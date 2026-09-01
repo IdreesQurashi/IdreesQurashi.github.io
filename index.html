@@ -8,7 +8,6 @@
     <title>Enterprise Autonomous AI Architectures & Revenue Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -33,9 +32,15 @@
     </script>
     <style>
         body { background-color: #000000; color: #d1d5db; }
-        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.22; }
         
-        /* CLEAN, PRECISE LUXURY 3D MECHANICAL BUTTONS */
+        /* SUBTLE MINIMAL LUXURY DOT-GRID TEXTURE (CLEAN & DECENT) */
+        .bg-luxury-grid {
+            background-color: #000000;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* CRISP LUXURY 3D MECHANICAL BUTTONS */
         .btn-3d-clean-gold {
             background: linear-gradient(180deg, #fff4cc 0%, #e2be4b 45%, #b88f19 100%);
             color: #000000;
@@ -46,9 +51,9 @@
             border-bottom: 2px solid #5a4305;
             border-radius: 12px;
             box-shadow: 
-                0 6px 0 #6e5207,
+                0 5px 0 #6e5207,
                 0 8px 18px rgba(0, 0, 0, 0.9),
-                0 0 25px rgba(212, 175, 55, 0.35);
+                0 0 20px rgba(212, 175, 55, 0.35);
             transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
             cursor: pointer;
@@ -58,21 +63,21 @@
             justify-content: center;
         }
         .btn-3d-clean-gold:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 
-                0 9px 0 #6e5207,
-                0 14px 25px rgba(0, 0, 0, 0.95),
-                0 0 35px rgba(212, 175, 55, 0.5);
+                0 7px 0 #6e5207,
+                0 12px 22px rgba(0, 0, 0, 0.95),
+                0 0 30px rgba(212, 175, 55, 0.5);
         }
         .btn-3d-clean-gold:active {
-            transform: translateY(5px);
+            transform: translateY(4px);
             box-shadow: 
                 0 1px 0 #6e5207,
-                0 3px 8px rgba(0, 0, 0, 0.9);
+                0 3px 6px rgba(0, 0, 0, 0.9);
         }
 
         .btn-3d-clean-dark {
-            background: linear-gradient(180deg, #242424 0%, #121212 50%, #080808 100%);
+            background: linear-gradient(180deg, #222222 0%, #111111 50%, #080808 100%);
             color: #f6ecc9;
             font-weight: 700;
             border-top: 1px solid #444444;
@@ -81,7 +86,7 @@
             border-bottom: 2px solid #000000;
             border-radius: 12px;
             box-shadow: 
-                0 6px 0 #080808,
+                0 5px 0 #080808,
                 0 8px 18px rgba(0, 0, 0, 0.9);
             transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
@@ -91,23 +96,23 @@
             justify-content: center;
         }
         .btn-3d-clean-dark:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             border-color: #d4af37;
             box-shadow: 
-                0 9px 0 #080808,
-                0 14px 25px rgba(0, 0, 0, 0.95),
+                0 7px 0 #080808,
+                0 12px 22px rgba(0, 0, 0, 0.95),
                 0 0 20px rgba(212, 175, 55, 0.2);
         }
         .btn-3d-clean-dark:active {
-            transform: translateY(5px);
+            transform: translateY(4px);
             box-shadow: 
                 0 1px 0 #080808,
-                0 3px 8px rgba(0, 0, 0, 0.9);
+                0 3px 6px rgba(0, 0, 0, 0.9);
         }
 
         .btn-nav-clean {
             background: linear-gradient(180deg, #181818 0%, #0c0c0c 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             border-bottom: 2px solid #000000;
             border-radius: 10px;
             box-shadow: 0 3px 0 #000000;
@@ -119,24 +124,23 @@
             box-shadow: 0 4px 0 #000000, 0 6px 15px rgba(212, 175, 55, 0.2);
         }
 
-        /* COMPACT MONUMENTAL PANELS */
         .panel-monument-clean {
             background: linear-gradient(180deg, #101010 0%, #050505 100%);
             border: 1px solid #1c1c1c;
             border-radius: 16px;
-            box-shadow: 0 8px 0 #000000, 0 15px 35px rgba(0, 0, 0, 0.9);
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 6px 0 #000000, 0 15px 35px rgba(0, 0, 0, 0.9);
+            transition: all 0.2s ease;
             transform: translateY(0);
         }
         .panel-monument-clean:hover {
-            transform: translateY(-4px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 12px 0 #000000, 0 20px 45px rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 9px 0 #000000, 0 20px 45px rgba(212, 175, 55, 0.08);
         }
 
         .gold-pill-clean {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.25);
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.22);
             color: #f6ecc9;
         }
         .code-box-clean {
@@ -146,26 +150,31 @@
         }
     </style>
 </head>
-<body class="bg-pitch font-sans antialiased selection:bg-gold selection:text-black relative">
-
-    <canvas id="three-canvas" class="canvas-bg"></canvas>
+<body class="bg-luxury-grid font-sans antialiased selection:bg-gold selection:text-black">
 
     <div class="relative z-10">
-        <!-- Clean Persistent Navbar -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-4">
+        <!-- Persistent Ultra-Clean Navbar -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-3.5">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <a href="#hero" class="flex items-center space-x-3">
-                    <div class="w-9 h-9 rounded-lg bg-neutral-900 border border-gold/40 flex items-center justify-center font-serif font-bold text-goldLight text-base shadow">
-                        IQ
+                <a href="#hero" class="flex items-center space-x-3.5">
+                    <!-- Geometric Apex Emblem Logo -->
+                    <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-gold/40 flex items-center justify-center p-2 shadow-lg">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-goldLight fill-current">
+                            <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" fill="none" stroke="#d4af37" stroke-width="7" stroke-linejoin="round"/>
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="#d4af37" stroke-width="4" stroke-opacity="0.8"/>
+                            <line x1="10" y1="30" x2="90" y2="70" stroke="#d4af37" stroke-width="4" stroke-opacity="0.8"/>
+                            <line x1="10" y1="70" x2="90" y2="30" stroke="#d4af37" stroke-width="4" stroke-opacity="0.8"/>
+                            <circle cx="50" cy="50" r="9" fill="#f6ecc9"/>
+                        </svg>
                     </div>
                     <div>
                         <div class="font-serif font-bold text-sm text-white tracking-widest uppercase">Idrees Qurashi</div>
-                        <div class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Growth</div>
+                        <div class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Enterprise Growth</div>
                     </div>
                 </a>
                 
-                <!-- ONLY 2 MAIN NAVIGATION BUTTONS -->
-                <div class="hidden md:flex items-center space-x-4 font-mono text-[11px] tracking-wider uppercase">
+                <!-- 2 MAIN NAVIGATION BUTTONS ONLY -->
+                <div class="hidden md:flex items-center space-x-3.5 font-mono text-[11px] tracking-wider uppercase">
                     <a href="#multi-agent-loop" class="btn-nav-clean px-4 py-2 text-goldLight font-bold flex items-center gap-2">
                         <i data-lucide="cpu" class="w-3.5 h-3.5 text-gold"></i>
                         <span>1. AI Automation & Agentic AI</span>
@@ -184,11 +193,11 @@
             </div>
         </nav>
 
-        <!-- 1. HERO SECTION -->
-        <section id="hero" class="pt-40 pb-20 px-8 text-center max-w-4xl mx-auto min-h-[85vh] flex flex-col justify-center">
+        <!-- 1. HERO SECTION (CLEAN & PROPORTIONAL) -->
+        <section id="hero" class="pt-40 pb-16 px-8 text-center max-w-4xl mx-auto min-h-[82vh] flex flex-col justify-center">
             <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full gold-pill-clean text-[10px] font-mono tracking-widest uppercase mb-6 mx-auto">
                 <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-                <span>ENTERPRISE AGENTIC ARCHITECTURES & B2B OUTBOUND SCALE</span>
+                <span>ENTERPRISE AGENTIC ARCHITECTURES & REVENUE INFRASTRUCTURE</span>
             </div>
 
             <h1 class="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.25]">
@@ -196,42 +205,42 @@
             </h1>
 
             <p class="mt-5 text-sm md:text-base text-neutral-400 max-w-xl mx-auto font-light leading-relaxed">
-                Replacing manual friction with deterministic multi-agent loops, tool execution, and high-velocity B2B lead generation infrastructure.
+                Replacing manual operational friction with deterministic multi-agent loops, tool execution, and high-velocity B2B revenue infrastructure.
             </p>
 
-            <!-- Clean 3D Action Buttons -->
-            <div class="mt-10 flex flex-wrap items-center justify-center gap-5 font-mono text-xs uppercase tracking-wider">
-                <a href="#multi-agent-loop" class="btn-3d-clean-gold px-7 py-3.5 flex items-center space-x-2.5">
+            <!-- Crisp 3D Action Buttons -->
+            <div class="mt-9 flex flex-wrap items-center justify-center gap-4 font-mono text-xs uppercase tracking-wider">
+                <a href="#multi-agent-loop" class="btn-3d-clean-gold px-7 py-3 flex items-center space-x-2.5">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
                     <span>1. AI Automation & Agentic AI</span>
                 </a>
-                <a href="#leadgen-matrix" class="btn-3d-clean-dark px-7 py-3.5 flex items-center space-x-2.5">
+                <a href="#leadgen-matrix" class="btn-3d-clean-dark px-7 py-3 flex items-center space-x-2.5">
                     <i data-lucide="target" class="w-4 h-4"></i>
                     <span>2. B2B Lead Generation</span>
                 </a>
             </div>
 
             <!-- Crisp 3D Stat Grid -->
-            <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+            <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                 <div class="panel-monument-clean p-5">
                     <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Experience</div>
                     <div class="text-2xl font-serif font-bold text-white mt-1">5+ Years</div>
-                    <p class="text-[10px] text-neutral-500 mt-1">Autonomous code</p>
+                    <p class="text-[10px] text-neutral-500 mt-0.5">Autonomous code</p>
                 </div>
                 <div class="panel-monument-clean p-5">
                     <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Enriched Pipeline</div>
                     <div class="text-2xl font-serif font-bold text-goldLight mt-1">25,000+</div>
-                    <p class="text-[10px] text-neutral-500 mt-1">B2B records</p>
+                    <p class="text-[10px] text-neutral-500 mt-0.5">B2B records</p>
                 </div>
                 <div class="panel-monument-clean p-5">
                     <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Speed-to-Lead</div>
                     <div class="text-2xl font-serif font-bold text-white mt-1">&lt;60 Sec</div>
-                    <p class="text-[10px] text-neutral-500 mt-1">Webhook sync</p>
+                    <p class="text-[10px] text-neutral-500 mt-0.5">Webhook sync</p>
                 </div>
                 <div class="panel-monument-clean p-5">
                     <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Distribution</div>
                     <div class="text-2xl font-serif font-bold text-neutral-300 mt-1">109.8K+</div>
-                    <p class="text-[10px] text-neutral-500 mt-1">Video reach</p>
+                    <p class="text-[10px] text-neutral-500 mt-0.5">Video reach</p>
                 </div>
             </div>
         </section>
@@ -239,7 +248,7 @@
         <!-- 2. LEAD GEN MATRIX -->
         <section id="leadgen-matrix" class="py-20 px-8 border-t border-neutral-900 bg-noir">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-14">
+                <div class="text-center max-w-2xl mx-auto mb-12">
                     <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
                         <i data-lucide="target" class="w-3 h-3"></i>
                         <span>Pillar 02: Targeting</span>
@@ -661,61 +670,7 @@
         </footer>
     </div>
 
-    <!-- 3D Subtle Floating Ribbon -->
     <script>
-        const canvas = document.getElementById('three-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        const curve = new THREE.CatmullRomCurve3([
-            new THREE.Vector3(-20, -4, 0),
-            new THREE.Vector3(-10, 6, -6),
-            new THREE.Vector3(0, -6, 6),
-            new THREE.Vector3(10, 5, -6),
-            new THREE.Vector3(20, -4, 0)
-        ]);
-
-        const tubeGeo = new THREE.TubeGeometry(curve, 120, 3.2, 12, false);
-        const tubeMat = new THREE.MeshBasicMaterial({ color: 0x555555, wireframe: true, transparent: true, opacity: 0.10 });
-        const ribbon = new THREE.Mesh(tubeGeo, tubeMat);
-        scene.add(ribbon);
-
-        camera.position.z = 24;
-
-        let mouseX = 0;
-        let mouseY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 1.5;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 1.5;
-        });
-
-        let clock = new THREE.Clock();
-
-        function animate() {
-            requestAnimationFrame(animate);
-            const t = clock.getElapsedTime() * 0.25;
-
-            ribbon.rotation.x = Math.sin(t * 0.5) * 0.12;
-            ribbon.rotation.y = Math.cos(t * 0.4) * 0.18;
-
-            camera.position.x += (mouseX * 2 - camera.position.x) * 0.04;
-            camera.position.y += (-mouseY * 2 - camera.position.y) * 0.04;
-            camera.lookAt(0, 0, 0);
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
         lucide.createIcons();
     </script>
 </body>

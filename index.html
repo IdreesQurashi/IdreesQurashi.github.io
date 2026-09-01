@@ -6,7 +6,8 @@
     <title>Idrees Qurashi | Agentic AI Solutions Architect & B2B Growth Lead</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -17,17 +18,13 @@
                         mono: ['"JetBrains Mono"', 'monospace']
                     },
                     colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            glow: '#00ff88'
-                        },
-                        cyber: {
-                            dark: '#0a0d14',
-                            card: '#111622',
-                            border: '#1e293b',
-                            accent: '#38bdf8'
+                        pitch: '#000000',
+                        fade: '#0a0a0a',
+                        card: '#111111',
+                        border: '#1f1f1f',
+                        emerald: {
+                            glow: '#00ff88',
+                            accent: '#10b981'
                         }
                     }
                 }
@@ -35,274 +32,284 @@
         }
     </script>
     <style>
-        .glass-panel {
-            background: rgba(17, 22, 34, 0.75);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        body {
+            background-color: #000000;
+            color: #d1d5db;
         }
-        .glow-effect {
-            box-shadow: 0 0 30px -5px rgba(34, 197, 94, 0.25);
+        .canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+        .pure-glass {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .pure-glass:hover {
+            border-color: rgba(0, 255, 136, 0.35);
+            box-shadow: 0 0 35px -5px rgba(0, 255, 136, 0.15);
+        }
+        .fade-card {
+            background: linear-gradient(180deg, #111111 0%, #080808 100%);
+            border: 1px solid #1c1c1c;
+        }
+        .fade-card:hover {
+            border-color: #2e2e2e;
+            transform: translateY(-4px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-text {
+            text-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
         }
     </style>
 </head>
-<body class="bg-cyber-dark text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-black">
+<body class="bg-pitch font-sans antialiased selection:bg-emerald-glow selection:text-black relative">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-cyber-border/80 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-cyber-accent flex items-center justify-center font-mono font-bold text-black text-lg">
-                    IQ
-                </div>
-                <div>
-                    <span class="font-bold text-lg text-white tracking-tight">Idrees Qurashi</span>
-                    <span class="hidden md:inline-block ml-2 px-2 py-0.5 text-xs font-mono font-semibold bg-brand-500/10 text-brand-500 border border-brand-500/30 rounded-full">
-                        Agentic AI & B2B Growth
-                    </span>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300">
-                <a href="#agentic-stack" class="hover:text-brand-500 transition">Agentic Stack</a>
-                <a href="#proof" class="hover:text-brand-500 transition">Brand Proof</a>
-                <a href="#contact" class="hover:text-brand-500 transition">Contact</a>
-            </div>
+    <!-- 3D Three.js Interactive Particle & Geometry Canvas -->
+    <canvas id="three-canvas" class="canvas-bg"></canvas>
 
-            <div class="flex items-center space-x-4">
-                <a href="https://wa.me/923489911425" target="_blank" class="px-4 py-2 text-xs font-mono font-bold bg-brand-500 text-black rounded-lg hover:bg-brand-400 transition flex items-center space-x-2">
-                    <i data-lucide="message-square" class="w-4 h-4"></i>
-                    <span>Let's Talk</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 relative overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[140px] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel text-xs font-mono text-brand-500 border border-brand-500/30 mb-8">
-                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-                <span>OPEN FOR HIGH-TICKET REMOTE ARCHITECT & GROWTH ROLES</span>
-            </div>
-
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-5xl mx-auto leading-tight md:leading-none">
-                Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-emerald-400 to-cyber-accent">Agentic AI Systems</span> & Autonomous B2B Revenue Pipelines.
-            </h1>
-
-            <p class="mt-8 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                Senior Solutions Architect specializing in multi-agent orchestration, tool-calling loops, and high-velocity outbound client acquisition architectures (Instantly, Apollo.io, Close CRM, Make.com, n8n).
-            </p>
-
-            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <a href="https://wa.me/923489911425" target="_blank" class="px-6 py-3.5 rounded-xl bg-brand-500 text-black font-semibold hover:bg-brand-400 transition flex items-center space-x-2 glow-effect">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    <span>Connect on WhatsApp</span>
-                </a>
-                <a href="https://drive.google.com/drive/folders/1PYW_b7h8e3tUPVZISI17RD383Rjyce1P" target="_blank" class="px-6 py-3.5 rounded-xl glass-panel text-white font-semibold hover:border-slate-500 transition flex items-center space-x-2">
-                    <i data-lucide="folder-git-2" class="w-5 h-5"></i>
-                    <span>Master Creative Drive</span>
-                </a>
-            </div>
-
-            <!-- Metric Highlights -->
-            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="glass-panel p-6 rounded-2xl text-left border border-cyber-border">
-                    <div class="text-3xl font-extrabold font-mono text-white">5+ Years</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase font-mono tracking-wider">Tech & Systems Track</div>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl text-left border border-cyber-border">
-                    <div class="text-3xl font-extrabold font-mono text-brand-500">25,000+</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase font-mono tracking-wider">B2B Leads Enriched</div>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl text-left border border-cyber-border">
-                    <div class="text-3xl font-extrabold font-mono text-cyber-accent">109.8K+</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase font-mono tracking-wider">Organic Social Reach</div>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl text-left border border-cyber-border">
-                    <div class="text-3xl font-extrabold font-mono text-emerald-400">&lt;60 Sec</div>
-                    <div class="text-xs text-slate-400 mt-1 uppercase font-mono tracking-wider">Speed-to-Lead SLA</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Agentic & Growth Stack -->
-    <section id="agentic-stack" class="py-20 px-6 border-t border-cyber-border/60 bg-cyber-card/30">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-mono font-bold text-brand-500 uppercase tracking-widest">Architectural Foundations</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mt-3">The Agentic & B2B Growth Engine</h3>
-                <p class="text-slate-400 mt-4 text-sm md:text-base">Built to replace manual human friction with deterministic, self-healing automation.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="glass-panel p-8 rounded-2xl border border-cyber-border hover:border-brand-500/50 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="bot" class="w-6 h-6"></i>
+    <div class="relative z-10">
+        <!-- Navigation Header -->
+        <nav class="fixed top-0 left-0 right-0 z-50 pure-glass border-b border-border px-6 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-glow to-emerald-accent flex items-center justify-center font-mono font-black text-black text-xl group-hover:scale-105 transition">
+                        IQ
                     </div>
-                    <h4 class="text-xl font-bold text-white">Agentic AI & Tool Calling</h4>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-                        Multi-agent systems using stateful memory, shell execution, web scrapers, and dynamic context windows for autonomous operations.
-                    </p>
-                    <div class="mt-6 pt-6 border-t border-cyber-border flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">LangGraph</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">MCP</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">Python</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">Pydantic</span>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass-panel p-8 rounded-2xl border border-cyber-border hover:border-cyber-accent/50 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-cyber-accent/10 border border-cyber-accent/30 flex items-center justify-center text-cyber-accent mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="workflow" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">Middleware & Pipelines</h4>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-                        Custom webhook listeners, n8n blueprints, and Make.com scenarios connecting unstructured data to production databases.
-                    </p>
-                    <div class="mt-6 pt-6 border-t border-cyber-border flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">n8n</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">Make.com</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">PostgreSQL</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">REST APIs</span>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-panel p-8 rounded-2xl border border-cyber-border hover:border-emerald-400/50 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="zap" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white">Outbound & CRM Scale</h4>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-                        40+ inbox rotation engines, DNS SPF/DKIM governance, Apollo enrichment, and Close/HubSpot dynamic Smart Views.
-                    </p>
-                    <div class="mt-6 pt-6 border-t border-cyber-border flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">Instantly</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">Close CRM</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">HubSpot</span>
-                        <span class="px-2.5 py-1 text-xs font-mono bg-cyber-dark text-slate-300 rounded-md border border-cyber-border">Apollo.io</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Verified Client Proof -->
-    <section id="proof" class="py-20 px-6 border-t border-cyber-border">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-mono font-bold text-brand-500 uppercase tracking-widest">Enterprise & Brand Proof</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mt-3">Verified Client Deployments</h3>
-                <p class="text-slate-400 mt-4 text-sm md:text-base">Real systems, brand campaigns, and commercial infrastructure delivered across international markets.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Brand 1 -->
-                <div class="glass-panel p-6 rounded-2xl border border-cyber-border flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-mono text-brand-500 font-semibold uppercase">National Television</div>
-                        <h4 class="text-xl font-bold text-white mt-2">Green TV Entertainment</h4>
-                        <p class="text-slate-400 text-sm mt-2">Mainstream national media network campaign assets and digital distribution systems.</p>
+                        <div class="font-extrabold text-lg text-white tracking-tight flex items-center gap-2">
+                            <span>Idrees Qurashi</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-glow animate-pulse"></span>
+                        </div>
+                        <div class="text-[11px] font-mono text-neutral-400">Agentic AI & B2B Growth Architect</div>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-cyber-border text-xs text-slate-500 font-mono">Enterprise Media</div>
+                </a>
+                
+                <!-- Multi-Page Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-1 font-mono text-xs font-semibold">
+                    <a href="index.html" class="px-4 py-2 text-emerald-glow bg-neutral-900/80 rounded-lg border border-emerald-glow/30">Home</a>
+                    <a href="agentic-lab.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Agentic Lab</a>
+                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Outbound Engine</a>
+                    <a href="client-proof.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Client Proof</a>
+                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Contact Terminal</a>
                 </div>
 
-                <!-- Brand 2 -->
-                <div class="glass-panel p-6 rounded-2xl border border-cyber-border flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs font-mono text-cyber-accent font-semibold uppercase">National Irish Franchise</div>
-                        <h4 class="text-xl font-bold text-white mt-2">Apache Pizza Ireland</h4>
-                        <p class="text-slate-400 text-sm mt-2">Social campaign creatives and high-retention video ad assets across Ireland.</p>
-                    </div>
-                    <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-6 pt-4 border-t border-cyber-border text-xs text-cyber-accent hover:underline font-mono flex items-center space-x-1">
-                        <span>View Live Instagram</span>
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                    </a>
-                </div>
-
-                <!-- Brand 3 -->
-                <div class="glass-panel p-6 rounded-2xl border border-cyber-border flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs font-mono text-emerald-400 font-semibold uppercase">Healthcare & Aesthetic Clinics</div>
-                        <h4 class="text-xl font-bold text-white mt-2">Rock Road & Slievemore Dental</h4>
-                        <p class="text-slate-400 text-sm mt-2">Leading Irish dental healthcare practices and digital patient acquisition funnels.</p>
-                    </div>
-                    <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-6 pt-4 border-t border-cyber-border text-xs text-emerald-400 hover:underline font-mono flex items-center space-x-1">
-                        <span>rockroaddental.ie</span>
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Master Creative Drive Banner -->
-            <div class="mt-12 glass-panel p-8 rounded-2xl border border-brand-500/30 flex flex-col md:flex-row items-center justify-between gap-6 glow-effect">
                 <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-500 flex items-center justify-center">
-                        <i data-lucide="film" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-white">Master Visual & Video Creative Drive</h4>
-                        <p class="text-slate-400 text-sm">Full repository of graphic designs, short-form reels, AI video ads, and agency deliverables.</p>
-                    </div>
-                </div>
-                <a href="https://drive.google.com/drive/folders/1PYW_b7h8e3tUPVZISI17RD383Rjyce1P" target="_blank" class="px-6 py-3 bg-brand-500 text-black font-bold rounded-xl hover:bg-brand-400 transition whitespace-nowrap">
-                    Access Google Drive
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Terminal / Contact -->
-    <section id="contact" class="py-20 px-6 border-t border-cyber-border bg-cyber-card/40">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-xs font-mono font-bold text-brand-500 uppercase tracking-widest">Connect & Deploy</h2>
-            <h3 class="text-3xl md:text-5xl font-extrabold text-white mt-3">Ready to Scale Your Systems?</h3>
-            <p class="text-slate-400 mt-4 text-base max-w-2xl mx-auto">
-                Available for full-time remote architecture, B2B outbound leadership, and high-ticket agentic engineering engagements.
-            </p>
-
-            <div class="mt-10 glass-panel p-8 rounded-2xl border border-cyber-border text-left font-mono text-sm max-w-xl mx-auto">
-                <div class="flex items-center justify-between pb-4 mb-4 border-b border-cyber-border text-xs text-slate-500">
-                    <div class="flex space-x-2">
-                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                        <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                        <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-                    </div>
-                    <span>idrees_terminal.sh</span>
-                </div>
-                <div class="space-y-2 text-slate-300">
-                    <p><span class="text-brand-500">$</span> idrees.location <span class="text-slate-500">-></span> <span class="text-white">"Islamabad, Pakistan (100% Remote Available)"</span></p>
-                    <p><span class="text-brand-500">$</span> idrees.email <span class="text-slate-500">-></span> <a href="mailto:idreesqurashi6@gmail.com" class="text-cyber-accent hover:underline">"idreesqurashi6@gmail.com"</a></p>
-                    <p><span class="text-brand-500">$</span> idrees.whatsapp <span class="text-slate-500">-></span> <a href="https://wa.me/923489911425" class="text-brand-500 hover:underline">"+92 348 9911425"</a></p>
-                    <p><span class="text-brand-500">$</span> idrees.degree <span class="text-slate-500">-></span> <span class="text-white">"BBIT, University of the Punjab"</span></p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-cyber-border flex justify-end">
-                    <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 bg-brand-500 text-black font-bold rounded-lg hover:bg-brand-400 transition text-xs flex items-center space-x-2">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                        <span>Initiate Direct WhatsApp</span>
+                    <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 text-xs font-mono font-bold bg-emerald-glow text-black rounded-xl hover:bg-white transition flex items-center space-x-2">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                        <span>Direct Booking</span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-cyber-border glass-panel text-center text-xs font-mono text-slate-500">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>&copy; 2026 Idrees Qurashi. All rights reserved.</div>
-            <div class="flex items-center space-x-6">
-                <a href="https://github.com/idreesqurashi6-crypto" target="_blank" class="hover:text-white transition">GitHub</a>
-                <a href="https://www.tiktok.com/@drivex__1" target="_blank" class="hover:text-white transition">TikTok</a>
-                <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-white transition">Email</a>
+        <!-- Hero Section -->
+        <section class="pt-40 pb-24 px-6 relative">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full pure-glass text-xs font-mono text-emerald-glow border border-neutral-800 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-emerald-glow animate-ping"></span>
+                    <span>100% AUTONOMOUS AGENTIC ARCHITECTURES</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.05]">
+                    Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-500">Agentic AI</span> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-glow via-emerald-accent to-white glow-text">Autonomous Scale</span>.
+                </h1>
+
+                <p class="mt-8 text-lg md:text-2xl text-neutral-400 max-w-3xl mx-auto font-normal leading-relaxed">
+                    Replacing manual human operations with deterministic multi-agent orchestration, tool-calling loops, and high-velocity B2B revenue infrastructure.
+                </p>
+
+                <div class="mt-12 flex flex-wrap items-center justify-center gap-5">
+                    <a href="agentic-lab.html" class="px-8 py-4 rounded-2xl bg-emerald-glow text-black font-extrabold hover:bg-white transition flex items-center space-x-3 text-sm font-mono">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                        <span>Launch Agentic Lab</span>
+                    </a>
+                    <a href="client-proof.html" class="px-8 py-4 rounded-2xl pure-glass text-white font-bold hover:border-neutral-600 transition flex items-center space-x-3 text-sm font-mono">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        <span>Verified Brand Proof</span>
+                    </a>
+                </div>
+
+                <!-- 3D Stat Grid -->
+                <div class="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-left">
+                    <div class="fade-card p-7 rounded-3xl">
+                        <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest">Engineering Track</div>
+                        <div class="text-4xl font-black font-mono text-white mt-2">5+ Years</div>
+                        <p class="text-xs text-neutral-400 mt-2">Autonomous systems & full-stack development</p>
+                    </div>
+                    <div class="fade-card p-7 rounded-3xl">
+                        <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest">Enriched Pipeline</div>
+                        <div class="text-4xl font-black font-mono text-emerald-glow mt-2">25,000+</div>
+                        <p class="text-xs text-neutral-400 mt-2">Verified B2B decision-maker datasets</p>
+                    </div>
+                    <div class="fade-card p-7 rounded-3xl">
+                        <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest">Speed-to-Lead SLA</div>
+                        <div class="text-4xl font-black font-mono text-white mt-2">&lt;60 Sec</div>
+                        <p class="text-xs text-neutral-400 mt-2">Automated webhook-to-CRM response</p>
+                    </div>
+                    <div class="fade-card p-7 rounded-3xl">
+                        <div class="text-xs font-mono text-neutral-500 uppercase tracking-widest">Organic Impressions</div>
+                        <div class="text-4xl font-black font-mono text-emerald-accent mt-2">109.8K+</div>
+                        <p class="text-xs text-neutral-400 mt-2">High-retention video distribution</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
+        <!-- Pages Portal Section -->
+        <section class="py-24 px-6 border-t border-border bg-fade/60">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono font-bold text-emerald-glow uppercase tracking-widest">Multi-Page Architecture</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white mt-3">Explore The Systems Vault</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Page Card 1 -->
+                    <a href="agentic-lab.html" class="fade-card p-8 rounded-3xl group block">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-border flex items-center justify-center text-emerald-glow mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="bot" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-emerald-glow transition">Agentic Lab</h4>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">Multi-agent loops, Tool Calling, LangGraph, and persistent memory ledgers.</p>
+                        <div class="mt-6 flex items-center space-x-2 text-xs font-mono text-emerald-glow">
+                            <span>Open Dedicated Page</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </a>
+
+                    <!-- Page Card 2 -->
+                    <a href="outbound-engine.html" class="fade-card p-8 rounded-3xl group block">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-border flex items-center justify-center text-white mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="send" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-emerald-glow transition">Outbound Engine</h4>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">40+ Inboxes, DNS SPF/DKIM protocols, Apollo scrapers, and Close CRM triggers.</p>
+                        <div class="mt-6 flex items-center space-x-2 text-xs font-mono text-emerald-glow">
+                            <span>Open Dedicated Page</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </a>
+
+                    <!-- Page Card 3 -->
+                    <a href="client-proof.html" class="fade-card p-8 rounded-3xl group block">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-border flex items-center justify-center text-emerald-accent mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-emerald-glow transition">Client Proof</h4>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">Green TV, Apache Pizza Ireland, Rock Road Dental, and Master Drive portfolio.</p>
+                        <div class="mt-6 flex items-center space-x-2 text-xs font-mono text-emerald-glow">
+                            <span>Open Dedicated Page</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </a>
+
+                    <!-- Page Card 4 -->
+                    <a href="contact.html" class="fade-card p-8 rounded-3xl group block">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-border flex items-center justify-center text-emerald-glow mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white group-hover:text-emerald-glow transition">Contact Terminal</h4>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">Interactive terminal, WhatsApp direct line, and executive booking calendar.</p>
+                        <div class="mt-6 flex items-center space-x-2 text-xs font-mono text-emerald-glow">
+                            <span>Open Dedicated Page</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 border-t border-border pure-glass text-center text-xs font-mono text-neutral-500">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>&copy; 2026 Idrees Qurashi. Pure Black 3D Architecture. All rights reserved.</div>
+                <div class="flex items-center space-x-8">
+                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-emerald-glow transition">GitHub</a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-emerald-glow transition">WhatsApp</a>
+                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-emerald-glow transition">Email</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 3D Three.js Interactive Particle Mesh Script -->
     <script>
+        const canvas = document.getElementById('three-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Create 3D Wireframe Icosahedron & Particle Field
+        const geometry = new THREE.IcosahedronGeometry(12, 2);
+        const material = new THREE.MeshBasicMaterial({
+            color: 0x00ff88,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.18
+        });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+        // Ambient particles
+        const particlesGeo = new THREE.BufferGeometry();
+        const count = 700;
+        const positions = new Float32Array(count * 3);
+
+        for(let i = 0; i < count * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 80;
+        }
+
+        particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particlesMat = new THREE.PointsMaterial({
+            size: 0.15,
+            color: 0x00ff88,
+            transparent: true,
+            opacity: 0.4
+        });
+        const particles = new THREE.Points(particlesGeo, particlesMat);
+        scene.add(particles);
+
+        camera.position.z = 30;
+
+        // Mouse Parallax
+        let mouseX = 0;
+        let mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            sphere.rotation.x += 0.002;
+            sphere.rotation.y += 0.003;
+            particles.rotation.y -= 0.001;
+
+            camera.position.x += (mouseX * 4 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 4 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
         lucide.createIcons();
     </script>
 </body>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Lab | Idrees Qurashi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+                    colors: { pitch: '#000000', fade: '#0a0a0a', card: '#111111', border: '#1f1f1f', emerald: { glow: '#00ff88', accent: '#10b981' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #000000; color: #d1d5db; }
+        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.55; }
+        .pure-glass { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
+        .fade-card { background: linear-gradient(180deg, #111111 0%, #080808 100%); border: 1px solid #1c1c1c; }
+        .fade-card:hover { border-color: #00ff88; box-shadow: 0 0 30px -5px rgba(0,255,136,0.15); }
+    </style>
+</head>
+<body class="bg-pitch font-sans antialiased selection:bg-emerald-glow selection:text-black relative">
+    <canvas id="three-canvas" class="canvas-bg"></canvas>
+
+    <div class="relative z-10">
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 pure-glass border-b border-border px-6 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-glow to-emerald-accent flex items-center justify-center font-mono font-black text-black text-xl">IQ</div>
+                    <div>
+                        <div class="font-extrabold text-lg text-white">Idrees Qurashi</div>
+                        <div class="text-[11px] font-mono text-neutral-400">Agentic AI & B2B Growth</div>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1 font-mono text-xs font-semibold">
+                    <a href="index.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Home</a>
+                    <a href="agentic-lab.html" class="px-4 py-2 text-emerald-glow bg-neutral-900/80 rounded-lg border border-emerald-glow/30">Agentic Lab</a>
+                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Outbound Engine</a>
+                    <a href="client-proof.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Client Proof</a>
+                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Contact Terminal</a>
+                </div>
+                <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 text-xs font-mono font-bold bg-emerald-glow text-black rounded-xl hover:bg-white transition flex items-center space-x-2">
+                    <i data-lucide="zap" class="w-4 h-4"></i><span>Direct Booking</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="pt-36 pb-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full pure-glass text-xs font-mono text-emerald-glow border border-neutral-800 mb-6">
+                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                    <span>AUTONOMOUS EXECUTION ENVIRONMENT</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-white">Agentic AI & Multi-Agent Lab</h1>
+                <p class="text-neutral-400 mt-4 text-base md:text-lg">Stateful tool-calling agent loops, persistent memory ledgers, and deterministic LLM execution.</p>
+            </div>
+
+            <!-- Core Architectures Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Blueprint 1 -->
+                <div class="fade-card p-8 rounded-3xl">
+                    <div class="flex items-center justify-between pb-6 border-b border-border">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-neutral-900 flex items-center justify-center text-emerald-glow border border-border">
+                                <i data-lucide="git-branch" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Multi-Agent Tool Orchestration</h3>
+                                <div class="text-xs font-mono text-neutral-400">Python + Function Calling + Sandboxed Shell</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-emerald-glow/10 text-emerald-glow border border-emerald-glow/30 rounded-full font-mono text-xs">Active</span>
+                    </div>
+                    <p class="text-neutral-400 text-sm mt-6 leading-relaxed">
+                        Deterministic multi-agent execution loops where specialized subagents execute shell commands, scrape web APIs, and write structured outputs with zero hallucination.
+                    </p>
+                    <div class="mt-6 p-4 bg-black/60 rounded-xl border border-neutral-900 font-mono text-xs text-neutral-300">
+                        <code>Agent Loop: Planner ➔ Research Agent (Scraper) ➔ Execution Agent (Python/Bash) ➔ Memory Sync</code>
+                    </div>
+                </div>
+
+                <!-- Blueprint 2 -->
+                <div class="fade-card p-8 rounded-3xl">
+                    <div class="flex items-center justify-between pb-6 border-b border-border">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-neutral-900 flex items-center justify-center text-white border border-border">
+                                <i data-lucide="database" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Dynamic Context & Memory Ledgers</h3>
+                                <div class="text-xs font-mono text-neutral-400">Persistent State Synchronization</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full font-mono text-xs">Production</span>
+                    </div>
+                    <p class="text-neutral-400 text-sm mt-6 leading-relaxed">
+                        Cross-session state persistence using structured Markdown and JSON ledgers (`AGENTS.md`, `SHARED_STATE.md`), maintaining 100% memory coherence across sessions.
+                    </p>
+                    <div class="mt-6 p-4 bg-black/60 rounded-xl border border-neutral-900 font-mono text-xs text-neutral-300">
+                        <code>Context Protocol: Sliding Window + Prompt Caching (38% Token Cost Reduction)</code>
+                    </div>
+                </div>
+
+                <!-- Blueprint 3 -->
+                <div class="fade-card p-8 rounded-3xl">
+                    <div class="flex items-center justify-between pb-6 border-b border-border">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-neutral-900 flex items-center justify-center text-emerald-accent border border-border">
+                                <i data-lucide="workflow" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">n8n Production Agent Vault</h3>
+                                <div class="text-xs font-mono text-neutral-400">Autonomous Webhook & Scraper Nodes</div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="text-xs font-mono text-emerald-glow hover:underline flex items-center gap-1">
+                            <span>View Repo</span><i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                    <p class="text-neutral-400 text-sm mt-6 leading-relaxed">
+                        Production-grade n8n blueprints featuring autonomous LLM agents, vector memory retrieval, and real-time CRM webhook synchronization.
+                    </p>
+                </div>
+
+                <!-- Blueprint 4 -->
+                <div class="fade-card p-8 rounded-3xl border border-emerald-glow/20">
+                    <div class="flex items-center justify-between pb-6 border-b border-border">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-glow/10 flex items-center justify-center text-emerald-glow border border-emerald-glow/30">
+                                <i data-lucide="lock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Proprietary E-Commerce Automations</h3>
+                                <div class="text-xs font-mono text-neutral-400">Shopify + WhatsApp Bulletproof COD</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-full font-mono text-xs">Private IP</span>
+                    </div>
+                    <p class="text-neutral-400 text-sm mt-6 leading-relaxed">
+                        High-converting automated order verification workflows reducing fake deliveries and customer acquisition waste. Available via private enterprise licensing.
+                    </p>
+                    <div class="mt-6 flex justify-end">
+                        <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="px-4 py-2 bg-neutral-900 text-white font-mono text-xs rounded-xl border border-neutral-700 hover:border-emerald-glow transition">Request Enterprise Access</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 border-t border-border pure-glass text-center text-xs font-mono text-neutral-500">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>&copy; 2026 Idrees Qurashi. Pure Black 3D Architecture.</div>
+                <div class="flex items-center space-x-8">
+                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-emerald-glow transition">GitHub</a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-emerald-glow transition">WhatsApp</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('three-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const geo = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+        const mat = new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.12 });
+        const torus = new THREE.Mesh(geo, mat);
+        scene.add(torus);
+        camera.position.z = 28;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            torus.rotation.x += 0.003;
+            torus.rotation.y += 0.004;
+            renderer.render(scene, camera);
+        }
+        animate();
+        lucide.createIcons();
+    </script>
+</body>
+</html>

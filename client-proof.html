@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Proof | Idrees Qurashi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+                    colors: { pitch: '#000000', fade: '#0a0a0a', card: '#111111', border: '#1f1f1f', emerald: { glow: '#00ff88', accent: '#10b981' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #000000; color: #d1d5db; }
+        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.55; }
+        .pure-glass { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
+        .fade-card { background: linear-gradient(180deg, #111111 0%, #080808 100%); border: 1px solid #1c1c1c; }
+        .fade-card:hover { border-color: #00ff88; box-shadow: 0 0 30px -5px rgba(0,255,136,0.15); }
+    </style>
+</head>
+<body class="bg-pitch font-sans antialiased selection:bg-emerald-glow selection:text-black relative">
+    <canvas id="three-canvas" class="canvas-bg"></canvas>
+
+    <div class="relative z-10">
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 pure-glass border-b border-border px-6 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-glow to-emerald-accent flex items-center justify-center font-mono font-black text-black text-xl">IQ</div>
+                    <div>
+                        <div class="font-extrabold text-lg text-white">Idrees Qurashi</div>
+                        <div class="text-[11px] font-mono text-neutral-400">Agentic AI & B2B Growth</div>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1 font-mono text-xs font-semibold">
+                    <a href="index.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Home</a>
+                    <a href="agentic-lab.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Agentic Lab</a>
+                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Outbound Engine</a>
+                    <a href="client-proof.html" class="px-4 py-2 text-emerald-glow bg-neutral-900/80 rounded-lg border border-emerald-glow/30">Client Proof</a>
+                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Contact Terminal</a>
+                </div>
+                <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 text-xs font-mono font-bold bg-emerald-glow text-black rounded-xl hover:bg-white transition flex items-center space-x-2">
+                    <i data-lucide="zap" class="w-4 h-4"></i><span>Direct Booking</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="pt-36 pb-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full pure-glass text-xs font-mono text-emerald-glow border border-neutral-800 mb-6">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>VERIFIED ENTERPRISE TRACK RECORD</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-white">Client Proof & Deployments</h1>
+                <p class="text-neutral-400 mt-4 text-base md:text-lg">Real commercial systems, media networks, and international client campaigns.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand 1 -->
+                <div class="fade-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono text-emerald-glow font-bold uppercase tracking-wider">National Television</div>
+                        <h3 class="text-2xl font-bold text-white mt-3">Green TV Entertainment</h3>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">
+                            Mainstream national television network campaign design, promotional assets, and broadcast media distribution.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-border font-mono text-xs text-neutral-500">National Media Network</div>
+                </div>
+
+                <!-- Brand 2 -->
+                <div class="fade-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono text-emerald-accent font-bold uppercase tracking-wider">National Irish Franchise</div>
+                        <h3 class="text-2xl font-bold text-white mt-3">Apache Pizza Ireland</h3>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">
+                            Social campaign assets, video reels, and customer acquisition marketing across Ireland.
+                        </p>
+                    </div>
+                    <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-8 pt-4 border-t border-border font-mono text-xs text-emerald-glow hover:underline flex items-center gap-1">
+                        <span>instagram.com/apachepizzaireland</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Brand 3 -->
+                <div class="fade-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono text-white font-bold uppercase tracking-wider">Healthcare Practices</div>
+                        <h3 class="text-2xl font-bold text-white mt-3">Rock Road & Slievemore Dental</h3>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">
+                            Leading Irish dental healthcare clinics, digital visibility systems, and organic patient funnels.
+                        </p>
+                    </div>
+                    <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-8 pt-4 border-t border-border font-mono text-xs text-emerald-glow hover:underline flex items-center gap-1">
+                        <span>rockroaddental.ie</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Master Drive Banner -->
+            <div class="mt-12 fade-card p-10 rounded-3xl border border-emerald-glow/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white">Master Visual & Video Creative Drive</h3>
+                    <p class="text-neutral-400 text-sm mt-2">Access the complete Google Drive vault containing graphics, AI video ads, social reels, and case studies.</p>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1PYW_b7h8e3tUPVZISI17RD383Rjyce1P" target="_blank" class="px-8 py-4 bg-emerald-glow text-black font-extrabold rounded-2xl hover:bg-white transition whitespace-nowrap text-xs font-mono">
+                    Access Google Drive
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 border-t border-border pure-glass text-center text-xs font-mono text-neutral-500">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>&copy; 2026 Idrees Qurashi. Pure Black 3D Architecture.</div>
+                <div class="flex items-center space-x-8">
+                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-emerald-glow transition">GitHub</a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-emerald-glow transition">WhatsApp</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('three-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const geo = new THREE.DodecahedronGeometry(12, 1);
+        const mat = new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.12 });
+        const mesh = new THREE.Mesh(geo, mat);
+        scene.add(mesh);
+        camera.position.z = 28;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            mesh.rotation.x += 0.002;
+            mesh.rotation.y += 0.003;
+            renderer.render(scene, camera);
+        }
+        animate();
+        lucide.createIcons();
+    </script>
+</body>
+</html>

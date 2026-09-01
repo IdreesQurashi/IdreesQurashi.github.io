@@ -33,74 +33,100 @@
         body { background-color: #000000; color: #d1d5db; }
         .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.28; }
         
-        /* 10X EXTREME 3D PHYSICAL MECHANICAL BUTTONS */
-        .btn-3d-extreme-gold {
-            background: linear-gradient(180deg, #fff8db 0%, #ecd37a 40%, #c59b1e 100%);
+        /* 1,000,000X INSANE 3D PHYSICAL MECHANICAL POPPING BUTTONS */
+        .btn-3d-insane-gold {
+            background: linear-gradient(180deg, #ffffff 0%, #fff0b3 20%, #f3ce5e 50%, #c49514 85%, #8f6805 100%);
             color: #000000;
             font-weight: 900;
-            border-top: 2px solid #ffffff;
-            border-left: 1px solid #ffd86b;
-            border-right: 1px solid #a67c0c;
-            border-bottom: 2px solid #5a4305;
-            border-radius: 16px;
-            box-shadow: 0 12px 0 #6e5207, 0 16px 0 #4a3704, 0 22px 0 #281d01, 0 30px 45px rgba(0, 0, 0, 0.95), 0 0 50px rgba(212, 175, 55, 0.55);
-            transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+            border-top: 3px solid #ffffff;
+            border-left: 2px solid #ffe885;
+            border-right: 2px solid #735303;
+            border-bottom: 4px solid #3d2c01;
+            border-radius: 20px;
+            box-shadow: 
+                0 16px 0 #5e4403,
+                0 22px 0 #3b2b02,
+                0 28px 0 #1f1601,
+                0 36px 50px rgba(0, 0, 0, 0.98),
+                0 0 60px rgba(212, 175, 55, 0.7);
+            transition: all 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform: translateY(0);
             cursor: pointer;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        .btn-3d-extreme-gold:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 17px 0 #6e5207, 0 21px 0 #4a3704, 0 27px 0 #281d01, 0 36px 55px rgba(0, 0, 0, 0.98), 0 0 65px rgba(212, 175, 55, 0.7);
+        .btn-3d-insane-gold:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 
+                0 26px 0 #5e4403,
+                0 32px 0 #3b2b02,
+                0 38px 0 #1f1601,
+                0 48px 65px rgba(0, 0, 0, 0.99),
+                0 0 85px rgba(212, 175, 55, 0.9);
         }
-        .btn-3d-extreme-gold:active {
-            transform: translateY(12px);
-            box-shadow: 0 3px 0 #6e5207, 0 5px 0 #4a3704, 0 8px 15px rgba(0, 0, 0, 0.9);
+        .btn-3d-insane-gold:active {
+            transform: translateY(16px) scale(0.98);
+            box-shadow: 
+                0 4px 0 #5e4403,
+                0 6px 0 #3b2b02,
+                0 8px 15px rgba(0, 0, 0, 0.9);
         }
 
-        .btn-3d-extreme-dark {
-            background: linear-gradient(180deg, #2a2a2a 0%, #151515 45%, #080808 100%);
+        .btn-3d-insane-dark {
+            background: linear-gradient(180deg, #383838 0%, #1f1f1f 40%, #0d0d0d 85%, #000000 100%);
             color: #f6ecc9;
-            font-weight: 800;
-            border-top: 1px solid #444444;
-            border-left: 1px solid #333333;
-            border-right: 1px solid #111111;
-            border-bottom: 2px solid #000000;
-            border-radius: 16px;
-            box-shadow: 0 12px 0 #0c0c0c, 0 16px 0 #050505, 0 22px 0 #000000, 0 30px 50px rgba(0, 0, 0, 0.98), 0 0 25px rgba(212, 175, 55, 0.2);
-            transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+            font-weight: 900;
+            border-top: 2px solid #666666;
+            border-left: 2px solid #444444;
+            border-right: 2px solid #111111;
+            border-bottom: 4px solid #000000;
+            border-radius: 20px;
+            box-shadow: 
+                0 16px 0 #141414,
+                0 22px 0 #0a0a0a,
+                0 28px 0 #000000,
+                0 36px 50px rgba(0, 0, 0, 0.98),
+                0 0 40px rgba(212, 175, 55, 0.35);
+            transition: all 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform: translateY(0);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        .btn-3d-extreme-dark:hover {
-            transform: translateY(-5px);
+        .btn-3d-insane-dark:hover {
+            transform: translateY(-10px) scale(1.03);
             border-color: #d4af37;
-            box-shadow: 0 17px 0 #0c0c0c, 0 21px 0 #050505, 0 27px 0 #000000, 0 36px 60px rgba(0, 0, 0, 0.99), 0 0 35px rgba(212, 175, 55, 0.35);
+            box-shadow: 
+                0 26px 0 #141414,
+                0 32px 0 #0a0a0a,
+                0 38px 0 #000000,
+                0 48px 65px rgba(0, 0, 0, 0.99),
+                0 0 60px rgba(212, 175, 55, 0.55);
         }
-        .btn-3d-extreme-dark:active {
-            transform: translateY(12px);
-            box-shadow: 0 3px 0 #0c0c0c, 0 5px 0 #050505, 0 8px 16px rgba(0, 0, 0, 0.95);
+        .btn-3d-insane-dark:active {
+            transform: translateY(16px) scale(0.98);
+            box-shadow: 
+                0 4px 0 #141414,
+                0 6px 0 #0a0a0a,
+                0 8px 15px rgba(0, 0, 0, 0.9);
         }
 
-        /* 10X 3D MONUMENTAL PANELS */
+        /* 3D MONUMENTAL PANELS */
         .panel-3d-monument {
             background: linear-gradient(180deg, #121212 0%, #050505 100%);
             border: 1px solid #222222;
             border-radius: 22px;
-            box-shadow: 0 12px 0 #000000, 0 25px 50px rgba(0, 0, 0, 0.95);
+            box-shadow: 0 14px 0 #000000, 0 25px 50px rgba(0, 0, 0, 0.95);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
         }
         .panel-3d-monument:hover {
             transform: translateY(-8px);
             border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 20px 0 #000000, 0 35px 65px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 22px 0 #000000, 0 35px 65px rgba(212, 175, 55, 0.15);
         }
 
         .gold-pill {
@@ -120,7 +146,7 @@
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
     <div class="relative z-10">
-        <!-- Persistent Executive Navigation -->
+        <!-- Persistent Executive Navigation (2 Dominant Core Tracks: AI Agentic & B2B Lead Gen) -->
         <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-5">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
                 <a href="#hero" class="flex items-center space-x-4">
@@ -129,27 +155,28 @@
                     </div>
                     <div>
                         <div class="font-serif font-bold text-base text-white tracking-widest uppercase">Idrees Qurashi</div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Autonomous AI Architect & B2B Growth</div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Enterprise Growth</div>
                     </div>
                 </a>
                 
-                <div class="hidden xl:flex items-center space-x-1 font-mono text-[10px] tracking-wider uppercase">
-                    <a href="#hero" class="px-2.5 py-1 text-goldLight font-bold">1. Overview</a>
-                    <a href="#leadgen-matrix" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">2. Sourcing</a>
-                    <a href="#scraping-engines" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">3. Scrapers</a>
-                    <a href="#icebreaker-tech" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">4. Enrichment</a>
-                    <a href="#dns-governance" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">5. 40+ Inboxes</a>
-                    <a href="#cold-email-copies" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">6. Copywriting</a>
-                    <a href="#multi-agent-loop" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">7. Multi-Agent</a>
-                    <a href="#context-memory" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">8. State Sync</a>
-                    <a href="#n8n-blueprints" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">9. n8n Vault</a>
-                    <a href="#crm-speed-lead" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">10. Close CRM</a>
-                    <a href="#client-proof-section" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">11. Proof</a>
-                    <a href="#contact-terminal-section" class="px-2.5 py-1 text-neutral-400 hover:text-white transition">12. Advisory</a>
+                <!-- 2 MAIN CORE PILLARS & NAVIGATION -->
+                <div class="hidden lg:flex items-center space-x-4 font-mono text-[11px] tracking-wider uppercase">
+                    <!-- Part 1: AI Agentic Systems -->
+                    <a href="#multi-agent-loop" class="px-4 py-2 bg-neutral-900 border border-gold/40 text-goldLight rounded-xl font-extrabold flex items-center gap-2 hover:bg-gold hover:text-black transition">
+                        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                        <span>1. AI Agentic Systems</span>
+                    </a>
+                    <!-- Part 2: B2B Lead Gen Architecture -->
+                    <a href="#leadgen-matrix" class="px-4 py-2 bg-neutral-900 border border-neutral-700 text-white rounded-xl font-extrabold flex items-center gap-2 hover:border-gold hover:text-goldLight transition">
+                        <i data-lucide="target" class="w-3.5 h-3.5"></i>
+                        <span>2. B2B Lead Gen Matrix</span>
+                    </a>
+                    <a href="#client-proof-section" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">Client Proof</a>
+                    <a href="#contact-terminal-section" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">Private Terminal</a>
                 </div>
 
-                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-extreme-gold px-5 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
-                    <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-insane-gold px-6 py-3 text-xs font-mono uppercase tracking-wider font-black flex items-center space-x-2">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
                     <span>Consultation</span>
                 </a>
             </div>
@@ -172,14 +199,15 @@
                 Replacing manual operational drag with deterministic multi-agent loops, tool execution, and high-velocity B2B lead generation infrastructure.
             </p>
 
+            <!-- 1000X INSANE POPPING 3D BUTTONS -->
             <div class="mt-14 flex flex-wrap items-center justify-center gap-8 font-mono text-xs uppercase tracking-wider">
-                <a href="#leadgen-matrix" class="btn-3d-extreme-gold px-10 py-5 flex items-center space-x-3">
-                    <i data-lucide="database" class="w-4 h-4"></i>
-                    <span>Explore Lead Gen Vault</span>
-                </a>
-                <a href="#multi-agent-loop" class="btn-3d-extreme-dark px-10 py-5 flex items-center space-x-3">
+                <a href="#multi-agent-loop" class="btn-3d-insane-gold px-10 py-5 flex items-center space-x-3">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <span>Inspect Agentic OS</span>
+                    <span>1. Launch AI Agentic Systems</span>
+                </a>
+                <a href="#leadgen-matrix" class="btn-3d-insane-dark px-10 py-5 flex items-center space-x-3">
+                    <i data-lucide="target" class="w-4 h-4"></i>
+                    <span>2. Inspect Lead Gen Matrix</span>
                 </a>
             </div>
 
@@ -493,7 +521,7 @@
                             <h3 class="text-lg font-serif font-bold text-white">Dynamic Lead Scoring Node</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Evaluates ICP match in 10s and pushes priority tags to CRM.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-extreme-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -504,7 +532,7 @@
                             <h3 class="text-lg font-serif font-bold text-white">Multi-Model Fallback Router</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Routes simple tasks to fast models, saving 40% on token expenditure.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-extreme-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -515,7 +543,7 @@
                             <h3 class="text-lg font-serif font-bold text-white">Vector Memory Retrieval Agent</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Embeds company documents into Qdrant/Pinecone for context retrieval.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-extreme-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -602,7 +630,7 @@
                         <h3 class="text-2xl font-serif font-bold text-white">Master Visual & Agentic Drive Vault</h3>
                         <p class="text-neutral-400 text-xs mt-2 font-light">Direct cloud access to creative assets, high-ticket SMB automation agreements, and multi-agent diagrams.</p>
                     </div>
-                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-extreme-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-insane-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
                         Access Drive Vault
                     </a>
                 </div>
@@ -622,7 +650,7 @@
                             Reduces returned orders by 70% with two-way automated WhatsApp order confirmations, address validation, and instant CRM tag synchronization. Available via private enterprise licensing.
                         </p>
                     </div>
-                    <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-extreme-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                    <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-insane-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
                         Request Private License
                     </a>
                 </div>
@@ -705,7 +733,7 @@
                             <h3 class="text-xl font-serif font-bold text-white">b2b-outbound-agentic-engine</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Autonomous prospect scraping, DNS deliverability verifiers, and high-ticket sequence templates.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="mt-8 btn-3d-extreme-dark px-6 py-3 text-xs font-mono font-bold flex items-center justify-center gap-2">
+                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="mt-8 btn-3d-insane-dark px-6 py-3 text-xs font-mono font-bold flex items-center justify-center gap-2">
                             <span>Inspect Repository</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -715,7 +743,7 @@
                             <h3 class="text-xl font-serif font-bold text-white">n8n-agentic-blueprints-vault</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Production n8n workflows featuring autonomous agents, vector memory, and CRM triggers.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-extreme-dark px-6 py-3 text-xs font-mono font-bold flex items-center justify-center gap-2">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-6 py-3 text-xs font-mono font-bold flex items-center justify-center gap-2">
                             <span>Inspect Repository</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -758,7 +786,7 @@
 
                     <div class="mt-8 pt-6 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
                         <span class="text-neutral-500">Advisory SLA: &lt;15 Minutes</span>
-                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-extreme-gold px-7 py-3.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-insane-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
                             <i data-lucide="send" class="w-4 h-4"></i>
                             <span>Initiate WhatsApp</span>
                         </a>
@@ -780,7 +808,7 @@
         </footer>
     </div>
 
-    <!-- 3D Subtle Floating Ribbon -->
+    <!-- 3D Floating Geometric Canvas -->
     <script>
         const canvas = document.getElementById('three-canvas');
         const scene = new THREE.Scene();

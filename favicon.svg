@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="goldEdge" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fff4d0"/>
-      <stop offset="50%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#917012"/>
+    <linearGradient id="silverEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="120" fill="#080808" stroke="#d4af37" stroke-width="12" stroke-opacity="0.4"/>
-  <!-- Minimalist Architectural Diamond Monogram -->
-  <polygon points="256,110 396,256 256,402 116,256" fill="none" stroke="url(#goldEdge)" stroke-width="20" stroke-linejoin="round"/>
-  <polygon points="256,170 342,256 256,342 170,256" fill="none" stroke="url(#goldEdge)" stroke-width="12" stroke-opacity="0.7"/>
-  <circle cx="256" cy="256" r="22" fill="url(#goldEdge)"/>
+  <rect width="512" height="512" rx="120" fill="#080808" stroke="#38bdf8" stroke-width="10" stroke-opacity="0.5"/>
+  <polygon points="256,110 396,256 256,402 116,256" fill="none" stroke="url(#silverEdge)" stroke-width="20" stroke-linejoin="round"/>
+  <polygon points="256,170 342,256 256,342 170,256" fill="none" stroke="#38bdf8" stroke-width="12" stroke-opacity="0.8"/>
+  <circle cx="256" cy="256" r="22" fill="#e2e8f0"/>
 </svg>

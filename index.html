@@ -22,17 +22,20 @@
                     },
                     colors: {
                         pitch: '#000000',
-                        noir: '#050505',
-                        charcoal: '#0a0a0a',
-                        gold: '#d4af37',
-                        goldLight: '#f6ecc9'
+                        noir: '#05070a',
+                        charcoal: '#090d14',
+                        accentBlue: '#38bdf8',
+                        steelBlue: '#0284c7',
+                        deepNavy: '#0f172a',
+                        silver: '#e2e8f0',
+                        steelGrey: '#94a3b8'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #000000; color: #d1d5db; overflow-x: hidden; }
+        body { background-color: #000000; color: #cbd5e1; overflow-x: hidden; }
         
         .canvas-bg {
             position: fixed;
@@ -42,23 +45,23 @@
             height: 100vh;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.28;
+            opacity: 0.32;
         }
 
-        /* CRISP LUXURY 3D MECHANICAL BUTTONS */
-        .btn-3d-clean-gold {
-            background: linear-gradient(180deg, #fff4cc 0%, #e2be4b 45%, #b88f19 100%);
+        /* CRISP 3D MECHANICAL BUTTONS (STEEL BLUE & PLATINUM SILVER) */
+        .btn-3d-blue {
+            background: linear-gradient(180deg, #f0f9ff 0%, #38bdf8 35%, #0284c7 85%, #0369a1 100%);
             color: #000000;
             font-weight: 800;
             border-top: 1px solid #ffffff;
-            border-left: 1px solid #ffd86b;
-            border-right: 1px solid #8c6a0c;
-            border-bottom: 2px solid #5a4305;
+            border-left: 1px solid #7dd3fc;
+            border-right: 1px solid #0369a1;
+            border-bottom: 2px solid #082f49;
             border-radius: 12px;
             box-shadow: 
-                0 5px 0 #6e5207,
+                0 5px 0 #075985,
                 0 8px 18px rgba(0, 0, 0, 0.9),
-                0 0 20px rgba(212, 175, 55, 0.35);
+                0 0 25px rgba(56, 189, 248, 0.4);
             transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
             cursor: pointer;
@@ -67,31 +70,31 @@
             align-items: center;
             justify-content: center;
         }
-        .btn-3d-clean-gold:hover {
+        .btn-3d-blue:hover {
             transform: translateY(-2px);
             box-shadow: 
-                0 7px 0 #6e5207,
+                0 7px 0 #075985,
                 0 12px 22px rgba(0, 0, 0, 0.95),
-                0 0 30px rgba(212, 175, 55, 0.5);
+                0 0 35px rgba(56, 189, 248, 0.55);
         }
-        .btn-3d-clean-gold:active {
+        .btn-3d-blue:active {
             transform: translateY(4px);
             box-shadow: 
-                0 1px 0 #6e5207,
+                0 1px 0 #075985,
                 0 3px 6px rgba(0, 0, 0, 0.9);
         }
 
-        .btn-3d-clean-dark {
-            background: linear-gradient(180deg, #222222 0%, #111111 50%, #080808 100%);
-            color: #f6ecc9;
+        .btn-3d-grey {
+            background: linear-gradient(180deg, #242933 0%, #151921 50%, #090c10 100%);
+            color: #e2e8f0;
             font-weight: 700;
-            border-top: 1px solid #444444;
-            border-left: 1px solid #333333;
-            border-right: 1px solid #111111;
+            border-top: 1px solid #475569;
+            border-left: 1px solid #334155;
+            border-right: 1px solid #0f172a;
             border-bottom: 2px solid #000000;
             border-radius: 12px;
             box-shadow: 
-                0 5px 0 #080808,
+                0 5px 0 #05070a,
                 0 8px 18px rgba(0, 0, 0, 0.9);
             transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
@@ -100,24 +103,24 @@
             align-items: center;
             justify-content: center;
         }
-        .btn-3d-clean-dark:hover {
+        .btn-3d-grey:hover {
             transform: translateY(-2px);
-            border-color: #d4af37;
+            border-color: #38bdf8;
             box-shadow: 
-                0 7px 0 #080808,
+                0 7px 0 #05070a,
                 0 12px 22px rgba(0, 0, 0, 0.95),
-                0 0 20px rgba(212, 175, 55, 0.2);
+                0 0 20px rgba(56, 189, 248, 0.25);
         }
-        .btn-3d-clean-dark:active {
+        .btn-3d-grey:active {
             transform: translateY(4px);
             box-shadow: 
-                0 1px 0 #080808,
+                0 1px 0 #05070a,
                 0 3px 6px rgba(0, 0, 0, 0.9);
         }
 
         .btn-nav-clean {
-            background: linear-gradient(180deg, #181818 0%, #0c0c0c 100%);
-            border: 1px solid rgba(212, 175, 55, 0.25);
+            background: linear-gradient(180deg, #18202f 0%, #0b111b 100%);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             border-bottom: 2px solid #000000;
             border-radius: 10px;
             box-shadow: 0 3px 0 #000000;
@@ -125,13 +128,13 @@
         }
         .btn-nav-clean:hover {
             transform: translateY(-1px);
-            border-color: #d4af37;
-            box-shadow: 0 4px 0 #000000, 0 6px 15px rgba(212, 175, 55, 0.2);
+            border-color: #38bdf8;
+            box-shadow: 0 4px 0 #000000, 0 6px 15px rgba(56, 189, 248, 0.2);
         }
 
         .panel-monument-clean {
-            background: linear-gradient(180deg, #101010 0%, #050505 100%);
-            border: 1px solid #1c1c1c;
+            background: linear-gradient(180deg, #0e141f 0%, #05080e 100%);
+            border: 1px solid #1e293b;
             border-radius: 16px;
             box-shadow: 0 6px 0 #000000, 0 15px 35px rgba(0, 0, 0, 0.9);
             transition: all 0.2s ease;
@@ -139,18 +142,18 @@
         }
         .panel-monument-clean:hover {
             transform: translateY(-3px);
-            border-color: rgba(212, 175, 55, 0.35);
-            box-shadow: 0 9px 0 #000000, 0 20px 45px rgba(212, 175, 55, 0.08);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 9px 0 #000000, 0 20px 45px rgba(56, 189, 248, 0.1);
         }
 
         .code-box-clean {
-            background: #030303;
-            border: 1px solid #141414;
+            background: #03060a;
+            border: 1px solid #172033;
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
-<body class="bg-pitch font-sans antialiased selection:bg-gold selection:text-black">
+<body class="bg-pitch font-sans antialiased selection:bg-accentBlue selection:text-black">
 
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
@@ -159,56 +162,55 @@
         <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-3.5">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
                 <a href="#hero" class="flex items-center space-x-3.5">
-                    <!-- Elegant Minimalist Gold Diamond Logo -->
-                    <div class="w-9 h-9 rounded-lg bg-neutral-900 border border-gold/40 flex items-center justify-center p-1.5 shadow">
-                        <svg viewBox="0 0 100 100" class="w-full h-full text-goldLight">
-                            <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="#d4af37" stroke-width="7" stroke-linejoin="round"/>
-                            <circle cx="50" cy="50" r="10" fill="#f6ecc9"/>
+                    <div class="w-9 h-9 rounded-lg bg-deepNavy border border-accentBlue/40 flex items-center justify-center p-1.5 shadow">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-accentBlue">
+                            <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="10" fill="#e2e8f0"/>
                         </svg>
                     </div>
                     <div>
                         <div class="font-serif font-bold text-sm text-white tracking-widest uppercase">Idrees Qurashi</div>
-                        <div class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Growth</div>
+                        <div class="text-[9px] font-mono uppercase tracking-widest text-slate-400">Autonomous Systems & Growth</div>
                     </div>
                 </a>
                 
                 <!-- 2 MAIN NAVIGATION BUTTONS ONLY -->
                 <div class="hidden md:flex items-center space-x-3.5 font-mono text-[11px] tracking-wider uppercase">
-                    <a href="#multi-agent-loop" class="btn-nav-clean px-4 py-2 text-goldLight font-bold flex items-center gap-2">
-                        <i data-lucide="cpu" class="w-3.5 h-3.5 text-gold"></i>
+                    <a href="#multi-agent-loop" class="btn-nav-clean px-4 py-2 text-accentBlue font-bold flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-3.5 h-3.5 text-accentBlue"></i>
                         <span>1. AI Automation & Agentic AI</span>
                     </a>
                     
                     <a href="#leadgen-matrix" class="btn-nav-clean px-4 py-2 text-white font-bold flex items-center gap-2">
-                        <i data-lucide="target" class="w-3.5 h-3.5 text-goldLight"></i>
+                        <i data-lucide="target" class="w-3.5 h-3.5 text-slate-300"></i>
                         <span>2. B2B Lead Generation</span>
                     </a>
                 </div>
 
-                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-clean-gold px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
                     <i data-lucide="zap" class="w-3.5 h-3.5"></i>
                     <span>Consultation</span>
                 </a>
             </div>
         </nav>
 
-        <!-- 1. HERO SECTION (DECENT, CRISP & MINIMALIST) -->
+        <!-- 1. HERO SECTION -->
         <section id="hero" class="pt-40 pb-16 px-8 text-center max-w-3xl mx-auto min-h-[80vh] flex flex-col justify-center">
             <h1 class="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.2]">
-                Engineering <span class="text-goldLight italic font-normal">Agentic AI</span> & Autonomous Revenue Scale.
+                Engineering <span class="text-accentBlue italic font-normal">Agentic AI</span> & Autonomous Revenue Scale.
             </h1>
 
-            <p class="mt-4 text-sm md:text-base text-neutral-400 max-w-lg mx-auto font-light leading-relaxed">
+            <p class="mt-4 text-sm md:text-base text-slate-300 max-w-lg mx-auto font-light leading-relaxed">
                 Replacing manual friction with deterministic multi-agent loops, tool execution, and high-velocity B2B revenue infrastructure.
             </p>
 
-            <!-- Crisp 3D Action Buttons -->
+            <!-- 3D Action Buttons -->
             <div class="mt-8 flex flex-wrap items-center justify-center gap-4 font-mono text-xs uppercase tracking-wider">
-                <a href="#multi-agent-loop" class="btn-3d-clean-gold px-6 py-2.5 flex items-center space-x-2">
+                <a href="#multi-agent-loop" class="btn-3d-blue px-6 py-2.5 flex items-center space-x-2">
                     <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
                     <span>1. AI Automation & Agentic AI</span>
                 </a>
-                <a href="#leadgen-matrix" class="btn-3d-clean-dark px-6 py-2.5 flex items-center space-x-2">
+                <a href="#leadgen-matrix" class="btn-3d-grey px-6 py-2.5 flex items-center space-x-2">
                     <i data-lucide="target" class="w-3.5 h-3.5"></i>
                     <span>2. B2B Lead Generation</span>
                 </a>
@@ -217,82 +219,82 @@
             <!-- Crisp 3D Stat Grid -->
             <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                 <div class="panel-monument-clean p-4">
-                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Experience</div>
+                    <div class="text-[9px] font-mono text-slate-400 uppercase tracking-widest">Experience</div>
                     <div class="text-xl font-serif font-bold text-white mt-1">5+ Years</div>
-                    <p class="text-[10px] text-neutral-500">Autonomous code</p>
+                    <p class="text-[10px] text-slate-500">Autonomous code</p>
                 </div>
                 <div class="panel-monument-clean p-4">
-                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Pipeline</div>
-                    <div class="text-xl font-serif font-bold text-goldLight mt-1">25,000+</div>
-                    <p class="text-[10px] text-neutral-500">B2B records</p>
+                    <div class="text-[9px] font-mono text-slate-400 uppercase tracking-widest">Pipeline</div>
+                    <div class="text-xl font-serif font-bold text-accentBlue mt-1">25,000+</div>
+                    <p class="text-[10px] text-slate-500">B2B records</p>
                 </div>
                 <div class="panel-monument-clean p-4">
-                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Speed-to-Lead</div>
+                    <div class="text-[9px] font-mono text-slate-400 uppercase tracking-widest">Speed-to-Lead</div>
                     <div class="text-xl font-serif font-bold text-white mt-1">&lt;60 Sec</div>
-                    <p class="text-[10px] text-neutral-500">Webhook sync</p>
+                    <p class="text-[10px] text-slate-500">Webhook sync</p>
                 </div>
                 <div class="panel-monument-clean p-4">
-                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Distribution</div>
-                    <div class="text-xl font-serif font-bold text-neutral-300 mt-1">109.8K+</div>
-                    <p class="text-[10px] text-neutral-500">Video reach</p>
+                    <div class="text-[9px] font-mono text-slate-400 uppercase tracking-widest">Distribution</div>
+                    <div class="text-xl font-serif font-bold text-slate-200 mt-1">109.8K+</div>
+                    <p class="text-[10px] text-slate-500">Video reach</p>
                 </div>
             </div>
         </section>
 
         <!-- 2. LEAD GEN MATRIX -->
-        <section id="leadgen-matrix" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section id="leadgen-matrix" class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <h2 class="text-2xl md:text-3xl font-serif font-bold text-white">High-Intent ICP Sourcing Architecture</h2>
-                    <p class="text-neutral-400 text-xs mt-2 font-light">Targeting accounts at the exact moment of commercial expansion through verified buying triggers.</p>
+                    <p class="text-slate-400 text-xs mt-2 font-light">Targeting accounts at the exact moment of commercial expansion through verified buying triggers.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono uppercase text-gold mb-1">Signal 01</div>
+                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-1">Signal 01</div>
                         <h3 class="text-base font-serif font-bold text-white">Active Hiring Expansion</h3>
-                        <p class="text-neutral-400 text-xs mt-2 leading-relaxed font-light">Monitoring job changes on LinkedIn/Greenhouse for sales and engineering headcount growth.</p>
+                        <p class="text-slate-400 text-xs mt-2 leading-relaxed font-light">Monitoring job changes on LinkedIn/Greenhouse for sales and engineering headcount growth.</p>
                     </div>
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono uppercase text-goldLight mb-1">Signal 02</div>
+                        <div class="text-[9px] font-mono uppercase text-slate-300 mb-1">Signal 02</div>
                         <h3 class="text-base font-serif font-bold text-white">Tech Stack Adoption</h3>
-                        <p class="text-neutral-400 text-xs mt-2 leading-relaxed font-light">Detecting frontend installs of HubSpot, Salesforce, Stripe, Shopify Plus, or Segment.</p>
+                        <p class="text-slate-400 text-xs mt-2 leading-relaxed font-light">Detecting frontend installs of HubSpot, Salesforce, Stripe, Shopify Plus, or Segment.</p>
                     </div>
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono uppercase text-white mb-1">Signal 03</div>
+                        <div class="text-[9px] font-mono uppercase text-slate-400 mb-1">Signal 03</div>
                         <h3 class="text-base font-serif font-bold text-white">Capital & M&A Events</h3>
-                        <p class="text-neutral-400 text-xs mt-2 leading-relaxed font-light">Tracking Crunchbase for Seed/Series-A funding or leadership restructuring.</p>
+                        <p class="text-slate-400 text-xs mt-2 leading-relaxed font-light">Tracking Crunchbase for Seed/Series-A funding or leadership restructuring.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. COMPACT CODE DEMO -->
-        <section id="scraping-engines" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section id="scraping-engines" class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-10">
                     <h2 class="text-2xl font-serif font-bold text-white">Autonomous Scraping Engine</h2>
                 </div>
 
                 <div class="panel-monument-clean p-6">
-                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800 text-xs font-mono">
-                        <span class="text-gold font-bold">decision_maker_extractor.py</span>
-                        <span class="text-neutral-500 text-[10px]">Playwright + AsyncIO</span>
+                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-xs font-mono">
+                        <span class="text-accentBlue font-bold">decision_maker_extractor.py</span>
+                        <span class="text-slate-400 text-[10px]">Playwright + AsyncIO</span>
                     </div>
-                    <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
-                        <p><span class="text-gold">async def</span> <span class="text-goldLight">extract_leadership_pool</span>(target_url):</p>
-                        <p class="pl-4">page = <span class="text-gold">await</span> browser.new_page()</p>
-                        <p class="pl-4"><span class="text-gold">await</span> page.goto(f"{target_url}/about-us", wait_until="networkidle")</p>
-                        <p class="pl-4">executives = <span class="text-gold">await</span> page.evaluate("""() => Array.from(document.querySelectorAll('.leadership-card'))</p>
+                    <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                        <p><span class="text-accentBlue">async def</span> <span class="text-slate-200">extract_leadership_pool</span>(target_url):</p>
+                        <p class="pl-4">page = <span class="text-accentBlue">await</span> browser.new_page()</p>
+                        <p class="pl-4"><span class="text-accentBlue">await</span> page.goto(f"{target_url}/about-us", wait_until="networkidle")</p>
+                        <p class="pl-4">executives = <span class="text-accentBlue">await</span> page.evaluate("""() => Array.from(document.querySelectorAll('.leadership-card'))</p>
                         <p class="pl-8">.map(el => ({ name: el.querySelector('h3')?.innerText, role: el.querySelector('p')?.innerText }))""")</p>
-                        <p class="pl-4"><span class="text-gold">return</span> [e <span class="text-gold">for</span> e <span class="text-gold">in</span> executives <span class="text-gold">if</span> any(t <span class="text-gold">in</span> e['role'].lower() <span class="text-gold">for</span> t <span class="text-gold">in</span> ['ceo', 'founder', 'vp'])]</p>
+                        <p class="pl-4"><span class="text-accentBlue">return</span> [e <span class="text-accentBlue">for</span> e <span class="text-accentBlue">in</span> executives <span class="text-accentBlue">if</span> any(t <span class="text-accentBlue">in</span> e['role'].lower() <span class="text-accentBlue">for</span> t <span class="text-accentBlue">in</span> ['ceo', 'founder', 'vp'])]</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 4. DYNAMIC ICEBREAKERS -->
-        <section id="icebreaker-tech" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section id="icebreaker-tech" class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="text-2xl font-serif font-bold text-white">Dynamic AI Icebreaker Synthesis</h2>
@@ -300,17 +302,17 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono uppercase text-gold mb-1">Target Context</div>
+                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-1">Target Context</div>
                         <h3 class="text-sm font-serif font-bold text-white">FinTech Series-A Startup</h3>
-                        <div class="code-box-clean p-3 rounded-lg mt-3 text-xs text-neutral-400">
+                        <div class="code-box-clean p-3 rounded-lg mt-3 text-xs text-slate-300">
                             "Saw you recently deployed automated SEPA merchant routing across EU accounts—curious how you're handling instant dispute reconciliation."
                         </div>
                     </div>
 
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono uppercase text-goldLight mb-1">Target Context</div>
+                        <div class="text-[9px] font-mono uppercase text-slate-300 mb-1">Target Context</div>
                         <h3 class="text-sm font-serif font-bold text-white">Enterprise Logistics Firm</h3>
-                        <div class="code-box-clean p-3 rounded-lg mt-3 text-xs text-neutral-400">
+                        <div class="code-box-clean p-3 rounded-lg mt-3 text-xs text-slate-300">
                             "Noticed your expansion across regional freight hubs—saw your team is managing custom dispatch integration across 3PL fleets."
                         </div>
                     </div>
@@ -319,7 +321,7 @@
         </section>
 
         <!-- 5. DNS GOVERNANCE -->
-        <section id="dns-governance" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section id="dns-governance" class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="text-2xl font-serif font-bold text-white">40+ Inbox Multi-Domain Governance</h2>
@@ -328,26 +330,26 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="panel-monument-clean p-4 text-center">
                         <div class="text-lg font-serif font-bold text-white">SPF & DKIM</div>
-                        <p class="text-neutral-400 text-[10px] mt-1">2048-bit key validation</p>
+                        <p class="text-slate-400 text-[10px] mt-1">2048-bit key validation</p>
                     </div>
                     <div class="panel-monument-clean p-4 text-center">
-                        <div class="text-lg font-serif font-bold text-goldLight">DMARC</div>
-                        <p class="text-neutral-400 text-[10px] mt-1">`p=quarantine` policy</p>
+                        <div class="text-lg font-serif font-bold text-accentBlue">DMARC</div>
+                        <p class="text-slate-400 text-[10px] mt-1">`p=quarantine` policy</p>
                     </div>
                     <div class="panel-monument-clean p-4 text-center">
                         <div class="text-lg font-serif font-bold text-white">CNAME SSL</div>
-                        <p class="text-neutral-400 text-[10px] mt-1">Custom tracking domain</p>
+                        <p class="text-slate-400 text-[10px] mt-1">Custom tracking domain</p>
                     </div>
                     <div class="panel-monument-clean p-4 text-center">
-                        <div class="text-lg font-serif font-bold text-emeraldMuted">&lt;2% Bounce</div>
-                        <p class="text-neutral-400 text-[10px] mt-1">ZeroBounce hygiene</p>
+                        <div class="text-lg font-serif font-bold text-emerald-400">&lt;2% Bounce</div>
+                        <p class="text-slate-400 text-[10px] mt-1">ZeroBounce hygiene</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 6. CLEAN COLD OUTREACH COPY -->
-        <section id="cold-email-copies" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section id="cold-email-copies" class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="text-2xl font-serif font-bold text-white">High-Converting Outreach Vault</h2>
@@ -355,12 +357,12 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div class="panel-monument-clean p-6">
-                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800">
-                            <span class="text-xs font-mono text-gold font-bold">The Drop-Off Angle</span>
-                            <span class="px-2 py-0.5 rounded bg-neutral-900 text-goldLight font-mono text-[9px]">62% Open Rate</span>
+                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+                            <span class="text-xs font-mono text-accentBlue font-bold">The Drop-Off Angle</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 text-accentBlue font-mono text-[9px]">62% Open Rate</span>
                         </div>
-                        <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
-                            <p class="text-neutral-500 font-bold">Subject: quick question regarding {{company}} outbound</p>
+                        <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                            <p class="text-slate-400 font-bold">Subject: quick question regarding {{company}} outbound</p>
                             <p>Hi {{first_name}},</p>
                             <p>Noticed {{company}} is scaling your SDR team this quarter.</p>
                             <p>Most founders struggle with manual list building and slow response times, causing a 40%+ drop-off in qualified demos.</p>
@@ -370,12 +372,12 @@
                     </div>
 
                     <div class="panel-monument-clean p-6">
-                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800">
-                            <span class="text-xs font-mono text-goldLight font-bold">The Permission Loom</span>
-                            <span class="px-2 py-0.5 rounded bg-neutral-900 text-white font-mono text-[9px]">14% Reply Rate</span>
+                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+                            <span class="text-xs font-mono text-slate-300 font-bold">The Permission Loom</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 text-white font-mono text-[9px]">14% Reply Rate</span>
                         </div>
-                        <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
-                            <p class="text-neutral-500 font-bold">Subject: {{first_name}}, saw your {{recent_feature}} update</p>
+                        <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                            <p class="text-slate-400 font-bold">Subject: {{first_name}}, saw your {{recent_feature}} update</p>
                             <p>Hi {{first_name}},</p>
                             <p>Saw your recent release around {{trigger_event}}.</p>
                             <p>Built a custom pipeline for a SaaS in your space connecting ad leads to WhatsApp / Close CRM with a &lt;60s trigger, doubling conversion rate.</p>
@@ -387,7 +389,7 @@
         </section>
 
         <!-- 7. MULTI-AGENT LOOP -->
-        <section id="multi-agent-loop" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section id="multi-agent-loop" class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="text-2xl font-serif font-bold text-white">Multi-Agent Stateful Reasoning Loop</h2>
@@ -396,28 +398,28 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div class="panel-monument-clean p-6">
                         <h3 class="text-base font-serif font-bold text-white">1. Master Planner</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Decomposes objectives into DAG execution graphs, assigning worker roles and token budgets.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">Decomposes objectives into DAG execution graphs, assigning worker roles and token budgets.</p>
                     </div>
                     <div class="panel-monument-clean p-6">
                         <h3 class="text-base font-serif font-bold text-white">2. Sandboxed Shell Tools</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Runs bash/Python commands, database operations, and external API calls deterministically.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">Runs bash/Python commands, database operations, and external API calls deterministically.</p>
                     </div>
                     <div class="panel-monument-clean p-6">
                         <h3 class="text-base font-serif font-bold text-white">3. LLM Evaluation Bench</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Evaluates output trajectories against strict validation schemas before committing mutations.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">Evaluates output trajectories against strict validation schemas before committing mutations.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 8. PERSISTENT STATE SYNC -->
-        <section id="context-memory" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section id="context-memory" class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-4xl mx-auto">
                 <div class="panel-monument-clean p-6">
-                    <div class="code-box-clean p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
-                        <p class="text-gold font-bold"># Cross-Session Memory Synchronization Protocol</p>
+                    <div class="code-box-clean p-5 rounded-xl text-xs text-slate-300 space-y-2 leading-relaxed">
+                        <p class="text-accentBlue font-bold"># Cross-Session Memory Synchronization Protocol</p>
                         <p>1. <span class="text-white">System Instructions Ledger:</span> Ingests rules, constraints, and verified proofs dynamically.</p>
-                        <p>2. <span class="text-goldLight">Live Execution State:</span> Tracks active campaigns, verified leads, and pending jobs in real-time.</p>
+                        <p>2. <span class="text-accentBlue">Live Execution State:</span> Tracks active campaigns, verified leads, and pending jobs in real-time.</p>
                         <p>3. <span class="text-white">Prompt Caching Optimization:</span> Reuses static memory blocks across turns (38% token reduction).</p>
                     </div>
                 </div>
@@ -425,7 +427,7 @@
         </section>
 
         <!-- 9. 50+ N8N BLUEPRINTS -->
-        <section id="n8n-blueprints" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section id="n8n-blueprints" class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="text-2xl font-serif font-bold text-white">Production n8n Blueprints Vault</h2>
@@ -434,22 +436,22 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div class="panel-monument-clean p-6 flex flex-col justify-between">
                         <div>
-                            <div class="text-[9px] font-mono text-gold uppercase mb-1">n8n Workflow</div>
+                            <div class="text-[9px] font-mono text-accentBlue uppercase mb-1">n8n Workflow</div>
                             <h3 class="text-sm font-serif font-bold text-white">Dynamic Lead Scoring Node</h3>
-                            <p class="text-neutral-400 text-xs mt-2 font-light">Evaluates ICP match in 10s and pushes priority tags to CRM.</p>
+                            <p class="text-slate-400 text-xs mt-2 font-light">Evaluates ICP match in 10s and pushes priority tags to CRM.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-clean-dark px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-grey px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
 
                     <div class="panel-monument-clean p-6 flex flex-col justify-between">
                         <div>
-                            <div class="text-[9px] font-mono text-goldLight uppercase mb-1">n8n Workflow</div>
+                            <div class="text-[9px] font-mono text-slate-300 uppercase mb-1">n8n Workflow</div>
                             <h3 class="text-sm font-serif font-bold text-white">Multi-Model Fallback Router</h3>
-                            <p class="text-neutral-400 text-xs mt-2 font-light">Routes simple tasks to fast models, saving 40% on tokens.</p>
+                            <p class="text-slate-400 text-xs mt-2 font-light">Routes simple tasks to fast models, saving 40% on tokens.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-clean-dark px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-grey px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -458,9 +460,9 @@
                         <div>
                             <div class="text-[9px] font-mono text-white uppercase mb-1">n8n Workflow</div>
                             <h3 class="text-sm font-serif font-bold text-white">Vector Memory Retrieval</h3>
-                            <p class="text-neutral-400 text-xs mt-2 font-light">Embeds company documents for context retrieval.</p>
+                            <p class="text-slate-400 text-xs mt-2 font-light">Embeds company documents for context retrieval.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-clean-dark px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-grey px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -469,21 +471,21 @@
         </section>
 
         <!-- 10. SPEED TO LEAD -->
-        <section id="crm-speed-lead" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section id="crm-speed-lead" class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="panel-monument-clean p-6">
                     <h3 class="text-base font-serif font-bold text-white">Close CRM Smart Views</h3>
-                    <p class="text-neutral-400 text-xs mt-2 font-light">Ensuring reps engage warmest inbound leads in under 60 seconds.</p>
+                    <p class="text-slate-400 text-xs mt-2 font-light">Ensuring reps engage warmest inbound leads in under 60 seconds.</p>
                 </div>
                 <div class="panel-monument-clean p-6">
                     <h3 class="text-base font-serif font-bold text-white">HubSpot Automated Handoffs</h3>
-                    <p class="text-neutral-400 text-xs mt-2 font-light">Automated pipeline progression and instant calendar routing.</p>
+                    <p class="text-slate-400 text-xs mt-2 font-light">Automated pipeline progression and instant calendar routing.</p>
                 </div>
             </div>
         </section>
 
         <!-- 11. CLIENT PROOF -->
-        <section id="client-proof-section" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section id="client-proof-section" class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="text-2xl font-serif font-bold text-white">Verified Client Portfolio</h2>
@@ -491,32 +493,32 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono text-gold uppercase mb-1">National Television</div>
+                        <div class="text-[9px] font-mono text-accentBlue uppercase mb-1">National Television</div>
                         <h3 class="text-lg font-serif font-bold text-white">Green TV Entertainment</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">National media network campaign design and broadcast distribution.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">National media network campaign design and broadcast distribution.</p>
                     </div>
                     <div class="panel-monument-clean p-6">
-                        <div class="text-[9px] font-mono text-goldLight uppercase mb-1">Irish Franchise</div>
+                        <div class="text-[9px] font-mono text-slate-300 uppercase mb-1">Irish Franchise</div>
                         <h3 class="text-lg font-serif font-bold text-white">Apache Pizza Ireland</h3>
-                        <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-3 text-xs font-mono text-gold hover:underline flex items-center gap-1">
+                        <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-3 text-xs font-mono text-accentBlue hover:underline flex items-center gap-1">
                             <span>instagram.com/apachepizzaireland</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
                     <div class="panel-monument-clean p-6">
                         <div class="text-[9px] font-mono text-white uppercase mb-1">Healthcare</div>
                         <h3 class="text-lg font-serif font-bold text-white">Rock Road & Slievemore</h3>
-                        <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-3 text-xs font-mono text-gold hover:underline flex items-center gap-1">
+                        <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-3 text-xs font-mono text-accentBlue hover:underline flex items-center gap-1">
                             <span>rockroaddental.ie</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="mt-8 panel-monument-clean p-6 flex flex-col md:flex-row items-center justify-between gap-4 border border-gold/30">
+                <div class="mt-8 panel-monument-clean p-6 flex flex-col md:flex-row items-center justify-between gap-4 border border-accentBlue/30">
                     <div>
                         <h3 class="text-lg font-serif font-bold text-white">Master Visual & Agentic Drive Vault</h3>
-                        <p class="text-neutral-400 text-xs font-light">Direct cloud access to creative assets and multi-agent diagrams.</p>
+                        <p class="text-slate-400 text-xs font-light">Direct cloud access to creative assets and multi-agent diagrams.</p>
                     </div>
-                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-clean-gold px-6 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-blue px-6 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
                         Access Drive Vault
                     </a>
                 </div>
@@ -524,15 +526,15 @@
         </section>
 
         <!-- 12. PROPRIETARY COD SYSTEM -->
-        <section class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-4xl mx-auto">
-                <div class="panel-monument-clean p-8 border border-gold/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="panel-monument-clean p-8 border border-accentBlue/30 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div class="max-w-xl">
-                        <div class="text-[9px] font-mono text-gold uppercase mb-1">Proprietary IP</div>
+                        <div class="text-[9px] font-mono text-accentBlue uppercase mb-1">Proprietary IP</div>
                         <h2 class="text-xl font-serif font-bold text-white">Shopify + WhatsApp Bulletproof COD</h2>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Reduces returned orders by 70% with two-way WhatsApp confirmations and CRM sync.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">Reduces returned orders by 70% with two-way WhatsApp confirmations and CRM sync.</p>
                     </div>
-                    <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-clean-gold px-6 py-3 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                    <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-blue px-6 py-3 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
                         Request License
                     </a>
                 </div>
@@ -540,21 +542,21 @@
         </section>
 
         <!-- 13. ENTERPRISE PROPOSAL SOP -->
-        <section class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-4xl mx-auto">
                 <div class="panel-monument-clean p-6">
                     <h3 class="text-base font-serif font-bold text-white mb-2">Enterprise Discovery & SLA Protocol</h3>
-                    <p class="text-neutral-400 text-xs font-light">Standardized 3-phase deployment: Discovery Call ➔ 7-Day Sprint ➔ 99.4% Uptime SLA.</p>
+                    <p class="text-slate-400 text-xs font-light">Standardized 3-phase deployment: Discovery Call ➔ 7-Day Sprint ➔ 99.4% Uptime SLA.</p>
                 </div>
             </div>
         </section>
 
         <!-- 14. EDD TESTING SUITE -->
-        <section class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-4xl mx-auto">
                 <div class="panel-monument-clean p-6">
-                    <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
-                        <p class="text-gold font-bold"># Evaluation-Driven Development (EDD)</p>
+                    <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                        <p class="text-accentBlue font-bold"># Evaluation-Driven Development (EDD)</p>
                         <p>• 99.4% deterministic tool-calling precision across test datasets.</p>
                         <p>• Multi-hop trajectory verification with zero dead-end loops.</p>
                     </div>
@@ -563,14 +565,14 @@
         </section>
 
         <!-- 15. OPEN SOURCE HUB -->
-        <section class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+        <section class="py-20 px-8 border-t border-slate-900 bg-pitch">
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="panel-monument-clean p-6 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-serif font-bold text-white">b2b-outbound-agentic-engine</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Autonomous prospect scraping, DNS verifiers, and sequence templates.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">Autonomous prospect scraping, DNS verifiers, and sequence templates.</p>
                     </div>
-                    <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="mt-4 btn-3d-clean-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                    <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="mt-4 btn-3d-grey px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                         <span>Inspect Repo</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
@@ -578,9 +580,9 @@
                 <div class="panel-monument-clean p-6 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-serif font-bold text-white">n8n-agentic-blueprints-vault</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Production n8n workflows with AI agents, vector memory, and CRM triggers.</p>
+                        <p class="text-slate-400 text-xs mt-2 font-light">Production n8n workflows with AI agents, vector memory, and CRM triggers.</p>
                     </div>
-                    <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-4 btn-3d-clean-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                    <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-4 btn-3d-grey px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                         <span>Inspect Repo</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
@@ -588,29 +590,29 @@
         </section>
 
         <!-- 16. PRIVATE CONTACT TERMINAL -->
-        <section id="contact-terminal-section" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+        <section id="contact-terminal-section" class="py-20 px-8 border-t border-slate-900 bg-noir">
             <div class="max-w-3xl mx-auto">
                 <div class="panel-monument-clean p-8 font-mono text-xs">
-                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800 text-neutral-500">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800 text-slate-500">
                         <div class="flex space-x-1.5">
-                            <span class="w-2.5 h-2.5 rounded-full bg-neutral-800"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-neutral-800"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-gold/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-accentBlue"></span>
                         </div>
                         <span>terminal://idrees_channel</span>
                     </div>
 
-                    <div class="space-y-3 text-neutral-300">
-                        <p><span class="text-gold">$</span> operator.status <span class="text-neutral-600">➔</span> <span class="text-white">"Available for High-Ticket Remote Architect Roles"</span></p>
-                        <p><span class="text-gold">$</span> operator.phone_call <span class="text-neutral-600">➔</span> <a href="tel:+923489911425" class="text-white hover:text-gold">+92 348 9911425</a></p>
-                        <p><span class="text-gold">$</span> operator.whatsapp <span class="text-neutral-600">➔</span> <a href="https://wa.me/923489911425" target="_blank" class="text-goldLight hover:underline">+92 348 9911425 (Instant Line)</a></p>
-                        <p><span class="text-gold">$</span> operator.email <span class="text-neutral-600">➔</span> <a href="mailto:idreesqurashi6@gmail.com" class="text-neutral-200 hover:text-gold">idreesqurashi6@gmail.com</a></p>
-                        <p><span class="text-gold">$</span> operator.github <span class="text-neutral-600">➔</span> <a href="https://github.com/IdreesQurashi" target="_blank" class="text-neutral-200 hover:text-gold">github.com/IdreesQurashi</a></p>
+                    <div class="space-y-3 text-slate-300">
+                        <p><span class="text-accentBlue">$</span> operator.status <span class="text-slate-600">➔</span> <span class="text-white">"Available for High-Ticket Remote Architect Roles"</span></p>
+                        <p><span class="text-accentBlue">$</span> operator.phone_call <span class="text-slate-600">➔</span> <a href="tel:+923489911425" class="text-white hover:text-accentBlue">+92 348 9911425</a></p>
+                        <p><span class="text-accentBlue">$</span> operator.whatsapp <span class="text-slate-600">➔</span> <a href="https://wa.me/923489911425" target="_blank" class="text-accentBlue hover:underline">+92 348 9911425 (Instant Line)</a></p>
+                        <p><span class="text-accentBlue">$</span> operator.email <span class="text-slate-600">➔</span> <a href="mailto:idreesqurashi6@gmail.com" class="text-slate-200 hover:text-accentBlue">idreesqurashi6@gmail.com</a></p>
+                        <p><span class="text-accentBlue">$</span> operator.github <span class="text-slate-600">➔</span> <a href="https://github.com/IdreesQurashi" target="_blank" class="text-slate-200 hover:text-accentBlue">github.com/IdreesQurashi</a></p>
                     </div>
 
-                    <div class="mt-6 pt-4 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
-                        <span class="text-neutral-500">SLA: &lt;15 Minutes</span>
-                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-clean-gold px-6 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+                        <span class="text-slate-500">SLA: &lt;15 Minutes</span>
+                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-6 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
                             <i data-lucide="send" class="w-4 h-4"></i>
                             <span>Initiate WhatsApp</span>
                         </a>
@@ -620,19 +622,19 @@
         </section>
 
         <!-- Footer -->
-        <footer class="py-10 px-8 border-t border-neutral-900 bg-pitch text-center text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+        <footer class="py-10 px-8 border-t border-slate-900 bg-pitch text-center text-[10px] font-mono text-slate-500 uppercase tracking-wider">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>&copy; 2026 Enterprise Autonomous Architecture. All rights reserved.</div>
                 <div class="flex items-center space-x-6">
-                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-gold transition">GitHub</a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-gold transition">WhatsApp</a>
-                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-gold transition">Email</a>
+                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-accentBlue transition">GitHub</a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-accentBlue transition">WhatsApp</a>
+                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-accentBlue transition">Email</a>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- ORIGINAL ELEGANT 3D TOPOGRAPHICAL WAVE CANVAS -->
+    <!-- ELEGANT 3D TOPOGRAPHICAL WAVE CANVAS (SLATE/CYBER-BLUE TONE) -->
     <script>
         const canvas = document.getElementById('three-canvas');
         const scene = new THREE.Scene();
@@ -649,10 +651,10 @@
         const geometry = new THREE.PlaneGeometry(width, height, segmentsW, segmentsH);
 
         const material = new THREE.MeshBasicMaterial({
-            color: 0x444444,
+            color: 0x38bdf8,
             wireframe: true,
             transparent: true,
-            opacity: 0.18
+            opacity: 0.12
         });
 
         const terrain = new THREE.Mesh(geometry, material);

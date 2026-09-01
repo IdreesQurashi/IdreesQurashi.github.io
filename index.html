@@ -20,8 +20,8 @@
                     },
                     colors: {
                         pitch: '#000000',
-                        noir: '#040404',
-                        charcoal: '#090909',
+                        noir: '#050505',
+                        charcoal: '#0a0a0a',
                         gold: '#d4af37',
                         goldLight: '#f6ecc9'
                     }
@@ -31,126 +31,114 @@
     </script>
     <style>
         body { background-color: #000000; color: #d1d5db; }
-        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.28; }
+        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.22; }
         
-        /* 1,000,000X INSANE 3D PHYSICAL MECHANICAL POPPING BUTTONS */
-        .btn-3d-insane-gold {
-            background: linear-gradient(180deg, #ffffff 0%, #fff0b3 20%, #f3ce5e 50%, #c49514 85%, #8f6805 100%);
+        /* CLEAN, PRECISE LUXURY 3D MECHANICAL BUTTONS */
+        .btn-3d-clean-gold {
+            background: linear-gradient(180deg, #fff4cc 0%, #e2be4b 45%, #b88f19 100%);
             color: #000000;
-            font-weight: 900;
-            border-top: 3px solid #ffffff;
-            border-left: 2px solid #ffe885;
-            border-right: 2px solid #735303;
-            border-bottom: 4px solid #3d2c01;
-            border-radius: 20px;
+            font-weight: 800;
+            border-top: 1px solid #ffffff;
+            border-left: 1px solid #ffd86b;
+            border-right: 1px solid #8c6a0c;
+            border-bottom: 2px solid #5a4305;
+            border-radius: 12px;
             box-shadow: 
-                0 16px 0 #5e4403,
-                0 22px 0 #3b2b02,
-                0 28px 0 #1f1601,
-                0 36px 50px rgba(0, 0, 0, 0.98),
-                0 0 60px rgba(212, 175, 55, 0.7);
-            transition: all 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                0 6px 0 #6e5207,
+                0 8px 18px rgba(0, 0, 0, 0.9),
+                0 0 25px rgba(212, 175, 55, 0.35);
+            transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
             cursor: pointer;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        .btn-3d-insane-gold:hover {
-            transform: translateY(-10px) scale(1.03);
+        .btn-3d-clean-gold:hover {
+            transform: translateY(-3px);
             box-shadow: 
-                0 26px 0 #5e4403,
-                0 32px 0 #3b2b02,
-                0 38px 0 #1f1601,
-                0 48px 65px rgba(0, 0, 0, 0.99),
-                0 0 85px rgba(212, 175, 55, 0.9);
+                0 9px 0 #6e5207,
+                0 14px 25px rgba(0, 0, 0, 0.95),
+                0 0 35px rgba(212, 175, 55, 0.5);
         }
-        .btn-3d-insane-gold:active {
-            transform: translateY(16px) scale(0.98);
+        .btn-3d-clean-gold:active {
+            transform: translateY(5px);
             box-shadow: 
-                0 4px 0 #5e4403,
-                0 6px 0 #3b2b02,
-                0 8px 15px rgba(0, 0, 0, 0.9);
+                0 1px 0 #6e5207,
+                0 3px 8px rgba(0, 0, 0, 0.9);
         }
 
-        .btn-3d-insane-dark {
-            background: linear-gradient(180deg, #383838 0%, #1f1f1f 40%, #0d0d0d 85%, #000000 100%);
+        .btn-3d-clean-dark {
+            background: linear-gradient(180deg, #242424 0%, #121212 50%, #080808 100%);
             color: #f6ecc9;
-            font-weight: 900;
-            border-top: 2px solid #666666;
-            border-left: 2px solid #444444;
-            border-right: 2px solid #111111;
-            border-bottom: 4px solid #000000;
-            border-radius: 20px;
-            box-shadow: 
-                0 16px 0 #141414,
-                0 22px 0 #0a0a0a,
-                0 28px 0 #000000,
-                0 36px 50px rgba(0, 0, 0, 0.98),
-                0 0 40px rgba(212, 175, 55, 0.35);
-            transition: all 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform: translateY(0);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-3d-insane-dark:hover {
-            transform: translateY(-10px) scale(1.03);
-            border-color: #d4af37;
-            box-shadow: 
-                0 26px 0 #141414,
-                0 32px 0 #0a0a0a,
-                0 38px 0 #000000,
-                0 48px 65px rgba(0, 0, 0, 0.99),
-                0 0 60px rgba(212, 175, 55, 0.55);
-        }
-        .btn-3d-insane-dark:active {
-            transform: translateY(16px) scale(0.98);
-            box-shadow: 
-                0 4px 0 #141414,
-                0 6px 0 #0a0a0a,
-                0 8px 15px rgba(0, 0, 0, 0.9);
-        }
-
-        /* 3D NAV PILLS */
-        .btn-nav-3d {
-            background: linear-gradient(180deg, #1c1c1c 0%, #0c0c0c 100%);
-            border: 1px solid rgba(212, 175, 55, 0.35);
+            font-weight: 700;
+            border-top: 1px solid #444444;
+            border-left: 1px solid #333333;
+            border-right: 1px solid #111111;
             border-bottom: 2px solid #000000;
             border-radius: 12px;
-            box-shadow: 0 4px 0 #000000, 0 8px 15px rgba(0,0,0,0.8);
+            box-shadow: 
+                0 6px 0 #080808,
+                0 8px 18px rgba(0, 0, 0, 0.9);
             transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(0);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        .btn-nav-3d:hover {
-            transform: translateY(-2px);
+        .btn-3d-clean-dark:hover {
+            transform: translateY(-3px);
             border-color: #d4af37;
-            box-shadow: 0 6px 0 #000000, 0 12px 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 
+                0 9px 0 #080808,
+                0 14px 25px rgba(0, 0, 0, 0.95),
+                0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        .btn-3d-clean-dark:active {
+            transform: translateY(5px);
+            box-shadow: 
+                0 1px 0 #080808,
+                0 3px 8px rgba(0, 0, 0, 0.9);
         }
 
-        /* 3D MONUMENTAL PANELS */
-        .panel-3d-monument {
-            background: linear-gradient(180deg, #121212 0%, #050505 100%);
-            border: 1px solid #222222;
-            border-radius: 22px;
-            box-shadow: 0 14px 0 #000000, 0 25px 50px rgba(0, 0, 0, 0.95);
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        .btn-nav-clean {
+            background: linear-gradient(180deg, #181818 0%, #0c0c0c 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 2px solid #000000;
+            border-radius: 10px;
+            box-shadow: 0 3px 0 #000000;
+            transition: all 0.12s ease;
+        }
+        .btn-nav-clean:hover {
+            transform: translateY(-1px);
+            border-color: #d4af37;
+            box-shadow: 0 4px 0 #000000, 0 6px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        /* COMPACT MONUMENTAL PANELS */
+        .panel-monument-clean {
+            background: linear-gradient(180deg, #101010 0%, #050505 100%);
+            border: 1px solid #1c1c1c;
+            border-radius: 16px;
+            box-shadow: 0 8px 0 #000000, 0 15px 35px rgba(0, 0, 0, 0.9);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
         }
-        .panel-3d-monument:hover {
-            transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 22px 0 #000000, 0 35px 65px rgba(212, 175, 55, 0.15);
+        .panel-monument-clean:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 0 #000000, 0 20px 45px rgba(212, 175, 55, 0.1);
         }
 
-        .gold-pill {
+        .gold-pill-clean {
             background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.28);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             color: #f6ecc9;
         }
-        .code-box {
-            background: #020202;
+        .code-box-clean {
+            background: #030303;
             border: 1px solid #141414;
             font-family: 'JetBrains Mono', monospace;
         }
@@ -161,203 +149,175 @@
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
     <div class="relative z-10">
-        <!-- Persistent Ultra-Clean Navigation (Only 2 Main Core Tracks + 1-Click Consultation) -->
+        <!-- Clean Persistent Navbar -->
         <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-4">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
                 <a href="#hero" class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-gold/40 flex items-center justify-center font-serif font-bold text-goldLight text-lg shadow-lg">
+                    <div class="w-9 h-9 rounded-lg bg-neutral-900 border border-gold/40 flex items-center justify-center font-serif font-bold text-goldLight text-base shadow">
                         IQ
                     </div>
                     <div>
-                        <div class="font-serif font-bold text-base text-white tracking-widest uppercase">Idrees Qurashi</div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Enterprise Growth</div>
+                        <div class="font-serif font-bold text-sm text-white tracking-widest uppercase">Idrees Qurashi</div>
+                        <div class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Growth</div>
                     </div>
                 </a>
                 
-                <!-- 2 CLEAN DOMINANT BUTTONS (ZERO CLUTTER) -->
-                <div class="hidden md:flex items-center space-x-5 font-mono text-xs tracking-wider uppercase">
-                    <!-- Part 1: AI Automation & Agentic AI -->
-                    <a href="#multi-agent-loop" class="btn-nav-3d px-5 py-2.5 text-goldLight font-extrabold flex items-center gap-2 hover:text-white">
-                        <i data-lucide="cpu" class="w-4 h-4 text-gold"></i>
+                <!-- ONLY 2 MAIN NAVIGATION BUTTONS -->
+                <div class="hidden md:flex items-center space-x-4 font-mono text-[11px] tracking-wider uppercase">
+                    <a href="#multi-agent-loop" class="btn-nav-clean px-4 py-2 text-goldLight font-bold flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-3.5 h-3.5 text-gold"></i>
                         <span>1. AI Automation & Agentic AI</span>
                     </a>
                     
-                    <!-- Part 2: B2B Lead Gen Matrix -->
-                    <a href="#leadgen-matrix" class="btn-nav-3d px-5 py-2.5 text-white font-extrabold flex items-center gap-2 hover:text-goldLight">
-                        <i data-lucide="target" class="w-4 h-4 text-goldLight"></i>
+                    <a href="#leadgen-matrix" class="btn-nav-clean px-4 py-2 text-white font-bold flex items-center gap-2">
+                        <i data-lucide="target" class="w-3.5 h-3.5 text-goldLight"></i>
                         <span>2. B2B Lead Generation</span>
                     </a>
                 </div>
 
-                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-insane-gold px-6 py-3 text-xs font-mono uppercase tracking-wider font-black flex items-center space-x-2">
-                    <i data-lucide="zap" class="w-4 h-4"></i>
+                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-clean-gold px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                    <i data-lucide="zap" class="w-3.5 h-3.5"></i>
                     <span>Consultation</span>
                 </a>
             </div>
         </nav>
 
-        <!-- ========================================== -->
-        <!-- 1. HERO & CORE FOUNDATION                 -->
-        <!-- ========================================== -->
-        <section id="hero" class="pt-48 pb-28 px-8 text-center max-w-5xl mx-auto min-h-[90vh] flex flex-col justify-center">
-            <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full gold-pill text-[11px] font-mono tracking-widest uppercase mb-8 mx-auto">
-                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-                <span>16-PILLAR ENTERPRISE AUTONOMOUS ARCHITECTURE</span>
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="pt-40 pb-20 px-8 text-center max-w-4xl mx-auto min-h-[85vh] flex flex-col justify-center">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full gold-pill-clean text-[10px] font-mono tracking-widest uppercase mb-6 mx-auto">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                <span>ENTERPRISE AGENTIC ARCHITECTURES & B2B OUTBOUND SCALE</span>
             </div>
 
-            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white tracking-tight leading-[1.2]">
+            <h1 class="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.25]">
                 Engineering <span class="text-goldLight italic font-normal">Agentic AI</span> & Autonomous Revenue Scale.
             </h1>
 
-            <p class="mt-6 text-base md:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
-                Replacing manual operational drag with deterministic multi-agent loops, tool execution, and high-velocity B2B lead generation infrastructure.
+            <p class="mt-5 text-sm md:text-base text-neutral-400 max-w-xl mx-auto font-light leading-relaxed">
+                Replacing manual friction with deterministic multi-agent loops, tool execution, and high-velocity B2B lead generation infrastructure.
             </p>
 
-            <!-- 1000X INSANE POPPING 3D BUTTONS -->
-            <div class="mt-14 flex flex-wrap items-center justify-center gap-8 font-mono text-xs uppercase tracking-wider">
-                <a href="#multi-agent-loop" class="btn-3d-insane-gold px-10 py-5 flex items-center space-x-3">
+            <!-- Clean 3D Action Buttons -->
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-5 font-mono text-xs uppercase tracking-wider">
+                <a href="#multi-agent-loop" class="btn-3d-clean-gold px-7 py-3.5 flex items-center space-x-2.5">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
                     <span>1. AI Automation & Agentic AI</span>
                 </a>
-                <a href="#leadgen-matrix" class="btn-3d-insane-dark px-10 py-5 flex items-center space-x-3">
+                <a href="#leadgen-matrix" class="btn-3d-clean-dark px-7 py-3.5 flex items-center space-x-2.5">
                     <i data-lucide="target" class="w-4 h-4"></i>
                     <span>2. B2B Lead Generation</span>
                 </a>
             </div>
 
-            <div class="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                <div class="panel-3d-monument p-6">
-                    <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Experience Track</div>
-                    <div class="text-3xl font-serif font-bold text-white mt-1.5">5+ Years</div>
-                    <p class="text-[11px] text-neutral-500 mt-1">Autonomous systems & code</p>
+            <!-- Crisp 3D Stat Grid -->
+            <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                <div class="panel-monument-clean p-5">
+                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Experience</div>
+                    <div class="text-2xl font-serif font-bold text-white mt-1">5+ Years</div>
+                    <p class="text-[10px] text-neutral-500 mt-1">Autonomous code</p>
                 </div>
-                <div class="panel-3d-monument p-6">
-                    <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Enriched Pipeline</div>
-                    <div class="text-3xl font-serif font-bold text-goldLight mt-1.5">25,000+</div>
-                    <p class="text-[11px] text-neutral-500 mt-1">Institutional B2B records</p>
+                <div class="panel-monument-clean p-5">
+                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Enriched Pipeline</div>
+                    <div class="text-2xl font-serif font-bold text-goldLight mt-1">25,000+</div>
+                    <p class="text-[10px] text-neutral-500 mt-1">B2B records</p>
                 </div>
-                <div class="panel-3d-monument p-6">
-                    <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Speed-to-Lead SLA</div>
-                    <div class="text-3xl font-serif font-bold text-white mt-1.5">&lt;60 Sec</div>
-                    <p class="text-[11px] text-neutral-500 mt-1">Real-time webhook sync</p>
+                <div class="panel-monument-clean p-5">
+                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Speed-to-Lead</div>
+                    <div class="text-2xl font-serif font-bold text-white mt-1">&lt;60 Sec</div>
+                    <p class="text-[10px] text-neutral-500 mt-1">Webhook sync</p>
                 </div>
-                <div class="panel-3d-monument p-6">
-                    <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Organic Distribution</div>
-                    <div class="text-3xl font-serif font-bold text-neutral-300 mt-1.5">109.8K+</div>
-                    <p class="text-[11px] text-neutral-500 mt-1">Verified video reach</p>
+                <div class="panel-monument-clean p-5">
+                    <div class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Distribution</div>
+                    <div class="text-2xl font-serif font-bold text-neutral-300 mt-1">109.8K+</div>
+                    <p class="text-[10px] text-neutral-500 mt-1">Video reach</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 2. ICP SOURCING & TARGETING MATRIX        -->
-        <!-- ========================================== -->
-        <section id="leadgen-matrix" class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="target" class="w-3.5 h-3.5"></i>
+        <!-- 2. LEAD GEN MATRIX -->
+        <section id="leadgen-matrix" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="target" class="w-3 h-3"></i>
                         <span>Pillar 02: Targeting</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">High-Intent ICP Sourcing Architecture</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Targeting accounts at the exact moment of commercial expansion through verified buying triggers.</p>
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-white">High-Intent ICP Sourcing Architecture</h2>
+                    <p class="text-neutral-400 text-xs mt-2 font-light">Targeting accounts at the exact moment of commercial expansion through verified buying triggers.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="panel-3d-monument p-8">
-                        <div class="text-[10px] font-mono uppercase text-gold mb-2">Trigger Signal 01</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Active Hiring & Department Expansion</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Monitoring job board changes on LinkedIn and Greenhouse for headcount growth in sales, engineering, and operations.
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono uppercase text-gold mb-1">Signal 01</div>
+                        <h3 class="text-base font-serif font-bold text-white">Active Hiring Expansion</h3>
+                        <p class="text-neutral-400 text-xs mt-2 leading-relaxed font-light">Monitoring job changes on LinkedIn/Greenhouse for sales and engineering headcount growth.</p>
                     </div>
-                    <div class="panel-3d-monument p-8">
-                        <div class="text-[10px] font-mono uppercase text-goldLight mb-2">Trigger Signal 02</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Technology Stack Adoption</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Scraping DNS and frontend scripts to detect installs of HubSpot, Salesforce, Stripe, Shopify Plus, or Segment.
-                        </p>
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono uppercase text-goldLight mb-1">Signal 02</div>
+                        <h3 class="text-base font-serif font-bold text-white">Tech Stack Adoption</h3>
+                        <p class="text-neutral-400 text-xs mt-2 leading-relaxed font-light">Detecting frontend installs of HubSpot, Salesforce, Stripe, Shopify Plus, or Segment.</p>
                     </div>
-                    <div class="panel-3d-monument p-8">
-                        <div class="text-[10px] font-mono uppercase text-white mb-2">Trigger Signal 03</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Capital & M&A Events</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Tracking Crunchbase and press releases for recent Seed/Series-A funding or leadership restructuring.
-                        </p>
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono uppercase text-white mb-1">Signal 03</div>
+                        <h3 class="text-base font-serif font-bold text-white">Capital & M&A Events</h3>
+                        <p class="text-neutral-400 text-xs mt-2 leading-relaxed font-light">Tracking Crunchbase for Seed/Series-A funding or leadership restructuring.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 3. AUTONOMOUS SCRAPING ENGINES            -->
-        <!-- ========================================== -->
-        <section id="scraping-engines" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="code" class="w-3.5 h-3.5"></i>
+        <!-- 3. COMPACT CODE DEMO -->
+        <section id="scraping-engines" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="code" class="w-3 h-3"></i>
                         <span>Pillar 03: Data Extraction</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Autonomous Scraping & Extraction Engines</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Custom Python & Playwright crawlers capable of extracting decision-maker contact records at scale.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">Autonomous Scraping Engine</h2>
                 </div>
 
-                <div class="panel-3d-monument p-8">
-                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800 text-xs font-mono">
-                        <span class="text-gold font-bold">autonomous_decision_maker_extractor.py</span>
-                        <span class="text-neutral-500">Playwright + AsyncIO</span>
+                <div class="panel-monument-clean p-6">
+                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800 text-xs font-mono">
+                        <span class="text-gold font-bold">decision_maker_extractor.py</span>
+                        <span class="text-neutral-500 text-[10px]">Playwright + AsyncIO</span>
                     </div>
-                    <div class="code-box p-6 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
-                        <p class="text-neutral-500"># Autonomous Playwright Scraper Extracting C-Level Executives</p>
+                    <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
                         <p><span class="text-gold">async def</span> <span class="text-goldLight">extract_leadership_pool</span>(target_url):</p>
                         <p class="pl-4">page = <span class="text-gold">await</span> browser.new_page()</p>
                         <p class="pl-4"><span class="text-gold">await</span> page.goto(f"{target_url}/about-us", wait_until="networkidle")</p>
-                        <p class="pl-4">executives = <span class="text-gold">await</span> page.evaluate("""() => {</p>
-                        <p class="pl-8">return Array.from(document.querySelectorAll('.team-member, [data-role="leadership"]'))</p>
-                        <p class="pl-12">.map(el => ({ name: el.querySelector('h3')?.innerText, title: el.querySelector('p')?.innerText }))</p>
-                        <p class="pl-4">}""")</p>
-                        <p class="pl-4"><span class="text-gold">return</span> [e <span class="text-gold">for</span> e <span class="text-gold">in</span> executives <span class="text-gold">if</span> any(t <span class="text-gold">in</span> e['title'].lower() <span class="text-gold">for</span> t <span class="text-gold">in</span> ['ceo', 'founder', 'vp', 'head'])]</p>
+                        <p class="pl-4">executives = <span class="text-gold">await</span> page.evaluate("""() => Array.from(document.querySelectorAll('.leadership-card'))</p>
+                        <p class="pl-8">.map(el => ({ name: el.querySelector('h3')?.innerText, role: el.querySelector('p')?.innerText }))""")</p>
+                        <p class="pl-4"><span class="text-gold">return</span> [e <span class="text-gold">for</span> e <span class="text-gold">in</span> executives <span class="text-gold">if</span> any(t <span class="text-gold">in</span> e['role'].lower() <span class="text-gold">for</span> t <span class="text-gold">in</span> ['ceo', 'founder', 'vp'])]</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 4. AI ENRICHMENT & ICEBREAKERS            -->
-        <!-- ========================================== -->
-        <section id="icebreaker-tech" class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <!-- 4. DYNAMIC ICEBREAKERS -->
+        <section id="icebreaker-tech" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="sparkles" class="w-3 h-3"></i>
                         <span>Pillar 04: AI Synthesis</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Dynamic AI Icebreaker Synthesis</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Synthesizing 1-to-1 personalized conversation openers based on deep domain analysis.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">Dynamic AI Icebreaker Synthesis</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="panel-3d-monument p-8">
-                        <div class="text-[10px] font-mono uppercase text-gold mb-2">Input Context</div>
-                        <h3 class="text-lg font-serif font-bold text-white">Target: FinTech Series-A Startup</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Scraped context: Target recently launched recurring billing automation for European SMB merchants.
-                        </p>
-                        <div class="code-box p-4 rounded-xl mt-6 text-xs text-neutral-400">
-                            <span class="text-neutral-500">Synthesized Hook:</span><br>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono uppercase text-gold mb-1">Target Context</div>
+                        <h3 class="text-sm font-serif font-bold text-white">FinTech Series-A Startup</h3>
+                        <div class="code-box-clean p-3 rounded-lg mt-3 text-xs text-neutral-400">
                             "Saw you recently deployed automated SEPA merchant routing across EU accounts—curious how you're handling instant dispute reconciliation."
                         </div>
                     </div>
 
-                    <div class="panel-3d-monument p-8">
-                        <div class="text-[10px] font-mono uppercase text-goldLight mb-2">Input Context</div>
-                        <h3 class="text-lg font-serif font-bold text-white">Target: Enterprise Logistics Firm</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Scraped context: Expanding nationwide warehouse network across 4 new regional hubs.
-                        </p>
-                        <div class="code-box p-4 rounded-xl mt-6 text-xs text-neutral-400">
-                            <span class="text-neutral-500">Synthesized Hook:</span><br>
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono uppercase text-goldLight mb-1">Target Context</div>
+                        <h3 class="text-sm font-serif font-bold text-white">Enterprise Logistics Firm</h3>
+                        <div class="code-box-clean p-3 rounded-lg mt-3 text-xs text-neutral-400">
                             "Noticed your expansion across regional freight hubs—saw your team is managing custom dispatch integration across 3PL fleets."
                         </div>
                     </div>
@@ -365,81 +325,75 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 5. 40+ INBOX DNS & DELIVERABILITY GOVERNANCE-->
-        <!-- ========================================== -->
-        <section id="dns-governance" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+        <!-- 5. DNS GOVERNANCE -->
+        <section id="dns-governance" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="shield" class="w-3 h-3"></i>
                         <span>Pillar 05: Infrastructure</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">40+ Inbox Multi-Domain Governance</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Decentralized email sending architecture keeping primary domains 100% insulated from spam risk.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">40+ Inbox Multi-Domain Governance</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div class="panel-3d-monument p-6 text-center">
-                        <div class="text-2xl font-serif font-bold text-white">SPF & DKIM</div>
-                        <p class="text-neutral-400 text-xs mt-2">2048-bit cryptographic key validation</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="panel-monument-clean p-4 text-center">
+                        <div class="text-lg font-serif font-bold text-white">SPF & DKIM</div>
+                        <p class="text-neutral-400 text-[10px] mt-1">2048-bit key validation</p>
                     </div>
-                    <div class="panel-3d-monument p-6 text-center">
-                        <div class="text-2xl font-serif font-bold text-goldLight">DMARC</div>
-                        <p class="text-neutral-400 text-xs mt-2">Strict `p=quarantine` policy enforcement</p>
+                    <div class="panel-monument-clean p-4 text-center">
+                        <div class="text-lg font-serif font-bold text-goldLight">DMARC</div>
+                        <p class="text-neutral-400 text-[10px] mt-1">`p=quarantine` policy</p>
                     </div>
-                    <div class="panel-3d-monument p-6 text-center">
-                        <div class="text-2xl font-serif font-bold text-white">CNAME Tracking</div>
-                        <p class="text-neutral-400 text-xs mt-2">Custom white-label SSL tracking domains</p>
+                    <div class="panel-monument-clean p-4 text-center">
+                        <div class="text-lg font-serif font-bold text-white">CNAME SSL</div>
+                        <p class="text-neutral-400 text-[10px] mt-1">Custom tracking domain</p>
                     </div>
-                    <div class="panel-3d-monument p-6 text-center">
-                        <div class="text-2xl font-serif font-bold text-emeraldMuted">&lt;2% Bounce</div>
-                        <p class="text-neutral-400 text-xs mt-2">ZeroBounce automated pre-flight filtering</p>
+                    <div class="panel-monument-clean p-4 text-center">
+                        <div class="text-lg font-serif font-bold text-emeraldMuted">&lt;2% Bounce</div>
+                        <p class="text-neutral-400 text-[10px] mt-1">ZeroBounce hygiene</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 6. HIGH-CONVERTING COLD OUTREACH COPY      -->
-        <!-- ========================================== -->
-        <section id="cold-email-copies" class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+        <!-- 6. CLEAN COLD OUTREACH COPY -->
+        <section id="cold-email-copies" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="mail" class="w-3 h-3"></i>
                         <span>Pillar 06: Copywriting</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">High-Converting Cold Outreach Vault</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Short, punchy, high-status cold email frameworks delivering measurable booked revenue.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">High-Converting Outreach Vault</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="panel-3d-monument p-8">
-                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800">
-                            <span class="text-xs font-mono text-gold uppercase">The Drop-Off Angle</span>
-                            <span class="px-2.5 py-0.5 rounded bg-neutral-900 text-goldLight font-mono text-[10px]">62% Open Rate</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="panel-monument-clean p-6">
+                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800">
+                            <span class="text-xs font-mono text-gold font-bold">The Drop-Off Angle</span>
+                            <span class="px-2 py-0.5 rounded bg-neutral-900 text-goldLight font-mono text-[9px]">62% Open Rate</span>
                         </div>
-                        <div class="code-box p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                        <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
                             <p class="text-neutral-500 font-bold">Subject: quick question regarding {{company}} outbound</p>
                             <p>Hi {{first_name}},</p>
-                            <p>Noticed {{company}} is actively scaling your SDR team this quarter.</p>
-                            <p>Most software founders we speak with struggle with manual list building and slow speed-to-lead response times, leading to 40%+ drop-off in qualified demos.</p>
-                            <p>We recently architected an autonomous Agentic AI engine that automated data enrichment and booked 35+ qualified meetings monthly on autopilot.</p>
+                            <p>Noticed {{company}} is scaling your SDR team this quarter.</p>
+                            <p>Most founders struggle with manual list building and slow response times, causing a 40%+ drop-off in qualified demos.</p>
+                            <p>We architected an autonomous Agentic AI engine that automated enrichment and booked 35+ qualified meetings monthly.</p>
                             <p>Open to a brief 4-minute screen-share this Thursday at 2 PM EST to see the architecture?</p>
                         </div>
                     </div>
 
-                    <div class="panel-3d-monument p-8">
-                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800">
-                            <span class="text-xs font-mono text-goldLight uppercase">The Permission-Based Video</span>
-                            <span class="px-2.5 py-0.5 rounded bg-neutral-900 text-white font-mono text-[10px]">14% Reply Rate</span>
+                    <div class="panel-monument-clean p-6">
+                        <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800">
+                            <span class="text-xs font-mono text-goldLight font-bold">The Permission Loom</span>
+                            <span class="px-2 py-0.5 rounded bg-neutral-900 text-white font-mono text-[9px]">14% Reply Rate</span>
                         </div>
-                        <div class="code-box p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                        <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
                             <p class="text-neutral-500 font-bold">Subject: {{first_name}}, saw your {{recent_feature}} update</p>
                             <p>Hi {{first_name}},</p>
-                            <p>Saw your recent updates around {{trigger_event}}.</p>
-                            <p>Built a custom workflow for a B2B SaaS in your space that connects ad leads directly to WhatsApp / Close CRM with a &lt;60s trigger, doubling conversion rate.</p>
+                            <p>Saw your recent release around {{trigger_event}}.</p>
+                            <p>Built a custom pipeline for a SaaS in your space connecting ad leads to WhatsApp / Close CRM with a &lt;60s trigger, doubling conversion rate.</p>
                             <p>Recorded a 90-second Loom showing the backend schema. Mind if I send the link over?</p>
                         </div>
                     </div>
@@ -447,117 +401,89 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 7. MULTI-AGENT STATEFUL REASONING LOOP     -->
-        <!-- ========================================== -->
-        <section id="multi-agent-loop" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+        <!-- 7. MULTI-AGENT LOOP -->
+        <section id="multi-agent-loop" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="cpu" class="w-3 h-3"></i>
                         <span>Pillar 07: Autonomous AI</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Multi-Agent Stateful Reasoning Loop</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Orchestrating task planning, sandboxed tool calling, and evaluation without hallucination.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">Multi-Agent Stateful Reasoning Loop</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="panel-3d-monument p-8">
-                        <div class="w-10 h-10 rounded-xl bg-pitch border border-neutral-800 flex items-center justify-center text-gold mb-6">
-                            <i data-lucide="terminal" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-serif font-bold text-white">1. Master Planner</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Decomposes objectives into DAG execution graphs, assigning subagent roles and token limits.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="panel-monument-clean p-6">
+                        <h3 class="text-base font-serif font-bold text-white">1. Master Planner</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Decomposes objectives into DAG execution graphs, assigning worker roles and token budgets.</p>
                     </div>
-
-                    <div class="panel-3d-monument p-8">
-                        <div class="w-10 h-10 rounded-xl bg-pitch border border-neutral-800 flex items-center justify-center text-goldLight mb-6">
-                            <i data-lucide="wrench" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-serif font-bold text-white">2. Sandboxed Shell Execution</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Runs bash/Python commands, database operations, and external API calls deterministically.</p>
+                    <div class="panel-monument-clean p-6">
+                        <h3 class="text-base font-serif font-bold text-white">2. Sandboxed Shell Tools</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Runs bash/Python commands, database operations, and external API calls deterministically.</p>
                     </div>
-
-                    <div class="panel-3d-monument p-8">
-                        <div class="w-10 h-10 rounded-xl bg-pitch border border-neutral-800 flex items-center justify-center text-white mb-6">
-                            <i data-lucide="check-circle" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-serif font-bold text-white">3. LLM-as-Judge Evaluation</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Evaluates output trajectories against strict validation schemas before committing mutations.</p>
+                    <div class="panel-monument-clean p-6">
+                        <h3 class="text-base font-serif font-bold text-white">3. LLM Evaluation Bench</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Evaluates output trajectories against strict validation schemas before committing mutations.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 8. PERSISTENT CONTEXT & MEMORY LEDGERS    -->
-        <!-- ========================================== -->
-        <section id="context-memory" class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="database" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 08: Memory Architecture</span>
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Persistent State Synchronization</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Maintaining 100% coherence across multi-turn sessions with structured markdown ledgers.</p>
-                </div>
-
-                <div class="panel-3d-monument p-8">
-                    <div class="code-box p-6 rounded-xl text-xs text-neutral-300 space-y-3 leading-relaxed">
-                        <p class="text-gold font-bold"># Cross-Session Memory Synchronization Architecture</p>
-                        <p>1. <span class="text-white">System Instructions Ledger:</span> Ingests rules, portfolio proofs, and strict constraints into system prompt.</p>
-                        <p>2. <span class="text-goldLight">Execution State Tracker:</span> Updates active campaign IDs, verified prospects, and pending tasks in real-time.</p>
-                        <p>3. <span class="text-white">Prompt Caching Optimization:</span> Reuses static memory blocks across turns, reducing LLM token costs by 38%.</p>
+        <!-- 8. PERSISTENT STATE SYNC -->
+        <section id="context-memory" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-4xl mx-auto">
+                <div class="panel-monument-clean p-6">
+                    <div class="code-box-clean p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                        <p class="text-gold font-bold"># Cross-Session Memory Synchronization Protocol</p>
+                        <p>1. <span class="text-white">System Instructions Ledger:</span> Ingests rules, constraints, and verified proofs dynamically.</p>
+                        <p>2. <span class="text-goldLight">Live Execution State:</span> Tracks active campaigns, verified leads, and pending jobs in real-time.</p>
+                        <p>3. <span class="text-white">Prompt Caching Optimization:</span> Reuses static memory blocks across turns (38% token reduction).</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 9. 50+ PRODUCTION N8N WORKFLOWS VAULT     -->
-        <!-- ========================================== -->
-        <section id="n8n-blueprints" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 09: Automation Library</span>
+        <!-- 9. 50+ N8N BLUEPRINTS -->
+        <section id="n8n-blueprints" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="layers" class="w-3 h-3"></i>
+                        <span>Pillar 09: Automation Vault</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Production n8n Blueprints Vault</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Curated production JSON workflows ready for instant import and enterprise execution.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">Production n8n Blueprints Vault</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="panel-monument-clean p-6 flex flex-col justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-gold uppercase mb-2">n8n Workflow</div>
-                            <h3 class="text-lg font-serif font-bold text-white">Dynamic Lead Scoring Node</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Evaluates ICP match in 10s and pushes priority tags to CRM.</p>
+                            <div class="text-[9px] font-mono text-gold uppercase mb-1">n8n Workflow</div>
+                            <h3 class="text-sm font-serif font-bold text-white">Dynamic Lead Scoring Node</h3>
+                            <p class="text-neutral-400 text-xs mt-2 font-light">Evaluates ICP match in 10s and pushes priority tags to CRM.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-clean-dark px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
 
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
+                    <div class="panel-monument-clean p-6 flex flex-col justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-goldLight uppercase mb-2">n8n Workflow</div>
-                            <h3 class="text-lg font-serif font-bold text-white">Multi-Model Fallback Router</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Routes simple tasks to fast models, saving 40% on token expenditure.</p>
+                            <div class="text-[9px] font-mono text-goldLight uppercase mb-1">n8n Workflow</div>
+                            <h3 class="text-sm font-serif font-bold text-white">Multi-Model Fallback Router</h3>
+                            <p class="text-neutral-400 text-xs mt-2 font-light">Routes simple tasks to fast models, saving 40% on tokens.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-clean-dark px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
 
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
+                    <div class="panel-monument-clean p-6 flex flex-col justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-white uppercase mb-2">n8n Workflow</div>
-                            <h3 class="text-lg font-serif font-bold text-white">Vector Memory Retrieval Agent</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Embeds company documents into Qdrant/Pinecone for context retrieval.</p>
+                            <div class="text-[9px] font-mono text-white uppercase mb-1">n8n Workflow</div>
+                            <h3 class="text-sm font-serif font-bold text-white">Vector Memory Retrieval</h3>
+                            <p class="text-neutral-400 text-xs mt-2 font-light">Embeds company documents for context retrieval.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-clean-dark px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -565,242 +491,153 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 10. SPEED-TO-LEAD & CRM INTEGRATIONS      -->
-        <!-- ========================================== -->
-        <section id="crm-speed-lead" class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 10: CRM Acceleration</span>
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">&lt;60s Speed-to-Lead Architecture</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Triggering instant notifications, AI response drafts, and rep task assignments in real-time.</p>
+        <!-- 10. SPEED TO LEAD -->
+        <section id="crm-speed-lead" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="panel-monument-clean p-6">
+                    <h3 class="text-base font-serif font-bold text-white">Close CRM Smart Views</h3>
+                    <p class="text-neutral-400 text-xs mt-2 font-light">Ensuring reps engage warmest inbound leads in under 60 seconds.</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="panel-3d-monument p-8">
-                        <h3 class="text-lg font-serif font-bold text-white">Close CRM Dynamic Smart Views</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Custom lead filtering ensuring reps engage warmest inbound opportunities in under 60 seconds.</p>
-                    </div>
-                    <div class="panel-3d-monument p-8">
-                        <h3 class="text-lg font-serif font-bold text-white">HubSpot Automated Setter Handoffs</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Automated pipeline stage progression and automated calendar appointment routing.</p>
-                    </div>
+                <div class="panel-monument-clean p-6">
+                    <h3 class="text-base font-serif font-bold text-white">HubSpot Automated Handoffs</h3>
+                    <p class="text-neutral-400 text-xs mt-2 font-light">Automated pipeline progression and instant calendar routing.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 11. VERIFIED INSTITUTIONAL PROOF          -->
-        <!-- ========================================== -->
-        <section id="client-proof-section" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 11: Track Record</span>
+        <!-- 11. CLIENT PROOF -->
+        <section id="client-proof-section" class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <div class="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full gold-pill-clean text-[9px] font-mono uppercase tracking-widest mb-2">
+                        <i data-lucide="shield-check" class="w-3 h-3"></i>
+                        <span>Pillar 11: Institutional Proof</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Verified Client Portfolio</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Commercial systems and media networks delivered across international markets.</p>
+                    <h2 class="text-2xl font-serif font-bold text-white">Verified Client Portfolio</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] font-mono text-gold uppercase mb-2">National Television</div>
-                            <h3 class="text-2xl font-serif font-bold text-white">Green TV Entertainment</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Mainstream national television network campaign design and broadcast media distribution.</p>
-                        </div>
-                        <div class="mt-8 pt-4 border-t border-neutral-800 text-[11px] font-mono text-neutral-500">National Media Network</div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono text-gold uppercase mb-1">National Television</div>
+                        <h3 class="text-lg font-serif font-bold text-white">Green TV Entertainment</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">National media network campaign design and broadcast distribution.</p>
                     </div>
-
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] font-mono text-goldLight uppercase mb-2">Irish National Franchise</div>
-                            <h3 class="text-2xl font-serif font-bold text-white">Apache Pizza Ireland</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Social campaign assets, video reels, and customer acquisition marketing across Ireland.</p>
-                        </div>
-                        <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-8 pt-4 border-t border-neutral-800 text-[11px] font-mono text-gold hover:underline flex items-center gap-1">
-                            <span>instagram.com/apachepizzaireland</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono text-goldLight uppercase mb-1">Irish Franchise</div>
+                        <h3 class="text-lg font-serif font-bold text-white">Apache Pizza Ireland</h3>
+                        <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-3 text-xs font-mono text-gold hover:underline flex items-center gap-1">
+                            <span>instagram.com/apachepizzaireland</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
-
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] font-mono text-white uppercase mb-2">Healthcare Practices</div>
-                            <h3 class="text-2xl font-serif font-bold text-white">Rock Road & Slievemore Dental</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Leading Irish dental healthcare clinics, digital visibility systems, and organic patient funnels.</p>
-                        </div>
-                        <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-8 pt-4 border-t border-neutral-800 text-[11px] font-mono text-gold hover:underline flex items-center gap-1">
-                            <span>rockroaddental.ie</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    <div class="panel-monument-clean p-6">
+                        <div class="text-[9px] font-mono text-white uppercase mb-1">Healthcare</div>
+                        <h3 class="text-lg font-serif font-bold text-white">Rock Road & Slievemore</h3>
+                        <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-3 text-xs font-mono text-gold hover:underline flex items-center gap-1">
+                            <span>rockroaddental.ie</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="mt-12 panel-3d-monument p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-gold/30">
+                <div class="mt-8 panel-monument-clean p-6 flex flex-col md:flex-row items-center justify-between gap-4 border border-gold/30">
                     <div>
-                        <h3 class="text-2xl font-serif font-bold text-white">Master Visual & Agentic Drive Vault</h3>
-                        <p class="text-neutral-400 text-xs mt-2 font-light">Direct cloud access to creative assets, high-ticket SMB automation agreements, and multi-agent diagrams.</p>
+                        <h3 class="text-lg font-serif font-bold text-white">Master Visual & Agentic Drive Vault</h3>
+                        <p class="text-neutral-400 text-xs font-light">Direct cloud access to creative assets and multi-agent diagrams.</p>
                     </div>
-                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-insane-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-clean-gold px-6 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
                         Access Drive Vault
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 12. PROPRIETARY SHOPIFY COD SYSTEM        -->
-        <!-- ========================================== -->
-        <section class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="panel-3d-monument p-12 border border-gold/40 flex flex-col lg:flex-row items-center justify-between gap-8">
-                    <div class="max-w-2xl">
-                        <div class="text-[10px] font-mono text-gold uppercase mb-2">Pillar 12: Proprietary IP</div>
-                        <h2 class="text-3xl font-serif font-bold text-white">Shopify + WhatsApp Bulletproof COD Verification</h2>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Reduces returned orders by 70% with two-way automated WhatsApp order confirmations, address validation, and instant CRM tag synchronization. Available via private enterprise licensing.
-                        </p>
+        <!-- 12. PROPRIETARY COD SYSTEM -->
+        <section class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-4xl mx-auto">
+                <div class="panel-monument-clean p-8 border border-gold/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="max-w-xl">
+                        <div class="text-[9px] font-mono text-gold uppercase mb-1">Proprietary IP</div>
+                        <h2 class="text-xl font-serif font-bold text-white">Shopify + WhatsApp Bulletproof COD</h2>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Reduces returned orders by 70% with two-way WhatsApp confirmations and CRM sync.</p>
                     </div>
-                    <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-insane-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
-                        Request Private License
+                    <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-clean-gold px-6 py-3 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                        Request License
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 13. ENTERPRISE CONTRACT & PROPOSAL SOP    -->
-        <!-- ========================================== -->
-        <section class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 13: Governance</span>
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Enterprise Proposal & Onboarding SOP</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Standardized discovery, timeline alignment, and deliverables protocol for high-ticket clients.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="panel-3d-monument p-8">
-                        <h3 class="text-lg font-serif font-bold text-white">Phase 1: Discovery & Scope</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">30-minute discovery call identifying core bottlenecks and tech stack requirements.</p>
-                    </div>
-                    <div class="panel-3d-monument p-8">
-                        <h3 class="text-lg font-serif font-bold text-white">Phase 2: Architecture Sprint</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Deployment of custom webhooks, agentic loops, and CRM Smart Views within 7 business days.</p>
-                    </div>
-                    <div class="panel-3d-monument p-8">
-                        <h3 class="text-lg font-serif font-bold text-white">Phase 3: Scaling & SLAs</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Continuous monitoring with 99.4% execution reliability and sub-minute response times.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- 14. EVALUATION-DRIVEN DEVELOPMENT (EDD)   -->
-        <!-- ========================================== -->
-        <section class="py-28 px-8 border-t border-neutral-900 bg-noir">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="check-square" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 14: Quality Assurance</span>
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Evaluation-Driven Development (EDD)</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Automated benchmarks testing tool-selection precision and response accuracy before commit.</p>
-                </div>
-
-                <div class="panel-3d-monument p-8">
-                    <div class="code-box p-6 rounded-xl text-xs text-neutral-300 space-y-3 leading-relaxed">
-                        <p class="text-gold font-bold"># Automated Benchmark Test Suite</p>
-                        <p>• <span class="text-white">Tool Selection Precision:</span> 99.4% deterministic tool-calling accuracy across test datasets.</p>
-                        <p>• <span class="text-goldLight">Trajectory Evaluation:</span> Automated multi-hop reasoning verification with zero dead-end loops.</p>
-                        <p>• <span class="text-white">Cost & FinOps Governance:</span> Strict token budget monitoring across Anthropic Claude, OpenAI, and Bedrock.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- 15. OPEN-SOURCE REPOSITORIES INDEX        -->
-        <!-- ========================================== -->
-        <section class="py-28 px-8 border-t border-neutral-900 bg-pitch">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 15: Public Engineering</span>
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Open-Source Repositories Hub</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">Shipped codebases available on GitHub for public audit and implementation.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-serif font-bold text-white">b2b-outbound-agentic-engine</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Autonomous prospect scraping, DNS deliverability verifiers, and high-ticket sequence templates.</p>
-                        </div>
-                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="mt-8 btn-3d-insane-dark px-6 py-3 text-xs font-mono font-bold flex items-center justify-center gap-2">
-                            <span>Inspect Repository</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-
-                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl font-serif font-bold text-white">n8n-agentic-blueprints-vault</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">Production n8n workflows featuring autonomous agents, vector memory, and CRM triggers.</p>
-                        </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-8 btn-3d-insane-dark px-6 py-3 text-xs font-mono font-bold flex items-center justify-center gap-2">
-                            <span>Inspect Repository</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- 16. PRIVATE ADVISORY & CONTACT TERMINAL   -->
-        <!-- ========================================== -->
-        <section id="contact-terminal-section" class="py-28 px-8 border-t border-neutral-900 bg-noir">
+        <!-- 13. ENTERPRISE PROPOSAL SOP -->
+        <section class="py-20 px-8 border-t border-neutral-900 bg-pitch">
             <div class="max-w-4xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-                        <span>Pillar 16: Direct Advisory</span>
+                <div class="panel-monument-clean p-6">
+                    <h3 class="text-base font-serif font-bold text-white mb-2">Enterprise Discovery & SLA Protocol</h3>
+                    <p class="text-neutral-400 text-xs font-light">Standardized 3-phase deployment: Discovery Call ➔ 7-Day Sprint ➔ 99.4% Uptime SLA.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. EDD TESTING SUITE -->
+        <section class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-4xl mx-auto">
+                <div class="panel-monument-clean p-6">
+                    <div class="code-box-clean p-4 rounded-xl text-xs text-neutral-300 space-y-1.5 leading-relaxed">
+                        <p class="text-gold font-bold"># Evaluation-Driven Development (EDD)</p>
+                        <p>• 99.4% deterministic tool-calling precision across test datasets.</p>
+                        <p>• Multi-hop trajectory verification with zero dead-end loops.</p>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Private Office Terminal</h2>
-                    <p class="text-neutral-400 text-sm mt-3 font-light">Direct scheduling and communication channels for high-ticket architecture engagements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. OPEN SOURCE HUB -->
+        <section class="py-20 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="panel-monument-clean p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-serif font-bold text-white">b2b-outbound-agentic-engine</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Autonomous prospect scraping, DNS verifiers, and sequence templates.</p>
+                    </div>
+                    <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="mt-4 btn-3d-clean-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <span>Inspect Repo</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
 
-                <div class="panel-3d-monument p-8 md:p-10 font-mono text-xs">
-                    <div class="flex items-center justify-between pb-6 mb-6 border-b border-neutral-800 text-neutral-500">
-                        <div class="flex space-x-2">
-                            <span class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-700"></span>
-                            <span class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-700"></span>
-                            <span class="w-3 h-3 rounded-full bg-gold/80"></span>
+                <div class="panel-monument-clean p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-serif font-bold text-white">n8n-agentic-blueprints-vault</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Production n8n workflows with AI agents, vector memory, and CRM triggers.</p>
+                    </div>
+                    <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-4 btn-3d-clean-dark px-4 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <span>Inspect Repo</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. PRIVATE CONTACT TERMINAL -->
+        <section id="contact-terminal-section" class="py-20 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-3xl mx-auto">
+                <div class="panel-monument-clean p-8 font-mono text-xs">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800 text-neutral-500">
+                        <div class="flex space-x-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-neutral-800"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-neutral-800"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-gold/80"></span>
                         </div>
-                        <span>terminal://idrees_private_channel</span>
+                        <span>terminal://idrees_channel</span>
                     </div>
 
-                    <div class="space-y-4 text-neutral-300">
+                    <div class="space-y-3 text-neutral-300">
                         <p><span class="text-gold">$</span> operator.status <span class="text-neutral-600">➔</span> <span class="text-white">"Available for High-Ticket Remote Architect Roles"</span></p>
-                        <p><span class="text-gold">$</span> operator.location <span class="text-neutral-600">➔</span> <span class="text-white">"Islamabad, Pakistan (100% Remote Available)"</span></p>
                         <p><span class="text-gold">$</span> operator.phone_call <span class="text-neutral-600">➔</span> <a href="tel:+923489911425" class="text-white hover:text-gold">+92 348 9911425</a></p>
-                        <p><span class="text-gold">$</span> operator.whatsapp <span class="text-neutral-600">➔</span> <a href="https://wa.me/923489911425" target="_blank" class="text-goldLight hover:underline">+92 348 9911425 (Instant Direct Line)</a></p>
+                        <p><span class="text-gold">$</span> operator.whatsapp <span class="text-neutral-600">➔</span> <a href="https://wa.me/923489911425" target="_blank" class="text-goldLight hover:underline">+92 348 9911425 (Instant Line)</a></p>
                         <p><span class="text-gold">$</span> operator.email <span class="text-neutral-600">➔</span> <a href="mailto:idreesqurashi6@gmail.com" class="text-neutral-200 hover:text-gold">idreesqurashi6@gmail.com</a></p>
                         <p><span class="text-gold">$</span> operator.github <span class="text-neutral-600">➔</span> <a href="https://github.com/IdreesQurashi" target="_blank" class="text-neutral-200 hover:text-gold">github.com/IdreesQurashi</a></p>
                     </div>
 
-                    <div class="mt-8 pt-6 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
-                        <span class="text-neutral-500">Advisory SLA: &lt;15 Minutes</span>
-                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-insane-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                    <div class="mt-6 pt-4 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
+                        <span class="text-neutral-500">SLA: &lt;15 Minutes</span>
+                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-clean-gold px-6 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
                             <i data-lucide="send" class="w-4 h-4"></i>
                             <span>Initiate WhatsApp</span>
                         </a>
@@ -810,10 +647,10 @@
         </section>
 
         <!-- Footer -->
-        <footer class="py-14 px-8 border-t border-neutral-900 bg-pitch text-center text-[11px] font-mono text-neutral-500 uppercase tracking-wider">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <footer class="py-10 px-8 border-t border-neutral-900 bg-pitch text-center text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>&copy; 2026 Enterprise Autonomous Architecture. All rights reserved.</div>
-                <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-6">
                     <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-gold transition">GitHub</a>
                     <a href="https://wa.me/923489911425" target="_blank" class="hover:text-gold transition">WhatsApp</a>
                     <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-gold transition">Email</a>

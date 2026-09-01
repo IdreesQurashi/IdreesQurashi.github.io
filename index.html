@@ -114,6 +114,21 @@
                 0 8px 15px rgba(0, 0, 0, 0.9);
         }
 
+        /* 3D NAV PILLS */
+        .btn-nav-3d {
+            background: linear-gradient(180deg, #1c1c1c 0%, #0c0c0c 100%);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-bottom: 2px solid #000000;
+            border-radius: 12px;
+            box-shadow: 0 4px 0 #000000, 0 8px 15px rgba(0,0,0,0.8);
+            transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-nav-3d:hover {
+            transform: translateY(-2px);
+            border-color: #d4af37;
+            box-shadow: 0 6px 0 #000000, 0 12px 20px rgba(212, 175, 55, 0.25);
+        }
+
         /* 3D MONUMENTAL PANELS */
         .panel-3d-monument {
             background: linear-gradient(180deg, #121212 0%, #050505 100%);
@@ -146,10 +161,10 @@
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
     <div class="relative z-10">
-        <!-- Persistent Executive Navigation (2 Dominant Core Tracks: AI Agentic & B2B Lead Gen) -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-5">
+        <!-- Persistent Ultra-Clean Navigation (Only 2 Main Core Tracks + 1-Click Consultation) -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-4">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <a href="#hero" class="flex items-center space-x-4">
+                <a href="#hero" class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-gold/40 flex items-center justify-center font-serif font-bold text-goldLight text-lg shadow-lg">
                         IQ
                     </div>
@@ -159,20 +174,19 @@
                     </div>
                 </a>
                 
-                <!-- 2 MAIN CORE PILLARS & NAVIGATION -->
-                <div class="hidden lg:flex items-center space-x-4 font-mono text-[11px] tracking-wider uppercase">
-                    <!-- Part 1: AI Agentic Systems -->
-                    <a href="#multi-agent-loop" class="px-4 py-2 bg-neutral-900 border border-gold/40 text-goldLight rounded-xl font-extrabold flex items-center gap-2 hover:bg-gold hover:text-black transition">
-                        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-                        <span>1. AI Agentic Systems</span>
+                <!-- 2 CLEAN DOMINANT BUTTONS (ZERO CLUTTER) -->
+                <div class="hidden md:flex items-center space-x-5 font-mono text-xs tracking-wider uppercase">
+                    <!-- Part 1: AI Automation & Agentic AI -->
+                    <a href="#multi-agent-loop" class="btn-nav-3d px-5 py-2.5 text-goldLight font-extrabold flex items-center gap-2 hover:text-white">
+                        <i data-lucide="cpu" class="w-4 h-4 text-gold"></i>
+                        <span>1. AI Automation & Agentic AI</span>
                     </a>
-                    <!-- Part 2: B2B Lead Gen Architecture -->
-                    <a href="#leadgen-matrix" class="px-4 py-2 bg-neutral-900 border border-neutral-700 text-white rounded-xl font-extrabold flex items-center gap-2 hover:border-gold hover:text-goldLight transition">
-                        <i data-lucide="target" class="w-3.5 h-3.5"></i>
-                        <span>2. B2B Lead Gen Matrix</span>
+                    
+                    <!-- Part 2: B2B Lead Gen Matrix -->
+                    <a href="#leadgen-matrix" class="btn-nav-3d px-5 py-2.5 text-white font-extrabold flex items-center gap-2 hover:text-goldLight">
+                        <i data-lucide="target" class="w-4 h-4 text-goldLight"></i>
+                        <span>2. B2B Lead Generation</span>
                     </a>
-                    <a href="#client-proof-section" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">Client Proof</a>
-                    <a href="#contact-terminal-section" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">Private Terminal</a>
                 </div>
 
                 <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-insane-gold px-6 py-3 text-xs font-mono uppercase tracking-wider font-black flex items-center space-x-2">
@@ -203,11 +217,11 @@
             <div class="mt-14 flex flex-wrap items-center justify-center gap-8 font-mono text-xs uppercase tracking-wider">
                 <a href="#multi-agent-loop" class="btn-3d-insane-gold px-10 py-5 flex items-center space-x-3">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <span>1. Launch AI Agentic Systems</span>
+                    <span>1. AI Automation & Agentic AI</span>
                 </a>
                 <a href="#leadgen-matrix" class="btn-3d-insane-dark px-10 py-5 flex items-center space-x-3">
                     <i data-lucide="target" class="w-4 h-4"></i>
-                    <span>2. Inspect Lead Gen Matrix</span>
+                    <span>2. B2B Lead Generation</span>
                 </a>
             </div>
 
@@ -808,7 +822,7 @@
         </footer>
     </div>
 
-    <!-- 3D Floating Geometric Canvas -->
+    <!-- 3D Subtle Floating Ribbon -->
     <script>
         const canvas = document.getElementById('three-canvas');
         const scene = new THREE.Scene();

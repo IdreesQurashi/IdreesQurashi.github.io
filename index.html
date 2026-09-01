@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idrees Qurashi | Agentic AI Solutions Architect & Enterprise Outbound</title>
+    <title>Enterprise Autonomous AI Architectures & Revenue Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -20,8 +20,8 @@
                     },
                     colors: {
                         pitch: '#000000',
-                        noir: '#050505',
-                        charcoal: '#0b0b0b',
+                        noir: '#040404',
+                        charcoal: '#090909',
                         gold: '#d4af37',
                         goldLight: '#f6ecc9'
                     }
@@ -42,96 +42,116 @@
             height: 100vh;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.32;
+            opacity: 0.28;
         }
         
-        /* ULTRA HEAVY 3D BEVEL BUTTONS */
-        .btn-3d-gold-heavy {
-            background: linear-gradient(180deg, #fff3c9 0%, #e2be4b 45%, #c29b20 100%);
+        /* 10X EXTREME 3D PHYSICAL MECHANICAL BUTTONS */
+        .btn-3d-extreme-gold {
+            background: linear-gradient(180deg, #fff8db 0%, #ecd37a 40%, #c59b1e 100%);
             color: #000000;
-            font-weight: 800;
-            border: 1px solid #ffecad;
-            border-bottom: 2px solid #826610;
-            border-radius: 14px;
+            font-weight: 900;
+            border-top: 2px solid #ffffff;
+            border-left: 1px solid #ffd86b;
+            border-right: 1px solid #a67c0c;
+            border-bottom: 2px solid #5a4305;
+            border-radius: 16px;
             box-shadow: 
-                0 8px 0 #735a0d,
-                0 10px 0 #524009,
-                0 16px 28px rgba(0, 0, 0, 0.9),
-                0 0 35px rgba(212, 175, 55, 0.45);
-            transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+                0 12px 0 #6e5207,
+                0 16px 0 #4a3704,
+                0 22px 0 #281d01,
+                0 30px 45px rgba(0, 0, 0, 0.95),
+                0 0 50px rgba(212, 175, 55, 0.55);
+            transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
             cursor: pointer;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        .btn-3d-gold-heavy:hover {
-            transform: translateY(-4px);
+        .btn-3d-extreme-gold:hover {
+            transform: translateY(-5px);
             box-shadow: 
-                0 12px 0 #735a0d,
-                0 14px 0 #524009,
-                0 22px 35px rgba(0, 0, 0, 0.95),
-                0 0 45px rgba(212, 175, 55, 0.6);
+                0 17px 0 #6e5207,
+                0 21px 0 #4a3704,
+                0 27px 0 #281d01,
+                0 36px 55px rgba(0, 0, 0, 0.98),
+                0 0 65px rgba(212, 175, 55, 0.7);
         }
-        .btn-3d-gold-heavy:active {
-            transform: translateY(6px);
+        .btn-3d-extreme-gold:active {
+            transform: translateY(12px);
             box-shadow: 
-                0 2px 0 #735a0d,
-                0 3px 0 #524009,
-                0 6px 12px rgba(0, 0, 0, 0.8);
+                0 3px 0 #6e5207,
+                0 5px 0 #4a3704,
+                0 8px 15px rgba(0, 0, 0, 0.9);
         }
 
-        .btn-3d-dark-heavy {
-            background: linear-gradient(180deg, #242424 0%, #121212 50%, #080808 100%);
+        .btn-3d-extreme-dark {
+            background: linear-gradient(180deg, #2a2a2a 0%, #151515 45%, #080808 100%);
             color: #f6ecc9;
-            font-weight: 700;
-            border: 1px solid rgba(212, 175, 55, 0.35);
+            font-weight: 800;
+            border-top: 1px solid #444444;
+            border-left: 1px solid #333333;
+            border-right: 1px solid #111111;
             border-bottom: 2px solid #000000;
-            border-radius: 14px;
+            border-radius: 16px;
             box-shadow: 
-                0 8px 0 #000000,
-                0 10px 0 #000000,
-                0 16px 30px rgba(0, 0, 0, 0.95);
-            transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+                0 12px 0 #0c0c0c,
+                0 16px 0 #050505,
+                0 22px 0 #000000,
+                0 30px 50px rgba(0, 0, 0, 0.98),
+                0 0 25px rgba(212, 175, 55, 0.2);
+            transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        .btn-3d-dark-heavy:hover {
-            transform: translateY(-4px);
+        .btn-3d-extreme-dark:hover {
+            transform: translateY(-5px);
             border-color: #d4af37;
             box-shadow: 
-                0 12px 0 #000000,
-                0 14px 0 #000000,
-                0 22px 38px rgba(212, 175, 55, 0.25);
+                0 17px 0 #0c0c0c,
+                0 21px 0 #050505,
+                0 27px 0 #000000,
+                0 36px 60px rgba(0, 0, 0, 0.99),
+                0 0 35px rgba(212, 175, 55, 0.35);
         }
-        .btn-3d-dark-heavy:active {
-            transform: translateY(6px);
+        .btn-3d-extreme-dark:active {
+            transform: translateY(12px);
             box-shadow: 
-                0 2px 0 #000000,
-                0 3px 0 #000000,
-                0 6px 12px rgba(0, 0, 0, 0.9);
+                0 3px 0 #0c0c0c,
+                0 5px 0 #050505,
+                0 8px 16px rgba(0, 0, 0, 0.95);
         }
 
-        /* 3D Elevated Architecture Panels */
-        .card-3d-monumental {
-            background: linear-gradient(180deg, #101010 0%, #060606 100%);
-            border: 1px solid #1a1a1a;
-            border-radius: 20px;
-            box-shadow: 0 10px 0 #000000, 0 20px 40px rgba(0, 0, 0, 0.95);
+        /* 10X 3D MONUMENTAL PANELS */
+        .panel-3d-monument {
+            background: linear-gradient(180deg, #121212 0%, #050505 100%);
+            border: 1px solid #222222;
+            border-radius: 22px;
+            box-shadow: 
+                0 12px 0 #000000,
+                0 25px 50px rgba(0, 0, 0, 0.95);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateY(0);
         }
-        .card-3d-monumental:hover {
-            transform: translateY(-6px);
-            border-color: rgba(212, 175, 55, 0.45);
-            box-shadow: 0 16px 0 #000000, 0 30px 50px rgba(212, 175, 55, 0.12);
+        .panel-3d-monument:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 
+                0 20px 0 #000000,
+                0 35px 65px rgba(212, 175, 55, 0.15);
         }
 
         .gold-pill {
             background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.25);
+            border: 1px solid rgba(212, 175, 55, 0.28);
             color: #f6ecc9;
         }
-        .code-snippet {
-            background: #040404;
+        .code-box {
+            background: #020202;
             border: 1px solid #141414;
             font-family: 'JetBrains Mono', monospace;
         }
@@ -142,10 +162,10 @@
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
     <div class="relative z-10">
-        <!-- Navigation Header -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/90 backdrop-blur-xl border-b border-neutral-900 px-8 py-5">
+        <!-- Persistent Executive Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-5">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-4">
+                <a href="#hero" class="flex items-center space-x-4">
                     <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-gold/40 flex items-center justify-center font-serif font-bold text-goldLight text-lg shadow-lg">
                         IQ
                     </div>
@@ -155,282 +175,474 @@
                     </div>
                 </a>
                 
-                <!-- Multi-Page Links -->
-                <div class="hidden lg:flex items-center space-x-1 font-mono text-[11px] tracking-wider uppercase">
-                    <a href="index.html" class="px-4 py-2 text-goldLight border-b-2 border-gold font-bold">Architecture Home</a>
-                    <a href="agentic-lab.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Agentic Lab</a>
-                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Outbound Systems</a>
-                    <a href="client-proof.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Verified Proof</a>
-                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Private Office</a>
+                <!-- Quick Navigation to All 8 Structured Blocks -->
+                <div class="hidden xl:flex items-center space-x-1 font-mono text-[10px] tracking-wider uppercase">
+                    <a href="#hero" class="px-3 py-1.5 text-goldLight font-bold">1. Overview</a>
+                    <a href="#leadgen-matrix" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">2. Lead Gen Matrix</a>
+                    <a href="#scrapers-examples" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">3. Scraper Demos</a>
+                    <a href="#multi-agent-loop" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">4. Agentic Loop</a>
+                    <a href="#outbound-copies" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">5. Copy Vault</a>
+                    <a href="#n8n-blueprints" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">6. n8n Blueprints</a>
+                    <a href="#client-proof-section" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">7. Client Proof</a>
+                    <a href="#contact-terminal-section" class="px-3 py-1.5 text-neutral-400 hover:text-white transition">8. Private Terminal</a>
                 </div>
 
-                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-gold-heavy px-5 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-extreme-gold px-5 py-2.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
                     <i data-lucide="zap" class="w-3.5 h-3.5"></i>
                     <span>Consultation</span>
                 </a>
             </div>
         </nav>
 
-        <!-- PAGE 1: HERO SECTION -->
-        <section class="pt-44 pb-24 px-8 text-center max-w-5xl mx-auto min-h-[90vh] flex flex-col justify-center">
+        <!-- ========================================== -->
+        <!-- BLOCK 1: HERO & CORE METRIC FOUNDATION    -->
+        <!-- ========================================== -->
+        <section id="hero" class="pt-48 pb-28 px-8 text-center max-w-5xl mx-auto min-h-[92vh] flex flex-col justify-center">
             <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full gold-pill text-[11px] font-mono tracking-widest uppercase mb-8 mx-auto">
                 <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-                <span>Enterprise Autonomous Workspaces & Revenue Engines</span>
+                <span>ENTERPRISE AGENTIC ARCHITECTURES & B2B OUTBOUND SCALE</span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.2]">
-                Engineering <span class="text-goldLight italic font-normal">Agentic AI</span> & Autonomous Scale.
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white tracking-tight leading-[1.2]">
+                Engineering <span class="text-goldLight italic font-normal">Agentic AI</span> & Autonomous Revenue Scale.
             </h1>
 
             <p class="mt-6 text-base md:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
-                Replacing manual friction with deterministic multi-agent orchestration, tool-calling loops, and high-velocity B2B revenue infrastructure.
+                Replacing manual friction with deterministic multi-agent orchestration, tool-calling loops, and high-velocity B2B lead generation infrastructure.
             </p>
 
-            <!-- Ultra Heavy 3D Buttons -->
-            <div class="mt-12 flex flex-wrap items-center justify-center gap-7 font-mono text-xs uppercase tracking-wider">
-                <a href="agentic-lab.html" class="btn-3d-gold-heavy px-9 py-4 flex items-center space-x-3">
-                    <i data-lucide="layers" class="w-4 h-4"></i>
-                    <span>Launch Agentic Lab</span>
+            <!-- 10X 3D Buttons -->
+            <div class="mt-14 flex flex-wrap items-center justify-center gap-8 font-mono text-xs uppercase tracking-wider">
+                <a href="#leadgen-matrix" class="btn-3d-extreme-gold px-10 py-5 flex items-center space-x-3">
+                    <i data-lucide="database" class="w-4 h-4"></i>
+                    <span>Explore Lead Gen Vault</span>
                 </a>
-                <a href="client-proof.html" class="btn-3d-dark-heavy px-9 py-4 flex items-center space-x-3">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i>
-                    <span>Verified Brand Proof</span>
+                <a href="#multi-agent-loop" class="btn-3d-extreme-dark px-10 py-5 flex items-center space-x-3">
+                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                    <span>Inspect Agentic OS</span>
                 </a>
             </div>
 
-            <!-- 3D Metric Blocks -->
-            <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                <div class="card-3d-monumental p-6">
+            <!-- 3D Stat Panels -->
+            <div class="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div class="panel-3d-monument p-6">
                     <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Experience Track</div>
                     <div class="text-3xl font-serif font-bold text-white mt-1.5">5+ Years</div>
                     <p class="text-[11px] text-neutral-500 mt-1">Autonomous systems & code</p>
                 </div>
-                <div class="card-3d-monumental p-6">
+                <div class="panel-3d-monument p-6">
                     <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Enriched Pipeline</div>
                     <div class="text-3xl font-serif font-bold text-goldLight mt-1.5">25,000+</div>
                     <p class="text-[11px] text-neutral-500 mt-1">Institutional B2B records</p>
                 </div>
-                <div class="card-3d-monumental p-6">
+                <div class="panel-3d-monument p-6">
                     <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Speed-to-Lead SLA</div>
                     <div class="text-3xl font-serif font-bold text-white mt-1.5">&lt;60 Sec</div>
                     <p class="text-[11px] text-neutral-500 mt-1">Real-time webhook sync</p>
                 </div>
-                <div class="card-3d-monumental p-6">
-                    <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Media Distribution</div>
+                <div class="panel-3d-monument p-6">
+                    <div class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Organic Distribution</div>
                     <div class="text-3xl font-serif font-bold text-neutral-300 mt-1.5">109.8K+</div>
-                    <p class="text-[11px] text-neutral-500 mt-1">Organic video impressions</p>
+                    <p class="text-[11px] text-neutral-500 mt-1">Verified video reach</p>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 2: ARCHITECTURAL DEEP-DIVE & INTERACTIVE SCHEMAS -->
-        <section class="py-28 px-8 border-t border-neutral-900 bg-noir min-h-[95vh]">
+        <!-- ========================================== -->
+        <!-- BLOCK 2: B2B LEAD GENERATION SYSTEM MATRIX -->
+        <!-- ========================================== -->
+        <section id="leadgen-matrix" class="py-28 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="filter" class="w-3.5 h-3.5"></i>
+                        <span>End-to-End Acquisition Engine</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">B2B Lead Generation & Scraping Matrix</h2>
+                    <p class="text-neutral-400 text-sm mt-4 font-light leading-relaxed">
+                        A fully automated pipeline converting cold unstructured internet data into qualified sales meetings without manual rep effort.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="panel-3d-monument p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono uppercase text-gold mb-2">Stage 01: Sourcing</div>
+                            <h3 class="text-lg font-serif font-bold text-white">Targeted ICP Extraction</h3>
+                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                                Apollo.io API + LinkedIn Sales Navigator scrapers filtering for hiring triggers, recent funding rounds, and verified tech stack changes.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neutral-800 text-[11px] font-mono text-neutral-500">Output: Clean CSV / JSON</div>
+                    </div>
+
+                    <div class="panel-3d-monument p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono uppercase text-goldLight mb-2">Stage 02: Validation</div>
+                            <h3 class="text-lg font-serif font-bold text-white">ZeroBounce Deliverability</h3>
+                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                                Double-pass SMTP handshake and MX record verification. Drops all catch-all and spam traps to enforce &lt;2% hard bounce rates.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neutral-800 text-[11px] font-mono text-goldLight">SLA: 98%+ Inbox Rate</div>
+                    </div>
+
+                    <div class="panel-3d-monument p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono uppercase text-gold mb-2">Stage 03: AI Enrichment</div>
+                            <h3 class="text-lg font-serif font-bold text-white">Dynamic LLM Icebreakers</h3>
+                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                                Automated web crawler inspects target landing page hero copy, synthesizing 100% unique personalized pain-point hooks per prospect.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neutral-800 text-[11px] font-mono text-neutral-500">Tool: Make.com / Python</div>
+                    </div>
+
+                    <div class="panel-3d-monument p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono uppercase text-goldLight mb-2">Stage 04: Routing</div>
+                            <h3 class="text-lg font-serif font-bold text-white">Close & HubSpot CRM Sync</h3>
+                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                                Real-time webhook injection into Close CRM / HubSpot with custom Smart Views, task assignments, and calendar booking routing.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-neutral-800 text-[11px] font-mono text-emeraldMuted">&lt;60s Speed-to-Lead</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BLOCK 3: LIVE SCRAPER EXAMPLES & CODE DEMOS-->
+        <!-- ========================================== -->
+        <section id="scrapers-examples" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                        <span>Code & Data Architecture</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Scraper Examples & Enrichment Schemas</h2>
+                    <p class="text-neutral-400 text-sm mt-4 font-light">Real code execution and sample data structures used in our high-velocity lead pipelines.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Live Code Snippet 1 -->
+                    <div class="panel-3d-monument p-8">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800 text-xs font-mono">
+                            <span class="text-gold font-bold">scraper_enrichment_loop.py</span>
+                            <span class="text-neutral-500">Python 3.11</span>
+                        </div>
+                        <div class="code-box p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                            <p class="text-neutral-500"># Autonomous Web Scraping & Pydantic Lead Schema</p>
+                            <p><span class="text-gold">class</span> <span class="text-goldLight">EnrichedLead</span>(BaseModel):</p>
+                            <p class="pl-4">company_name: str</p>
+                            <p class="pl-4">decision_maker: str</p>
+                            <p class="pl-4">verified_email: EmailStr</p>
+                            <p class="pl-4">ai_icebreaker: str</p>
+                            <p class="pl-4">intent_score: float</p>
+                            <p class="mt-4"><span class="text-gold">async def</span> <span class="text-goldLight">enrich_prospect</span>(domain, person):</p>
+                            <p class="pl-4">html = <span class="text-gold">await</span> crawler.fetch_hero_text(domain)</p>
+                            <p class="pl-4">hook = <span class="text-gold">await</span> llm.generate_icebreaker(html, person)</p>
+                            <p class="pl-4"><span class="text-gold">return</span> EnrichedLead(ai_icebreaker=hook, intent_score=0.94)</p>
+                        </div>
+                    </div>
+
+                    <!-- Live Code Snippet 2 -->
+                    <div class="panel-3d-monument p-8">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800 text-xs font-mono">
+                            <span class="text-goldLight font-bold">enriched_prospect_sample.json</span>
+                            <span class="text-neutral-500">Live JSON Payload</span>
+                        </div>
+                        <div class="code-box p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                            <p>{</p>
+                            <p class="pl-4"><span class="text-gold">"target_company"</span>: "Apex Logistics Ltd",</p>
+                            <p class="pl-4"><span class="text-gold">"decision_maker"</span>: "Managing Director",</p>
+                            <p class="pl-4"><span class="text-gold">"verified_email"</span>: "exec@apexlogistics.com",</p>
+                            <p class="pl-4"><span class="text-gold">"deliverability_check"</span>: "100% ZeroBounce Valid",</p>
+                            <p class="pl-4"><span class="text-gold">"ai_icebreaker"</span>: "Noticed Apex recently expanded your Dublin freight hub—saw you're managing custom routing.",</p>
+                            <p class="pl-4"><span class="text-gold">"crm_sync_status"</span>: "Close CRM Tagged (High Intent)"</p>
+                            <p>}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BLOCK 4: AGENTIC MULTI-AGENT LOOP         -->
+        <!-- ========================================== -->
+        <section id="multi-agent-loop" class="py-28 px-8 border-t border-neutral-900 bg-noir">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-20">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
                         <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-                        <span>System Architecture Blueprint</span>
+                        <span>Deterministic Autonomous Reasoning</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">The Autonomous Multi-Agent Loop</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light leading-relaxed">
-                        How our deterministic execution layers eliminate hallucination, orchestrate tool calls, and sync persistent memory ledgers in real-time.
-                    </p>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">The Multi-Agent Tool-Calling Loop</h2>
+                    <p class="text-neutral-400 text-sm mt-4 font-light">Subagents execute sandboxed shell tools, maintain cross-session memory, and validate structured outputs.</p>
                 </div>
 
-                <!-- 3D Architecture Visual Stack -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-                    <div class="card-3d-monumental p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="panel-3d-monument p-8">
                         <div class="w-12 h-12 rounded-xl bg-pitch border border-neutral-800 flex items-center justify-center text-gold mb-6">
                             <i data-lucide="terminal" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white">1. Master Planner & Router</h3>
+                        <h3 class="text-xl font-serif font-bold text-white">Master Planner & Router</h3>
                         <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Parses unstructured inputs, calculates execution graphs, evaluates token budgets, and delegates subtasks to specialized worker agents.
+                            Parses complex objectives, constructs dependency graphs, assigns token budgets, and selects the optimal foundation model.
                         </p>
-                        <div class="code-snippet p-4 rounded-xl mt-6 text-[11px] text-neutral-400 space-y-1">
-                            <div><span class="text-gold">router.eval</span>(task_complexity)</div>
-                            <div>➔ Simple: Fast Model (Haiku / 4o-mini)</div>
-                            <div>➔ Complex: Frontier Model (Claude Opus)</div>
-                        </div>
                     </div>
 
-                    <div class="card-3d-monumental p-8">
+                    <div class="panel-3d-monument p-8">
                         <div class="w-12 h-12 rounded-xl bg-pitch border border-neutral-800 flex items-center justify-center text-goldLight mb-6">
-                            <i data-lucide="git-pull-request" class="w-6 h-6"></i>
+                            <i data-lucide="wrench" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white">2. Sandboxed Tool Execution</h3>
+                        <h3 class="text-xl font-serif font-bold text-white">Sandboxed Tool Execution</h3>
                         <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Subagents execute deterministic Python/Bash commands, scrapers, and REST APIs with strict Pydantic structured output validation.
+                            Subagents execute Python, Bash, REST APIs, and database mutations in isolated environments with automated retry policies.
                         </p>
-                        <div class="code-snippet p-4 rounded-xl mt-6 text-[11px] text-neutral-400 space-y-1">
-                            <div><span class="text-gold">tools.execute</span>(sandboxed_shell)</div>
-                            <div>➔ Web Scraper + Clean Regex</div>
-                            <div>➔ PostgreSQL Mutation + Sync</div>
-                        </div>
                     </div>
 
-                    <div class="card-3d-monumental p-8">
+                    <div class="panel-3d-monument p-8">
                         <div class="w-12 h-12 rounded-xl bg-pitch border border-neutral-800 flex items-center justify-center text-white mb-6">
                             <i data-lucide="database" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white">3. Persistent Memory Ledger</h3>
+                        <h3 class="text-xl font-serif font-bold text-white">Persistent State Synchronization</h3>
                         <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Maintains 100% cross-session coherence via Markdown/JSON state ledgers, preventing task duplication and drift across turns.
+                            Structured Markdown/JSON ledgers maintain cross-session memory coherence and sliding context window token caching (38% cost reduction).
                         </p>
-                        <div class="code-snippet p-4 rounded-xl mt-6 text-[11px] text-neutral-400 space-y-1">
-                            <div><span class="text-gold">memory.sync</span>(SHARED_STATE.md)</div>
-                            <div>➔ Sliding Context Window</div>
-                            <div>➔ Prompt Caching (38% Token Save)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BLOCK 5: HIGH-TICKET COLD EMAIL COPY VAULT -->
+        <!-- ========================================== -->
+        <section id="outbound-copies" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                        <span>High-Converting Outreach Cadences</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Battle-Tested Cold Email Vault</h2>
+                    <p class="text-neutral-400 text-sm mt-4 font-light">Field-proven copy frameworks delivering 60%+ open rates and 12%+ positive reply rates.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Copy 1 -->
+                    <div class="panel-3d-monument p-8">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800">
+                            <div>
+                                <span class="text-xs font-mono text-gold uppercase">Sequence 01</span>
+                                <h3 class="text-lg font-serif font-bold text-white mt-1">The ICP Pain-Point Hook</h3>
+                            </div>
+                            <span class="px-3 py-1 bg-neutral-900 text-goldLight text-xs font-mono rounded-full border border-neutral-800">High Reply</span>
+                        </div>
+                        <div class="code-box p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                            <p class="text-neutral-500 font-bold">Subject: quick question regarding {{company}} outbound</p>
+                            <p>Hi {{first_name}},</p>
+                            <p>Noticed {{company}} is actively scaling your {{department}} team this quarter.</p>
+                            <p>Most founders we speak with struggle with manual list building and slow speed-to-lead response times, causing a 40%+ drop-off in qualified demos.</p>
+                            <p>We recently architected an autonomous Agentic AI engine that automated enrichment and booked 35+ qualified meetings monthly on autopilot.</p>
+                            <p>Open to a brief 4-minute screen-share this Thursday at 2 PM EST to see the architecture?</p>
+                        </div>
+                    </div>
+
+                    <!-- Copy 2 -->
+                    <div class="panel-3d-monument p-8">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-neutral-800">
+                            <div>
+                                <span class="text-xs font-mono text-goldLight uppercase">Sequence 02</span>
+                                <h3 class="text-lg font-serif font-bold text-white mt-1">The Infrastructure Loom Teaser</h3>
+                            </div>
+                            <span class="px-3 py-1 bg-neutral-900 text-white text-xs font-mono rounded-full border border-neutral-800">Enterprise</span>
+                        </div>
+                        <div class="code-box p-5 rounded-xl text-xs text-neutral-300 space-y-2 leading-relaxed">
+                            <p class="text-neutral-500 font-bold">Subject: {{first_name}}, saw your {{recent_feature}} update</p>
+                            <p>Hi {{first_name}},</p>
+                            <p>Saw your recent release around {{trigger_event}}.</p>
+                            <p>Built a custom pipeline for a SaaS in your space connecting ad leads to WhatsApp / Close CRM with a &lt;60s trigger, doubling their conversion rate.</p>
+                            <p>Recorded a 90-second Loom showing the backend schema. Mind if I send the link over?</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 3: FULL PRODUCTION VAULTS & ASSETS SHOWCASE -->
-        <section class="py-28 px-8 border-t border-neutral-900 bg-pitch min-h-[95vh]">
+        <!-- ========================================== -->
+        <!-- BLOCK 6: 50+ N8N & MAKE.COM BLUEPRINTS     -->
+        <!-- ========================================== -->
+        <section id="n8n-blueprints" class="py-28 px-8 border-t border-neutral-900 bg-noir">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-20">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
-                        <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
-                        <span>Production Systems & Workspaces</span>
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                        <span>Production Workflow Library</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Full Enterprise Vault Index</h2>
-                    <p class="text-neutral-400 text-sm mt-4 font-light">All production blueprints, outbound email playbooks, and verified client assets organized for instant deployment.</p>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">n8n & Make.com Automation Vault</h2>
+                    <p class="text-neutral-400 text-sm mt-4 font-light">Curated production blueprints ready for instant download and deployment.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Vault Card 1 -->
-                    <div class="card-3d-monumental p-8 flex flex-col justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-gold mb-3">
-                                <span>AGENTIC SYSTEM</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-pitch border border-neutral-800">PYTHON / MCP</span>
-                            </div>
-                            <h3 class="text-xl font-serif font-bold text-white">Multi-Agent Scraper & Enrichment Loop</h3>
+                            <div class="text-[10px] font-mono text-gold uppercase mb-2">n8n Workflow</div>
+                            <h3 class="text-lg font-serif font-bold text-white">Dynamic Lead Scoring Node</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                                Autonomous subagents with sandboxed execution that extract decision-maker data, clean contact details, and trigger CRM routing.
+                                Ingests raw leads, scrapes company domain, evaluates ICP criteria via LLM, and tags CRM records within 10 seconds.
                             </p>
                         </div>
                         <div class="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Live Engine</span>
-                            <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="btn-3d-dark-heavy px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
-                                <span>View GitHub</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            <span class="text-[11px] font-mono text-neutral-500">n8n Vault</span>
+                            <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="btn-3d-extreme-dark px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                                <span>Get Blueprint</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Vault Card 2 -->
-                    <div class="card-3d-monumental p-8 flex flex-col justify-between">
+                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-goldLight mb-3">
-                                <span>N8N PRODUCTION VAULT</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-pitch border border-neutral-800">50+ WORKFLOWS</span>
-                            </div>
-                            <h3 class="text-xl font-serif font-bold text-white">n8n Agentic Blueprints Repository</h3>
+                            <div class="text-[10px] font-mono text-goldLight uppercase mb-2">Make.com Scenario</div>
+                            <h3 class="text-lg font-serif font-bold text-white">Autonomous Cold DM Replier</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                                Production-ready JSON blueprints for lead scoring, vector memory retrieval, and multi-model routing (reducing token costs by 40%).
+                                Listens to inbound social DMs, runs LLM intent classification, and triggers personalized replies or calendar links.
                             </p>
                         </div>
                         <div class="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Open Source</span>
-                            <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="btn-3d-dark-heavy px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
-                                <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            <span class="text-[11px] font-mono text-neutral-500">JSON Blueprint</span>
+                            <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="btn-3d-extreme-dark px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                                <span>Get Blueprint</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Vault Card 3 -->
-                    <div class="card-3d-monumental p-8 flex flex-col justify-between">
+                    <div class="panel-3d-monument p-8 flex flex-col justify-between border border-gold/30">
                         <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-gold mb-3">
-                                <span>OUTBOUND PLAYBOOKS</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-pitch border border-neutral-800">60%+ OPEN RATE</span>
-                            </div>
-                            <h3 class="text-xl font-serif font-bold text-white">Cold Email & Multi-Inbox Infrastructure</h3>
+                            <div class="text-[10px] font-mono text-gold uppercase mb-2">Proprietary IP</div>
+                            <h3 class="text-lg font-serif font-bold text-white">Shopify + WhatsApp COD Verification</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                                40+ Inboxes, SPF/DKIM/DMARC governance, ZeroBounce hygiene, and battle-tested high-ticket SaaS copy sequences.
+                                High-converting automated order validation system slashing return rates by 70% with two-way WhatsApp confirmations.
                             </p>
                         </div>
                         <div class="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Playbook Docs</span>
-                            <a href="outbound-engine.html" class="btn-3d-dark-heavy px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
-                                <span>Inspect Copies</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Vault Card 4 (Proprietary) -->
-                    <div class="card-3d-monumental p-8 flex flex-col justify-between border border-gold/30">
-                        <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-goldLight mb-3">
-                                <span>PROPRIETARY E-COM</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-gold/10 text-gold font-bold">PRIVATE IP</span>
-                            </div>
-                            <h3 class="text-xl font-serif font-bold text-white">Shopify + WhatsApp Bulletproof COD</h3>
-                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                                High-converting automated order validation system slashing return rates by 70% with two-way WhatsApp confirmations and CRM sync.
-                            </p>
-                        </div>
-                        <div class="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Private License</span>
-                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-gold-heavy px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <span class="text-[11px] font-mono text-neutral-500">Private IP</span>
+                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="btn-3d-extreme-gold px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
                                 <span>Request License</span>
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Vault Card 5 -->
-                    <div class="card-3d-monumental p-8 flex flex-col justify-between">
+        <!-- ========================================== -->
+        <!-- BLOCK 7: VERIFIED INSTITUTIONAL PROOF      -->
+        <!-- ========================================== -->
+        <section id="client-proof-section" class="py-28 px-8 border-t border-neutral-900 bg-pitch">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        <span>Institutional Deployments</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Verified Client Portfolio</h2>
+                    <p class="text-neutral-400 text-sm mt-4 font-light">Commercial systems and media networks delivered across international markets.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-3">
-                                <span>INSTITUTIONAL PROOF</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-pitch border border-neutral-800">GLOBAL BRANDS</span>
-                            </div>
-                            <h3 class="text-xl font-serif font-bold text-white">Verified Client Portfolio & Deployments</h3>
+                            <div class="text-[10px] font-mono text-gold uppercase mb-2">National Television</div>
+                            <h3 class="text-2xl font-serif font-bold text-white">Green TV Entertainment</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                                Green TV Entertainment (National TV), Apache Pizza Ireland, Rock Road Dental, and Slievemore Dental.
+                                Mainstream national television network campaign design, promotional assets, and broadcast media distribution.
                             </p>
                         </div>
-                        <div class="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Case Studies</span>
-                            <a href="client-proof.html" class="btn-3d-dark-heavy px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
-                                <span>View Proof</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
+                        <div class="mt-8 pt-4 border-t border-neutral-800 text-[11px] font-mono text-neutral-500">National Media Network</div>
                     </div>
 
-                    <!-- Vault Card 6 -->
-                    <div class="card-3d-monumental p-8 flex flex-col justify-between">
+                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-[11px] font-mono text-gold mb-3">
-                                <span>CLOUD VAULT</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-pitch border border-neutral-800">DIRECT ACCESS</span>
-                            </div>
-                            <h3 class="text-xl font-serif font-bold text-white">Master Agentic Workflows Drive</h3>
+                            <div class="text-[10px] font-mono text-goldLight uppercase mb-2">Irish National Franchise</div>
+                            <h3 class="text-2xl font-serif font-bold text-white">Apache Pizza Ireland</h3>
                             <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                                Master drive repository with discovery call SOPs, SMB AI automation contracts, and multi-agent workspace diagrams.
+                                Social campaign assets, video reels, and customer acquisition marketing across Ireland.
                             </p>
                         </div>
-                        <div class="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Google Drive</span>
-                            <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-dark-heavy px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
-                                <span>Access Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                            </a>
+                        <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="mt-8 pt-4 border-t border-neutral-800 text-[11px] font-mono text-gold hover:underline flex items-center gap-1">
+                            <span>instagram.com/apachepizzaireland</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="panel-3d-monument p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono text-white uppercase mb-2">Healthcare Practices</div>
+                            <h3 class="text-2xl font-serif font-bold text-white">Rock Road & Slievemore Dental</h3>
+                            <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                                Leading Irish dental healthcare clinics, digital visibility systems, and organic patient funnels.
+                            </p>
                         </div>
+                        <a href="https://www.rockroaddental.ie/" target="_blank" class="mt-8 pt-4 border-t border-neutral-800 text-[11px] font-mono text-gold hover:underline flex items-center gap-1">
+                            <span>rockroaddental.ie</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Final Conversion Banner -->
-                <div class="mt-20 card-3d-monumental p-12 text-center max-w-4xl mx-auto border border-gold/40">
-                    <h3 class="text-2xl md:text-4xl font-serif font-bold text-white">Deploy Autonomous Intelligence Across Your Stack</h3>
-                    <p class="text-neutral-400 text-sm mt-3 max-w-2xl mx-auto font-light">
-                        Available for select enterprise architecture contracts, B2B outbound leadership, and high-ticket agentic engineering engagements.
-                    </p>
-                    <div class="mt-8 flex justify-center">
-                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-gold-heavy px-8 py-4 text-xs font-mono uppercase tracking-widest font-extrabold flex items-center space-x-3">
-                            <i data-lucide="message-square" class="w-4 h-4"></i>
-                            <span>Schedule Private Advisory</span>
+                <!-- Drive Banner -->
+                <div class="mt-12 panel-3d-monument p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-gold/30">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-white">Master Visual & Agentic Drive Vault</h3>
+                        <p class="text-neutral-400 text-xs mt-2 font-light">Direct cloud access to creative assets, high-ticket SMB automation agreements, and multi-agent diagrams.</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="btn-3d-extreme-gold px-8 py-4 text-xs font-mono uppercase tracking-wider font-extrabold whitespace-nowrap">
+                        Access Drive Vault
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BLOCK 8: PRIVATE CONTACT & ADVISORY TERMINAL-->
+        <!-- ========================================== -->
+        <section id="contact-terminal-section" class="py-28 px-8 border-t border-neutral-900 bg-noir">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full gold-pill text-[10px] font-mono uppercase tracking-widest mb-3">
+                        <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                        <span>Direct Channel</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Private Office Terminal</h2>
+                    <p class="text-neutral-400 text-sm mt-3 font-light">Direct scheduling and channel details for high-ticket architecture engagements.</p>
+                </div>
+
+                <!-- Terminal Box -->
+                <div class="panel-3d-monument p-8 md:p-10 font-mono text-xs">
+                    <div class="flex items-center justify-between pb-6 mb-6 border-b border-neutral-800 text-neutral-500">
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-700"></span>
+                            <span class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-700"></span>
+                            <span class="w-3 h-3 rounded-full bg-gold/80"></span>
+                        </div>
+                        <span>terminal://idrees_private_channel</span>
+                    </div>
+
+                    <div class="space-y-4 text-neutral-300">
+                        <p><span class="text-gold">$</span> operator.status <span class="text-neutral-600">➔</span> <span class="text-white">"Available for High-Ticket Remote Architect Roles"</span></p>
+                        <p><span class="text-gold">$</span> operator.location <span class="text-neutral-600">➔</span> <span class="text-white">"Islamabad, Pakistan (100% Remote Available)"</span></p>
+                        <p><span class="text-gold">$</span> operator.phone_call <span class="text-neutral-600">➔</span> <a href="tel:+923489911425" class="text-white hover:text-gold">+92 348 9911425</a></p>
+                        <p><span class="text-gold">$</span> operator.whatsapp <span class="text-neutral-600">➔</span> <a href="https://wa.me/923489911425" target="_blank" class="text-goldLight hover:underline">+92 348 9911425 (Instant Direct Line)</a></p>
+                        <p><span class="text-gold">$</span> operator.email <span class="text-neutral-600">➔</span> <a href="mailto:idreesqurashi6@gmail.com" class="text-neutral-200 hover:text-gold">idreesqurashi6@gmail.com</a></p>
+                        <p><span class="text-gold">$</span> operator.github <span class="text-neutral-600">➔</span> <a href="https://github.com/IdreesQurashi" target="_blank" class="text-neutral-200 hover:text-gold">github.com/IdreesQurashi</a></p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
+                        <span class="text-neutral-500">Advisory SLA: &lt;15 Minutes</span>
+                        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-extreme-gold px-7 py-3.5 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Initiate WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -440,7 +652,7 @@
         <!-- Footer -->
         <footer class="py-14 px-8 border-t border-neutral-900 bg-pitch text-center text-[11px] font-mono text-neutral-500 uppercase tracking-wider">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>&copy; 2026 Idrees Qurashi. Old-Money 3D Architecture. All rights reserved.</div>
+                <div>&copy; 2026 Enterprise Autonomous Architecture. All rights reserved.</div>
                 <div class="flex items-center space-x-8">
                     <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-gold transition">GitHub</a>
                     <a href="https://wa.me/923489911425" target="_blank" class="hover:text-gold transition">WhatsApp</a>
@@ -473,7 +685,7 @@
             color: 0x555555,
             wireframe: true,
             transparent: true,
-            opacity: 0.12
+            opacity: 0.10
         });
         const ribbon = new THREE.Mesh(tubeGeo, tubeMat);
         scene.add(ribbon);

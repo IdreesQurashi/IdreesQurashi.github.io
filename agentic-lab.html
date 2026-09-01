@@ -3,240 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic AI Lab & Workflows Vault | Idrees Qurashi</title>
+    <title>Agentic Architectures & Systems OS | Idrees Qurashi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
-                    colors: { pitch: '#000000', fade: '#0a0a0a', card: '#111111', border: '#1c1c1c', emerald: { glow: '#00ff88', accent: '#10b981' } }
+                    fontFamily: { serif: ['"Cinzel"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+                    colors: { pitch: '#000000', noir: '#050505', charcoal: '#0c0c0c', border: '#171717', gold: '#d4af37', goldLight: '#f3e5ab' }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #000000; color: #d1d5db; }
-        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.55; }
-        .pure-glass { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
-        .fade-card { background: linear-gradient(180deg, #111111 0%, #060606 100%); border: 1px solid #1c1c1c; }
-        .fade-card:hover { border-color: #00ff88; box-shadow: 0 0 30px -5px rgba(0,255,136,0.15); transform: translateY(-3px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        body { background-color: #000000; color: #c4c4c4; }
+        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.35; }
+        .old-money-panel { background: rgba(8, 8, 8, 0.92); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .old-money-panel:hover { border-color: rgba(212, 175, 55, 0.35); transform: translateY(-2px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.25); }
     </style>
 </head>
-<body class="bg-pitch font-sans antialiased selection:bg-emerald-glow selection:text-black relative">
+<body class="bg-pitch font-sans antialiased selection:bg-gold selection:text-black relative">
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
     <div class="relative z-10">
         <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-50 pure-glass border-b border-border px-6 py-4">
+        <nav class="fixed top-0 left-0 right-0 z-50 old-money-panel border-b border-border/80 px-8 py-5">
             <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-glow to-emerald-accent flex items-center justify-center font-mono font-black text-black text-xl">IQ</div>
+                <a href="index.html" class="flex items-center space-x-4">
+                    <div class="w-10 h-10 rounded-sm bg-gradient-to-br from-neutral-800 to-black border gold-border flex items-center justify-center font-serif font-bold text-goldLight text-lg">IQ</div>
                     <div>
-                        <div class="font-extrabold text-lg text-white">Idrees Qurashi</div>
-                        <div class="text-[11px] font-mono text-neutral-400">Agentic AI & B2B Growth Architect</div>
+                        <div class="font-serif font-bold text-base text-white tracking-widest uppercase">Idrees Qurashi</div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Enterprise Growth</div>
                     </div>
                 </a>
-                <div class="hidden lg:flex items-center space-x-1 font-mono text-xs font-semibold">
-                    <a href="index.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Home</a>
-                    <a href="agentic-lab.html" class="px-4 py-2 text-emerald-glow bg-neutral-900/80 rounded-lg border border-emerald-glow/30">Agentic Lab</a>
-                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Outbound Engine</a>
-                    <a href="client-proof.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Client Proof</a>
-                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition">Contact Terminal</a>
+                <div class="hidden lg:flex items-center space-x-1 font-mono text-[11px] tracking-wider uppercase">
+                    <a href="index.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Executive</a>
+                    <a href="agentic-lab.html" class="px-4 py-2 text-goldLight border-b border-gold font-semibold">Agentic Architecture</a>
+                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Outbound Systems</a>
+                    <a href="client-proof.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Verified Proof</a>
+                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Private Office</a>
                 </div>
-                <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 text-xs font-mono font-bold bg-emerald-glow text-black rounded-xl hover:bg-white transition flex items-center space-x-2">
-                    <i data-lucide="zap" class="w-4 h-4"></i><span>Direct Booking</span>
+                <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 text-[11px] font-mono uppercase tracking-widest font-bold bg-neutral-900 text-goldLight border gold-border rounded-sm hover:bg-gold hover:text-black transition">
+                    <span>Consultation</span>
                 </a>
             </div>
         </nav>
 
-        <!-- Main Container -->
-        <main class="pt-36 pb-24 px-6 max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full pure-glass text-xs font-mono text-emerald-glow border border-neutral-800 mb-6">
-                    <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <span>AUTONOMOUS AGENT REPOSITORY & WORKFLOWS</span>
+        <!-- Main Content -->
+        <main class="pt-44 pb-28 px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-neutral-800 bg-noir text-[10px] font-mono tracking-widest uppercase text-gold mb-6">
+                    <span>Enterprise Autonomous OS & Multi-Agent Framework</span>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-black text-white">Agentic AI Lab & Blueprints</h1>
-                <p class="text-neutral-400 mt-4 text-base md:text-lg">Interactive library of stateful multi-agent execution loops, Make.com scenario templates, and n8n autonomous blueprints.</p>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">Agentic Workspaces & Systems Architecture</h1>
+                <p class="text-neutral-400 mt-5 text-sm md:text-base font-light leading-relaxed">
+                    Designed and deployed by Idrees Qurashi. Proprietary multi-agent workflows, autonomous tool loops, context ledgers, and deterministic LLM evaluation pipelines.
+                </p>
             </div>
 
-            <!-- Category 1: Live Agentic Workflows & Blueprints -->
-            <div class="mb-16">
-                <h2 class="text-xs font-mono font-bold text-emerald-glow uppercase tracking-widest mb-6 flex items-center gap-2">
-                    <i data-lucide="layers" class="w-4 h-4"></i>
-                    <span>Active Production Scenarios & Blueprints</span>
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Workflow 1 -->
-                    <div class="fade-card p-6 rounded-3xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-3">
-                                <span>MAKE.COM SCENARIO</span>
-                                <span class="text-emerald-glow">READY</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">Autonomous Cold DM Replier</h3>
-                            <p class="text-neutral-400 text-xs mt-2 leading-relaxed">
-                                Listens to inbound social DMs, runs LLM intent classification, and replies with calendar links or handles objections in real-time.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">JSON Blueprint</span>
-                            <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine/blob/main/blueprints/make_cold_dm_replier.json" target="_blank" class="px-3 py-1.5 bg-neutral-900 border border-neutral-700 hover:border-emerald-glow text-emerald-glow text-xs font-mono rounded-lg flex items-center gap-1 transition">
-                                <span>Get Blueprint</span><i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
+            <!-- Architecture Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- System 1 -->
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Systems Protocol 01</div>
+                        <h3 class="text-xl font-serif font-bold text-white">Autonomous Tool-Calling Loops</h3>
+                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                            Deterministic multi-agent execution loops with sandboxed Python, bash, and REST API access. Zero hallucination through structured Pydantic schema validation.
+                        </p>
                     </div>
-
-                    <!-- Workflow 2 -->
-                    <div class="fade-card p-6 rounded-3xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-3">
-                                <span>MAKE.COM SCENARIO</span>
-                                <span class="text-emerald-glow">READY</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">AI Icebreaker Generator</h3>
-                            <p class="text-neutral-400 text-xs mt-2 leading-relaxed">
-                                Scrapes prospect company website, extracts mission/hiring triggers, and synthesizes 100% unique personalized opening hooks.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">JSON Blueprint</span>
-                            <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine/blob/main/blueprints/make_icebreaker_generator.json" target="_blank" class="px-3 py-1.5 bg-neutral-900 border border-neutral-700 hover:border-emerald-glow text-emerald-glow text-xs font-mono rounded-lg flex items-center gap-1 transition">
-                                <span>Get Blueprint</span><i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Workflow 3 -->
-                    <div class="fade-card p-6 rounded-3xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-3">
-                                <span>MULTI-AGENT SYSTEM</span>
-                                <span class="text-white">PYTHON / MCP</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">Multi-Agent Lead Scraper Loop</h3>
-                            <p class="text-neutral-400 text-xs mt-2 leading-relaxed">
-                                Stateful orchestrator with sandboxed Python/bash subagents that extract decision-maker records, clean phone numbers, and push to Close CRM.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">GitHub Repo</span>
-                            <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="px-3 py-1.5 bg-neutral-900 border border-neutral-700 hover:border-emerald-glow text-white text-xs font-mono rounded-lg flex items-center gap-1 transition">
-                                <span>Explore Code</span><i data-lucide="github" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Workflow 4 -->
-                    <div class="fade-card p-6 rounded-3xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-3">
-                                <span>N8N WORKFLOW</span>
-                                <span class="text-emerald-glow">BLUEPRINT</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">Dynamic Lead Scoring Node</h3>
-                            <p class="text-neutral-400 text-xs mt-2 leading-relaxed">
-                                Evaluates incoming inbound leads against ICP parameters and automatically assigns priority tags inside CRM within 10 seconds.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">n8n Vault</span>
-                            <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="px-3 py-1.5 bg-neutral-900 border border-neutral-700 hover:border-emerald-glow text-emerald-glow text-xs font-mono rounded-lg flex items-center gap-1 transition">
-                                <span>View Vault</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Workflow 5: Proprietary COD -->
-                    <div class="fade-card p-6 rounded-3xl flex flex-col justify-between border border-emerald-glow/30">
-                        <div>
-                            <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-3">
-                                <span>PROPRIETARY ARCHITECTURE</span>
-                                <span class="text-amber-400">PRIVATE IP</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">Shopify + WhatsApp Bulletproof COD</h3>
-                            <p class="text-neutral-400 text-xs mt-2 leading-relaxed">
-                                Reduces returned orders by 70% with two-way automated WhatsApp order confirmations, address validation, and instant CRM tag synchronization.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-amber-400">Restricted Access</span>
-                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="px-3 py-1.5 bg-emerald-glow text-black font-bold text-xs font-mono rounded-lg hover:bg-white transition flex items-center gap-1">
-                                <span>Request License</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Workflow 6: Proposal Engine -->
-                    <div class="fade-card p-6 rounded-3xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-3">
-                                <span>AGENCY PIPELINE</span>
-                                <span class="text-emerald-glow">SOP</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">Automated Proposal Generator</h3>
-                            <p class="text-neutral-400 text-xs mt-2 leading-relaxed">
-                                Takes discovery call notes and auto-compiles custom PDF proposals with deliverables, timelines, and payment milestone contracts.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                            <span class="text-[11px] font-mono text-neutral-500">Enterprise SOP</span>
-                            <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="px-3 py-1.5 bg-neutral-900 border border-neutral-700 hover:border-emerald-glow text-white text-xs font-mono rounded-lg flex items-center gap-1 transition">
-                                <span>View Docs</span><i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
+                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-neutral-500">Core Engine</span>
+                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="text-gold hover:underline flex items-center gap-1">
+                            <span>Inspect Schema</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Nick Saraev Drive Vault Banner -->
-            <div class="fade-card p-10 rounded-3xl border border-emerald-glow/40 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                    <div class="text-xs font-mono text-emerald-glow uppercase tracking-wider mb-2">Master Enterprise Architecture Drive</div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white">Nick Saraev Agentic Workflows Vault</h3>
-                    <p class="text-neutral-400 text-sm mt-2">Comprehensive drive repository of enterprise multi-agent workflows, kickoff discovery frameworks, and automation proposal contracts.</p>
+                <!-- System 2 -->
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Systems Protocol 02</div>
+                        <h3 class="text-xl font-serif font-bold text-white">Persistent Memory & Context Ledgers</h3>
+                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                            Cross-session state coherence using dynamic Markdown/JSON ledgers (`AGENTS.md`, `SHARED_STATE.md`) with sliding window prompt caching (38% token cost reduction).
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-neutral-500">Memory Sync</span>
+                        <span class="text-white">Active</span>
+                    </div>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="px-8 py-4 bg-emerald-glow text-black font-extrabold rounded-2xl hover:bg-white transition whitespace-nowrap text-xs font-mono">
-                    Access Drive Vault
-                </a>
+
+                <!-- System 3 -->
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Systems Protocol 03</div>
+                        <h3 class="text-xl font-serif font-bold text-white">n8n Enterprise Blueprint Vault</h3>
+                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                            Curated production-grade n8n workflows: autonomous lead scoring nodes, vector memory retrieval, and real-time CRM webhook synchronization.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-neutral-500">Open-Source</span>
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="text-gold hover:underline flex items-center gap-1">
+                            <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- System 4 -->
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Systems Protocol 04</div>
+                        <h3 class="text-xl font-serif font-bold text-white">Evaluation-Driven Development (EDD)</h3>
+                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                            Automated tool-selection accuracy benchmarks, multi-step trajectory evaluation, and LLM-as-judge scoring matrices for mission-critical reliability.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-neutral-500">Reliability SLA</span>
+                        <span class="text-goldLight">99.4% Pass</span>
+                    </div>
+                </div>
+
+                <!-- System 5: Proprietary -->
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between border gold-border">
+                    <div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Proprietary IP</div>
+                        <h3 class="text-xl font-serif font-bold text-white">Shopify & WhatsApp Bulletproof COD</h3>
+                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                            Proprietary automated order validation pipelines slashing return rates by 70% with two-way WhatsApp order confirmations and CRM tag synchronization.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-neutral-500">Private Licensing</span>
+                        <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="text-goldLight hover:underline">
+                            <span>Request Access</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- System 6: Drive -->
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Drive Repository</div>
+                        <h3 class="text-xl font-serif font-bold text-white">Idrees Qurashi Master Drive Vault</h3>
+                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                            Direct cloud access to institutional SOPs, high-ticket SMB automation agreements, and multi-agent workspace diagrams.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-neutral-500">Drive Cloud</span>
+                        <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="text-gold hover:underline flex items-center gap-1">
+                            <span>Access Cloud</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </main>
 
         <!-- Footer -->
-        <footer class="py-12 px-6 border-t border-border pure-glass text-center text-xs font-mono text-neutral-500">
+        <footer class="py-14 px-8 border-t border-border old-money-panel text-center text-[11px] font-mono text-neutral-500 uppercase tracking-wider">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>&copy; 2026 Idrees Qurashi. Pure Black 3D Architecture.</div>
+                <div>&copy; 2026 Idrees Qurashi. Old-Money Minimalist Architecture.</div>
                 <div class="flex items-center space-x-8">
-                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-emerald-glow transition">GitHub</a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-emerald-glow transition">WhatsApp</a>
+                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-gold transition">GitHub</a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-gold transition">WhatsApp</a>
                 </div>
             </div>
         </footer>
     </div>
 
+    <!-- 3D Subtle Wave -->
     <script>
         const canvas = document.getElementById('three-canvas');
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        const geo = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-        const mat = new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.12 });
-        const torus = new THREE.Mesh(geo, mat);
-        scene.add(torus);
-        camera.position.z = 28;
+        const width = 60; const height = 40; const segmentsW = 45; const segmentsH = 30;
+        const geometry = new THREE.PlaneGeometry(width, height, segmentsW, segmentsH);
+        const material = new THREE.MeshBasicMaterial({ color: 0x444444, wireframe: true, transparent: true, opacity: 0.18 });
+        const terrain = new THREE.Mesh(geometry, material);
+        terrain.rotation.x = -Math.PI / 2.5; terrain.position.y = -6;
+        scene.add(terrain); camera.position.z = 18; camera.position.y = 4;
 
+        const pos = geometry.attributes.position;
+        let clock = new THREE.Clock();
         function animate() {
             requestAnimationFrame(animate);
-            torus.rotation.x += 0.003;
-            torus.rotation.y += 0.004;
+            const t = clock.getElapsedTime() * 0.5;
+            for(let i = 0; i < pos.count; i++) {
+                const u = (i % (segmentsW + 1)) / segmentsW;
+                const v = Math.floor(i / (segmentsW + 1)) / segmentsH;
+                pos.setZ(i, Math.sin(u * 5 + t) * Math.cos(v * 4 + t) * 1.5);
+            }
+            pos.needsUpdate = true;
             renderer.render(scene, camera);
         }
         animate();

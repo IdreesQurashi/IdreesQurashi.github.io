@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Social Intelligence & Scheduled AI Post Generator | Idrees Qurashi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #030712; color: #cbd5e1; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .btn-3d {
+            background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+            box-shadow: 0 4px 0 #0369a1, 0 6px 14px rgba(0,0,0,0.6);
+            color: #000; font-weight: 800; border-radius: 12px;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn-3d:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #0369a1, 0 10px 20px rgba(56,189,248,0.25); }
+    </style>
+</head>
+<body class="p-6 md:p-12 max-w-5xl mx-auto">
+    <div class="mb-8 flex items-center justify-between border-b border-slate-800 pb-6">
+        <a href="../../index.html" class="text-xs font-mono text-slate-400 hover:text-sky-400 flex items-center gap-2">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Main Portfolio
+        </a>
+        <a href="https://wa.me/923489911425" target="_blank" class="btn-3d px-5 py-2.5 text-xs font-mono uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Chat to Owner
+        </a>
+    </div>
+
+    <div class="mb-6">
+        <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-sky-500/10 text-sky-400 border border-sky-500/30 uppercase">
+            Architectural Blueprint Walkthrough
+        </span>
+        <h1 class="text-2xl md:text-4xl font-bold text-white mt-3">LinkedIn Social Intelligence & Scheduled AI Post Generator</h1>
+        <p class="font-mono text-xs text-sky-400 mt-2">Stack: Make.com • Apify Actor • OpenAI GPT-4o • LinkedIn REST API • Array Aggregators</p>
+    </div>
+
+    <!-- Video Player (Muted by default) -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 bg-black mb-10 shadow-2xl">
+        <video controls autoplay muted loop playsinline class="w-full aspect-video">
+            <source src="linkedin_post_generator.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-xs font-mono text-rose-400 uppercase tracking-widest mb-2 font-bold">The Problem &amp; Operational Bottleneck</div>
+            <p class="text-sm text-slate-300 leading-relaxed">Consistent organic content creation requires hours of daily research, drafting, and manual publishing across peak engagement hours.</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2 font-bold">How It Was Built &amp; Solution</div>
+            <p class="text-sm text-slate-300 leading-relaxed">Scrapes trending industry content, classifies timely vs evergreen angles via GPT-4o, re-writes in customized brand voice, and calculates automated 6-hour posting queue slots.</p>
+        </div>
+    </div>
+
+    <div class="p-6 rounded-xl bg-slate-900/30 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+            <div class="text-sm font-bold text-white">Get Workflow Blueprint (.json)</div>
+            <div class="text-xs text-slate-400">Inspect raw Make.com / n8n blueprint schema for this scenario.</div>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="blueprint.json" download class="btn-3d px-6 py-2.5 text-xs font-mono uppercase flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i> Download Blueprint
+            </a>
+            <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="px-4 py-2.5 rounded-xl border border-slate-700 text-xs font-mono hover:border-sky-400 text-slate-300 transition">
+                View in GitHub Vault
+            </a>
+        </div>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

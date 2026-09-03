@@ -1,0 +1,602 @@
+{
+  "code": "OK",
+  "response": {
+    "blueprint": {
+      "flow": [
+        {
+          "id": 9,
+          "mapper": {},
+          "module": "google-forms:watchResponses",
+          "version": 2,
+          "metadata": {
+            "restore": {
+              "parameters": {
+                "__IMTCONN__": {
+                  "data": {
+                    "scoped": "true",
+                    "connection": "google"
+                  },
+                  "label": "My Google connection (a.hashage@gmail.com)"
+                }
+              }
+            },
+            "designer": {
+              "x": -806,
+              "y": 344
+            },
+            "parameters": [
+              {
+                "name": "__IMTCONN__",
+                "type": "account:google",
+                "label": "Connection",
+                "required": true
+              },
+              {
+                "name": "formId",
+                "type": "text",
+                "label": "Form ID",
+                "required": true
+              },
+              {
+                "name": "limit",
+                "type": "uinteger",
+                "label": "Limit",
+                "required": true
+              }
+            ]
+          },
+          "parameters": {
+            "limit": 2,
+            "formId": "1CH9q6sX1pDiCnQ450vPGvE2beVgPr_rCY1KUaoXZwUw",
+            "__IMTCONN__": 3255629
+          }
+        },
+        {
+          "id": 12,
+          "mapper": {
+            "from": "drive",
+            "mode": "select",
+            "values": {},
+            "sheetId": "Sheet1",
+            "spreadsheetId": "/1p73PMnZ0eAV5DaGos8-knbi7OFpk5gdBkVmGhBoqPMk",
+            "includesHeaders": true,
+            "insertDataOption": "INSERT_ROWS",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+          },
+          "module": "google-sheets:addRow",
+          "version": 2,
+          "metadata": {
+            "expect": [
+              {
+                "name": "mode",
+                "type": "select",
+                "label": "Search Method",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "select",
+                    "fromAll",
+                    "map"
+                  ]
+                }
+              },
+              {
+                "name": "insertUnformatted",
+                "type": "boolean",
+                "label": "Unformatted",
+                "required": true
+              },
+              {
+                "name": "valueInputOption",
+                "type": "select",
+                "label": "Value input option",
+                "validate": {
+                  "enum": [
+                    "USER_ENTERED",
+                    "RAW"
+                  ]
+                }
+              },
+              {
+                "name": "insertDataOption",
+                "type": "select",
+                "label": "Insert data option",
+                "validate": {
+                  "enum": [
+                    "INSERT_ROWS",
+                    "OVERWRITE"
+                  ]
+                }
+              },
+              {
+                "name": "from",
+                "type": "select",
+                "label": "Drive",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "drive",
+                    "share",
+                    "team"
+                  ]
+                }
+              },
+              {
+                "name": "spreadsheetId",
+                "type": "file",
+                "label": "Spreadsheet ID",
+                "required": true
+              },
+              {
+                "name": "mode",
+                "type": "select",
+                "label": "Search Method",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "select",
+                    "fromAll",
+                    "map"
+                  ]
+                }
+              },
+              {
+                "name": "insertUnformatted",
+                "type": "boolean",
+                "label": "Unformatted",
+                "required": true
+              },
+              {
+                "name": "valueInputOption",
+                "type": "select",
+                "label": "Value input option",
+                "validate": {
+                  "enum": [
+                    "USER_ENTERED",
+                    "RAW"
+                  ]
+                }
+              },
+              {
+                "name": "insertDataOption",
+                "type": "select",
+                "label": "Insert data option",
+                "validate": {
+                  "enum": [
+                    "INSERT_ROWS",
+                    "OVERWRITE"
+                  ]
+                }
+              },
+              {
+                "name": "from",
+                "type": "select",
+                "label": "Drive",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "drive",
+                    "share",
+                    "team"
+                  ]
+                }
+              },
+              {
+                "name": "spreadsheetId",
+                "type": "file",
+                "label": "Spreadsheet ID",
+                "required": true
+              },
+              {
+                "name": "sheetId",
+                "type": "select",
+                "label": "Sheet Name",
+                "required": true
+              },
+              {
+                "name": "includesHeaders",
+                "type": "select",
+                "label": "Table contains headers",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    true,
+                    false
+                  ]
+                }
+              },
+              {
+                "name": "values",
+                "spec": [
+                  {
+                    "name": "0",
+                    "type": "text",
+                    "label": "email adresses (A)"
+                  },
+                  {
+                    "name": "1",
+                    "type": "text",
+                    "label": "name (B)"
+                  },
+                  {
+                    "name": "2",
+                    "type": "text",
+                    "label": "(C)"
+                  },
+                  {
+                    "name": "3",
+                    "type": "text",
+                    "label": "(D)"
+                  },
+                  {
+                    "name": "4",
+                    "type": "text",
+                    "label": "(E)"
+                  },
+                  {
+                    "name": "5",
+                    "type": "text",
+                    "label": "(F)"
+                  },
+                  {
+                    "name": "6",
+                    "type": "text",
+                    "label": "(G)"
+                  },
+                  {
+                    "name": "7",
+                    "type": "text",
+                    "label": "(H)"
+                  },
+                  {
+                    "name": "8",
+                    "type": "text",
+                    "label": "(I)"
+                  },
+                  {
+                    "name": "9",
+                    "type": "text",
+                    "label": "(J)"
+                  },
+                  {
+                    "name": "10",
+                    "type": "text",
+                    "label": "(K)"
+                  },
+                  {
+                    "name": "11",
+                    "type": "text",
+                    "label": "(L)"
+                  },
+                  {
+                    "name": "12",
+                    "type": "text",
+                    "label": "(M)"
+                  },
+                  {
+                    "name": "13",
+                    "type": "text",
+                    "label": "(N)"
+                  },
+                  {
+                    "name": "14",
+                    "type": "text",
+                    "label": "(O)"
+                  },
+                  {
+                    "name": "15",
+                    "type": "text",
+                    "label": "(P)"
+                  },
+                  {
+                    "name": "16",
+                    "type": "text",
+                    "label": "(Q)"
+                  },
+                  {
+                    "name": "17",
+                    "type": "text",
+                    "label": "(R)"
+                  },
+                  {
+                    "name": "18",
+                    "type": "text",
+                    "label": "(S)"
+                  },
+                  {
+                    "name": "19",
+                    "type": "text",
+                    "label": "(T)"
+                  },
+                  {
+                    "name": "20",
+                    "type": "text",
+                    "label": "(U)"
+                  },
+                  {
+                    "name": "21",
+                    "type": "text",
+                    "label": "(V)"
+                  },
+                  {
+                    "name": "22",
+                    "type": "text",
+                    "label": "(W)"
+                  },
+                  {
+                    "name": "23",
+                    "type": "text",
+                    "label": "(X)"
+                  },
+                  {
+                    "name": "24",
+                    "type": "text",
+                    "label": "(Y)"
+                  },
+                  {
+                    "name": "25",
+                    "type": "text",
+                    "label": "(Z)"
+                  }
+                ],
+                "type": "collection",
+                "label": "Values"
+              }
+            ],
+            "restore": {
+              "expect": {
+                "from": {
+                  "label": "My Drive"
+                },
+                "mode": {
+                  "label": "Search by path"
+                },
+                "sheetId": {
+                  "label": "Sheet1"
+                },
+                "spreadsheetId": {
+                  "path": [
+                    "consulting and coaching example"
+                  ]
+                },
+                "includesHeaders": {
+                  "label": "Yes",
+                  "nested": [
+                    {
+                      "name": "values",
+                      "spec": [
+                        {
+                          "name": "0",
+                          "type": "text",
+                          "label": "email adresses (A)"
+                        },
+                        {
+                          "name": "1",
+                          "type": "text",
+                          "label": "name (B)"
+                        },
+                        {
+                          "name": "2",
+                          "type": "text",
+                          "label": "(C)"
+                        },
+                        {
+                          "name": "3",
+                          "type": "text",
+                          "label": "(D)"
+                        },
+                        {
+                          "name": "4",
+                          "type": "text",
+                          "label": "(E)"
+                        },
+                        {
+                          "name": "5",
+                          "type": "text",
+                          "label": "(F)"
+                        },
+                        {
+                          "name": "6",
+                          "type": "text",
+                          "label": "(G)"
+                        },
+                        {
+                          "name": "7",
+                          "type": "text",
+                          "label": "(H)"
+                        },
+                        {
+                          "name": "8",
+                          "type": "text",
+                          "label": "(I)"
+                        },
+                        {
+                          "name": "9",
+                          "type": "text",
+                          "label": "(J)"
+                        },
+                        {
+                          "name": "10",
+                          "type": "text",
+                          "label": "(K)"
+                        },
+                        {
+                          "name": "11",
+                          "type": "text",
+                          "label": "(L)"
+                        },
+                        {
+                          "name": "12",
+                          "type": "text",
+                          "label": "(M)"
+                        },
+                        {
+                          "name": "13",
+                          "type": "text",
+                          "label": "(N)"
+                        },
+                        {
+                          "name": "14",
+                          "type": "text",
+                          "label": "(O)"
+                        },
+                        {
+                          "name": "15",
+                          "type": "text",
+                          "label": "(P)"
+                        },
+                        {
+                          "name": "16",
+                          "type": "text",
+                          "label": "(Q)"
+                        },
+                        {
+                          "name": "17",
+                          "type": "text",
+                          "label": "(R)"
+                        },
+                        {
+                          "name": "18",
+                          "type": "text",
+                          "label": "(S)"
+                        },
+                        {
+                          "name": "19",
+                          "type": "text",
+                          "label": "(T)"
+                        },
+                        {
+                          "name": "20",
+                          "type": "text",
+                          "label": "(U)"
+                        },
+                        {
+                          "name": "21",
+                          "type": "text",
+                          "label": "(V)"
+                        },
+                        {
+                          "name": "22",
+                          "type": "text",
+                          "label": "(W)"
+                        },
+                        {
+                          "name": "23",
+                          "type": "text",
+                          "label": "(X)"
+                        },
+                        {
+                          "name": "24",
+                          "type": "text",
+                          "label": "(Y)"
+                        },
+                        {
+                          "name": "25",
+                          "type": "text",
+                          "label": "(Z)"
+                        }
+                      ],
+                      "type": "collection",
+                      "label": "Values"
+                    }
+                  ]
+                },
+                "insertDataOption": {
+                  "mode": "chose",
+                  "label": "Insert rows"
+                },
+                "valueInputOption": {
+                  "mode": "chose",
+                  "label": "User entered"
+                },
+                "insertUnformatted": {
+                  "mode": "chose"
+                }
+              },
+              "parameters": {
+                "__IMTCONN__": {
+                  "data": {
+                    "scoped": "true",
+                    "connection": "google"
+                  },
+                  "label": "My Google connection (idreesqurashi6@gmail.com)"
+                }
+              }
+            },
+            "designer": {
+              "x": -516,
+              "y": 328
+            },
+            "parameters": [
+              {
+                "name": "__IMTCONN__",
+                "type": "account:google",
+                "label": "Connection",
+                "required": true
+              }
+            ]
+          },
+          "parameters": {
+            "__IMTCONN__": 5328218
+          }
+        },
+        {
+          "id": 13,
+          "module": "email:ActionSendEmail",
+          "version": 7,
+          "metadata": {
+            "designer": {
+              "x": -216,
+              "y": 328
+            }
+          }
+        }
+      ],
+      "name": "coaching and consultant example automation",
+      "metadata": {
+        "instant": false,
+        "version": 1,
+        "designer": {
+          "orphans": [],
+          "samples": {
+            "12": {
+              "updates": {
+                "updatedRange": "Sheet1!A3",
+                "spreadsheetId": "1p73PMnZ0eAV5DaGos8-knbi7OFpk5gdBkVmGhBoqPMk"
+              },
+              "rowNumber": 3,
+              "sheetName": "Sheet1",
+              "tableRange": "Sheet1!A1:D2",
+              "spreadsheetId": "1p73PMnZ0eAV5DaGos8-knbi7OFpk5gdBkVmGhBoqPMk"
+            }
+          }
+        },
+        "scenario": {
+          "dlq": false,
+          "slots": null,
+          "dataloss": false,
+          "maxErrors": 3,
+          "autoCommit": true,
+          "roundtrips": 1,
+          "sequential": false,
+          "confidential": false,
+          "freshVariables": false,
+          "autoCommitTriggerLast": true
+        }
+      }
+    },
+    "scheduling": {
+      "type": "indefinitely",
+      "interval": 900
+    },
+    "concept": false,
+    "created": "2025-10-11T22:27:01.663Z",
+    "last_edit": "2025-10-13T14:12:25.236Z",
+    "metadata": {
+      "input_spec": [],
+      "output_spec": []
+    },
+    "idSequence": 14
+  }
+}

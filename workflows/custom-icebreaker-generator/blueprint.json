@@ -1,0 +1,1577 @@
+{
+  "code": "OK",
+  "response": {
+    "blueprint": {
+      "flow": [
+        {
+          "id": 1,
+          "mapper": {
+            "from": "drive",
+            "limit": "1",
+            "sheetId": "Agency_Leads",
+            "sortOrder": "asc",
+            "spreadsheetId": "1q-yVsyXYbr2pmkncVYtYA5fqD25uMScXx8gsgxddEaA",
+            "tableFirstRow": "A1:Z1",
+            "includesHeaders": true,
+            "valueRenderOption": "FORMATTED_VALUE",
+            "dateTimeRenderOption": "FORMATTED_STRING"
+          },
+          "module": "google-sheets:filterRows",
+          "version": 2,
+          "metadata": {
+            "expect": [
+              {
+                "name": "from",
+                "type": "select",
+                "label": "Search Method",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "drive",
+                    "share"
+                  ]
+                }
+              },
+              {
+                "name": "valueRenderOption",
+                "type": "select",
+                "label": "Value render option",
+                "validate": {
+                  "enum": [
+                    "FORMATTED_VALUE",
+                    "UNFORMATTED_VALUE",
+                    "FORMULA"
+                  ]
+                }
+              },
+              {
+                "name": "dateTimeRenderOption",
+                "type": "select",
+                "label": "Date and time render option",
+                "validate": {
+                  "enum": [
+                    "SERIAL_NUMBER",
+                    "FORMATTED_STRING"
+                  ]
+                }
+              },
+              {
+                "name": "limit",
+                "type": "uinteger",
+                "label": "Limit"
+              },
+              {
+                "name": "spreadsheetId",
+                "type": "select",
+                "label": "Spreadsheet ID",
+                "required": true
+              },
+              {
+                "name": "sheetId",
+                "type": "any",
+                "label": "Sheet Name",
+                "required": true
+              },
+              {
+                "name": "includesHeaders",
+                "type": "select",
+                "label": "Table contains headers",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    true,
+                    false
+                  ]
+                }
+              },
+              {
+                "name": "tableFirstRow",
+                "type": "select",
+                "label": "Column range",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "A1:Z1",
+                    "A1:BZ1",
+                    "A1:CZ1",
+                    "A1:DZ1",
+                    "A1:MZ1",
+                    "A1:ZZ1",
+                    "A1:AZZ1",
+                    "A1:BZZ1",
+                    "A1:CZZ1",
+                    "A1:DZZ1",
+                    "A1:MZZ1",
+                    "A1:ZZZ1"
+                  ]
+                }
+              },
+              {
+                "name": "filter",
+                "type": "filter",
+                "label": "Filter",
+                "options": "rpc://google-sheets/2/rpcGetFilterKeys?includesHeaders=true"
+              },
+              {
+                "name": "orderBy",
+                "type": "select",
+                "label": "Order by"
+              },
+              {
+                "name": "sortOrder",
+                "type": "select",
+                "label": "Sort order",
+                "validate": {
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ]
+                }
+              }
+            ],
+            "restore": {
+              "expect": {
+                "from": {
+                  "label": "Select from My Drive"
+                },
+                "orderBy": {
+                  "mode": "chose"
+                },
+                "sortOrder": {
+                  "mode": "chose",
+                  "label": "Ascending"
+                },
+                "spreadsheetId": {
+                  "mode": "edit"
+                },
+                "tableFirstRow": {
+                  "label": "A-Z"
+                },
+                "includesHeaders": {
+                  "mode": "chose",
+                  "label": "Yes"
+                },
+                "valueRenderOption": {
+                  "mode": "chose",
+                  "label": "Formatted value"
+                },
+                "dateTimeRenderOption": {
+                  "mode": "chose",
+                  "label": "Formatted string"
+                }
+              },
+              "parameters": {
+                "__IMTCONN__": {
+                  "data": {
+                    "scoped": "true",
+                    "connection": "google"
+                  },
+                  "label": "My Google connection (a.hashage@gmail.com)"
+                }
+              }
+            },
+            "designer": {
+              "x": 0,
+              "y": 0
+            },
+            "interface": [
+              {
+                "name": "__ROW_NUMBER__",
+                "type": "number",
+                "label": "Row number"
+              },
+              {
+                "name": "__SPREADSHEET_ID__",
+                "type": "text",
+                "label": "Spreadsheet ID"
+              },
+              {
+                "name": "__SHEET__",
+                "type": "text",
+                "label": "Sheet"
+              },
+              {
+                "name": "0",
+                "type": "text",
+                "label": "first_name (A)"
+              },
+              {
+                "name": "1",
+                "type": "text",
+                "label": "last_name (B)"
+              },
+              {
+                "name": "2",
+                "type": "text",
+                "label": "headline (C)"
+              },
+              {
+                "name": "3",
+                "type": "text",
+                "label": "Employment_history (D)"
+              },
+              {
+                "name": "4",
+                "type": "text",
+                "label": "industry (E)"
+              },
+              {
+                "name": "5",
+                "type": "text",
+                "label": "city (F)"
+              },
+              {
+                "name": "6",
+                "type": "text",
+                "label": "country (G)"
+              },
+              {
+                "name": "7",
+                "type": "text",
+                "label": "email (H)"
+              },
+              {
+                "name": "8",
+                "type": "text",
+                "label": "icebreaker (I)"
+              },
+              {
+                "name": "9",
+                "type": "text",
+                "label": "personal_email (J)"
+              },
+              {
+                "name": "10",
+                "type": "text",
+                "label": "organization_website_url (K)"
+              },
+              {
+                "name": "11",
+                "type": "text",
+                "label": "linkedin_url (L)"
+              },
+              {
+                "name": "12",
+                "type": "text",
+                "label": "name (M)"
+              },
+              {
+                "name": "13",
+                "type": "text",
+                "label": "organization_phone (N)"
+              },
+              {
+                "name": "14",
+                "type": "text",
+                "label": "organization_street_address (O)"
+              },
+              {
+                "name": "15",
+                "type": "text",
+                "label": "organization_raw_address (P)"
+              },
+              {
+                "name": "16",
+                "type": "text",
+                "label": "organization_state (Q)"
+              },
+              {
+                "name": "17",
+                "type": "text",
+                "label": "organization_city (R)"
+              },
+              {
+                "name": "18",
+                "type": "text",
+                "label": "organization_country (S)"
+              },
+              {
+                "name": "19",
+                "type": "text",
+                "label": "organization_postal_code (T)"
+              },
+              {
+                "name": "20",
+                "type": "text",
+                "label": "organization_market_cap (U)"
+              },
+              {
+                "name": "21",
+                "type": "text",
+                "label": "(V)"
+              },
+              {
+                "name": "22",
+                "type": "text",
+                "label": "(W)"
+              },
+              {
+                "name": "23",
+                "type": "text",
+                "label": "(X)"
+              },
+              {
+                "name": "24",
+                "type": "text",
+                "label": "(Y)"
+              },
+              {
+                "name": "25",
+                "type": "text",
+                "label": "(Z)"
+              }
+            ],
+            "parameters": [
+              {
+                "name": "__IMTCONN__",
+                "type": "account:google",
+                "label": "Connection",
+                "required": true
+              }
+            ]
+          },
+          "parameters": {
+            "__IMTCONN__": 3255629
+          }
+        },
+        {
+          "id": 2,
+          "mapper": {
+            "model": "gpt-5-mini",
+            "top_p": "1",
+            "select": "chat",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You're a helpful, intelligent writing assistant"
+              },
+              {
+                "role": "user",
+                "content": "Your task is to take, as input, a bunch of information about a prospect, and then generate a customized, one-line email icebreaker to imply that the rest of my communique is personalized.\n\nYou'll return your icebreakers in the following JSON format:\n{\"icebreaker\":\"Hey {name}. Love {thing}. Also doing/in {otherThing}, Wanted to run something by you.\"}\n\nRules:\n\n-Write in a spartan/laconic tone of voice.\nKeep things short.\n-Make sure to use above format when constructing icebreaker.\n- Shorten the company name wherever possible (say, \"XYZ\" instead of \"XYZ Agency\"). More examples: \"Love AMS\" instead of \"Love AMS Professional Services\", \"Love Mayo\" instead of \"Love Mayo Inc.\", etc. and shorten the location i.e city, country like this too.\n- For {otherThing} , Donot add the location and their work at the same time. \n\nExample Input:\nAbdullah Al-Rashidi | Co-Founder | Nasaq Agency | marketing & advertising | Kuwait\n\nExample Output:\n{\"icebreaker\":\"Hey Abdullah, Love what you're doing at Nasaq. Just saw some of your campaigns, Thought you might find this useful.\"}\n\nExample 2:\nAli Khan | Director | Optima Logistics | transportation | Dubai\n\nOutput:\n{\"icebreaker\":\"Hey Ali, Love Optima. Also with with some logistics companies lately, Thought you might find this useful.\"}\n\u200b"
+              },
+              {
+                "role": "user",
+                "content": "{{1.`0`}}{{1.`1`}}{{1.`2`}}{{1.`3`}}{{1.`4`}}{{1.`5`}}{{1.`6`}}"
+              }
+            ],
+            "max_tokens": "2048",
+            "temperature": "1",
+            "n_completions": "1",
+            "response_format": "json_object",
+            "parseJSONResponse": true
+          },
+          "module": "openai-gpt-3:CreateCompletion",
+          "version": 1,
+          "metadata": {
+            "expect": [
+              {
+                "name": "select",
+                "type": "select",
+                "label": "Select Method",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "chat",
+                    "prompt"
+                  ]
+                }
+              },
+              {
+                "name": "temperature",
+                "type": "number",
+                "label": "Temperature",
+                "validate": {
+                  "max": 2,
+                  "min": 0
+                }
+              },
+              {
+                "name": "top_p",
+                "type": "number",
+                "label": "Top P",
+                "validate": {
+                  "max": 1,
+                  "min": 0
+                }
+              },
+              {
+                "name": "n_completions",
+                "type": "number",
+                "label": "Number"
+              },
+              {
+                "name": "frequency_penalty",
+                "type": "number",
+                "label": "Frequency Penalty",
+                "validate": {
+                  "max": 2,
+                  "min": -2
+                }
+              },
+              {
+                "name": "presence_penalty",
+                "type": "number",
+                "label": "Presence Penalty",
+                "validate": {
+                  "max": 2,
+                  "min": -2
+                }
+              },
+              {
+                "name": "logit_bias",
+                "spec": {
+                  "name": "value",
+                  "spec": [
+                    {
+                      "name": "token",
+                      "type": "text",
+                      "label": "Token ID",
+                      "required": true
+                    },
+                    {
+                      "name": "probability",
+                      "type": "number",
+                      "label": "Probability",
+                      "required": true,
+                      "validate": {
+                        "max": 100,
+                        "min": -100
+                      }
+                    }
+                  ],
+                  "type": "collection",
+                  "label": "Token Probability"
+                },
+                "type": "array",
+                "label": "Token Probability"
+              },
+              {
+                "name": "seed",
+                "type": "integer",
+                "label": "Seed"
+              },
+              {
+                "name": "tool_choice",
+                "type": "select",
+                "label": "Tool Choice",
+                "validate": {
+                  "enum": [
+                    "none",
+                    "auto",
+                    "required"
+                  ]
+                }
+              },
+              {
+                "name": "stop",
+                "spec": {
+                  "name": "value",
+                  "type": "text",
+                  "label": "Stop Sequence"
+                },
+                "type": "array",
+                "label": "Stop Sequences",
+                "validate": {
+                  "maxItems": 4
+                }
+              },
+              {
+                "name": "additionalParameters",
+                "spec": {
+                  "name": "value",
+                  "spec": [
+                    {
+                      "name": "key",
+                      "type": "text",
+                      "label": "Parameter Name",
+                      "required": true
+                    },
+                    {
+                      "name": "type",
+                      "type": "select",
+                      "label": "Input Type",
+                      "options": [
+                        {
+                          "label": "Text",
+                          "value": "text",
+                          "nested": [
+                            {
+                              "name": "value",
+                              "type": "text",
+                              "label": "Parameter Value"
+                            }
+                          ],
+                          "default": true
+                        },
+                        {
+                          "label": "Number",
+                          "value": "number",
+                          "nested": [
+                            {
+                              "name": "value",
+                              "type": "number",
+                              "label": "Parameter Value"
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Boolean",
+                          "value": "boolean",
+                          "nested": [
+                            {
+                              "name": "value",
+                              "type": "boolean",
+                              "label": "Parameter Value"
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Date",
+                          "value": "date",
+                          "nested": [
+                            {
+                              "name": "value",
+                              "type": "date",
+                              "label": "Parameter Value"
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Any",
+                          "value": "any",
+                          "nested": [
+                            {
+                              "name": "value",
+                              "type": "any",
+                              "label": "Parameter Value"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "collection",
+                  "label": "Input Parameter"
+                },
+                "type": "array",
+                "label": "Other Input Parameters"
+              },
+              {
+                "name": "model",
+                "type": "select",
+                "label": "Model",
+                "required": true
+              },
+              {
+                "name": "max_tokens",
+                "type": "uinteger",
+                "label": "Max Output Tokens"
+              },
+              {
+                "name": "messages",
+                "spec": {
+                  "name": "value",
+                  "spec": [
+                    {
+                      "name": "role",
+                      "type": "select",
+                      "label": "Role",
+                      "options": {
+                        "store": [
+                          {
+                            "label": "User",
+                            "value": "user",
+                            "nested": [
+                              {
+                                "help": "Text content of the message on behalf of the selected __Role__.",
+                                "name": "content",
+                                "type": "text",
+                                "label": "Text Content"
+                              }
+                            ],
+                            "default": true
+                          },
+                          {
+                            "label": "Assistant",
+                            "value": "assistant",
+                            "nested": [
+                              {
+                                "help": "Text content of the message on behalf of the selected __Role__.",
+                                "name": "content",
+                                "type": "text",
+                                "label": "Text Content"
+                              },
+                              {
+                                "mode": "edit",
+                                "name": "tool_calls",
+                                "spec": {
+                                  "spec": [
+                                    {
+                                      "name": "type",
+                                      "type": "hidden",
+                                      "default": "function"
+                                    },
+                                    {
+                                      "help": "Map this directly from the output of a previous **Create a Completion** module. Look for `Choices[]: Message.Tool Calls[]: ID`.",
+                                      "name": "id",
+                                      "type": "text",
+                                      "label": "Tool call ID"
+                                    },
+                                    {
+                                      "name": "function",
+                                      "spec": [
+                                        {
+                                          "help": "The name of the function previously called.",
+                                          "name": "name",
+                                          "type": "text",
+                                          "label": "Name",
+                                          "required": true
+                                        },
+                                        {
+                                          "help": "The arguments previously output by the AI.",
+                                          "name": "arguments",
+                                          "type": "text",
+                                          "label": "Arguments",
+                                          "required": true
+                                        }
+                                      ],
+                                      "type": "collection",
+                                      "label": "Function"
+                                    }
+                                  ],
+                                  "type": "collection",
+                                  "label": "Tool Call"
+                                },
+                                "type": "array",
+                                "label": "Tool Calls",
+                                "labels": {
+                                  "add": "Add tool call"
+                                },
+                                "mappable": {
+                                  "help": "You can map the entire `Choices[]: Message.Tool Calls` array from a previous Create a Completion module here."
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "label": "Developer / System",
+                            "value": "system",
+                            "nested": [
+                              {
+                                "help": "Text content of the message on behalf of the selected __Role__.",
+                                "name": "content",
+                                "type": "text",
+                                "label": "Text Content"
+                              }
+                            ]
+                          },
+                          {
+                            "label": "Tool",
+                            "value": "tool",
+                            "nested": [
+                              {
+                                "help": "The return of the function. This role should only be used when you have processed a previous function call and want to send the output of the function execution back to the AI.",
+                                "name": "content",
+                                "type": "text",
+                                "label": "Text Content",
+                                "required": true
+                              },
+                              {
+                                "help": "Map this directly from the output of a previous **Create a Completion** module. Look for `Choices[]: Message.Tool Calls[]: ID`.",
+                                "name": "tool_call_id",
+                                "type": "text",
+                                "label": "Tool Call ID.",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "required": true
+                    }
+                  ],
+                  "type": "collection",
+                  "label": "Message"
+                },
+                "type": "array",
+                "label": "Messages",
+                "required": true
+              },
+              {
+                "name": "response_format",
+                "type": "select",
+                "label": "Response Format",
+                "validate": {
+                  "enum": [
+                    "text",
+                    "json_object"
+                  ]
+                }
+              },
+              {
+                "name": "reasoning_effort",
+                "type": "select",
+                "label": "Reasoning Effort",
+                "validate": {
+                  "enum": [
+                    "minimal",
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                }
+              },
+              {
+                "name": "parseJSONResponse",
+                "type": "boolean",
+                "label": "Parse JSON Response",
+                "required": true
+              }
+            ],
+            "restore": {
+              "expect": {
+                "stop": {
+                  "mode": "chose"
+                },
+                "model": {
+                  "mode": "chose",
+                  "label": "gpt-5-mini (system)"
+                },
+                "select": {
+                  "label": "Create a Chat Completion (GPT and o1 models)",
+                  "collapsed": true
+                },
+                "messages": {
+                  "mode": "chose",
+                  "items": [
+                    {
+                      "role": {
+                        "mode": "chose",
+                        "label": "Developer / System"
+                      }
+                    },
+                    {
+                      "role": {
+                        "mode": "chose",
+                        "label": "User"
+                      }
+                    },
+                    {
+                      "role": {
+                        "mode": "chose",
+                        "label": "User"
+                      }
+                    }
+                  ]
+                },
+                "logit_bias": {
+                  "mode": "chose"
+                },
+                "tool_choice": {
+                  "mode": "chose",
+                  "label": "Empty"
+                },
+                "response_format": {
+                  "mode": "chose",
+                  "label": "JSON Object"
+                },
+                "reasoning_effort": {
+                  "mode": "chose",
+                  "label": "Empty"
+                },
+                "parseJSONResponse": {
+                  "mode": "chose"
+                },
+                "additionalParameters": {
+                  "mode": "chose"
+                }
+              },
+              "parameters": {
+                "__IMTCONN__": {
+                  "data": {
+                    "scoped": "true",
+                    "connection": "openai-gpt-3"
+                  },
+                  "label": "My OpenAI connection"
+                }
+              }
+            },
+            "advanced": true,
+            "designer": {
+              "x": 300,
+              "y": 0
+            },
+            "interface": [
+              {
+                "name": "result",
+                "type": "any",
+                "label": "Result"
+              },
+              {
+                "name": "id",
+                "type": "text",
+                "label": "ID"
+              },
+              {
+                "name": "object",
+                "type": "text",
+                "label": "Object"
+              },
+              {
+                "name": "created",
+                "type": "date",
+                "label": "Created"
+              },
+              {
+                "name": "model",
+                "type": "text",
+                "label": "Model"
+              },
+              {
+                "name": "choices",
+                "spec": [
+                  {
+                    "name": "text",
+                    "type": "text",
+                    "label": "Text"
+                  },
+                  {
+                    "name": "index",
+                    "type": "number",
+                    "label": "Index"
+                  },
+                  {
+                    "name": "logprobs",
+                    "type": "text",
+                    "label": "Log Probs"
+                  },
+                  {
+                    "name": "finish_reason",
+                    "type": "text",
+                    "label": "Finish Reason"
+                  },
+                  {
+                    "name": "message",
+                    "spec": [
+                      {
+                        "name": "role",
+                        "type": "text",
+                        "label": "Role"
+                      },
+                      {
+                        "name": "content",
+                        "type": "text",
+                        "label": "Content"
+                      },
+                      {
+                        "name": "tool_calls",
+                        "spec": [
+                          {
+                            "name": "id",
+                            "type": "text",
+                            "label": "ID"
+                          },
+                          {
+                            "name": "type",
+                            "type": "text",
+                            "label": "Type"
+                          },
+                          {
+                            "name": "function",
+                            "spec": [
+                              {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                              },
+                              {
+                                "name": "arguments",
+                                "type": "text",
+                                "label": "Arguments"
+                              }
+                            ],
+                            "type": "collection",
+                            "label": "Function"
+                          }
+                        ],
+                        "type": "array",
+                        "label": "Tool Calls"
+                      },
+                      {
+                        "name": "refusal",
+                        "type": "text",
+                        "label": "Refusal"
+                      },
+                      {
+                        "name": "annotations",
+                        "spec": [
+                          {
+                            "name": "type",
+                            "type": "text",
+                            "label": "Type"
+                          },
+                          {
+                            "name": "url_citation",
+                            "spec": [
+                              {
+                                "name": "end_index",
+                                "type": "number",
+                                "label": "End Index"
+                              },
+                              {
+                                "name": "start_index",
+                                "type": "number",
+                                "label": "Start Index"
+                              },
+                              {
+                                "name": "title",
+                                "type": "text",
+                                "label": "Title"
+                              },
+                              {
+                                "name": "url",
+                                "type": "text",
+                                "label": "URL"
+                              }
+                            ],
+                            "type": "collection",
+                            "label": "URL Citation"
+                          }
+                        ],
+                        "type": "array",
+                        "label": "Annotations"
+                      }
+                    ],
+                    "type": "collection",
+                    "label": "Message"
+                  }
+                ],
+                "type": "array",
+                "label": "Choices"
+              },
+              {
+                "name": "usage",
+                "spec": [
+                  {
+                    "name": "prompt_tokens",
+                    "type": "number",
+                    "label": "Prompt Tokens"
+                  },
+                  {
+                    "name": "completion_tokens",
+                    "type": "text",
+                    "label": "Completion Tokens"
+                  },
+                  {
+                    "name": "total_tokens",
+                    "type": "number",
+                    "label": "Total Tokens"
+                  },
+                  {
+                    "name": "prompt_tokens_details",
+                    "spec": [
+                      {
+                        "name": "cached_tokens",
+                        "type": "uinteger",
+                        "label": "Cached Tokens"
+                      },
+                      {
+                        "name": "text_tokens",
+                        "type": "uinteger",
+                        "label": "Text Tokens"
+                      },
+                      {
+                        "name": "image_tokens",
+                        "type": "uinteger",
+                        "label": "Image Tokens"
+                      },
+                      {
+                        "name": "audio_tokens",
+                        "type": "uinteger",
+                        "label": "Audio Tokens"
+                      }
+                    ],
+                    "type": "collection",
+                    "label": "Prompt Tokens Details"
+                  },
+                  {
+                    "name": "completion_tokens_details",
+                    "spec": [
+                      {
+                        "name": "reasoning_tokens",
+                        "type": "uinteger",
+                        "label": "Reasoning Tokens"
+                      },
+                      {
+                        "name": "text_tokens",
+                        "type": "uinteger",
+                        "label": "Text Tokens"
+                      },
+                      {
+                        "name": "audio_tokens",
+                        "type": "uinteger",
+                        "label": "Audio Tokens"
+                      },
+                      {
+                        "name": "accepted_prediction_tokens",
+                        "type": "uinteger",
+                        "label": "Accepted Prediction Tokens"
+                      },
+                      {
+                        "name": "rejected_prediction_tokens",
+                        "type": "uinteger",
+                        "label": "Rejected Prediction Tokens"
+                      }
+                    ],
+                    "type": "collection",
+                    "label": "Completion Tokens Details"
+                  }
+                ],
+                "type": "collection",
+                "label": "Usage"
+              },
+              {
+                "name": "service_tier",
+                "type": "text",
+                "label": "Service Tier"
+              },
+              {
+                "name": "system_fingerprint",
+                "type": "text",
+                "label": "System Fingerprint"
+              }
+            ],
+            "parameters": [
+              {
+                "name": "__IMTCONN__",
+                "type": "account:openai-gpt-3",
+                "label": "Connection",
+                "required": true
+              }
+            ]
+          },
+          "parameters": {
+            "__IMTCONN__": 3029843
+          }
+        },
+        {
+          "id": 5,
+          "mapper": {
+            "mode": "fromAll",
+            "values": {
+              "8": "{{2.result.icebreaker}}"
+            },
+            "sheetId": "{{1.`__SHEET__`}}",
+            "rowNumber": "{{1.`__ROW_NUMBER__`}}",
+            "spreadsheetId": "1q-yVsyXYbr2pmkncVYtYA5fqD25uMScXx8gsgxddEaA",
+            "tableFirstRow": "A1:Z1",
+            "includesHeaders": false,
+            "valueInputOption": "USER_ENTERED"
+          },
+          "module": "google-sheets:updateRow",
+          "version": 2,
+          "metadata": {
+            "expect": [
+              {
+                "name": "mode",
+                "type": "select",
+                "label": "Search Method",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "select",
+                    "fromAll",
+                    "map"
+                  ]
+                }
+              },
+              {
+                "name": "valueInputOption",
+                "type": "select",
+                "label": "Value input option",
+                "validate": {
+                  "enum": [
+                    "USER_ENTERED",
+                    "RAW"
+                  ]
+                }
+              },
+              {
+                "name": "spreadsheetId",
+                "type": "text",
+                "label": "Spreadsheet ID",
+                "required": true
+              },
+              {
+                "mode": "edit",
+                "name": "sheetId",
+                "type": "select",
+                "label": "Sheet Name",
+                "required": true
+              },
+              {
+                "name": "rowNumber",
+                "type": "uinteger",
+                "label": "Row number",
+                "required": true
+              },
+              {
+                "name": "includesHeaders",
+                "type": "select",
+                "label": "Table contains headers",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    true,
+                    false
+                  ]
+                }
+              },
+              {
+                "name": "tableFirstRow",
+                "type": "select",
+                "label": "Column range",
+                "required": true,
+                "validate": {
+                  "enum": [
+                    "A1:Z1",
+                    "A1:BZ1",
+                    "A1:CZ1",
+                    "A1:DZ1",
+                    "A1:MZ1",
+                    "A1:ZZ1"
+                  ]
+                }
+              },
+              {
+                "name": "values",
+                "spec": [
+                  {
+                    "name": "0",
+                    "type": "text",
+                    "label": "A"
+                  },
+                  {
+                    "name": "1",
+                    "type": "text",
+                    "label": "B"
+                  },
+                  {
+                    "name": "2",
+                    "type": "text",
+                    "label": "C"
+                  },
+                  {
+                    "name": "3",
+                    "type": "text",
+                    "label": "D"
+                  },
+                  {
+                    "name": "4",
+                    "type": "text",
+                    "label": "E"
+                  },
+                  {
+                    "name": "5",
+                    "type": "text",
+                    "label": "F"
+                  },
+                  {
+                    "name": "6",
+                    "type": "text",
+                    "label": "G"
+                  },
+                  {
+                    "name": "7",
+                    "type": "text",
+                    "label": "H"
+                  },
+                  {
+                    "name": "8",
+                    "type": "text",
+                    "label": "I"
+                  },
+                  {
+                    "name": "9",
+                    "type": "text",
+                    "label": "J"
+                  },
+                  {
+                    "name": "10",
+                    "type": "text",
+                    "label": "K"
+                  },
+                  {
+                    "name": "11",
+                    "type": "text",
+                    "label": "L"
+                  },
+                  {
+                    "name": "12",
+                    "type": "text",
+                    "label": "M"
+                  },
+                  {
+                    "name": "13",
+                    "type": "text",
+                    "label": "N"
+                  },
+                  {
+                    "name": "14",
+                    "type": "text",
+                    "label": "O"
+                  },
+                  {
+                    "name": "15",
+                    "type": "text",
+                    "label": "P"
+                  },
+                  {
+                    "name": "16",
+                    "type": "text",
+                    "label": "Q"
+                  },
+                  {
+                    "name": "17",
+                    "type": "text",
+                    "label": "R"
+                  },
+                  {
+                    "name": "18",
+                    "type": "text",
+                    "label": "S"
+                  },
+                  {
+                    "name": "19",
+                    "type": "text",
+                    "label": "T"
+                  },
+                  {
+                    "name": "20",
+                    "type": "text",
+                    "label": "U"
+                  },
+                  {
+                    "name": "21",
+                    "type": "text",
+                    "label": "V"
+                  },
+                  {
+                    "name": "22",
+                    "type": "text",
+                    "label": "W"
+                  },
+                  {
+                    "name": "23",
+                    "type": "text",
+                    "label": "X"
+                  },
+                  {
+                    "name": "24",
+                    "type": "text",
+                    "label": "Y"
+                  },
+                  {
+                    "name": "25",
+                    "type": "text",
+                    "label": "Z"
+                  }
+                ],
+                "type": "collection",
+                "label": "Values"
+              }
+            ],
+            "restore": {
+              "expect": {
+                "mode": {
+                  "label": "Select from all"
+                },
+                "sheetId": {
+                  "mode": "edit"
+                },
+                "tableFirstRow": {
+                  "label": "A-Z",
+                  "nested": [
+                    {
+                      "name": "values",
+                      "spec": [
+                        {
+                          "name": "0",
+                          "type": "text",
+                          "label": "A"
+                        },
+                        {
+                          "name": "1",
+                          "type": "text",
+                          "label": "B"
+                        },
+                        {
+                          "name": "2",
+                          "type": "text",
+                          "label": "C"
+                        },
+                        {
+                          "name": "3",
+                          "type": "text",
+                          "label": "D"
+                        },
+                        {
+                          "name": "4",
+                          "type": "text",
+                          "label": "E"
+                        },
+                        {
+                          "name": "5",
+                          "type": "text",
+                          "label": "F"
+                        },
+                        {
+                          "name": "6",
+                          "type": "text",
+                          "label": "G"
+                        },
+                        {
+                          "name": "7",
+                          "type": "text",
+                          "label": "H"
+                        },
+                        {
+                          "name": "8",
+                          "type": "text",
+                          "label": "I"
+                        },
+                        {
+                          "name": "9",
+                          "type": "text",
+                          "label": "J"
+                        },
+                        {
+                          "name": "10",
+                          "type": "text",
+                          "label": "K"
+                        },
+                        {
+                          "name": "11",
+                          "type": "text",
+                          "label": "L"
+                        },
+                        {
+                          "name": "12",
+                          "type": "text",
+                          "label": "M"
+                        },
+                        {
+                          "name": "13",
+                          "type": "text",
+                          "label": "N"
+                        },
+                        {
+                          "name": "14",
+                          "type": "text",
+                          "label": "O"
+                        },
+                        {
+                          "name": "15",
+                          "type": "text",
+                          "label": "P"
+                        },
+                        {
+                          "name": "16",
+                          "type": "text",
+                          "label": "Q"
+                        },
+                        {
+                          "name": "17",
+                          "type": "text",
+                          "label": "R"
+                        },
+                        {
+                          "name": "18",
+                          "type": "text",
+                          "label": "S"
+                        },
+                        {
+                          "name": "19",
+                          "type": "text",
+                          "label": "T"
+                        },
+                        {
+                          "name": "20",
+                          "type": "text",
+                          "label": "U"
+                        },
+                        {
+                          "name": "21",
+                          "type": "text",
+                          "label": "V"
+                        },
+                        {
+                          "name": "22",
+                          "type": "text",
+                          "label": "W"
+                        },
+                        {
+                          "name": "23",
+                          "type": "text",
+                          "label": "X"
+                        },
+                        {
+                          "name": "24",
+                          "type": "text",
+                          "label": "Y"
+                        },
+                        {
+                          "name": "25",
+                          "type": "text",
+                          "label": "Z"
+                        }
+                      ],
+                      "type": "collection",
+                      "label": "Values"
+                    }
+                  ]
+                },
+                "includesHeaders": {
+                  "label": "No"
+                },
+                "valueInputOption": {
+                  "mode": "chose",
+                  "label": "User entered"
+                }
+              },
+              "parameters": {
+                "__IMTCONN__": {
+                  "data": {
+                    "scoped": "true",
+                    "connection": "google"
+                  },
+                  "label": "My Google connection (a.hashage@gmail.com)"
+                }
+              }
+            },
+            "designer": {
+              "x": 600,
+              "y": 0
+            },
+            "parameters": [
+              {
+                "name": "__IMTCONN__",
+                "type": "account:google",
+                "label": "Connection",
+                "required": true
+              }
+            ]
+          },
+          "parameters": {
+            "__IMTCONN__": 3255629
+          }
+        }
+      ],
+      "name": "Icebreaker generator",
+      "metadata": {
+        "instant": false,
+        "version": 1,
+        "designer": {
+          "orphans": [],
+          "samples": {
+            "1": {
+              "0": "Mohamed",
+              "1": "Gamal",
+              "2": "Frontend Web Developer (Freelance)",
+              "3": "Smart Vision Agency",
+              "4": "online media",
+              "5": "Muscat",
+              "6": "Oman",
+              "7": "m.gamal@smartvisionagency.com",
+              "8": "Hey Mohamed. Love Smart Vision. Also building UIs for media brands, Wanted to run something by you.",
+              "9": "",
+              "10": "http://www.smartvisionagency.com",
+              "11": "http://www.linkedin.com/in/mohamed-gamal-800823121",
+              "12": "Mohamed Gamal",
+              "13": "+20 121 290 5759",
+              "14": "",
+              "15": "Construction & Housing Bank Buildings, Beside Housing & Development Bank, Central Spine ., 302, 6th ...",
+              "16": "Giza Governorate",
+              "17": "6th of October City",
+              "18": "Egypt",
+              "__SHEET__": "Agency_Leads",
+              "__IMTINDEX__": 1,
+              "__IMTLENGTH__": 1,
+              "__ROW_NUMBER__": 2,
+              "__SPREADSHEET_ID__": "1q-yVsyXYbr2pmkncVYtYA5fqD25uMScXx8gsgxddEaA"
+            },
+            "2": {
+              "id": "chatcmpl-CTu3FaVw0SE9B7VLjoPfLB4l1IF6G",
+              "model": "gpt-5-mini-2025-08-07",
+              "usage": {
+                "total_tokens": 1271,
+                "prompt_tokens": 338,
+                "completion_tokens": 933,
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 896,
+                  "accepted_prediction_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                }
+              },
+              "object": "chat.completion",
+              "result": {
+                "icebreaker": "Hey Mohamed. Love Smart Vision. Also doing front-end work for online media, Wanted to run something ..."
+              },
+              "choices": [
+                {
+                  "index": 0,
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"icebreaker\":\"Hey Mohamed. Love Smart Vision. Also doing front-end work for online media, Wanted to...",
+                    "refusal": null,
+                    "annotations": []
+                  },
+                  "finish_reason": "stop"
+                }
+              ],
+              "created": "2025-10-23T18:10:09.000Z",
+              "service_tier": "default",
+              "system_fingerprint": null
+            },
+            "5": {
+              "updatedRows": 1,
+              "updatedCells": 1,
+              "updatedRange": "Agency_Leads!A2:I2",
+              "spreadsheetId": "1q-yVsyXYbr2pmkncVYtYA5fqD25uMScXx8gsgxddEaA",
+              "updatedColumns": 1
+            }
+          }
+        },
+        "scenario": {
+          "dlq": false,
+          "slots": null,
+          "dataloss": false,
+          "maxErrors": 3,
+          "autoCommit": true,
+          "roundtrips": 1,
+          "sequential": true,
+          "confidential": false,
+          "freshVariables": false,
+          "autoCommitTriggerLast": true
+        }
+      }
+    },
+    "scheduling": {
+      "type": "indefinitely",
+      "interval": 900
+    },
+    "concept": false,
+    "created": "2025-09-10T07:08:43.036Z",
+    "last_edit": "2025-10-23T18:21:13.523Z",
+    "metadata": {
+      "input_spec": [],
+      "output_spec": []
+    },
+    "idSequence": 10
+  }
+}

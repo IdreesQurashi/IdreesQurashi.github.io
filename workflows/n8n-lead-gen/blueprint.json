@@ -1,0 +1,188 @@
+{
+  "name": "Autonomous B2B Outbound Engine: Apify Lead Scraping, ZeroBounce Verification, GPT Icebreaker & Instantly Campaign Sync",
+  "flow": [
+    {
+      "id": 1,
+      "module": "apify:finishedActorRuns",
+      "version": 1,
+      "parameters": {
+        "__IMTHOOK__": 1443681
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": -600,
+          "y": 0
+        },
+        "restore": {}
+      }
+    },
+    {
+      "id": 2,
+      "module": "apify:fetchDatasetItems",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "datasetId": "{{1.resource.defaultDatasetId}}",
+        "limit": 500
+      },
+      "metadata": {
+        "designer": {
+          "x": -350,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true
+      },
+      "mapper": {
+        "url": "https://api.zerobounce.net/v2/validate?api_key=PROD_ZEROBOUNCE_KEY&email={{2.email}}&ip_address=",
+        "method": "GET"
+      },
+      "metadata": {
+        "designer": {
+          "x": -100,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "metadata": {
+        "designer": {
+          "x": 150,
+          "y": 0
+        }
+      },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 5,
+              "module": "openai-gpt-3:CreateCompletion",
+              "version": 1,
+              "parameters": {},
+              "mapper": {
+                "model": "gpt-4o",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an elite B2B research analyst. Generate a hyper-personalized, 1-sentence opening icebreaker for a cold email based on the prospect's recent LinkedIn activity, company news, or executive achievements. Never use generic praise. Output strict JSON: {\"icebreaker\": \"...\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "Prospect Name: {{2.firstName}} {{2.lastName}}\nTitle: {{2.jobTitle}}\nCompany: {{2.companyName}}\nSummary / Bio: {{2.summary}}\nRecent Post: {{2.recentPostSnippet}}"
+                  }
+                ],
+                "response_format": {
+                  "type": "json_object"
+                }
+              },
+              "metadata": {
+                "designer": {
+                  "x": 400,
+                  "y": -120
+                }
+              }
+            },
+            {
+              "id": 6,
+              "module": "http:ActionSendData",
+              "version": 3,
+              "parameters": {
+                "handleErrors": true
+              },
+              "mapper": {
+                "url": "https://api.instantly.ai/api/v1/lead/add",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": "{\"api_key\": \"PROD_INSTANTLY_KEY\", \"campaign_id\": \"outbound_q4_enterprise\", \"email\": \"{{2.email}}\", \"first_name\": \"{{2.firstName}}\", \"last_name\": \"{{2.lastName}}\", \"company_name\": \"{{2.companyName}}\", \"custom_variables\": {\"icebreaker\": \"{{5.choices[1].message.content.icebreaker}}\", \"title\": \"{{2.jobTitle}}\", \"linkedin_url\": \"{{2.profileUrl}}\"}}"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 650,
+                  "y": -120
+                }
+              }
+            },
+            {
+              "id": 7,
+              "module": "google-sheets:addRow",
+              "version": 2,
+              "parameters": {},
+              "mapper": {
+                "sheetId": "Active_Outbound_Campaigns",
+                "worksheetId": "Enriched_Leads",
+                "values": {
+                  "0": "{{2.email}}",
+                  "1": "{{2.firstName}}",
+                  "2": "{{2.companyName}}",
+                  "3": "{{3.data.status}}",
+                  "4": "{{5.choices[1].message.content.icebreaker}}",
+                  "5": "Synced to Instantly (Active Warmup Sequence)",
+                  "6": "{{formatDate(now; \"YYYY-MM-DD HH:mm:ss\")}}"
+                }
+              },
+              "metadata": {
+                "designer": {
+                  "x": 900,
+                  "y": -120
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 8,
+              "module": "google-sheets:addRow",
+              "version": 2,
+              "parameters": {},
+              "mapper": {
+                "sheetId": "Active_Outbound_Campaigns",
+                "worksheetId": "Disqualified_Invalid_Bounces",
+                "values": {
+                  "0": "{{2.email}}",
+                  "1": "{{2.firstName}}",
+                  "2": "{{2.companyName}}",
+                  "3": "{{3.data.status}}",
+                  "4": "Blocked - Low Deliverability / Risk of Spam Bounce",
+                  "5": "{{formatDate(now; \"YYYY-MM-DD HH:mm:ss\")}}"
+                }
+              },
+              "metadata": {
+                "designer": {
+                  "x": 400,
+                  "y": 120
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "cleanConfig": false
+    }
+  }
+}

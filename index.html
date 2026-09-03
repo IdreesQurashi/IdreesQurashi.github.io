@@ -368,6 +368,41 @@
             border: 1px solid rgba(56,189,248,0.15);
             color: #7dd3fc;
         }
+    
+        /* ═══════════════════════════════════════════
+           ULTRA-SEXY OLD-MONEY LUXURY HERO CARDS
+        ═══════════════════════════════════════════ */
+        .sexy-luxury-card {
+            background: radial-gradient(140% 140% at 50% -20%, rgba(30, 41, 59, 0.45) 0%, rgba(10, 15, 26, 0.85) 60%, rgba(2, 4, 8, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 24px;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            box-shadow: 
+                0 25px 60px -15px rgba(0, 0, 0, 0.95),
+                0 0 0 1px rgba(255, 255, 255, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .sexy-luxury-card:hover {
+            transform: translateY(-8px) scale(1.015);
+            border-color: rgba(255, 255, 255, 0.18);
+            border-top-color: rgba(56, 189, 248, 0.7);
+            box-shadow: 
+                0 35px 70px -15px rgba(0, 0, 0, 0.98),
+                0 0 45px -10px rgba(56, 189, 248, 0.20),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        .sexy-card-emerald:hover {
+            border-top-color: rgba(52, 211, 153, 0.7) !important;
+            box-shadow: 
+                0 35px 70px -15px rgba(0, 0, 0, 0.98),
+                0 0 45px -10px rgba(52, 211, 153, 0.20),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        }
+
     </style>
 </head>
 <body class="bg-pitch font-sans antialiased selection:bg-accentBlue selection:text-black">
@@ -419,46 +454,68 @@
             </div>
 
             <!-- 2 HIGH-VALUE FOCUS CARDS: 1. PURE AI AUTOMATION & AGENTIC WORKFLOWS | 2. LEAD GEN AT AI AUTOMATION SCALE -->
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
-                <!-- Card 1: Pure AI Automation & Agentic Systems -->
-                <div class="panel-monument-clean reveal-3d p-6 relative overflow-hidden">
-                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
-                        <div class="flex items-center space-x-2 text-accentBlue font-mono text-[10px] font-bold uppercase tracking-wider">
-                            <i data-lucide="cpu" class="w-4 h-4"></i>
-                            <span>AI Automation &amp; Agentic Workflows</span>
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-7 text-left max-w-4xl mx-auto">
+                
+                <!-- Card 1: Pure AI Automation & Agentic Systems (Ultra-Sexy Glassmorphism) -->
+                <div class="sexy-luxury-card reveal-3d p-8 relative overflow-hidden group">
+                    <div class="absolute -top-24 -right-24 w-52 h-52 rounded-full bg-sky-500/10 blur-3xl pointer-events-none group-hover:bg-sky-500/25 transition duration-700"></div>
+                    
+                    <div class="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-5">
+                        <div class="flex items-center space-x-2.5 text-accentBlue font-mono text-[10px] font-extrabold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-accentBlue animate-pulse"></span>
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 text-accentBlue"></i>
+                            <span class="text-slate-200">AI Automation &amp; Agentic Systems</span>
                         </div>
-                        <span class="px-2.5 py-0.5 rounded-full bg-accentBlue/10 text-accentBlue border border-accentBlue/30 text-[9px] font-mono font-bold">PRODUCTION</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-400/30 text-[9px] font-mono font-bold tracking-widest uppercase">
+                            Flagship
+                        </span>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-white mb-1">Autonomous Systems Engine</div>
-                    <p class="text-slate-400 text-xs leading-relaxed mt-2">
+
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-white tracking-tight mb-2">
+                        Autonomous Systems Engine
+                    </div>
+
+                    <p class="text-slate-300 text-xs leading-relaxed font-light mt-2.5">
                         Enterprise Make.com &amp; n8n architectures: Vapi voice agents with 7 deterministic MCP tools, Claude Code multi-agent browser swarms, and strict JSON schema LLM guardrails preventing hallucinations.
                     </p>
-                    <div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-slate-500">Execution Reliability:</span>
-                        <span class="text-accentBlue font-bold">100% Deterministic Backends</span>
+
+                    <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-400 text-[11px]">Backend Reliability:</span>
+                        <span class="text-accentBlue font-bold tracking-wide">100% Deterministic</span>
                     </div>
                 </div>
 
-                <!-- Card 2: Lead Gen at AI Automation Scale (Original Content Preserved) -->
-                <div class="panel-monument-clean reveal-3d p-6 relative overflow-hidden">
-                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
-                        <div class="flex items-center space-x-2 text-emerald-400 font-mono text-[10px] font-bold uppercase tracking-wider">
-                            <i data-lucide="target" class="w-4 h-4"></i>
-                            <span>Lead Gen at AI Automation Scale</span>
+                <!-- Card 2: Lead Gen at AI Automation Scale (Ultra-Sexy Emerald Glow) -->
+                <div class="sexy-luxury-card sexy-card-emerald reveal-3d p-8 relative overflow-hidden group">
+                    <div class="absolute -top-24 -right-24 w-52 h-52 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none group-hover:bg-emerald-500/25 transition duration-700"></div>
+                    
+                    <div class="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-5">
+                        <div class="flex items-center space-x-2.5 text-emerald-400 font-mono text-[10px] font-extrabold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400"></i>
+                            <span class="text-slate-200">Lead Gen at AI Automation Scale</span>
                         </div>
-                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[9px] font-mono font-bold">AUTONOMOUS</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-400/30 text-[9px] font-mono font-bold tracking-widest uppercase">
+                            Autonomous
+                        </span>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-white mb-1">$350K+ Pipeline Engine</div>
-                    <p class="text-slate-400 text-xs leading-relaxed mt-2">
+
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-white tracking-tight mb-2">
+                        $350K+ Pipeline Engine
+                    </div>
+
+                    <p class="text-slate-300 text-xs leading-relaxed font-light mt-2.5">
                         Self-healing Make.com &amp; n8n agentic workflows: Apify scraping, dynamic GPT-4o personalized icebreakers under strict JSON schema, and sub-60s speed-to-lead routing directly into CRM pipelines.
                     </p>
-                    <div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-slate-500">Response Time:</span>
-                        <span class="text-emerald-400 font-bold">&lt;60 Seconds (96% Precision)</span>
+
+                    <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-400 text-[11px]">Speed to Lead:</span>
+                        <span class="text-emerald-400 font-bold tracking-wide">&lt;60s (96% Precision)</span>
                     </div>
                 </div>
+
             </div>
-        </section>
+</section>
 
 
         <!-- ═══════════════════════════════════════════════════════════════════

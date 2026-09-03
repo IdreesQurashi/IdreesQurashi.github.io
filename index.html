@@ -1479,33 +1479,37 @@
         const titleEl = document.getElementById('popout-window-title');
         const bodyEl = document.getElementById('popout-window-body');
 
-        titleEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-accentBlue animate-pulse"></span> <span>${data.badge || 'SYSTEM OVERVIEW'}</span>`;
+        titleEl.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-accentBlue animate-pulse"></span> <span class="text-white tracking-widest font-mono text-[11px]">${data.badge || 'SYSTEM OVERVIEW'}</span>`;
         
         let mediaHtml = '';
         if (data.video) {
             mediaHtml = `
-                <div class="rounded-2xl overflow-hidden border border-slate-800 bg-black aspect-video mb-6 shadow-2xl relative">
+                <div class="rounded-2xl overflow-hidden border border-slate-700/60 bg-black aspect-video mb-6 shadow-2xl relative group">
                     <video controls autoplay muted loop playsinline class="w-full h-full object-cover">
                         <source src="${data.video}" type="video/mp4">
                     </video>
+                    <div class="absolute top-3 right-3 px-3 py-1 rounded-lg bg-black/80 backdrop-blur border border-white/10 text-[10px] font-mono text-sky-400 font-bold flex items-center gap-1.5 pointer-events-none">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> LIVE SCREENCAST
+                    </div>
                 </div>
             `;
         } else if (data.locked) {
             mediaHtml = `
-                <div class="p-8 rounded-2xl border-2 border-amber-500/40 bg-gradient-to-b from-amber-500/10 to-transparent flex flex-col items-center justify-center text-center mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-amber-500/20 border border-amber-400 flex items-center justify-center text-amber-300 mb-3">
-                        <i data-lucide="lock" class="w-8 h-8"></i>
+                <div class="p-8 rounded-2xl border-2 border-amber-500/40 bg-gradient-to-b from-amber-500/15 via-slate-900/40 to-transparent flex flex-col items-center justify-center text-center mb-6 relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-amber-300 mb-3 shadow-lg shadow-amber-500/20">
+                        <i data-lucide="lock" class="w-8 h-8 text-amber-300"></i>
                     </div>
-                    <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-xs font-extrabold uppercase mb-2">PROPRIETARY ASSET</span>
+                    <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-xs font-extrabold uppercase mb-2 border border-amber-500/40 tracking-widest">PROPRIETARY COMMERCIAL ASSET</span>
                     <div class="text-3xl font-mono font-bold text-amber-400 mb-2">${data.price || '$1,000'} <span class="text-xs text-slate-400 font-normal">/ Private License</span></div>
-                    <p class="text-slate-300 text-xs max-w-md">${data.lockNotice || 'Commercial enterprise license required. Raw code and blueprints are protected under private licensing agreement.'}</p>
+                    <p class="text-slate-300 text-xs max-w-md leading-relaxed font-light">${data.lockNotice || 'Commercial enterprise license required. Raw code and blueprints are protected under private licensing agreement.'}</p>
                 </div>
             `;
         }
 
+        // Action Buttons
         let buttonsHtml = '';
         if (data.pageUrl) {
-            buttonsHtml += `<a href="${data.pageUrl}" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Open Full Dedicated Webpage</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
+            buttonsHtml += `<a href="${data.pageUrl}" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
         }
         if (data.blueprintUrl) {
             buttonsHtml += `<a href="${data.blueprintUrl}" download class="btn-3d-grey px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2 text-slate-200"><span>Download Blueprint (.json)</span><i data-lucide="download" class="w-4 h-4"></i></a>`;
@@ -1516,31 +1520,82 @@
             buttonsHtml += `<a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
         }
 
+        // Stack tags pills
+        let stackPills = '';
+        if (data.stack) {
+            stackPills = data.stack.split('•').map(s => `<span class="px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/[0.1] font-mono text-[10px] text-slate-300 font-medium">${s.trim()}</span>`).join(' ');
+        }
+
+        // Specifications Grid (Rich metrics row)
+        let specsRow = `
+            <div class="grid grid-cols-3 gap-3 mb-6">
+                <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+                    <span class="text-[9px] font-mono uppercase text-slate-500 block">Performance Benchmark</span>
+                    <span class="text-xs font-serif font-bold text-white mt-1 block">${data.outcome || '<60s Speed-to-Lead'}</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+                    <span class="text-[9px] font-mono uppercase text-slate-500 block">Architecture Type</span>
+                    <span class="text-xs font-serif font-bold text-accentBlue mt-1 block">${data.tag || 'Deterministic Agent'}</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+                    <span class="text-[9px] font-mono uppercase text-slate-500 block">Execution Status</span>
+                    <span class="text-xs font-serif font-bold text-emerald-400 mt-1 block">Production Ready</span>
+                </div>
+            </div>
+        `;
+
         bodyEl.innerHTML = `
             <div class="max-w-3xl mx-auto">
-                <div class="mb-4">
-                    <span class="px-3 py-1 rounded-full text-[10px] font-mono font-extrabold bg-sky-500/10 text-sky-400 border border-sky-400/30 uppercase tracking-widest">${data.tag || 'PRODUCTION ARCHITECTURE'}</span>
-                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-2">${data.title}</h2>
-                    <p class="font-mono text-xs text-slate-400 mt-1.5">${data.stack || ''}</p>
+                
+                <!-- Hero Meta Header -->
+                <div class="mb-6 pb-5 border-b border-white/[0.08]">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="px-3 py-1 rounded-full text-[10px] font-mono font-extrabold bg-sky-500/10 text-sky-400 border border-sky-400/30 uppercase tracking-widest">${data.tag || 'PRODUCTION ARCHITECTURE'}</span>
+                        <span class="px-2.5 py-1 rounded-full text-[9px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">VERIFIED</span>
+                    </div>
+                    <h2 class="text-2xl md:text-4xl font-serif font-bold text-white tracking-tight leading-tight">${data.title}</h2>
+                    <div class="flex flex-wrap gap-1.5 mt-3">${stackPills}</div>
                 </div>
 
+                <!-- Video / Media Showcase -->
                 ${mediaHtml}
 
+                <!-- Specifications Row -->
+                ${specsRow}
+
+                <!-- Deep Technical Breakdown -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
-                        <div class="text-[10px] font-mono text-rose-400 uppercase tracking-widest mb-1.5 font-bold">The Challenge / Problem</div>
-                        <p class="text-xs text-slate-300 leading-relaxed">${data.problem || data.desc}</p>
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90 relative overflow-hidden">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                            <span class="text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">The Challenge &amp; Problem</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed font-light">${data.problem || data.desc}</p>
                     </div>
-                    <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
-                        <div class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1.5 font-bold">The Engineering Solution</div>
-                        <p class="text-xs text-slate-300 leading-relaxed">${data.solution || data.desc}</p>
+
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90 relative overflow-hidden">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">The Engineering Solution</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed font-light">${data.solution || data.desc}</p>
                     </div>
                 </div>
 
-                <div class="p-4 rounded-xl bg-slate-900/30 border border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-                    <div class="text-xs font-mono text-emerald-400 font-bold">${data.outcome || 'Production Audited Precision'}</div>
+                <!-- Action Hub & Consultation Trigger -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-slate-900/80 border border-slate-800 flex flex-wrap items-center justify-between gap-4 shadow-xl">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue">
+                            <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Ready for Enterprise Deployment</div>
+                            <p class="text-[11px] text-slate-400 font-light">Direct integration, custom webhook endpoints &amp; SLA support.</p>
+                        </div>
+                    </div>
                     <div class="flex flex-wrap items-center gap-3">${buttonsHtml}</div>
                 </div>
+
             </div>
         `;
 

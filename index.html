@@ -403,6 +403,107 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
         }
 
+    
+        /* ═══════════════════════════════════════════════════════════════════
+           ALL CARDS: SMEXY LUXURY GLASSMORPHISM & HOVER ELEVATION
+        ═══════════════════════════════════════════════════════════════════ */
+        .vault-card, .client-card, .highlight-card, .outbound-card {
+            background: radial-gradient(130% 130% at 50% -10%, rgba(26, 36, 54, 0.45) 0%, rgba(9, 14, 24, 0.85) 60%, rgba(2, 4, 8, 0.98) 100%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+            border-radius: 20px !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            cursor: pointer !important;
+            position: relative;
+        }
+        .vault-card:hover, .client-card:hover, .highlight-card:hover, .outbound-card:hover {
+            transform: translateY(-6px) scale(1.012) !important;
+            border-color: rgba(56, 189, 248, 0.35) !important;
+            border-top-color: rgba(56, 189, 248, 0.70) !important;
+            box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(56, 189, 248, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════
+           POP-OUT MODAL: EXACT LINUX/GNOME OS WINDOW SIZE & SHAPE
+        ═══════════════════════════════════════════════════════════════════ */
+        #enki-popout-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        #enki-popout-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        #enki-popout-window {
+            width: 90vw;
+            max-width: 980px;
+            height: 82vh;
+            max-height: 750px;
+            background: #090e17;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-top: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 22px;
+            box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.98), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #enki-popout-overlay.active #enki-popout-window {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Window Titlebar (GNOME / Mac Style) */
+        .window-titlebar {
+            height: 48px;
+            background: #0f1726;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            flex-shrink: 0;
+        }
+        .window-dots {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .w-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 0.15s;
+        }
+        .w-dot-close { background: #ef4444; }
+        .w-dot-min { background: #f59e0b; }
+        .w-dot-max { background: #10b981; }
+        .w-dot:hover { opacity: 0.8; }
+
+        /* Window Content Body */
+        .window-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 28px 32px;
+            scrollbar-width: thin;
+            scrollbar-color: #38bdf8 #0f1726;
+        }
+
     </style>
 </head>
 <body class="bg-pitch font-sans antialiased selection:bg-accentBlue selection:text-black">
@@ -535,7 +636,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     
                     <!-- Client 1: Green TV -->
-                    <div class="p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
                         <div>
                             <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-1">National Television PK</span>
                             <h3 class="text-base font-serif font-bold text-white">Green TV Entertainment</h3>
@@ -549,7 +650,7 @@
                     </div>
 
                     <!-- Client 2: Apache Pizza -->
-                    <div class="p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
                         <div>
                             <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-1">National Franchise IE</span>
                             <h3 class="text-base font-serif font-bold text-white">Apache Pizza Ireland</h3>
@@ -565,7 +666,7 @@
                     </div>
 
                     <!-- Client 3: Healthcare Dental Clinics -->
-                    <div class="p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
                         <div>
                             <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-1">Irish Healthcare</span>
                             <h3 class="text-base font-serif font-bold text-white">Rock Road &amp; Slievemore</h3>
@@ -581,7 +682,7 @@
                     </div>
 
                     <!-- Client 4: Master Drive Vault -->
-                    <div class="p-5 rounded-2xl bg-gradient-to-b from-sky-950/20 to-black border border-sky-500/20 hover:border-sky-500/40 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-sky-950/20 to-black border border-sky-500/20 hover:border-sky-500/40 transition duration-300 flex flex-col justify-between">
                         <div>
                             <span class="text-[9px] font-mono text-sky-400 uppercase tracking-widest block mb-1">Confidential Cloud</span>
                             <h3 class="text-base font-serif font-bold text-white">Master Drive Vault</h3>
@@ -602,7 +703,7 @@
                 <div class="mt-8 pt-8 border-t border-slate-900/60">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                         
-                        <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
+                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
                             <div class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
                                 <i data-lucide="shield-check" class="w-4 h-4"></i>
                             </div>
@@ -612,7 +713,7 @@
                             </div>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
+                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
                             <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                                 <i data-lucide="mic" class="w-4 h-4"></i>
                             </div>
@@ -622,7 +723,7 @@
                             </div>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
+                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
                             <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
                                 <i data-lucide="layers" class="w-4 h-4"></i>
                             </div>
@@ -632,7 +733,7 @@
                             </div>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
+                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
                             <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                                 <i data-lucide="check-circle-2" class="w-4 h-4"></i>
                             </div>
@@ -1343,5 +1444,361 @@
         });
 
     </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         ENKI POP-OUT CINEMA WINDOW (EXACT OS CONTAINER SIZE)
+    ═══════════════════════════════════════════════════════════════════ -->
+    <div id="enki-popout-overlay" onclick="closePopout(event)">
+        <div id="enki-popout-window" onclick="event.stopPropagation()">
+            <!-- Window Titlebar -->
+            <div class="window-titlebar">
+                <div class="window-dots">
+                    <span class="w-dot w-dot-close" onclick="closePopout()" title="Close (Esc)"></span>
+                    <span class="w-dot w-dot-min"></span>
+                    <span class="w-dot w-dot-max"></span>
+                </div>
+                <div class="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest flex items-center gap-2" id="popout-window-title">
+                    <span class="w-2 h-2 rounded-full bg-accentBlue animate-pulse"></span>
+                    <span>System Architecture Inspection</span>
+                </div>
+                <button onclick="closePopout()" class="text-slate-400 hover:text-white text-xs font-mono px-2 py-1 rounded bg-slate-800/60 hover:bg-slate-700">
+                    ✕ ESC
+                </button>
+            </div>
+
+            <!-- Window Dynamic Body -->
+            <div class="window-body" id="popout-window-body">
+                <!-- Content injected dynamically on card click -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function openPopout(data) {
+        const overlay = document.getElementById('enki-popout-overlay');
+        const titleEl = document.getElementById('popout-window-title');
+        const bodyEl = document.getElementById('popout-window-body');
+
+        titleEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-accentBlue animate-pulse"></span> <span>${data.badge || 'SYSTEM OVERVIEW'}</span>`;
+        
+        let mediaHtml = '';
+        if (data.video) {
+            mediaHtml = `
+                <div class="rounded-2xl overflow-hidden border border-slate-800 bg-black aspect-video mb-6 shadow-2xl relative">
+                    <video controls autoplay muted loop playsinline class="w-full h-full object-cover">
+                        <source src="${data.video}" type="video/mp4">
+                    </video>
+                </div>
+            `;
+        } else if (data.locked) {
+            mediaHtml = `
+                <div class="p-8 rounded-2xl border-2 border-amber-500/40 bg-gradient-to-b from-amber-500/10 to-transparent flex flex-col items-center justify-center text-center mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/20 border border-amber-400 flex items-center justify-center text-amber-300 mb-3">
+                        <i data-lucide="lock" class="w-8 h-8"></i>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-xs font-extrabold uppercase mb-2">PROPRIETARY ASSET</span>
+                    <div class="text-3xl font-mono font-bold text-amber-400 mb-2">${data.price || '$1,000'} <span class="text-xs text-slate-400 font-normal">/ Private License</span></div>
+                    <p class="text-slate-300 text-xs max-w-md">${data.lockNotice || 'Commercial enterprise license required. Raw code and blueprints are protected under private licensing agreement.'}</p>
+                </div>
+            `;
+        }
+
+        let buttonsHtml = '';
+        if (data.pageUrl) {
+            buttonsHtml += `<a href="${data.pageUrl}" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Open Full Dedicated Webpage</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
+        }
+        if (data.blueprintUrl) {
+            buttonsHtml += `<a href="${data.blueprintUrl}" download class="btn-3d-grey px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2 text-slate-200"><span>Download Blueprint (.json)</span><i data-lucide="download" class="w-4 h-4"></i></a>`;
+        }
+        if (data.chatMsg) {
+            buttonsHtml += `<a href="https://wa.me/923489911425?text=${encodeURIComponent(data.chatMsg)}" target="_blank" class="btn-3d-blue px-6 py-2.5 text-xs font-mono font-extrabold uppercase flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
+        } else {
+            buttonsHtml += `<a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
+        }
+
+        bodyEl.innerHTML = `
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4">
+                    <span class="px-3 py-1 rounded-full text-[10px] font-mono font-extrabold bg-sky-500/10 text-sky-400 border border-sky-400/30 uppercase tracking-widest">${data.tag || 'PRODUCTION ARCHITECTURE'}</span>
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-2">${data.title}</h2>
+                    <p class="font-mono text-xs text-slate-400 mt-1.5">${data.stack || ''}</p>
+                </div>
+
+                ${mediaHtml}
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-[10px] font-mono text-rose-400 uppercase tracking-widest mb-1.5 font-bold">The Challenge / Problem</div>
+                        <p class="text-xs text-slate-300 leading-relaxed">${data.problem || data.desc}</p>
+                    </div>
+                    <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1.5 font-bold">The Engineering Solution</div>
+                        <p class="text-xs text-slate-300 leading-relaxed">${data.solution || data.desc}</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900/30 border border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                    <div class="text-xs font-mono text-emerald-400 font-bold">${data.outcome || 'Production Audited Precision'}</div>
+                    <div class="flex flex-wrap items-center gap-3">${buttonsHtml}</div>
+                </div>
+            </div>
+        `;
+
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (window.lucide) lucide.createIcons();
+    }
+
+    function closePopout(e) {
+        const overlay = document.getElementById('enki-popout-overlay');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        // Stop any playing video
+        const vid = overlay.querySelector('video');
+        if (vid) vid.pause();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closePopout();
+    });
+
+    // Wire up ALL cards with smart data hooks
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Hero Card 1: AI Automation & Agentic Systems
+        const hero1 = document.querySelector('.sexy-luxury-card:first-of-type');
+        if (hero1) {
+            hero1.onclick = () => openPopout({
+                badge: 'FLAGSHIP AI AGENTIC SUITE',
+                tag: 'Make.com • n8n MCP • LangGraph • Claude Code',
+                title: 'Autonomous Systems Engine & MCP Architectures',
+                stack: 'Vapi Voice Telephony • Claude Code MCP • GPT-4o Strict JSON • pgvector RAG',
+                desc: 'Full enterprise AI automation architecture wiring LLMs into operational business software with 100% deterministic backends.',
+                problem: 'LLMs in production suffer from non-deterministic outputs, API rate limit drops, hallucinations, and context rot when integrated without schema validation.',
+                solution: 'Strict JSON schema guardrails, dual-model validation gates, idempotent webhooks, and self-hosted n8n MCP tools delivering sub-60s execution with 96% benchmark accuracy.',
+                outcome: '100% Deterministic Backends · Zero Hallucinations',
+                chatMsg: 'Hi Idrees, I want to inspect and deploy your Autonomous Systems Engine & MCP Architecture.'
+            });
+        }
+
+        // 2. Hero Card 2: Lead Gen at AI Automation Scale
+        const hero2 = document.querySelector('.sexy-card-emerald');
+        if (hero2) {
+            hero2.onclick = () => openPopout({
+                badge: 'HIGH-VELOCITY OUTBOUND REVOPS',
+                tag: 'Apify • ZeroBounce • Instantly • Smartlead',
+                title: '$350K+ Pipeline Engine & Outbound Infrastructure',
+                stack: '40+ Secondary Domains • SPF/DKIM/DMARC • GPT-4o Icebreakers • Close CRM',
+                desc: 'Autonomous lead generation infrastructure capable of scaling past 25,000 verified decision-maker contacts every single month.',
+                problem: 'Manual lead prospecting burns SDR time, produces high bounce rates (>5%), and risks primary domain blacklisting from Google & Microsoft algorithms.',
+                solution: 'Automated Apify scraping paired with waterfall ZeroBounce verification, secondary domain DNS rotation across 40+ inboxes, and dynamic LLM personalized opening lines.',
+                outcome: '25K+ Contacts/Mo · <1.5% Hard Bounce · $350K Pipeline',
+                chatMsg: 'Hi Idrees, I am interested in scaling my outbound pipeline with your $350K+ Pipeline Engine.'
+            });
+        }
+
+        // 3. The 10 Master Workflows
+        const workflowsData = [
+            {
+                id: 1,
+                title: 'Full Automated B2B Lead Gen in n8n',
+                badge: 'WORKFLOW 01 · FLAGSHIP',
+                tag: 'Live Execution Proof',
+                stack: 'n8n • Apify • ZeroBounce • CRM Routing',
+                video: 'workflows/n8n-lead-gen/n8n_lead_gen_execution.mp4',
+                pageUrl: 'workflows/n8n-lead-gen/index.html',
+                blueprintUrl: 'workflows/n8n-lead-gen/blueprint.json',
+                problem: 'Manual list building takes 25+ hours weekly with bounce rates over 8%.',
+                solution: 'Webhook trigger running Apify actors, live SMTP validation, and automated CRM slotting in real time.',
+                outcome: '25K+ Leads/Mo · <1.5% Bounce Rate'
+            },
+            {
+                id: 2,
+                title: 'Shopify COD Fraud Shield & WhatsApp AI',
+                badge: 'WORKFLOW 02 · PROPRIETARY',
+                tag: 'Commercial Enterprise IP',
+                stack: 'Make.com • Shopify GraphQL • WhatsApp Cloud • GPT-4o',
+                locked: true,
+                price: '$1,000',
+                lockNotice: 'Proprietary reverse-logistics defense system reducing Cash-on-Delivery RTO return losses by 48%. Confidential deployment only.',
+                problem: 'Cash-on-Delivery fake orders and unconfirmed addresses bleed e-commerce stores up to $18,000 every month in wasted courier fees.',
+                solution: 'Shopify GraphQL risk profiler + GPT-4o address validator + 2-way WhatsApp template confirmation with automated order tagging.',
+                outcome: 'RTO Rate Down 48% · $18K/mo Protected',
+                chatMsg: 'Hi Idrees, I want to license your proprietary Shopify COD Fraud Prevention workflow ($1,000).'
+            },
+            {
+                id: 3,
+                title: 'Make.com Autonomous Meeting Booking',
+                badge: 'WORKFLOW 03 · SPEED-TO-LEAD',
+                tag: 'Live Execution Proof',
+                stack: 'Make.com • Google Calendar • Twilio SMS • Slack',
+                video: 'workflows/make-meeting-booking/meeting_booking_execution.mp4',
+                pageUrl: 'workflows/make-meeting-booking/index.html',
+                blueprintUrl: 'workflows/make-meeting-booking/blueprint.json',
+                problem: 'Inbound leads waiting hours for manual SDR contact drop off by over 60%.',
+                solution: 'Instant webhook listener qualifying leads, finding open slots, and sending SMS/Calendar invites in under 60 seconds.',
+                outcome: '<60s Lead Response Time · Zero Scheduling Friction'
+            },
+            {
+                id: 4,
+                title: 'LinkedIn Social Intelligence & Post Generator',
+                badge: 'WORKFLOW 04 · CONTENT ENGINE',
+                tag: 'Canvas Walkthrough Proof',
+                stack: 'Make.com • Apify • GPT-4o • LinkedIn REST API',
+                video: 'workflows/linkedin-post-generator/linkedin_post_generator.mp4',
+                pageUrl: 'workflows/linkedin-post-generator/index.html',
+                blueprintUrl: 'workflows/linkedin-post-generator/blueprint.json',
+                problem: 'Writing consistent high-performing LinkedIn content burns hours of valuable executive time.',
+                solution: 'Automated trend research, brand-voice adaptation, hook re-engineering, and 6-hour interval queued publishing.',
+                outcome: '20+ Hours/Week Saved · Automated Queues'
+            },
+            {
+                id: 5,
+                title: 'Cold DM Replier (Multi-Account Engine)',
+                badge: 'WORKFLOW 05 · PROPRIETARY SCALE',
+                tag: 'Multi-Tenant Commercial Setup',
+                stack: 'Make.com • Instagram Graph API • Delay Pacing Logic',
+                locked: true,
+                price: '$500',
+                lockNotice: 'Multi-tenant engine managing 3+ Instagram business accounts in a single task with sub-60s anti-ban pacing.',
+                problem: 'Instagram rate limits and shadowbans trigger when managing multiple sales outreach accounts manually.',
+                solution: 'Paced multi-account routing architecture running unified queues while keeping individual account limits safe.',
+                outcome: 'Sub-60s Replies · Anti-Ban Protected',
+                chatMsg: 'Hi Idrees, I want to license your Multi-Account Cold DM Replier Workflow ($500).'
+            },
+            {
+                id: 6,
+                title: 'WhatsApp Cloud API Bot with Paced Delays',
+                badge: 'WORKFLOW 06 · RETENTION AI',
+                tag: 'Live Execution Proof',
+                stack: 'Make.com • WhatsApp Business Cloud • Sleep Timers',
+                video: 'workflows/whatsapp-replying-bot/whatsapp_replying_bot.mp4',
+                pageUrl: 'workflows/whatsapp-replying-bot/index.html',
+                blueprintUrl: 'workflows/whatsapp-replying-bot/blueprint.json',
+                problem: 'Generic chatbots feel robotic and trigger spam blocks from Meta algorithms.',
+                solution: 'Human typing simulations (1-3s sleep pacing) handling customer support queries and routing orders.',
+                outcome: '100% Automated · Natural Human Pacing'
+            },
+            {
+                id: 7,
+                title: 'Custom AI Icebreaker & Hook Generator',
+                badge: 'WORKFLOW 07 · PERSONALIZATION',
+                tag: 'Live Execution Proof',
+                stack: 'Make.com • OpenAI GPT-4o • Google Sheets DB',
+                video: 'workflows/custom-icebreaker-generator/custom_icebreaker_generator.webm',
+                pageUrl: 'workflows/custom-icebreaker-generator/index.html',
+                blueprintUrl: 'workflows/custom-icebreaker-generator/blueprint.json',
+                problem: 'Standard generic cold email templates generate 1% to 2% reply rates.',
+                solution: 'Dynamically parses prospect public achievements and injects tailored 1-sentence opening hooks.',
+                outcome: '16% Benchmark Outbound Reply Rate'
+            },
+            {
+                id: 8,
+                title: 'ClickUp Automated Sprint & Task Engine',
+                badge: 'WORKFLOW 08 · OPERATIONS',
+                tag: 'Live Execution Proof',
+                stack: 'Make.com • ClickUp API • Form Webhooks • Slack',
+                video: 'workflows/clickup-operations-hub/clickup_operations_hub.mp4',
+                pageUrl: 'workflows/clickup-operations-hub/index.html',
+                blueprintUrl: 'workflows/clickup-operations-hub/blueprint.json',
+                problem: 'Manual client onboarding causes handover bottlenecks and missed technical deadlines.',
+                solution: 'Auto-generates technical deliverable sprints, assigns engineers, and posts updates to client channels.',
+                outcome: 'Zero Manual PM Overhead · Instant Onboarding'
+            },
+            {
+                id: 9,
+                title: 'Autonomous Inbound Customer Sales Agent',
+                badge: 'WORKFLOW 09 · SALES CLOSER',
+                tag: 'Canvas Walkthrough Proof',
+                stack: 'Make.com • GPT-4o Router • Google Sheets DB',
+                video: 'workflows/autonomous-sales-agent/sales_agent_architecture.mp4',
+                pageUrl: 'workflows/autonomous-sales-agent/index.html',
+                blueprintUrl: 'workflows/autonomous-sales-agent/blueprint.json',
+                problem: 'Off-hours prospect questions sit unanswered, allowing buyers to shop with competitors.',
+                solution: 'Detects returning vs new customers, answers technical questions, and drives directly to payment links.',
+                outcome: '24/7 Closing Capability · Sub-Minute Response'
+            },
+            {
+                id: 10,
+                title: 'WhatsApp ChatBot Improved Routing Engine',
+                badge: 'WORKFLOW 10 · RESILIENCE',
+                tag: 'Canvas Walkthrough Proof',
+                stack: 'Make.com • WhatsApp Cloud • Custom Error Break Handlers',
+                video: 'workflows/whatsapp-chatbot-improved/whatsapp_chatbot_improved.mp4',
+                pageUrl: 'workflows/whatsapp-chatbot-improved/index.html',
+                blueprintUrl: 'workflows/whatsapp-chatbot-improved/blueprint.json',
+                problem: 'Uncaught API edge cases cause silent bot failures and leave customers stranded.',
+                solution: 'Custom error break handlers, automatic human escalation alerts on Slack, and persistent lead tracking.',
+                outcome: '99.4% Uptime · Zero Silent Drops'
+            }
+        ];
+
+        document.querySelectorAll('#master-workflows-vault .vault-card').forEach((card, index) => {
+            const data = workflowsData[index];
+            if (data) {
+                card.onclick = (e) => {
+                    // If user clicked direct link button inside card, don't open modal, let link work
+                    if (e.target.closest('a') && !e.target.closest('a[href="#"]')) return;
+                    openPopout(data);
+                };
+            }
+        });
+
+        // 4. Client Proof Cards
+        const clientsData = [
+            {
+                title: 'Green TV Entertainment',
+                badge: 'CLIENT ENGAGEMENT · MEDIA',
+                tag: 'National Television PK',
+                desc: 'Full digital broadcast campaign architecture and media distribution system for Pakistan national TV network.',
+                problem: 'Massive volume of television programming required real-time multi-channel digital distribution without manual editing delay.',
+                solution: 'Automated video rendering pipeline and algorithmic distribution engine reaching over 5M+ monthly audience.',
+                outcome: '5M+ Audience Reach · Automated Media Feeds',
+                chatMsg: 'Hi Idrees, tell me more about your media distribution work for Green TV.'
+            },
+            {
+                title: 'Apache Pizza Ireland',
+                badge: 'CLIENT ENGAGEMENT · FRANCHISE',
+                tag: 'National Irish Franchise',
+                desc: 'Organic growth strategy and content automation engine across national Irish franchise locations.',
+                problem: 'Decentralized store presence required a unified social voice that drove walk-in foot traffic and online orders.',
+                solution: 'Localized digital campaigns and automated viral content distribution across Irish demographics.',
+                outcome: 'National Foot Traffic Lift · Verifiable Case Study',
+                chatMsg: 'Hi Idrees, tell me more about your work with Apache Pizza Ireland.'
+            },
+            {
+                title: 'Rock Road & Slievemore Dental',
+                badge: 'CLIENT ENGAGEMENT · HEALTHCARE',
+                tag: 'Irish Private Healthcare',
+                desc: 'Patient intake automation, booking speed-to-lead, and automated patient recall communications.',
+                problem: 'Dental clinics losing high-ticket cosmetic consultations due to delayed email responses and manual phone tag.',
+                solution: 'Automated WhatsApp & SMS appointment confirmation sequences with automated reminder triggers.',
+                outcome: '38% Booking Show-Up Lift · Automated Patient Influx',
+                chatMsg: 'Hi Idrees, tell me about your healthcare appointment automation systems.'
+            },
+            {
+                title: 'Master Visual & Agentic Drive Vault',
+                badge: 'CLOUD REPOSITORY · ARCHITECTURE',
+                tag: 'Master Knowledge Vault',
+                desc: 'Comprehensive cloud drive containing system diagrams, agentic DAG flows, and client onboarding SOPs.',
+                problem: 'Enterprise clients need rapid due diligence on architectural patterns and production deliverables.',
+                solution: 'Open cloud repository containing visual blueprints, SOP templates, and deliverability matrices.',
+                outcome: '100% Transparent Architectural Blueprints',
+                pageUrl: 'https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk',
+                chatMsg: 'Hi Idrees, I want access to your Master Visual & Agentic Drive Vault.'
+            }
+        ];
+
+        document.querySelectorAll('#client-proof-section .client-card').forEach((card, idx) => {
+            const data = clientsData[idx];
+            if (data) {
+                card.onclick = (e) => {
+                    if (e.target.closest('a')) return;
+                    openPopout(data);
+                };
+            }
+        });
+    });
+    </script>
+
 </body>
 </html>

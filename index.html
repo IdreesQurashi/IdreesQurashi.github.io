@@ -227,12 +227,11 @@
            SCROLL 3D REVEAL SYSTEM
         ═══════════════════════════════════════════ */
         .reveal-3d {
-            opacity: 0;
-            transform: perspective(900px) translateY(48px) rotateX(10deg);
+            opacity: 1; /* Fallback for immediate visibility & clickability */
+            transform: translateY(0px);
             transition:
                 opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: transform, opacity;
         }
         .reveal-3d.visible {
             opacity: 1;
@@ -432,15 +431,21 @@
         #enki-popout-overlay {
             position: fixed;
             inset: 0;
-            z-index: 99999;
-            background: rgba(0, 0, 0, 0.78);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            z-index: 999999;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             display: none;
             align-items: center;
             justify-content: center;
             opacity: 0;
+            pointer-events: none;
             transition: opacity 0.25s ease;
+        }
+        #enki-popout-overlay.active {
+            display: flex !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
         }
         #enki-popout-overlay.active {
             display: flex;
@@ -544,7 +549,7 @@
 
             <!-- ONLY TWO ULTRA 3D BUTTONS: 1. AI AUTOMATION | 2. B2B LEAD GEN -->
             <div class="mt-8 flex flex-wrap items-center justify-center gap-6 font-mono text-xs uppercase tracking-wider">
-                <a href="#multi-agent-loop" class="btn-3d-blue hero-primary flex items-center space-x-3" style="padding: 18px 42px; font-size: 0.9rem; border-radius: 16px;">
+                <a href="#client-proof-section" class="btn-3d-blue hero-primary flex items-center space-x-3" style="padding: 18px 42px; font-size: 0.9rem; border-radius: 16px;">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
                     <span>1. AI Automation &amp; Agentic Workflows</span>
                 </a>
@@ -1554,10 +1559,13 @@
     </div>
 
     <script>
-    function openPopout(data) {
+// Global Popout Engine
+    window.openPopout = function(data) {
+        if (!data) return;
         const overlay = document.getElementById('enki-popout-overlay');
         const titleEl = document.getElementById('popout-window-title');
         const bodyEl = document.getElementById('popout-window-body');
+        if (!overlay || !titleEl || !bodyEl) return;
 
         titleEl.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-accentBlue animate-pulse"></span> <span class="text-white tracking-widest font-mono text-[11px]">${data.badge || 'SYSTEM OVERVIEW'}</span>`;
         
@@ -1586,7 +1594,6 @@
             `;
         }
 
-        // Action Buttons
         let buttonsHtml = '';
         if (data.pageUrl) {
             buttonsHtml += `<a href="${data.pageUrl}" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
@@ -1600,13 +1607,11 @@
             buttonsHtml += `<a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
         }
 
-        // Stack tags pills
         let stackPills = '';
         if (data.stack) {
             stackPills = data.stack.split('•').map(s => `<span class="px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/[0.1] font-mono text-[10px] text-slate-300 font-medium">${s.trim()}</span>`).join(' ');
         }
 
-        // Specifications Grid (Rich metrics row)
         let specsRow = `
             <div class="grid grid-cols-3 gap-3 mb-6">
                 <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
@@ -1626,8 +1631,6 @@
 
         bodyEl.innerHTML = `
             <div class="max-w-3xl mx-auto">
-                
-                <!-- Hero Meta Header -->
                 <div class="mb-6 pb-5 border-b border-white/[0.08]">
                     <div class="flex items-center gap-2 mb-2">
                         <span class="px-3 py-1 rounded-full text-[10px] font-mono font-extrabold bg-sky-500/10 text-sky-400 border border-sky-400/30 uppercase tracking-widest">${data.tag || 'PRODUCTION ARCHITECTURE'}</span>
@@ -1637,15 +1640,11 @@
                     <div class="flex flex-wrap gap-1.5 mt-3">${stackPills}</div>
                 </div>
 
-                <!-- Video / Media Showcase -->
                 ${mediaHtml}
-
-                <!-- Specifications Row -->
                 ${specsRow}
 
-                <!-- Deep Technical Breakdown -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90 relative overflow-hidden">
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90">
                         <div class="flex items-center gap-2 mb-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                             <span class="text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">The Challenge &amp; Problem</span>
@@ -1653,7 +1652,7 @@
                         <p class="text-xs text-slate-300 leading-relaxed font-light">${data.problem || data.desc}</p>
                     </div>
 
-                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90 relative overflow-hidden">
+                    <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90">
                         <div class="flex items-center gap-2 mb-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                             <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">The Engineering Solution</span>
@@ -1662,7 +1661,6 @@
                     </div>
                 </div>
 
-                <!-- Action Hub & Consultation Trigger -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-slate-900/80 border border-slate-800 flex flex-wrap items-center justify-between gap-4 shadow-xl">
                     <div class="flex items-center space-x-3">
                         <div class="w-9 h-9 rounded-xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue">
@@ -1675,30 +1673,31 @@
                     </div>
                     <div class="flex flex-wrap items-center gap-3">${buttonsHtml}</div>
                 </div>
-
             </div>
         `;
 
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
         if (window.lucide) lucide.createIcons();
-    }
+    };
 
-    function closePopout(e) {
+    window.closePopout = function(e) {
         const overlay = document.getElementById('enki-popout-overlay');
+        if (!overlay) return;
         overlay.classList.remove('active');
         document.body.style.overflow = '';
-        // Stop any playing video
         const vid = overlay.querySelector('video');
         if (vid) vid.pause();
-    }
+    };
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closePopout();
+        if (e.key === 'Escape') window.closePopout();
     });
 
-    // Wire up ALL cards with smart data hooks from Top to Bottom
-    document.addEventListener('DOMContentLoaded', () => {
+        // Wire up ALL cards with smart data hooks from Top to Bottom
+    
+    function initCardBindings() {
+
         // 1. Hero Card 1: AI Automation & Agentic Systems
         const hero1 = document.querySelector('.sexy-luxury-card:first-of-type');
         if (hero1) {
@@ -2236,8 +2235,13 @@
                 };
             }
         });
-    });
 
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCardBindings);
+    } else {
+        initCardBindings();
+    }
     </script>
 
 </body>

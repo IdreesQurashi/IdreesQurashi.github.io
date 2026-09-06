@@ -781,7 +781,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 
                     <!-- ARCHITECTURE 01: Nick Saraev Autonomous Outbound SDR Swarm -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-sky-400">
+                    <div onclick="openAgenticCard(1)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-sky-400 cursor-pointer transition-all duration-300 hover:border-sky-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-sky-500/10 group">
                         <div>
                             <!-- Terminal Visualizer -->
                             <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
@@ -806,7 +806,7 @@
                             </div>
 
                             <div class="text-[9px] font-mono uppercase text-sky-400 font-bold mb-1">Architecture 01 · Nick Saraev Provenance</div>
-                            <h3 class="text-xl font-serif font-bold text-white mb-2">Autonomous Outbound SDR Swarm</h3>
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Autonomous Outbound SDR Swarm</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Three layer Directive, Orchestration, and Execution architecture. Extracts deep account intelligence via Firecrawl, synthesizes low ego abundance copy, and routes ambiguous outputs to human review before dispatch.
                             </p>
@@ -814,24 +814,14 @@
 
                         <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
                             <span class="outcome-badge">15 to 20 Bookings / Wk</span>
-                            <button onclick="openPopout({
-                                badge: 'MULTI AGENT SDR SWARM',
-                                tag: 'NICK SARAEV ARCHITECTURE',
-                                title: 'Autonomous Outbound SDR Swarm',
-                                stack: 'LangGraph • DOE Framework • Firecrawl API • Claude 3.5 Sonnet • Smartlead API',
-                                outcome: '15 to 20 Qualified Calls / Wk',
-                                problem: 'Manual SDR prospecting requires 45 minutes per account. Generic cold email scraping results in low reply rates and domain burn. Monolithic AI tools hallucinate irrelevant company context and produce robotic spam.',
-                                solution: 'Three layer DOE framework (Directive, Orchestration, Execution). Orchestrator routes accounts to specialized workers: Firecrawl extracts live website tech stacks and recent funding news, Claude 3.5 Sonnet drafts bespoke 4 line abundance pitches, and a confidence scoring gate prevents sending if certainty drops below 90%.',
-                                blueprintUrl: 'agentic_blueprints/workflow_1_nick_saraev.json',
-                                chatMsg: 'Hi Idrees, I want to inspect your Nick Saraev Autonomous SDR Swarm architecture.'
-                            })" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(1);" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
                                 <span>Inspect Architecture</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- ARCHITECTURE 02: IndyDevDan & Dave Ebbelaar Autonomous Software Engineer -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-indigo-400">
+                    <div onclick="openAgenticCard(2)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-indigo-400 cursor-pointer transition-all duration-300 hover:border-indigo-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-indigo-500/10 group">
                         <div>
                             <!-- Terminal Visualizer -->
                             <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
@@ -856,7 +846,7 @@
                             </div>
 
                             <div class="text-[9px] font-mono uppercase text-indigo-400 font-bold mb-1">Architecture 02 · IndyDevDan &amp; Ebbelaar Provenance</div>
-                            <h3 class="text-xl font-serif font-bold text-white mb-2">Autonomous Software Engineer</h3>
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Autonomous Software Engineer</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Hierarchical 5 agent system replacing monolithic vibe coding. Isolates context windows, executes reproduction tests in ephemeral Docker sandboxes, self corrects on runtime stack traces, and gates PR releases with Semgrep.
                             </p>
@@ -864,17 +854,7 @@
 
                         <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
                             <span class="outcome-badge">Zero Host Blast Radius</span>
-                            <button onclick="openPopout({
-                                badge: 'AUTONOMOUS DEV ENGINE',
-                                tag: 'INDYDEVDAN & EBBELAAR ARCHITECTURE',
-                                title: 'Autonomous Multi Agent Software Engineer',
-                                stack: 'LangGraph • Docker Sandbox • Claude Opus • Semgrep • Pytest • GitHub API',
-                                outcome: 'Closed Loop Self Correction',
-                                problem: 'Single prompt AI coding assistants degrade on complex repositories due to context contamination, broken imports, unvetted shell execution, and infinite loops where models repeat the same failing edit.',
-                                solution: 'Division of labor architecture with 5 specialized agents. Lead Architect maps dependencies, Test Runner writes failing reproduction tests, Coder generates isolated surgical patches, Docker Sandbox executes tests safely, and Critic Auditor enforces static Semgrep security scans before automated PR creation.',
-                                blueprintUrl: 'agentic_blueprints/workflow_2_autonomous_dev.json',
-                                chatMsg: 'Hi Idrees, I want to inspect your Autonomous Multi Agent Software Engineer architecture.'
-                            })" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(2);" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
                                 <span>Inspect Architecture</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
@@ -886,7 +866,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                     <!-- ARCHITECTURE 03: Cole Medin Self Healing Scraper -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-emerald-400">
+                    <div onclick="openAgenticCard(3)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-emerald-400 cursor-pointer transition-all duration-300 hover:border-emerald-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-emerald-500/10 group">
                         <div>
                             <!-- Terminal Visualizer -->
                             <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
@@ -910,7 +890,7 @@
                             </div>
 
                             <div class="text-[9px] font-mono uppercase text-emerald-400 font-bold mb-1">Architecture 03 · Cole Medin Provenance</div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Self Healing Web Scraper</h3>
+                            <h3 class="text-lg font-serif font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Self Healing Web Scraper</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Eliminates scraper maintenance. Stealth Playwright runs fast on cached locators. On DOM failure, Gemini Flash Vision performs spatial grounding and updates persistent cache on the fly.
                             </p>
@@ -918,24 +898,14 @@
 
                         <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
                             <span class="outcome-badge">95% Zero LLM Fast Path</span>
-                            <button onclick="openPopout({
-                                badge: 'SELF HEALING COMPUTER USE',
-                                tag: 'COLE MEDIN ARCHITECTURE',
-                                title: 'Self Healing Web Scraper & Browser Agent',
-                                stack: 'Playwright Async • Gemini 2.5 Flash Vision • Pydantic v2 • SQLite Cache',
-                                outcome: '100% Visual Auto Recovery',
-                                problem: 'Modern React and Tailwind SPAs recompile with randomized class hashes across deployments, breaking hardcoded CSS and XPath selectors and halting data extraction pipelines until developers manually rewrite locators.',
-                                solution: 'Deterministic first architecture. Executes in 14ms using cached locators. Upon element timeout, an error interceptor captures a lossless viewport snapshot and feeds it to Gemini Flash Vision. The vision model grounds the element visually, derives resilient ARIA selectors, and updates the persistent ledger for future zero latency runs.',
-                                blueprintUrl: 'agentic_blueprints/workflow_3_self_healing_scraper.json',
-                                chatMsg: 'Hi Idrees, I want to inspect your Self Healing Web Scraper architecture.'
-                            })" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(3);" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
                                 <span>Inspect</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- ARCHITECTURE 04: Matthew Berman & Liam Ottley Enterprise Operations Swarm -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-purple-400">
+                    <div onclick="openAgenticCard(4)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-purple-400 cursor-pointer transition-all duration-300 hover:border-purple-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-purple-500/10 group">
                         <div>
                             <!-- Terminal Visualizer -->
                             <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
@@ -959,7 +929,7 @@
                             </div>
 
                             <div class="text-[9px] font-mono uppercase text-purple-400 font-bold mb-1">Architecture 04 · Berman &amp; Ottley Provenance</div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Enterprise Operations Swarm</h3>
+                            <h3 class="text-lg font-serif font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Enterprise Operations Swarm</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Triage routing swarm with strict operational barriers. LLMs formulate proposals while deterministic Python executes database changes, pausing for Slack manager sign off on high risk actions.
                             </p>
@@ -967,24 +937,14 @@
 
                         <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
                             <span class="outcome-badge">70% Triage Deflection</span>
-                            <button onclick="openPopout({
-                                badge: 'ENTERPRISE OPS SWARM',
-                                tag: 'BERMAN & OTTLEY ARCHITECTURE',
-                                title: 'Enterprise Customer Operations & Triage Swarm',
-                                stack: 'LangGraph Interrupt • PostgreSQL VIP • Slack Block Kit • FastAPI • Python',
-                                outcome: '100% Financial Risk Guardrails',
-                                problem: 'Unchecked customer support AI bots suffer from hallucinations, accidental discount promises, unauthorized refunds, and lack of context regarding high value enterprise customer relationships.',
-                                solution: 'Domain isolated specialist swarm (Technical Support, Billing, Retention). Synchronous PostgreSQL VIP lookups identify account tiers. A deterministic barrier guarantees LLMs only draft proposals: refunds exceeding $100 pause execution and push Slack Block Kit interactive approval cards for human manager sign off.',
-                                blueprintUrl: 'agentic_blueprints/workflow_4_enterprise_swarm.json',
-                                chatMsg: 'Hi Idrees, I want to inspect your Enterprise Customer Operations Swarm architecture.'
-                            })" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(4);" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
                                 <span>Inspect</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- ARCHITECTURE 05: Harrison Chase Deep Financial Intelligence -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-amber-400">
+                    <div onclick="openAgenticCard(5)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-amber-400 cursor-pointer transition-all duration-300 hover:border-amber-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-amber-500/10 group">
                         <div>
                             <!-- Terminal Visualizer -->
                             <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
@@ -1008,7 +968,7 @@
                             </div>
 
                             <div class="text-[9px] font-mono uppercase text-amber-400 font-bold mb-1">Architecture 05 · Harrison Chase Provenance</div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Deep Financial Intelligence</h3>
+                            <h3 class="text-lg font-serif font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Deep Financial Intelligence</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Zero hallucination equity research architecture. Employs LangGraph dynamic Send API, isolated Python code execution for financial arithmetic, and adversarial citation validation against raw SEC filings.
                             </p>
@@ -1016,17 +976,7 @@
 
                         <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
                             <span class="outcome-badge">100% Math Accuracy</span>
-                            <button onclick="openPopout({
-                                badge: 'DETERMINISTIC FINANCIAL RAG',
-                                tag: 'HARRISON CHASE ARCHITECTURE',
-                                title: 'Deep Financial Intelligence & SEC 10K Research',
-                                stack: 'LangGraph Send API • Docling Hybrid Chunking • Python Pandas Sandbox • pgvector',
-                                outcome: 'Zero Hallucination Math',
-                                problem: 'Standard RAG systems hallucinate when computing financial ratios, operating margins, or revenue growth rates, leading to inaccurate investment research and lost client trust.',
-                                solution: 'Deconstructs research into parallel sub tasks using LangGraph dynamic Send API. Ingests SEC 10K tables using Docling. Bypasses LLM math completely by executing extracted statement metrics inside an isolated Python Pandas code interpreter, validating every single claim with raw SEC chunk citations.',
-                                blueprintUrl: 'agentic_blueprints/workflow_5_deep_research_finance.json',
-                                chatMsg: 'Hi Idrees, I want to inspect your Deep Financial Intelligence architecture.'
-                            })" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(5);" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
                                 <span>Inspect</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
@@ -1842,6 +1792,70 @@
     </div>
 
     <script>
+    // Agentic Suite Card Popout Router
+    window.openAgenticCard = function(index) {
+        const agenticCards = {
+            1: {
+                badge: 'MULTI AGENT SDR SWARM',
+                tag: 'NICK SARAEV ARCHITECTURE',
+                title: 'Autonomous Outbound SDR Swarm',
+                stack: 'LangGraph • DOE Framework • Firecrawl API • Claude 3.5 Sonnet • Smartlead API',
+                outcome: '15 to 20 Qualified Calls / Wk',
+                problem: 'Manual SDR prospecting requires 45 minutes per account. Generic cold email scraping results in low reply rates and domain burn. Monolithic AI tools hallucinate irrelevant company context and produce robotic spam.',
+                solution: 'Three layer DOE framework (Directive, Orchestration, Execution). Orchestrator routes accounts to specialized workers: Firecrawl extracts live website tech stacks and recent funding news, Claude 3.5 Sonnet drafts bespoke 4 line abundance pitches, and a confidence scoring gate prevents sending if certainty drops below 90%.',
+                blueprintUrl: 'agentic_blueprints/workflow_1_nick_saraev.json',
+                chatMsg: 'Hi Idrees, I want to inspect your Nick Saraev Autonomous SDR Swarm architecture.'
+            },
+            2: {
+                badge: 'AUTONOMOUS DEV ENGINE',
+                tag: 'INDYDEVDAN & EBBELAAR ARCHITECTURE',
+                title: 'Autonomous Multi Agent Software Engineer',
+                stack: 'LangGraph • Docker Sandbox • Claude Opus • Semgrep • Pytest • GitHub API',
+                outcome: 'Closed Loop Self Correction',
+                problem: 'Single prompt AI coding assistants degrade on complex repositories due to context contamination, broken imports, unvetted shell execution, and infinite loops where models repeat the same failing edit.',
+                solution: 'Division of labor architecture with 5 specialized agents. Lead Architect maps dependencies, Test Runner writes failing reproduction tests, Coder generates isolated surgical patches, Docker Sandbox executes tests safely, and Critic Auditor enforces static Semgrep security scans before automated PR creation.',
+                blueprintUrl: 'agentic_blueprints/workflow_2_autonomous_dev.json',
+                chatMsg: 'Hi Idrees, I want to inspect your Autonomous Multi Agent Software Engineer architecture.'
+            },
+            3: {
+                badge: 'SELF HEALING COMPUTER USE',
+                tag: 'COLE MEDIN ARCHITECTURE',
+                title: 'Self Healing Web Scraper & Browser Agent',
+                stack: 'Playwright Async • Gemini 2.5 Flash Vision • Pydantic v2 • SQLite Cache',
+                outcome: '100% Visual Auto Recovery',
+                problem: 'Modern React and Tailwind SPAs recompile with randomized class hashes across deployments, breaking hardcoded CSS and XPath selectors and halting data extraction pipelines until developers manually rewrite locators.',
+                solution: 'Deterministic first architecture. Executes in 14ms using cached locators. Upon element timeout, an error interceptor captures a lossless viewport snapshot and feeds it to Gemini Flash Vision. The vision model grounds the element visually, derives resilient ARIA selectors, and updates the persistent ledger for future zero latency runs.',
+                blueprintUrl: 'agentic_blueprints/workflow_3_self_healing_scraper.json',
+                chatMsg: 'Hi Idrees, I want to inspect your Self Healing Web Scraper architecture.'
+            },
+            4: {
+                badge: 'ENTERPRISE OPS SWARM',
+                tag: 'BERMAN & OTTLEY ARCHITECTURE',
+                title: 'Enterprise Customer Operations & Triage Swarm',
+                stack: 'LangGraph Interrupt • PostgreSQL VIP • Slack Block Kit • FastAPI • Python',
+                outcome: '100% Financial Risk Guardrails',
+                problem: 'Unchecked customer support AI bots suffer from hallucinations, accidental discount promises, unauthorized refunds, and lack of context regarding high value enterprise customer relationships.',
+                solution: 'Domain isolated specialist swarm (Technical Support, Billing, Retention). Synchronous PostgreSQL VIP lookups identify account tiers. A deterministic barrier guarantees LLMs only draft proposals: refunds exceeding $100 pause execution and push Slack Block Kit interactive approval cards for human manager sign off.',
+                blueprintUrl: 'agentic_blueprints/workflow_4_enterprise_swarm.json',
+                chatMsg: 'Hi Idrees, I want to inspect your Enterprise Customer Operations Swarm architecture.'
+            },
+            5: {
+                badge: 'DETERMINISTIC FINANCIAL RAG',
+                tag: 'HARRISON CHASE ARCHITECTURE',
+                title: 'Deep Financial Intelligence & SEC 10K Research',
+                stack: 'LangGraph Send API • Docling Hybrid Chunking • Python Pandas Sandbox • pgvector',
+                outcome: 'Zero Hallucination Math',
+                problem: 'Standard RAG systems hallucinate when computing financial ratios, operating margins, or revenue growth rates, leading to inaccurate investment research and lost client trust.',
+                solution: 'Deconstructs research into parallel sub tasks using LangGraph dynamic Send API. Ingests SEC 10K tables using Docling. Bypasses LLM math completely by executing extracted statement metrics inside an isolated Python Pandas code interpreter, validating every single claim with raw SEC chunk citations.',
+                blueprintUrl: 'agentic_blueprints/workflow_5_deep_research_finance.json',
+                chatMsg: 'Hi Idrees, I want to inspect your Deep Financial Intelligence architecture.'
+            }
+        };
+        if (agenticCards[index]) {
+            openPopout(agenticCards[index]);
+        }
+    };
+
 // Global Popout Engine
     window.openPopout = function(data) {
         if (!data) return;

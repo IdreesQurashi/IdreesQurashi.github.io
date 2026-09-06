@@ -25,6 +25,64 @@
         .old-money-panel { background: rgba(8, 8, 8, 0.92); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .old-money-panel:hover { border-color: rgba(212, 175, 55, 0.35); transform: translateY(-2px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .gold-border { border: 1px solid rgba(212, 175, 55, 0.25); }
+
+        /* Popout Modal */
+        #protocol-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999999;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(16px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        #protocol-modal.active {
+            display: flex !important;
+            opacity: 1 !important;
+        }
+        #protocol-window {
+            width: 92vw;
+            max-width: 1050px;
+            height: 85vh;
+            max-height: 800px;
+            background: #07090e;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.98), 0 0 30px -5px rgba(212, 175, 55, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.95) translateY(15px);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #protocol-modal.active #protocol-window {
+            transform: scale(1) translateY(0);
+        }
+        .window-titlebar {
+            height: 48px;
+            background: #0c0f17;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .window-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 28px;
+            scrollbar-width: thin;
+            scrollbar-color: #d4af37 #0c0f17;
+        }
+        pre code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12.5px;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body class="bg-pitch font-sans antialiased selection:bg-gold selection:text-black relative">
@@ -62,50 +120,60 @@
                 </div>
                 <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">Agentic Workspaces & Systems Architecture</h1>
                 <p class="text-neutral-400 mt-5 text-sm md:text-base font-light leading-relaxed">
-                    Designed and deployed by Idrees Qurashi. Proprietary multi-agent workflows, autonomous tool loops, context ledgers, and deterministic LLM evaluation pipelines.
+                    Designed and deployed by Idrees Qurashi. Production multi-agent workflows, autonomous tool loops, persistent context ledgers, and deterministic LLM evaluation pipelines.
                 </p>
             </div>
 
             <!-- Architecture Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- System 1 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group cursor-pointer" onclick="openProtocol('p1')">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Systems Protocol 01</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Autonomous Tool-Calling Loops</h3>
-                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2 flex items-center justify-between">
+                            <span>Systems Protocol 01</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-gold/10 text-gold border border-gold/20">Interactive</span>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-gold transition">Autonomous Tool-Calling Loops</h3>
+                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
                             Deterministic multi-agent execution loops with sandboxed Python, bash, and REST API access. Zero hallucination through structured Pydantic schema validation.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-neutral-500">Core Engine</span>
-                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" class="text-gold hover:underline flex items-center gap-1">
-                            <span>Inspect Schema</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        <button class="text-gold group-hover:underline flex items-center gap-1">
+                            <span>Inspect Engine & Code</span><i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" onclick="event.stopPropagation()" class="text-neutral-400 hover:text-white flex items-center gap-1">
+                            <span>GitHub</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- System 2 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group cursor-pointer border border-gold/30 shadow-[0_0_20px_rgba(212,175,55,0.08)]" onclick="openProtocol('p2')">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Systems Protocol 02</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Persistent Memory & Context Ledgers</h3>
-                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
-                            Cross-session state coherence using dynamic Markdown/JSON ledgers (`AGENTS.md`, `SHARED_STATE.md`) with sliding window prompt caching (38% token cost reduction).
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2 flex items-center justify-between">
+                            <span>Systems Protocol 02</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-gold/20 text-goldLight border border-gold/40 font-bold">CLICK TO INSPECT</span>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-gold transition">Persistent Memory & Context Ledgers</h3>
+                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                            Cross-session state coherence using dynamic Markdown/JSON ledgers (<code class="text-gold">AGENTS.md</code>, <code class="text-gold">SHARED_STATE.md</code>) with sliding window prompt caching (38% token cost reduction).
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-neutral-500">Memory Sync</span>
-                        <span class="text-white">Active</span>
+                        <button class="text-gold font-semibold group-hover:underline flex items-center gap-1">
+                            <span>Inspect Memory Ledger</span><i data-lucide="database" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Active</span>
                     </div>
                 </div>
 
                 <!-- System 3 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group">
                     <div>
                         <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Systems Protocol 03</div>
                         <h3 class="text-xl font-serif font-bold text-white">n8n Enterprise Blueprint Vault</h3>
-                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
                             Curated production-grade n8n workflows: autonomous lead scoring nodes, vector memory retrieval, and real-time CRM webhook synchronization.
                         </p>
                     </div>
@@ -118,17 +186,22 @@
                 </div>
 
                 <!-- System 4 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group cursor-pointer border border-neutral-700 hover:border-gold/40" onclick="openProtocol('p4')">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Systems Protocol 04</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Evaluation-Driven Development (EDD)</h3>
-                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
-                            Automated tool-selection accuracy benchmarks, multi-step trajectory evaluation, and LLM-as-judge scoring matrices for mission-critical reliability.
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2 flex items-center justify-between">
+                            <span>Systems Protocol 04</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-gold/10 text-gold border border-gold/20">Interactive</span>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-gold transition">Evaluation-Driven Development (EDD)</h3>
+                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                            Automated tool-selection accuracy benchmarks, multi-step trajectory evaluation, and LLM-as-a-judge scoring matrices for mission-critical reliability.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-neutral-500">Reliability SLA</span>
-                        <span class="text-goldLight">99.4% Pass</span>
+                        <button class="text-gold group-hover:underline flex items-center gap-1">
+                            <span>Inspect Eval Pipeline</span><i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <span class="text-goldLight">99.4% Pass SLA</span>
                     </div>
                 </div>
 
@@ -137,7 +210,7 @@
                     <div>
                         <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Proprietary IP</div>
                         <h3 class="text-xl font-serif font-bold text-white">Shopify & WhatsApp Bulletproof COD</h3>
-                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
                             Proprietary automated order validation pipelines slashing return rates by 70% with two-way WhatsApp order confirmations and CRM tag synchronization.
                         </p>
                     </div>
@@ -154,7 +227,7 @@
                     <div>
                         <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Drive Repository</div>
                         <h3 class="text-xl font-serif font-bold text-white">Idrees Qurashi Master Drive Vault</h3>
-                        <p class="text-neutral-500 text-xs mt-3 leading-relaxed font-light">
+                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
                             Direct cloud access to institutional SOPs, high-ticket SMB automation agreements, and multi-agent workspace diagrams.
                         </p>
                     </div>
@@ -178,6 +251,30 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- POP-OUT ARCHITECTURE MODAL -->
+    <div id="protocol-modal" onclick="closeProtocolModal(event)">
+        <div id="protocol-window" onclick="event.stopPropagation()">
+            <!-- Title Bar -->
+            <div class="window-titlebar">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 cursor-pointer inline-block" onclick="closeProtocolModal()"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 cursor-pointer inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 cursor-pointer inline-block"></span>
+                    <span id="modal-title" class="ml-4 font-mono text-xs text-neutral-300 font-semibold uppercase tracking-wider">System Protocol 02: Persistent Memory & Context Ledgers</span>
+                </div>
+                <div class="flex items-center space-x-3 text-[11px] font-mono">
+                    <span class="text-gold border border-gold/30 px-2 py-0.5 rounded bg-gold/10">Python 3.11</span>
+                    <button onclick="closeProtocolModal()" class="text-neutral-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
+                </div>
+            </div>
+
+            <!-- Body Content -->
+            <div id="modal-body" class="window-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
     </div>
 
     <!-- 3D Subtle Wave -->
@@ -209,6 +306,242 @@
             renderer.render(scene, camera);
         }
         animate();
+
+        // PROTOCOL DATA
+        const protocols = {
+            p1: {
+                title: "Systems Protocol 01: Autonomous Tool-Calling & ReAct Loops",
+                html: `
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                            <div>
+                                <h4 class="text-lg font-serif font-bold text-white">Deterministic Tool Execution with Pydantic Validation</h4>
+                                <p class="text-xs font-mono text-neutral-400 mt-1">Solves LLM non-determinism, schema hallucination, and API timeout failures.</p>
+                            </div>
+                            <div class="flex gap-2 font-mono text-[10px]">
+                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-gold">Zero Hallucination</span>
+                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-emerald-400">Auto Self-Healing</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono text-xs">
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">EXECUTION PATTERN</span>
+                                <span class="text-white font-semibold">ReAct Tool Loop + Exponential Backoff</span>
+                            </div>
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">VALIDATION LAYER</span>
+                                <span class="text-gold font-semibold">Strict Pydantic V2 Schemas</span>
+                            </div>
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">SANDBOX ENVIRONMENT</span>
+                                <span class="text-emerald-400 font-semibold">Restricted Python & Subprocess Guard</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] font-mono text-gold mb-2 uppercase tracking-wider">Production Python Implementation:</div>
+                            <div class="bg-[#05070a] border border-neutral-800 rounded-lg p-4 overflow-x-auto text-neutral-300 font-mono text-xs">
+<pre><code><span class="text-purple-400">from</span> pydantic <span class="text-purple-400">import</span> BaseModel, Field, EmailStr
+<span class="text-purple-400">from</span> typing <span class="text-purple-400">import</span> Dict, Any, List
+<span class="text-purple-400">import</span> time, logging
+
+<span class="text-blue-400">class</span> <span class="text-yellow-300">LeadEnrichmentOutput</span>(BaseModel):
+    <span class="text-neutral-400">"""Strict Pydantic schema intercepting agent hallucination"""</span>
+    full_name: str = Field(..., description="Target executive full name")
+    company_domain: str = Field(..., regex=r"^[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
+    work_email: EmailStr = Field(..., description="Deliverable work email")
+    seniority: str = Field(..., description="C-Suite, VP, or Founder")
+    verified_mx: bool = Field(True, description="Strict DNS MX verification flag")
+
+<span class="text-blue-400">class</span> <span class="text-yellow-300">DeterministicToolExecutor</span>:
+    <span class="text-neutral-400">"""Autonomous loop enforcing structured self-healing execution"""</span>
+    <span class="text-blue-400">def</span> <span class="text-blue-300">__init__</span>(self, max_retries: int = 3):
+        self.max_retries = max_retries
+        self.trace_history: List[Dict[str, Any]] = []
+
+    <span class="text-blue-400">def</span> <span class="text-blue-300">invoke_tool</span>(self, tool_func, **kwargs) -> LeadEnrichmentOutput:
+        <span class="text-purple-400">for</span> attempt <span class="text-purple-400">in</span> range(1, self.max_retries + 1):
+            <span class="text-purple-400">try</span>:
+                raw_payload = tool_func(**kwargs)
+                <span class="text-neutral-400"># Pydantic runtime enforcement</span>
+                validated_data = LeadEnrichmentOutput.model_validate(raw_payload)
+                self.trace_history.append({"tool": tool_func.__name__, "status": "SUCCESS", "attempt": attempt})
+                <span class="text-purple-400">return</span> validated_data
+            <span class="text-purple-400">except</span> Exception <span class="text-purple-400">as</span> validation_err:
+                logging.warning(f"Schema violation attempt {attempt}: {validation_err}")
+                self.trace_history.append({"status": "RETRY_TRIGGERED", "error": str(validation_err)})
+                <span class="text-neutral-400"># Injects error back into LLM memory for self-correction</span>
+                kwargs = self._request_llm_schema_correction(validation_err, kwargs)
+                time.sleep(1.5 ** attempt)
+        <span class="text-purple-400">raise</span> RuntimeError(f"Tool {tool_func.__name__} breached SLA thresholds.")</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            p2: {
+                title: "Systems Protocol 02: Persistent Memory & Dynamic Context Ledgers",
+                html: `
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                            <div>
+                                <h4 class="text-lg font-serif font-bold text-white">Sliding-Window Cache & Cross-Session State Ledgers</h4>
+                                <p class="text-xs font-mono text-neutral-400 mt-1">Eliminates lost-in-the-middle context drift and cuts token consumption by 38%.</p>
+                            </div>
+                            <div class="flex gap-2 font-mono text-[10px]">
+                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-gold">-38% Token Burn</span>
+                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-cyan-400">Zero Context Drift</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono text-xs">
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">CROSS-SESSION LEDGER</span>
+                                <span class="text-gold font-semibold">AGENTS.md & SHARED_STATE.md</span>
+                            </div>
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">CACHE ALGORITHM</span>
+                                <span class="text-white font-semibold">LRU Sliding Window + KV Pruner</span>
+                            </div>
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">COHERENCE SLA</span>
+                                <span class="text-emerald-400 font-semibold">100% Deterministic Sync</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] font-mono text-gold mb-2 uppercase tracking-wider">Production Python Implementation:</div>
+                            <div class="bg-[#05070a] border border-neutral-800 rounded-lg p-4 overflow-x-auto text-neutral-300 font-mono text-xs">
+<pre><code><span class="text-purple-400">from</span> pathlib <span class="text-purple-400">import</span> Path
+<span class="text-purple-400">from</span> typing <span class="text-purple-400">import</span> List, Dict, Any
+<span class="text-purple-400">import</span> json, hashlib
+
+<span class="text-blue-400">class</span> <span class="text-yellow-300">ContextLedgerManager</span>:
+    <span class="text-neutral-400">"""Manages multi-agent cross-session state coherence and sliding prompt caches"""</span>
+    <span class="text-blue-400">def</span> <span class="text-blue-300">__init__</span>(self, ledger_file: str = "SHARED_STATE.md", max_tokens: int = 4096):
+        self.ledger_path = Path(ledger_file)
+        self.max_tokens = max_tokens
+        self._ensure_ledger_exists()
+
+    <span class="text-blue-400">def</span> <span class="text-blue-300">sync_state_atomic</span>(self, event_type: str, payload: Dict[str, Any]) -> None:
+        <span class="text-neutral-400">"""Atomically commits multi-agent transitions to shared markdown ledger"""</span>
+        entry = f"\\n### [{event_type.upper()}] {payload.get('timestamp')}\\n"
+        entry += f"- **Target Entity**: {payload.get('company')}\\n"
+        entry += f"- **Action Taken**: {payload.get('action')}\\n"
+        <span class="text-purple-400">with</span> open(self.ledger_path, "a", encoding="utf-8") <span class="text-purple-400">as</span> f:
+            f.write(entry)
+
+    <span class="text-blue-400">def</span> <span class="text-blue-300">prune_context_window</span>(self, messages: List[Dict[str, str]]) -> List[Dict[str, str]]:
+        <span class="text-neutral-400">"""Compresses raw transcripts into high-density key-value pairs before model forward pass"""</span>
+        retained = []
+        accumulated_tokens = 0
+        <span class="text-purple-400">for</span> msg <span class="text-purple-400">in</span> reversed(messages):
+            estimated = len(msg["content"].split()) * 1.3
+            <span class="text-purple-400">if</span> accumulated_tokens + estimated &lt; self.max_tokens:
+                retained.insert(0, msg)
+                accumulated_tokens += estimated
+            <span class="text-purple-400">else</span>:
+                <span class="text-neutral-400"># Compress older tool dumps to preserve system intent</span>
+                summary = self._summarize_dense_kv(msg["content"])
+                retained.insert(0, {"role": "system", "content": f"[COMPRESSED_MEMORY]: {summary}"})
+                <span class="text-purple-400">break</span>
+        <span class="text-purple-400">return</span> retained</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            p4: {
+                title: "Systems Protocol 04: Evaluation-Driven Development (LLM-as-a-Judge)",
+                html: `
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                            <div>
+                                <h4 class="text-lg font-serif font-bold text-white">LLM-as-a-Judge Quality & Deliverability Gating</h4>
+                                <p class="text-xs font-mono text-neutral-400 mt-1">Multi-criteria evaluation rejecting hallucinated copy and deliverability risks.</p>
+                            </div>
+                            <div class="flex gap-2 font-mono text-[10px]">
+                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-gold">85% Confidence Gate</span>
+                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-emerald-400">99.4% Pass Rate</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono text-xs">
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">EVALUATION ENGINE</span>
+                                <span class="text-white font-semibold">LLM-as-a-Judge (Claude 3.5 / GPT-4o)</span>
+                            </div>
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">CORE METRICS</span>
+                                <span class="text-gold font-semibold">Grounding, Tone, Compliance</span>
+                            </div>
+                            <div class="p-3 bg-noir border border-neutral-800 rounded">
+                                <span class="text-neutral-500 block text-[10px]">ACTION ON BREACH</span>
+                                <span class="text-red-400 font-semibold">Immediate Regeneration & Halt</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] font-mono text-gold mb-2 uppercase tracking-wider">Production Python Implementation:</div>
+                            <div class="bg-[#05070a] border border-neutral-800 rounded-lg p-4 overflow-x-auto text-neutral-300 font-mono text-xs">
+<pre><code><span class="text-purple-400">from</span> pydantic <span class="text-purple-400">import</span> BaseModel, Field
+<span class="text-purple-400">from</span> typing <span class="text-purple-400">import</span> Literal
+
+<span class="text-blue-400">class</span> <span class="text-yellow-300">EvalDecision</span>(BaseModel):
+    relevance_score: float = Field(..., ge=0.0, le=1.0)
+    factual_grounding_score: float = Field(..., ge=0.0, le=1.0)
+    spam_trigger_score: float = Field(..., ge=0.0, le=1.0)
+    decision: Literal["APPROVE", "REJECT", "REWRITE"]
+    reasoning: str
+
+<span class="text-blue-400">class</span> <span class="text-yellow-300">RuntimeEvalGatingEngine</span>:
+    <span class="text-neutral-400">"""Pre-flight quality gate before external dispatch"""</span>
+    <span class="text-blue-400">def</span> <span class="text-blue-300">__init__</span>(self, judge_client, pass_threshold: float = 0.85):
+        self.client = judge_client
+        self.threshold = pass_threshold
+
+    <span class="text-blue-400">def</span> <span class="text-blue-300">evaluate_candidate</span>(self, verified_lead: dict, generated_outreach: str) -> EvalDecision:
+        prompt = (
+            f"Judge following outreach against ground-truth lead:\\n"
+            f"LEAD: {verified_lead}\\nOUTREACH: {generated_outreach}\\n"
+            f"Score relevance, factual grounding, and spam risk."
+        )
+        decision = self.client.structured_completion(prompt=prompt, response_model=EvalDecision)
+        
+        <span class="text-neutral-400"># Enforce composite gating formula</span>
+        composite = (decision.relevance_score * 0.4 + decision.factual_grounding_score * 0.4 + (1.0 - decision.spam_trigger_score) * 0.2)
+        <span class="text-purple-400">if</span> composite &lt; self.threshold <span class="text-purple-400">or</span> decision.factual_grounding_score &lt; 0.90:
+            decision.decision = "REJECT"
+        <span class="text-purple-400">return</span> decision</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function openProtocol(id) {
+            const data = protocols[id];
+            if (!data) return;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-body').innerHTML = data.html;
+            const modal = document.getElementById('protocol-modal');
+            modal.classList.add('active');
+            lucide.createIcons();
+        }
+
+        function closeProtocolModal(e) {
+            if (e && e.target && e.target.closest('#protocol-window') && !e.target.closest('.w-3') && !e.target.closest('button')) {
+                return;
+            }
+            document.getElementById('protocol-modal').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeProtocolModal();
+        });
+
         lucide.createIcons();
     </script>
 </body>

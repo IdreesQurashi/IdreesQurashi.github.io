@@ -529,10 +529,16 @@
                     </div>
                 </a>
                 
-                <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
-                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-                    <span>Chat to Owner</span>
-                </a>
+                <div class="flex space-x-4">
+                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-3d-grey px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                        <span>Contact Form</span>
+                    </a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                        <span>Chat to Owner</span>
+                    </a>
+                </div>
             </div>
         </nav>
 
@@ -1644,7 +1650,16 @@
                 <div>&copy; 2026 Idrees Qurashi — AI Integration &amp; Automation Engineer. All rights reserved.</div>
                 <div class="flex items-center space-x-6">
                     <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-accentBlue transition">GitHub</a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-accentBlue transition">WhatsApp</a>
+                    <div class="flex space-x-4">
+                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-3d-grey px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                        <span>Contact Form</span>
+                    </a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                        <span>Chat to Owner</span>
+                    </a>
+                </div>
                     <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-accentBlue transition">Email</a>
                 </div>
             </div>
@@ -1901,7 +1916,16 @@
         if (data.chatMsg) {
             buttonsHtml += `<a href="https://wa.me/923489911425?text=${encodeURIComponent(data.chatMsg)}" target="_blank" class="btn-3d-blue px-6 py-2.5 text-xs font-mono font-extrabold uppercase flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
         } else {
-            buttonsHtml += `<a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
+            buttonsHtml += `<div class="flex space-x-4">
+                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-3d-grey px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                        <span>Contact Form</span>
+                    </a>
+                    <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                        <span>Chat to Owner</span>
+                    </a>
+                </div>`;
         }
 
         let stackPills = '';
@@ -2539,6 +2563,97 @@
     } else {
         initCardBindings();
     }
+    </script>
+
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="panel-monument-clean w-full max-w-lg p-8 relative">
+            <button onclick="document.getElementById('contact-modal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h2 class="font-serif text-2xl text-white font-bold mb-2">Send a Message</h2>
+            <p class="text-sm text-slate-400 mb-6 font-mono">Will be sent directly to my Discord workspace via API.</p>
+            
+            <form id="contact-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-mono text-accentBlue uppercase mb-1">Name</label>
+                    <input type="text" id="form-name" required class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-accentBlue font-sans">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-accentBlue uppercase mb-1">Email</label>
+                    <input type="email" id="form-email" required class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-accentBlue font-sans">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-accentBlue uppercase mb-1">Message</label>
+                    <textarea id="form-message" required rows="4" class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-accentBlue font-sans"></textarea>
+                </div>
+                <button type="submit" class="btn-3d-blue w-full py-3 text-sm font-mono uppercase tracking-widest mt-4">
+                    Send via Webhook
+                </button>
+                <div id="form-status" class="hidden text-sm font-mono mt-3 text-center"></div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const message = document.getElementById('form-message').value;
+            const statusEl = document.getElementById('form-status');
+            const btn = e.target.querySelector('button[type="submit"]');
+            
+            // NOTE: Replace this with your actual Discord Webhook URL.
+            // DO NOT commit the URL if the repository is public! Use a serverless function if possible.
+            // For now, it will look for a URL. 
+            const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
+            
+            if (webhookUrl === 'YOUR_DISCORD_WEBHOOK_URL_HERE') {
+                statusEl.innerHTML = '<span class="text-yellow-400">Please configure the Webhook URL in index.html first!</span>';
+                statusEl.classList.remove('hidden');
+                return;
+            }
+
+            btn.innerText = 'SENDING...';
+            statusEl.classList.add('hidden');
+
+            const payload = {
+                content: `**New Contact Form Submission**`,
+                embeds: [{
+                    color: 3447003,
+                    fields: [
+                        { name: "Name", value: name, inline: true },
+                        { name: "Email", value: email, inline: true },
+                        { name: "Message", value: message }
+                    ],
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (response.ok) {
+                    statusEl.innerHTML = '<span class="text-green-400">Message sent successfully!</span>';
+                    document.getElementById('contact-form').reset();
+                } else {
+                    statusEl.innerHTML = '<span class="text-red-400">Failed to send message.</span>';
+                }
+            } catch (err) {
+                statusEl.innerHTML = '<span class="text-red-400">Error: ' + err.message + '</span>';
+            } finally {
+                statusEl.classList.remove('hidden');
+                btn.innerText = 'SEND VIA WEBHOOK';
+            }
+        });
     </script>
 
 </body>

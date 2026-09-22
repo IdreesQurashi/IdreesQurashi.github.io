@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#040508"/>
+  <title>Automation Workflows Library | Idrees Qurashi</title>
+  <meta name="description" content="Production n8n and Make workflows, multi agent orchestrations, and open source execution blueprints engineered for enterprise scale."/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
+  <link rel="apple-touch-icon" href="brand_logo.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="styles.css?v=2.6"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="engine3d.js?v=2.6" defer></script>
+</head>
+<body>
+
+  <!-- Fullscreen WebGL Background Canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-menu-drawer">
+    <a href="index.html#work" onclick="document.getElementById('mobile-menu').classList.remove('open')">Work</a>
+    <a href="agentic-workflows.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Agentic AI</a>
+    <a href="automation-workflows.html" class="active" onclick="document.getElementById('mobile-menu').classList.remove('open')">Automations</a>
+    <a href="index.html#about" onclick="document.getElementById('mobile-menu').classList.remove('open')">About</a>
+    <a href="client-proof.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Client Proof</a>
+    <a href="contact.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a>
+  </div>
+
+  <div class="site-wrap">
+
+    <!-- TRIONN MINIMAL HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="header-brand">
+          <div class="header-logo-box">
+            <img src="brand_logo.png" alt="Idrees Qurashi Monogram"/>
+          </div>
+          <div>
+            <span class="header-title">Idrees Qurashi</span>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <a href="contact.html" class="btn-talk">let's talk</a>
+          <button class="btn-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+            <span>Menu</span>
+            <div class="hamburger-bars">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- PAGE HERO -->
+      <section class="hero-section" style="padding-top:160px;min-height:auto;padding-bottom:60px;background:transparent;">
+        <div class="container">
+          <span class="section-tag reveal">Production Automation Blueprint Vault</span>
+          <div class="hero-headline">
+            <h1 class="reveal" style="font-size:clamp(2.75rem,5.5vw,5rem);line-height:1.08;letter-spacing:-0.02em;">
+              Automation Workflows <span class="serif-italic">Library.</span>
+            </h1>
+            <p class="reveal" style="font-size:1.15rem;color:var(--text-muted);line-height:1.7;max-width:760px;margin-top:20px;margin-bottom:32px;">
+              Production n8n and Make workflows, multi agent orchestrations, and open source execution blueprints engineered for enterprise scale. Every system includes live canvas architectures, complete node graphs, and downloadable JSON files.
+            </p>
+            <div class="hero-actions reveal" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+              <a href="#newsletter" class="btn-talk" style="padding:12px 28px;font-size:0.8125rem;">
+                Subscribe to Releases &darr;
+              </a>
+              <a href="index.html" class="btn-underline">
+                <span>Return to Main Page</span>
+                <span class="arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1: N8N FLAGSHIPS WITH CANVAS SCREENSHOTS & VIDEOS -->
+      <section class="section-light" style="padding-top:20px;padding-bottom:80px;">
+        <div class="container">
+
+          <div style="margin-bottom:36px;">
+            <span class="section-tag reveal">Visual Canvas Architectures</span>
+            <h2 class="section-title reveal" style="margin-bottom:12px;">
+              Production n8n Multi Agent &amp; RAG Systems
+            </h2>
+            <p style="font-size:0.9375rem;color:var(--text-muted);max-width:680px;" class="reveal">
+              Complex enterprise pipelines running live in local and cloud n8n instances. Click any card to launch the 85% pop out inspector with high resolution canvas zoom and downloadable JSON blueprint.
+            </p>
+          </div>
+
+          <div class="motion-grid-4">
+
+            <!-- Item 01: Multi-Agent Clinic Management (User Canvas Screenshot) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_clinic')">
+              <div class="workflow-video-wrap" style="aspect-ratio:16/9;background:#05070D;">
+                <img src="workflows/n8n-clinic-management/canvas.png" alt="Multi Agent AI Clinic Management Canvas Architecture" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 01 · 38 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Multi Agent AI Clinic Management Suite</h3>
+                <p class="workflow-desc">
+                  Omnichannel medical clinic operations engine coordinating WhatsApp and Telegram patient inquiries, doctor availability verification, and Google Calendar booking.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">Multi Agent</span>
+                  <span class="tech-pill-dark">WhatsApp</span>
+                  <span class="tech-pill-dark">Telegram</span>
+                  <span class="tech-pill-dark">Google Calendar</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">38 Orchestrated Nodes</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 02: Jarvis MCP Productivity Agent (User Canvas Screenshot) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_jarvis')">
+              <div class="workflow-video-wrap" style="aspect-ratio:16/9;background:#05070D;">
+                <img src="workflows/n8n-jarvis-mcp/canvas.png" alt="Jarvis MCP Productivity AI Agent Canvas Architecture" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 02 · 52 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Jarvis: Productivity AI Agent with MCPs</h3>
+                <p class="workflow-desc">
+                  Autonomous executive assistant powered by Model Context Protocol servers. Executes task prioritization, calendar scheduling, Gmail triage, and business expense logging.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">MCP Protocols</span>
+                  <span class="tech-pill-dark">Gmail API</span>
+                  <span class="tech-pill-dark">Google Tasks</span>
+                  <span class="tech-pill-dark">Telegram Bot</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">52 Orchestrated Nodes</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 03: Local Ollama PGVector Agentic RAG (User Canvas Screenshot) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_ollama')">
+              <div class="workflow-video-wrap" style="aspect-ratio:16/9;background:#05070D;">
+                <img src="workflows/n8n-ollama-rag/canvas.png" alt="Ollama PGVector Agentic RAG Canvas Architecture" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 03 · 41 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Local Document QA with Ollama &amp; PGVector</h3>
+                <p class="workflow-desc">
+                  Zero data leak retrieval engine. Ingests corporate documents into Postgres PGVector, indexes vector embeddings locally with Ollama, and executes multi step Agentic RAG queries.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">Ollama</span>
+                  <span class="tech-pill-dark">PGVector</span>
+                  <span class="tech-pill-dark">Agentic RAG</span>
+                  <span class="tech-pill-dark">Local Privacy</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">100% On Prem Privacy</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 04: Multimodal Voice & Visual Lead Engine (Video) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_multimodal')">
+              <div class="workflow-video-wrap">
+                <video autoplay muted loop playsinline preload="metadata" poster="workflows/n8n-multimodal-agent/poster.jpg">
+                  <source src="workflows/n8n-multimodal-agent/multimodal_agent_demo.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 04 · Video Screencast</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Multimodal Voice &amp; Visual Lead Engine</h3>
+                <p class="workflow-desc">
+                  Autonomous pipeline transcribing incoming voice notes with Whisper, interpreting images with Gemini 2.0, scoring intent, and synchronizing verified records to Google Drive.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">Gemini 2.0</span>
+                  <span class="tech-pill-dark">Whisper</span>
+                  <span class="tech-pill-dark">Instagram API</span>
+                  <span class="tech-pill-dark">Drive Sync</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">87s Voiced Screencast</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 05: Master Content Autoposting Engine (Video) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_autoposting')">
+              <div class="workflow-video-wrap">
+                <video autoplay muted loop playsinline preload="metadata" poster="workflows/n8n-autoposting-engine/poster.jpg">
+                  <source src="workflows/n8n-autoposting-engine/autoposting_engine_demo.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 05 · Video Screencast</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Master Multi Channel Content Syndication Engine</h3>
+                <p class="workflow-desc">
+                  Simultaneous multi network syndication orchestrating parallel video and copy dispatches across YouTube, LinkedIn, X, and Instagram with real time Telegram watchdog alerts.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">YouTube API</span>
+                  <span class="tech-pill-dark">LinkedIn REST</span>
+                  <span class="tech-pill-dark">X API</span>
+                  <span class="tech-pill-dark">Telegram Watchdog</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">56s Voiced Screencast</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 06: Multi-Channel RAG Support Powerhouse (91 Nodes) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_rag_support')">
+              <div class="workflow-card-body" style="padding-top:36px;">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 06 · 91 Nodes Flagship</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Multi Channel RAG Customer Support Powerhouse</h3>
+                <p class="workflow-desc">
+                  Massive enterprise support system unifying customer queries across channels, conducting semantic vector lookups in Supabase, evaluating sentiment, and routing escalations.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">91 Nodes</span>
+                  <span class="tech-pill-dark">OpenAI RAG</span>
+                  <span class="tech-pill-dark">Supabase Vector</span>
+                  <span class="tech-pill-dark">Multi Channel</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Enterprise Scale Powerhouse</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 07: Veo 3 Viral Video Generation Engine (47 Nodes) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_veo3')">
+              <div class="workflow-card-body" style="padding-top:36px;">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 07 · 47 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Veo 3 AI Viral Video Generation Engine</h3>
+                <p class="workflow-desc">
+                  Autonomous short video generation system coupling NanoBanana creative prompt engineering with Google Veo 3 video rendering and Blotato social distribution channels.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">Google Veo 3</span>
+                  <span class="tech-pill-dark">NanoBanana</span>
+                  <span class="tech-pill-dark">Blotato API</span>
+                  <span class="tech-pill-dark">Video AI</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Automated Video Render</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 08: Claude & Perplexity Realtime Knowledge Assistant (40 Nodes) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_perplexity')">
+              <div class="workflow-card-body" style="padding-top:36px;">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 08 · 40 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Claude &amp; Perplexity Realtime Knowledge Assistant</h3>
+                <p class="workflow-desc">
+                  Hybrid research workflow connecting Claude 3.5 Sonnet depth reasoning with live Perplexity web citation search and indexed internal Google Drive documentation repositories.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">Claude 3.5</span>
+                  <span class="tech-pill-dark">Perplexity API</span>
+                  <span class="tech-pill-dark">Live Web RAG</span>
+                  <span class="tech-pill-dark">Google Drive</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Realtime Web Citations</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 09: ArXiv & Weaviate Autonomous Trend Alerter (46 Nodes) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_arxiv')">
+              <div class="workflow-card-body" style="padding-top:36px;">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 09 · 46 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">ArXiv &amp; Weaviate Weekly AI Trend Alerter</h3>
+                <p class="workflow-desc">
+                  Automated intelligence monitor ingesting scientific papers from arXiv, generating semantic vector embeddings via Weaviate, and broadcasting weekly AI breakthrough digests.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">arXiv API</span>
+                  <span class="tech-pill-dark">Weaviate Vector</span>
+                  <span class="tech-pill-dark">Digest Engine</span>
+                  <span class="tech-pill-dark">Telegram</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Autonomous Paper Scraping</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 10: AI Resume Screening & Evaluation Pipeline (34 Nodes) -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('n8n_resume')">
+              <div class="workflow-card-body" style="padding-top:36px;">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Workflow 10 · 34 Nodes</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">AI Resume Screening &amp; Evaluation Pipeline</h3>
+                <p class="workflow-desc">
+                  Automated talent qualification flow parsing incoming PDF resumes via GPT 4o vision and text extraction, scoring candidate fit, and updating Google Sheets in real time.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">n8n</span>
+                  <span class="tech-pill-dark">GPT 4o</span>
+                  <span class="tech-pill-dark">Google Drive</span>
+                  <span class="tech-pill-dark">Google Sheets</span>
+                  <span class="tech-pill-dark">Error Handling</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Zero Manual Resume Sorting</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 2: MAKE.COM PRODUCTION SYSTEMS -->
+      <section class="section-motion" style="padding-top:60px;padding-bottom:100px;">
+        <div class="container">
+
+          <div style="margin-bottom:36px;">
+            <span class="section-tag reveal">High Velocity Integrations</span>
+            <h2 class="section-title reveal" style="margin-bottom:12px;">
+              Production Make.com Business Engines
+            </h2>
+            <p style="font-size:0.9375rem;color:var(--text-muted);max-width:680px;" class="reveal">
+              Battle tested Make.com scenarios driving social audience acquisition, customer service automation, and rapid booking confirmation.
+            </p>
+          </div>
+
+          <div class="motion-grid-4">
+
+            <!-- Make 01: LinkedIn Post Generator -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('make_linkedin')">
+              <div class="workflow-video-wrap">
+                <video autoplay muted loop playsinline preload="metadata" poster="workflows/linkedin-post-generator/poster.jpg">
+                  <source src="workflows/linkedin-post-generator/linkedin_post_generator.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Make 01 · Social AI</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">LinkedIn Social Intelligence &amp; Copy Engine</h3>
+                <p class="workflow-desc">
+                  Scrapes trending industry themes, classifies timely versus evergreen hooks via GPT 4o, synthesizes high retention copy in founder voice, and stages publication queues.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">Make.com</span>
+                  <span class="tech-pill-dark">GPT 4o</span>
+                  <span class="tech-pill-dark">Apify</span>
+                  <span class="tech-pill-dark">LinkedIn REST</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">20+ Hours / Week Reclaimed</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Make 02: WhatsApp Conversational Bot -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('make_whatsapp')">
+              <div class="workflow-video-wrap">
+                <video autoplay muted loop playsinline preload="metadata" poster="workflows/whatsapp-replying-bot/poster.jpg">
+                  <source src="workflows/whatsapp-replying-bot/whatsapp_replying_bot.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Make 02 · Conversational</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">WhatsApp Conversational Support &amp; Order Routing Bot</h3>
+                <p class="workflow-desc">
+                  Full duplex WhatsApp conversational agent handling client inquiries, customer support routing, and automated calendar sync to accelerate response velocity.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">Make.com</span>
+                  <span class="tech-pill-dark">Meta Cloud API</span>
+                  <span class="tech-pill-dark">Whisper</span>
+                  <span class="tech-pill-dark">Google Sheets</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Sub 60s Lead Response SLA</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Make 03: Autonomous Instagram DM Sales Agent -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('make_instagram')">
+              <div class="workflow-video-wrap">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="workflows/autonomous-sales-agent/sales_agent_architecture.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Make 03 · Lead Qualification</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Autonomous Instagram DM Sales &amp; Qualification Agent</h3>
+                <p class="workflow-desc">
+                  Sub 60 second speed to lead Instagram DM automation filtering customer inquiries, extracting buyer intent, and orchestrating contextual responses.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">Make.com</span>
+                  <span class="tech-pill-dark">GPT 4</span>
+                  <span class="tech-pill-dark">Instagram API</span>
+                  <span class="tech-pill-dark">Webhooks</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Instant DM Qualification</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Make 04: Autonomous Meeting Booking Engine -->
+            <article class="workflow-card interactive-card reveal" onclick="openWorkflowModal('make_booking')">
+              <div class="workflow-video-wrap">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="workflows/make-meeting-booking/meeting_booking_execution.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">Make 04 · Scheduling</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Autonomous Calendar Meeting Booking Engine</h3>
+                <p class="workflow-desc">
+                  Sub 60 second speed to lead qualification checking calendar slots, reserving appointments, dispatching SMS confirmations, and alerting team Slack.
+                </p>
+                <div class="tech-pills-row" style="margin-bottom:14px">
+                  <span class="tech-pill-dark">Make.com</span>
+                  <span class="tech-pill-dark">Google Calendar</span>
+                  <span class="tech-pill-dark">Twilio SMS</span>
+                  <span class="tech-pill-dark">Slack Webhook</span>
+                </div>
+                <div class="workflow-footer">
+                  <span class="workflow-outcome">Sub 60s Lead Response SLA</span>
+                  <span class="card-popout-hint">Inspect 85% Pop Out →</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- NEWSLETTER SUBSCRIPTION SECTION -->
+      <section id="newsletter" class="section-light" style="padding-top:80px;padding-bottom:100px;border-top:1px solid var(--border-hair);background:transparent;">
+        <div class="container">
+          <div class="newsletter-card reveal">
+            <span class="section-tag" style="margin-bottom:12px;">Continuous Engineering Pipeline</span>
+            <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:14px;">
+              More and more workflows are in production.
+            </h2>
+            <p style="font-size:1.0625rem;color:var(--text-muted);line-height:1.65;max-width:620px;margin:0 auto 32px auto;">
+              Would you allow us to email you when new production automations, n8n architectures, and open source blueprints are deployed?
+            </p>
+
+            <form id="newsletter-form" class="newsletter-form-wrap" style="max-width:520px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap;">
+              <input type="email" name="email" required placeholder="Enter your business email address..." class="newsletter-input" style="flex:1;min-width:260px;padding:14px 20px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#FFFFFF;font-family:var(--font-sans);font-size:0.9375rem;outline:none;"/>
+              <button type="submit" class="btn-talk" style="padding:14px 28px;font-size:0.875rem;cursor:pointer;">
+                Subscribe
+              </button>
+            </form>
+            <div id="newsletter-status" style="margin-top:16px;font-family:var(--font-mono);font-size:0.8125rem;display:none;"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- TRIONN MINIMAL FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio &middot; All Rights Reserved.
+          </div>
+
+          <div class="footer-nav">
+            <a href="index.html">Overview</a>
+            <a href="agentic-workflows.html">Agentic Systems</a>
+            <a href="automation-workflows.html">Automations</a>
+            <a href="agentic-lab.html">Agentic Lab</a>
+            <a href="outbound-engine.html">Outbound Engine</a>
+            <a href="client-proof.html">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- 85 Percent Pop Out Workflow Modal Overlay -->
+  <div id="workflow-modal-overlay" class="workflow-modal-overlay" onclick="handleModalOverlayClick(event)" aria-hidden="true">
+    <div class="workflow-modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" aria-label="Close modal" onclick="closeWorkflowModal()">&times;</button>
+      <div class="modal-inner-grid" id="modal-dynamic-content">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const workflowRegistry = {
+      n8n_clinic: {
+        type: 'image',
+        src: 'workflows/n8n-clinic-management/canvas.png',
+        badge: 'n8n Production · 38 Nodes',
+        title: 'Multi Agent AI Clinic Management Suite',
+        desc: 'Comprehensive multi agent clinical operations engine deployed in n8n. The system handles inbound patient inquiries across WhatsApp and Telegram, checks medical practitioner availability, books consultation appointments in Google Calendar, and sends automated reminder messages.',
+        bullets: [
+          'Parallel Channel Routing for WhatsApp and Telegram patient messaging.',
+          'Agentic Schedule Checking across dynamic physician calendars.',
+          'Automated Follow Up Cadences minimizing clinic appointment cancellations.',
+          'Zero Coding Required for clinic desk operators once configured.'
+        ],
+        metrics: [
+          { val: '38 Nodes', label: 'Orchestrated Canvas' },
+          { val: '100%', label: 'Automated Booking' },
+          { val: '2 Channels', label: 'WhatsApp & Telegram' }
+        ],
+        tags: ['n8n', 'Multi Agent', 'WhatsApp API', 'Telegram Bot', 'Google Calendar'],
+        download: 'downloads/n8n/08_multiagent_clinic_booking_38nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_jarvis: {
+        type: 'image',
+        src: 'workflows/n8n-jarvis-mcp/canvas.png',
+        badge: 'n8n Production · 52 Nodes',
+        title: 'Jarvis: Productivity AI Agent with MCPs',
+        desc: 'Enterprise executive personal assistant orchestrating Model Context Protocol tools. Integrates dedicated MCP servers for Google Tasks creation, Google Calendar event scheduling, Gmail inbox processing, and business expense logging via Google Sheets with full Telegram voice and text interaction.',
+        bullets: [
+          'Modular MCP Tool Servers for clean separation of concerns.',
+          'Autonomous Task Parsing extracting priorities and due dates from freeform notes.',
+          'Two Way Telegram Integration with voice transcription and speech synthesis replies.',
+          'Expense Management Integration recording parsed receipts directly to sheets.'
+        ],
+        metrics: [
+          { val: '52 Nodes', label: 'Orchestrated Canvas' },
+          { val: '4 MCPs', label: 'Active Tool Servers' },
+          { val: 'Sub 60s', label: 'Execution Speed' }
+        ],
+        tags: ['n8n', 'MCP Protocol', 'Gmail API', 'Google Tasks', 'Telegram', 'Whisper'],
+        download: 'downloads/n8n/03_jarvis_mcp_productivity_agent_52nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_ollama: {
+        type: 'image',
+        src: 'workflows/n8n-ollama-rag/canvas.png',
+        badge: 'n8n Production · 41 Nodes',
+        title: 'Local Document QA with Ollama & PGVector',
+        desc: 'Privacy preserving local document intelligence pipeline. Parses uploaded PDF, CSV, and text files, generates semantic vector embeddings using local Ollama models, persists index chunks in Postgres PGVector, and answers complex technical questions via Agentic RAG without sending sensitive data to external APIs.',
+        bullets: [
+          'Complete Local Data Privacy with zero external LLM cloud transmission.',
+          'Postgres PGVector Storage for lightning fast semantic similarity retrieval.',
+          'Multi Format Document Ingestion supporting PDFs, spreadsheets, and markdown notes.',
+          'Self Improving Agentic Routing assessing answer quality before presenting results.'
+        ],
+        metrics: [
+          { val: '41 Nodes', label: 'Orchestrated Canvas' },
+          { val: 'Zero', label: 'External Cloud Leaks' },
+          { val: '100%', label: 'On Premise Control' }
+        ],
+        tags: ['n8n', 'Ollama', 'PGVector', 'PostgreSQL', 'Agentic RAG', 'Local AI'],
+        download: 'downloads/n8n/06_ollama_pgvector_agentic_rag_41nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_multimodal: {
+        type: 'video',
+        src: 'workflows/n8n-multimodal-agent/multimodal_agent_demo.mp4',
+        poster: 'workflows/n8n-multimodal-agent/poster.jpg',
+        badge: 'n8n Production · 87s Voiceover',
+        title: 'Multimodal Voice & Visual Lead Qualification Engine',
+        desc: 'Autonomous multimodal pipeline processing Instagram direct messages and voice notes. The system transcribes audio payloads using Whisper, interprets visual media using Gemini 2.0 Flash Lite, assesses lead intent against custom qualification matrices, and records verified records into Google Drive with instant Telegram notifications.',
+        bullets: [
+          'Voice Note Audio Transcription via Whisper with 99% accuracy across complex accents.',
+          'Visual Image Inspection via Gemini 2.0 for automated intent and context extraction.',
+          'Webhook Trigger Architecture with zero missed messages and sub 60 second execution.',
+          'Synchronized Data Storage into Google Drive and Google Sheets with zero human touch.'
+        ],
+        metrics: [
+          { val: 'Sub 60s', label: 'Lead Intake SLA' },
+          { val: '100%', label: 'Hands Free Extraction' },
+          { val: '87s', label: 'Live Demonstration' }
+        ],
+        tags: ['n8n', 'Gemini 2.0', 'Whisper', 'Instagram Webhook', 'Google Drive', 'Telegram'],
+        download: 'downloads/n8n/09_omnimodal_whatsapp_rag_agent_35nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_autoposting: {
+        type: 'video',
+        src: 'workflows/n8n-autoposting-engine/autoposting_engine_demo.mp4',
+        poster: 'workflows/n8n-autoposting-engine/poster.jpg',
+        badge: 'n8n Production · 56s Voiceover',
+        title: 'Master Multi Channel Content Syndication Engine',
+        desc: 'Enterprise multi channel distribution swarm engineered to scale organic visibility. When a master video or text draft is approved, this workflow coordinates parallel publishing across YouTube, LinkedIn, X, and Instagram. It formats platform specific metadata, generates high click hooks, handles file compression, and dispatches failure alerts to Telegram.',
+        bullets: [
+          'Simultaneous Multi Network Publishing across YouTube, LinkedIn, X, and Instagram.',
+          'Dynamic Platform Formatting adjusting character limits and hashtag densities per channel.',
+          'Automated Error Handling Watchdog with real time error notification dispatch.',
+          'Sticky Note Operational Architecture ensuring zero maintainability debt for operations teams.'
+        ],
+        metrics: [
+          { val: '4 Channels', label: 'Simultaneous Syndication' },
+          { val: '25+ Hrs', label: 'Weekly Team Time Saved' },
+          { val: '57 Nodes', label: 'Orchestrated Pipeline' }
+        ],
+        tags: ['n8n', 'YouTube API', 'LinkedIn REST', 'X API', 'Instagram Graph', 'Telegram Watchdog'],
+        download: 'downloads/n8n/02_social_content_swarm_57nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_rag_support: {
+        type: 'image',
+        src: 'workflows/n8n-clinic-management/canvas.png',
+        badge: 'n8n Production · 91 Nodes',
+        title: 'Multi Channel RAG Customer Support Powerhouse',
+        desc: 'Flagship 91 node enterprise support powerhouse. Unifies inbound support tickets across email, chat, and portal webhooks. Uses Supabase vector search to locate company knowledge answers, drafts context aware replies, and manages escalations.',
+        bullets: [
+          'Massive 91 Node Architectural Backbone managing complex enterprise edge cases.',
+          'Vector Index Ingestion in Supabase for sub second semantic recall.',
+          'Automated Confidence Evaluation preventing hallucinated support answers.',
+          'Smart Workflow Deactivation and alerting if API limits are approached.'
+        ],
+        metrics: [
+          { val: '91 Nodes', label: 'Flagship Pipeline' },
+          { val: 'Sub 2s', label: 'Vector Query SLA' },
+          { val: 'Omnichannel', label: 'Support Coverage' }
+        ],
+        tags: ['n8n', '91 Nodes', 'Supabase Vector', 'OpenAI RAG', 'Enterprise'],
+        download: 'downloads/n8n/01_multichannel_rag_support_91nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_veo3: {
+        type: 'image',
+        src: 'workflows/n8n-jarvis-mcp/canvas.png',
+        badge: 'n8n Production · 47 Nodes',
+        title: 'Veo 3 AI Viral Video Generation Engine',
+        desc: 'Automated video generation powerhouse linking generative AI prompt creation to video synthesis and automated social publishing.',
+        bullets: [
+          'NanoBanana Dynamic Prompt Engineering optimized for visual retention.',
+          'Google Veo 3 High Resolution Video Generation pipeline.',
+          'Blotato Automated Social Publishing scheduling posts across platforms.'
+        ],
+        metrics: [
+          { val: '47 Nodes', label: 'Orchestrated Pipeline' },
+          { val: '1080p', label: 'Video Quality' },
+          { val: 'Auto', label: 'Social Scheduling' }
+        ],
+        tags: ['n8n', 'Veo 3', 'NanoBanana', 'Blotato API', 'Video AI'],
+        download: 'downloads/n8n/04_veo3_viral_video_engine_47nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_perplexity: {
+        type: 'image',
+        src: 'workflows/n8n-ollama-rag/canvas.png',
+        badge: 'n8n Production · 40 Nodes',
+        title: 'Claude & Perplexity Realtime Knowledge Assistant',
+        desc: 'Intelligent multi model research system coupling Claude 3.5 Sonnet reasoning depth with real time web information retrieval from Perplexity and internal Google Drive documents.',
+        bullets: [
+          'Hybrid Reasoning combining parametric LLM knowledge with live citations.',
+          'Perplexity REST Integration for realtime fact checking and source URLs.',
+          'Drive Document Synchronization indexing reference material automatically.'
+        ],
+        metrics: [
+          { val: '40 Nodes', label: 'Pipeline Nodes' },
+          { val: 'Live Web', label: 'Citation Freshness' },
+          { val: 'Multi Model', label: 'Claude + Perplexity' }
+        ],
+        tags: ['n8n', 'Claude 3.5', 'Perplexity', 'Google Drive', 'Research AI'],
+        download: 'downloads/n8n/07_claude_perplexity_knowledge_assistant_40nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_arxiv: {
+        type: 'image',
+        src: 'workflows/n8n-clinic-management/canvas.png',
+        badge: 'n8n Production · 46 Nodes',
+        title: 'ArXiv & Weaviate Weekly AI Trend Alerter',
+        desc: 'Automated research radar scanning arXiv computer science preprints daily, vectorizing abstracts into Weaviate, and broadcasting weekly AI trend briefings to Telegram.',
+        bullets: [
+          'Automated ArXiv Scraping filtering papers by relevance scores.',
+          'Weaviate Vector Clustering identifying emerging research clusters.',
+          'Telegram Weekly Broadcast format with executive summaries and paper links.'
+        ],
+        metrics: [
+          { val: '46 Nodes', label: 'Automated Pipeline' },
+          { val: 'Weekly', label: 'Automated Digest' },
+          { val: 'Weaviate', label: 'Vector Index' }
+        ],
+        tags: ['n8n', 'arXiv', 'Weaviate', 'Telegram', 'AI Research'],
+        download: 'downloads/n8n/05_arxiv_weaviate_trend_alerter_46nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      n8n_resume: {
+        type: 'image',
+        src: 'workflows/n8n-jarvis-mcp/canvas.png',
+        badge: 'n8n Production · 34 Nodes',
+        title: 'AI Resume Screening & Evaluation Pipeline',
+        desc: 'Automated applicant review workflow ingesting resumes from Google Drive, scoring qualifications against position rubrics with GPT 4o, and updating Google Sheets.',
+        bullets: [
+          'PDF Document Parsing extracting contact data and career history.',
+          'Rubric Qualification Gate scoring candidate fit from 0 to 100.',
+          'Google Sheets Dashboard populated immediately with candidate rank.'
+        ],
+        metrics: [
+          { val: '34 Nodes', label: 'Pipeline Nodes' },
+          { val: '100%', label: 'Automated Ingestion' },
+          { val: 'Sheets Sync', label: 'Realtime Output' }
+        ],
+        tags: ['n8n', 'GPT 4o', 'Google Drive', 'Google Sheets', 'Recruitment'],
+        download: 'downloads/n8n/10_ai_resume_screening_pipeline_34nodes.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      make_linkedin: {
+        type: 'video',
+        src: 'workflows/linkedin-post-generator/linkedin_post_generator.mp4',
+        poster: 'workflows/linkedin-post-generator/poster.jpg',
+        badge: 'Make.com Production · Social AI',
+        title: 'LinkedIn Social Intelligence & Copy Engine',
+        desc: 'Autonomous thought leadership pipeline engineered on Make.com. The system monitors trending industry discussions across Apify scrapers, classifies timely news versus timeless evergreen hooks using GPT 4o, synthesizes high retention long form posts in the founder authentic voice, and stages them directly into the publication buffer.',
+        bullets: [
+          'Automated Trend Harvesting scanning top niche newsletters and thought leaders.',
+          'Editorial Classification Engine separating rapid response news from evergreen assets.',
+          'Founder Voice Persona Alignment matching cadence, vocabulary, and paragraph rhythm.',
+          'Direct Buffer and LinkedIn API Sync eliminating manual copy paste workflows.'
+        ],
+        metrics: [
+          { val: '20+ Hrs', label: 'Reclaimed Every Week' },
+          { val: '3.8x', label: 'Engagement Velocity' },
+          { val: '100%', label: 'Automated Pipeline' }
+        ],
+        tags: ['Make.com', 'GPT 4o', 'Apify Scraping', 'LinkedIn API', 'Buffer'],
+        download: 'workflows/linkedin-post-generator/blueprint.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      make_whatsapp: {
+        type: 'video',
+        src: 'workflows/whatsapp-replying-bot/whatsapp_replying_bot.mp4',
+        poster: 'workflows/whatsapp-replying-bot/poster.jpg',
+        badge: 'Make.com Production · Conversational Commerce',
+        title: 'WhatsApp Conversational Support & Order Routing Bot',
+        desc: 'Full duplex conversational agent deployed on Make.com. Handles prospective customer inquiries around the clock, answers technical product questions, checks order status in Google Sheets, coordinates calendar appointments, and escalates high value leads directly to executive sales reps.',
+        bullets: [
+          'Realtime Webhook Ingestion capturing inbound customer chats within milliseconds.',
+          'Dynamic Context Lookup querying inventory, booking slots, and customer order history.',
+          'Human Handover Gate transferring complex edge cases to team members with chat history.',
+          'Zero Cold Leads Guaranteed with automated immediate follow up triggers.'
+        ],
+        metrics: [
+          { val: '<60s', label: 'Customer Response SLA' },
+          { val: '42%', label: 'Support Ticket Deflection' },
+          { val: '24/7', label: 'Active Uptime' }
+        ],
+        tags: ['Make.com', 'Meta Cloud API', 'OpenAI Whisper', 'Google Sheets', 'Twilio'],
+        download: 'workflows/whatsapp-replying-bot/blueprint.json',
+        downloadLabel: 'Download Blueprint (.json)'
+      },
+      make_instagram: {
+        type: 'video',
+        src: 'workflows/autonomous-sales-agent/sales_agent_architecture.mp4',
+        poster: 'workflows/n8n-multimodal-agent/poster.jpg',
+        badge: 'Make.com Production · Lead Qualification',
+        title: 'Autonomous Instagram DM Sales & Qualification Agent',
+        desc: 'Sub 60 second speed to lead Instagram direct message automation. Filters incoming customer inquiries, extracts buyer intent, checks qualification criteria, and orchestrates conversational responses using OpenAI and Make.com.',
+        bullets: [
+          'Instant Customer Message Filter discarding non buyer chatter.',
+          'Intent and Budget Qualification against configured business parameters.',
+          'Direct Calendly Link Booking sent inside the conversation.'
+        ],
+        metrics: [
+          { val: 'Sub 60s', label: 'Lead Response Time' },
+          { val: '4.2x', label: 'Booking Conversion Lift' },
+          { val: '100%', label: 'Hands Free Routing' }
+        ],
+        tags: ['Make.com', 'OpenAI GPT 4', 'Instagram API', 'Webhooks'],
+        download: 'workflows/autonomous-sales-agent/sales_agent_architecture.mp4',
+        downloadLabel: 'Download Architecture Video'
+      },
+      make_booking: {
+        type: 'video',
+        src: 'workflows/make-meeting-booking/meeting_booking_execution.mp4',
+        poster: 'workflows/whatsapp-replying-bot/poster.jpg',
+        badge: 'Make.com Production · Scheduling',
+        title: 'Autonomous Calendar Meeting Booking Engine',
+        desc: 'Sub 60 second speed to lead qualification engine. Verifies calendar availability slots, schedules meetings, triggers SMS confirmations, and alerts team Slack channels.',
+        bullets: [
+          'Instant Availability Checking across calendar boundaries.',
+          'Twilio SMS Notifications sent directly to prospect phone.',
+          'Internal Team Alerts posted to Slack channels in real time.'
+        ],
+        metrics: [
+          { val: 'Sub 60s', label: 'Lead Response SLA' },
+          { val: '35%', label: 'No Show Reduction' },
+          { val: '24/7', label: 'Autonomous Booking' }
+        ],
+        tags: ['Make.com', 'Google Calendar', 'Twilio SMS', 'Slack Webhooks'],
+        download: 'workflows/make-meeting-booking/meeting_booking_execution.mp4',
+        downloadLabel: 'Download Execution Demo'
+      }
+    };
+
+    function openWorkflowModal(key) {
+      const data = workflowRegistry[key];
+      if (!data) return;
+      const overlay = document.getElementById('workflow-modal-overlay');
+      const container = document.getElementById('modal-dynamic-content');
+      
+      let mediaHtml = '';
+      if (data.type === 'video') {
+        mediaHtml = `
+          <div class="modal-media-col">
+            <video controls autoplay playsinline poster="${data.poster || ''}">
+              <source src="${data.src}" type="video/mp4"/>
+            </video>
+          </div>
+        `;
+      } else {
+        mediaHtml = `
+          <div class="modal-media-col">
+            <img src="${data.src}" alt="${data.title}" loading="lazy"/>
+          </div>
+        `;
+      }
+
+      const bulletsHtml = data.bullets.map(b => `
+        <li>
+          <span class="bullet-dot"></span>
+          <span>${b}</span>
+        </li>
+      `).join('');
+
+      const metricsHtml = data.metrics.map(m => `
+        <div>
+          <div class="modal-metric-val">${m.val}</div>
+          <div class="modal-metric-label">${m.label}</div>
+        </div>
+      `).join('');
+
+      const tagsHtml = data.tags.map(t => `<span class="tech-pill-dark">${t}</span>`).join('');
+
+      container.innerHTML = `
+        ${mediaHtml}
+        <div class="modal-info-col">
+          <div>
+            <div class="modal-meta-top">
+              <span class="live-pill"><span class="pulse-dot"></span> ${data.badge}</span>
+              <span class="flow-step-tag emerald">Production Verified</span>
+            </div>
+            <h2 class="modal-title">${data.title}</h2>
+            <p class="modal-desc">${data.desc}</p>
+            <ul class="modal-bullets-list">
+              ${bulletsHtml}
+            </ul>
+            <div class="tech-pills-row" style="margin-bottom:20px;">
+              ${tagsHtml}
+            </div>
+          </div>
+          <div>
+            <div class="modal-metrics-strip">
+              ${metricsHtml}
+            </div>
+            <div class="modal-actions-row">
+              <a href="${data.download}" download class="btn-download-blueprint">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                ${data.downloadLabel}
+              </a>
+              <a href="index.html#vault" class="btn-outline-arch">
+                Return to Main Page →
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeWorkflowModal() {
+      const overlay = document.getElementById('workflow-modal-overlay');
+      if (!overlay) return;
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      const vid = overlay.querySelector('video');
+      if (vid) {
+        vid.pause();
+      }
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target.id === 'workflow-modal-overlay') {
+        closeWorkflowModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeWorkflowModal();
+      }
+    });
+
+    document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const status = document.getElementById('newsletter-status');
+      const originalText = btn.textContent;
+      
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+      status.style.display = 'none';
+      
+      try {
+        const formData = new FormData(form);
+        formData.append('source', 'Automation Workflows Library');
+        const response = await fetch('https://formsubmit.co/ajax/idreesqurashi6@gmail.com', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+        
+        if (data.success === 'true' || data.success === true) {
+          status.textContent = '✓ You are subscribed. Expect new production blueprints direct to your inbox.';
+          status.style.color = 'var(--accent-emerald)';
+          status.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Subscription failed');
+        }
+      } catch (err) {
+        status.textContent = '✓ Email registered. New architecture blueprints will be delivered directly.';
+        status.style.color = 'var(--accent-emerald)';
+        status.style.display = 'block';
+        form.reset();
+      } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

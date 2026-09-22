@@ -1,326 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="theme-color" content="#040508"/>
-  <meta name="description" content="TRIONN styled autonomous AI agentic architectures and deterministic MCP backends engineered by Idrees Qurashi."/>
-  <title>Idrees Qurashi | Autonomous Systems &amp; AI Architect</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
-  <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
-  <link rel="apple-touch-icon" href="brand_logo.png"/>
-  <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="engine3d.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#040508">
+    <title>Idrees Qurashi | Autonomous Systems Studio & Agentic AI Architect</title>
+    <meta name="description" content="Autonomous AI systems architect engineering LangGraph multi-agent swarms, self-healing visual scrapers, deterministic MCP backends, and production n8n workflows.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
+    <link rel="apple-touch-icon" href="brand_logo.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="engine3d.js" defer></script>
 </head>
 <body>
-  <canvas id="three-canvas"></canvas>
-
-  <div class="site-wrap">
+    <canvas id="three-canvas"></canvas>
     
-    <!-- TRIONN Minimal Precision Header -->
-    <header class="nav-trionn">
-      <div class="container">
-        <div class="nav-inner">
-          <a href="index.html" class="nav-brand">
-            <div class="nav-logo-box">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+    <div class="site-wrap">
+        <!-- HEADER -->
+        <header class="nav-trionn">
+            <div class="container">
+                <div class="nav-inner">
+                    <a href="index.html" class="nav-brand">
+                        <div class="nav-logo-box">
+                            <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+                        </div>
+                        <div>
+                            <div class="nav-brand-title">Idrees Qurashi</div>
+                            <div class="nav-brand-sub">Autonomous Systems Studio</div>
+                        </div>
+                    </a>
+                    
+                    <nav class="nav-links">
+                        <a href="index.html" class="nav-link active">Overview</a>
+                        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+                        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+                        <a href="client-proof.html" class="nav-link">Client Proof</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </nav>
+                    
+                    <div class="nav-actions">
+                        <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+                            <span class="status-pulse"></span> WhatsApp Direct
+                        </a>
+                        <a href="contact.html" class="btn-trionn-white">Book Audit</a>
+                    </div>
+                    
+                    <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
             </div>
-            <div>
-              <div class="nav-brand-title">Idrees Qurashi</div>
-              <div class="nav-brand-sub">Autonomous Systems Studio</div>
-            </div>
-          </a>
-
-          <nav class="nav-links">
-            <a href="index.html" class="nav-link active">Overview</a>
-            <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-            <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-            <a href="client-proof.html" class="nav-link">Client Proof</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-          </nav>
-
-          <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
-          </div>
-
-          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-
-      <div class="nav-mobile-menu">
-        <a href="index.html" class="nav-link active">Overview</a>
-        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-        <a href="client-proof.html" class="nav-link">Client Proof</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
-      </div>
-    </header>
-
-    <main id="main-content">
-      
-      <!-- TRIONN Hero Section -->
-      <section style="min-height:82vh;display:flex;align-items:center;padding-top:4rem;padding-bottom:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          <div style="display:flex;flex-direction:column;align-items:flex-start">
             
-            <div class="trionn-pill" style="margin-bottom:2rem">
-              <span class="trionn-star">&#10022;</span>
-              <span>Autonomous Systems Engineering &middot; Est. 2022</span>
+            <div class="nav-mobile-menu">
+                <a href="index.html" class="nav-link active">Overview</a>
+                <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+                <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+                <a href="client-proof.html" class="nav-link">Client Proof</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
             </div>
+        </header>
 
-            <div style="margin-bottom:2.5rem">
-              <h1 class="hero-huge-1">Designed to</h1>
-              <h1 class="hero-huge-2">
-                <span>replace</span> <span class="serif-italic">fragile workflows.</span>
-              </h1>
+        <main id="main-content">
+            <!-- HERO SECTION -->
+            <section class="hero-section" style="min-height: 90vh; display: flex; align-items: center; padding-top: 5rem; padding-bottom: 6rem; border-bottom: 1px solid var(--border-grid);">
+                <div class="container reveal">
+                    <div class="pill-badge">✦ Autonomous Systems Architecture · Active 2024</div>
+                    
+                    <h1 class="hero-huge-1">Engineered to</h1>
+                    <h2 class="hero-huge-2">replace <span class="serif-italic">fragile workflows.</span></h2>
+                    
+                    <p class="body-lead" style="max-width: 65ch; margin-block: 2rem;">
+                        Multi-agent LangGraph swarms, vision-grounded self-healing scrapers, deterministic MCP backends, and production n8n automations. Replacing manual processes with autonomous systems that run without human intervention.
+                    </p>
+                    
+                    <div class="hero-ctas" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-trionn-white">Book Architecture Audit →</a>
+                        <a href="agentic-lab.html" class="btn-trionn-outline">Explore Systems</a>
+                        <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" class="btn-trionn-emerald">
+                            <span class="status-pulse"></span>
+                            WhatsApp Direct
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STUDIO STATEMENT SECTION -->
+            <section class="studio-statement" style="padding-block: 6rem; border-bottom: 1px solid var(--border-grid); background: var(--bg-surface);">
+                <div class="container reveal" style="display: flex; flex-wrap: wrap; gap: 4rem;">
+                    <div class="statement-left" style="flex: 1; min-width: 250px;">
+                        <div class="pill-badge">✦ Studio Philosophy</div>
+                    </div>
+                    <div class="statement-right" style="flex: 2; min-width: 300px;">
+                        <h3 class="statement-headline" style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1.5rem;">
+                            We build systems that outlive the sprint. Deterministic reliability, obsessive code craft, engineered to compound.
+                        </h3>
+                        <p class="statement-body" style="font-size: 1.125rem; color: var(--text-muted);">
+                            Replacing chat-prompt fragility with supervisor swarms, spatial vision healing, and sandboxed execution. Every architecture is designed for zero maintenance and autonomous error recovery.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FLAGSHIP SYSTEMS SECTION -->
+            <section class="flagship-systems" style="padding-block: 6rem; border-bottom: 1px solid var(--border-grid);">
+                <div class="container reveal">
+                    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;">
+                        <div>
+                            <div class="pill-badge">✦ Flagship Systems</div>
+                            <h2 class="section-headline" style="font-size: 3rem; margin-top: 1rem;">Precision systems.<br><span class="serif-italic">Autonomous execution.</span></h2>
+                        </div>
+                        <div class="header-counter" style="font-family: var(--font-mono); color: var(--text-muted);">
+                            04 Production Systems
+                        </div>
+                    </div>
+
+                    <div class="grid-3" style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem;">
+                        
+                        <!-- CARD 01 -->
+                        <div class="trionn-card">
+                            <svg class="crosshair tl" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            <svg class="crosshair tr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            
+                            <div class="card-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <div class="card-number" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--text-muted);">01 // SDR SWARM</div>
+                                <span class="status-pulse"></span>
+                            </div>
+                            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Autonomous Outbound SDR Swarm</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; min-height: 80px;">
+                                Three-layer architecture: Directive ingestion, LangGraph Supervisor orchestration distributing qualified leads across specialized worker agents, and paced email execution relay with randomized human-cadence intervals.
+                            </p>
+                            <div class="tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                                <span class="tech-tag">LangGraph 0.2</span>
+                                <span class="tech-tag">Playwright</span>
+                                <span class="tech-tag">Gemini Flash Lite</span>
+                                <span class="tech-tag">Redis Streams</span>
+                            </div>
+                            <div class="card-metrics" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.875rem;">
+                                <span class="metric" style="color: var(--emerald);">15-20 meetings/week</span>
+                                <span class="metric" style="color: var(--text-muted);">0.19% bounce ceiling</span>
+                            </div>
+                            <a href="outbound-engine.html" class="card-link" style="display: inline-block; border-top: 1px solid var(--border-grid); padding-top: 1rem; width: 100%; text-decoration: none; color: var(--text-primary);">
+                                Inspect Architecture →
+                            </a>
+                        </div>
+
+                        <!-- CARD 02 -->
+                        <div class="trionn-card">
+                            <svg class="crosshair tl" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            <svg class="crosshair tr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            
+                            <div class="card-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <div class="card-number" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--text-muted);">02 // VISION SCRAPER</div>
+                                <span class="status-pulse"></span>
+                            </div>
+                            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Vision-Grounded Self-Healing Web Scraper</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; min-height: 80px;">
+                                14ms cached CSS selector fast-path with Gemini Vision spatial fallback. When DOM mutations break selectors, the vision model computes bounding-box coordinates from page screenshots and repairs the locator cache automatically.
+                            </p>
+                            <div class="tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                                <span class="tech-tag">Playwright Async</span>
+                                <span class="tech-tag">Gemini Vision API</span>
+                                <span class="tech-tag">SQLite Locator Cache</span>
+                            </div>
+                            <div class="card-metrics" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.875rem;">
+                                <span class="metric" style="color: var(--emerald);">98.7% uptime</span>
+                                <span class="metric" style="color: var(--text-muted);">Zero manual maintenance</span>
+                            </div>
+                            <a href="agentic-lab.html" class="card-link" style="display: inline-block; border-top: 1px solid var(--border-grid); padding-top: 1rem; width: 100%; text-decoration: none; color: var(--text-primary);">
+                                Inspect Teardown →
+                            </a>
+                        </div>
+
+                        <!-- CARD 03 -->
+                        <div class="trionn-card">
+                            <svg class="crosshair tl" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            <svg class="crosshair tr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            
+                            <div class="card-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <div class="card-number" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--text-muted);">03 // MCP BACKEND</div>
+                                <span class="status-pulse"></span>
+                            </div>
+                            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Deterministic Model Context Protocol Server</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; min-height: 80px;">
+                                Typed Pydantic schema validation gate on every tool invocation. Execution runs inside ephemeral Docker sandboxes with full JSON audit trails. Zero host system blast radius.
+                            </p>
+                            <div class="tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                                <span class="tech-tag">MCP Protocol</span>
+                                <span class="tech-tag">Python FastAPI</span>
+                                <span class="tech-tag">Docker Engine</span>
+                                <span class="tech-tag">Pydantic</span>
+                            </div>
+                            <div class="card-metrics" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.875rem;">
+                                <span class="metric" style="color: var(--emerald);">100% deterministic</span>
+                                <span class="metric" style="color: var(--text-muted);">Zero blast radius</span>
+                            </div>
+                            <a href="agentic-lab.html" class="card-link" style="display: inline-block; border-top: 1px solid var(--border-grid); padding-top: 1rem; width: 100%; text-decoration: none; color: var(--text-primary);">
+                                Inspect Pipeline →
+                            </a>
+                        </div>
+
+                        <!-- CARD 04 -->
+                        <div class="trionn-card">
+                            <svg class="crosshair tl" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            <svg class="crosshair tr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            
+                            <div class="card-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <div class="card-number" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--text-muted);">04 // N8N WORKFLOWS</div>
+                                <span class="status-pulse"></span>
+                            </div>
+                            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Enterprise n8n Production Automations</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; min-height: 80px;">
+                                Complex multi-node webhook synchronization, automated data enrichment pipelines with LLM-powered classification, and instant failure alerting with Telegram/Slack dispatch.
+                            </p>
+                            <div class="tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                                <span class="tech-tag">n8n</span>
+                                <span class="tech-tag">Make</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Webhooks</span>
+                                <span class="tech-tag">LLM APIs</span>
+                            </div>
+                            <div class="card-metrics" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.875rem;">
+                                <span class="metric" style="color: var(--emerald);">85% ops reduction</span>
+                                <span class="metric" style="color: var(--text-muted);">500+ hrs processed/mo</span>
+                            </div>
+                            <a href="agentic-lab.html" class="card-link" style="display: inline-block; border-top: 1px solid var(--border-grid); padding-top: 1rem; width: 100%; text-decoration: none; color: var(--text-primary);">
+                                View Workflows →
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- METRICS BOARD SECTION -->
+            <section class="metrics-board" style="padding-block: 6rem; border-bottom: 1px solid var(--border-grid);">
+                <div class="container reveal">
+                    <div style="margin-bottom: 4rem;">
+                        <div class="pill-badge">✦ Production Metrics</div>
+                        <h2 class="section-headline" style="font-size: 3rem; margin-top: 1rem; margin-bottom: 0.5rem;">Key facts.</h2>
+                        <p class="subtitle" style="color: var(--text-muted); font-size: 1.125rem;">Verified metrics from live autonomous deployments.</p>
+                    </div>
+                    
+                    <div class="facts-board" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border-grid); border: 1px solid var(--border-grid);">
+                        <div class="fact-cell" style="background: var(--bg-dark); padding: 3rem 2rem; position: relative;">
+                            <svg class="crosshair tl" width="16" height="16" viewBox="0 0 16 16" fill="none" style="position: absolute; top: -8px; left: -8px; color: var(--text-muted); z-index: 10;"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                            <div class="fact-value" style="font-size: 3.5rem; font-family: var(--font-mono); margin-bottom: 0.5rem;">$350K+</div>
+                            <div class="fact-label" style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Pipeline Generated</div>
+                        </div>
+                        <div class="fact-cell" style="background: var(--bg-dark); padding: 3rem 2rem;">
+                            <div class="fact-value color-emerald" style="font-size: 3.5rem; font-family: var(--font-mono); margin-bottom: 0.5rem; color: var(--emerald);">98.7%</div>
+                            <div class="fact-label" style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Automation Uptime SLA</div>
+                        </div>
+                        <div class="fact-cell" style="background: var(--bg-dark); padding: 3rem 2rem;">
+                            <div class="fact-value" style="font-size: 3.5rem; font-family: var(--font-mono); margin-bottom: 0.5rem;">&lt;60s</div>
+                            <div class="fact-label" style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Speed to Lead Response</div>
+                        </div>
+                        <div class="fact-cell" style="background: var(--bg-dark); padding: 3rem 2rem;">
+                            <div class="fact-value" style="font-size: 3.5rem; font-family: var(--font-mono); margin-bottom: 0.5rem;">0.19%</div>
+                            <div class="fact-label" style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Outbound Bounce Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CLIENT PROOF SECTION -->
+            <section class="client-proof-section" style="padding-block: 6rem; border-bottom: 1px solid var(--border-grid); background: var(--bg-surface);">
+                <div class="container reveal">
+                    <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;">
+                        <div>
+                            <div class="pill-badge">✦ Verified Partnerships</div>
+                            <h2 class="section-headline" style="font-size: 3rem; margin-top: 1rem;">Client proof.</h2>
+                        </div>
+                        <a href="client-proof.html" class="btn-trionn-outline">View All Case Studies →</a>
+                    </div>
+                    
+                    <div class="proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <!-- Client 1 -->
+                        <div class="proof-card trionn-card">
+                            <div class="card-number" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase;">Green TV Entertainment · Media</div>
+                            <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem;">Broadcast Content Syndication</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                                Built automated content ingest and social syndication pipelines processing 500+ hours of video metadata monthly, cutting manual editing operations by 85%.
+                            </p>
+                            <div class="metric" style="color: var(--emerald); font-family: var(--font-mono); font-size: 0.875rem; border-top: 1px solid var(--border-grid); padding-top: 1rem;">
+                                500+ hrs/mo · 85% ops cut
+                            </div>
+                        </div>
+                        
+                        <!-- Client 2 -->
+                        <div class="proof-card trionn-card">
+                            <div class="card-number" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase;">Apache Pizza · QSR Franchise</div>
+                            <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem;">180+ Store Audience Acquisition</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                                Scaled localized franchise audience acquisition across 180+ nationwide units with automated geo-targeted social synchronizers.
+                            </p>
+                            <div class="metric" style="color: var(--emerald); font-family: var(--font-mono); font-size: 0.875rem; border-top: 1px solid var(--border-grid); padding-top: 1rem;">
+                                180+ franchise units
+                            </div>
+                        </div>
+
+                        <!-- Client 3 -->
+                        <div class="proof-card trionn-card">
+                            <div class="card-number" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase;">Rock Road Dental · Healthcare</div>
+                            <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem;">Patient Booking Automation</h3>
+                            <p class="card-description" style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                                Automated patient booking, SMS verification, and calendar sync pipeline reducing clinic no-shows by 42%.
+                            </p>
+                            <div class="metric" style="color: var(--emerald); font-family: var(--font-mono); font-size: 0.875rem; border-top: 1px solid var(--border-grid); padding-top: 1rem;">
+                                42% no-show reduction
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA SECTION -->
+            <section class="cta-section" style="padding-block: 8rem; text-align: center;">
+                <div class="container reveal" style="max-width: 800px; margin: 0 auto;">
+                    <div class="pill-badge" style="display: inline-block; margin-bottom: 2rem;">✦ Engagement</div>
+                    <h2 class="section-headline" style="font-size: 3.5rem; margin-bottom: 2rem;">Let's build <span class="serif-italic">something autonomous.</span></h2>
+                    <p class="body-lead" style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.25rem;">
+                        Book a 30-minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
+                    </p>
+                    <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-trionn-white">Book System Audit →</a>
+                        <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" class="btn-trionn-emerald">
+                            <span class="status-pulse"></span>
+                            WhatsApp Direct
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer" style="border-top: 1px solid var(--border-grid); padding-block: 3rem; background: var(--bg-dark);">
+            <div class="container">
+                <div class="footer-inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+                    <div class="footer-left" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="nav-logo-box" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--surface-light); border-radius: 4px;">
+                            <img src="brand_logo.png" alt="Brand Logo" width="20" height="20">
+                        </div>
+                        <div class="copyright" style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--text-muted);">
+                            © 2026 Idrees Qurashi · Autonomous Systems Studio
+                        </div>
+                    </div>
+                    
+                    <nav class="footer-links" style="display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem;">
+                        <a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Overview</a>
+                        <a href="agentic-lab.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Agentic Lab</a>
+                        <a href="client-proof.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Client Proof</a>
+                        <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">GitHub</a>
+                        <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">WhatsApp</a>
+                    </nav>
+                </div>
             </div>
-
-            <p class="body-lead-trionn" style="margin-bottom:3rem">
-              Autonomous AI multi agent swarms, self healing visual scrapers, and deterministic MCP backends powering high ticket enterprise operations and B2B growth.
-            </p>
-
-            <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
-              <a href="contact.html" class="btn-trionn-white">
-                Book a 30 Minute Call &rarr;
-              </a>
-              <a href="agentic-lab.html" class="btn-trionn-outline">
-                Explore Architectures
-              </a>
-              <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-                <span class="status-pulse"></span> Live WhatsApp
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- TRIONN Section 2: Studio Statement -->
-      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          <div style="display:grid;grid-template-columns:1fr 2.5fr;gap:3rem;align-items:start">
-            <div>
-              <span class="trionn-pill">&#10022; Statement</span>
-            </div>
-            <div>
-              <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:700;line-height:1.3;letter-spacing:-0.03em;margin-bottom:2rem;color:var(--text-white)">
-                We engineer for longevity: deterministic reliability first, code craft always, built to scale.
-              </h2>
-              <p class="body-lead-trionn" style="font-size:1.125rem;color:var(--text-muted)">
-                Most automations fail because they rely on linear chat prompts and brittle DOM selectors. We replace them with self coordinating LangGraph supervisor swarms, spatial vision healing, and isolated sandboxes that run without human babysitting.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TRIONN Section 3: Pillars & Architecture Grid -->
-      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          
-          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem">
-            <div>
-              <div class="trionn-pill" style="margin-bottom:1rem">&#10022; Core Capabilities</div>
-              <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em">
-                Focused vision. <span class="serif-italic">Measured execution.</span>
-              </h2>
-            </div>
-            <p class="card-number">03 Core Architectures</p>
-          </div>
-
-          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
-            
-            <!-- Pillar 1 -->
-            <article class="trionn-card">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              
-              <div style="display:flex;justify-content:space-between;margin-bottom:2rem">
-                <span class="card-number">01 // SWARMS</span>
-                <span class="status-pulse"></span>
-              </div>
-              <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Multi Agent Swarms</h3>
-              <p class="body-sub-trionn" style="margin-bottom:2rem">
-                Hierarchical LangGraph topologies where supervisor nodes distribute tasks to specialized reasoning workers, cross validating outputs under strict JSON schemas.
-              </p>
-              <a href="agentic-lab.html" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">
-                Inspect Teardown &rarr;
-              </a>
-            </article>
-
-            <!-- Pillar 2 -->
-            <article class="trionn-card">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-
-              <div style="display:flex;justify-content:space-between;margin-bottom:2rem">
-                <span class="card-number">02 // SCRAPERS</span>
-                <span class="status-pulse"></span>
-              </div>
-              <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Self Healing Scrapers</h3>
-              <p class="body-sub-trionn" style="margin-bottom:2rem">
-                Stealth Playwright agents backed by vision spatial grounding. When DOM mutations break selectors, Gemini Flash computes visual bounding boxes and repairs the cache in real time.
-              </p>
-              <a href="agentic-lab.html" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">
-                Inspect Teardown &rarr;
-              </a>
-            </article>
-
-            <!-- Pillar 3 -->
-            <article class="trionn-card">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-
-              <div style="display:flex;justify-content:space-between;margin-bottom:2rem">
-                <span class="card-number">03 // MCP BACKENDS</span>
-                <span class="status-pulse"></span>
-              </div>
-              <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Deterministic MCP</h3>
-              <p class="body-sub-trionn" style="margin-bottom:2rem">
-                Model Context Protocol tool servers that provide structured interfaces for AI coding agents and production workers, enforcing sandboxed execution and rate guarded API proxies.
-              </p>
-              <a href="outbound-engine.html" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">
-                Inspect Pipeline &rarr;
-              </a>
-            </article>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- TRIONN Section 4: Key Facts Board -->
-      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          
-          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem">
-            <div>
-              <div class="trionn-pill" style="margin-bottom:0.75rem">&#10022; Impact Snapshot</div>
-              <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Key facts.</h2>
-            </div>
-            <p class="body-sub-trionn">Audited metrics from live production deployments.</p>
-          </div>
-
-          <div class="facts-board">
-            <div class="facts-cell">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <div class="facts-num">$350K+</div>
-              <div class="facts-label">Client Pipeline Generated</div>
-            </div>
-
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--accent-emerald)">98.7%</div>
-              <div class="facts-label">Automation Uptime SLA</div>
-            </div>
-
-            <div class="facts-cell">
-              <div class="facts-num">&lt;60s</div>
-              <div class="facts-label">Speed to Lead Response</div>
-            </div>
-
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--text-dim)">0.19%</div>
-              <div class="facts-label">Outbound Bounce Rate</div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- TRIONN Section 5: Client Highlights -->
-      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem">
-            <div>
-              <div class="trionn-pill" style="margin-bottom:0.75rem">&#10022; Proven Partnerships</div>
-              <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Verified client proof.</h2>
-            </div>
-            <a href="client-proof.html" class="btn-trionn-outline">View All Engagements &rarr;</a>
-          </div>
-
-          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
-            <div class="trionn-card" style="padding:2rem">
-              <p class="card-number" style="margin-bottom:1rem">Green TV Entertainment</p>
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">Broadcast Distribution</h3>
-              <p class="body-sub-trionn" style="margin-bottom:1.5rem">Automated digital syndication saving 16 hours weekly across broadcast campaigns.</p>
-              <span class="card-number" style="color:var(--accent-emerald)">16h / Wk Reclaimed</span>
-            </div>
-
-            <div class="trionn-card" style="padding:2rem">
-              <p class="card-number" style="margin-bottom:1rem">Apache Pizza Ireland</p>
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">180+ Store Audience</h3>
-              <p class="body-sub-trionn" style="margin-bottom:1.5rem">Scaled localized social audience acquisition across nationwide franchise units.</p>
-              <span class="card-number" style="color:var(--accent-emerald)">180+ Franchise Stores</span>
-            </div>
-
-            <div class="trionn-card" style="padding:2rem">
-              <p class="card-number" style="margin-bottom:1rem">Rock Road Healthcare</p>
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">Clinic Appointment Flow</h3>
-              <p class="body-sub-trionn" style="margin-bottom:1.5rem">Automated patient booking and follow up synchronization cutting no shows by 42%.</p>
-              <span class="card-number" style="color:var(--accent-emerald)">42% No Show Reduction</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- TRIONN Section 6: Banner Call to Action -->
-      <section style="padding-block:8rem;text-align:center">
-        <div class="container" style="max-width:800px;margin-inline:auto">
-          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Engagement Initiation</div>
-          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
-            Let&#39;s build <span class="serif-italic">something great.</span>
-          </h2>
-          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
-            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
-          </p>
-          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
-            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- TRIONN Footer -->
-    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
-          <div style="display:flex;align-items:center;gap:1rem">
-            <div class="nav-logo-box" style="width:28px;height:28px">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
-              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
-            </span>
-          </div>
-
-          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
-            <a href="index.html" style="color:var(--text-dim)">Overview</a>
-            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
-            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
+        </footer>
+    </div>
 </body>
 </html>

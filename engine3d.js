@@ -1,95 +1,150 @@
-/* ============================================================
-   IDREES QURASHI — TRIONN Studio 3D WebGL Engine
-   Interactive 3D Geometric Torus Knot & Mouse Dynamics
-   ============================================================ */
+/**
+ * TRIONN Studio Luxury Three.js WebGL Engine & Interaction System
+ * Target: #three-canvas
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('three-canvas');
-  if (canvas && window.THREE) {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 85;
+    // ----------------------------------------------------
+    // 1. Scroll Reveal System
+    // ----------------------------------------------------
+    const initScrollReveal = () => {
+        const revealElements = document.querySelectorAll('.reveal');
+        if (!revealElements.length) return;
 
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
 
-    // TRIONN 3D Geometric Object: Torus Knot Wireframe
-    const geometry = new THREE.TorusKnotGeometry(22, 6, 120, 16, 2, 3);
-    const wireframe = new THREE.WireframeGeometry(geometry);
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-    const lineMaterial = new THREE.LineBasicMaterial({
-      color: 0x2F323B,
-      transparent: true,
-      opacity: 0.45
-    });
+        revealElements.forEach(el => observer.observe(el));
+    };
 
-    const torusMesh = new THREE.LineSegments(wireframe, lineMaterial);
-    scene.add(torusMesh);
+    initScrollReveal();
 
-    // Dynamic glowing points along vertices
-    const pointsMaterial = new THREE.PointsMaterial({
-      color: 0xD8D8D8,
-      size: 1.2,
-      transparent: true,
-      opacity: 0.65
-    });
+    // ----------------------------------------------------
+    // 2. Three.js Background Engine
+    // ----------------------------------------------------
+    const initThreeJSEngine = () => {
+        // Graceful degradation if Three.js is missing
+        if (typeof window.THREE === 'undefined') {
+            console.warn('Three.js is not loaded.');
+            return;
+        }
 
-    const pointsMesh = new THREE.Points(geometry, pointsMaterial);
-    scene.add(pointsMesh);
+        const canvas = document.getElementById('three-canvas');
+        if (!canvas) {
+            console.warn('Canvas element #three-canvas not found.');
+            return;
+        }
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetRotationX = 0;
-    let targetRotationY = 0;
+        // Scene Setup
+        const scene = new THREE.Scene();
+        scene.background = null;
+        scene.fog = new THREE.Fog(0x0a0a0a, 2, 8); // Fog near for depth fade
 
-    window.addEventListener('mousemove', (e) => {
-      mouseX = (e.clientX - window.innerWidth / 2) * 0.001;
-      mouseY = (e.clientY - window.innerHeight / 2) * 0.001;
-    }, { passive: true });
+        // Camera Setup
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.z = 5;
 
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+        // Renderer Setup
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
-    function renderLoop() {
-      requestAnimationFrame(renderLoop);
+        // Geometries & Materials
+        // Main Mesh
+        const mainGeometry = new THREE.IcosahedronGeometry(2.2, 1);
+        const mainWireframe = new THREE.WireframeGeometry(mainGeometry);
+        const mainMaterial = new THREE.LineBasicMaterial({
+            color: 0x1E2026,
+            opacity: 0.5,
+            transparent: true
+        });
+        const mainMesh = new THREE.LineSegments(mainWireframe, mainMaterial);
 
-      targetRotationY += (mouseX - targetRotationY) * 0.05;
-      targetRotationX += (mouseY - targetRotationX) * 0.05;
+        // Inner Mesh
+        const innerGeometry = new THREE.IcosahedronGeometry(1.4, 2);
+        const innerWireframe = new THREE.WireframeGeometry(innerGeometry);
+        const innerMaterial = new THREE.LineBasicMaterial({
+            color: 0x2F323B,
+            opacity: 0.25,
+            transparent: true
+        });
+        const innerMesh = new THREE.LineSegments(innerWireframe, innerMaterial);
 
-      torusMesh.rotation.x += 0.002 + targetRotationX * 0.4;
-      torusMesh.rotation.y += 0.003 + targetRotationY * 0.4;
+        scene.add(mainMesh);
+        scene.add(innerMesh);
 
-      pointsMesh.rotation.x = torusMesh.rotation.x;
-      pointsMesh.rotation.y = torusMesh.rotation.y;
+        // Interaction State
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+        let windowHalfX = window.innerWidth / 2;
+        let windowHalfY = window.innerHeight / 2;
 
-      renderer.render(scene, camera);
-    }
+        const onDocumentMouseMove = (event) => {
+            // Normalized coordinates: -1 to +1
+            mouseX = (event.clientX - windowHalfX) / windowHalfX;
+            mouseY = (event.clientY - windowHalfY) / windowHalfY;
+        };
+        document.addEventListener('mousemove', onDocumentMouseMove, false);
 
-    renderLoop();
-  }
+        // Resize Handling (Debounced)
+        let resizeTimeout;
+        const onWindowResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+                
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            }, 200);
+        };
+        window.addEventListener('resize', onWindowResize, false);
 
-  // 3D Card Hover Inertia
-  const cards = document.querySelectorAll('.trionn-card');
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const midX = rect.width / 2;
-      const midY = rect.height / 2;
+        // Animation Loop
+        const animate = () => {
+            requestAnimationFrame(animate);
 
-      const rotX = ((y - midY) / midY) * -5;
-      const rotY = ((x - midX) / midX) * 5;
+            // Base autonomous elegant rotation
+            mainMesh.rotation.x += 0.0008;
+            mainMesh.rotation.y += 0.0012;
 
-      card.style.transform = `perspective(800px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-4px)`;
-    });
+            innerMesh.rotation.x -= 0.0006;
+            innerMesh.rotation.y += 0.001;
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-    });
-  });
+            // Target rotation for mouse following (dampened by 0.15)
+            targetX = mouseX * 0.15;
+            targetY = mouseY * 0.15;
+
+            // Apply lerp for smooth mouse following (factor 0.03) to scene
+            scene.rotation.y += (targetX - scene.rotation.y) * 0.03;
+            scene.rotation.x += (targetY - scene.rotation.x) * 0.03;
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    };
+
+    initThreeJSEngine();
 });

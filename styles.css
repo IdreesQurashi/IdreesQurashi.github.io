@@ -949,6 +949,184 @@ button {
   transform: translateY(-1px);
 }
 
+/* Agentic Duo Grid */
+.agentic-duo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 36px;
+}
+
+@media (max-width: 960px) {
+  .agentic-duo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact Visual Flow Diagram */
+.visual-flow-card {
+  background: rgba(10, 13, 22, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.flow-step-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: all 0.25s ease;
+}
+
+.flow-step-row:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateX(3px);
+}
+
+.flow-step-row:last-child {
+  margin-bottom: 0;
+}
+
+.flow-step-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.85rem;
+  margin: -2px 0 4px 0;
+  line-height: 1;
+}
+
+.flow-step-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.flow-step-content {
+  flex: 1;
+}
+
+.flow-step-title {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.flow-step-desc {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.flow-step-tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.flow-step-tag.emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Explore All Agentic CTA Button */
+.btn-explore-all-agentic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF !important;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(16px);
+  margin-top: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.btn-explore-all-agentic:hover {
+  background: #FFFFFF;
+  color: #040508 !important;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* Email Subscription Card */
+.newsletter-card {
+  background: rgba(10, 13, 22, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-card);
+  padding: 56px 40px;
+  margin: 80px 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 30px 60px -15px rgba(0, 0, 0, 0.85);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 580px;
+  margin: 32px auto 16px auto;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 260px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 14px 22px;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.newsletter-input:focus {
+  border-color: var(--accent-emerald);
+}
+
 /* === 9. SECTION: WORKFLOWS IN MOTION (Real Video Grid) === */
 .section-motion {
   background-color: transparent !important; /* CRITICAL: 3D sky visible */

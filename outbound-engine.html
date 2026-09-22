@@ -1,208 +1,251 @@
 <!DOCTYPE html>
-<html lang="en" class="grain">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Outbound Engine &amp; Cold Email Copy Vault | Idrees Qurashi</title>
-    <meta name="description" content="Battle-tested cold email copy frameworks, 40+ inbox deliverability DNS protocols, and automated lead enrichment architectures by Idrees Qurashi.">
-    <link rel="canonical" href="https://idreesqurashi.github.io/outbound-engine.html">
-    <meta name="theme-color" content="#05060a">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="B2B Outbound Engine &amp; Cold Email Copy Vault | Idrees Qurashi">
-    <meta property="og:description" content="Battle-tested cold email copy frameworks, 40+ inbox deliverability DNS protocols, and automated lead enrichment architectures.">
-    <meta property="og:url" content="https://idreesqurashi.github.io/outbound-engine.html">
-    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
-    <link rel="apple-touch-icon" href="brand_logo.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/tailwind.css">
-
-    <script>document.documentElement.classList.add('js');</script>
-    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Autonomous B2B outbound pipeline: ICP scraping, email verification, Gemini personalization, rate-guarded Gmail dispatch."/>
+  <title>B2B Outbound Engine — Enterprise Pipeline Architecture | Idrees Qurashi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
+  <link rel="apple-touch-icon" href="brand_logo.png"/>
+  <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="font-sans antialiased">
-
-    <div class="aurora-glow w-[700px] h-[340px] bg-cyan-500/[0.06] top-10 left-1/2 -translate-x-1/2"></div>
-    <div class="aurora-glow w-[420px] h-[300px] bg-emerald-500/[0.05] bottom-32 left-4"></div>
-
-    <div class="relative z-10">
-
-        <!-- ═══════════ UNIFIED NAVBAR ═══════════ -->
-        <nav class="nav-glass fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 py-3">
-            <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-                <a href="index.html" class="flex items-center space-x-3 shrink-0" aria-label="Idrees Qurashi — home">
-                    <div class="w-10 h-10 rounded-xl overflow-hidden border border-slate-700/70 shadow-lg shadow-black/60 bg-black">
-                        <img src="brand_logo.png" alt="Idrees Qurashi monogram" class="w-full h-full object-cover">
-                    </div>
-                    <div class="hidden sm:block">
-                        <div class="font-serif font-bold text-sm text-white tracking-widest uppercase">Idrees Qurashi</div>
-                        <div class="text-[9px] font-mono uppercase tracking-widest text-slate-400">Autonomous Systems &amp; Growth</div>
-                    </div>
-                </a>
-
-                <div class="hidden lg:flex items-center gap-1">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-                    <a href="index.html#master-workflows-vault" class="nav-link">Workflows</a>
-                    <a href="outbound-engine.html" class="nav-link active">Outbound Engine</a>
-                    <a href="client-proof.html" class="nav-link">Client Proof</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-aurora px-4 py-2 text-xs font-mono uppercase tracking-wider">
-                        <i data-lucide="zap" class="w-3.5 h-3.5"></i><span>Direct Booking</span>
-                    </a>
-                    <button id="mobile-menu-btn" class="lg:hidden btn-graphite p-2.5" aria-label="Open menu" aria-expanded="false">
-                        <i data-lucide="menu" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-menu" class="hidden lg:hidden mt-3 pt-3 border-t border-slate-800/70 grid grid-cols-2 gap-1.5">
-                <a href="index.html" class="nav-link text-center">Home</a>
-                <a href="agentic-lab.html" class="nav-link text-center">Agentic Lab</a>
-                <a href="index.html#master-workflows-vault" class="nav-link text-center">Workflows</a>
-                <a href="outbound-engine.html" class="nav-link active text-center">Outbound Engine</a>
-                <a href="client-proof.html" class="nav-link text-center">Client Proof</a>
-                <a href="contact.html" class="nav-link text-center">Contact</a>
-            </div>
-        </nav>
-
-        <!-- ═══════════ MAIN ═══════════ -->
-        <main class="relative pt-40 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="badge-pill mb-5">
-                    <i data-lucide="send" class="w-3.5 h-3.5"></i> HIGH-TICKET OUTBOUND &amp; EMAIL PLAYBOOKS
-                </div>
-                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">Outbound Engine &amp; <span class="text-aurora">Copy Vault</span></h1>
-                <p class="text-slate-400 mt-5 text-sm md:text-base font-light leading-relaxed">Battle-tested cold email copy frameworks, 40+ inbox deliverability DNS protocols, and automated lead enrichment architectures.</p>
-            </div>
-
-            <!-- Cold Email Copy Blueprints -->
-            <div class="mb-16">
-                <h2 class="text-xs font-mono font-bold text-aurora-cyan uppercase tracking-widest mb-6 flex items-center gap-2">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>High-Converting Cold Email Copy Blueprints (60%+ Open Rate)</span>
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Copy 1 -->
-                    <div class="aurora-card aurora-hairline reveal-3d p-8">
-                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-slate-800/70">
-                            <div>
-                                <span class="text-xs font-mono text-aurora-cyan uppercase">Sequence Angle 01</span>
-                                <h3 class="text-xl font-serif font-bold text-white mt-1">The ICP Observation &amp; Drop-Off Hook</h3>
-                            </div>
-                            <span class="badge-pill badge-emerald">High Reply</span>
-                        </div>
-                        <div class="code-box p-5 text-xs text-slate-300 space-y-3 leading-relaxed">
-                            <p class="text-slate-500 font-bold">Subject: quick question regarding {{company}} outbound</p>
-                            <p>Hi {{first_name}},</p>
-                            <p>Noticed {{company}} is actively scaling your {{department/service}} team this quarter.</p>
-                            <p>Most founders we speak with struggle with SDR manual list building and slow speed-to-lead response times, leading to 40%+ drop-off in qualified demos.</p>
-                            <p>We recently architected an autonomous Agentic AI lead engine that automated entire data enrichment and booked 35+ qualified meetings monthly on autopilot.</p>
-                            <p>Open to a brief 4-minute screen-share this Thursday at 2 PM EST to see how the architecture works?</p>
-                            <p class="text-slate-500">Best,<br>Idrees Qurashi | Lead Architect</p>
-                        </div>
-                    </div>
-
-                    <!-- Copy 2 -->
-                    <div class="aurora-card is-violet reveal-3d p-8">
-                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-slate-800/70">
-                            <div>
-                                <span class="text-xs font-mono text-purple-glow uppercase">Sequence Angle 02</span>
-                                <h3 class="text-xl font-serif font-bold text-white mt-1">The Direct Infrastructure Teaser</h3>
-                            </div>
-                            <span class="badge-pill badge-violet">Enterprise Pitch</span>
-                        </div>
-                        <div class="code-box p-5 text-xs text-slate-300 space-y-3 leading-relaxed">
-                            <p class="text-slate-500 font-bold">Subject: {{first_name}}, saw your {{recent_feature/hiring}} update</p>
-                            <p>Hi {{first_name}},</p>
-                            <p>Saw your recent updates around {{trigger_event}}.</p>
-                            <p>Built a custom workflow for a B2B SaaS in your space that connects ad leads directly to WhatsApp / Close CRM with a &lt;60s speed-to-lead trigger, doubling their conversion rate.</p>
-                            <p>Recorded a 90-second Loom showing the backend schema. Mind if I send the link over?</p>
-                            <p class="text-slate-500">Cheers,<br>Idrees</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DNS & Deliverability -->
-            <div class="aurora-card reveal-3d p-10">
-                <div class="max-w-3xl">
-                    <div class="text-xs font-mono text-aurora-cyan uppercase tracking-wider mb-2">Technical Deliverability SOP</div>
-                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">40+ Inbox Multi-Domain Scaling Protocol</h3>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-                        To scale past 15,000 cold emails monthly without landing in spam, we operate a decentralized inbox rotation matrix:
-                    </p>
-                </div>
-
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-6 bg-black/60 rounded-2xl border border-slate-800/80">
-                        <div class="text-aurora-cyan font-mono font-bold text-sm">1. DNS Authentication</div>
-                        <p class="text-slate-400 text-xs mt-2">100% strict SPF (`v=spf1`), 2048-bit DKIM, and DMARC policy (`p=quarantine; sp=quarantine`) with custom CNAME tracking domains.</p>
-                    </div>
-                    <div class="p-6 bg-black/60 rounded-2xl border border-slate-800/80">
-                        <div class="text-white font-mono font-bold text-sm">2. 14-Day Warmup Ramp</div>
-                        <p class="text-slate-400 text-xs mt-2">Gradual ramp from 5 to 30 emails/day per inbox with bidirectional peer inbox engagement to establish 100% sender reputation.</p>
-                    </div>
-                    <div class="p-6 bg-black/60 rounded-2xl border border-slate-800/80">
-                        <div class="text-emerald-400 font-mono font-bold text-sm">3. ZeroBounce Hygiene</div>
-                        <p class="text-slate-400 text-xs mt-2">Every scraped Apollo/Sales Nav lead passes through API validation, discarding all catch-all and invalid MX records (bounces &lt;2%).</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- ═══════════ FOOTER ═══════════ -->
-        <footer class="relative py-10 px-6 md:px-8 border-t border-slate-900 text-center text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-                <div>&copy; 2026 Idrees Qurashi — AI Integration &amp; Automation Engineer. All rights reserved.</div>
-                <div class="flex items-center gap-6">
-                    <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition">GitHub</a>
-                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-aurora-cyan transition">Email</a>
-                    <a href="contact.html" class="hover:text-aurora-cyan transition">Contact</a>
-                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition">WhatsApp</a>
-                </div>
-            </div>
-        </footer>
+<body>
+  <nav class="nav" role="navigation" aria-label="Primary navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Home" style="display:flex;align-items:center;gap:var(--space-3)">
+          <div style="width:28px;height:28px;border-radius:6px;overflow:hidden;background:#000;border:1px solid var(--border-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+          </div>
+          <span class="nav-logo-name">Idrees Qurashi</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link ">Overview</a></li>
+          <li><a href="agentic-lab.html" class="nav-link ">Agentic Lab</a></li>
+          <li><a href="outbound-engine.html" class="nav-link active">Outbound Engine</a></li>
+          <li><a href="client-proof.html" class="nav-link ">Client Proof</a></li>
+          <li><a href="contact.html" class="nav-link ">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">
+          <span class="status-dot"></span>
+          Book a System Audit
+        </a>
+        <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+    <div class="nav-mobile-menu">
+      <a href="index.html" class="nav-link">Overview</a>
+      <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+      <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+      <a href="client-proof.html" class="nav-link">Client Proof</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="btn-primary" style="align-self:flex-start">Book a System Audit</a>
+    </div>
+  </nav>
+<main id="main-content">
 
-    <script>
-        // Mobile menu
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                const menu = document.getElementById('mobile-menu');
-                const open = menu.classList.toggle('hidden') === false;
-                menuBtn.setAttribute('aria-expanded', String(open));
-            });
-        }
+<section class="section" aria-labelledby="ob-h" style="padding-top:var(--space-20);padding-bottom:var(--space-12)">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span><span class="mono-label">outbound.engine</span>
+          <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;LIVE</span>
+        </div>
+        <h1 id="ob-h" class="display-hero" style="margin-bottom:var(--space-6)">The B2B pipeline engine.</h1>
+        <p class="body-lead" style="margin-bottom:var(--space-8)">End-to-end autonomous outbound. ICP definition to verified-send in a single deterministic pipeline. Zero manual intervention, sub-0.25% bounce rate, and a stateful dedup registry that survives crashes and restarts.</p>
+        <div class="metric-row" style="border-radius:var(--radius-lg)">
+          <div class="metric-cell"><span class="mono-label">Sends/day</span><span class="mono-metric">120</span></div>
+          <div class="metric-cell"><span class="mono-label">Open rate</span><span class="mono-metric">38<span style="font-size:var(--text-sm);color:var(--fg-muted)">%</span></span></div>
+          <div class="metric-cell"><span class="mono-label">Reply rate</span><span class="mono-metric">8.4<span style="font-size:var(--text-sm);color:var(--fg-muted)">%</span></span></div>
+          <div class="metric-cell"><span class="mono-label">Bounce rate</span><span class="mono-metric" style="color:var(--emerald)">0.19<span style="font-size:var(--text-sm);color:var(--fg-muted)">%</span></span></div>
+        </div>
+      </div>
+      <div>
+        <div class="terminal-block">
+          <p class="mono-label" style="margin-bottom:var(--space-4)">pipeline.daemon &mdash; PID 8742 &mdash; running 14h 22m</p>
+          <div class="terminal-line"><span class="tl-timestamp">09:00:00</span><span class="tl-level-ok">INIT</span><span class="tl-source">icp_scraper</span><span class="tl-msg">target: <span class="tl-val">SaaS founders &lt;50 employees</span></span></div>
+          <div class="terminal-line"><span class="tl-timestamp">09:04:12</span><span class="tl-level-ok">OK</span><span class="tl-source">apollo_api</span><span class="tl-msg">Fetched <span class="tl-val">420 contacts</span> &middot; ICP match: <span class="tl-val">311</span></span></div>
+          <div class="terminal-line"><span class="tl-timestamp">09:04:19</span><span class="tl-level-ok">OK</span><span class="tl-source">hunter_verify</span><span class="tl-msg">Verified <span class="tl-val">294/311</span> &middot; 17 dropped</span></div>
+          <div class="terminal-line"><span class="tl-timestamp">09:06:00</span><span class="tl-level-ok">OK</span><span class="tl-source">gemini_flash</span><span class="tl-msg">Generated <span class="tl-val">294 drafts</span> &middot; 0 failures</span></div>
+          <div class="terminal-line"><span class="tl-timestamp">09:06:22</span><span class="tl-level-ok">OK</span><span class="tl-source">dedup_registry</span><span class="tl-msg">Filtered <span class="tl-val">12 dupes</span> &middot; queue: <span class="tl-val">282</span></span></div>
+          <div class="terminal-line"><span class="tl-timestamp">09:06:22</span><span class="tl-level-ok">INFO</span><span class="tl-source">rate_guard</span><span class="tl-msg">Sleep <span class="tl-val">1340s</span> &middot; next: <span class="tl-val">09:28:42</span></span></div>
+          <div class="terminal-line"><span class="tl-timestamp">09:28:42</span><span class="tl-level-ok">SENT</span><span class="tl-source">gmail_api</span><span class="tl-msg">Dispatch <span class="tl-val">#001</span> &middot; alex@finflow.io</span></div>
+          <div class="terminal-line"><span class="tl-level-warn">WARN</span><span class="tl-source">gmail_api</span><span class="tl-msg">Soft bounce &mdash; jake@oldsaas.com &mdash; blacklisting</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Reveal on scroll
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal-3d').forEach(el => revealObserver.observe(el));
+<div class="container"><div class="section-divider" style="margin-top:0"><span class="section-divider-label">pipeline.stages</span></div></div>
 
-        // Icons (deferred script)
-        window.addEventListener('DOMContentLoaded', () => {
-            if (window.lucide) lucide.createIcons(); else setTimeout(() => window.lucide && lucide.createIcons(), 600);
-        });
-    </script>
+<section class="section" aria-labelledby="stages-h" style="padding-top:0">
+  <div class="container">
+    <header class="section-header" style="margin-bottom:var(--space-10)">
+      <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">stage.breakdown</span></div>
+      <h2 id="stages-h" class="display-section">Seven deterministic stages</h2>
+    </header>
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">01</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">ICP Definition &amp; Scraper Dispatch</h3>
+              <span class="tag tag-ghost">icp_scraper</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">Supervisor agent parses ICP brief JSON (industry, headcount, title, geography). Dispatches Apollo API batch query and LinkedIn Playwright scraper in parallel. Merges results and normalises schema.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">420</span><br><span class="mono-label">contacts/run</span></div>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">02</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">Email Verification &amp; Enrichment</h3>
+              <span class="tag tag-ghost">hunter_verify</span><span class="tag tag-ghost">clearbit</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">Hunter.io SMTP verification for each raw email. Clearbit enriches company domain with tech stack, funding round, and headcount. Contacts with confidence below 0.75 are silently discarded. Zero guessed addresses.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">&lt;0.25%</span><br><span class="mono-label">bounce target</span></div>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">03</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">Deduplication Registry Check</h3>
+              <span class="tag tag-ghost">dedup_registry</span><span class="tag tag-ghost">SQLite</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">Stateful sent-log registry backed by SQLite. Each contact email is SHA-256 hashed and checked before enqueueing. Survives daemon restarts. Eliminates duplicate sends across pipeline reruns.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">0</span><br><span class="mono-label">duplicate sends</span></div>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">04</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">Gemini Flash Personalization Engine</h3>
+              <span class="tag tag-ghost">gemini-flash-lite</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">Six-key rotating Gemini Flash Lite pool generates bespoke email copy per contact. System prompt encodes ICP context, company enrichment data, and tone rules. Outputs structured JSON with subject, body, and PS line. Rotates keys to avoid quota limits.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">294</span><br><span class="mono-label">drafts/run</span></div>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">05</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">Rate Guard &amp; Human-Pacing Daemon</h3>
+              <span class="tag tag-ghost">rate_guard</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">Background daemon enforces randomized 900s to 1800s sleep between individual sends. Mimics human send patterns to prevent Google Workspace abuse flags. Sub-minute burst sending is architecturally impossible by design.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">15-30m</span><br><span class="mono-label">send interval</span></div>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">06</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">Gmail API Dispatch</h3>
+              <span class="tag tag-ghost">gmail_api</span><span class="tag tag-ghost">OAuth2</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">Authenticated Gmail API sends with OAuth2 refresh token management. Each send is logged to the dedup registry with timestamp and message ID. Hard bounce detection triggers immediate 24-hour cooldown and domain blacklisting.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">120</span><br><span class="mono-label">sends/day</span></div>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-5) var(--space-6)">
+        <div style="display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-5);align-items:start">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted);margin-top:2px">07</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+              <h3 style="font-weight:700;font-size:var(--text-base);color:var(--fg-primary)">Monitoring &amp; Telegram Alerting</h3>
+              <span class="tag tag-ghost">notifier</span><span class="tag tag-ghost">Telegram Bot</span>
+            </div>
+            <p class="body-base" style="font-size:var(--text-sm)">LangGraph health monitor polls pipeline state every 15 minutes. Fires structured Telegram alerts on: bounce threshold breach, rate limit warnings, daemon crash recovery, and daily send summary with open and reply tallies.</p>
+          </div>
+          <div style="text-align:right"><span class="mono-value">15m</span><br><span class="mono-label">poll interval</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="section-divider"><span class="section-divider-label">deliverability.spec</span></div></div>
+
+<section class="section" aria-labelledby="deliv-h" style="padding-top:0">
+  <div class="container">
+    <header class="section-header" style="margin-bottom:var(--space-10)">
+      <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">deliverability.invariants</span></div>
+      <h2 id="deliv-h" class="display-section">Zero-bounce operating system</h2>
+    </header>
+    <div style="background:var(--bg-surface);border:1px solid var(--border-hair);border-radius:var(--radius-lg);overflow:hidden">
+      <table class="data-table">
+        <thead><tr><th>Invariant</th><th>Rule</th><th>Implementation</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="td-primary">Email source reliability</td><td>Only JD-stated or Hunter.io verified addresses</td><td>Hunter SMTP verify &gt; 0.75 confidence gate</td><td><span class="tag tag-emerald">Enforced</span></td></tr>
+          <tr><td class="td-primary">No address guessing</td><td>Zero extrapolated mailboxes</td><td>Architectural ban: no pattern synthesis</td><td><span class="tag tag-emerald">Enforced</span></td></tr>
+          <tr><td class="td-primary">Human pacing</td><td>15 to 30 minute randomized send gaps</td><td>random.uniform(900, 1800) daemon sleep</td><td><span class="tag tag-emerald">Enforced</span></td></tr>
+          <tr><td class="td-primary">Bounce rate ceiling</td><td>Hard limit: 0.25%</td><td>Bounce counter triggers 24h cooldown + blacklist</td><td><span class="tag tag-emerald">Active</span></td></tr>
+          <tr><td class="td-primary">Deduplication</td><td>Zero duplicate sends on restart</td><td>SHA-256 email hash registry in SQLite</td><td><span class="tag tag-emerald">Enforced</span></td></tr>
+          <tr><td class="td-primary">Dispatch permission</td><td>No auto-send without explicit approval</td><td>Approval gate in pipeline config JSON</td><td><span class="tag tag-emerald">Enforced</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)">
+            <span class="nav-logo-mark">IQ://</span>
+            <span class="nav-logo-name">Idrees Qurashi</span>
+          </div>
+          <p class="footer-meta">AI Automation Engineer &amp; Agentic Systems Architect</p>
+          <p class="footer-meta" style="margin-top:var(--space-2)">Islamabad, Pakistan &middot; Available for remote engagements worldwide</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="agentic-lab.html" class="footer-link">Agentic Lab</a>
+          <a href="outbound-engine.html" class="footer-link">Outbound Engine</a>
+          <a href="client-proof.html" class="footer-link">Client Proof</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="https://github.com/IdreesQurashi" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/idreesqurashi" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+      </div>
+      <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-hair);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+        <span class="footer-meta">&copy; 2026 Idrees Qurashi. Production-grade systems, zero placeholders.</span>
+        <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;Systems Operational</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

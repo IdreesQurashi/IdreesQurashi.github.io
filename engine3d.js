@@ -13,17 +13,57 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // === 1. SCROLL REVEAL OBSERVER ===
+  // === 1. BI-DIRECTIONAL DYNAMIC SCROLL SPAWN SYSTEM ===
+  // Intense magnetic pulling animation: converts from transparent to translucent obsidian glass
+  // Operates continuously on every scroll cycle from top or bottom without page reload
   const revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
+    const vh = window.innerHeight;
+
+    // Immediately prime directional state for all elements based on viewport coordinates
+    revealEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < vh && rect.bottom > 0) {
+        // Inside viewport on load
+        el.classList.add('visible');
+      } else if (rect.top <= 0) {
+        // Above viewport on load: prime to pull down when scrolling up
+        el.classList.add('spawn-from-top');
+      } else {
+        // Below viewport on load: prime to pull up when scrolling down
+        el.classList.add('spawn-from-bottom');
+      }
+    });
+
     const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
+      entries.forEach(entry => {
+        const el = entry.target;
+        const rect = entry.boundingClientRect;
+
+        if (entry.isIntersecting) {
+          // Entered viewport: trigger visible pull animation
+          el.classList.add('visible');
+        } else {
+          // Left viewport: remove visible and re-prime direction class based on exit edge
+          if (el.style) el.style.transform = '';
+          el.classList.remove('visible');
+
+          if (rect.top < 0) {
+            // Exited above screen: prime to spawn downwards when scrolling down
+            el.classList.remove('spawn-from-bottom');
+            el.classList.add('spawn-from-top');
+          } else {
+            // Exited below screen: prime to spawn upwards when scrolling up
+            el.classList.remove('spawn-from-top');
+            el.classList.add('spawn-from-bottom');
+          }
         }
       });
-    }, { threshold: 0.08 });
+    }, {
+      threshold: 0.02,
+      rootMargin: '60px 0px 60px 0px'
+    });
+
     revealEls.forEach(el => obs.observe(el));
   }
 
@@ -57,8 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function onMouseLeave() {
-      card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease';
+      card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease';
       card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale3d(1, 1, 1)';
+      setTimeout(() => {
+        if (!card.matches(':hover') && card.classList.contains('visible')) {
+          card.style.transform = '';
+        }
+      }, 400);
       const glare = card.querySelector('.card-glare');
       if (glare) glare.style.opacity = '0';
     }

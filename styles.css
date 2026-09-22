@@ -1165,14 +1165,63 @@ button {
   color: #FFFFFF;
 }
 
-/* Scroll reveal utility */
+/* Dynamic Bi-Directional Scroll Floating & Spawn System */
+/* High-intensity magnetic pull + transparent to translucent obsidian glass conversion */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(14px);
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Pulled from bottom (when scrolling down, or elements below viewport) */
+.reveal,
+.reveal.spawn-from-bottom {
+  opacity: 0;
+  filter: blur(14px);
+  transform: perspective(1200px) rotateX(10deg) translateY(110px) scale(0.90);
 }
+
+/* Pulled from top (when scrolling up, or elements above viewport) */
+.reveal.spawn-from-top {
+  opacity: 0;
+  filter: blur(14px);
+  transform: perspective(1200px) rotateX(-10deg) translateY(-110px) scale(0.90);
+}
+
+/* Active in viewport: pulled into position and converted from transparent to translucent */
+.reveal.visible {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1) !important;
+}
+
+/* Rhythmic Stagger Delays for Grid Items */
+.motion-grid-6 .workflow-card:nth-child(1),
+.workflow-grid .workflow-card:nth-child(1) { transition-delay: 0.04s; }
+.motion-grid-6 .workflow-card:nth-child(2),
+.workflow-grid .workflow-card:nth-child(2) { transition-delay: 0.10s; }
+.motion-grid-6 .workflow-card:nth-child(3),
+.workflow-grid .workflow-card:nth-child(3) { transition-delay: 0.16s; }
+.motion-grid-6 .workflow-card:nth-child(4),
+.workflow-grid .workflow-card:nth-child(4) { transition-delay: 0.22s; }
+.motion-grid-6 .workflow-card:nth-child(5),
+.workflow-grid .workflow-card:nth-child(5) { transition-delay: 0.28s; }
+.motion-grid-6 .workflow-card:nth-child(6),
+.workflow-grid .workflow-card:nth-child(6) { transition-delay: 0.34s; }
+
+.facts-grid-4 .facts-item:nth-child(1) { transition-delay: 0.04s; }
+.facts-grid-4 .facts-item:nth-child(2) { transition-delay: 0.10s; }
+.facts-grid-4 .facts-item:nth-child(3) { transition-delay: 0.16s; }
+.facts-grid-4 .facts-item:nth-child(4) { transition-delay: 0.22s; }
+
+#proof .workflow-card:nth-child(1),
+.proof-cards-grid .workflow-card:nth-child(1) { transition-delay: 0.05s; }
+#proof .workflow-card:nth-child(2),
+.proof-cards-grid .workflow-card:nth-child(2) { transition-delay: 0.12s; }
+#proof .workflow-card:nth-child(3),
+.proof-cards-grid .workflow-card:nth-child(3) { transition-delay: 0.19s; }
+

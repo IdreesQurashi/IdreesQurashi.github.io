@@ -66,31 +66,41 @@
 <body>
 
 <canvas id="three-canvas"></canvas>
-<div class="site-wrap">
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <a href="index.html" class="header-logo">
-      <img src="brand_logo.png" alt="Idrees Qurashi" style="height:28px;width:auto;border-radius:4px">
-    </a>
-    <div class="header-actions">
-      <a href="contact.html" class="btn-talk">let's talk</a>
-      <button class="btn-menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
-        <span>Menu</span>
-        <div class="hamburger"><span></span><span></span></div>
-      </button>
-    </div>
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-menu-drawer">
+    <a href="index.html#work" onclick="document.getElementById('mobile-menu').classList.remove('open')">Work</a>
+    <a href="agentic-workflows.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Agentic AI</a>
+    <a href="index.html#about" onclick="document.getElementById('mobile-menu').classList.remove('open')">About</a>
+    <a href="client-proof.html" class="active" onclick="document.getElementById('mobile-menu').classList.remove('open')">Client Proof</a>
+    <a href="contact.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a>
   </div>
-</header>
 
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="mobile-menu">
-  <a href="index.html">Overview</a>
-  <a href="agentic-lab.html">Systems</a>
-  <a href="client-proof.html">Proof</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <div class="site-wrap">
+
+    <!-- TRIONN MINIMAL HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="header-brand">
+          <div class="header-logo-box">
+            <img src="brand_logo.png" alt="Idrees Qurashi Monogram"/>
+          </div>
+          <div>
+            <span class="header-title">Idrees Qurashi</span>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <a href="contact.html" class="btn-talk">let's talk</a>
+          <button class="btn-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+            <span>Menu</span>
+            <div class="hamburger-bars">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
 
 <main>
     <!-- HERO SECTION -->

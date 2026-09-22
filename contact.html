@@ -18,31 +18,41 @@
 <body>
 
 <canvas id="three-canvas"></canvas>
-<div class="site-wrap">
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <a href="index.html" class="header-logo">
-      <img src="brand_logo.png" alt="Idrees Qurashi" style="height:28px;width:auto;border-radius:4px">
-    </a>
-    <div class="header-actions">
-      <span class="btn-menu">let's talk</span>
-      <button class="btn-menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
-        <span>Menu</span>
-        <div class="hamburger"><span></span><span></span></div>
-      </button>
-    </div>
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-menu-drawer">
+    <a href="index.html#work" onclick="document.getElementById('mobile-menu').classList.remove('open')">Work</a>
+    <a href="agentic-workflows.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Agentic AI</a>
+    <a href="index.html#about" onclick="document.getElementById('mobile-menu').classList.remove('open')">About</a>
+    <a href="client-proof.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Client Proof</a>
+    <a href="contact.html" class="active" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a>
   </div>
-</header>
 
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="mobile-menu">
-  <a href="index.html">Overview</a>
-  <a href="agentic-lab.html">Systems</a>
-  <a href="client-proof.html">Proof</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <div class="site-wrap">
+
+    <!-- TRIONN MINIMAL HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="header-brand">
+          <div class="header-logo-box">
+            <img src="brand_logo.png" alt="Idrees Qurashi Monogram"/>
+          </div>
+          <div>
+            <span class="header-title">Idrees Qurashi</span>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <a href="contact.html" class="btn-talk">let's talk</a>
+          <button class="btn-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+            <span>Menu</span>
+            <div class="hamburger-bars">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
 
 <main>
 
@@ -52,7 +62,7 @@
     <div class="grid-12">
       <div style="grid-column: 1 / 10;">
         <h1 style="font-family: var(--font-display); font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem;" class="reveal">Let's connect.</h1>
-        <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; line-height: 1.6;" class="reveal reveal-d1">Book a 30-minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.</p>
+        <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; line-height: 1.6;" class="reveal reveal-d1">Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.</p>
       </div>
     </div>
   </div>

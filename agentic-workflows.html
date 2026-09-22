@@ -13,10 +13,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="styles.css?v=2.4"/>
+  <link rel="stylesheet" href="styles.css?v=2.5"/>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="engine3d.js?v=2.4" defer></script>
+  <script src="engine3d.js?v=2.5" defer></script>
 </head>
 <body>
 
@@ -25,78 +25,87 @@
 
   <!-- Mobile Drawer Menu -->
   <div id="mobile-menu" class="mobile-menu-drawer">
-    <a href="index.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Overview</a>
-    <a href="agentic-workflows.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Agentic AI</a>
-    <a href="client-proof.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Proof</a>
+    <a href="index.html#work" onclick="document.getElementById('mobile-menu').classList.remove('open')">Work</a>
+    <a href="agentic-workflows.html" class="active" onclick="document.getElementById('mobile-menu').classList.remove('open')">Agentic AI</a>
+    <a href="index.html#about" onclick="document.getElementById('mobile-menu').classList.remove('open')">About</a>
+    <a href="client-proof.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Client Proof</a>
     <a href="contact.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a>
   </div>
 
   <div class="site-wrap">
 
-    <!-- Fixed Header -->
+    <!-- TRIONN MINIMAL HEADER -->
     <header class="site-header">
       <div class="container">
-        <a href="index.html" class="header-logo" aria-label="Idrees Qurashi Homepage">
-          <img src="brand_logo.png" alt="Idrees Qurashi Logo" class="brand-symbol"/>
-          <span class="brand-text">Idrees Qurashi</span>
+        <a href="index.html" class="header-brand">
+          <div class="header-logo-box">
+            <img src="brand_logo.png" alt="Idrees Qurashi Monogram"/>
+          </div>
+          <div>
+            <span class="header-title">Idrees Qurashi</span>
+          </div>
         </a>
 
-        <nav class="header-nav">
-          <a href="index.html" class="nav-link">Overview</a>
-          <a href="agentic-workflows.html" class="nav-link active" style="color:#FFFFFF">Agentic AI</a>
-          <a href="client-proof.html" class="nav-link">Proof</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
-
         <div class="header-actions">
-          <a href="contact.html" class="btn-talk">Let's Talk</a>
-          <button class="btn-menu" aria-label="Toggle Navigation Menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+          <a href="contact.html" class="btn-talk">let's talk</a>
+          <button class="btn-menu" aria-label="Toggle navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
             <span>Menu</span>
-            <div class="hamburger"><span></span><span></span></div>
+            <div class="hamburger-bars">
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
 
       <!-- PAGE HERO -->
-      <section style="padding: 140px 0 60px 0; border-bottom: 1px solid var(--border-hair);">
-        <div class="container reveal">
-          <span class="section-tag">Production Blueprint Vault</span>
-          <h1 style="font-family:var(--font-display);font-size:clamp(2.75rem,5.5vw,4.75rem);font-weight:700;line-height:1.05;letter-spacing:-0.03em;color:#FFFFFF;margin-bottom:20px;">
-            Agentic AI Systems <span class="serif-italic">Library.</span>
-          </h1>
-          <p style="font-size:1.15rem;color:var(--text-muted);line-height:1.65;max-width:760px;margin-bottom:32px;">
-            Production multi agent architectures, autonomous terminal pipelines, and open source execution blueprints engineered for enterprise scale. Every system includes full layer breakdowns, intuitive visual flow schematics, and production grade source code packages.
-          </p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="#newsletter" class="btn-download-blueprint">
-              Subscribe to Releases ↓
-            </a>
-            <a href="index.html" class="btn-outline-arch">
-              ← Return to Main Page
-            </a>
+      <section class="hero-section" style="padding-top:160px;min-height:auto;padding-bottom:60px;background:transparent;">
+        <div class="container">
+          <span class="section-tag reveal">Production Blueprint Vault</span>
+          <div class="hero-headline">
+            <h1 class="reveal" style="font-size:clamp(2.75rem,5.5vw,5rem);line-height:1.08;letter-spacing:-0.03em;">
+              Agentic AI <span class="serif-italic">Library.</span>
+            </h1>
+            <p class="reveal" style="font-size:1.15rem;color:var(--text-muted);line-height:1.7;max-width:760px;margin-top:20px;margin-bottom:32px;">
+              Production multi agent architectures, autonomous terminal pipelines, and open source execution blueprints engineered for enterprise throughput. Every system includes full layer breakdowns, intuitive visual flow schematics, and production grade source code packages.
+            </p>
+            <div class="hero-actions reveal" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+              <a href="#newsletter" class="btn-talk" style="padding:12px 28px;font-size:0.8125rem;">
+                Subscribe to Releases &darr;
+              </a>
+              <a href="index.html" class="btn-underline">
+                <span>Return to Main Page</span>
+                <span class="arrow">&rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- SYSTEMS DIRECTORY -->
-      <section style="padding: 80px 0;">
+      <!-- ALL 5 PRODUCTION AGENTIC SYSTEMS -->
+      <section class="section-light" style="padding-top:20px;padding-bottom:100px;">
         <div class="container">
 
-          <!-- SYSTEM 01: CLAUDE CODE HARVESTER -->
-          <article id="system-01" class="showcase-featured-card reveal" style="margin-bottom:60px;">
+          <!-- SYSTEM 01: MONUMENTAL TOP FLAGSHIP -->
+          <span class="section-tag reveal">System 01 &middot; Primary Flagship</span>
+          <h2 class="section-title reveal" style="margin-bottom:28px;">
+            Claude Code Autonomous Harvester &amp; Enrichment Swarm
+          </h2>
+
+          <div class="showcase-featured-card reveal">
+            <div class="card-glare"></div>
             <div class="featured-card-content">
               <div>
-                <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
+                <div style="margin-bottom:16px;">
                   <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                  <span class="flow-step-tag emerald">System 01 · Flagship</span>
                 </div>
-                <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:12px;">
-                  Claude Code Autonomous Harvester &amp; Enrichment Swarm
-                </h2>
-                <p style="font-size:0.9375rem;line-height:1.65;color:var(--text-muted);margin-bottom:18px;">
+                <h3 style="font-family:var(--font-display);font-size:1.85rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:14px;">
+                  Claude Code Autonomous Harvester &amp; Enrichment Engine
+                </h3>
+                <p style="font-size:0.9375rem;line-height:1.65;color:var(--text-muted);margin-bottom:20px;">
                   Autonomous multi agent pipeline executed directly in Claude Code CLI. Claude Opus 5 operates as supervisory orchestrator, decomposing regional clinic directories across Miami and New York, orchestrating parallel headless Playwright workers with anti bot stealth fingerprinting, validating domains and social profiles, verifying ICP criteria with Gemini Flash Lite, and launching autonomous background recovery daemons for unverified records with zero human prompts.
                 </p>
 
@@ -108,120 +117,130 @@
                   <span class="tech-pill-dark">Autonomous Recovery Daemon</span>
                   <span class="tech-pill-dark">Pydantic V2</span>
                 </div>
+              </div>
 
-                <!-- Visual Flow -->
-                <div class="visual-flow-card" style="margin:20px 0;">
-                  <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--accent-emerald);letter-spacing:0.06em;font-weight:700;margin-bottom:12px;">
-                    Architecture Execution Flow
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-top:24px;border-top:1px solid var(--border-hair);margin-top:20px;flex-wrap:wrap;gap:16px;">
+                  <div>
+                    <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--accent-emerald);line-height:1;">100%</div>
+                    <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Extraction Fidelity</div>
                   </div>
-                  <div class="flow-step-row">
-                    <div class="flow-step-icon">01</div>
-                    <div class="flow-step-content">
-                      <div class="flow-step-title">Regional Directives</div>
-                      <div class="flow-step-desc">Target Miami &amp; NY clinic directories</div>
-                    </div>
-                    <span class="flow-step-tag">Input</span>
+                  <div>
+                    <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:#FFFFFF;line-height:1;">0</div>
+                    <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Human Prompts Needed</div>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
-                  <div class="flow-step-row">
-                    <div class="flow-step-icon">02</div>
-                    <div class="flow-step-content">
-                      <div class="flow-step-title">Claude Opus 5 Supervisor</div>
-                      <div class="flow-step-desc">Terminal task decomposition &amp; parallel scheduling</div>
-                    </div>
-                    <span class="flow-step-tag emerald">Planner</span>
-                  </div>
-                  <div class="flow-step-arrow">▼</div>
-                  <div class="flow-step-row">
-                    <div class="flow-step-icon">03</div>
-                    <div class="flow-step-content">
-                      <div class="flow-step-title">Playwright Stealth Cluster</div>
-                      <div class="flow-step-desc">Headless Chromium anti bot bypass &amp; DOM harvesting</div>
-                    </div>
-                    <span class="flow-step-tag">Stealth</span>
-                  </div>
-                  <div class="flow-step-arrow">▼</div>
-                  <div class="flow-step-row">
-                    <div class="flow-step-icon">04</div>
-                    <div class="flow-step-content">
-                      <div class="flow-step-title">Gemini Flash Lite ICP Gate</div>
-                      <div class="flow-step-desc">Validation, contact points &amp; doctor credentials</div>
-                    </div>
-                    <span class="flow-step-tag">Verify</span>
-                  </div>
-                  <div class="flow-step-arrow">▼</div>
-                  <div class="flow-step-row">
-                    <div class="flow-step-icon">05</div>
-                    <div class="flow-step-content">
-                      <div class="flow-step-title">Background Recovery Daemon</div>
-                      <div class="flow-step-desc">Asynchronously recovers unverified leads, exit code 0</div>
-                    </div>
-                    <span class="flow-step-tag emerald">Healed</span>
+                  <div>
+                    <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--accent-emerald);line-height:1;">Auto</div>
+                    <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Recovery Daemon</div>
                   </div>
                 </div>
 
-                <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;border-top:1px solid var(--border-hair);margin-top:16px;flex-wrap:wrap;gap:12px;">
-                  <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">100%</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Extraction Fidelity</div>
-                  </div>
-                  <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1">0</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Human Prompts Needed</div>
-                  </div>
-                  <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">Auto</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Recovery Daemon</div>
-                  </div>
-                </div>
-
-                <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
-                  <a href="downloads/workflow_3_claude_scraper.zip" download="workflow_3_claude_scraper.zip" class="btn-download-blueprint">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download Production Blueprint (.zip)
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+                  <button type="button" class="btn-download-blueprint" onclick="playScreencastWithSound()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Play Screencast with Voiceover
+                  </button>
+                  <a href="downloads/workflow_3_claude_scraper.zip" download="workflow_3_claude_scraper.zip" class="btn-outline-arch">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Blueprint (.zip)
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Video Player -->
+            <!-- Screencast Video Area -->
             <div class="featured-media-area" style="position:relative;">
               <div class="video-audio-badge">
                 <span class="audio-wave"><span></span><span></span><span></span></span>
-                AI Voiceover · 74s Production Cut
+                AI Voiceover &middot; 74s Production Cut
               </div>
-              <video controls playsinline preload="metadata" poster="workflows/claude-code-scraper/poster.jpg">
+              <video id="claude-scraper-video" controls playsinline preload="metadata" poster="workflows/claude-code-scraper/poster.jpg">
                 <source src="workflows/claude-code-scraper/claude_code_scraper_execution.mp4" type="video/mp4"/>
               </video>
             </div>
-          </article>
+          </div>
 
-          <!-- SYSTEM 02: AUTONOMOUS OUTBOUND SDR SWARM -->
-          <article id="system-02" class="showcase-featured-card reveal" style="grid-template-columns:1fr;margin-bottom:60px;">
-            <div class="featured-card-content" style="padding:48px;">
+          <!-- SYSTEM 01 VISUAL FLOW SCHEMATIC -->
+          <div class="visual-flow-card reveal" style="margin-top:20px;margin-bottom:60px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
               <div>
-                <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
-                  <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                  <span class="flow-step-tag">System 02 · Outbound Swarm</span>
+                <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--accent-emerald);letter-spacing:0.08em;font-weight:700;">System 01 Execution Flow</span>
+                <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#FFFFFF;margin-top:2px;">Claude Code Autonomous Pipeline Architecture</div>
+              </div>
+              <span class="flow-step-tag emerald"><span class="pulse-dot" style="display:inline-block;margin-right:4px;"></span> Verified Autonomous Loop</span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:12px;">
+              <div class="flow-step-row" style="margin-bottom:0;">
+                <div class="flow-step-icon">01</div>
+                <div class="flow-step-content">
+                  <div class="flow-step-title">Regional Directives</div>
+                  <div class="flow-step-desc">Target Miami &amp; NY clinic directories</div>
                 </div>
-                <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:12px;">
-                  Autonomous Outbound SDR Swarm
-                </h2>
-                <p style="font-size:0.9375rem;line-height:1.65;color:var(--text-muted);margin-bottom:18px;">
+              </div>
+              <div class="flow-step-row" style="margin-bottom:0;">
+                <div class="flow-step-icon">02</div>
+                <div class="flow-step-content">
+                  <div class="flow-step-title">Claude Opus 5</div>
+                  <div class="flow-step-desc">Terminal task decomposition &amp; schedule</div>
+                </div>
+              </div>
+              <div class="flow-step-row" style="margin-bottom:0;">
+                <div class="flow-step-icon">03</div>
+                <div class="flow-step-content">
+                  <div class="flow-step-title">Playwright Stealth</div>
+                  <div class="flow-step-desc">Anti bot bypass &amp; DOM harvesting</div>
+                </div>
+              </div>
+              <div class="flow-step-row" style="margin-bottom:0;">
+                <div class="flow-step-icon">04</div>
+                <div class="flow-step-content">
+                  <div class="flow-step-title">Gemini Flash Lite</div>
+                  <div class="flow-step-desc">ICP scoring &amp; contact verification</div>
+                </div>
+              </div>
+              <div class="flow-step-row" style="margin-bottom:0;">
+                <div class="flow-step-icon">05</div>
+                <div class="flow-step-content">
+                  <div class="flow-step-title">Recovery Daemon</div>
+                  <div class="flow-step-desc">Self heals missing leads, exit code 0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION DIVIDER -->
+          <div style="margin-top:60px;margin-bottom:32px;">
+            <span class="section-tag reveal">Production Agentic Blueprints</span>
+            <h2 class="section-title reveal" style="margin-bottom:0;">Autonomous Execution Swarms</h2>
+          </div>
+
+          <!-- DUO GRID ROW 1: SYSTEMS 02 & 03 -->
+          <div class="agentic-duo-grid" style="margin-top:0;margin-bottom:48px;">
+
+            <!-- System 02: Outbound SDR Swarm -->
+            <article class="workflow-card reveal">
+              <div class="card-glare"></div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">System 02 &middot; Outbound Swarm</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
+                </div>
+                <h3 class="workflow-title">Autonomous Outbound SDR Swarm</h3>
+                <p class="workflow-desc">
                   Three layer autonomous SDR engine: Directive Ingestion parses ICP rules, the LangGraph Supervisor coordinates specialized research and email agents under strict JSON schemas, and a paced relay daemon dispatches sequences at randomized 15 to 30 minute human cadences.
                 </p>
 
-                <div class="tech-pills-row">
+                <div class="tech-pills-row" style="margin:12px 0;">
                   <span class="tech-pill-dark">LangGraph 0.2</span>
                   <span class="tech-pill-dark">Playwright</span>
                   <span class="tech-pill-dark">Gemini Flash Lite</span>
                   <span class="tech-pill-dark">Pydantic V2</span>
                   <span class="tech-pill-dark">Zero Bounce OS</span>
-                  <span class="tech-pill-dark">Nick Saraev Protocol</span>
                 </div>
 
                 <!-- Visual Flow -->
-                <div class="visual-flow-card" style="margin:24px 0;">
+                <div class="visual-flow-card" style="margin:16px 0;">
                   <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--accent-emerald);letter-spacing:0.06em;font-weight:700;margin-bottom:12px;">
                     Architecture Execution Flow
                   </div>
@@ -230,11 +249,11 @@
                     <div class="flow-step-icon">01</div>
                     <div class="flow-step-content">
                       <div class="flow-step-title">Directive Ingestion</div>
-                      <div class="flow-step-desc">YAML ICP rules, negative filters, Zero Dash check</div>
+                      <div class="flow-step-desc">YAML ICP rules, negative filters, zero dash check</div>
                     </div>
                     <span class="flow-step-tag">Input</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">02</div>
@@ -244,7 +263,7 @@
                     </div>
                     <span class="flow-step-tag emerald">Router</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">03</div>
@@ -254,7 +273,7 @@
                     </div>
                     <span class="flow-step-tag">Enrich</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">04</div>
@@ -264,7 +283,7 @@
                     </div>
                     <span class="flow-step-tag">Copy</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">05</div>
@@ -274,7 +293,7 @@
                     </div>
                     <span class="flow-step-tag emerald">0.85 Gate</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">06</div>
@@ -288,48 +307,45 @@
 
                 <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;border-top:1px solid var(--border-hair);margin-top:16px;flex-wrap:wrap;gap:12px;">
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1">15 to 20</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Meetings / Week</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1;">15 to 20</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Meetings / Week</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">0.19%</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Bounce Ceiling</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">0.19%</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Bounce Ceiling</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1">0.85+</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Quality Gate</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1;">0.85+</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Quality Gate</div>
                   </div>
                 </div>
 
-                <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
+                <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
                   <a href="downloads/workflow_1_outbound_sdr_swarm.zip" download="workflow_1_outbound_sdr_swarm.zip" class="btn-download-blueprint">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download Production Blueprint (.zip)
+                    Download Blueprint (.zip)
                   </a>
                   <a href="outbound-engine.html" class="btn-outline-arch">
-                    Full Spec &amp; Data →
+                    Full Spec &rarr;
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- SYSTEM 03: AUTONOMOUS DEVELOPER AGENT -->
-          <article id="system-03" class="showcase-featured-card reveal" style="grid-template-columns:1fr;margin-bottom:60px;">
-            <div class="featured-card-content" style="padding:48px;">
-              <div>
-                <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
-                  <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                  <span class="flow-step-tag">System 03 · Autonomous Engineering</span>
+            <!-- System 03: Autonomous Full Stack Developer Agent -->
+            <article class="workflow-card reveal">
+              <div class="card-glare"></div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">System 03 &middot; Autonomous Engineering</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
                 </div>
-                <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:12px;">
-                  Autonomous Full Stack Developer Agent
-                </h2>
-                <p style="font-size:0.9375rem;line-height:1.65;color:var(--text-muted);margin-bottom:18px;">
+                <h3 class="workflow-title">Autonomous Full Stack Developer Agent</h3>
+                <p class="workflow-desc">
                   End to end autonomous coding agent. Ingests GitHub issue directives, performs AST syntax parsing, authors test suites first under strict TDD Red Green Refactor cycles, runs sandboxed verification, and self repairs syntax and logic errors autonomously.
                 </p>
 
-                <div class="tech-pills-row">
+                <div class="tech-pills-row" style="margin:12px 0;">
                   <span class="tech-pill-dark">Python 3.12</span>
                   <span class="tech-pill-dark">AST Parser</span>
                   <span class="tech-pill-dark">Pytest Sandbox</span>
@@ -338,7 +354,7 @@
                 </div>
 
                 <!-- Visual Flow -->
-                <div class="visual-flow-card" style="margin:24px 0;">
+                <div class="visual-flow-card" style="margin:16px 0;">
                   <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--accent-emerald);letter-spacing:0.06em;font-weight:700;margin-bottom:12px;">
                     Architecture Execution Flow
                   </div>
@@ -351,7 +367,7 @@
                     </div>
                     <span class="flow-step-tag">Issue</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">02</div>
@@ -361,7 +377,7 @@
                     </div>
                     <span class="flow-step-tag emerald">AST Map</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">03</div>
@@ -371,7 +387,7 @@
                     </div>
                     <span class="flow-step-tag">TDD Red</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">04</div>
@@ -381,7 +397,7 @@
                     </div>
                     <span class="flow-step-tag">Synthesize</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">05</div>
@@ -391,7 +407,7 @@
                     </div>
                     <span class="flow-step-tag emerald">Sandbox</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">06</div>
@@ -405,45 +421,50 @@
 
                 <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;border-top:1px solid var(--border-hair);margin-top:16px;flex-wrap:wrap;gap:12px;">
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">80%+</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Test Coverage</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">80%+</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Test Coverage</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1">3x</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Auto Retries</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1;">3x</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Auto Retries</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">0</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Human Guidance</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">0</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Human Guidance</div>
                   </div>
                 </div>
 
-                <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
+                <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
                   <a href="downloads/workflow_2_autonomous_dev.zip" download="workflow_2_autonomous_dev.zip" class="btn-download-blueprint">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download Production Blueprint (.zip)
+                    Download Blueprint (.zip)
+                  </a>
+                  <a href="index.html#work" class="btn-outline-arch">
+                    Full Spec &rarr;
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- SYSTEM 04: HIERARCHICAL EXECUTIVE SWARM -->
-          <article id="system-04" class="showcase-featured-card reveal" style="grid-template-columns:1fr;margin-bottom:60px;">
-            <div class="featured-card-content" style="padding:48px;">
-              <div>
-                <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
-                  <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                  <span class="flow-step-tag">System 04 · Multi Agent Swarm</span>
+          </div>
+
+          <!-- DUO GRID ROW 2: SYSTEMS 04 & 05 -->
+          <div class="agentic-duo-grid" style="margin-top:0;margin-bottom:60px;">
+
+            <!-- System 04: Hierarchical Multi Agent Executive Swarm -->
+            <article class="workflow-card reveal">
+              <div class="card-glare"></div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">System 04 &middot; Multi Agent Swarm</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
                 </div>
-                <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:12px;">
-                  Hierarchical Multi Agent Executive Swarm
-                </h2>
-                <p style="font-size:0.9375rem;line-height:1.65;color:var(--text-muted);margin-bottom:18px;">
+                <h3 class="workflow-title">Hierarchical Multi Agent Executive Swarm</h3>
+                <p class="workflow-desc">
                   Enterprise grade hierarchical swarm architecture. Coordinates specialized executive and worker agents across technical strategy, system architecture, parallel task decomposition, and adversarial QA review before production staging.
                 </p>
 
-                <div class="tech-pills-row">
+                <div class="tech-pills-row" style="margin:12px 0;">
                   <span class="tech-pill-dark">LangGraph 0.2</span>
                   <span class="tech-pill-dark">Executive Consensus</span>
                   <span class="tech-pill-dark">Memory Graph</span>
@@ -452,7 +473,7 @@
                 </div>
 
                 <!-- Visual Flow -->
-                <div class="visual-flow-card" style="margin:24px 0;">
+                <div class="visual-flow-card" style="margin:16px 0;">
                   <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--accent-emerald);letter-spacing:0.06em;font-weight:700;margin-bottom:12px;">
                     Architecture Execution Flow
                   </div>
@@ -465,7 +486,7 @@
                     </div>
                     <span class="flow-step-tag">Input</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">02</div>
@@ -475,7 +496,7 @@
                     </div>
                     <span class="flow-step-tag emerald">CEO</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">03</div>
@@ -485,17 +506,17 @@
                     </div>
                     <span class="flow-step-tag">CTO</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">04</div>
                     <div class="flow-step-content">
                       <div class="flow-step-title">Specialized Worker Execution</div>
-                      <div class="flow-step-desc">Parallel sub agents: Backend + Frontend + Data Pipeline</div>
+                      <div class="flow-step-desc">Parallel sub agents: Backend, Frontend, Data Pipeline</div>
                     </div>
                     <span class="flow-step-tag emerald">Workers</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">05</div>
@@ -505,7 +526,7 @@
                     </div>
                     <span class="flow-step-tag">QA Gate</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">06</div>
@@ -519,45 +540,42 @@
 
                 <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;border-top:1px solid var(--border-hair);margin-top:16px;flex-wrap:wrap;gap:12px;">
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">05</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Specialized Roles</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">05</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Specialized Roles</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1">100%</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Deterministic Routing</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1;">100%</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Deterministic Routing</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">Zero</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Hallucination Gate</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">Zero</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Hallucination Gate</div>
                   </div>
                 </div>
 
-                <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
+                <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
                   <a href="downloads/workflow_4_enterprise_swarm.zip" download="workflow_4_enterprise_swarm.zip" class="btn-download-blueprint">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download Production Blueprint (.zip)
+                    Download Blueprint (.zip)
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- SYSTEM 05: DEEP RESEARCH & FINANCIAL INTELLIGENCE -->
-          <article id="system-05" class="showcase-featured-card reveal" style="grid-template-columns:1fr;margin-bottom:60px;">
-            <div class="featured-card-content" style="padding:48px;">
-              <div>
-                <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
-                  <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                  <span class="flow-step-tag">System 05 · Intelligence Engine</span>
+            <!-- System 05: Deep Research & Financial Intelligence -->
+            <article class="workflow-card reveal">
+              <div class="card-glare"></div>
+              <div class="workflow-card-body">
+                <div class="workflow-meta-row">
+                  <span class="workflow-num">System 05 &middot; Intelligence Engine</span>
+                  <span class="live-pill"><span class="pulse-dot"></span> Live</span>
                 </div>
-                <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:12px;">
-                  Deep Research &amp; Financial Market Intelligence Engine
-                </h2>
-                <p style="font-size:0.9375rem;line-height:1.65;color:var(--text-muted);margin-bottom:18px;">
+                <h3 class="workflow-title">Deep Research &amp; Financial Market Intelligence</h3>
+                <p class="workflow-desc">
                   Rigorous institutional research pipeline. Crawls official SEC EDGAR 10 K and 10 Q filings, executes deterministic Python financial calculations inside a sandbox, verifies mathematical claims against source line offsets, and synthesizes executive investment memorandums.
                 </p>
 
-                <div class="tech-pills-row">
+                <div class="tech-pills-row" style="margin:12px 0;">
                   <span class="tech-pill-dark">SEC EDGAR API</span>
                   <span class="tech-pill-dark">Python Math Sandbox</span>
                   <span class="tech-pill-dark">Gemini Flash Lite</span>
@@ -566,7 +584,7 @@
                 </div>
 
                 <!-- Visual Flow -->
-                <div class="visual-flow-card" style="margin:24px 0;">
+                <div class="visual-flow-card" style="margin:16px 0;">
                   <div style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;color:var(--accent-emerald);letter-spacing:0.06em;font-weight:700;margin-bottom:12px;">
                     Architecture Execution Flow
                   </div>
@@ -579,7 +597,7 @@
                     </div>
                     <span class="flow-step-tag">Input</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">02</div>
@@ -589,7 +607,7 @@
                     </div>
                     <span class="flow-step-tag emerald">Crawl</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">03</div>
@@ -599,7 +617,7 @@
                     </div>
                     <span class="flow-step-tag">Math</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">04</div>
@@ -609,7 +627,7 @@
                     </div>
                     <span class="flow-step-tag emerald">0 Drift</span>
                   </div>
-                  <div class="flow-step-arrow">▼</div>
+                  <div class="flow-step-arrow">&darr;</div>
 
                   <div class="flow-step-row">
                     <div class="flow-step-icon">05</div>
@@ -623,31 +641,33 @@
 
                 <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px;border-top:1px solid var(--border-hair);margin-top:16px;flex-wrap:wrap;gap:12px;">
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">100%</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Source Grounded</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">100%</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Source Grounded</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1">0</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Mathematical Drift</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:#FFFFFF;line-height:1;">0</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Mathematical Drift</div>
                   </div>
                   <div>
-                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1">Strict</div>
-                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em">Institutional SLA</div>
+                    <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent-emerald);line-height:1;">Strict</div>
+                    <div style="font-family:var(--font-mono);font-size:0.625rem;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.06em;">Institutional SLA</div>
                   </div>
                 </div>
 
-                <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
+                <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
                   <a href="downloads/workflow_5_deep_research_finance.zip" download="workflow_5_deep_research_finance.zip" class="btn-download-blueprint">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download Production Blueprint (.zip)
+                    Download Blueprint (.zip)
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- NEWSLETTER / ARCHITECTURE RELEASE NOTIFIER -->
+          </div>
+
+          <!-- NEWSLETTER RELEASE SUBSCRIPTION CARD -->
           <div id="newsletter" class="newsletter-card reveal">
+            <div class="card-glare"></div>
             <span class="section-tag" style="margin-bottom:12px;">Private Architecture Channel</span>
             <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;color:#FFFFFF;margin-bottom:12px;letter-spacing:-0.02em;">
               More production workflows are currently in development.
@@ -658,11 +678,16 @@
 
             <form id="newsletter-form" class="newsletter-form">
               <input type="email" name="subscriber_email" class="newsletter-input" placeholder="Enter your work email address..." required/>
-              <button type="submit" class="btn-download-blueprint" style="padding:14px 28px;">
-                Subscribe to Architecture Releases →
+              <button type="submit" class="btn-talk" style="padding:14px 28px;background:#FFFFFF;color:#000000;font-weight:700;font-size:0.75rem;">
+                Subscribe to Releases &rarr;
               </button>
             </form>
             <div id="newsletter-status" style="display:none;font-family:var(--font-mono);font-size:0.8125rem;margin-top:16px;"></div>
+          </div>
+
+          <!-- Giant Outline Typography Footer Element (TRIONN Signature) -->
+          <div class="footer-giant-brand" aria-hidden="true">
+            IDREES
           </div>
 
         </div>
@@ -670,53 +695,41 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- TRIONN MINIMAL FOOTER -->
     <footer class="site-footer">
-      <div class="container footer-content">
-        <div class="footer-left">
-          <div class="footer-brand">
-            <img src="brand_logo.png" alt="Idrees Qurashi" class="footer-logo"/>
-            <span class="footer-name">Idrees Qurashi</span>
-          </div>
-          <p class="footer-tagline">
-            Autonomous systems studio engineering deterministic AI pipelines, self healing scrapers, and enterprise automation infrastructure.
-          </p>
-        </div>
-
-        <div class="footer-right">
-          <div class="footer-col">
-            <h3 class="footer-heading">Navigation</h3>
-            <a href="index.html" class="footer-link">Overview</a>
-            <a href="agentic-workflows.html" class="footer-link">Agentic AI</a>
-            <a href="client-proof.html" class="footer-link">Client Proof</a>
-            <a href="contact.html" class="footer-link">Contact</a>
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio &middot; All Rights Reserved.
           </div>
 
-          <div class="footer-col">
-            <h3 class="footer-heading">Direct Connect</h3>
-            <a href="mailto:idreesqurashi6@gmail.com" class="footer-link">idreesqurashi6@gmail.com</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" class="footer-link">+92 348 9911425</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-            <a href="https://linkedin.com/in/idrees-qurashi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+          <div class="footer-nav">
+            <a href="index.html">Overview</a>
+            <a href="agentic-workflows.html">Agentic Systems</a>
+            <a href="agentic-lab.html">Agentic Lab</a>
+            <a href="outbound-engine.html">Outbound Engine</a>
+            <a href="client-proof.html">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
           </div>
-        </div>
-      </div>
-
-      <div class="container footer-bottom">
-        <div class="footer-copyright">
-          © 2026 Idrees Qurashi. All rights reserved. Zero hype, deterministic execution.
-        </div>
-        <div class="footer-status">
-          <span class="pulse-dot"></span>
-          <span>Antigravity Operating System Active</span>
         </div>
       </div>
     </footer>
 
   </div>
 
-  <!-- Newsletter AJAX Submission Script -->
+  <!-- Scripts -->
   <script>
+    function playScreencastWithSound() {
+      const vid = document.getElementById('claude-scraper-video');
+      if (vid) {
+        vid.muted = false;
+        vid.currentTime = 0;
+        vid.play();
+        vid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
     document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;

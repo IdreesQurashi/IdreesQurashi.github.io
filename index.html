@@ -1,586 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="grain">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="brand_logo.png">
-    <link rel="shortcut icon" href="brand_logo.png">
+    <title>Idrees Qurashi — Agentic AI Automation &amp; B2B Outbound Architect</title>
+    <meta name="description" content="Autonomous AI agentic architectures, self-healing visual workflows, and deterministic MCP backends powering high-ticket enterprise operations and high-scale B2B outbound systems.">
+    <link rel="canonical" href="https://idreesqurashi.github.io/">
+    <meta name="theme-color" content="#05060a">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Idrees Qurashi — Agentic AI Automation &amp; B2B Outbound Architect">
+    <meta property="og:description" content="Autonomous AI agentic architectures, self-healing workflows, and deterministic MCP backends for enterprise operations and B2B outbound.">
+    <meta property="og:url" content="https://idreesqurashi.github.io/">
+    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Idrees Qurashi — Agentic AI Automation &amp; B2B Outbound Architect">
+    <meta name="twitter:description" content="Autonomous AI agentic architectures, self-healing workflows, and deterministic MCP backends for enterprise operations and B2B outbound.">
+    <meta name="twitter:image" content="https://idreesqurashi.github.io/brand_logo.png">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
     <link rel="apple-touch-icon" href="brand_logo.png">
-    <title>Enterprise Autonomous AI Architectures & Revenue Engine</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace']
-                    },
-                    colors: {
-                        pitch: '#000000',
-                        noir: '#05070a',
-                        charcoal: '#090d14',
-                        accentBlue: '#38bdf8',
-                        steelBlue: '#0284c7',
-                        deepNavy: '#0f172a',
-                        silver: '#e2e8f0',
-                        steelGrey: '#94a3b8'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #000000; color: #cbd5e1; overflow-x: hidden; }
-        
-        .canvas-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.32;
-        }
+    <link rel="stylesheet" href="assets/tailwind.css">
 
-        /* ═══════════════════════════════════════════
-           CLEAN 3D BLUE BUTTON
-        ═══════════════════════════════════════════ */
-        .btn-3d-blue {
-            position: relative;
-            background: linear-gradient(
-                180deg,
-                #e0f5ff 0%,
-                #7dd3fc 12%,
-                #38bdf8 38%,
-                #0ea5e9 62%,
-                #0284c7 82%,
-                #0369a1 100%
-            );
-            color: #000e18;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            border-radius: 14px;
-            border: none;
-            outline: none;
-            box-shadow:
-                inset 0 2px 0 rgba(255,255,255,0.80),
-                0 8px 0 0 #054d80,
-                0 9px 0 0 #033a60,
-                0 10px 0 0 #021f35;
-            transition: box-shadow 0.15s ease, background 0.15s ease;
-            transform: translateY(0);
-            cursor: pointer;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.55);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-3d-blue:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(
-                180deg,
-                #f0faff 0%,
-                #93e0fc 12%,
-                #56cffa 38%,
-                #22b5f0 62%,
-                #0396d8 82%,
-                #0378b5 100%
-            );
-            box-shadow:
-                inset 0 2px 0 rgba(255,255,255,0.88),
-                0 10px 0 0 #054d80,
-                0 11px 0 0 #033a60,
-                0 12px 0 0 #021f35,
-                0 0 28px rgba(56,189,248,0.50);
-        }
-        .btn-3d-blue:active {
-            box-shadow:
-                inset 0 3px 6px rgba(0,0,0,0.40),
-                0 3px 0 0 #054d80,
-                0 4px 0 0 #033a60;
-            transform: translateY(6px);
-            transition: transform 0.06s ease, box-shadow 0.06s ease;
-        }
-
-        /* ═══════════════════════════════════════════
-           CLEAN 3D DARK BUTTON
-        ═══════════════════════════════════════════ */
-        .btn-3d-grey {
-            position: relative;
-            background: linear-gradient(
-                180deg,
-                #2a3347 0%,
-                #1a2235 28%,
-                #111827 58%,
-                #090d14 85%,
-                #04070d 100%
-            );
-            color: #e2e8f0;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            border-radius: 14px;
-            border: none;
-            outline: none;
-            box-shadow:
-                inset 0 1px 0 rgba(148,163,184,0.20),
-                0 8px 0 0 #02040a,
-                0 9px 0 0 #010204,
-                0 10px 0 0 #000000;
-            transition: box-shadow 0.15s ease, background 0.15s ease;
-            transform: translateY(0);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-3d-grey:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(
-                180deg,
-                #334060 0%,
-                #1e2d48 28%,
-                #152035 58%,
-                #0e1520 85%,
-                #060a12 100%
-            );
-            box-shadow:
-                inset 0 1px 0 rgba(56,189,248,0.20),
-                0 10px 0 0 #02040a,
-                0 11px 0 0 #010204,
-                0 12px 0 0 #000000,
-                0 0 18px rgba(56,189,248,0.15);
-            color: #f1f5f9;
-        }
-        .btn-3d-grey:active {
-            box-shadow:
-                inset 0 3px 6px rgba(0,0,0,0.55),
-                0 3px 0 0 #02040a,
-                0 4px 0 0 #010204;
-            transform: translateY(0px);
-            transition: transform 0.06s ease, box-shadow 0.06s ease;
-        }
-
-        /* Navbar pill buttons */
-        .btn-nav-clean {
-            background: linear-gradient(180deg, #18202f 0%, #0b111b 100%);
-            border: 1px solid rgba(56, 189, 248, 0.20);
-            border-bottom: 2px solid #000000;
-            border-radius: 10px;
-            box-shadow: 0 4px 0 #000000, 0 6px 14px rgba(0,0,0,0.7);
-            transition: all 0.10s ease;
-        }
-        .btn-nav-clean:hover {
-            transform: translateY(-2px);
-            border-color: rgba(56,189,248,0.60);
-            box-shadow: 0 6px 0 #000000, 0 10px 20px rgba(56,189,248,0.18);
-        }
-        .btn-nav-clean:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 #000000;
-        }
-
-        /* ═══════════════════════════════════════════
-           CARDS : richer depth + glowing top edge
-        ═══════════════════════════════════════════ */
-        .panel-monument-clean {
-            background: linear-gradient(160deg, #0f1724 0%, #070b12 60%, #03050a 100%);
-            border: 1px solid #1a2540;
-            border-top: 1px solid #2a3f62;
-            border-radius: 18px;
-            box-shadow:
-                0 4px 0 #0a1220,
-                0 8px 0 #06090f,
-                0 14px 0 #030508,
-                0 20px 0 #010204,
-                0 24px 0 #000000,
-                0 30px 60px rgba(0,0,0,0.95),
-                inset 0 1px 0 rgba(56,189,248,0.09);
-            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-                        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-                        border-color 0.45s ease;
-            transform: translateY(0) perspective(800px);
-        }
-        .panel-monument-clean:hover {
-            transform: translateY(-12px) perspective(800px) rotateX(2deg);
-            border-color: rgba(56,189,248,0.40);
-            border-top-color: rgba(56,189,248,0.65);
-            box-shadow:
-                0 4px 0 #0a1220,
-                0 8px 0 #06090f,
-                0 16px 0 #030508,
-                0 26px 0 #010204,
-                0 32px 0 #000000,
-                0 40px 80px rgba(0,0,0,0.98),
-                inset 0 1px 0 rgba(56,189,248,0.22),
-                0 0 50px rgba(56,189,248,0.10);
-        }
-
-
-        /* ═══════════════════════════════════════════
-           SCROLL 3D REVEAL SYSTEM
-        ═══════════════════════════════════════════ */
-        .reveal-3d {
-            opacity: 1; /* Fallback for immediate visibility & clickability */
-            transform: translateY(0px);
-            transition:
-                opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal-3d.visible {
-            opacity: 1;
-            transform: perspective(900px) translateY(0px) rotateX(0deg);
-        }
-        /* stagger delays for grid children */
-        .reveal-3d:nth-child(2) { transition-delay: 0.08s; }
-        .reveal-3d:nth-child(3) { transition-delay: 0.16s; }
-        .reveal-3d:nth-child(4) { transition-delay: 0.24s; }
-
-        /* Floating cards */
-        @keyframes float-card {
-            0%, 100% { transform: translateY(0px); }
-            50%       { transform: translateY(-6px); }
-        }
-        @keyframes float-card-2 {
-            0%, 100% { transform: translateY(-3px); }
-            50%       { transform: translateY(3px); }
-        }
-        @keyframes float-card-3 {
-            0%, 100% { transform: translateY(-2px); }
-            50%       { transform: translateY(5px); }
-        }
-        @keyframes float-card-4 {
-            0%, 100% { transform: translateY(0px); }
-            50%       { transform: translateY(-8px); }
-        }
-        .float-1 { animation: float-card   5s ease-in-out infinite; }
-        .float-2 { animation: float-card-2 6s ease-in-out infinite; }
-        .float-3 { animation: float-card-3 4.5s ease-in-out infinite; }
-        .float-4 { animation: float-card-4 7s ease-in-out infinite; }
-        .code-box-clean {
-            background: #020509;
-            border: 1px solid #0f1e30;
-            border-top: 1px solid #1a2e44;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Glow pulse on hero primary button */
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow:
-                inset 0 1px 0 rgba(255,255,255,0.75),
-                inset 1px 0 0 rgba(255,255,255,0.30),
-                0 10px 0 0 #054d80, 0 12px 0 0 #033a60, 0 14px 0 0 #021f35,
-                0 0 22px rgba(56,189,248,0.40); }
-            50% { box-shadow:
-                inset 0 2px 0 rgba(255,255,255,0.85),
-                inset 1px 0 0 rgba(255,255,255,0.40),
-                0 10px 0 0 #054d80, 0 12px 0 0 #033a60, 0 14px 0 0 #021f35,
-                0 0 42px rgba(56,189,248,0.75); }
-        }
-        .btn-3d-blue.hero-primary {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-        .btn-3d-blue.hero-primary:hover,
-        .btn-3d-blue.hero-primary:active {
-            animation: none;
-        }
-
-        /* ── LIVE WORK VAULT ─────────────────────────────────────────────── */
-        .vault-filter-tab {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 6px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(56,189,248,0.2);
-            color: #94a3b8;
-            cursor: pointer;
-            transition: all 0.18s ease;
-            background: transparent;
-            white-space: nowrap;
-        }
-        .vault-filter-tab:hover { border-color: #38bdf8; color: #38bdf8; }
-        .vault-filter-tab.active { background: rgba(56,189,248,0.12); border-color: #38bdf8; color: #38bdf8; }
-        .vault-card { transition: opacity 0.22s ease, transform 0.22s ease; }
-        .vault-card.hidden { display: none; }
-        .vault-video-frame {
-            background: #05070a;
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            width: 100%;
-            border: 1px solid rgba(56,189,248,0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .vault-video-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            color: #334155;
-            height: 100%;
-            text-align: center;
-        }
-        .arch-step {
-            display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            color: #94a3b8;
-        }
-        .arch-step .step-label {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(56,189,248,0.15);
-            color: #e2e8f0;
-            background: rgba(56,189,248,0.04);
-            white-space: nowrap;
-        }
-        .arch-step .step-arrow { color: #38bdf8; padding: 0 4px; }
-        .outcome-badge {
-            display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            background: rgba(52,211,153,0.08);
-            border: 1px solid rgba(52,211,153,0.25);
-            color: #34d399;
-        }
-        .stack-tag {
-            display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.6rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(56,189,248,0.06);
-            border: 1px solid rgba(56,189,248,0.15);
-            color: #7dd3fc;
-        }
-    
-        /* ═══════════════════════════════════════════
-           ULTRA-SEXY OLD-MONEY LUXURY HERO CARDS
-        ═══════════════════════════════════════════ */
-        .sexy-luxury-card {
-            background: radial-gradient(140% 140% at 50% -20%, rgba(30, 41, 59, 0.45) 0%, rgba(10, 15, 26, 0.85) 60%, rgba(2, 4, 8, 0.98) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 24px;
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            box-shadow: 
-                0 25px 60px -15px rgba(0, 0, 0, 0.95),
-                0 0 0 1px rgba(255, 255, 255, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.18);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-        .sexy-luxury-card:hover {
-            transform: translateY(-8px) scale(1.015);
-            border-color: rgba(255, 255, 255, 0.18);
-            border-top-color: rgba(56, 189, 248, 0.7);
-            box-shadow: 
-                0 35px 70px -15px rgba(0, 0, 0, 0.98),
-                0 0 45px -10px rgba(56, 189, 248, 0.20),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
-        .sexy-card-emerald:hover {
-            border-top-color: rgba(52, 211, 153, 0.7) !important;
-            box-shadow: 
-                0 35px 70px -15px rgba(0, 0, 0, 0.98),
-                0 0 45px -10px rgba(52, 211, 153, 0.20),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-        }
-
-    
-        /* ═══════════════════════════════════════════════════════════════════
-           ALL CARDS: SMEXY LUXURY GLASSMORPHISM & HOVER ELEVATION
-        ═══════════════════════════════════════════════════════════════════ */
-        .vault-card, .client-card, .highlight-card, .outbound-card {
-            background: radial-gradient(130% 130% at 50% -10%, rgba(26, 36, 54, 0.45) 0%, rgba(9, 14, 24, 0.85) 60%, rgba(2, 4, 8, 0.98) 100%) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
-            border-radius: 20px !important;
-            backdrop-filter: blur(24px) !important;
-            -webkit-backdrop-filter: blur(24px) !important;
-            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-            cursor: pointer !important;
-            position: relative;
-        }
-        .vault-card:hover, .client-card:hover, .highlight-card:hover, .outbound-card:hover {
-            transform: translateY(-6px) scale(1.012) !important;
-            border-color: rgba(56, 189, 248, 0.35) !important;
-            border-top-color: rgba(56, 189, 248, 0.70) !important;
-            box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(56, 189, 248, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════════
-           POP-OUT MODAL: EXACT LINUX/GNOME OS WINDOW SIZE & SHAPE
-        ═══════════════════════════════════════════════════════════════════ */
-        #enki-popout-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 999999;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-        }
-        #enki-popout-overlay.active {
-            display: flex !important;
-            opacity: 1 !important;
-            pointer-events: auto !important;
-        }
-        #enki-popout-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-        #enki-popout-window {
-            width: 90vw;
-            max-width: 980px;
-            height: 82vh;
-            max-height: 750px;
-            background: #090e17;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-top: 1px solid rgba(255, 255, 255, 0.32);
-            border-radius: 22px;
-            box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.98), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.20);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transform: scale(0.92) translateY(20px);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #enki-popout-overlay.active #enki-popout-window {
-            transform: scale(1) translateY(0);
-        }
-
-        /* Window Titlebar (GNOME / Mac Style) */
-        .window-titlebar {
-            height: 48px;
-            background: #0f1726;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 0 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            user-select: none;
-            flex-shrink: 0;
-        }
-        .window-dots {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-        .w-dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: opacity 0.15s;
-        }
-        .w-dot-close { background: #ef4444; }
-        .w-dot-min { background: #f59e0b; }
-        .w-dot-max { background: #10b981; }
-        .w-dot:hover { opacity: 0.8; }
-
-        /* Window Content Body */
-        .window-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 28px 32px;
-            scrollbar-width: thin;
-            scrollbar-color: #38bdf8 #0f1726;
-        }
-
-    </style>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
-<body class="bg-pitch font-sans antialiased selection:bg-accentBlue selection:text-black">
+<body class="font-sans antialiased">
 
     <canvas id="three-canvas" class="canvas-bg"></canvas>
 
     <div class="relative z-10">
-        <!-- Persistent Ultra-Clean Navbar -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-pitch/95 backdrop-blur-2xl border-b border-neutral-900 px-8 py-3.5">
-            <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <a href="#hero" class="flex items-center space-x-3.5">
-                    <div class="w-10 h-10 rounded-xl overflow-hidden border border-slate-700/80 shadow-lg shadow-black/80 flex items-center justify-center bg-black">
-                        <img src="brand_logo.png" alt="Idrees Qurashi Monogram" class="w-full h-full object-cover">
+
+        <!-- ═══════════ UNIFIED NAVBAR ═══════════ -->
+        <nav class="nav-glass fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 py-3">
+            <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0" aria-label="Idrees Qurashi — home">
+                    <div class="w-10 h-10 rounded-xl overflow-hidden border border-slate-700/70 shadow-lg shadow-black/60 bg-black">
+                        <img src="brand_logo.png" alt="Idrees Qurashi monogram" class="w-full h-full object-cover">
                     </div>
-                    <div>
+                    <div class="hidden sm:block">
                         <div class="font-serif font-bold text-sm text-white tracking-widest uppercase">Idrees Qurashi</div>
                         <div class="text-[9px] font-mono uppercase tracking-widest text-slate-400">Autonomous Systems &amp; Growth</div>
                     </div>
                 </a>
-                
-                <div class="flex space-x-4">
-                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-3d-grey px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
-                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-                        <span>Contact Form</span>
-                    </a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
-                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-                        <span>Chat to Owner</span>
-                    </a>
+
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+                    <a href="index.html#master-workflows-vault" class="nav-link">Workflows</a>
+                    <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+                    <a href="client-proof.html" class="nav-link">Client Proof</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-graphite hidden sm:inline-flex px-4 py-2 text-xs font-mono uppercase tracking-wider font-bold">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i><span>Contact Form</span>
+                    </a>
+                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-aurora px-4 py-2 text-xs font-mono uppercase tracking-wider">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i><span>Chat to Owner</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="lg:hidden btn-graphite p-2.5" aria-label="Open menu" aria-expanded="false">
+                        <i data-lucide="menu" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 pt-3 border-t border-slate-800/70 grid grid-cols-2 gap-1.5">
+                <a href="index.html" class="nav-link active text-center">Home</a>
+                <a href="agentic-lab.html" class="nav-link text-center">Agentic Lab</a>
+                <a href="index.html#master-workflows-vault" class="nav-link text-center">Workflows</a>
+                <a href="outbound-engine.html" class="nav-link text-center">Outbound Engine</a>
+                <a href="client-proof.html" class="nav-link text-center">Client Proof</a>
+                <a href="contact.html" class="nav-link text-center">Contact</a>
             </div>
         </nav>
 
-        <!-- 1. HERO SECTION: CLICKABLE ACTIONS ON TOP (ZERO FLUFF) -->
-        <section id="hero" class="pt-36 pb-12 px-8 text-center max-w-4xl mx-auto min-h-[75vh] flex flex-col justify-center">
-            
-            <h1 class="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.2]">
-                Wiring <span class="text-accentBlue italic font-normal">LLM Capabilities</span> Into the Systems Your Business Already Runs.
+        <!-- ═══════════ 1. HERO ═══════════ -->
+        <section id="hero" class="relative pt-36 pb-16 px-6 md:px-8 text-center max-w-4xl mx-auto min-h-[78vh] flex flex-col justify-center">
+            <div class="aurora-glow w-[700px] h-[340px] bg-cyan-500/[0.07] top-8 left-1/2 -translate-x-1/2"></div>
+
+            <h1 class="relative text-3xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.2]">
+                Wiring <span class="text-aurora italic font-semibold">LLM Capabilities</span> Into the Systems Your Business Already Runs.
             </h1>
 
-            <p class="mt-4 text-sm md:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+            <p class="relative mt-5 text-sm md:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
                 Autonomous AI agentic architectures, self-healing visual workflows, and deterministic MCP backends powering high-ticket enterprise operations and high-scale B2B outbound systems.
             </p>
 
-            <!-- ONLY TWO ULTRA 3D BUTTONS: 1. AI AUTOMATION | 2. B2B LEAD GEN -->
-            <div class="mt-8 flex flex-wrap items-center justify-center gap-6 font-mono text-xs uppercase tracking-wider">
-                <a href="#agentic-ai-swarms" class="btn-3d-blue hero-primary flex items-center space-x-3" style="padding: 18px 42px; font-size: 0.9rem; border-radius: 16px;">
+            <div class="relative mt-9 flex flex-wrap items-center justify-center gap-5 font-mono text-xs uppercase tracking-wider">
+                <a href="#agentic-ai-swarms" class="btn-aurora hero-primary" style="padding: 17px 36px; font-size: 0.85rem; border-radius: 14px;">
                     <i data-lucide="cpu" class="w-4 h-4"></i>
                     <span>1. AI Automation &amp; Agentic Workflows</span>
                 </a>
-                <a href="#leadgen-matrix" class="btn-3d-blue flex items-center space-x-3" style="padding: 18px 42px; font-size: 0.9rem; border-radius: 16px;">
+                <a href="#leadgen-matrix" class="btn-aurora" style="padding: 17px 36px; font-size: 0.85rem; border-radius: 14px;">
                     <i data-lucide="target" class="w-4 h-4"></i>
                     <span>2. B2B Lead Generation</span>
                 </a>
             </div>
 
-            <!-- 2 HIGH-VALUE FOCUS CARDS: 1. PURE AI AUTOMATION & AGENTIC WORKFLOWS | 2. LEAD GEN AT AI AUTOMATION SCALE -->
-            <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-7 text-left max-w-4xl mx-auto">
-                
-                <!-- Card 1: Pure AI Automation & Agentic Systems (Ultra-Sexy Glassmorphism) -->
-                <div class="sexy-luxury-card reveal-3d p-8 relative overflow-hidden group">
-                    <div class="absolute -top-24 -right-24 w-52 h-52 rounded-full bg-sky-500/10 blur-3xl pointer-events-none group-hover:bg-sky-500/25 transition duration-700"></div>
-                    
+            <!-- Two flagship focus cards -->
+            <div class="relative mt-14 grid grid-cols-1 md:grid-cols-2 gap-7 text-left max-w-4xl mx-auto">
+
+                <div class="aurora-card aurora-hairline reveal-3d p-8 overflow-hidden group cursor-pointer">
+                    <div class="absolute -top-24 -right-24 w-52 h-52 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none group-hover:bg-cyan-500/25 transition duration-700"></div>
+
                     <div class="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-5">
-                        <div class="flex items-center space-x-2.5 text-accentBlue font-mono text-[10px] font-extrabold uppercase tracking-wider">
-                            <span class="w-2 h-2 rounded-full bg-accentBlue animate-pulse"></span>
-                            <i data-lucide="cpu" class="w-3.5 h-3.5 text-accentBlue"></i>
+                        <div class="flex items-center space-x-2.5 font-mono text-[10px] font-extrabold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-aurora-cyan animate-pulse"></span>
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 text-aurora-cyan"></i>
                             <span class="text-slate-200">AI Automation &amp; Agentic Systems</span>
                         </div>
-                        <span class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-400/30 text-[9px] font-mono font-bold tracking-widest uppercase">
-                            Flagship
-                        </span>
+                        <span class="badge-pill">Flagship</span>
                     </div>
 
                     <div class="text-2xl md:text-3xl font-serif font-bold text-white tracking-tight mb-2">
@@ -593,23 +132,20 @@
 
                     <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
                         <span class="text-slate-400 text-[11px]">Backend Reliability:</span>
-                        <span class="text-accentBlue font-bold tracking-wide">100% Deterministic</span>
+                        <span class="text-aurora-cyan font-bold tracking-wide">100% Deterministic</span>
                     </div>
                 </div>
 
-                <!-- Card 2: Lead Gen at AI Automation Scale (Ultra-Sexy Emerald Glow) -->
-                <div class="sexy-luxury-card sexy-card-emerald reveal-3d p-8 relative overflow-hidden group">
+                <div class="aurora-card is-emerald reveal-3d p-8 overflow-hidden group cursor-pointer">
                     <div class="absolute -top-24 -right-24 w-52 h-52 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none group-hover:bg-emerald-500/25 transition duration-700"></div>
-                    
+
                     <div class="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-5">
-                        <div class="flex items-center space-x-2.5 text-emerald-400 font-mono text-[10px] font-extrabold uppercase tracking-wider">
+                        <div class="flex items-center space-x-2.5 font-mono text-[10px] font-extrabold uppercase tracking-wider">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                             <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400"></i>
                             <span class="text-slate-200">Lead Gen at AI Automation Scale</span>
                         </div>
-                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-400/30 text-[9px] font-mono font-bold tracking-widest uppercase">
-                            Autonomous
-                        </span>
+                        <span class="badge-pill badge-emerald">Autonomous</span>
                     </div>
 
                     <div class="text-2xl md:text-3xl font-serif font-bold text-white tracking-tight mb-2">
@@ -627,27 +163,20 @@
                 </div>
 
             </div>
-</section>
+        </section>
 
-
-        <!-- ═══════════════════════════════════════════════════════════════════
-             CURATED ENTERPRISE CLIENTS & FLAGSHIP ARCHITECTURAL HIGHLIGHTS
-             (OLD MONEY EDITORIAL • ULTRA-MINIMAL • CONTINUOUS BEAUTY)
-        ═══════════════════════════════════════════════════════════════════ -->
-        <section id="client-proof-section" class="py-14 px-8 border-t border-slate-900/80 bg-pitch">
+        <!-- ═══════════ CLIENTS & HIGHLIGHTS ═══════════ -->
+        <section id="client-proof-section" class="relative py-16 px-6 md:px-8 border-t border-slate-900/70">
             <div class="max-w-6xl mx-auto">
-                
-                <!-- Section Header -->
+
                 <div class="text-center max-w-xl mx-auto mb-10">
-                    <p class="text-[10px] font-mono tracking-[0.25em] text-slate-400 uppercase">Trusted Enterprise Partnerships</p>
-                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-1">Clients &amp; Proven Engagements</h2>
+                    <p class="section-kicker">Trusted Enterprise Partnerships</p>
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-2">Clients &amp; Proven Engagements</h2>
                 </div>
 
-                <!-- Old Money Editorial Client Cards (Minimal, Clean, Classic) -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    
-                    <!-- Client 1: Green TV -->
-                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+
+                    <div class="client-card aurora-card reveal-3d p-5 flex flex-col justify-between cursor-pointer">
                         <div>
                             <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-1">National Television PK</span>
                             <h3 class="text-base font-serif font-bold text-white">Green TV Entertainment</h3>
@@ -660,8 +189,7 @@
                         </div>
                     </div>
 
-                    <!-- Client 2: Apache Pizza -->
-                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card aurora-card reveal-3d p-5 flex flex-col justify-between cursor-pointer">
                         <div>
                             <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-1">National Franchise IE</span>
                             <h3 class="text-base font-serif font-bold text-white">Apache Pizza Ireland</h3>
@@ -670,14 +198,13 @@
                             </p>
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800/50">
-                            <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" class="text-[10px] font-mono text-sky-400 hover:underline flex items-center gap-1">
+                            <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" rel="noopener" class="text-[10px] font-mono text-aurora-cyan hover:underline flex items-center gap-1">
                                 <span>instagram.com</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Client 3: Healthcare Dental Clinics -->
-                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-slate-900/40 to-black border border-slate-800/80 hover:border-slate-700 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card aurora-card reveal-3d p-5 flex flex-col justify-between cursor-pointer">
                         <div>
                             <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-1">Irish Healthcare</span>
                             <h3 class="text-base font-serif font-bold text-white">Rock Road &amp; Slievemore</h3>
@@ -686,23 +213,22 @@
                             </p>
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800/50">
-                            <a href="https://www.rockroaddental.ie/" target="_blank" class="text-[10px] font-mono text-sky-400 hover:underline flex items-center gap-1">
+                            <a href="https://www.rockroaddental.ie/" target="_blank" rel="noopener" class="text-[10px] font-mono text-aurora-cyan hover:underline flex items-center gap-1">
                                 <span>rockroaddental.ie</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Client 4: Master Drive Vault -->
-                    <div class="client-card p-5 rounded-2xl bg-gradient-to-b from-sky-950/20 to-black border border-sky-500/20 hover:border-sky-500/40 transition duration-300 flex flex-col justify-between">
+                    <div class="client-card aurora-card is-emerald reveal-3d p-5 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <span class="text-[9px] font-mono text-sky-400 uppercase tracking-widest block mb-1">Confidential Cloud</span>
+                            <span class="text-[9px] font-mono text-aurora-cyan uppercase tracking-widest block mb-1">Confidential Cloud</span>
                             <h3 class="text-base font-serif font-bold text-white">Master Drive Vault</h3>
                             <p class="text-slate-400 text-xs mt-2 leading-relaxed font-light">
                                 Direct access to architectural blueprints, diagrams &amp; assets.
                             </p>
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800/50">
-                            <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="text-[10px] font-mono text-sky-400 hover:underline flex items-center gap-1 font-bold">
+                            <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" rel="noopener" class="text-[10px] font-mono text-aurora-cyan hover:underline flex items-center gap-1 font-bold">
                                 <span>Access Vault</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                             </a>
                         </div>
@@ -710,12 +236,11 @@
 
                 </div>
 
-                <!-- Flagship Engineering Highlights (Single Line Clean Minimal Cards) -->
                 <div class="mt-8 pt-8 border-t border-slate-900/60">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        
-                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
-                            <div class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
+
+                        <div class="highlight-card aurora-card reveal-3d p-3.5 flex items-center space-x-3 cursor-pointer">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-aurora-cyan shrink-0">
                                 <i data-lucide="shield-check" class="w-4 h-4"></i>
                             </div>
                             <div>
@@ -724,7 +249,7 @@
                             </div>
                         </div>
 
-                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
+                        <div class="highlight-card aurora-card reveal-3d p-3.5 flex items-center space-x-3 cursor-pointer">
                             <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                                 <i data-lucide="mic" class="w-4 h-4"></i>
                             </div>
@@ -734,8 +259,8 @@
                             </div>
                         </div>
 
-                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
-                            <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                        <div class="highlight-card aurora-card reveal-3d p-3.5 flex items-center space-x-3 cursor-pointer">
+                            <div class="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-purple-glow shrink-0">
                                 <i data-lucide="layers" class="w-4 h-4"></i>
                             </div>
                             <div>
@@ -744,8 +269,8 @@
                             </div>
                         </div>
 
-                        <div class="highlight-card p-3.5 rounded-xl bg-slate-950/60 border border-slate-900 flex items-center space-x-3">
-                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                        <div class="highlight-card aurora-card is-amber reveal-3d p-3.5 flex items-center space-x-3 cursor-pointer">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-glow shrink-0">
                                 <i data-lucide="check-circle-2" class="w-4 h-4"></i>
                             </div>
                             <div>
@@ -760,19 +285,14 @@
             </div>
         </section>
 
-        <!-- ═════════════════════════════════════════════════════════════════════
-             SECTION: 5 FLAGSHIP AUTONOMOUS AGENTIC AI ARCHITECTURES
-             Positioned prominently above Make.com & n8n Video Canvasses
-        ══════════════════════════════════════════════════════════════════════ -->
-        <section id="agentic-ai-swarms" class="py-24 px-6 md:px-8 border-t border-slate-900 bg-pitch relative overflow-hidden">
-            <!-- Subtle ambient glow -->
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-sky-500/5 blur-[140px] rounded-full pointer-events-none"></div>
-            <div class="absolute bottom-10 right-10 w-[400px] h-[300px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <!-- ═══════════ 5 FLAGSHIP AGENTIC ARCHITECTURES ═══════════ -->
+        <section id="agentic-ai-swarms" class="relative py-24 px-6 md:px-8 border-t border-slate-900 overflow-hidden">
+            <div class="aurora-glow w-[800px] h-[350px] bg-cyan-500/[0.06] top-1/4 left-1/2 -translate-x-1/2"></div>
+            <div class="aurora-glow w-[400px] h-[300px] bg-violet-500/[0.06] bottom-10 right-10"></div>
 
             <div class="max-w-6xl mx-auto relative z-10">
-                <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-mono font-extrabold bg-sky-500/10 text-sky-400 border border-sky-400/30 uppercase tracking-widest mb-4 shadow-lg shadow-sky-500/10">
+                    <div class="badge-pill mb-4">
                         <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Enterprise Agentic Fleet · 5 Production Architectures
                     </div>
                     <h2 class="reveal-3d text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
@@ -783,23 +303,21 @@
                     </p>
                 </div>
 
-                <!-- Row 1: Dual Flagship Architectures (2 Columns) -->
+                <!-- Row 1: dual flagships -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 
-                    <!-- ARCHITECTURE 01: Nick Saraev Autonomous Outbound SDR Swarm -->
-                    <div onclick="openAgenticCard(1)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-sky-400 cursor-pointer transition-all duration-300 hover:border-sky-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-sky-500/10 group">
+                    <div onclick="openAgenticCard(1)" class="aurora-card aurora-hairline reveal-3d p-6 flex flex-col justify-between cursor-pointer group">
                         <div>
-                            <!-- Terminal Visualizer -->
-                            <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
+                            <div class="code-box p-4 mb-5 text-[11px] leading-relaxed text-slate-300">
                                 <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-800/60 text-[10px] text-slate-500">
-                                    <span class="flex items-center gap-1.5"><i data-lucide="network" class="w-3 h-3 text-sky-400"></i> LANGGRAPH SUPERVISOR DAG</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="network" class="w-3 h-3 text-aurora-cyan"></i> LANGGRAPH SUPERVISOR DAG</span>
                                     <span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> RUNNING</span>
                                 </div>
                                 <div class="space-y-1">
-                                    <div class="text-sky-400">&gt; Directive Layer: ICP constraints loaded</div>
+                                    <div class="text-aurora-cyan">&gt; Directive Layer: ICP constraints loaded</div>
                                     <div class="text-slate-400">&gt; Supervisor: LangGraph DAG initialized</div>
                                     <div class="text-slate-400">&gt; Firecrawl Worker: Deep tech stack enriched</div>
-                                    <div class="text-indigo-300">&gt; Copywriter Node: Claude 3.5 Sonnet pitch generated</div>
+                                    <div class="text-purple-glow">&gt; Copywriter Node: Claude 3.5 Sonnet pitch generated</div>
                                     <div class="text-emerald-400 font-bold">&gt; Confidence Gate: 94.2% verified, dispatched</div>
                                 </div>
                             </div>
@@ -811,36 +329,34 @@
                                 <span class="stack-tag">Human in the Loop</span>
                             </div>
 
-                            <div class="text-[9px] font-mono uppercase text-sky-400 font-bold mb-1">Architecture 01 · Nick Saraev Provenance</div>
-                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Autonomous Outbound SDR Swarm</h3>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Architecture 01 · Nick Saraev Provenance</div>
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-aurora-cyan transition-colors">Autonomous Outbound SDR Swarm</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Three layer Directive, Orchestration, and Execution architecture. Extracts deep account intelligence via Firecrawl, synthesizes low ego abundance copy, and routes ambiguous outputs to human review before dispatch.
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">15 to 20 Bookings / Wk</span>
-                            <button onclick="event.stopPropagation(); openAgenticCard(1);" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(1);" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Inspect Architecture</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- ARCHITECTURE 02: IndyDevDan & Dave Ebbelaar Autonomous Software Engineer -->
-                    <div onclick="openAgenticCard(2)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-indigo-400 cursor-pointer transition-all duration-300 hover:border-indigo-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-indigo-500/10 group">
+                    <div onclick="openAgenticCard(2)" class="aurora-card is-violet reveal-3d p-6 flex flex-col justify-between cursor-pointer group">
                         <div>
-                            <!-- Terminal Visualizer -->
-                            <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
+                            <div class="code-box p-4 mb-5 text-[11px] leading-relaxed text-slate-300">
                                 <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-800/60 text-[10px] text-slate-500">
-                                    <span class="flex items-center gap-1.5"><i data-lucide="terminal" class="w-3 h-3 text-indigo-400"></i> SANDBOX VERIFICATION LOOP</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="terminal" class="w-3 h-3 text-purple-glow"></i> SANDBOX VERIFICATION LOOP</span>
                                     <span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> PASSED</span>
                                 </div>
                                 <div class="space-y-1">
-                                    <div class="text-indigo-400">&gt; Lead Architect: Issue DAG decomposed</div>
+                                    <div class="text-purple-glow">&gt; Lead Architect: Issue DAG decomposed</div>
                                     <div class="text-rose-400">&gt; Red Phase: Reproduction test failing as expected</div>
                                     <div class="text-slate-400">&gt; Coder: Surgical patch applied in isolated context</div>
                                     <div class="text-emerald-400">&gt; Green Phase: Docker sandbox pytest passed</div>
-                                    <div class="text-sky-300 font-bold">&gt; Security Gate: Semgrep 0 alerts, PR created</div>
+                                    <div class="text-aurora-cyan font-bold">&gt; Security Gate: Semgrep 0 alerts, PR created</div>
                                 </div>
                             </div>
 
@@ -851,16 +367,16 @@
                                 <span class="stack-tag">Semgrep Audit</span>
                             </div>
 
-                            <div class="text-[9px] font-mono uppercase text-indigo-400 font-bold mb-1">Architecture 02 · IndyDevDan &amp; Ebbelaar Provenance</div>
-                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Autonomous Software Engineer</h3>
+                            <div class="text-[9px] font-mono uppercase text-purple-glow font-bold mb-1">Architecture 02 · IndyDevDan &amp; Ebbelaar Provenance</div>
+                            <h3 class="text-xl font-serif font-bold text-white mb-2 group-hover:text-purple-glow transition-colors">Autonomous Software Engineer</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Hierarchical 5 agent system replacing monolithic vibe coding. Isolates context windows, executes reproduction tests in ephemeral Docker sandboxes, self corrects on runtime stack traces, and gates PR releases with Semgrep.
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">Zero Host Blast Radius</span>
-                            <button onclick="event.stopPropagation(); openAgenticCard(2);" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(2);" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Inspect Architecture</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
@@ -868,14 +384,12 @@
 
                 </div>
 
-                <!-- Row 2: Specialized Triple Swarms (3 Columns) -->
+                <!-- Row 2: specialized triple -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                    <!-- ARCHITECTURE 03: Cole Medin Self Healing Scraper -->
-                    <div onclick="openAgenticCard(3)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-emerald-400 cursor-pointer transition-all duration-300 hover:border-emerald-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-emerald-500/10 group">
+                    <div onclick="openAgenticCard(3)" class="aurora-card is-emerald reveal-3d p-6 flex flex-col justify-between cursor-pointer group">
                         <div>
-                            <!-- Terminal Visualizer -->
-                            <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
+                            <div class="code-box p-4 mb-5 text-[11px] leading-relaxed text-slate-300">
                                 <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-800/60 text-[10px] text-slate-500">
                                     <span class="flex items-center gap-1.5"><i data-lucide="eye" class="w-3 h-3 text-emerald-400"></i> VISION HEALER</span>
                                     <span class="text-emerald-400 text-[10px]">ACTIVE</span>
@@ -883,8 +397,8 @@
                                 <div class="space-y-1">
                                     <div class="text-slate-400">&gt; Fast Path: Cache executed (14ms)</div>
                                     <div class="text-amber-400">&gt; DOM Mutation: 404 trapped</div>
-                                    <div class="text-indigo-300">&gt; Viewport: Screenshot taken</div>
-                                    <div class="text-sky-400">&gt; Gemini: Spatial box grounded</div>
+                                    <div class="text-purple-glow">&gt; Viewport: Screenshot taken</div>
+                                    <div class="text-aurora-cyan">&gt; Gemini: Spatial box grounded</div>
                                     <div class="text-emerald-400 font-bold">&gt; Cache: ARIA locator updated</div>
                                 </div>
                             </div>
@@ -902,28 +416,26 @@
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">95% Zero LLM Fast Path</span>
-                            <button onclick="event.stopPropagation(); openAgenticCard(3);" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(3);" class="btn-aurora px-3.5 py-2 text-xs font-mono shrink-0">
                                 <span>Inspect</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- ARCHITECTURE 04: Matthew Berman & Liam Ottley Enterprise Operations Swarm -->
-                    <div onclick="openAgenticCard(4)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-purple-400 cursor-pointer transition-all duration-300 hover:border-purple-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-purple-500/10 group">
+                    <div onclick="openAgenticCard(4)" class="aurora-card is-violet reveal-3d p-6 flex flex-col justify-between cursor-pointer group">
                         <div>
-                            <!-- Terminal Visualizer -->
-                            <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
+                            <div class="code-box p-4 mb-5 text-[11px] leading-relaxed text-slate-300">
                                 <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-800/60 text-[10px] text-slate-500">
-                                    <span class="flex items-center gap-1.5"><i data-lucide="shield-alert" class="w-3 h-3 text-purple-400"></i> OPS TRIAGE SWARM</span>
-                                    <span class="text-purple-400 text-[10px]">ESCORTED</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="shield-alert" class="w-3 h-3 text-purple-glow"></i> OPS TRIAGE SWARM</span>
+                                    <span class="text-purple-glow text-[10px]">ESCORTED</span>
                                 </div>
                                 <div class="space-y-1">
-                                    <div class="text-purple-400">&gt; Inbound: $120k ARR account</div>
+                                    <div class="text-purple-glow">&gt; Inbound: $120k ARR account</div>
                                     <div class="text-slate-400">&gt; Intent: Ticket decomposed</div>
                                     <div class="text-amber-400">&gt; Deterministic Gate: Refund &gt; $100</div>
-                                    <div class="text-indigo-300">&gt; Paused: Slack card pushed</div>
+                                    <div class="text-purple-glow">&gt; Paused: Slack card pushed</div>
                                     <div class="text-emerald-400 font-bold">&gt; Resumed: Manager sign off logged</div>
                                 </div>
                             </div>
@@ -934,35 +446,33 @@
                                 <span class="stack-tag">Slack HITL</span>
                             </div>
 
-                            <div class="text-[9px] font-mono uppercase text-purple-400 font-bold mb-1">Architecture 04 · Berman &amp; Ottley Provenance</div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Enterprise Operations Swarm</h3>
+                            <div class="text-[9px] font-mono uppercase text-purple-glow font-bold mb-1">Architecture 04 · Berman &amp; Ottley Provenance</div>
+                            <h3 class="text-lg font-serif font-bold text-white mb-2 group-hover:text-purple-glow transition-colors">Enterprise Operations Swarm</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Triage routing swarm with strict operational barriers. LLMs formulate proposals while deterministic Python executes database changes, pausing for Slack manager sign off on high risk actions.
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">70% Triage Deflection</span>
-                            <button onclick="event.stopPropagation(); openAgenticCard(4);" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(4);" class="btn-aurora px-3.5 py-2 text-xs font-mono shrink-0">
                                 <span>Inspect</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- ARCHITECTURE 05: Harrison Chase Deep Financial Intelligence -->
-                    <div onclick="openAgenticCard(5)" class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-amber-400 cursor-pointer transition-all duration-300 hover:border-amber-400 hover:scale-[1.01] hover:shadow-2xl hover:shadow-amber-500/10 group">
+                    <div onclick="openAgenticCard(5)" class="aurora-card is-amber reveal-3d p-6 flex flex-col justify-between cursor-pointer group">
                         <div>
-                            <!-- Terminal Visualizer -->
-                            <div class="code-box-clean p-4 rounded-xl border border-slate-800/80 bg-slate-950/90 mb-5 font-mono text-[11px] leading-relaxed text-slate-300">
+                            <div class="code-box p-4 mb-5 text-[11px] leading-relaxed text-slate-300">
                                 <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-800/60 text-[10px] text-slate-500">
-                                    <span class="flex items-center gap-1.5"><i data-lucide="calculator" class="w-3 h-3 text-amber-400"></i> FINANCIAL MATH SANDBOX</span>
-                                    <span class="text-amber-400 text-[10px]">GROUNDED</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="calculator" class="w-3 h-3 text-amber-glow"></i> FINANCIAL MATH SANDBOX</span>
+                                    <span class="text-amber-glow text-[10px]">GROUNDED</span>
                                 </div>
                                 <div class="space-y-1">
                                     <div class="text-amber-400">&gt; Target: 3 Year margin analysis</div>
                                     <div class="text-slate-400">&gt; Hybrid: Docling vector and BM25</div>
-                                    <div class="text-sky-400">&gt; Code Sandbox: Python Pandas</div>
-                                    <div class="text-indigo-300">&gt; Math: EBITDA 32.41% computed</div>
+                                    <div class="text-aurora-cyan">&gt; Code Sandbox: Python Pandas</div>
+                                    <div class="text-purple-glow">&gt; Math: EBITDA 32.41% computed</div>
                                     <div class="text-emerald-400 font-bold">&gt; Critic: 100% SEC citations cited</div>
                                 </div>
                             </div>
@@ -973,16 +483,16 @@
                                 <span class="stack-tag">Pandas Math</span>
                             </div>
 
-                            <div class="text-[9px] font-mono uppercase text-amber-400 font-bold mb-1">Architecture 05 · Harrison Chase Provenance</div>
+                            <div class="text-[9px] font-mono uppercase text-amber-glow font-bold mb-1">Architecture 05 · Harrison Chase Provenance</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">Deep Financial Intelligence</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4 font-light">
                                 Zero hallucination equity research architecture. Employs LangGraph dynamic Send API, isolated Python code execution for financial arithmetic, and adversarial citation validation against raw SEC filings.
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">100% Math Accuracy</span>
-                            <button onclick="event.stopPropagation(); openAgenticCard(5);" class="btn-3d-blue px-3.5 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <button onclick="event.stopPropagation(); openAgenticCard(5);" class="btn-aurora px-3.5 py-2 text-xs font-mono shrink-0">
                                 <span>Inspect</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
@@ -993,27 +503,36 @@
             </div>
         </section>
 
-<section id="master-workflows-vault" class="py-24 px-8 border-t border-slate-900 bg-pitch">
+        <!-- ═══════════ MASTER WORKFLOWS VAULT ═══════════ -->
+        <section id="master-workflows-vault" class="relative py-24 px-6 md:px-8 border-t border-slate-900">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-accentBlue/10 text-accentBlue border border-accentBlue/30 uppercase tracking-widest mb-3">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="badge-pill mb-3">
                         <i data-lucide="layers" class="w-3.5 h-3.5"></i> 10 Master Production Workflows
                     </div>
                     <h2 class="reveal-3d text-3xl md:text-4xl font-serif font-bold text-white tracking-tight">
                         Visual Canvas Proof &amp; Architectural Blueprints
                     </h2>
                     <p class="text-slate-400 text-sm mt-3 font-normal leading-relaxed">
-                        Every workflow contains live screencasts directly recorded from Make.com &amp; n8n canvasses. Open dedicated case studies for full breakdowns and blueprints.
+                        Every workflow contains live screencasts directly recorded from Make.com &amp; n8n canvases. Open dedicated case studies for full breakdowns and blueprints.
                     </p>
+
+                    <!-- Filter tabs -->
+                    <div id="vault-filter-bar" class="mt-7 flex flex-wrap items-center justify-center gap-2">
+                        <button class="vault-filter-tab active" data-filter="all">All</button>
+                        <button class="vault-filter-tab" data-filter="live">Live Execution</button>
+                        <button class="vault-filter-tab" data-filter="walkthrough">Canvas Walkthrough</button>
+                        <button class="vault-filter-tab" data-filter="commercial">Commercial</button>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    <!-- SLOT 1: Full n8n Lead Gen (Live Execution Video) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between border-t-2 border-t-accentBlue">
+                    <!-- SLOT 1 -->
+                    <div data-tags="live" class="vault-card aurora-card aurora-hairline reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/n8n-lead-gen/n8n_lead_gen_execution.mp4" type="video/mp4">
                                 </video>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-emerald-400 font-mono text-[9px] font-bold border border-emerald-500/30 flex items-center gap-1.5">
@@ -1026,50 +545,50 @@
                                 <span class="stack-tag">ZeroBounce</span>
                                 <span class="stack-tag">CRM Queue</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 01 · Flagship Architecture</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 01 · Flagship Architecture</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">Full Automated B2B Lead Gen in n8n</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Most complex automated outbound scenario: webhook trigger, Apify actor scraping, multi-layer ZeroBounce SMTP verification, lead scoring, and automated CRM slotting.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">25K+ Leads/Mo · &lt;1.5% Bounce</span>
-                            <a href="workflows/n8n-lead-gen/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/n8n-lead-gen/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 2: COD Verification (PREMIUM GATED: $1,000 PRIVATE LICENSE) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between relative overflow-hidden border-2 border-amber-500/30">
+                    <!-- SLOT 2 (gated) -->
+                    <div data-tags="commercial" class="vault-card aurora-card is-amber reveal-3d p-6 flex flex-col justify-between relative overflow-hidden">
                         <div class="absolute inset-0 bg-slate-950/85 backdrop-blur-md z-20 flex flex-col items-center justify-center p-6 text-center">
-                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-amber-400 mb-3 shadow-lg shadow-amber-500/20">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-amber-glow mb-3 shadow-lg shadow-amber-500/20">
                                 <i data-lucide="lock" class="w-7 h-7"></i>
                             </div>
-                            <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-[10px] font-extrabold border border-amber-500/50 uppercase tracking-widest mb-2">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 font-mono text-[10px] font-extrabold border border-amber-500/40 uppercase tracking-widest mb-2">
                                 Commercial Enterprise Asset
                             </span>
                             <h4 class="text-lg font-serif font-bold text-white mb-1">Shopify COD Fraud Shield</h4>
                             <p class="text-slate-300 text-xs max-w-sm mb-4 leading-relaxed">
                                 Proprietary architecture reducing Cash-on-Delivery return-to-origin courier losses by 48%. Never open-sourced. Full setup &amp; private license.
                             </p>
-                            <div class="font-mono text-2xl font-bold text-amber-400 mb-4">$1,000 <span class="text-xs text-slate-400 font-normal">/ Private License</span></div>
-                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20want%20to%20license%20your%20Shopify%20COD%20Fraud%20Prevention%20System%20($1,000)" target="_blank" class="btn-3d-blue px-6 py-3 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center gap-2">
+                            <div class="font-mono text-2xl font-bold text-amber-glow mb-4">$1,000 <span class="text-xs text-slate-400 font-normal">/ Private License</span></div>
+                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20want%20to%20license%20your%20Shopify%20COD%20Fraud%20Prevention%20System%20($1,000)" target="_blank" rel="noopener" class="btn-aurora px-6 py-3 text-xs font-mono uppercase tracking-wider">
                                 <i data-lucide="message-square" class="w-4 h-4"></i> Chat to Owner
                             </a>
                         </div>
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black opacity-25 aspect-video"></div>
+                            <div class="video-frame mb-5 opacity-25"></div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">Shopify COD Fraud Prevention Engine</h3>
                             <p class="text-slate-400 text-xs">Proprietary GraphQL + WhatsApp confirmation pipeline.</p>
                         </div>
                     </div>
 
-                    <!-- SLOT 3: Make Meeting Booking (Live Execution Video) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 3 -->
+                    <div data-tags="live" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/make-meeting-booking/meeting_booking_execution.mp4" type="video/mp4">
                                 </video>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-emerald-400 font-mono text-[9px] font-bold border border-emerald-500/30 flex items-center gap-1.5">
@@ -1082,28 +601,28 @@
                                 <span class="stack-tag">Twilio SMS</span>
                                 <span class="stack-tag">Speed-to-Lead</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 03 · Conversational Booking</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 03 · Conversational Booking</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">Make.com Autonomous Meeting Booking</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Sub-60-second speed-to-lead qualification: listens for inbound bookings, verifies availability slots in real time, locks schedule, and alerts SDRs on Slack.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">&lt;60s Lead Response Time</span>
-                            <a href="workflows/make-meeting-booking/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/make-meeting-booking/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 4: LinkedIn Post Generation (Architecture Walkthrough) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 4 -->
+                    <div data-tags="walkthrough" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/linkedin-post-generator/linkedin_post_generator.mp4" type="video/mp4">
                                 </video>
-                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-sky-400 font-mono text-[9px] font-bold border border-sky-500/30 flex items-center gap-1.5">
+                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-aurora-cyan font-mono text-[9px] font-bold border border-cyan-500/30 flex items-center gap-1.5">
                                     <i data-lucide="eye" class="w-3 h-3"></i> CANVAS WALKTHROUGH
                                 </span>
                             </div>
@@ -1113,50 +632,50 @@
                                 <span class="stack-tag">GPT-4o</span>
                                 <span class="stack-tag">LinkedIn REST</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 04 · Content Machine</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 04 · Content Machine</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">LinkedIn Social Intelligence &amp; Post Generator</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Scrapes trending industry themes, classifies timely vs evergreen hooks via GPT-4o, rewrites in brand voice, and calculates optimal 6-hour publishing queues.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">20+ hrs/wk Saved · Automated Queues</span>
-                            <a href="workflows/linkedin-post-generator/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/linkedin-post-generator/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 5: Cold DM Replier (PREMIUM GATED: $500 TURNKEY ACCESS) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between relative overflow-hidden border-2 border-purple-500/30">
+                    <!-- SLOT 5 (gated) -->
+                    <div data-tags="commercial" class="vault-card aurora-card is-violet reveal-3d p-6 flex flex-col justify-between relative overflow-hidden">
                         <div class="absolute inset-0 bg-slate-950/85 backdrop-blur-md z-20 flex flex-col items-center justify-center p-6 text-center">
-                            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/40 flex items-center justify-center text-purple-400 mb-3 shadow-lg shadow-purple-500/20">
+                            <div class="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/40 flex items-center justify-center text-purple-glow mb-3 shadow-lg shadow-violet-500/20">
                                 <i data-lucide="shield-alert" class="w-7 h-7"></i>
                             </div>
-                            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 font-mono text-[10px] font-extrabold border border-purple-500/50 uppercase tracking-widest mb-2">
+                            <span class="px-3 py-1 rounded-full bg-violet-500/15 text-purple-glow font-mono text-[10px] font-extrabold border border-violet-500/40 uppercase tracking-widest mb-2">
                                 Multi-Tenant Commercial Architecture
                             </span>
                             <h4 class="text-lg font-serif font-bold text-white mb-1">Cold DM Replier (Multi-Account Engine)</h4>
                             <p class="text-slate-300 text-xs max-w-sm mb-4 leading-relaxed">
                                 Runs 3+ Instagram accounts simultaneously in a single task with sub-60s human reply pacing. Scalable to unlimited accounts. Confidential commercial deployment.
                             </p>
-                            <div class="font-mono text-2xl font-bold text-purple-400 mb-4">$500 <span class="text-xs text-slate-400 font-normal">/ Commercial Setup</span></div>
-                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20want%20to%20license%20your%20Multi-Account%20Cold%20DM%20Replier%20Workflow%20($500)" target="_blank" class="btn-3d-blue px-6 py-3 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center gap-2">
+                            <div class="font-mono text-2xl font-bold text-purple-glow mb-4">$500 <span class="text-xs text-slate-400 font-normal">/ Commercial Setup</span></div>
+                            <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20want%20to%20license%20your%20Multi-Account%20Cold%20DM%20Replier%20Workflow%20($500)" target="_blank" rel="noopener" class="btn-aurora px-6 py-3 text-xs font-mono uppercase tracking-wider">
                                 <i data-lucide="message-square" class="w-4 h-4"></i> Chat to Owner
                             </a>
                         </div>
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black opacity-25 aspect-video"></div>
+                            <div class="video-frame mb-5 opacity-25"></div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">Multi-Account Cold DM Replier</h3>
                             <p class="text-slate-400 text-xs">Paced automated replies across multiple Instagram handles.</p>
                         </div>
                     </div>
 
-                    <!-- SLOT 6: WhatsApp Replying Bot (Live Execution Video) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 6 -->
+                    <div data-tags="live" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/whatsapp-replying-bot/whatsapp_replying_bot.mp4" type="video/mp4">
                                 </video>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-emerald-400 font-mono text-[9px] font-bold border border-emerald-500/30 flex items-center gap-1.5">
@@ -1168,25 +687,25 @@
                                 <span class="stack-tag">WhatsApp Cloud API</span>
                                 <span class="stack-tag">Typing Pacing</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 06 · Conversational AI</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 06 · Conversational AI</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">WhatsApp Cloud API Bot with Paced Delays</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Built to prevent Meta spam detection with intelligent sleep timers (1-3s human pacing). Handles inbound client questions, orders, and intent routing.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">Anti-Ban Paced · 100% Automated</span>
-                            <a href="workflows/whatsapp-replying-bot/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/whatsapp-replying-bot/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 7: Custom Icebreaker Generator (Live Execution Video) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 7 -->
+                    <div data-tags="live" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/custom-icebreaker-generator/custom_icebreaker_generator.webm" type="video/webm">
                                 </video>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-emerald-400 font-mono text-[9px] font-bold border border-emerald-500/30 flex items-center gap-1.5">
@@ -1199,25 +718,25 @@
                                 <span class="stack-tag">Google Sheets</span>
                                 <span class="stack-tag">JSON Schema</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 07 · Outbound Personalization</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 07 · Outbound Personalization</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">Custom AI Icebreaker &amp; Hook Generator</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Scrapes executive profile data, evaluates career highlights via GPT-4o, and generates personalized 1-sentence opening hooks directly into dispatch CSVs.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">16% Outbound Reply Rate Benchmark</span>
-                            <a href="workflows/custom-icebreaker-generator/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/custom-icebreaker-generator/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 8: ClickUp Operations Hub (Live Execution Video) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 8 -->
+                    <div data-tags="live" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/clickup-operations-hub/clickup_operations_hub.mp4" type="video/mp4">
                                 </video>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-emerald-400 font-mono text-[9px] font-bold border border-emerald-500/30 flex items-center gap-1.5">
@@ -1230,28 +749,28 @@
                                 <span class="stack-tag">Slack Notifier</span>
                                 <span class="stack-tag">Sprint Ops</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 08 · Agency Operations</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 08 · Agency Operations</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">ClickUp Automated Sprint &amp; Task Engine</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Connects onboarding forms with ClickUp workspaces: creates project spaces, assigns technical deliverables, and updates team channels on sprint progress.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">Zero Manual PM Overhead</span>
-                            <a href="workflows/clickup-operations-hub/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/clickup-operations-hub/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 9: Autonomous Sales Agent (Architecture Walkthrough) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 9 -->
+                    <div data-tags="walkthrough" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/autonomous-sales-agent/sales_agent_architecture.mp4" type="video/mp4">
                                 </video>
-                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-sky-400 font-mono text-[9px] font-bold border border-sky-500/30 flex items-center gap-1.5">
+                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-aurora-cyan font-mono text-[9px] font-bold border border-cyan-500/30 flex items-center gap-1.5">
                                     <i data-lucide="eye" class="w-3 h-3"></i> CANVAS WALKTHROUGH
                                 </span>
                             </div>
@@ -1261,28 +780,28 @@
                                 <span class="stack-tag">Google Sheets DB</span>
                                 <span class="stack-tag">Sales Engine</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 09 · Sales Pipeline</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 09 · Sales Pipeline</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">Autonomous Inbound Customer Sales Agent</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Full-funnel customer qualification: dynamically determines returning vs new buyers from database, answers product inquiries via GPT-4o, and routes to payment.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">24/7 Closing Capability</span>
-                            <a href="workflows/autonomous-sales-agent/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/autonomous-sales-agent/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- SLOT 10: WhatsApp ChatBot Improved (Architecture Walkthrough) -->
-                    <div class="sexy-luxury-card reveal-3d p-6 vault-card flex flex-col justify-between">
+                    <!-- SLOT 10 -->
+                    <div data-tags="walkthrough" class="vault-card aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="vault-video-frame mb-5 rounded-xl overflow-hidden bg-black border border-slate-800 relative group aspect-video flex items-center justify-center">
-                                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <div class="video-frame mb-5 relative group">
+                                <video muted loop playsinline preload="metadata" data-autoplay class="w-full h-full object-cover">
                                     <source src="workflows/whatsapp-chatbot-improved/whatsapp_chatbot_improved.mp4" type="video/mp4">
                                 </video>
-                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-sky-400 font-mono text-[9px] font-bold border border-sky-500/30 flex items-center gap-1.5">
+                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur text-aurora-cyan font-mono text-[9px] font-bold border border-cyan-500/30 flex items-center gap-1.5">
                                     <i data-lucide="eye" class="w-3 h-3"></i> CANVAS WALKTHROUGH
                                 </span>
                             </div>
@@ -1292,15 +811,15 @@
                                 <span class="stack-tag">Break Handlers</span>
                                 <span class="stack-tag">Error Resiliency</span>
                             </div>
-                            <div class="text-[9px] font-mono uppercase text-accentBlue font-bold mb-1">Workflow 10 · Hardened Resilience</div>
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan font-bold mb-1">Workflow 10 · Hardened Resilience</div>
                             <h3 class="text-lg font-serif font-bold text-white mb-2">WhatsApp ChatBot Improved Routing Engine</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">
                                 Enterprise-grade reliability: includes custom rollback handlers, edge-case recovery, human escalation routing via Slack, and automatic lead history logging.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between">
+                        <div class="pt-4 border-t border-slate-900 flex items-center justify-between gap-3">
                             <span class="outcome-badge">99.4% Uptime · Zero Silent Drops</span>
-                            <a href="workflows/whatsapp-chatbot-improved/index.html" class="btn-3d-blue px-4 py-2 text-xs font-mono font-bold flex items-center gap-1.5">
+                            <a href="workflows/whatsapp-chatbot-improved/index.html" class="btn-aurora px-4 py-2 text-xs font-mono shrink-0">
                                 <span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
@@ -1310,50 +829,52 @@
             </div>
         </section>
 
-<section id="n8n-blueprints" class="py-20 px-8 border-t border-slate-900 bg-pitch">
+        <!-- ═══════════ N8N BLUEPRINTS ═══════════ -->
+        <section id="n8n-blueprints" class="relative py-20 px-6 md:px-8 border-t border-slate-900">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <h2 class="reveal-3d text-2xl md:text-3xl font-serif font-bold text-white">Community n8n Starter Pack &amp; Enterprise Blueprints</h2>
                     <p class="text-slate-400 text-sm mt-2 font-normal max-w-xl mx-auto">Curated starter templates across 17 SaaS categories (Shopify, CRM, Slack, AI Agents) alongside our proprietary production-grade engines.</p>
-                    <div class="mt-4 flex items-center justify-center gap-3">
-                        <a href="vault_downloads/1000-n8n-automation-pack-starter.zip" download class="btn-3d-blue px-5 py-2 text-xs font-mono font-bold flex items-center gap-2">
+                    <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+                        <a href="vault_downloads/1000-n8n-automation-pack-starter.zip" download class="btn-aurora px-5 py-2.5 text-xs font-mono">
                             <i data-lucide="download" class="w-4 h-4"></i> Download 1000+ n8n Starter Pack (.zip)
                         </a>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="btn-3d-grey px-5 py-2 text-xs font-mono font-bold flex items-center gap-2">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" rel="noopener" class="btn-graphite px-5 py-2.5 text-xs font-mono">
                             <i data-lucide="github" class="w-4 h-4"></i> Explore Full GitHub Vault
                         </a>
-                    </div></div>
+                    </div>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <div class="sexy-luxury-card reveal-3d p-6 flex flex-col justify-between">
+                    <div class="aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
-                            <div class="text-[9px] font-mono text-accentBlue uppercase mb-1">Workflow Architecture 01</div>
+                            <div class="text-[9px] font-mono text-aurora-cyan uppercase mb-1">Workflow Architecture 01</div>
                             <h3 class="text-sm font-serif font-bold text-white">Sub-10s Dynamic Lead Scoring</h3>
                             <p class="text-slate-400 text-xs mt-2 leading-relaxed">Scores incoming inbound and outbound prospect replies against strict ICP criteria, applies automated lead heat tags, and triggers instant SMS or Slack alerts to top closers.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-grey px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" rel="noopener" class="mt-5 btn-graphite px-3 py-2 text-xs font-mono">
                             <span>Open Blueprint</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
 
-                    <div class="sexy-luxury-card reveal-3d p-6 flex flex-col justify-between">
+                    <div class="aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
                             <div class="text-[9px] font-mono text-slate-300 uppercase mb-1">Workflow Architecture 02</div>
                             <h3 class="text-sm font-serif font-bold text-white">Multi-Model Fallback &amp; Cost Optimizer</h3>
                             <p class="text-slate-400 text-xs mt-2 leading-relaxed">Dynamically routes lightweight JSON formatting to fast flash models and deep analytical personalization to Claude or GPT-4. Reduces enterprise API operating expenses by 42%.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-grey px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" rel="noopener" class="mt-5 btn-graphite px-3 py-2 text-xs font-mono">
                             <span>Open Blueprint</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
 
-                    <div class="sexy-luxury-card reveal-3d p-6 flex flex-col justify-between">
+                    <div class="aurora-card reveal-3d p-6 flex flex-col justify-between cursor-pointer">
                         <div>
                             <div class="text-[9px] font-mono text-white uppercase mb-1">Workflow Architecture 03</div>
                             <h3 class="text-sm font-serif font-bold text-white">pgvector Semantic Knowledge Base</h3>
                             <p class="text-slate-400 text-xs mt-2 leading-relaxed">Vectorizes company case studies, pricing tiers, and objection documentation into pgvector storage. AI agents reference exact brand facts with zero hallucinations.</p>
                         </div>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="mt-5 btn-3d-grey px-3 py-2 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" rel="noopener" class="mt-5 btn-graphite px-3 py-2 text-xs font-mono">
                             <span>Open Blueprint</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -1361,7 +882,8 @@
             </div>
         </section>
 
-<section id="leadgen-matrix" class="py-20 px-8 border-t border-slate-900 bg-noir">
+        <!-- ═══════════ LEADGEN MATRIX ═══════════ -->
+        <section id="leadgen-matrix" class="relative py-20 px-6 md:px-8 border-t border-slate-900 bg-abyss/60">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <h2 class="reveal-3d text-2xl md:text-3xl font-serif font-bold text-white">Outbound Data Pipeline &amp; Deliverability Infrastructure</h2>
@@ -1369,18 +891,18 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <div class="sexy-luxury-card reveal-3d p-6">
-                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-2">Stage 01: Extraction</div>
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
+                        <div class="text-[9px] font-mono uppercase text-aurora-cyan mb-2">Stage 01: Extraction</div>
                         <h3 class="text-base font-serif font-bold text-white">Apify Scraping &amp; LinkedIn Extraction</h3>
                         <p class="text-slate-400 text-xs mt-3 leading-relaxed">Headless Apify actors scrape target industry lists and LinkedIn profiles. Python-based deduplication filters remove already-processed URNs before any enrichment API is called, keeping cost to a minimum.</p>
                     </div>
-                    <div class="sexy-luxury-card reveal-3d p-6">
-                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-2">Stage 02: Waterfall Enrichment</div>
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
+                        <div class="text-[9px] font-mono uppercase text-aurora-cyan mb-2">Stage 02: Waterfall Enrichment</div>
                         <h3 class="text-base font-serif font-bold text-white">Apollo, Clay &amp; ZeroBounce Fallback</h3>
                         <p class="text-slate-400 text-xs mt-3 leading-relaxed">Records flow through Apollo for firmographic data, then Clay for waterfall enrichment, then ZeroBounce and MillionVerifier in sequence. Only contacts that pass all verification layers enter the dispatch queue.</p>
                     </div>
-                    <div class="sexy-luxury-card reveal-3d p-6">
-                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-2">Stage 03: Governed Dispatch</div>
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
+                        <div class="text-[9px] font-mono uppercase text-aurora-cyan mb-2">Stage 03: Governed Dispatch</div>
                         <h3 class="text-base font-serif font-bold text-white">40+ Inbox Rotation &amp; DNS Governance</h3>
                         <p class="text-slate-400 text-xs mt-3 leading-relaxed">Smartlead/Instantly rotate sends across 40+ secondary domains under full SPF, DKIM, DMARC governance. Per-domain daily send caps are enforced via Airtable rate ledger with auto-pause on bounce threshold breach.</p>
                     </div>
@@ -1388,31 +910,33 @@
             </div>
         </section>
 
-<section id="scraping-engines" class="py-20 px-8 border-t border-slate-900 bg-pitch">
+        <!-- ═══════════ SCRAPING ENGINES ═══════════ -->
+        <section id="scraping-engines" class="relative py-20 px-6 md:px-8 border-t border-slate-900">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-10">
                     <h2 class="reveal-3d text-2xl font-serif font-bold text-white">Autonomous Prospect Extraction</h2>
                     <p class="text-slate-400 text-xs mt-2 font-normal max-w-md mx-auto">Decision-maker data sourced, enriched, and validated without a single manual lookup.</p>
                 </div>
 
-                <div class="sexy-luxury-card reveal-3d p-6">
+                <div class="aurora-card reveal-3d p-6">
                     <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-xs font-mono">
-                        <span class="text-accentBlue font-bold">decision_maker_extractor.py</span>
+                        <span class="text-aurora-cyan font-bold">decision_maker_extractor.py</span>
                         <span class="text-slate-400 text-[10px]">Playwright + AsyncIO</span>
                     </div>
-                    <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-1.5 leading-relaxed">
-                        <p><span class="text-accentBlue">async def</span> <span class="text-slate-200">extract_leadership_pool</span>(target_url):</p>
-                        <p class="pl-4">page = <span class="text-accentBlue">await</span> browser.new_page()</p>
-                        <p class="pl-4"><span class="text-accentBlue">await</span> page.goto(f"{target_url}/about-us", wait_until="networkidle")</p>
-                        <p class="pl-4">executives = <span class="text-accentBlue">await</span> page.evaluate("""() => Array.from(document.querySelectorAll('.leadership-card'))</p>
-                        <p class="pl-8">.map(el => ({ name: el.querySelector('h3')?.innerText, role: el.querySelector('p')?.innerText }))""")</p>
-                        <p class="pl-4"><span class="text-accentBlue">return</span> [e <span class="text-accentBlue">for</span> e <span class="text-accentBlue">in</span> executives <span class="text-accentBlue">if</span> any(t <span class="text-accentBlue">in</span> e['role'].lower() <span class="text-accentBlue">for</span> t <span class="text-accentBlue">in</span> ['ceo', 'founder', 'vp'])]</p>
+                    <div class="code-box p-4 text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                        <p><span class="text-aurora-cyan">async def</span> <span class="text-slate-200">extract_leadership_pool</span>(target_url):</p>
+                        <p class="pl-4">page = <span class="text-aurora-cyan">await</span> browser.new_page()</p>
+                        <p class="pl-4"><span class="text-aurora-cyan">await</span> page.goto(f"{target_url}/about-us", wait_until="networkidle")</p>
+                        <p class="pl-4">executives = <span class="text-aurora-cyan">await</span> page.evaluate("""() =&gt; Array.from(document.querySelectorAll('.leadership-card'))</p>
+                        <p class="pl-8">.map(el =&gt; ({ name: el.querySelector('h3')?.innerText, role: el.querySelector('p')?.innerText }))""")</p>
+                        <p class="pl-4"><span class="text-aurora-cyan">return</span> [e <span class="text-aurora-cyan">for</span> e <span class="text-aurora-cyan">in</span> executives <span class="text-aurora-cyan">if</span> any(t <span class="text-aurora-cyan">in</span> e['role'].lower() <span class="text-aurora-cyan">for</span> t <span class="text-aurora-cyan">in</span> ['ceo', 'founder', 'vp'])]</p>
                     </div>
                 </div>
             </div>
         </section>
 
-<section id="icebreaker-tech" class="py-20 px-8 border-t border-slate-900 bg-noir">
+        <!-- ═══════════ ICEBREAKER TECH ═══════════ -->
+        <section id="icebreaker-tech" class="relative py-20 px-6 md:px-8 border-t border-slate-900 bg-abyss/60">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="reveal-3d text-2xl font-serif font-bold text-white">Hyper-Personalized Outreach at Scale</h2>
@@ -1420,18 +944,18 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div class="sexy-luxury-card reveal-3d p-6">
-                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-2">Live Example : FinTech Series A</div>
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
+                        <div class="text-[9px] font-mono uppercase text-aurora-cyan mb-2">Live Example : FinTech Series A</div>
                         <h3 class="text-sm font-serif font-bold text-white">Trigger: EU merchant routing launch</h3>
-                        <div class="code-box-clean p-4 rounded-lg mt-3 text-xs text-slate-300 leading-relaxed">
+                        <div class="code-box p-4 mt-3 text-xs text-slate-300 leading-relaxed">
                             "Saw you rolled out automated SEPA routing across EU accounts last week. Curious how you are handling real-time dispute reconciliation at that volume. Built something similar for a payments startup that cut their chargeback rate by 34%."
                         </div>
                     </div>
 
-                    <div class="sexy-luxury-card reveal-3d p-6">
-                        <div class="text-[9px] font-mono uppercase text-accentBlue mb-2">Live Example : Enterprise Logistics</div>
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
+                        <div class="text-[9px] font-mono uppercase text-aurora-cyan mb-2">Live Example : Enterprise Logistics</div>
                         <h3 class="text-sm font-serif font-bold text-white">Trigger: Regional freight hub expansion</h3>
-                        <div class="code-box-clean p-4 rounded-lg mt-3 text-xs text-slate-300 leading-relaxed">
+                        <div class="code-box p-4 mt-3 text-xs text-slate-300 leading-relaxed">
                             "Noticed you expanded across three regional freight hubs this quarter. If your team is still managing dispatch coordination manually across 3PL partners, there is a straightforward automation that typically recovers 18 hours per week."
                         </div>
                     </div>
@@ -1439,7 +963,8 @@
             </div>
         </section>
 
-<section id="dns-governance" class="py-20 px-8 border-t border-slate-900 bg-pitch">
+        <!-- ═══════════ DNS GOVERNANCE ═══════════ -->
+        <section id="dns-governance" class="relative py-20 px-6 md:px-8 border-t border-slate-900">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-xl mx-auto mb-12">
                     <h2 class="reveal-3d text-2xl font-serif font-bold text-white">Email Infrastructure That Actually Lands</h2>
@@ -1447,19 +972,19 @@
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="sexy-luxury-card reveal-3d p-4 text-center">
-                        <div class="text-lg font-serif font-bold text-white">SPF & DKIM</div>
+                    <div class="aurora-card reveal-3d p-4 text-center cursor-pointer">
+                        <div class="text-lg font-serif font-bold text-white">SPF &amp; DKIM</div>
                         <p class="text-slate-400 text-[10px] mt-1">2048-bit key validation</p>
                     </div>
-                    <div class="sexy-luxury-card reveal-3d p-4 text-center">
-                        <div class="text-lg font-serif font-bold text-accentBlue">DMARC</div>
+                    <div class="aurora-card reveal-3d p-4 text-center cursor-pointer">
+                        <div class="text-lg font-serif font-bold text-aurora-cyan">DMARC</div>
                         <p class="text-slate-400 text-[10px] mt-1">`p=quarantine` policy</p>
                     </div>
-                    <div class="sexy-luxury-card reveal-3d p-4 text-center">
+                    <div class="aurora-card reveal-3d p-4 text-center cursor-pointer">
                         <div class="text-lg font-serif font-bold text-white">CNAME SSL</div>
                         <p class="text-slate-400 text-[10px] mt-1">Custom tracking domain</p>
                     </div>
-                    <div class="sexy-luxury-card reveal-3d p-4 text-center">
+                    <div class="aurora-card is-emerald reveal-3d p-4 text-center cursor-pointer">
                         <div class="text-lg font-serif font-bold text-emerald-400">&lt;2% Bounce</div>
                         <p class="text-slate-400 text-[10px] mt-1">ZeroBounce hygiene</p>
                     </div>
@@ -1467,21 +992,21 @@
             </div>
         </section>
 
-<section id="cold-email-copies" class="py-20 px-8 border-t border-slate-900 bg-noir">
+        <!-- ═══════════ COLD EMAIL COPIES ═══════════ -->
+        <section id="cold-email-copies" class="relative py-20 px-6 md:px-8 border-t border-slate-900 bg-abyss/60">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <h2 class="reveal-3d text-2xl md:text-3xl font-serif font-bold text-white">Psychological Copywriting &amp; Objection Mastery</h2>
                     <p class="text-slate-400 text-sm mt-2 font-normal max-w-xl mx-auto">The difference between a 2% reply rate and a 16% reply rate is psychological positioning. Below is how I engineer cold outreach hooks and neutralize commercial objections before they kill the deal.</p>
                 </div>
 
-                <!-- Cold Outreach Angle Vault -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="sexy-luxury-card reveal-3d p-6">
+                <div class="copy-framework-grid grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
                         <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
-                            <span class="text-xs font-mono text-accentBlue font-bold">Framework 01: Bottleneck Diagnosis</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-900 text-accentBlue font-mono text-[9px]">62% Open Rate</span>
+                            <span class="text-xs font-mono text-aurora-cyan font-bold">Framework 01: Bottleneck Diagnosis</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 text-aurora-cyan font-mono text-[9px]">62% Open Rate</span>
                         </div>
-                        <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-2 leading-relaxed">
+                        <div class="code-box p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                             <p class="text-slate-400 font-bold">Subject: quick question regarding {{company}} outbound</p>
                             <p>Hi {{first_name}},</p>
                             <p>Noticed {{company}} is aggressively expanding your commercial sales roster this quarter.</p>
@@ -1492,12 +1017,12 @@
                         <p class="mt-3 text-[11px] text-slate-400 italic">Psychology: Zero begging, validates executive growth, pinpoints a specific revenue leak, and proposes an ultra low friction screen share.</p>
                     </div>
 
-                    <div class="sexy-luxury-card reveal-3d p-6">
+                    <div class="aurora-card reveal-3d p-6 cursor-pointer">
                         <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
                             <span class="text-xs font-mono text-slate-300 font-bold">Framework 02: Permission Based Asset</span>
                             <span class="px-2 py-0.5 rounded bg-slate-900 text-white font-mono text-[9px]">16.4% Reply Rate</span>
                         </div>
-                        <div class="code-box-clean p-4 rounded-xl text-xs text-slate-300 space-y-2 leading-relaxed">
+                        <div class="code-box p-4 text-xs text-slate-300 space-y-2 leading-relaxed">
                             <p class="text-slate-400 font-bold">Subject: {{first_name}}, saw your {{trigger_event}} deployment</p>
                             <p>Hi {{first_name}},</p>
                             <p>Saw your team recently launched {{trigger_event}} across international markets.</p>
@@ -1508,34 +1033,34 @@
                     </div>
                 </div>
 
-                <!-- Consultative Objection Handling Matrix -->
+                <!-- Objection handling -->
                 <div class="mt-12">
                     <div class="text-center max-w-xl mx-auto mb-8">
                         <h3 class="reveal-3d text-xl font-serif font-bold text-white">Live Consultative Objection Neutralization</h3>
                         <p class="text-slate-400 text-xs mt-1 font-normal">How we reframe traditional pushbacks into high ticket discovery conversations.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                        <div class="sexy-luxury-card reveal-3d p-5">
+                    <div class="objection-grid grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div class="aurora-card reveal-3d p-5 cursor-pointer">
                             <div class="text-[9px] font-mono uppercase text-rose-400 mb-1">Objection 01</div>
                             <h4 class="text-sm font-serif font-bold text-white mb-2">"We already have an in-house team or agency."</h4>
-                            <div class="code-box-clean p-3 rounded-lg text-[11px] text-slate-300 leading-relaxed">
+                            <div class="code-box p-3 text-[11px] text-slate-300 leading-relaxed">
                                 "Understood completely. Most enterprise leaders we partner with already have an internal team. We do not replace them. We install the autonomous data enrichment and verification layer underneath them so your reps spend 100% of their time closing rather than building CSV lists. Worth a 5 minute look at how we feed their pipeline?"
                             </div>
                         </div>
 
-                        <div class="sexy-luxury-card reveal-3d p-5">
+                        <div class="aurora-card is-amber reveal-3d p-5 cursor-pointer">
                             <div class="text-[9px] font-mono uppercase text-amber-400 mb-1">Objection 02</div>
                             <h4 class="text-sm font-serif font-bold text-white mb-2">"Send info over email, we are too busy."</h4>
-                            <div class="code-box-clean p-3 rounded-lg text-[11px] text-slate-300 leading-relaxed">
+                            <div class="code-box p-3 text-[11px] text-slate-300 leading-relaxed">
                                 "Happy to send documentation over. To ensure I only send the exact architecture that fits your current setup, are you primarily focused on scaling cold email volume or speeding up inbound lead qualification to under 60 seconds?"
                             </div>
                         </div>
 
-                        <div class="sexy-luxury-card reveal-3d p-5">
-                            <div class="text-[9px] font-mono uppercase text-accentBlue mb-1">Objection 03</div>
+                        <div class="aurora-card reveal-3d p-5 cursor-pointer">
+                            <div class="text-[9px] font-mono uppercase text-aurora-cyan mb-1">Objection 03</div>
                             <h4 class="text-sm font-serif font-bold text-white mb-2">"Timing is not right for this quarter."</h4>
-                            <div class="code-box-clean p-3 rounded-lg text-[11px] text-slate-300 leading-relaxed">
+                            <div class="code-box p-3 text-[11px] text-slate-300 leading-relaxed">
                                 "Totally respect that timing is key. Out of curiosity, when you revisit pipeline growth in Q3, what is the single biggest bottleneck that would make an automated pipeline an immediate priority for the leadership team?"
                             </div>
                         </div>
@@ -1544,27 +1069,26 @@
             </div>
         </section>
 
-<section id="crm-speed-lead" class="py-24 px-8 border-t border-slate-900 bg-noir">
+        <!-- ═══════════ CRM & PROPOSALS ═══════════ -->
+        <section id="crm-speed-lead" class="relative py-24 px-6 md:px-8 border-t border-slate-900 bg-abyss/60">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-14">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-accentBlue/10 text-accentBlue border border-accentBlue/30 uppercase tracking-widest mb-3">
+                    <div class="badge-pill mb-3">
                         <i data-lucide="database" class="w-3.5 h-3.5"></i> CRM Speed-to-Lead &amp; Commercial Scope
                     </div>
                     <h2 class="reveal-3d text-3xl md:text-4xl font-serif font-bold text-white tracking-tight">CRM Architecture &amp; Enterprise Proposals</h2>
                     <p class="text-slate-400 text-sm mt-3 font-normal leading-relaxed">The fastest company to respond wins the deal. Below are production speed-to-lead pipelines alongside battle-tested commercial proposal frameworks.</p>
                 </div>
 
-                <!-- 4 Cards Grid: 2 CRM Engines + 2 High-Ticket Proposal Blueprints -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <!-- Card 1: Close CRM Architecture -->
-                    <div class="sexy-luxury-card reveal-3d p-7 group">
+
+                    <div class="aurora-card reveal-3d p-7 group cursor-pointer">
                         <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/[0.06]">
-                            <div class="flex items-center space-x-2 text-accentBlue font-mono text-[10px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center space-x-2 text-aurora-cyan font-mono text-[10px] font-bold uppercase tracking-wider">
                                 <i data-lucide="zap" class="w-3.5 h-3.5"></i>
                                 <span>Close CRM Architecture</span>
                             </div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-accentBlue/10 text-accentBlue border border-accentBlue/30 text-[9px] font-mono font-bold">SUB-60s SPEED</span>
+                            <span class="badge-pill">SUB-60s SPEED</span>
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-2">Smart Views, Auto-Sequences &amp; Heat Routing</h3>
                         <p class="text-slate-300 text-xs leading-relaxed font-light mb-4">
@@ -1572,20 +1096,19 @@
                         </p>
                         <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
                             <span class="text-emerald-400 font-bold">Response: &lt;60 Seconds</span>
-                            <span class="text-slate-400 text-[11px] group-hover:text-accentBlue transition flex items-center gap-1 font-bold">
+                            <span class="text-slate-400 text-[11px] group-hover:text-aurora-cyan transition flex items-center gap-1 font-bold">
                                 <span>Inspect Architecture</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Card 2: HubSpot Pipeline Automation -->
-                    <div class="sexy-luxury-card reveal-3d p-7 group">
+                    <div class="aurora-card is-emerald reveal-3d p-7 group cursor-pointer">
                         <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/[0.06]">
                             <div class="flex items-center space-x-2 text-emerald-400 font-mono text-[10px] font-bold uppercase tracking-wider">
                                 <i data-lucide="workflow" class="w-3.5 h-3.5"></i>
                                 <span>HubSpot Architecture</span>
                             </div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[9px] font-mono font-bold">AUTOMATED DISPATCH</span>
+                            <span class="badge-pill badge-emerald">AUTOMATED DISPATCH</span>
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-2">Pipeline Automation &amp; Round-Robin Calendar</h3>
                         <p class="text-slate-300 text-xs leading-relaxed font-light mb-4">
@@ -1599,35 +1122,33 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: Commercial Proposal 01 - SMB AI Automation Scope -->
-                    <div class="sexy-luxury-card reveal-3d p-7 group border-l-2 border-l-accentBlue">
+                    <div class="aurora-card aurora-hairline reveal-3d p-7 group cursor-pointer">
                         <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/[0.06]">
-                            <div class="flex items-center space-x-2 text-sky-400 font-mono text-[10px] font-bold uppercase tracking-wider">
+                            <div class="flex items-center space-x-2 text-aurora-cyan font-mono text-[10px] font-bold uppercase tracking-wider">
                                 <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
                                 <span>Commercial Proposal Blueprint</span>
                             </div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-400/30 text-[9px] font-mono font-bold">$3,500 – $5,000 SCOPE</span>
+                            <span class="badge-pill">$3,500 – $5,000 SCOPE</span>
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-2">Enterprise AI Automation &amp; Growth Scope</h3>
                         <p class="text-slate-300 text-xs leading-relaxed font-light mb-4">
                             Production deliverables agreement: multi-inbox deliverability setup, automated data enrichment, webhook speed-to-lead middleware, and SLA terms with structured milestones.
                         </p>
                         <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
-                            <span class="text-sky-300 font-bold">Terms: 50% Kickoff / 50% Deploy</span>
-                            <span class="text-slate-400 text-[11px] group-hover:text-sky-400 transition flex items-center gap-1 font-bold">
+                            <span class="text-aurora-cyan font-bold">Terms: 50% Kickoff / 50% Deploy</span>
+                            <span class="text-slate-400 text-[11px] group-hover:text-aurora-cyan transition flex items-center gap-1 font-bold">
                                 <span>View Full Proposal Scope</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </span>
                         </div>
                     </div>
 
-                    <!-- Card 4: Commercial Proposal 02 - B2B Outbound Engine Retainer -->
-                    <div class="sexy-luxury-card reveal-3d p-7 group border-l-2 border-l-emerald-500">
+                    <div class="aurora-card is-emerald reveal-3d p-7 group cursor-pointer">
                         <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/[0.06]">
                             <div class="flex items-center space-x-2 text-emerald-400 font-mono text-[10px] font-bold uppercase tracking-wider">
                                 <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
                                 <span>Retainer Proposal Blueprint</span>
                             </div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-400/30 text-[9px] font-mono font-bold">$2,500/MO RETAINER</span>
+                            <span class="badge-pill badge-emerald">$2,500/MO RETAINER</span>
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-2">High-Velocity Outbound Engine &amp; Monthly Optimization</h3>
                         <p class="text-slate-300 text-xs leading-relaxed font-light mb-4">
@@ -1645,145 +1166,23 @@
             </div>
         </section>
 
-<footer class="py-10 px-8 border-t border-slate-900 bg-pitch text-center text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <!-- ═══════════ FOOTER ═══════════ -->
+        <footer class="relative py-10 px-6 md:px-8 border-t border-slate-900 text-center text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
                 <div>&copy; 2026 Idrees Qurashi — AI Integration &amp; Automation Engineer. All rights reserved.</div>
-                <div class="flex items-center space-x-6">
-                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-accentBlue transition">GitHub</a>
-                    <div class="flex space-x-4">
-                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-3d-grey px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
-                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-                        <span>Contact Form</span>
-                    </a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
-                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-                        <span>Chat to Owner</span>
-                    </a>
-                </div>
-                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-accentBlue transition">Email</a>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition">GitHub</a>
+                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-aurora-cyan transition">Email</a>
+                    <a href="contact.html" class="hover:text-aurora-cyan transition">Contact</a>
+                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition">WhatsApp</a>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- ELEGANT 3D TOPOGRAPHICAL WAVE CANVAS (SLATE/CYBER-BLUE TONE) -->
-    <script>
-        const canvas = document.getElementById('three-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        const width = 60;
-        const height = 40;
-        const segmentsW = 45;
-        const segmentsH = 30;
-        const geometry = new THREE.PlaneGeometry(width, height, segmentsW, segmentsH);
-
-        const material = new THREE.MeshBasicMaterial({
-            color: 0x38bdf8,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.12
-        });
-
-        const terrain = new THREE.Mesh(geometry, material);
-        terrain.rotation.x = -Math.PI / 2.5;
-        terrain.position.y = -6;
-        scene.add(terrain);
-
-        camera.position.z = 18;
-        camera.position.y = 4;
-
-        let mouseX = 0;
-        let mouseY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.8;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.8;
-        });
-
-        const pos = geometry.attributes.position;
-        const initialZ = new Float32Array(pos.count);
-        for(let i = 0; i < pos.count; i++) {
-            initialZ[i] = pos.getZ(i);
-        }
-
-        let clock = new THREE.Clock();
-
-        function animate() {
-            requestAnimationFrame(animate);
-            const time = clock.getElapsedTime() * 0.7;
-
-            for(let i = 0; i < pos.count; i++) {
-                const x = pos.getX(i);
-                const y = pos.getY(i);
-                const z = Math.sin(x * 0.2 + time) * Math.cos(y * 0.2 + time) * 1.8;
-                pos.setZ(i, z);
-            }
-            pos.needsUpdate = true;
-
-            terrain.rotation.z = Math.sin(time * 0.15) * 0.05;
-            camera.position.x += (mouseX * 4 - camera.position.x) * 0.05;
-            camera.position.y += (4 - mouseY * 2 - camera.position.y) * 0.05;
-            camera.lookAt(0, -2, 0);
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        lucide.createIcons();
-
-        // Live Work Vault filter tabs
-        const filterBar = document.getElementById('vault-filter-bar');
-        if (filterBar) {
-            filterBar.addEventListener('click', function(e) {
-                const btn = e.target.closest('.vault-filter-tab');
-                if (!btn) return;
-                filterBar.querySelectorAll('.vault-filter-tab').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.vault-card').forEach(card => {
-                    if (filter === 'all') {
-                        card.classList.remove('hidden');
-                    } else {
-                        const tags = (card.dataset.tags || '').split(' ');
-                        card.classList.toggle('hidden', !tags.includes(filter));
-                    }
-                });
-            });
-        }
-
-
-        // ── SCROLL 3D REVEAL ──────────────────────────────────
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.reveal-3d').forEach(el => {
-            revealObserver.observe(el);
-        });
-
-    </script>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         ENKI POP-OUT CINEMA WINDOW (EXACT OS CONTAINER SIZE)
-    ═══════════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════ POPOUT OS WINDOW ═══════════ -->
     <div id="enki-popout-overlay" onclick="closePopout(event)">
-        <div id="enki-popout-window" onclick="event.stopPropagation()">
-            <!-- Window Titlebar -->
+        <div id="enki-popout-window" onclick="event.stopPropagation()" role="dialog" aria-modal="true">
             <div class="window-titlebar">
                 <div class="window-dots">
                     <span class="w-dot w-dot-close" onclick="closePopout()" title="Close (Esc)"></span>
@@ -1791,23 +1190,49 @@
                     <span class="w-dot w-dot-max"></span>
                 </div>
                 <div class="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest flex items-center gap-2" id="popout-window-title">
-                    <span class="w-2 h-2 rounded-full bg-accentBlue animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-aurora-cyan animate-pulse"></span>
                     <span>System Architecture Inspection</span>
                 </div>
                 <button onclick="closePopout()" class="text-slate-400 hover:text-white text-xs font-mono px-2 py-1 rounded bg-slate-800/60 hover:bg-slate-700">
                     ✕ ESC
                 </button>
             </div>
+            <div class="window-body" id="popout-window-body"></div>
+        </div>
+    </div>
 
-            <!-- Window Dynamic Body -->
-            <div class="window-body" id="popout-window-body">
-                <!-- Content injected dynamically on card click -->
-            </div>
+    <!-- ═══════════ CONTACT MODAL ═══════════ -->
+    <div id="contact-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="aurora-card w-full max-w-lg p-8 relative">
+            <button onclick="document.getElementById('contact-modal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-white" aria-label="Close contact form">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h2 class="font-serif text-2xl text-white font-bold mb-2">Send a Message</h2>
+            <p class="text-sm text-slate-400 mb-6 font-mono">Will be sent directly to my Discord workspace via API.</p>
+
+            <form id="contact-form" class="space-y-4">
+                <div>
+                    <label for="form-name" class="block text-xs font-mono text-aurora-cyan uppercase mb-1">Name</label>
+                    <input type="text" id="form-name" name="name" required class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-aurora-cyan">
+                </div>
+                <div>
+                    <label for="form-email" class="block text-xs font-mono text-aurora-cyan uppercase mb-1">Email</label>
+                    <input type="email" id="form-email" name="email" required class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-aurora-cyan">
+                </div>
+                <div>
+                    <label for="form-message" class="block text-xs font-mono text-aurora-cyan uppercase mb-1">Message</label>
+                    <textarea id="form-message" name="message" required rows="4" class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-aurora-cyan"></textarea>
+                </div>
+                <button type="submit" class="btn-aurora w-full py-3 text-sm font-mono uppercase tracking-widest mt-4">
+                    Send via Webhook
+                </button>
+                <div id="form-status" class="hidden text-sm font-mono mt-3 text-center leading-relaxed"></div>
+            </form>
         </div>
     </div>
 
     <script>
-    // Agentic Suite Card Popout Router
+    // ═══════════ AGENTIC POPOUT DATA (content preserved) ═══════════
     window.openAgenticCard = function(index) {
         const agenticCards = {
             1: {
@@ -1871,7 +1296,7 @@
         }
     };
 
-// Global Popout Engine
+    // ═══════════ GLOBAL POPOUT ENGINE ═══════════
     window.openPopout = function(data) {
         if (!data) return;
         const overlay = document.getElementById('enki-popout-overlay');
@@ -1879,8 +1304,8 @@
         const bodyEl = document.getElementById('popout-window-body');
         if (!overlay || !titleEl || !bodyEl) return;
 
-        titleEl.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-accentBlue animate-pulse"></span> <span class="text-white tracking-widest font-mono text-[11px]">${data.badge || 'SYSTEM OVERVIEW'}</span>`;
-        
+        titleEl.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-aurora-cyan animate-pulse"></span> <span class="text-white tracking-widest font-mono text-[11px]">${data.badge || 'SYSTEM OVERVIEW'}</span>`;
+
         let mediaHtml = '';
         if (data.video) {
             mediaHtml = `
@@ -1888,7 +1313,7 @@
                     <video controls autoplay muted loop playsinline class="w-full h-full object-cover">
                         <source src="${data.video}" type="video/mp4">
                     </video>
-                    <div class="absolute top-3 right-3 px-3 py-1 rounded-lg bg-black/80 backdrop-blur border border-white/10 text-[10px] font-mono text-sky-400 font-bold flex items-center gap-1.5 pointer-events-none">
+                    <div class="absolute top-3 right-3 px-3 py-1 rounded-lg bg-black/80 backdrop-blur border border-white/10 text-[10px] font-mono text-aurora-cyan font-bold flex items-center gap-1.5 pointer-events-none">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> LIVE SCREENCAST
                     </div>
                 </div>
@@ -1900,7 +1325,7 @@
                         <i data-lucide="lock" class="w-8 h-8 text-amber-300"></i>
                     </div>
                     <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-xs font-extrabold uppercase mb-2 border border-amber-500/40 tracking-widest">PROPRIETARY COMMERCIAL ASSET</span>
-                    <div class="text-3xl font-mono font-bold text-amber-400 mb-2">${data.price || '$1,000'} <span class="text-xs text-slate-400 font-normal">/ Private License</span></div>
+                    <div class="text-3xl font-mono font-bold text-amber-glow mb-2">${data.price || '$1,000'} <span class="text-xs text-slate-400 font-normal">/ Private License</span></div>
                     <p class="text-slate-300 text-xs max-w-md leading-relaxed font-light">${data.lockNotice || 'Commercial enterprise license required. Raw code and blueprints are protected under private licensing agreement.'}</p>
                 </div>
             `;
@@ -1908,20 +1333,20 @@
 
         let buttonsHtml = '';
         if (data.pageUrl) {
-            buttonsHtml += `<a href="${data.pageUrl}" class="btn-3d-blue px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2"><span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
+            buttonsHtml += `<a href="${data.pageUrl}" class="btn-aurora px-5 py-2.5 text-xs font-mono"><span>Open Full Webpage</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>`;
         }
         if (data.blueprintUrl) {
-            buttonsHtml += `<a href="${data.blueprintUrl}" download class="btn-3d-grey px-5 py-2.5 text-xs font-mono font-bold flex items-center gap-2 text-slate-200"><span>Download Blueprint (.json)</span><i data-lucide="download" class="w-4 h-4"></i></a>`;
+            buttonsHtml += `<a href="${data.blueprintUrl}" download class="btn-graphite px-5 py-2.5 text-xs font-mono"><span>Download Blueprint (.json)</span><i data-lucide="download" class="w-4 h-4"></i></a>`;
         }
         if (data.chatMsg) {
-            buttonsHtml += `<a href="https://wa.me/923489911425?text=${encodeURIComponent(data.chatMsg)}" target="_blank" class="btn-3d-blue px-6 py-2.5 text-xs font-mono font-extrabold uppercase flex items-center gap-2"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
+            buttonsHtml += `<a href="https://wa.me/923489911425?text=${encodeURIComponent(data.chatMsg)}" target="_blank" rel="noopener" class="btn-aurora px-6 py-2.5 text-xs font-mono uppercase"><span>Chat to Owner</span><i data-lucide="message-square" class="w-4 h-4"></i></a>`;
         } else {
             buttonsHtml += `<div class="flex space-x-4">
-                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-3d-grey px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-graphite px-5 py-2 text-xs font-mono uppercase tracking-wider font-bold">
                         <i data-lucide="mail" class="w-3.5 h-3.5"></i>
                         <span>Contact Form</span>
                     </a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="btn-3d-blue px-5 py-2 text-xs font-mono uppercase tracking-wider font-extrabold flex items-center space-x-2">
+                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-aurora px-5 py-2 text-xs font-mono uppercase tracking-wider">
                         <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
                         <span>Chat to Owner</span>
                     </a>
@@ -1930,18 +1355,18 @@
 
         let stackPills = '';
         if (data.stack) {
-            stackPills = data.stack.split('•').map(s => `<span class="px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/[0.1] font-mono text-[10px] text-slate-300 font-medium">${s.trim()}</span>`).join(' ');
+            stackPills = data.stack.split('•').map(s => `<span class="stack-tag">${s.trim()}</span>`).join(' ');
         }
 
         let specsRow = `
-            <div class="grid grid-cols-3 gap-3 mb-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                 <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
                     <span class="text-[9px] font-mono uppercase text-slate-500 block">Performance Benchmark</span>
                     <span class="text-xs font-serif font-bold text-white mt-1 block">${data.outcome || '<60s Speed-to-Lead'}</span>
                 </div>
                 <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
                     <span class="text-[9px] font-mono uppercase text-slate-500 block">Architecture Type</span>
-                    <span class="text-xs font-serif font-bold text-accentBlue mt-1 block">${data.tag || 'Deterministic Agent'}</span>
+                    <span class="text-xs font-serif font-bold text-aurora-cyan mt-1 block">${data.tag || 'Deterministic Agent'}</span>
                 </div>
                 <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
                     <span class="text-[9px] font-mono uppercase text-slate-500 block">Execution Status</span>
@@ -1953,9 +1378,9 @@
         bodyEl.innerHTML = `
             <div class="max-w-3xl mx-auto">
                 <div class="mb-6 pb-5 border-b border-white/[0.08]">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="px-3 py-1 rounded-full text-[10px] font-mono font-extrabold bg-sky-500/10 text-sky-400 border border-sky-400/30 uppercase tracking-widest">${data.tag || 'PRODUCTION ARCHITECTURE'}</span>
-                        <span class="px-2.5 py-1 rounded-full text-[9px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">VERIFIED</span>
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="badge-pill">${data.tag || 'PRODUCTION ARCHITECTURE'}</span>
+                        <span class="badge-pill badge-emerald">VERIFIED</span>
                     </div>
                     <h2 class="text-2xl md:text-4xl font-serif font-bold text-white tracking-tight leading-tight">${data.title}</h2>
                     <div class="flex flex-wrap gap-1.5 mt-3">${stackPills}</div>
@@ -1984,7 +1409,7 @@
 
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-slate-900/80 border border-slate-800 flex flex-wrap items-center justify-between gap-4 shadow-xl">
                     <div class="flex items-center space-x-3">
-                        <div class="w-9 h-9 rounded-xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue">
+                        <div class="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-aurora-cyan">
                             <i data-lucide="shield-check" class="w-5 h-5"></i>
                         </div>
                         <div>
@@ -2012,17 +1437,20 @@
     };
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') window.closePopout();
+        if (e.key === 'Escape') {
+            window.closePopout();
+            document.getElementById('contact-modal').classList.add('hidden');
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
     });
 
-        // Wire up ALL cards with smart data hooks from Top to Bottom
-    
+    // ═══════════ CARD BINDINGS (content preserved) ═══════════
     function initCardBindings() {
 
-        // 1. Hero Card 1: AI Automation & Agentic Systems
-        const hero1 = document.querySelector('.sexy-luxury-card:first-of-type');
-        if (hero1) {
-            hero1.onclick = () => openPopout({
+        // Hero cards
+        const heroCards = document.querySelectorAll('#hero .aurora-card');
+        if (heroCards[0]) {
+            heroCards[0].onclick = () => openPopout({
                 badge: 'FLAGSHIP AI AGENTIC SUITE',
                 tag: 'Make.com • n8n MCP • LangGraph • Claude Code',
                 title: 'Autonomous Systems Engine & MCP Architectures',
@@ -2034,11 +1462,8 @@
                 chatMsg: 'Hi Idrees, I want to inspect and deploy your Autonomous Systems Engine & MCP Architecture.'
             });
         }
-
-        // 2. Hero Card 2: Lead Gen at AI Automation Scale
-        const hero2 = document.querySelector('.sexy-card-emerald');
-        if (hero2) {
-            hero2.onclick = () => openPopout({
+        if (heroCards[1]) {
+            heroCards[1].onclick = () => openPopout({
                 badge: 'HIGH-VELOCITY OUTBOUND REVOPS',
                 tag: 'Apify • ZeroBounce • Instantly • Smartlead',
                 title: '$350K+ Pipeline Engine & Outbound Infrastructure',
@@ -2051,7 +1476,7 @@
             });
         }
 
-        // 3. Client Proof Cards (Green TV, Apache Pizza, Healthcare, Drive Vault)
+        // Client proof cards
         const clientsData = [
             {
                 title: 'Green TV Entertainment',
@@ -2106,7 +1531,7 @@
             }
         });
 
-        // 4. Client Highlight Mini-Badges
+        // Highlight mini-badges
         const highlightsData = [
             {
                 title: 'Shopify COD Fraud Shield',
@@ -2153,13 +1578,11 @@
         document.querySelectorAll('#client-proof-section .highlight-card').forEach((card, idx) => {
             const data = highlightsData[idx];
             if (data) {
-                card.onclick = (e) => {
-                    openPopout(data);
-                };
+                card.onclick = () => openPopout(data);
             }
         });
 
-        // 5. The 10 Master Workflows Vault
+        // 10 Master Workflows
         const workflowsData = [
             {
                 id: 1,
@@ -2305,7 +1728,7 @@
             }
         });
 
-        // 6. Community Blueprints Cards (3 Cards)
+        // Community blueprints
         const blueprintsData = [
             {
                 title: 'Sub-10s Dynamic Lead Scoring',
@@ -2342,7 +1765,7 @@
             }
         ];
 
-        document.querySelectorAll('#n8n-blueprints .sexy-luxury-card').forEach((card, idx) => {
+        document.querySelectorAll('#n8n-blueprints .aurora-card').forEach((card, idx) => {
             const data = blueprintsData[idx];
             if (data) {
                 card.onclick = (e) => {
@@ -2352,7 +1775,7 @@
             }
         });
 
-        // 7. Outbound Lead Gen Matrix (Stage 01, 02, 03)
+        // Outbound stages
         const outboundStages = [
             {
                 title: 'Apify Scraping & LinkedIn Extraction',
@@ -2386,16 +1809,14 @@
             }
         ];
 
-        document.querySelectorAll('#leadgen-matrix .sexy-luxury-card').forEach((card, idx) => {
+        document.querySelectorAll('#leadgen-matrix .aurora-card').forEach((card, idx) => {
             const data = outboundStages[idx];
             if (data) {
-                card.onclick = (e) => {
-                    openPopout(data);
-                };
+                card.onclick = () => openPopout(data);
             }
         });
 
-        // 8. Dynamic Icebreaker Examples (FinTech & Logistics)
+        // Icebreaker examples
         const icebreakerCards = [
             {
                 title: 'FinTech Series A Icebreaker Engine',
@@ -2419,16 +1840,14 @@
             }
         ];
 
-        document.querySelectorAll('#icebreaker-tech .sexy-luxury-card').forEach((card, idx) => {
+        document.querySelectorAll('#icebreaker-tech .aurora-card').forEach((card, idx) => {
             const data = icebreakerCards[idx];
             if (data) {
-                card.onclick = (e) => {
-                    openPopout(data);
-                };
+                card.onclick = () => openPopout(data);
             }
         });
 
-        // 9. DNS Governance Cards (SPF, DMARC, CNAME, ZeroBounce)
+        // DNS governance cards
         const dnsCards = [
             {
                 title: 'SPF & DKIM Cryptographic Validation',
@@ -2472,16 +1891,14 @@
             }
         ];
 
-        document.querySelectorAll('#dns-governance .sexy-luxury-card').forEach((card, idx) => {
+        document.querySelectorAll('#dns-governance .aurora-card').forEach((card, idx) => {
             const data = dnsCards[idx];
             if (data) {
-                card.onclick = (e) => {
-                    openPopout(data);
-                };
+                card.onclick = () => openPopout(data);
             }
         });
 
-        // 10. Copywriting Angles & Objection Handling Cards
+        // Copy frameworks + objections
         const copyCards = [
             {
                 title: 'Bottleneck Diagnosis Outreach Framework',
@@ -2505,16 +1922,13 @@
             }
         ];
 
-        document.querySelectorAll('#cold-email-copies .grid:first-of-type .sexy-luxury-card').forEach((card, idx) => {
+        document.querySelectorAll('#cold-email-copies .copy-framework-grid .aurora-card').forEach((card, idx) => {
             const data = copyCards[idx];
             if (data) {
-                card.onclick = (e) => {
-                    openPopout(data);
-                };
+                card.onclick = () => openPopout(data);
             }
         });
 
-        // 11. Objection Neutralization Cards (Objections 01, 02, 03)
         const objectionCards = [
             {
                 title: 'Objection 01: "We already have an in-house team or agency"',
@@ -2548,72 +1962,169 @@
             }
         ];
 
-        document.querySelectorAll('#cold-email-copies .grid:last-of-type .sexy-luxury-card').forEach((card, idx) => {
+        document.querySelectorAll('#cold-email-copies .objection-grid .aurora-card').forEach((card, idx) => {
             const data = objectionCards[idx];
             if (data) {
-                card.onclick = (e) => {
-                    openPopout(data);
-                };
+                card.onclick = () => openPopout(data);
             }
         });
 
     }
+
+    // ═══════════ RUNTIME ═══════════
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initCardBindings);
     } else {
         initCardBindings();
     }
+
+    // Lucide icons (deferred script)
+    window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) lucide.createIcons(); else setTimeout(() => window.lucide && lucide.createIcons(), 600);
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            menuBtn.setAttribute('aria-expanded', String(open));
+        });
+    }
+
+    // Vault filter tabs (scoped to workflows vault)
+    const filterBar = document.getElementById('vault-filter-bar');
+    if (filterBar) {
+        filterBar.addEventListener('click', function(e) {
+            const btn = e.target.closest('.vault-filter-tab');
+            if (!btn) return;
+            filterBar.querySelectorAll('.vault-filter-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('#master-workflows-vault .vault-card').forEach(card => {
+                if (filter === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    const tags = (card.dataset.tags || '').split(' ');
+                    card.classList.toggle('hidden', !tags.includes(filter));
+                }
+            });
+            if (window.lucide) lucide.createIcons();
+        });
+    }
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal-3d').forEach(el => revealObserver.observe(el));
+
+    // Videos: play only while visible (saves bandwidth, respects reduced motion)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const v = entry.target;
+                if (entry.isIntersecting) {
+                    v.play().catch(() => {});
+                } else {
+                    v.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+        document.querySelectorAll('video[data-autoplay]').forEach(v => videoObserver.observe(v));
+    }
+
+    // ═══════════ AURORA TOPOGRAPHY CANVAS ═══════════
+    window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('three-canvas');
+        if (!canvas || !window.THREE) return;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const geometry = new THREE.PlaneGeometry(60, 40, 45, 30);
+        const material = new THREE.MeshBasicMaterial({
+            color: 0x22d3ee,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.10
+        });
+
+        const terrain = new THREE.Mesh(geometry, material);
+        terrain.rotation.x = -Math.PI / 2.5;
+        terrain.position.y = -6;
+        scene.add(terrain);
+
+        camera.position.z = 18;
+        camera.position.y = 4;
+
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.8;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.8;
+        });
+
+        const pos = geometry.attributes.position;
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = clock.getElapsedTime() * 0.7;
+            for (let i = 0; i < pos.count; i++) {
+                const x = pos.getX(i);
+                const y = pos.getY(i);
+                const z = Math.sin(x * 0.2 + time) * Math.cos(y * 0.2 + time) * 1.8;
+                pos.setZ(i, z);
+            }
+            pos.needsUpdate = true;
+            terrain.rotation.z = Math.sin(time * 0.15) * 0.05;
+            camera.position.x += (mouseX * 4 - camera.position.x) * 0.05;
+            camera.position.y += (4 - mouseY * 2 - camera.position.y) * 0.05;
+            camera.lookAt(0, -2, 0);
+            renderer.render(scene, camera);
+        }
+
+        if (prefersReducedMotion) {
+            renderer.render(scene, camera);
+        } else {
+            animate();
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    });
     </script>
 
-
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="panel-monument-clean w-full max-w-lg p-8 relative">
-            <button onclick="document.getElementById('contact-modal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <h2 class="font-serif text-2xl text-white font-bold mb-2">Send a Message</h2>
-            <p class="text-sm text-slate-400 mb-6 font-mono">Will be sent directly to my Discord workspace via API.</p>
-            
-            <form id="contact-form" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-mono text-accentBlue uppercase mb-1">Name</label>
-                    <input type="text" id="form-name" required class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-accentBlue font-sans">
-                </div>
-                <div>
-                    <label class="block text-xs font-mono text-accentBlue uppercase mb-1">Email</label>
-                    <input type="email" id="form-email" required class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-accentBlue font-sans">
-                </div>
-                <div>
-                    <label class="block text-xs font-mono text-accentBlue uppercase mb-1">Message</label>
-                    <textarea id="form-message" required rows="4" class="w-full bg-black/50 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-accentBlue font-sans"></textarea>
-                </div>
-                <button type="submit" class="btn-3d-blue w-full py-3 text-sm font-mono uppercase tracking-widest mt-4">
-                    Send via Webhook
-                </button>
-                <div id="form-status" class="hidden text-sm font-mono mt-3 text-center"></div>
-            </form>
-        </div>
-    </div>
-
-
     <script>
+        // ═══════════ CONTACT FORM (graceful placeholder fallback) ═══════════
         document.getElementById('contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('form-name').value;
             const email = document.getElementById('form-email').value;
             const message = document.getElementById('form-message').value;
             const statusEl = document.getElementById('form-status');
             const btn = e.target.querySelector('button[type="submit"]');
-            
-            // NOTE: Replace this with your actual Discord Webhook URL.
-            // DO NOT commit the URL if the repository is public! Use a serverless function if possible.
-            // For now, it will look for a URL. 
+
+            // Replace with your Discord webhook URL. Never commit a live webhook to a public repo —
+            // use a serverless proxy (Cloudflare Worker / Vercel Function) instead.
             const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
-            
+
             if (webhookUrl === 'YOUR_DISCORD_WEBHOOK_URL_HERE') {
-                statusEl.innerHTML = '<span class="text-yellow-400">Please configure the Webhook URL in index.html first!</span>';
+                statusEl.innerHTML = '<span class="text-amber-400">Direct delivery is being set up.</span><br><a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="text-aurora-cyan underline font-bold mt-2 inline-block">Message me on WhatsApp instead →</a>';
                 statusEl.classList.remove('hidden');
                 return;
             }
@@ -2640,15 +2151,15 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                
+
                 if (response.ok) {
-                    statusEl.innerHTML = '<span class="text-green-400">Message sent successfully!</span>';
+                    statusEl.innerHTML = '<span class="text-emerald-400">Message sent successfully!</span>';
                     document.getElementById('contact-form').reset();
                 } else {
-                    statusEl.innerHTML = '<span class="text-red-400">Failed to send message.</span>';
+                    statusEl.innerHTML = '<span class="text-rose-400">Failed to send message.</span>';
                 }
             } catch (err) {
-                statusEl.innerHTML = '<span class="text-red-400">Error: ' + err.message + '</span>';
+                statusEl.innerHTML = '<span class="text-rose-400">Error: ' + err.message + '</span>';
             } finally {
                 statusEl.classList.remove('hidden');
                 btn.innerText = 'SEND VIA WEBHOOK';

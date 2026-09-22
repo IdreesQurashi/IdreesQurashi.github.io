@@ -1,0 +1,13 @@
+{
+  "name": "idreesqurashi-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Idrees Qurashi — Agentic AI Solutions Architect & B2B Growth portfolio",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/tailwind.input.css -o ./assets/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./assets/tailwind.input.css -o ./assets/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

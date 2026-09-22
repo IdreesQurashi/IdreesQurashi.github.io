@@ -1,83 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="grain">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Architectures & Systems OS | Idrees Qurashi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { serif: ['"Cinzel"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
-                    colors: { pitch: '#000000', noir: '#050505', charcoal: '#0c0c0c', border: '#171717', gold: '#d4af37', goldLight: '#f3e5ab' }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #000000; color: #c4c4c4; }
-        .canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.35; }
-        .old-money-panel { background: rgba(8, 8, 8, 0.92); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .old-money-panel:hover { border-color: rgba(212, 175, 55, 0.35); transform: translateY(-2px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .gold-border { border: 1px solid rgba(212, 175, 55, 0.25); }
+    <title>Agentic Lab — Systems Protocols &amp; Multi-Agent Architecture | Idrees Qurashi</title>
+    <meta name="description" content="Production multi-agent workflows, autonomous tool loops, persistent context ledgers, and deterministic LLM evaluation pipelines designed and deployed by Idrees Qurashi.">
+    <link rel="canonical" href="https://idreesqurashi.github.io/agentic-lab.html">
+    <meta name="theme-color" content="#05060a">
 
-        /* Popout Modal */
-        #protocol-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 999999;
-            background: rgba(0, 0, 0, 0.88);
-            backdrop-filter: blur(16px);
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-        #protocol-modal.active {
-            display: flex !important;
-            opacity: 1 !important;
-        }
-        #protocol-window {
-            width: 92vw;
-            max-width: 1050px;
-            height: 85vh;
-            max-height: 800px;
-            background: #07090e;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 16px;
-            box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.98), 0 0 30px -5px rgba(212, 175, 55, 0.15);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transform: scale(0.95) translateY(15px);
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #protocol-modal.active #protocol-window {
-            transform: scale(1) translateY(0);
-        }
-        .window-titlebar {
-            height: 48px;
-            background: #0c0f17;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-shrink: 0;
-        }
-        .window-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 24px 28px;
-            scrollbar-width: thin;
-            scrollbar-color: #d4af37 #0c0f17;
-        }
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agentic Lab — Systems Protocols &amp; Multi-Agent Architecture | Idrees Qurashi">
+    <meta property="og:description" content="Production multi-agent workflows, autonomous tool loops, persistent context ledgers, and deterministic LLM evaluation pipelines.">
+    <meta property="og:url" content="https://idreesqurashi.github.io/agentic-lab.html">
+    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
+    <link rel="apple-touch-icon" href="brand_logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/tailwind.css">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+
+    <style>
         pre code {
             font-family: 'JetBrains Mono', monospace;
             font-size: 12.5px;
@@ -85,83 +36,107 @@
         }
     </style>
 </head>
-<body class="bg-pitch font-sans antialiased selection:bg-gold selection:text-black relative">
-    <canvas id="three-canvas" class="canvas-bg"></canvas>
+<body class="font-sans antialiased">
+
+    <div class="aurora-glow w-[700px] h-[340px] bg-cyan-500/[0.06] top-10 left-1/2 -translate-x-1/2"></div>
+    <div class="aurora-glow w-[420px] h-[300px] bg-violet-500/[0.06] bottom-24 right-4"></div>
 
     <div class="relative z-10">
-        <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-50 old-money-panel border-b border-border/80 px-8 py-5">
-            <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-4">
-                    <div class="w-10 h-10 rounded-sm bg-gradient-to-br from-neutral-800 to-black border gold-border flex items-center justify-center font-serif font-bold text-goldLight text-lg">IQ</div>
-                    <div>
-                        <div class="font-serif font-bold text-base text-white tracking-widest uppercase">Idrees Qurashi</div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Autonomous Systems & Enterprise Growth</div>
+
+        <!-- ═══════════ UNIFIED NAVBAR ═══════════ -->
+        <nav class="nav-glass fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 py-3">
+            <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0" aria-label="Idrees Qurashi — home">
+                    <div class="w-10 h-10 rounded-xl overflow-hidden border border-slate-700/70 shadow-lg shadow-black/60 bg-black">
+                        <img src="brand_logo.png" alt="Idrees Qurashi monogram" class="w-full h-full object-cover">
+                    </div>
+                    <div class="hidden sm:block">
+                        <div class="font-serif font-bold text-sm text-white tracking-widest uppercase">Idrees Qurashi</div>
+                        <div class="text-[9px] font-mono uppercase tracking-widest text-slate-400">Autonomous Systems &amp; Growth</div>
                     </div>
                 </a>
-                <div class="hidden lg:flex items-center space-x-1 font-mono text-[11px] tracking-wider uppercase">
-                    <a href="index.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Executive</a>
-                    <a href="agentic-lab.html" class="px-4 py-2 text-goldLight border-b border-gold font-semibold">Agentic Architecture</a>
-                    <a href="outbound-engine.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Outbound Systems</a>
-                    <a href="client-proof.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Verified Proof</a>
-                    <a href="contact.html" class="px-4 py-2 text-neutral-400 hover:text-white transition">Private Office</a>
+
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="agentic-lab.html" class="nav-link active">Agentic Lab</a>
+                    <a href="index.html#master-workflows-vault" class="nav-link">Workflows</a>
+                    <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+                    <a href="client-proof.html" class="nav-link">Client Proof</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
-                <a href="https://wa.me/923489911425" target="_blank" class="px-5 py-2.5 text-[11px] font-mono uppercase tracking-widest font-bold bg-neutral-900 text-goldLight border gold-border rounded-sm hover:bg-gold hover:text-black transition">
-                    <span>Consultation</span>
-                </a>
+
+                <div class="flex items-center gap-3">
+                    <a href="javascript:void(0)" onclick="document.getElementById('contact-modal').classList.remove('hidden')" class="btn-graphite hidden sm:inline-flex px-4 py-2 text-xs font-mono uppercase tracking-wider font-bold">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i><span>Contact Form</span>
+                    </a>
+                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-aurora px-4 py-2 text-xs font-mono uppercase tracking-wider">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i><span>Chat to Owner</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="lg:hidden btn-graphite p-2.5" aria-label="Open menu" aria-expanded="false">
+                        <i data-lucide="menu" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 pt-3 border-t border-slate-800/70 grid grid-cols-2 gap-1.5">
+                <a href="index.html" class="nav-link text-center">Home</a>
+                <a href="agentic-lab.html" class="nav-link active text-center">Agentic Lab</a>
+                <a href="index.html#master-workflows-vault" class="nav-link text-center">Workflows</a>
+                <a href="outbound-engine.html" class="nav-link text-center">Outbound Engine</a>
+                <a href="client-proof.html" class="nav-link text-center">Client Proof</a>
+                <a href="contact.html" class="nav-link text-center">Contact</a>
             </div>
         </nav>
 
-        <!-- Main Content -->
-        <main class="pt-44 pb-28 px-8 max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-neutral-800 bg-noir text-[10px] font-mono tracking-widest uppercase text-gold mb-6">
-                    <span>Enterprise Autonomous OS & Multi-Agent Framework</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">Agentic Workspaces & Systems Architecture</h1>
-                <p class="text-neutral-400 mt-5 text-sm md:text-base font-light leading-relaxed">
+        <!-- ═══════════ MAIN ═══════════ -->
+        <main class="relative pt-40 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="badge-pill mb-5">Enterprise Autonomous OS &amp; Multi-Agent Framework</div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">Agentic Workspaces &amp; <span class="text-aurora">Systems Architecture</span></h1>
+                <p class="text-slate-400 mt-5 text-sm md:text-base font-light leading-relaxed">
                     Designed and deployed by Idrees Qurashi. Production multi-agent workflows, autonomous tool loops, persistent context ledgers, and deterministic LLM evaluation pipelines.
                 </p>
             </div>
 
             <!-- Architecture Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 <!-- System 1 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group cursor-pointer" onclick="openProtocol('p1')">
+                <div class="aurora-card aurora-hairline reveal-3d p-8 flex flex-col justify-between group cursor-pointer" onclick="openProtocol('p1')">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2 flex items-center justify-between">
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-aurora-cyan mb-2 flex items-center justify-between">
                             <span>Systems Protocol 01</span>
-                            <span class="text-[9px] px-2 py-0.5 rounded bg-gold/10 text-gold border border-gold/20">Interactive</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-cyan-500/10 text-aurora-cyan border border-cyan-500/20">Interactive</span>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-gold transition">Autonomous Tool-Calling Loops</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-aurora-cyan transition">Autonomous Tool-Calling Loops</h3>
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed font-light">
                             Deterministic multi-agent execution loops with sandboxed Python, bash, and REST API access. Zero hallucination through structured Pydantic schema validation.
                         </p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <button class="text-gold group-hover:underline flex items-center gap-1">
-                            <span>Inspect Engine & Code</span><i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+                    <div class="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px] font-mono">
+                        <button class="text-aurora-cyan group-hover:underline flex items-center gap-1">
+                            <span>Inspect Engine &amp; Code</span><i data-lucide="code-2" class="w-3.5 h-3.5"></i>
                         </button>
-                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" onclick="event.stopPropagation()" class="text-neutral-400 hover:text-white flex items-center gap-1">
+                        <a href="https://github.com/IdreesQurashi/b2b-outbound-agentic-engine" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="text-slate-400 hover:text-white flex items-center gap-1">
                             <span>GitHub</span><i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- System 2 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group cursor-pointer border border-gold/30 shadow-[0_0_20px_rgba(212,175,55,0.08)]" onclick="openProtocol('p2')">
+                <div class="aurora-card is-violet reveal-3d p-8 flex flex-col justify-between group cursor-pointer" onclick="openProtocol('p2')">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2 flex items-center justify-between">
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-purple-glow mb-2 flex items-center justify-between">
                             <span>Systems Protocol 02</span>
-                            <span class="text-[9px] px-2 py-0.5 rounded bg-gold/20 text-goldLight border border-gold/40 font-bold">CLICK TO INSPECT</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-violet-500/15 text-purple-glow border border-violet-500/30 font-bold">CLICK TO INSPECT</span>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-gold transition">Persistent Memory & Context Ledgers</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
-                            Cross-session state coherence using dynamic Markdown/JSON ledgers (<code class="text-gold">AGENTS.md</code>, <code class="text-gold">SHARED_STATE.md</code>) with sliding window prompt caching (38% token cost reduction).
+                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-purple-glow transition">Persistent Memory &amp; Context Ledgers</h3>
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed font-light">
+                            Cross-session state coherence using dynamic Markdown/JSON ledgers (<code class="text-aurora-cyan">AGENTS.md</code>, <code class="text-aurora-cyan">SHARED_STATE.md</code>) with sliding window prompt caching (38% token cost reduction).
                         </p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <button class="text-gold font-semibold group-hover:underline flex items-center gap-1">
+                    <div class="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px] font-mono">
+                        <button class="text-purple-glow font-semibold group-hover:underline flex items-center gap-1">
                             <span>Inspect Memory Ledger</span><i data-lucide="database" class="w-3.5 h-3.5"></i>
                         </button>
                         <span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Active</span>
@@ -169,179 +144,167 @@
                 </div>
 
                 <!-- System 3 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group">
+                <div class="aurora-card reveal-3d p-8 flex flex-col justify-between group">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Systems Protocol 03</div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-aurora-cyan mb-2">Systems Protocol 03</div>
                         <h3 class="text-xl font-serif font-bold text-white">n8n Enterprise Blueprint Vault</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed font-light">
                             Curated production-grade n8n workflows: autonomous lead scoring nodes, vector memory retrieval, and real-time CRM webhook synchronization.
                         </p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-neutral-500">Open-Source</span>
-                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" class="text-gold hover:underline flex items-center gap-1">
+                    <div class="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-slate-500">Open-Source</span>
+                        <a href="https://github.com/IdreesQurashi/n8n-agentic-blueprints-vault" target="_blank" rel="noopener" class="text-aurora-cyan hover:underline flex items-center gap-1">
                             <span>Open Vault</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- System 4 -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between group cursor-pointer border border-neutral-700 hover:border-gold/40" onclick="openProtocol('p4')">
+                <div class="aurora-card reveal-3d p-8 flex flex-col justify-between group cursor-pointer" onclick="openProtocol('p4')">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2 flex items-center justify-between">
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-aurora-cyan mb-2 flex items-center justify-between">
                             <span>Systems Protocol 04</span>
-                            <span class="text-[9px] px-2 py-0.5 rounded bg-gold/10 text-gold border border-gold/20">Interactive</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-cyan-500/10 text-aurora-cyan border border-cyan-500/20">Interactive</span>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-gold transition">Evaluation-Driven Development (EDD)</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                        <h3 class="text-xl font-serif font-bold text-white group-hover:text-aurora-cyan transition">Evaluation-Driven Development (EDD)</h3>
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed font-light">
                             Automated tool-selection accuracy benchmarks, multi-step trajectory evaluation, and LLM-as-a-judge scoring matrices for mission-critical reliability.
                         </p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <button class="text-gold group-hover:underline flex items-center gap-1">
+                    <div class="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px] font-mono">
+                        <button class="text-aurora-cyan group-hover:underline flex items-center gap-1">
                             <span>Inspect Eval Pipeline</span><i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
                         </button>
-                        <span class="text-goldLight">99.4% Pass SLA</span>
+                        <span class="text-slate-300">99.4% Pass SLA</span>
                     </div>
                 </div>
 
                 <!-- System 5: Proprietary -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between border gold-border">
+                <div class="aurora-card is-amber reveal-3d p-8 flex flex-col justify-between">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gold mb-2">Proprietary IP</div>
-                        <h3 class="text-xl font-serif font-bold text-white">Shopify & WhatsApp Bulletproof COD</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-amber-glow mb-2">Proprietary IP</div>
+                        <h3 class="text-xl font-serif font-bold text-white">Shopify &amp; WhatsApp Bulletproof COD</h3>
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed font-light">
                             Proprietary automated order validation pipelines slashing return rates by 70% with two-way WhatsApp order confirmations and CRM tag synchronization.
                         </p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-neutral-500">Private Licensing</span>
-                        <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" class="text-goldLight hover:underline">
+                    <div class="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-slate-500">Private Licensing</span>
+                        <a href="https://wa.me/923489911425?text=Hi%20Idrees,%20I%20am%20interested%20in%20licensing%20your%20Shopify%20COD%20Verification%20Architecture" target="_blank" rel="noopener" class="text-amber-300 hover:underline">
                             <span>Request Access</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- System 6: Drive -->
-                <div class="old-money-panel p-8 rounded-sm flex flex-col justify-between">
+                <div class="aurora-card is-emerald reveal-3d p-8 flex flex-col justify-between group">
                     <div>
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2">Drive Repository</div>
+                        <div class="text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-2">Drive Repository</div>
                         <h3 class="text-xl font-serif font-bold text-white">Idrees Qurashi Master Drive Vault</h3>
-                        <p class="text-neutral-400 text-xs mt-3 leading-relaxed font-light">
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed font-light">
                             Direct cloud access to institutional SOPs, high-ticket SMB automation agreements, and multi-agent workspace diagrams.
                         </p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-[11px] font-mono">
-                        <span class="text-neutral-500">Drive Cloud</span>
-                        <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" class="text-gold hover:underline flex items-center gap-1">
+                    <div class="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px] font-mono">
+                        <span class="text-slate-500">Drive Cloud</span>
+                        <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" rel="noopener" class="text-aurora-cyan hover:underline flex items-center gap-1">
                             <span>Access Cloud</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
                 </div>
+
             </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="py-14 px-8 border-t border-border old-money-panel text-center text-[11px] font-mono text-neutral-500 uppercase tracking-wider">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>&copy; 2026 Idrees Qurashi. Old-Money Minimalist Architecture.</div>
-                <div class="flex items-center space-x-8">
-                    <a href="https://github.com/IdreesQurashi" target="_blank" class="hover:text-gold transition">GitHub</a>
-                    <a href="https://wa.me/923489911425" target="_blank" class="hover:text-gold transition">WhatsApp</a>
+        <!-- ═══════════ FOOTER ═══════════ -->
+        <footer class="relative py-10 px-6 md:px-8 border-t border-slate-900 text-center text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+                <div>&copy; 2026 Idrees Qurashi — AI Integration &amp; Automation Engineer. All rights reserved.</div>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition">GitHub</a>
+                    <a href="mailto:idreesqurashi6@gmail.com" class="hover:text-aurora-cyan transition">Email</a>
+                    <a href="contact.html" class="hover:text-aurora-cyan transition">Contact</a>
+                    <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition">WhatsApp</a>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- POP-OUT ARCHITECTURE MODAL -->
+    <!-- ═══════════ PROTOCOL POP-OUT ═══════════ -->
     <div id="protocol-modal" onclick="closeProtocolModal(event)">
-        <div id="protocol-window" onclick="event.stopPropagation()">
-            <!-- Title Bar -->
+        <div id="protocol-window" onclick="event.stopPropagation()" role="dialog" aria-modal="true">
             <div class="window-titlebar">
-                <div class="flex items-center space-x-2">
-                    <span class="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 cursor-pointer inline-block" onclick="closeProtocolModal()"></span>
-                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 cursor-pointer inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 cursor-pointer inline-block"></span>
-                    <span id="modal-title" class="ml-4 font-mono text-xs text-neutral-300 font-semibold uppercase tracking-wider">System Protocol 02: Persistent Memory & Context Ledgers</span>
+                <div class="window-dots">
+                    <span class="w-dot w-dot-close" onclick="closeProtocolModal()" title="Close (Esc)"></span>
+                    <span class="w-dot w-dot-min"></span>
+                    <span class="w-dot w-dot-max"></span>
                 </div>
-                <div class="flex items-center space-x-3 text-[11px] font-mono">
-                    <span class="text-gold border border-gold/30 px-2 py-0.5 rounded bg-gold/10">Python 3.11</span>
-                    <button onclick="closeProtocolModal()" class="text-neutral-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
+                <div id="modal-title" class="font-mono text-xs text-slate-300 font-semibold uppercase tracking-wider truncate px-3 flex-1 text-center">Systems Protocol</div>
+                <div class="flex items-center gap-2 font-mono text-[10px]">
+                    <span class="badge-pill">Python 3.11</span>
+                    <button onclick="closeProtocolModal()" class="text-slate-400 hover:text-white text-xs px-2 py-1 rounded bg-slate-800/60 hover:bg-slate-700"><i data-lucide="x" class="w-4 h-4"></i></button>
                 </div>
             </div>
+            <div id="modal-body" class="window-body"></div>
+        </div>
+    </div>
 
-            <!-- Body Content -->
-            <div id="modal-body" class="window-body">
-                <!-- Dynamically populated -->
+    <!-- ═══════════ CONTACT MODAL ═══════════ -->
+    <div id="contact-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="aurora-card w-full max-w-lg p-8 relative">
+            <button onclick="document.getElementById('contact-modal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-white" aria-label="Close contact form">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h2 class="font-serif text-2xl text-white font-bold mb-2">Send a Message</h2>
+            <p class="text-sm text-slate-400 mb-6 font-mono">Will be sent directly to my Discord workspace via API.</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-aurora flex-1 px-5 py-3 text-xs font-mono uppercase tracking-wider">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> Chat on WhatsApp
+                </a>
+                <a href="mailto:idreesqurashi6@gmail.com" class="btn-graphite flex-1 px-5 py-3 text-xs font-mono uppercase tracking-wider">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Email Directly
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- 3D Subtle Wave -->
     <script>
-        const canvas = document.getElementById('three-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-        const width = 60; const height = 40; const segmentsW = 45; const segmentsH = 30;
-        const geometry = new THREE.PlaneGeometry(width, height, segmentsW, segmentsH);
-        const material = new THREE.MeshBasicMaterial({ color: 0x444444, wireframe: true, transparent: true, opacity: 0.18 });
-        const terrain = new THREE.Mesh(geometry, material);
-        terrain.rotation.x = -Math.PI / 2.5; terrain.position.y = -6;
-        scene.add(terrain); camera.position.z = 18; camera.position.y = 4;
-
-        const pos = geometry.attributes.position;
-        let clock = new THREE.Clock();
-        function animate() {
-            requestAnimationFrame(animate);
-            const t = clock.getElapsedTime() * 0.5;
-            for(let i = 0; i < pos.count; i++) {
-                const u = (i % (segmentsW + 1)) / segmentsW;
-                const v = Math.floor(i / (segmentsW + 1)) / segmentsH;
-                pos.setZ(i, Math.sin(u * 5 + t) * Math.cos(v * 4 + t) * 1.5);
-            }
-            pos.needsUpdate = true;
-            renderer.render(scene, camera);
-        }
-        // animate();
-
-        // PROTOCOL DATA
+        // ═══════════ PROTOCOL DATA (content preserved verbatim) ═══════════
         const protocols = {
             p1: {
                 title: "Systems Protocol 01: Autonomous Tool-Calling & ReAct Loops",
                 html: `
                     <div class="space-y-6">
-                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                             <div>
                                 <h4 class="text-lg font-serif font-bold text-white">Deterministic Tool Execution with Pydantic Validation</h4>
-                                <p class="text-xs font-mono text-neutral-400 mt-1">Solves LLM non-determinism, schema hallucination, and API timeout failures.</p>
+                                <p class="text-xs font-mono text-slate-400 mt-1">Solves LLM non-determinism, schema hallucination, and API timeout failures.</p>
                             </div>
-                            <div class="flex gap-2 font-mono text-[10px]">
-                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-gold">Zero Hallucination</span>
-                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-emerald-400">Auto Self-Healing</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+                                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-aurora-cyan">Zero Hallucination</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-emerald-400">Auto Self-Healing</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono text-xs">
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">EXECUTION PATTERN</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">EXECUTION PATTERN</span>
                                 <span class="text-white font-semibold">ReAct Tool Loop + Exponential Backoff</span>
                             </div>
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">VALIDATION LAYER</span>
-                                <span class="text-gold font-semibold">Strict Pydantic V2 Schemas</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">VALIDATION LAYER</span>
+                                <span class="text-aurora-cyan font-semibold">Strict Pydantic V2 Schemas</span>
                             </div>
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">SANDBOX ENVIRONMENT</span>
-                                <span class="text-emerald-400 font-semibold">Restricted Python & Subprocess Guard</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">SANDBOX ENVIRONMENT</span>
+                                <span class="text-emerald-400 font-semibold">Restricted Python &amp; Subprocess Guard</span>
                             </div>
                         </div>
 
                         <div>
-                            <div class="text-[11px] font-mono text-gold mb-2 uppercase tracking-wider">Production Python Implementation:</div>
-                            <div class="bg-[#05070a] border border-neutral-800 rounded-lg p-4 overflow-x-auto text-neutral-300 font-mono text-xs">
+                            <div class="text-[11px] font-mono text-aurora-cyan mb-2 uppercase tracking-wider">Production Python Implementation:</div>
+                            <div class="code-box p-4 overflow-x-auto text-slate-300 text-xs">
 <pre><code><span class="text-purple-400">from</span> pydantic <span class="text-purple-400">import</span> BaseModel, Field, EmailStr
 <span class="text-purple-400">from</span> typing <span class="text-purple-400">import</span> Dict, Any, List
 <span class="text-purple-400">import</span> time, logging
@@ -349,7 +312,7 @@
 <span class="text-blue-400">class</span> <span class="text-yellow-300">LeadEnrichmentOutput</span>(BaseModel):
     <span class="text-neutral-400">"""Strict Pydantic schema intercepting agent hallucination"""</span>
     full_name: str = Field(..., description="Target executive full name")
-    company_domain: str = Field(..., regex=r"^[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
+    company_domain: str = Field(..., regex=r"^[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$")
     work_email: EmailStr = Field(..., description="Deliverable work email")
     seniority: str = Field(..., description="C-Suite, VP, or Founder")
     verified_mx: bool = Field(True, description="Strict DNS MX verification flag")
@@ -384,35 +347,35 @@
                 title: "Systems Protocol 02: Persistent Memory & Dynamic Context Ledgers",
                 html: `
                     <div class="space-y-6">
-                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                             <div>
-                                <h4 class="text-lg font-serif font-bold text-white">Sliding-Window Cache & Cross-Session State Ledgers</h4>
-                                <p class="text-xs font-mono text-neutral-400 mt-1">Eliminates lost-in-the-middle context drift and cuts token consumption by 38%.</p>
+                                <h4 class="text-lg font-serif font-bold text-white">Sliding-Window Cache &amp; Cross-Session State Ledgers</h4>
+                                <p class="text-xs font-mono text-slate-400 mt-1">Eliminates lost-in-the-middle context drift and cuts token consumption by 38%.</p>
                             </div>
-                            <div class="flex gap-2 font-mono text-[10px]">
-                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-gold">-38% Token Burn</span>
-                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-cyan-400">Zero Context Drift</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+                                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-aurora-cyan">-38% Token Burn</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-cyan-400">Zero Context Drift</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono text-xs">
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">CROSS-SESSION LEDGER</span>
-                                <span class="text-gold font-semibold">AGENTS.md & SHARED_STATE.md</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">CROSS-SESSION LEDGER</span>
+                                <span class="text-aurora-cyan font-semibold">AGENTS.md &amp; SHARED_STATE.md</span>
                             </div>
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">CACHE ALGORITHM</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">CACHE ALGORITHM</span>
                                 <span class="text-white font-semibold">LRU Sliding Window + KV Pruner</span>
                             </div>
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">COHERENCE SLA</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">COHERENCE SLA</span>
                                 <span class="text-emerald-400 font-semibold">100% Deterministic Sync</span>
                             </div>
                         </div>
 
                         <div>
-                            <div class="text-[11px] font-mono text-gold mb-2 uppercase tracking-wider">Production Python Implementation:</div>
-                            <div class="bg-[#05070a] border border-neutral-800 rounded-lg p-4 overflow-x-auto text-neutral-300 font-mono text-xs">
+                            <div class="text-[11px] font-mono text-aurora-cyan mb-2 uppercase tracking-wider">Production Python Implementation:</div>
+                            <div class="code-box p-4 overflow-x-auto text-slate-300 text-xs">
 <pre><code><span class="text-purple-400">from</span> pathlib <span class="text-purple-400">import</span> Path
 <span class="text-purple-400">from</span> typing <span class="text-purple-400">import</span> List, Dict, Any
 <span class="text-purple-400">import</span> json, hashlib
@@ -426,9 +389,9 @@
 
     <span class="text-blue-400">def</span> <span class="text-blue-300">sync_state_atomic</span>(self, event_type: str, payload: Dict[str, Any]) -> None:
         <span class="text-neutral-400">"""Atomically commits multi-agent transitions to shared markdown ledger"""</span>
-        entry = f"\\n### [{event_type.upper()}] {payload.get('timestamp')}\\n"
-        entry += f"- **Target Entity**: {payload.get('company')}\\n"
-        entry += f"- **Action Taken**: {payload.get('action')}\\n"
+        entry = f"\\\\n### [{event_type.upper()}] {payload.get('timestamp')}\\\\n"
+        entry += f"- **Target Entity**: {payload.get('company')}\\\\n"
+        entry += f"- **Action Taken**: {payload.get('action')}\\\\n"
         <span class="text-purple-400">with</span> open(self.ledger_path, "a", encoding="utf-8") <span class="text-purple-400">as</span> f:
             f.write(entry)
 
@@ -456,35 +419,35 @@
                 title: "Systems Protocol 04: Evaluation-Driven Development (LLM-as-a-Judge)",
                 html: `
                     <div class="space-y-6">
-                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                             <div>
-                                <h4 class="text-lg font-serif font-bold text-white">LLM-as-a-Judge Quality & Deliverability Gating</h4>
-                                <p class="text-xs font-mono text-neutral-400 mt-1">Multi-criteria evaluation rejecting hallucinated copy and deliverability risks.</p>
+                                <h4 class="text-lg font-serif font-bold text-white">LLM-as-a-Judge Quality &amp; Deliverability Gating</h4>
+                                <p class="text-xs font-mono text-slate-400 mt-1">Multi-criteria evaluation rejecting hallucinated copy and deliverability risks.</p>
                             </div>
-                            <div class="flex gap-2 font-mono text-[10px]">
-                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-gold">85% Confidence Gate</span>
-                                <span class="px-2.5 py-1 rounded bg-neutral-900 border border-neutral-800 text-emerald-400">99.4% Pass Rate</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-[10px]">
+                                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-aurora-cyan">85% Confidence Gate</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-emerald-400">99.4% Pass Rate</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono text-xs">
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">EVALUATION ENGINE</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">EVALUATION ENGINE</span>
                                 <span class="text-white font-semibold">LLM-as-a-Judge (Claude 3.5 / GPT-4o)</span>
                             </div>
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">CORE METRICS</span>
-                                <span class="text-gold font-semibold">Grounding, Tone, Compliance</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">CORE METRICS</span>
+                                <span class="text-aurora-cyan font-semibold">Grounding, Tone, Compliance</span>
                             </div>
-                            <div class="p-3 bg-noir border border-neutral-800 rounded">
-                                <span class="text-neutral-500 block text-[10px]">ACTION ON BREACH</span>
-                                <span class="text-red-400 font-semibold">Immediate Regeneration & Halt</span>
+                            <div class="p-3 bg-slate-950 border border-slate-800 rounded">
+                                <span class="text-slate-500 block text-[10px]">ACTION ON BREACH</span>
+                                <span class="text-rose-400 font-semibold">Immediate Regeneration &amp; Halt</span>
                             </div>
                         </div>
 
                         <div>
-                            <div class="text-[11px] font-mono text-gold mb-2 uppercase tracking-wider">Production Python Implementation:</div>
-                            <div class="bg-[#05070a] border border-neutral-800 rounded-lg p-4 overflow-x-auto text-neutral-300 font-mono text-xs">
+                            <div class="text-[11px] font-mono text-aurora-cyan mb-2 uppercase tracking-wider">Production Python Implementation:</div>
+                            <div class="code-box p-4 overflow-x-auto text-slate-300 text-xs">
 <pre><code><span class="text-purple-400">from</span> pydantic <span class="text-purple-400">import</span> BaseModel, Field
 <span class="text-purple-400">from</span> typing <span class="text-purple-400">import</span> Literal
 
@@ -503,12 +466,12 @@
 
     <span class="text-blue-400">def</span> <span class="text-blue-300">evaluate_candidate</span>(self, verified_lead: dict, generated_outreach: str) -> EvalDecision:
         prompt = (
-            f"Judge following outreach against ground-truth lead:\\n"
-            f"LEAD: {verified_lead}\\nOUTREACH: {generated_outreach}\\n"
+            f"Judge following outreach against ground-truth lead:\\\\n"
+            f"LEAD: {verified_lead}\\\\nOUTREACH: {generated_outreach}\\\\n"
             f"Score relevance, factual grounding, and spam risk."
         )
         decision = self.client.structured_completion(prompt=prompt, response_model=EvalDecision)
-        
+
         <span class="text-neutral-400"># Enforce composite gating formula</span>
         composite = (decision.relevance_score * 0.4 + decision.factual_grounding_score * 0.4 + (1.0 - decision.spam_trigger_score) * 0.2)
         <span class="text-purple-400">if</span> composite &lt; self.threshold <span class="text-purple-400">or</span> decision.factual_grounding_score &lt; 0.90:
@@ -528,21 +491,49 @@
             document.getElementById('modal-body').innerHTML = data.html;
             const modal = document.getElementById('protocol-modal');
             modal.classList.add('active');
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
 
         function closeProtocolModal(e) {
-            if (e && e.target && e.target.closest('#protocol-window') && !e.target.closest('.w-3') && !e.target.closest('button')) {
+            if (e && e.target && e.target.closest('#protocol-window') && !e.target.closest('.w-dot') && !e.target.closest('button')) {
                 return;
             }
             document.getElementById('protocol-modal').classList.remove('active');
         }
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeProtocolModal();
+            if (e.key === 'Escape') {
+                closeProtocolModal();
+                document.getElementById('contact-modal').classList.add('hidden');
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
         });
 
-        lucide.createIcons();
+        // Mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const menu = document.getElementById('mobile-menu');
+                const open = menu.classList.toggle('hidden') === false;
+                menuBtn.setAttribute('aria-expanded', String(open));
+            });
+        }
+
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal-3d').forEach(el => revealObserver.observe(el));
+
+        // Icons (deferred script)
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons(); else setTimeout(() => window.lucide && lucide.createIcons(), 600);
+        });
     </script>
 </body>
 </html>

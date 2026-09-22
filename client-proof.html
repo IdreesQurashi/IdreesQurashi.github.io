@@ -1,331 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="theme-color" content="#040508"/>
-  <meta name="description" content="Verified client engagements and production results from autonomous AI systems deployed for Green TV Entertainment, Apache Pizza Ireland, and Rock Road Dental Clinic."/>
-  <title>Client Proof | Idrees Qurashi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
-  <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
-  <link rel="apple-touch-icon" href="brand_logo.png"/>
-  <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="engine3d.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#040508">
+    <title>Client Proof | Idrees Qurashi</title>
+    <meta name="description" content="Production deployments with verified outcomes.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
+    <link rel="apple-touch-icon" href="brand_logo.png">
+    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="engine3d.js" defer></script>
+    <style>
+        .page-hero { padding-block: 8rem 4rem; }
+        .hero-body-large { font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin-top: 2rem; line-height: 1.5; }
+        
+        .showcase-grid { display: flex; flex-direction: column; gap: 3rem; margin-block: 4rem; }
+        .showcase-card { 
+            position: relative; 
+            padding: 3rem; 
+            background: var(--surface-light, rgba(255,255,255,0.03)); 
+            border: 1px solid var(--border-grid, rgba(255,255,255,0.1));
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .corner-plus { position: absolute; width: 16px; height: 16px; opacity: 0.5; }
+        .corner-plus-tl { top: -8px; left: -8px; }
+        .corner-plus-tr { top: -8px; right: -8px; }
+        .corner-plus-bl { bottom: -8px; left: -8px; }
+        .corner-plus-br { bottom: -8px; right: -8px; }
+        
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+        .card-meta { font-family: var(--font-mono, monospace); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 1px; }
+        .status-dot { display: inline-block; width: 8px; height: 8px; background: var(--emerald, #10b981); border-radius: 50%; box-shadow: 0 0 8px #10b981; }
+        
+        .card-title { font-size: 2rem; font-family: var(--font-serif, serif); font-weight: normal; }
+        .card-desc { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; max-width: 800px; }
+        
+        .tech-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .tech-tag { padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono, monospace); font-size: 0.75rem; color: #D8D8D8; border: 1px solid rgba(255,255,255,0.1); }
+        
+        .card-metrics { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-grid, rgba(255,255,255,0.1)); }
+        .metric-item { display: flex; flex-direction: column; gap: 0.5rem; }
+        .metric-val { font-size: 1.5rem; font-family: var(--font-serif, serif); }
+        .metric-val.emerald { color: var(--emerald, #10b981); }
+        .metric-label { font-family: var(--font-mono, monospace); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+        .process-section { padding-block: 6rem; border-top: 1px solid var(--border-grid); }
+        .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem; }
+        .flow-step { padding: 2rem; border: 1px solid var(--border-grid); position: relative; }
+        .step-num { font-family: var(--font-mono, monospace); font-size: 0.875rem; color: var(--emerald, #10b981); margin-bottom: 1rem; display: block; }
+        .step-title { font-size: 1.5rem; font-family: var(--font-serif, serif); margin-bottom: 1rem; }
+        .step-desc { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+        
+        @media (max-width: 768px) {
+            .showcase-card { padding: 2rem; }
+        }
+    </style>
 </head>
 <body>
-  <canvas id="three-canvas"></canvas>
 
-  <div class="site-wrap">
-    
-    <!-- TRIONN Minimal Precision Header -->
-    <header class="nav-trionn">
-      <div class="container">
-        <div class="nav-inner">
-          <a href="index.html" class="nav-brand">
-            <div class="nav-logo-box">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <div>
-              <div class="nav-brand-title">Idrees Qurashi</div>
-              <div class="nav-brand-sub">Autonomous Systems Studio</div>
-            </div>
-          </a>
+<canvas id="three-canvas"></canvas>
+<div class="site-wrap">
 
-          <nav class="nav-links">
-            <a href="index.html" class="nav-link">Overview</a>
-            <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-            <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-            <a href="client-proof.html" class="nav-link active">Client Proof</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-          </nav>
-
-          <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
-          </div>
-
-          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-
-      <div class="nav-mobile-menu">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-        <a href="client-proof.html" class="nav-link active">Client Proof</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
-      </div>
-    </header>
-
-    <main id="main-content">
-      
-      <!-- PAGE HERO -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          <div style="display:flex;flex-direction:column;align-items:flex-start">
-            <div class="trionn-pill" style="margin-bottom:2rem">
-              <span class="trionn-star">&#10022;</span>
-              <span>Verified Results</span>
-            </div>
-            <div style="margin-bottom:2rem">
-              <h1 class="hero-huge-1">Client <span class="serif-italic">Proof</span></h1>
-            </div>
-            <p class="body-lead-trionn" style="max-width:800px">
-              Production deployments with verified outcomes. Every engagement documented with technical architecture, measurable impact, and operational metrics.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CLIENT 01: GREEN TV ENTERTAINMENT -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          <article class="trionn-card" style="padding:3rem">
-            <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            
-            <div style="display:flex;justify-content:space-between;margin-bottom:2.5rem;align-items:center;flex-wrap:wrap;gap:1rem">
-              <span class="card-number">CLIENT 01 // MEDIA &amp; BROADCAST</span>
-              <span class="status-pulse"></span>
-            </div>
-
-            <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem">
-              Green TV Entertainment
-            </h2>
-            <p class="body-lead-trionn" style="margin-bottom:2rem;color:var(--text-white)">
-              Broadcast Content Syndication &amp; Automated Distribution
-            </p>
-            <p class="body-sub-trionn" style="margin-bottom:3rem;max-width:900px">
-              Built automated content ingest and social syndication pipelines processing 500+ hours of video metadata monthly. The system automates metadata extraction, format normalization, platform-specific thumbnail generation, and scheduled multi-platform publishing. Manual editing operations reduced by 85%, freeing the production team to focus on content creation rather than distribution logistics.
-            </p>
-
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:4rem">
-              <span class="trionn-pill">n8n</span>
-              <span class="trionn-pill">Make</span>
-              <span class="trionn-pill">YouTube API</span>
-              <span class="trionn-pill">Social APIs</span>
-              <span class="trionn-pill">Metadata Extraction</span>
-            </div>
-
-            <div class="facts-board" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr))">
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num">500+</div>
-                <div class="facts-label">Hours Processed / Month</div>
-              </div>
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num" style="color:var(--accent-emerald)">85%</div>
-                <div class="facts-label">Ops Reduction</div>
-              </div>
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num">24/7</div>
-                <div class="facts-label">Automated Pipeline</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CLIENT 02: APACHE PIZZA IRELAND -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          <article class="trionn-card" style="padding:3rem">
-            <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            
-            <div style="display:flex;justify-content:space-between;margin-bottom:2.5rem;align-items:center;flex-wrap:wrap;gap:1rem">
-              <span class="card-number">CLIENT 02 // QSR FRANCHISE</span>
-              <span class="status-pulse"></span>
-            </div>
-
-            <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem">
-              Apache Pizza Ireland
-            </h2>
-            <p class="body-lead-trionn" style="margin-bottom:2rem;color:var(--text-white)">
-              Nationwide Franchise Audience Acquisition
-            </p>
-            <p class="body-sub-trionn" style="margin-bottom:3rem;max-width:900px">
-              Scaled localized franchise audience acquisition across 180+ nationwide units with automated geo-targeted social synchronizers. Each franchise location receives dynamically generated localized content calibrated to regional demographics, seasonal promotions, and store-level performance data. The system coordinates cross-platform publishing cadence to maximize organic reach while maintaining brand consistency across all 180+ locations.
-            </p>
-
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:4rem">
-              <span class="trionn-pill">Social Automation</span>
-              <span class="trionn-pill">Geo-targeting</span>
-              <span class="trionn-pill">Content Syndication</span>
-              <span class="trionn-pill">Analytics</span>
-            </div>
-
-            <div class="facts-board" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr))">
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num">180+</div>
-                <div class="facts-label">Franchise Units</div>
-              </div>
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num" style="color:var(--accent-emerald)">Nationwide</div>
-                <div class="facts-label">Coverage Scale</div>
-              </div>
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num">Automated</div>
-                <div class="facts-label">Content Localization</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CLIENT 03: ROCK ROAD DENTAL CLINIC -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          <article class="trionn-card" style="padding:3rem">
-            <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-            
-            <div style="display:flex;justify-content:space-between;margin-bottom:2.5rem;align-items:center;flex-wrap:wrap;gap:1rem">
-              <span class="card-number">CLIENT 03 // HEALTHCARE</span>
-              <span class="status-pulse"></span>
-            </div>
-
-            <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem">
-              Rock Road Dental Clinic
-            </h2>
-            <p class="body-lead-trionn" style="margin-bottom:2rem;color:var(--text-white)">
-              Patient Booking &amp; Retention Automation
-            </p>
-            <p class="body-sub-trionn" style="margin-bottom:3rem;max-width:900px">
-              Automated patient booking, SMS verification, and calendar sync pipeline reducing clinic no-shows by 42%. The system integrates with the clinic's scheduling platform to detect available slots, send automated booking confirmations via SMS, trigger 24-hour and 2-hour pre-appointment reminders, and automatically reschedule missed appointments. Post-visit follow-up sequences drive review generation and rebooking.
-            </p>
-
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:4rem">
-              <span class="trionn-pill">n8n</span>
-              <span class="trionn-pill">SMS Gateway</span>
-              <span class="trionn-pill">Calendar API</span>
-              <span class="trionn-pill">Booking System</span>
-              <span class="trionn-pill">CRM</span>
-            </div>
-
-            <div class="facts-board" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr))">
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num" style="color:var(--accent-emerald)">42%</div>
-                <div class="facts-label">No-show Reduction</div>
-              </div>
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num">Automated</div>
-                <div class="facts-label">Booking Flow</div>
-              </div>
-              <div class="facts-cell" style="padding:1.5rem">
-                <div class="facts-num">24/7</div>
-                <div class="facts-label">Patient Comms</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ENGAGEMENT MODEL SECTION -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          <div class="trionn-pill" style="margin-bottom:2rem">
-            <span class="trionn-star">&#10022;</span>
-            <span>Engagement Process</span>
-          </div>
-          <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:3rem">
-            How We Work
-          </h2>
-          
-          <div style="display:flex;flex-direction:column;gap:1rem">
-            <!-- Step 01 -->
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">
-                <span class="card-number" style="margin-right:1rem">01 - AUDIT</span>
-              </h3>
-              <p class="body-sub-trionn" style="margin-bottom:0">
-                30-minute architecture audit examining manual bottlenecks, integration gaps, and automation opportunities. Written roadmap delivered within 48 hours.
-              </p>
-            </div>
-            
-            <!-- Step 02 -->
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">
-                <span class="card-number" style="margin-right:1rem">02 - BUILD</span>
-              </h3>
-              <p class="body-sub-trionn" style="margin-bottom:0">
-                Production-grade system engineering with full technical specification, iterative testing, and documented deployment procedures.
-              </p>
-            </div>
-            
-            <!-- Step 03 -->
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">
-                <span class="card-number" style="margin-right:1rem">03 - OPERATE</span>
-              </h3>
-              <p class="body-sub-trionn" style="margin-bottom:0">
-                Ongoing monitoring, self-healing maintenance, and performance optimization. Systems designed to run autonomously post-deployment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA SECTION -->
-      <section style="padding-block:8rem;text-align:center">
-        <div class="container" style="max-width:800px;margin-inline:auto">
-          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Engagement Initiation</div>
-          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
-            Let&#39;s build <span class="serif-italic">something great.</span>
-          </h2>
-          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
-            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
-          </p>
-          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
-            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- TRIONN Footer -->
-    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
-          <div style="display:flex;align-items:center;gap:1rem">
-            <div class="nav-logo-box" style="width:28px;height:28px">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
-              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
-            </span>
-          </div>
-
-          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
-            <a href="index.html" style="color:var(--text-dim)">Overview</a>
-            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
-            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="header-logo">
+      <img src="brand_logo.png" alt="Idrees Qurashi" style="height:28px;width:auto;border-radius:4px">
+    </a>
+    <div class="header-actions">
+      <a href="contact.html" class="btn-talk">let's talk</a>
+      <button class="btn-menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+        <span>Menu</span>
+        <div class="hamburger"><span></span><span></span></div>
+      </button>
+    </div>
   </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="index.html">Overview</a>
+  <a href="agentic-lab.html">Systems</a>
+  <a href="client-proof.html">Proof</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="page-hero">
+        <div class="container reveal">
+            <div class="pill-badge" style="display:inline-block; margin-bottom: 2rem;">✦ results</div>
+            <h1 class="section-headline" style="font-size: 4rem; line-height: 1.1;">Client Proof.</h1>
+            <p class="hero-body-large">Production deployments with verified outcomes.</p>
+        </div>
+    </section>
+
+    <!-- PROOF CARDS -->
+    <section>
+        <div class="container reveal">
+            <div class="showcase-grid">
+                
+                <!-- Client 01 -->
+                <div class="showcase-card">
+                    <svg class="corner-plus corner-plus-tl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-tr" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-bl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-br" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    
+                    <div class="card-header">
+                        <div class="card-meta">CLIENT 01 // MEDIA & BROADCAST</div>
+                        <div class="status-dot"></div>
+                    </div>
+                    <h2 class="card-title">Green TV Entertainment</h2>
+                    <p class="card-desc">Built automated content ingest and social syndication pipelines processing 500+ hours of video metadata monthly. Metadata extraction, format normalization, platform-specific thumbnails, scheduled multi-platform publishing. Manual editing operations reduced by 85%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">Make</span>
+                        <span class="tech-tag">YouTube API</span>
+                        <span class="tech-tag">Social APIs</span>
+                        <span class="tech-tag">Metadata Extraction</span>
+                    </div>
+                    <div class="card-metrics">
+                        <div class="metric-item">
+                            <span class="metric-val">500+</span>
+                            <span class="metric-label">Hrs Month</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val emerald">85%</span>
+                            <span class="metric-label">Ops Reduction</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">24/7</span>
+                            <span class="metric-label">Automated Pipeline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client 02 -->
+                <div class="showcase-card">
+                    <svg class="corner-plus corner-plus-tl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-tr" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-bl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-br" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+
+                    <div class="card-header">
+                        <div class="card-meta">CLIENT 02 // QSR FRANCHISE</div>
+                        <div class="status-dot"></div>
+                    </div>
+                    <h2 class="card-title">Apache Pizza Ireland</h2>
+                    <p class="card-desc">Scaled localized audience acquisition across 180+ units with geo-targeted social synchronizers. Dynamic localized content calibrated to regional demographics and store-level performance data.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Social Automation</span>
+                        <span class="tech-tag">Geo-targeting</span>
+                        <span class="tech-tag">Content Syndication</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
+                    <div class="card-metrics">
+                        <div class="metric-item">
+                            <span class="metric-val">180+</span>
+                            <span class="metric-label">Franchise Units</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val emerald">Nationwide</span>
+                            <span class="metric-label">Coverage</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">Automated</span>
+                            <span class="metric-label">Content Localization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client 03 -->
+                <div class="showcase-card">
+                    <svg class="corner-plus corner-plus-tl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-tr" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-bl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-br" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+
+                    <div class="card-header">
+                        <div class="card-meta">CLIENT 03 // HEALTHCARE</div>
+                        <div class="status-dot"></div>
+                    </div>
+                    <h2 class="card-title">Rock Road Dental Clinic</h2>
+                    <p class="card-desc">Automated patient booking, SMS verification, calendar sync reducing no-shows by 42%. 24hr and 2hr pre-appointment reminders, automatic rescheduling, post-visit follow-up sequences.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">SMS Gateway</span>
+                        <span class="tech-tag">Calendar API</span>
+                        <span class="tech-tag">Booking System</span>
+                        <span class="tech-tag">CRM</span>
+                    </div>
+                    <div class="card-metrics">
+                        <div class="metric-item">
+                            <span class="metric-val emerald">42%</span>
+                            <span class="metric-label">No-show Cut</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">Automated</span>
+                            <span class="metric-label">Booking Flow</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">24/7</span>
+                            <span class="metric-label">Patient Comms</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ENGAGEMENT PROCESS -->
+    <section class="process-section">
+        <div class="container reveal">
+            <h2 class="section-headline" style="font-size: 2.5rem;">Engagement Process</h2>
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <span class="step-num">01 // AUDIT</span>
+                    <h3 class="step-title">Architecture Audit</h3>
+                    <p class="step-desc">30-min architecture audit examining manual bottlenecks, followed by a 48hr roadmap delivery detailing the autonomous replacement system.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="step-num">02 // BUILD</span>
+                    <h3 class="step-title">Production Engineering</h3>
+                    <p class="step-desc">Rigorous build phase focusing on production engineering, edge-case handling, and fully documented deployment artifacts.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="step-num">03 // OPERATE</span>
+                    <h3 class="step-title">Continuous Operation</h3>
+                    <p class="step-desc">System monitoring, self-healing routines, and autonomous post-deployment management ensuring 99.9% uptime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" style="padding-block: 8rem; text-align: center;">
+        <div class="container reveal" style="max-width: 800px; margin: 0 auto;">
+            <div class="pill-badge" style="display: inline-block; margin-bottom: 2rem;">✦ Engagement</div>
+            <h2 class="section-headline" style="font-size: 3.5rem; margin-bottom: 2rem;">Let's build <span class="serif-italic">something autonomous.</span></h2>
+            <p class="body-lead" style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.25rem;">
+                Book a 30-minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
+            </p>
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="contact.html" class="btn-trionn-white" style="display:inline-block; padding:1rem 2rem; background:#fff; color:#000; text-decoration:none; font-weight:500; border-radius:4px;">Book System Audit →</a>
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" class="btn-trionn-emerald" style="display:inline-flex; align-items:center; gap:0.5rem; padding:1rem 2rem; border:1px solid #10b981; color:#10b981; text-decoration:none; font-weight:500; border-radius:4px;">
+                    <span class="status-pulse" style="width:8px; height:8px; background:#10b981; border-radius:50%; box-shadow:0 0 8px #10b981;"></span>
+                    WhatsApp Direct
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" style="border-top: 1px solid var(--border-grid); padding-block: 3rem; background: var(--bg-dark, #040508);">
+    <div class="container">
+        <div class="footer-inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+            <div class="footer-left" style="display: flex; align-items: center; gap: 1rem;">
+                <div class="nav-logo-box" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--surface-light, rgba(255,255,255,0.05)); border-radius: 4px;">
+                    <img src="brand_logo.png" alt="Brand Logo" width="20" height="20">
+                </div>
+                <div class="copyright" style="font-family: var(--font-mono, monospace); font-size: 0.875rem; color: var(--text-muted);">
+                    © 2026 Idrees Qurashi · Autonomous Systems Studio
+                </div>
+            </div>
+            
+            <nav class="footer-links" style="display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Overview</a>
+                <a href="agentic-lab.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Agentic Lab</a>
+                <a href="client-proof.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Client Proof</a>
+                <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">GitHub</a>
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">WhatsApp</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+</div>
 </body>
 </html>

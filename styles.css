@@ -1,27 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap');
+/* ============================================================
+   IDREES QURASHI — TRIONN Studio Luxury Architecture
+   Exact replication of trionn.com aesthetic, rhythm, and cards
+   ============================================================ */
 
-/* === COLOR SYSTEM & TYPOGRAPHY === */
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap');
+
 :root {
-  /* Colors */
-  --bg-dark: #040508;
-  --bg-surface: #0A0B0E;
+  /* TRIONN Exact Color Palette */
+  --bg-dark:        #040508;
+  --bg-hero:        #0C0C0C;
+  --bg-surface:     #0A0B0E;
   --bg-surface-alt: #111216;
-  --bg-card: #0E0F12;
-  --border-grid: #1E2026;
-  --border-hair: rgba(255, 255, 255, 0.08);
-  --border-light: #2F323B;
-  --text-white: #FFFFFF;
-  --text-lead: #C4C4C8;
-  --text-muted: #737580;
-  --text-dim: #D8D8D8;
+  --bg-card:        #0E0F12;
+  --bg-light:       #EBEAE5;
+  --bg-light-card:  #F5F4F0;
+
+  --border-grid:    #2F323B;
+  --border-hair:    rgba(255, 255, 255, 0.08);
+  --border-light:   #D8D7D2;
+
+  --text-white:     #FFFFFF;
+  --text-light:     #D8D8D8;
+  --text-muted:     rgba(216, 216, 216, 0.55);
+  --text-dim:       #737580;
+  --text-dark:      #0C0C0C;
+  --text-dark-sub:  #555555;
+
   --accent-emerald: #10B981;
-  --accent-red: #E5484D;
+  --accent-amber:   #FF5500;
+  --accent-blue:    #3B82F6;
 
   /* Typography */
-  --font-display: 'Syne', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display:   'Familjen Grotesk', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:      'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif:     'Playfair Display', Georgia, serif;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  --radius-card:    12px;
+  --radius-pill:    9999px;
 }
 
 /* === 1. RESET & BASE === */
@@ -34,272 +50,236 @@
 html {
   background-color: var(--bg-dark);
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  font-size: 16px;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark);
-  color: var(--text-white);
+  color: var(--text-light);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
-ul, ol {
-  list-style: none;
+img, video {
+  display: block;
+  max-width: 100%;
 }
 
 button {
-  border: none;
-  background: none;
   cursor: pointer;
-  font-family: inherit;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
 }
 
-/* === 2. THREE.JS CANVAS === */
+/* === 2. THREE.JS 3D CANVAS (CRITICAL: Full Visibility) === */
 #three-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.45;
+  z-index: 1; /* Above dark foundation, below interactive content */
+  pointer-events: auto; /* Receives mouse click & hold to blast */
 }
 
-/* === 3. SITE WRAP === */
 .site-wrap {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none; /* Let clicks & hovers pass through empty areas to 3D canvas */
 }
 
-/* === 4. CONTAINER === */
+/* Re-enable pointer events for interactive elements */
+.site-wrap a,
+.site-wrap button,
+.site-wrap input,
+.site-wrap textarea,
+.site-wrap video,
+.site-wrap .interactive,
+.site-wrap .showcase-card,
+.site-wrap .workflow-card,
+.site-wrap .nav-link,
+.site-wrap .hero-info-card,
+.site-wrap .footer-links a,
+.site-wrap .contact-form,
+.site-wrap .btn-underline {
+  pointer-events: auto;
+}
+
+/* === 3. CONTAINER SYSTEM === */
 .container {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding-inline: 2rem;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 36px;
 }
 
-/* === 5. STICKY HEADER === */
-.nav-trionn {
-  position: sticky;
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 20px;
+  }
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+/* === 4. TRIONN STICKY HEADER === */
+.site-header {
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: rgba(4, 5, 8, 0.88);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-hair);
-}
-
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.nav-logo-box {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid var(--border-grid);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-brand-title {
-  font-size: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-}
-
-.nav-brand-sub {
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-}
-
-.nav-brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-link {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  padding-block: 6px;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--text-white);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--text-white);
+  z-index: 999;
+  padding: 24px 0;
+  mix-blend-mode: difference;
+  transition: all 0.3s ease;
 }
 
-.nav-actions {
+.site-header .container {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
   align-items: center;
 }
 
-/* === 6. BUTTONS === */
-.btn-trionn-white {
-  display: inline-flex;
-  background-color: var(--text-white);
-  color: #000000;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 11px 24px;
-  border-radius: 9999px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.btn-trionn-white:hover {
-  background-color: #E5E5E5;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -6px rgba(255, 255, 255, 0.2);
-}
-
-.btn-trionn-outline {
-  display: inline-flex;
-  background-color: transparent;
-  color: var(--text-white);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 11px 24px;
+.header-logo-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
   border: 1px solid var(--border-grid);
-  border-radius: 9999px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-trionn-outline:hover {
-  border-color: #888888;
-  transform: translateY(-2px);
+.header-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.btn-trionn-emerald {
-  display: inline-flex;
-  background-color: #0D2218;
-  color: var(--accent-emerald);
-  font-size: 0.8125rem;
+.header-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 11px 24px;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 9999px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* TRIONN "LET'S TALK" Button */
+.btn-talk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  color: #000000;
+  border: 1px solid #FFFFFF;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-trionn-emerald:hover {
-  background-color: #143D2B;
-  border-color: var(--accent-emerald);
-  transform: translateY(-2px);
+.btn-talk:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
 }
 
-/* === 7. PILL BADGES === */
-.trionn-pill {
+/* TRIONN "MENU ≡" Button */
+.btn-menu {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 16px;
-  border-radius: 9999px;
-  border: 1px solid var(--border-grid);
-  background: rgba(10, 11, 14, 0.7);
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-}
-
-.trionn-star {
-  color: var(--text-white);
   font-size: 0.75rem;
-}
-
-/* === 8. CORNER CROSSHAIRS === */
-.corner-plus {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  z-index: 10;
-  pointer-events: none;
-}
-.corner-plus::before,
-.corner-plus::after {
-  content: '';
-  position: absolute;
-  background-color: var(--border-light);
-}
-.corner-plus::before {
-  top: 6px;
-  left: 0;
-  width: 13px;
-  height: 1px;
-}
-.corner-plus::after {
-  top: 0;
-  left: 6px;
-  width: 1px;
-  height: 13px;
-}
-
-.corner-plus.tl { top: -6.5px; left: -6.5px; }
-.corner-plus.tr { top: -6.5px; right: -6.5px; }
-.corner-plus.bl { bottom: -6.5px; left: -6.5px; }
-.corner-plus.br { bottom: -6.5px; right: -6.5px; }
-
-/* === 9. HERO TYPOGRAPHY === */
-.hero-huge-1,
-.hero-huge-2 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 900;
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+  border-color: #FFFFFF;
+}
+
+.hamburger-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-bars span {
+  display: block;
+  width: 14px;
+  height: 1px;
+  background-color: currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* === 5. HERO SECTION (TRIONN Exact Split View) === */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  background: transparent !important; /* CRITICAL: 3D canvas renders behind */
+}
+
+.hero-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+}
+
+.hero-headline {
+  max-width: 650px;
+  z-index: 5;
+}
+
+.hero-headline h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-white);
+  margin-bottom: 0.2em;
 }
 
 .serif-italic {
@@ -307,91 +287,646 @@ button {
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.02em;
-  color: var(--text-lead);
+  color: var(--text-light);
 }
 
-.body-lead-trionn {
-  font-size: 1.1875rem;
-  color: var(--text-lead);
-  line-height: 1.65;
-  max-width: 58ch;
+/* TRIONN Hero Action Buttons with Animated Underline */
+.hero-actions {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 36px;
 }
 
-.body-sub-trionn {
-  font-size: 0.9375rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* === 10. SHOWCASE CARDS === */
-.trionn-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-grid);
-  border-radius: 8px;
-  padding: 2.5rem;
+.btn-underline {
   position: relative;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.4s;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-
-.trionn-card:hover {
-  border-color: #3A3D45;
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-
-.card-number {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
+  font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  display: block;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
+  padding-bottom: 6px;
+  min-width: 180px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
-/* === 11. STATUS PULSE === */
-.status-pulse {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
+.btn-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(216, 216, 216, 0.6);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-underline:hover::after {
+  background-color: #FFFFFF;
+}
+
+.btn-underline:hover {
+  color: #FFFFFF;
+}
+
+.btn-underline .arrow {
+  margin-left: auto;
+  font-size: 0.8125rem;
+}
+
+/* Hero Bottom Row */
+.hero-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+/* Scroll indicator */
+.hero-scroll-wrap {
+  grid-column: 1 / 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.65;
+}
+
+.scroll-circle {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-circle svg {
+  animation: bounce-down 2s infinite ease-in-out;
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* Interactive caption center */
+.hero-blast-callout {
+  grid-column: 4 / 9;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(216, 216, 216, 0.45);
+  user-select: none;
+}
+
+.hero-blast-callout .highlight {
+  color: var(--accent-amber);
+  font-weight: 700;
+}
+
+/* TRIONN 2-Column Info Card (Bottom Right) */
+.hero-info-wrap {
+  grid-column: 9 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-info-card {
+  display: flex;
+  border: 1px solid var(--border-grid);
+  border-radius: 4px;
+  background: rgba(12, 12, 12, 0.85);
+  backdrop-filter: blur(12px);
+  color: var(--text-light);
+  font-family: var(--font-mono);
+  overflow: hidden;
+}
+
+.hero-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-right: 1px solid var(--border-grid);
+  gap: 6px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.hero-info-right {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 0.75rem;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.hero-info-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: justify;
+}
+
+/* === 6. SECTION 2: ABOUT / PHILOSOPHY === */
+.about-section {
+  position: relative;
+  z-index: 3;
+  padding: 120px 0 100px 0;
+  background: var(--bg-hero);
+  border-top: 1px solid var(--border-grid);
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 24px;
+}
+
+.about-reveal-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--text-white);
+  max-width: 1100px;
+}
+
+/* TRIONN Signature Precision Line with Corner Crosshair */
+.line-crosshair-wrap {
+  position: relative;
+  width: 100%;
+  margin: 70px 0;
+  display: flex;
+  align-items: center;
+}
+
+.line-crosshair-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-grid);
+}
+
+.line-crosshair-mark {
+  position: absolute;
+  left: 65%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-hero);
+}
+
+.line-crosshair-mark svg {
+  width: 13px;
+  height: 13px;
+}
+
+.line-crosshair-mark line {
+  stroke: var(--text-light);
+  stroke-width: 1;
+}
+
+.about-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.about-col-left {
+  grid-column: 2 / 6;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  color: var(--text-white);
+}
+
+.about-col-right {
+  grid-column: 8 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-body-p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* === 7. KINETIC TICKER MARQUEE (TRIONN Band) === */
+.marquee-band {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 30px 0;
+  background: #FFFFFF;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 40px;
+  animation: marquee 25s linear infinite;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === 8. LIGHT EDITORIAL SHOWCASE SECTION (TRIONN Contrast Section) === */
+.section-light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 120px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.section-light .section-tag {
+  color: var(--text-dark-sub);
+}
+
+.section-light .section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+}
+
+/* Monumental Horizontal Showcase Card */
+.showcase-featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 40px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  margin-bottom: 48px;
+}
+
+.showcase-featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.2);
+}
+
+.featured-card-content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-media-area {
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-media-area video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Live Badge */
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--accent-emerald);
-  box-shadow: 0 0 12px var(--accent-emerald);
-  animation: pulse-dot 2s infinite;
+  box-shadow: 0 0 8px var(--accent-emerald);
+  animation: pulse-ring 2s infinite ease-out;
 }
 
-@keyframes pulse-dot {
+@keyframes pulse-ring {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.75); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }
 
-/* === 12. FACTS/METRICS BOARD === */
-.facts-board {
+/* Tech Pills */
+.tech-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: #F0EFEA;
+  color: #333333;
+  border: 1px solid #D8D7D2;
+}
+
+/* Dark tech pill for dark sections */
+.tech-pill-dark {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-light);
+  border: 1px solid var(--border-grid);
+}
+
+/* === 9. SECTION: WORKFLOWS IN MOTION (Real Video Grid) === */
+.section-motion {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 120px 0;
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid var(--border-grid);
+}
+
+.section-motion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.motion-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .motion-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .motion-grid-6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Video Workflow Card */
+.workflow-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-grid);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.8);
+}
+
+.workflow-video-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000000;
+  overflow: hidden;
+  position: relative;
+}
+
+.workflow-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.workflow-card:hover .workflow-video-wrap video {
+  transform: scale(1.04);
+}
+
+.workflow-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.workflow-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.workflow-num {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.workflow-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.workflow-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.workflow-footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-grid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workflow-outcome {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent-emerald);
+}
+
+.workflow-link {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.workflow-link:hover {
+  color: #FFFFFF;
+}
+
+/* === 10. SECTION: 3D SERVICES MONOLITH & CAPABILITIES === */
+.section-services {
+  background: var(--bg-hero);
+  border-top: 1px solid var(--border-grid);
+  padding: 100px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.services-big-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.service-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-grid);
+  transition: padding-left 0.3s ease;
+}
+
+.service-item-row:hover {
+  padding-left: 16px;
+}
+
+.service-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-white);
+}
+
+.service-arrow {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-item-row:hover .service-arrow {
+  transform: translateX(8px);
+  color: #FFFFFF;
+}
+
+/* === 11. FACTS & METRICS BOARD === */
+.facts-section {
+  padding: 80px 0;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border-grid);
+  position: relative;
+  z-index: 3;
+}
+
+.facts-grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--border-grid);
-  background-color: var(--bg-dark);
+  background: var(--bg-surface);
 }
 
-.facts-cell {
-  padding: 2.5rem 2rem;
+.facts-item {
+  padding: 36px 28px;
   border-right: 1px solid var(--border-grid);
   position: relative;
 }
 
-.facts-cell:last-child {
+.facts-item:last-child {
   border-right: none;
 }
 
-.facts-num {
-  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
-  font-weight: 800;
+.facts-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--text-white);
+  color: #FFFFFF;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+}
+
+.facts-number.emerald {
+  color: var(--accent-emerald);
 }
 
 .facts-label {
@@ -402,133 +937,59 @@ button {
   color: var(--text-muted);
 }
 
-/* === 13. PIPELINE FLOW GRID === */
-.trionn-flow {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border-grid);
+@media (max-width: 960px) {
+  .facts-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .facts-item:nth-child(2) {
+    border-right: none;
+  }
+  .facts-item:nth-child(1), .facts-item:nth-child(2) {
+    border-bottom: 1px solid var(--border-grid);
+  }
 }
 
-.trionn-flow-step {
-  padding: 1.75rem;
-  border-right: 1px solid var(--border-grid);
-  background-color: var(--bg-surface);
+@media (max-width: 580px) {
+  .facts-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .facts-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-grid);
+  }
+  .facts-item:last-child {
+    border-bottom: none;
+  }
 }
 
-.trionn-flow-step:last-child {
-  border-right: none;
-}
-
-.trionn-step-num {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-.trionn-step-title {
-  font-size: 1.0625rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 0.5rem;
-}
-
-.trionn-step-desc {
-  font-size: 0.875rem;
-  color: var(--text-lead);
-  line-height: 1.55;
-}
-
-/* === 14. DATA TABLE === */
-.trionn-table-wrap {
-  border: 1px solid var(--border-grid);
-  background-color: var(--bg-surface);
-  overflow-x: auto;
-}
-
-.trionn-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.875rem;
-}
-
-.trionn-table th {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  padding: 1.25rem 1.5rem;
-  background-color: var(--bg-surface-alt);
-  border-bottom: 1px solid var(--border-grid);
-  color: var(--text-muted);
-}
-
-.trionn-table td {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--border-grid);
-  color: var(--text-lead);
-}
-
-.trionn-table tr:hover td {
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.trionn-table tr:last-child td {
-  border-bottom: none;
-}
-
-/* === 15. TECH STACK TAGS === */
-.tech-tag {
-  display: inline-flex;
-  padding: 4px 12px;
-  border-radius: 9999px;
-  border: 1px solid var(--border-grid);
-  background-color: rgba(10, 11, 14, 0.5);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-}
-
-/* === 16. ARCHITECTURE DIAGRAM BLOCK === */
-.arch-diagram {
-  background-color: var(--bg-surface-alt);
-  border: 1px solid var(--border-grid);
-  border-radius: 8px;
-  padding: 2rem;
+/* === 12. INTERACTIVE CONTACT & FOOTER === */
+.contact-section {
+  padding: 120px 0 80px 0;
+  background: var(--bg-hero);
+  border-top: 1px solid var(--border-grid);
   position: relative;
+  z-index: 3;
 }
 
-.arch-layer {
-  padding: 1rem 1.25rem;
-  border-left: 2px solid var(--border-grid);
-  margin-bottom: 1rem;
+.contact-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1.08;
+  margin-bottom: 40px;
 }
 
-.arch-layer:last-child {
-  margin-bottom: 0;
+.contact-form-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-grid);
+  border-radius: var(--radius-card);
+  padding: 40px;
 }
 
-.arch-layer-title {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  color: var(--accent-emerald);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
-.arch-layer-content {
-  font-size: 0.875rem;
-  color: var(--text-lead);
-}
-
-/* === 17. CONTACT FORM === */
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .form-label {
@@ -538,73 +999,141 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
-.form-input,
-.form-textarea {
+.form-input, .form-textarea {
   width: 100%;
-  background-color: var(--bg-surface-alt);
+  background: var(--bg-surface-alt);
   border: 1px solid var(--border-grid);
   border-radius: 6px;
   padding: 14px 18px;
-  color: var(--text-white);
+  color: #FFFFFF;
   font-family: var(--font-sans);
   font-size: 0.9375rem;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-input:focus,
-.form-textarea:focus {
+.form-input:focus, .form-textarea:focus {
   outline: none;
-  border-color: #555555;
+  border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
 }
 
 .form-textarea {
-  min-height: 160px;
+  min-height: 140px;
   resize: vertical;
 }
 
 .form-status {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-top: 1rem;
 }
 
 .form-status.success {
-  background-color: rgba(16, 185, 129, 0.1);
+  display: block;
+  background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.3);
   color: var(--accent-emerald);
 }
 
 .form-status.error {
-  background-color: rgba(229, 72, 77, 0.1);
-  border: 1px solid rgba(229, 72, 77, 0.3);
-  color: var(--accent-red);
+  display: block;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #EF4444;
 }
 
-/* === 18. SECTION DIVIDERS === */
-.section-divider {
-  height: 1px;
-  background-color: var(--border-grid);
-  margin: 0;
-  border: none;
+/* Giant Outline Brand Footer Text (TRIONN Signature) */
+.footer-giant-brand {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 15vw, 14rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  user-select: none;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 
-/* === 19. FOOTER === */
-footer {
+.site-footer {
+  padding: 40px 0;
   border-top: 1px solid var(--border-grid);
-  padding: 3rem 0;
-  background-color: var(--bg-dark);
+  background: var(--bg-dark);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
-/* === 20. SCROLL REVEAL ANIMATIONS === */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #FFFFFF;
+}
+
+/* Mobile Nav Drawer */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-drawer a {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-drawer a:hover {
+  color: #FFFFFF;
+}
+
+/* Scroll reveal utility */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(28px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -613,115 +1142,46 @@ footer {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* === 21. GRID UTILITIES === */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.nav-mobile-toggle {
-  display: none;
-  background: none;
-  border: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.nav-mobile-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: var(--text-white);
-}
-
-.nav-mobile-menu {
-  display: none;
-  flex-direction: column;
-  padding: 1.5rem;
-  gap: 1rem;
-  background-color: var(--bg-surface);
-  border-top: 1px solid var(--border-hair);
-}
-
-.nav-mobile-menu.open {
+/* Compatibility aliases */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  z-index: 998;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+.mobile-menu a:hover {
+  color: #FFFFFF;
 }
 
-/* === 22. MOBILE RESPONSIVENESS === */
-@media (max-width: 960px) {
-  .nav-links,
-  .nav-actions {
-    display: none;
-  }
-  
-  .nav-mobile-toggle {
-    display: flex;
-  }
-  
-  .facts-board {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .facts-cell {
-    border-bottom: 1px solid var(--border-grid);
-  }
-
-  .facts-cell:nth-child(even) {
-    border-right: none;
-  }
-  .facts-cell:nth-child(n+3) {
-    border-bottom: none;
-  }
-  
-  .trionn-flow {
-    grid-template-columns: 1fr;
-  }
-  
-  .trionn-flow-step {
-    border-right: none;
-    border-bottom: 1px solid var(--border-grid);
-  }
-  .trionn-flow-step:last-child {
-    border-bottom: none;
-  }
-
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-
-@media (max-width: 600px) {
-  .container {
-    padding-inline: 1.25rem;
-  }
-  
-  .facts-board {
-    grid-template-columns: 1fr;
-  }
-
-  .facts-cell {
-    border-right: none;
-    border-bottom: 1px solid var(--border-grid);
-  }
-
-  .facts-cell:last-child {
-    border-bottom: none;
-  }
-  
-  .hero-huge-1,
-  .hero-huge-2 {
-    font-size: clamp(2.5rem, 10vw, 3rem);
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
+.hamburger span {
+  display: block;
+  width: 14px;
+  height: 1px;
+  background-color: currentColor;
 }

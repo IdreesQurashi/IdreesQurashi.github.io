@@ -1,314 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="theme-color" content="#040508"/>
-  <meta name="description" content="Autonomous outbound SDR swarm architecture: three-layer directive ingestion, LangGraph supervisor orchestration, and paced execution relay booking 15-20 qualified meetings weekly."/>
-  <title>Outbound Engine | Idrees Qurashi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
-  <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
-  <link rel="apple-touch-icon" href="brand_logo.png"/>
-  <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="engine3d.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#040508">
+    <title>Outbound Engine | Idrees Qurashi</title>
+    <meta name="description" content="Autonomous Outbound Engine - 15-20 qualified meetings weekly with 0.19% bounce ceiling.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
+    <link rel="apple-touch-icon" href="brand_logo.png">
+    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="engine3d.js" defer></script>
+    <style>
+        .page-hero { padding-block: 8rem 4rem; }
+        .hero-body-large { font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin-top: 2rem; line-height: 1.5; }
+        
+        .showcase-grid { display: flex; flex-direction: column; gap: 3rem; margin-block: 4rem; }
+        .showcase-card { 
+            position: relative; 
+            padding: 3rem; 
+            background: var(--surface-light, rgba(255,255,255,0.03)); 
+            border: 1px solid var(--border-grid, rgba(255,255,255,0.1));
+            overflow: hidden;
+        }
+        .corner-plus { position: absolute; width: 16px; height: 16px; opacity: 0.5; }
+        .corner-plus-tl { top: -8px; left: -8px; }
+        .corner-plus-tr { top: -8px; right: -8px; }
+        .corner-plus-bl { bottom: -8px; left: -8px; }
+        .corner-plus-br { bottom: -8px; right: -8px; }
+        
+        .card-meta { font-family: var(--font-mono, monospace); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 1rem; }
+        .card-title { font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-serif, serif); font-weight: normal; }
+        .card-desc { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; max-width: 800px; }
+        
+        .tech-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .tech-tag { padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono, monospace); font-size: 0.75rem; color: #D8D8D8; border: 1px solid rgba(255,255,255,0.1); }
+        
+        .metrics-section { padding-block: 6rem; border-top: 1px solid var(--border-grid); }
+        .facts-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .fact-item { border-left: 1px solid var(--border-grid); padding-left: 1.5rem; }
+        .fact-val { font-size: 2.5rem; margin-bottom: 0.5rem; font-family: var(--font-serif, serif); }
+        .fact-val.emerald { color: var(--emerald, #10b981); }
+        .fact-label { font-family: var(--font-mono, monospace); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+        .deliverability-section { padding-block: 6rem; border-top: 1px solid var(--border-grid); }
+        .data-table { width: 100%; border-collapse: collapse; text-align: left; margin-top: 2rem; }
+        .data-table th, .data-table td { padding: 1.5rem; border-bottom: 1px solid var(--border-grid); }
+        .data-table th { font-family: var(--font-mono, monospace); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .data-table td { font-size: 1rem; color: #D8D8D8; }
+        
+        @media (max-width: 768px) {
+            .showcase-card { padding: 2rem; }
+            .data-table th, .data-table td { padding: 1rem 0.5rem; }
+            .fact-val { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
-  <canvas id="three-canvas"></canvas>
 
-  <div class="site-wrap">
-    
-    <!-- TRIONN Minimal Precision Header -->
-    <header class="nav-trionn">
-      <div class="container">
-        <div class="nav-inner">
-          <a href="index.html" class="nav-brand">
-            <div class="nav-logo-box">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <div>
-              <div class="nav-brand-title">Idrees Qurashi</div>
-              <div class="nav-brand-sub">Autonomous Systems Studio</div>
-            </div>
-          </a>
+<canvas id="three-canvas"></canvas>
+<div class="site-wrap">
 
-          <nav class="nav-links">
-            <a href="index.html" class="nav-link">Overview</a>
-            <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-            <a href="outbound-engine.html" class="nav-link active">Outbound Engine</a>
-            <a href="client-proof.html" class="nav-link">Client Proof</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-          </nav>
-
-          <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
-          </div>
-
-          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-
-      <div class="nav-mobile-menu">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-        <a href="outbound-engine.html" class="nav-link active">Outbound Engine</a>
-        <a href="client-proof.html" class="nav-link">Client Proof</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
-      </div>
-    </header>
-
-    <main id="main-content">
-      
-      <!-- PAGE HERO -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          <div style="display:flex;flex-direction:column;align-items:flex-start">
-            
-            <div class="trionn-pill" style="margin-bottom:2rem">
-              <span class="trionn-star">&#10022;</span>
-              <span>Outbound Architecture</span>
-            </div>
-
-            <div style="margin-bottom:2.5rem">
-              <h1 class="hero-huge-2">Autonomous <span class="serif-italic">Outbound Engine</span></h1>
-            </div>
-
-            <p class="body-lead-trionn" style="margin-bottom:0">
-              A three-layer autonomous sales development system replacing manual prospecting with deterministic LangGraph orchestration and paced execution. Booking 15-20 qualified discovery calls weekly with a 0.19% bounce rate ceiling.
-            </p>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- FULL ARCHITECTURE BREAKDOWN -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          
-          <div style="margin-bottom:3.5rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; Three Layer Architecture</div>
-            <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em">
-              System Architecture Teardown
-            </h2>
-          </div>
-
-          <div style="display:grid;grid-template-columns:repeat(1, 1fr);gap:2rem">
-            
-            <!-- Layer 01 -->
-            <article class="trionn-card" style="padding:2.5rem">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              
-              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
-                <span class="card-number">LAYER 01 // DIRECTIVE ENGINE</span>
-              </div>
-              <h3 style="font-size:1.75rem;font-weight:700;margin-bottom:1.5rem">Directive Ingestion &amp; ICP Qualification</h3>
-              <p class="body-sub-trionn" style="margin-bottom:2rem;font-size:1.05rem;max-width:85ch">
-                The directive engine parses YAML configuration files containing role whitelists (AI Automation Engineer, Agentic Workflows Developer, Prompt Engineer, n8n Specialist), banned company registries, geographic contractor eligibility rules, and ICP qualification criteria. Each prospective lead is scored against the 11/10 Skill Match Rule: the job description must feel as though it was written by inspecting the operator's CV directly. Roles that require forced-fit skills (GPU infrastructure, CUDA, C++ systems engineering) are silently discarded.
-              </p>
-              <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">Python YAML</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">Pydantic Validators</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">ICP Scoring Engine</span>
-              </div>
-            </article>
-
-            <!-- Layer 02 -->
-            <article class="trionn-card" style="padding:2.5rem">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-
-              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
-                <span class="card-number">LAYER 02 // SUPERVISOR SWARM</span>
-              </div>
-              <h3 style="font-size:1.75rem;font-weight:700;margin-bottom:1.5rem">LangGraph Multi-Agent Supervisor</h3>
-              <p class="body-sub-trionn" style="margin-bottom:2rem;font-size:1.05rem;max-width:85ch">
-                Central supervisor node receives qualified leads and distributes tasks to specialized worker agents. The Email Composer agent generates bespoke outreach using the Copywriting Mastery engine with native Western founder tone. The Bounce Validator agent pre-screens recipient mailboxes against deliverability heuristics. The CRM Logger agent writes qualified interactions to the pipeline tracker. All agent outputs are cross-validated under strict JSON schemas before forwarding to the execution layer. The supervisor implements a State Graph with conditional edges, ensuring deterministic routing.
-              </p>
-              <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">LangGraph 0.2</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">State Graph</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">Gemini Flash Lite</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">JSON Schema</span>
-              </div>
-            </article>
-
-            <!-- Layer 03 -->
-            <article class="trionn-card" style="padding:2.5rem">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-
-              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
-                <span class="card-number">LAYER 03 // EXECUTION RELAY</span>
-              </div>
-              <h3 style="font-size:1.75rem;font-weight:700;margin-bottom:1.5rem">Paced Execution &amp; Deliverability Guard</h3>
-              <p class="body-sub-trionn" style="margin-bottom:2rem;font-size:1.05rem;max-width:85ch">
-                The execution relay dispatches personalized outbound sequences through a detached background daemon enforcing randomized 15-30 minute intervals between sends. Real-time bounce monitoring triggers automatic 12-24 hour cooldown when rates exceed 0.25%. A deduplication registry prevents repeat sends on script restart. All dispatches require explicit verbal approval before transmission.
-              </p>
-              <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">Background Daemon</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">SMTP Relay</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">Redis Streams</span>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;padding:0.25rem 0.75rem;background:#1a1a1a;border-radius:1rem;color:#ccc">Dedup Registry</span>
-              </div>
-            </article>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- PERFORMANCE METRICS -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          
-          <div style="margin-bottom:3.5rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; Verified Performance</div>
-            <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em">
-              Outbound Metrics Dashboard
-            </h2>
-          </div>
-
-          <div class="facts-board">
-            <div class="facts-cell">
-              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
-              <div class="facts-num">15-20</div>
-              <div class="facts-label">Qualified Meetings / Week</div>
-            </div>
-
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--accent-emerald)">0.19%</div>
-              <div class="facts-label">Bounce Rate Ceiling</div>
-            </div>
-
-            <div class="facts-cell">
-              <div class="facts-num">&lt;0.25%</div>
-              <div class="facts-label">Hard Bounce Threshold</div>
-            </div>
-
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--text-dim)">900-1800s</div>
-              <div class="facts-label">Randomized Send Interval</div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- DELIVERABILITY PROTOCOL TABLE -->
-      <section style="padding-block:5rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          
-          <div style="margin-bottom:3.5rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; Zero Bounce Protocol</div>
-            <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em">
-              Deliverability Safeguards
-            </h2>
-          </div>
-
-          <div class="trionn-table-wrap" style="overflow-x:auto;border:1px solid var(--border-grid);border-radius:8px">
-            <table class="trionn-table" style="width:100%;border-collapse:collapse;text-align:left;color:var(--text-white)">
-              <thead style="background:var(--bg-dark);font-family:var(--font-mono);font-size:0.875rem;text-transform:uppercase;letter-spacing:0.04em">
-                <tr>
-                  <th style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Protocol</th>
-                  <th style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Rule</th>
-                  <th style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Enforcement</th>
-                </tr>
-              </thead>
-              <tbody style="font-size:1rem;color:var(--text-dim)">
-                <tr>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid);color:var(--text-white);font-weight:600">Email Source Reliability</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Only JD-stated or verified executive contacts</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Guessing permanently banned</td>
-                </tr>
-                <tr>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid);color:var(--text-white);font-weight:600">Human Pacing</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">15-30 min randomized intervals</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Sub-minute dispatch banned</td>
-                </tr>
-                <tr>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid);color:var(--text-white);font-weight:600">Hard Bounce Protocol</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Single bounce triggers 12-24hr cooldown</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Address permanently blacklisted</td>
-                </tr>
-                <tr>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid);color:var(--text-white);font-weight:600">Deduplication</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Sent log registry checked before every dispatch</td>
-                  <td style="padding:1.5rem;border-bottom:1px solid var(--border-grid)">Zero duplicate sends</td>
-                </tr>
-                <tr>
-                  <td style="padding:1.5rem;color:var(--text-white);font-weight:600">Dispatch Permission</td>
-                  <td style="padding:1.5rem">Explicit verbal approval required</td>
-                  <td style="padding:1.5rem">Automated sends banned</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- TRIONN Section 6: Banner Call to Action -->
-      <section style="padding-block:8rem;text-align:center">
-        <div class="container" style="max-width:800px;margin-inline:auto">
-          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Engagement Initiation</div>
-          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
-            Let&#39;s build <span class="serif-italic">something great.</span>
-          </h2>
-          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
-            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
-          </p>
-          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
-            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- TRIONN Footer -->
-    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
-          <div style="display:flex;align-items:center;gap:1rem">
-            <div class="nav-logo-box" style="width:28px;height:28px">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
-              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
-            </span>
-          </div>
-
-          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
-            <a href="index.html" style="color:var(--text-dim)">Overview</a>
-            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
-            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="header-logo">
+      <img src="brand_logo.png" alt="Idrees Qurashi" style="height:28px;width:auto;border-radius:4px">
+    </a>
+    <div class="header-actions">
+      <a href="contact.html" class="btn-talk">let's talk</a>
+      <button class="btn-menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+        <span>Menu</span>
+        <div class="hamburger"><span></span><span></span></div>
+      </button>
+    </div>
   </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="index.html">Overview</a>
+  <a href="agentic-lab.html">Systems</a>
+  <a href="client-proof.html">Proof</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="page-hero">
+        <div class="container reveal">
+            <div class="pill-badge" style="display:inline-block; margin-bottom: 2rem;">✦ architecture</div>
+            <h1 class="section-headline" style="font-size: 4rem; line-height: 1.1;">Autonomous<br><span style="font-family:var(--font-serif);font-style:italic;color:rgba(216,216,216,0.6)">Outbound Engine.</span></h1>
+            <p class="hero-body-large">Three-layer autonomous SDR system replacing manual prospecting. Booking 15-20 qualified meetings weekly with 0.19% bounce ceiling.</p>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE LAYERS -->
+    <section>
+        <div class="container reveal">
+            <div class="showcase-grid">
+                
+                <!-- Layer 01 -->
+                <div class="showcase-card">
+                    <svg class="corner-plus corner-plus-tl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-tr" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-bl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-br" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    
+                    <div class="card-meta">LAYER 01 // DIRECTIVE ENGINE</div>
+                    <h2 class="card-title">Directive Ingestion & ICP Qualification</h2>
+                    <p class="card-desc">Parses YAML configurations with role whitelists, banned company registries, geographic eligibility rules. Scores leads against the 11/10 Skill Match Rule. Forced-fit skills silently discarded.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python YAML</span>
+                        <span class="tech-tag">Pydantic Validators</span>
+                        <span class="tech-tag">ICP Scoring</span>
+                    </div>
+                </div>
+
+                <!-- Layer 02 -->
+                <div class="showcase-card">
+                    <svg class="corner-plus corner-plus-tl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-tr" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-bl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-br" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+
+                    <div class="card-meta">LAYER 02 // SUPERVISOR SWARM</div>
+                    <h2 class="card-title">LangGraph Multi-Agent Supervisor</h2>
+                    <p class="card-desc">Central supervisor distributes to Email Composer, Bounce Validator, CRM Logger agents. Copywriting Mastery engine generates bespoke outreach. All outputs cross-validated under JSON schemas. State Graph with conditional edges for deterministic routing.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LangGraph 0.2</span>
+                        <span class="tech-tag">State Graph</span>
+                        <span class="tech-tag">Gemini Flash Lite</span>
+                        <span class="tech-tag">JSON Schema</span>
+                    </div>
+                </div>
+
+                <!-- Layer 03 -->
+                <div class="showcase-card">
+                    <svg class="corner-plus corner-plus-tl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-tr" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-bl" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+                    <svg class="corner-plus corner-plus-br" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="1"/></svg>
+
+                    <div class="card-meta">LAYER 03 // EXECUTION RELAY</div>
+                    <h2 class="card-title">Paced Execution & Deliverability Guard</h2>
+                    <p class="card-desc">Detached background daemon with randomized 15-30min intervals. Real-time bounce monitoring with 12-24hr cooldown. Deduplication registry prevents repeat sends. Explicit approval gate before transmission.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Background Daemon</span>
+                        <span class="tech-tag">SMTP Relay</span>
+                        <span class="tech-tag">Redis Streams</span>
+                        <span class="tech-tag">Dedup Registry</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics-section">
+        <div class="container reveal">
+            <h2 class="section-headline" style="font-size: 2.5rem; margin-bottom: 3rem;">Performance Metrics</h2>
+            <div class="facts-board">
+                <div class="fact-item">
+                    <div class="fact-val">15-20</div>
+                    <div class="fact-label">Meetings Week</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-val emerald">0.19%</div>
+                    <div class="fact-label">Bounce Ceiling</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-val"><0.25%</div>
+                    <div class="fact-label">Hard Bounce Threshold</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-val">900-1800s</div>
+                    <div class="fact-label">Send Interval</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DELIVERABILITY PROTOCOL -->
+    <section class="deliverability-section">
+        <div class="container reveal">
+            <h2 class="section-headline" style="font-size: 2.5rem; margin-bottom: 2rem;">Deliverability Protocol</h2>
+            <div style="overflow-x: auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Rule</th>
+                            <th>Enforcement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 500;">Email Source Reliability</td>
+                            <td>Only trusted SMTP infrastructure utilized.</td>
+                            <td>Hardened DNS records (DKIM, SPF, DMARC).</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 500;">Human Pacing</td>
+                            <td>Mimic natural human sending intervals.</td>
+                            <td>Randomized 15-30 minute sleep jitter between dispatches.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 500;">Hard Bounce Protocol</td>
+                            <td>Strict immediate pause upon bounce detection.</td>
+                            <td>12-24 hour mandatory cooldown triggered instantly.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 500;">Deduplication</td>
+                            <td>Zero duplicate engagements.</td>
+                            <td>Global Redis hash registry validates prior outreach.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 500;">Dispatch Permission</td>
+                            <td>Human-in-the-loop approval.</td>
+                            <td>Interactive terminal gate requires 'yes' before network egress.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" style="padding-block: 8rem; text-align: center;">
+        <div class="container reveal" style="max-width: 800px; margin: 0 auto;">
+            <div class="pill-badge" style="display: inline-block; margin-bottom: 2rem;">✦ Engagement</div>
+            <h2 class="section-headline" style="font-size: 3.5rem; margin-bottom: 2rem;">Let's build <span class="serif-italic">something autonomous.</span></h2>
+            <p class="body-lead" style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.25rem;">
+                Book a 30-minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
+            </p>
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="contact.html" class="btn-trionn-white" style="display:inline-block; padding:1rem 2rem; background:#fff; color:#000; text-decoration:none; font-weight:500; border-radius:4px;">Book System Audit →</a>
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" class="btn-trionn-emerald" style="display:inline-flex; align-items:center; gap:0.5rem; padding:1rem 2rem; border:1px solid #10b981; color:#10b981; text-decoration:none; font-weight:500; border-radius:4px;">
+                    <span class="status-pulse" style="width:8px; height:8px; background:#10b981; border-radius:50%; box-shadow:0 0 8px #10b981;"></span>
+                    WhatsApp Direct
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" style="border-top: 1px solid var(--border-grid); padding-block: 3rem; background: var(--bg-dark, #040508);">
+    <div class="container">
+        <div class="footer-inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+            <div class="footer-left" style="display: flex; align-items: center; gap: 1rem;">
+                <div class="nav-logo-box" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--surface-light, rgba(255,255,255,0.05)); border-radius: 4px;">
+                    <img src="brand_logo.png" alt="Brand Logo" width="20" height="20">
+                </div>
+                <div class="copyright" style="font-family: var(--font-mono, monospace); font-size: 0.875rem; color: var(--text-muted);">
+                    © 2026 Idrees Qurashi · Autonomous Systems Studio
+                </div>
+            </div>
+            
+            <nav class="footer-links" style="display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Overview</a>
+                <a href="agentic-lab.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Agentic Lab</a>
+                <a href="client-proof.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">Client Proof</a>
+                <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">GitHub</a>
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;">WhatsApp</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+</div>
 </body>
 </html>

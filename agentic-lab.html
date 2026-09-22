@@ -1,346 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="theme-color" content="#040508"/>
-  <meta name="description" content="Deep technical teardowns of autonomous AI systems: LangGraph multi-agent swarms, self-healing visual scrapers, deterministic MCP servers, and enterprise n8n automations."/>
-  <title>Agentic Lab | Idrees Qurashi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
-  <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
-  <link rel="apple-touch-icon" href="brand_logo.png"/>
-  <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="engine3d.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#040508">
+    <title>Systems | Agentic Laboratory</title>
+    <meta name="description" content="Autonomous Systems Studio building deterministic AI workflows, multi-agent swarms, and self-healing systems.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png">
+    <link rel="apple-touch-icon" href="brand_logo.png">
+    <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="engine3d.js" defer></script>
+    <style>
+        .page-hero { padding: 80px 0 40px; border-bottom: 1px solid #2F323B; }
+        .system-section { padding: 60px 0; border-bottom: 1px solid #2F323B; }
+        .arch-diagram { display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
+        .arch-layer { padding: 24px; background: rgba(255,255,255,0.03); border-left: 2px solid #333; }
+        .arch-layer-label { font-family: var(--font-mono); font-size: 0.6875rem; color: rgba(216,216,216,0.4); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; }
+        .arch-layer-desc { font-size: 0.9375rem; color: rgba(216,216,216,0.8); line-height: 1.6; }
+        .facts-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; padding: 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
+        .flow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+        .flow-step { padding: 24px; background: rgba(255,255,255,0.03); border-top: 2px solid #333; }
+        
+        @media (max-width: 768px) {
+            .facts-board, .flow-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <canvas id="three-canvas"></canvas>
 
-  <div class="site-wrap">
-    
-    <!-- TRIONN Minimal Precision Header -->
-    <header class="nav-trionn">
-      <div class="container">
-        <div class="nav-inner">
-          <a href="index.html" class="nav-brand">
-            <div class="nav-logo-box">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <div>
-              <div class="nav-brand-title">Idrees Qurashi</div>
-              <div class="nav-brand-sub">Autonomous Systems Studio</div>
-            </div>
-          </a>
+<canvas id="three-canvas"></canvas>
+<div class="site-wrap">
 
-          <nav class="nav-links">
-            <a href="index.html" class="nav-link">Overview</a>
-            <a href="agentic-lab.html" class="nav-link active">Agentic Lab</a>
-            <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-            <a href="client-proof.html" class="nav-link">Client Proof</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-          </nav>
-
-          <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
-          </div>
-
-          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-
-      <div class="nav-mobile-menu">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="agentic-lab.html" class="nav-link active">Agentic Lab</a>
-        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-        <a href="client-proof.html" class="nav-link">Client Proof</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
-      </div>
-    </header>
-
-    <main id="main-content">
-      
-      <!-- PAGE HERO -->
-      <section class="reveal" style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          <div style="display:flex;flex-direction:column;align-items:flex-start">
-            
-            <div class="trionn-pill" style="margin-bottom:1.5rem">
-              <span class="trionn-star">&#10022;</span>
-              <span>Technical Teardowns</span>
-            </div>
-
-            <div style="margin-bottom:2rem">
-              <h1 class="hero-huge-1" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:0;">Agentic <span class="serif-italic">Laboratory</span></h1>
-            </div>
-
-            <p class="body-lead-trionn" style="margin-bottom:0;max-width:800px">
-              Production architectures engineered for autonomous execution. Each system documented with full technical specification, layer architecture, and verified performance metrics.
-            </p>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- SYSTEM 01: AUTONOMOUS OUTBOUND SDR SWARM -->
-      <section class="reveal" style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          
-          <div style="margin-bottom:3rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; System 01</div>
-            <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Autonomous Outbound SDR Swarm</h2>
-          </div>
-
-          <div class="arch-diagram" style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem">
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 1 - DIRECTIVE INGESTION</h3>
-              <p class="body-sub-trionn">Parses role whitelists, ICP qualification rules, and banned-company registries from YAML directives. Feeds structured targeting criteria to the supervisor.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 2 - LANGGRAPH SUPERVISOR ORCHESTRATION</h3>
-              <p class="body-sub-trionn">Central supervisor node distributes qualified leads to specialized worker agents: Email Composer, Bounce Validator, CRM Logger. Cross-validates outputs under strict JSON schemas before forwarding to execution layer.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 3 - PACED EXECUTION RELAY</h3>
-              <p class="body-sub-trionn">Dispatches personalized outbound sequences with randomized 15-30 minute human-cadence intervals. Monitors bounce rates in real-time, triggering automatic cooldown when threshold exceeds 0.25%.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem">
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">LangGraph 0.2</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Playwright</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Gemini Flash Lite</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Redis Streams</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Python 3.12</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">YAML Directives</span>
-          </div>
-
-          <div class="facts-board" style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;border-top:1px solid var(--border-grid);padding-top:2rem">
-            <div class="facts-cell">
-              <div class="facts-num">15-20</div>
-              <div class="facts-label">Qualified Meetings / Week</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--accent-emerald)">0.19%</div>
-              <div class="facts-label">Bounce Rate Ceiling</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num">&lt;60s</div>
-              <div class="facts-label">Speed to Lead</div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
-      <!-- SYSTEM 02: VISION-GROUNDED SELF-HEALING SCRAPER -->
-      <section class="reveal" style="padding-block:5rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          
-          <div style="margin-bottom:3rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; System 02</div>
-            <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Vision-Grounded Self-Healing Web Scraper</h2>
-          </div>
-
-          <div class="arch-diagram" style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem">
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 1 - CACHED FAST PATH</h3>
-              <p class="body-sub-trionn">SQLite locator cache stores verified CSS selectors. On each run, the fast path attempts cached selectors with a 14ms timeout. If the element resolves, extraction proceeds at native speed.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 2 - MUTATION DETECTION</h3>
-              <p class="body-sub-trionn">When cached selectors fail (DOM redesign, class name rotation, dynamic rendering), the system captures a full-page screenshot and forwards it to the vision pipeline.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 3 - GEMINI VISION SPATIAL FALLBACK</h3>
-              <p class="body-sub-trionn">Gemini Vision API receives the screenshot with the target element description. Returns bounding-box coordinates. The system maps coordinates back to DOM elements, extracts the data, and writes the new working selector back to the SQLite cache.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem">
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Playwright Async</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Gemini Vision API</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">SQLite</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Python AsyncIO</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Pillow</span>
-          </div>
-
-          <div class="facts-board" style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;border-top:1px solid var(--border-grid);padding-top:2rem">
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--accent-emerald)">98.7%</div>
-              <div class="facts-label">Automated Uptime</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num">14ms</div>
-              <div class="facts-label">Cached Selector Speed</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num">0</div>
-              <div class="facts-label">Manual Interventions</div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
-      <!-- SYSTEM 03: DETERMINISTIC MCP SERVER -->
-      <section class="reveal" style="padding-block:5rem;border-bottom:1px solid var(--border-grid)">
-        <div class="container">
-          
-          <div style="margin-bottom:3rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; System 03</div>
-            <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Deterministic Model Context Protocol Server</h2>
-          </div>
-
-          <div class="arch-diagram" style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem">
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 1 - PYDANTIC SCHEMA GATE</h3>
-              <p class="body-sub-trionn">Every tool invocation passes through typed Pydantic model validation. Malformed parameters, missing fields, and type mismatches are rejected before any execution begins.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 2 - EPHEMERAL DOCKER SANDBOX</h3>
-              <p class="body-sub-trionn">Validated tool calls execute inside isolated, ephemeral Docker containers with restricted network access, memory limits, and filesystem quotas. Container destroyed after each invocation.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Layer 3 - JSON AUDIT TRAIL</h3>
-              <p class="body-sub-trionn">Every invocation, parameter set, execution result, and error trace is logged to an append-only JSON audit file. Full deterministic replay capability for debugging and compliance.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem">
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">MCP Protocol</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Python FastAPI</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Docker Engine</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Pydantic V2</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">JSON Lines</span>
-          </div>
-
-          <div class="facts-board" style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;border-top:1px solid var(--border-grid);padding-top:2rem">
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--accent-emerald)">100%</div>
-              <div class="facts-label">Parameter Validation</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num">0</div>
-              <div class="facts-label">Host Blast Radius</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num">∞</div>
-              <div class="facts-label">Audit Trail Depth</div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
-      <!-- SYSTEM 04: ENTERPRISE N8N WORKFLOW AUTOMATIONS -->
-      <section class="reveal" style="padding-block:5rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
-        <div class="container">
-          
-          <div style="margin-bottom:3rem">
-            <div class="trionn-pill" style="margin-bottom:1rem">&#10022; System 04</div>
-            <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Enterprise n8n Production Automations</h2>
-            <p class="body-lead-trionn" style="margin-top:1.5rem;max-width:800px">
-              A comprehensive suite of 5 production-grade workflows powering scalable data ingestion, intelligent classification, and reliable destination routing across the enterprise stack.
-            </p>
-          </div>
-
-          <div class="trionn-flow" style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem">
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Stage 1 - WEBHOOK INGESTION</h3>
-              <p class="body-sub-trionn">Multi-source webhook listeners aggregate inbound data from CRMs, forms, and third-party APIs into normalized event streams.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Stage 2 - LLM ENRICHMENT</h3>
-              <p class="body-sub-trionn">Gemini and OpenAI nodes classify, summarize, and enrich raw data. Structured outputs feed downstream routing logic.</p>
-            </div>
-            <div class="trionn-card" style="padding:2rem">
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--text-white)">Stage 3 - DISPATCH &amp; ALERTING</h3>
-              <p class="body-sub-trionn">Processed records route to destination systems (PostgreSQL, Google Sheets, CRM APIs) with instant Telegram/Slack failure alerts.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem">
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">n8n</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Make</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">PostgreSQL</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Webhooks</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">LLM APIs</span>
-            <span class="tech-tag" style="padding:0.5rem 1rem;border:1px solid var(--border-grid);border-radius:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim)">Telegram Bot API</span>
-          </div>
-
-          <div class="facts-board" style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;border-top:1px solid var(--border-grid);padding-top:2rem">
-            <div class="facts-cell">
-              <div class="facts-num">500+</div>
-              <div class="facts-label">Hours Processed / Month</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num" style="color:var(--accent-emerald)">85%</div>
-              <div class="facts-label">Operations Reduction</div>
-            </div>
-            <div class="facts-cell">
-              <div class="facts-num">5</div>
-              <div class="facts-label">Production Workflows</div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
-      <!-- CTA SECTION -->
-      <section style="padding-block:8rem;text-align:center">
-        <div class="container" style="max-width:800px;margin-inline:auto">
-          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Engagement Initiation</div>
-          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
-            Let&#39;s build <span class="serif-italic">something great.</span>
-          </h2>
-          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
-            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
-          </p>
-          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
-            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
-              <span class="status-pulse"></span> WhatsApp Direct
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- TRIONN Footer -->
-    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
-          <div style="display:flex;align-items:center;gap:1rem">
-            <div class="nav-logo-box" style="width:28px;height:28px">
-              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
-              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
-            </span>
-          </div>
-
-          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
-            <a href="index.html" style="color:var(--text-dim)">Overview</a>
-            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
-            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+<!-- HEADER (TRIONN exact: fixed, mix-blend-difference) -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="header-logo">
+      <img src="brand_logo.png" alt="Idrees Qurashi" style="height:28px;width:auto;border-radius:4px">
+    </a>
+    <div class="header-actions">
+      <a href="contact.html" class="btn-talk">let's talk</a>
+      <button class="btn-menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+        <span>Menu</span>
+        <div class="hamburger"><span></span><span></span></div>
+      </button>
+    </div>
   </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <a href="index.html">Overview</a>
+  <a href="agentic-lab.html">Systems</a>
+  <a href="client-proof.html">Proof</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero reveal">
+  <div class="container">
+    <div class="grid-12">
+      <div style="grid-column: 1 / 2">
+        <span class="section-label">systems</span>
+      </div>
+      <div style="grid-column: 2 / 10">
+        <h1 class="section-title" style="font-family:var(--font-display);font-size:clamp(3rem,6vw,5rem);font-weight:700;margin-bottom:24px;line-height:1;letter-spacing:-0.03em;">Agentic Laboratory</h1>
+        <p style="font-size:1.125rem;color:rgba(216,216,216,0.6);line-height:1.6;max-width:600px;">Production architectures engineered for autonomous execution. Each system documented with full technical specification, layer architecture, and verified performance metrics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM 01: AUTONOMOUS OUTBOUND SDR SWARM -->
+<section class="system-section reveal">
+  <div class="container">
+    <div class="grid-12">
+      <div style="grid-column: 1 / 2">
+        <span class="section-label">system 01</span>
+      </div>
+      <div style="grid-column: 2 / 13">
+        <h2 class="section-title">Autonomous Outbound SDR Swarm</h2>
+        
+        <div class="arch-diagram">
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 1 // DIRECTIVE INGESTION</div>
+            <div class="arch-layer-desc">YAML parsing, role whitelists, and rigorous ICP qualification against strict pre-defined exclusion filters.</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 2 // LANGGRAPH SUPERVISOR</div>
+            <div class="arch-layer-desc">Supervisor node distributes specialized tasks to Email Composer, Bounce Validator, and CRM Logger workers based on state.</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 3 // PACED EXECUTION RELAY</div>
+            <div class="arch-layer-desc">Randomized 15-30min intervals, real-time bounce monitoring, and automatic cooldown triggers to preserve domain reputation.</div>
+          </div>
+        </div>
+
+        <div class="tech-tags" style="margin-top:24px">
+          <span class="tech-tag">LangGraph 0.2</span>
+          <span class="tech-tag">Playwright</span>
+          <span class="tech-tag">Gemini Flash Lite</span>
+          <span class="tech-tag">Redis Streams</span>
+          <span class="tech-tag">Python 3.12</span>
+          <span class="tech-tag">YAML</span>
+        </div>
+
+        <div class="facts-board">
+          <div class="metric"><span class="metric-value">15-20</span><span class="metric-label">Meetings Week</span></div>
+          <div class="metric"><span class="metric-value emerald">0.19%</span><span class="metric-label">Bounce Ceiling</span></div>
+          <div class="metric"><span class="metric-value">&lt;60s</span><span class="metric-label">Speed to Lead</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM 02: VISION SCRAPER -->
+<section class="system-section reveal">
+  <div class="container">
+    <div class="grid-12">
+      <div style="grid-column: 1 / 2">
+        <span class="section-label">system 02</span>
+      </div>
+      <div style="grid-column: 2 / 13">
+        <h2 class="section-title">Vision-Grounded Self-Healing Web Scraper</h2>
+        
+        <div class="arch-diagram">
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 1 // CACHED FAST PATH</div>
+            <div class="arch-layer-desc">SQLite locator cache enabling 14ms timeout selector resolution for known DOM structures.</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 2 // MUTATION DETECTION</div>
+            <div class="arch-layer-desc">Cached selector failure detection triggering immediate full-page screenshot capture for vision analysis.</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 3 // GEMINI VISION FALLBACK</div>
+            <div class="arch-layer-desc">Bounding-box coordinate computation, complex DOM element mapping, and persistent cache repair.</div>
+          </div>
+        </div>
+
+        <div class="tech-tags" style="margin-top:24px">
+          <span class="tech-tag">Playwright Async</span>
+          <span class="tech-tag">Gemini Vision API</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">Python AsyncIO</span>
+          <span class="tech-tag">Pillow</span>
+        </div>
+
+        <div class="facts-board">
+          <div class="metric"><span class="metric-value emerald">98.7%</span><span class="metric-label">Automated Uptime</span></div>
+          <div class="metric"><span class="metric-value">14ms</span><span class="metric-label">Cached Speed</span></div>
+          <div class="metric"><span class="metric-value">0</span><span class="metric-label">Manual Interventions</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM 03: MCP SERVER -->
+<section class="system-section reveal">
+  <div class="container">
+    <div class="grid-12">
+      <div style="grid-column: 1 / 2">
+        <span class="section-label">system 03</span>
+      </div>
+      <div style="grid-column: 2 / 13">
+        <h2 class="section-title">Deterministic Model Context Protocol Server</h2>
+        
+        <div class="arch-diagram">
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 1 // PYDANTIC SCHEMA GATE</div>
+            <div class="arch-layer-desc">Strict typed validation and automatic malformed parameter rejection before any execution logic runs.</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 2 // EPHEMERAL DOCKER SANDBOX</div>
+            <div class="arch-layer-desc">Isolated containers, severely restricted network access, and hard memory limits for executing untrusted operations.</div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-layer-label">Layer 3 // JSON AUDIT TRAIL</div>
+            <div class="arch-layer-desc">Append-only logging ensuring complete, deterministic replay capability for every single tool invocation.</div>
+          </div>
+        </div>
+
+        <div class="tech-tags" style="margin-top:24px">
+          <span class="tech-tag">MCP Protocol</span>
+          <span class="tech-tag">Python FastAPI</span>
+          <span class="tech-tag">Docker Engine</span>
+          <span class="tech-tag">Pydantic V2</span>
+          <span class="tech-tag">JSON Lines</span>
+        </div>
+
+        <div class="facts-board">
+          <div class="metric"><span class="metric-value emerald">100%</span><span class="metric-label">Parameter Validation</span></div>
+          <div class="metric"><span class="metric-value">0</span><span class="metric-label">Host Blast Radius</span></div>
+          <div class="metric"><span class="metric-value">∞</span><span class="metric-label">Audit Trail</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM 04: N8N WORKFLOWS -->
+<section class="system-section reveal" style="border-bottom:none">
+  <div class="container">
+    <div class="grid-12">
+      <div style="grid-column: 1 / 2">
+        <span class="section-label">system 04</span>
+      </div>
+      <div style="grid-column: 2 / 13">
+        <h2 class="section-title">Enterprise n8n Production Automations</h2>
+        
+        <div class="flow-grid">
+          <div class="flow-step">
+            <div class="arch-layer-label">Step 01 // WEBHOOK INGESTION</div>
+            <div class="arch-layer-desc">Multi-source webhook listeners parsing and routing normalized event streams instantly.</div>
+          </div>
+          <div class="flow-step">
+            <div class="arch-layer-label">Step 02 // LLM ENRICHMENT</div>
+            <div class="arch-layer-desc">Gemini and OpenAI models providing robust classification and outputting structured JSON payload data.</div>
+          </div>
+          <div class="flow-step">
+            <div class="arch-layer-label">Step 03 // DISPATCH & ALERTING</div>
+            <div class="arch-layer-desc">PostgreSQL and Sheets persistent routing with real-time Telegram/Slack failure alerts and operational logs.</div>
+          </div>
+        </div>
+
+        <div class="tech-tags" style="margin-top:24px">
+          <span class="tech-tag">n8n</span>
+          <span class="tech-tag">Make</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Webhooks</span>
+          <span class="tech-tag">LLM APIs</span>
+          <span class="tech-tag">Telegram Bot API</span>
+        </div>
+
+        <div class="facts-board">
+          <div class="metric"><span class="metric-value">500+</span><span class="metric-label">Hours Month</span></div>
+          <div class="metric"><span class="metric-value emerald">85%</span><span class="metric-label">Ops Reduction</span></div>
+          <div class="metric"><span class="metric-value">5</span><span class="metric-label">Prod Workflows</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CTA (TRIONN contact section style) -->
+<section style="padding:120px 0;text-align:center">
+  <div class="container" style="max-width:800px">
+    <h2 class="reveal" style="font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,5vw,4rem);line-height:1.1;letter-spacing:-0.03em;color:#D8D8D8;margin-bottom:32px">
+      Let's build <span style="font-family:var(--font-serif);font-style:italic;font-weight:400;color:rgba(216,216,216,0.6)">something autonomous.</span>
+    </h2>
+    <p class="reveal reveal-d1" style="font-size:0.9375rem;color:rgba(216,216,216,0.6);max-width:480px;margin:0 auto 40px;line-height:1.7">Book a 30-minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.</p>
+    <div class="hero-cta-row reveal reveal-d2" style="justify-content:center">
+      <a href="contact.html" class="btn-underline"><span>Book System Audit</span><span class="arrow">→</span></a>
+      <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-underline"><span>WhatsApp Direct</span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="brand_logo.png" alt="IQ" style="height:20px;width:auto;border-radius:3px">
+        <span class="footer-copy">© 2026 Idrees Qurashi · Autonomous Systems Studio</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Overview</a>
+        <a href="agentic-lab.html">Systems</a>
+        <a href="client-proof.html">Proof</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://github.com/IdreesQurashi" target="_blank">GitHub</a>
+        <a href="https://wa.me/923489911425" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
 </body>
 </html>

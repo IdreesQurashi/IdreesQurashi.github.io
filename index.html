@@ -3,268 +3,292 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Production-grade autonomous systems: multi-agent LangGraph swarms, self-healing Playwright scrapers, MCP backends, and enterprise B2B outbound engines."/>
-  <title>Idrees Qurashi — AI Automation Engineer & Agentic Systems Architect</title>
+  <meta name="description" content="Autonomous AI agentic architectures, self healing workflows, and deterministic MCP backends powering enterprise operations and high scale B2B systems."/>
+  <title>Idrees Qurashi | AI Automation Engineer &amp; Agentic Systems Architect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
   <link rel="apple-touch-icon" href="brand_logo.png"/>
   <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
   <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="engine3d.js" defer></script>
 </head>
 <body>
-  <nav class="nav" role="navigation" aria-label="Primary navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo" aria-label="Home" style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:28px;height:28px;border-radius:6px;overflow:hidden;background:#000;border:1px solid var(--border-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-          </div>
-          <span class="nav-logo-name">Idrees Qurashi</span>
-        </a>
-        <ul class="nav-links" role="list">
-          <li><a href="index.html" class="nav-link active">Overview</a></li>
-          <li><a href="agentic-lab.html" class="nav-link ">Agentic Lab</a></li>
-          <li><a href="outbound-engine.html" class="nav-link ">Outbound Engine</a></li>
-          <li><a href="client-proof.html" class="nav-link ">Client Proof</a></li>
-          <li><a href="contact.html" class="nav-link ">Contact</a></li>
-        </ul>
-        <a href="contact.html" class="nav-cta">
-          <span class="status-dot"></span>
-          Book a System Audit
-        </a>
-        <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile-menu">
-      <a href="index.html" class="nav-link">Overview</a>
-      <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-      <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-      <a href="client-proof.html" class="nav-link">Client Proof</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="contact.html" class="btn-primary" style="align-self:flex-start">Book a System Audit</a>
-    </div>
-  </nav>
-<main id="main-content">
+  <canvas id="three-canvas"></canvas>
 
-<section class="section" aria-labelledby="hero-h" style="padding-top:var(--space-20)">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="section-eyebrow" style="margin-bottom:var(--space-5)">
-          <span class="eyebrow-line"></span>
-          <span class="tag tag-accent">v2.4.1 &middot; Production</span>
-          <span class="tag tag-ghost">LangGraph 0.2</span>
-        </div>
-        <h1 id="hero-h" class="display-hero" style="margin-bottom:var(--space-6)">Autonomous systems<br/>that replace<br/><span class="text-accent">fragile workflows.</span></h1>
-        <p class="body-lead" style="margin-bottom:var(--space-8)">I build production-grade agentic infrastructure for enterprise teams. Multi-agent swarms, self-healing Playwright scrapers with vision grounding, deterministic MCP backends, and B2B outbound engines that run while your team sleeps.</p>
-        <div class="stack-row" style="margin-bottom:var(--space-10)">
-          <span class="tag tag-ghost">LangGraph</span><span class="tag tag-ghost">CrewAI</span><span class="tag tag-ghost">Playwright</span><span class="tag tag-ghost">MCP Servers</span><span class="tag tag-ghost">n8n</span><span class="tag tag-ghost">Make.com</span><span class="tag tag-ghost">Python 3.12</span><span class="tag tag-ghost">Docker</span><span class="tag tag-ghost">OpenAI API</span><span class="tag tag-ghost">Gemini API</span>
-        </div>
-        <div style="display:flex;gap:var(--space-4);flex-wrap:wrap">
-          <a href="contact.html" class="btn-primary">&#8594; Book a System Audit</a>
-          <a href="agentic-lab.html" class="btn-ghost">View Architecture Teardowns</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="card card-accent-top" style="padding:var(--space-5) var(--space-6)">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4)">
-            <span class="mono-label">sys.status &mdash; agent_cluster_01</span>
-            <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none;animation:none"></span>&nbsp;LIVE</span>
-          </div>
-          <div class="terminal-block" style="padding:var(--space-4)">
-            <div class="terminal-line"><span class="tl-timestamp">09:14:02</span><span class="tl-level-ok">INFO</span><span class="tl-source">orchestrator</span><span class="tl-msg">Spawned <span class="tl-val">4 sub-agents</span> on task graph</span></div>
-            <div class="terminal-line"><span class="tl-timestamp">09:14:03</span><span class="tl-level-ok">INFO</span><span class="tl-source">scraper.vision</span><span class="tl-msg">Grounded LinkedIn CAPTCHA &mdash; retrying</span></div>
-            <div class="terminal-line"><span class="tl-timestamp">09:14:07</span><span class="tl-level-ok">OK</span><span class="tl-source">scraper.vision</span><span class="tl-msg">Extracted <span class="tl-val">312 leads</span> &middot; 0 blocks</span></div>
-            <div class="terminal-line"><span class="tl-timestamp">09:14:09</span><span class="tl-level-ok">INFO</span><span class="tl-source">mcp.outbound</span><span class="tl-msg">Enqueued <span class="tl-val">28 emails</span> &middot; rate-guard: OK</span></div>
-            <div class="terminal-line"><span class="tl-timestamp">09:14:12</span><span class="tl-level-ok">OK</span><span class="tl-source">langgraph</span><span class="tl-msg">Cycle <span class="tl-val">7/7</span> complete &middot; no retry needed</span></div>
-          </div>
-        </div>
-        <div class="metric-row">
-          <div class="metric-cell"><span class="mono-label">Avg. pipeline runtime</span><span class="mono-metric">4.2<span style="font-size:var(--text-sm);color:var(--fg-muted)">min</span></span><span class="tag tag-emerald" style="width:fit-content">vs. 6hr manual</span></div>
-          <div class="metric-cell"><span class="mono-label">Self-heal success rate</span><span class="mono-metric">98.7<span style="font-size:var(--text-sm);color:var(--fg-muted)">%</span></span><span class="tag tag-accent" style="width:fit-content">scraper uptime</span></div>
-          <div class="metric-cell"><span class="mono-label">Leads processed / day</span><span class="mono-metric">1,400<span style="font-size:var(--text-sm);color:var(--fg-muted)">+</span></span><span class="tag tag-ghost" style="width:fit-content">zero human review</span></div>
-          <div class="metric-cell"><span class="mono-label">Bounce rate (outbound)</span><span class="mono-metric">0.19<span style="font-size:var(--text-sm);color:var(--fg-muted)">%</span></span><span class="tag tag-emerald" style="width:fit-content">target: &lt;0.25%</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">architecture.overview</span></div></div>
-
-<section class="section" aria-labelledby="cap-h" style="padding-top:0">
-  <div class="container">
-    <header class="section-header">
-      <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">core.capabilities</span></div>
-      <h2 id="cap-h" class="display-section" style="max-width:22ch">Four infrastructure primitives. All production-grade.</h2>
-    </header>
-    <div class="bento bento-3" style="margin-bottom:var(--space-4)">
-      <article class="card card-accent-top">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-6)">
-          <div>
-            <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-accent">LangGraph</span><span class="tag tag-ghost">CrewAI</span><span class="tag tag-ghost">AutoGen</span></div>
-            <h3 class="display-card">Multi-Agent Orchestration</h3>
-          </div>
-        </div>
-        <p class="body-base" style="margin-bottom:var(--space-6)">Stateful DAG-based agent graphs with conditional branching, inter-agent memory sharing via Redis, and deterministic retry logic. Designed to replace brittle RPA chains with composable, observable swarm architectures.</p>
-        <div style="margin-bottom:var(--space-5)">
-          <div class="dag-flow" style="margin-bottom:var(--space-3)">
-            <span class="dag-node"><span style="color:var(--accent)">&#11044;</span> Supervisor</span>
-            <span class="dag-arrow">&rarr;</span>
-            <span class="dag-node"><span style="color:var(--emerald)">&#11044;</span> Researcher</span>
-            <span class="dag-arrow">&rarr;</span>
-            <span class="dag-node"><span style="color:var(--amber)">&#11044;</span> Validator</span>
-            <span class="dag-arrow">&rarr;</span>
-            <span class="dag-node"><span style="color:var(--accent)">&#11044;</span> Writer</span>
-          </div>
-          <div class="dag-flow">
-            <span class="dag-node" style="border-color:rgba(239,68,68,0.3)"><span style="color:var(--red)">&#11044;</span> ErrorHandler</span>
-            <span class="dag-arrow">&rarr;</span>
-            <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted)">conditional_edge &rarr; retry | abort</span>
-          </div>
-        </div>
-        <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-5);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-3)">
-          <span class="mono-label">State bus: <span class="mono-value">Redis Streams</span> &middot; Avg. depth: <span class="mono-value">7 nodes</span></span>
-          <a href="agentic-lab.html" class="btn-ghost" style="padding:var(--space-2) var(--space-4)">Teardown &rarr;</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">Playwright</span><span class="tag tag-ghost">Vision API</span></div>
-        <h3 class="display-card" style="margin-bottom:var(--space-4)">Self-Healing Scrapers</h3>
-        <p class="body-base" style="margin-bottom:var(--space-6)">Vision-grounded Playwright agents that detect DOM layout shifts, re-ground selectors via screenshot annotation, and self-recover from CAPTCHA without manual intervention.</p>
-        <div>
-          <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span class="mono-label">Uptime SLA</span><span class="mono-value">98.7%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:98.7%"></div></div>
-        </div>
-        <div style="margin-top:var(--space-4)">
-          <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span class="mono-label">CAPTCHA recovery</span><span class="mono-value">94.2%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:94.2%"></div></div>
-        </div>
-      </article>
-    </div>
-    <div class="bento" style="grid-template-columns:2fr 3fr;gap:var(--space-4)">
-      <article class="card">
-        <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">MCP</span><span class="tag tag-ghost">FastAPI</span><span class="tag tag-ghost">Docker</span></div>
-        <h3 class="display-card" style="margin-bottom:var(--space-4)">Deterministic MCP Backends</h3>
-        <p class="body-base" style="margin-bottom:var(--space-6)">Model Context Protocol servers with typed tool schemas, sandboxed Docker execution, rate-limited API proxying, and structured JSON audit logs for every tool call.</p>
-        <div class="terminal-block" style="padding:var(--space-3) var(--space-4)">
-          <div class="terminal-line"><span class="tl-level-ok">CALL</span><span class="tl-source">mcp.tool</span><span class="tl-msg">enrich_lead(email, domain)</span></div>
-          <div class="terminal-line"><span class="tl-level-ok">RESP</span><span class="tl-source">mcp.tool</span><span class="tl-msg">confidence: <span class="tl-val">0.94</span> tokens: <span class="tl-val">312</span></span></div>
-          <div class="terminal-line"><span class="tl-level-ok">DONE</span><span class="tl-source">sandbox</span><span class="tl-msg">runtime: <span class="tl-val">1.4s</span> status: <span class="tl-val">200</span></span></div>
-        </div>
-      </article>
-      <article class="card card-emerald-top">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-6)">
-          <div>
-            <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-emerald">Outbound Engine</span><span class="tag tag-ghost">n8n</span><span class="tag tag-ghost">Gmail API</span></div>
-            <h3 class="display-card">B2B Enterprise Outbound</h3>
-          </div>
-          <span class="status-dot"></span>
-        </div>
-        <p class="body-base" style="margin-bottom:var(--space-6)">End-to-end outbound pipeline: ICP scraping, Apollo/Hunter enrichment, Gemini-powered personalization at scale, Gmail API dispatch with randomized 15-to-30-minute pacing, and a stateful deduplication registry. Bounce rate locked below 0.25%.</p>
-        <div class="metric-row" style="border-radius:var(--radius-md)">
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Emails/day</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--fg-primary)">120</span></div>
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Open rate</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--fg-primary)">38%</span></div>
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Reply rate</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--fg-primary)">8.4%</span></div>
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Bounce rate</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--emerald)">0.19%</span></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">runtime.environment</span></div></div>
-
-<section class="section" aria-labelledby="stack-h" style="padding-top:0">
-  <div class="container">
-    <header class="section-header" style="margin-bottom:var(--space-10)">
-      <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">stack.manifest</span></div>
-      <h2 id="stack-h" class="display-section">Full runtime inventory</h2>
-    </header>
-    <div style="background:var(--bg-surface);border:1px solid var(--border-hair);border-radius:var(--radius-lg);overflow:hidden">
-      <table class="data-table">
-        <thead><tr><th>Layer</th><th>Technology</th><th>Version</th><th>Role in System</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td class="td-primary">Orchestration</td><td class="td-mono">LangGraph</td><td class="td-mono">0.2.x</td><td>Stateful agent DAG runtime, conditional edge routing</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">Orchestration</td><td class="td-mono">CrewAI</td><td class="td-mono">0.55+</td><td>Role-based crew definitions, task dependency graphs</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">Automation</td><td class="td-mono">Playwright</td><td class="td-mono">1.44</td><td>Vision-grounded browser agents, headless scraping</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">Workflow</td><td class="td-mono">n8n</td><td class="td-mono">Self-hosted 1.x</td><td>Trigger orchestration, webhook routing, CRM sync</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">Workflow</td><td class="td-mono">Make.com</td><td class="td-mono">Enterprise</td><td>Low-code integration pipelines, multi-step automation</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">LLM APIs</td><td class="td-mono">OpenAI / Gemini</td><td class="td-mono">gpt-4o / flash-lite</td><td>Reasoning, enrichment, email personalization, eval</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">Servers</td><td class="td-mono">MCP FastAPI</td><td class="td-mono">Python 3.12</td><td>Typed tool servers, sandboxed Docker execution layer</td><td><span class="tag tag-emerald">Production</span></td></tr>
-          <tr><td class="td-primary">State</td><td class="td-mono">Redis Streams</td><td class="td-mono">7.x</td><td>Cross-agent memory bus, deduplication registry</td><td><span class="tag tag-amber">Staging</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">social.proof</span></div></div>
-
-<section class="section" aria-labelledby="proof-h" style="padding-top:0">
-  <div class="container">
-    <header class="section-header" style="margin-bottom:var(--space-10)">
-      <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">client.proof</span></div>
-      <h2 id="proof-h" class="display-section">Outcomes, not promises.</h2>
-    </header>
-    <div class="bento bento-2">
-      <blockquote class="card" style="border-left:3px solid var(--accent);border-radius:0 var(--radius-lg) var(--radius-lg) 0">
-        <p class="body-base" style="margin-bottom:var(--space-6)">&ldquo;Idrees delivered a fully autonomous LinkedIn scraper and enrichment pipeline in 10 days. It now processes 300 leads per hour without a single human touchpoint. We cancelled two SaaS subscriptions the week after.&rdquo;</p>
-        <footer><p style="font-weight:600;color:var(--fg-primary);font-size:var(--text-sm)">Head of Growth &mdash; B2B SaaS, Series A</p><p class="mono-label" style="margin-top:var(--space-1)">Verified engagement &middot; Oct 2024</p></footer>
-      </blockquote>
-      <blockquote class="card" style="border-left:3px solid var(--emerald);border-radius:0 var(--radius-lg) var(--radius-lg) 0">
-        <p class="body-base" style="margin-bottom:var(--space-6)">&ldquo;The MCP server Idrees built cut our LLM integration time from 3 weeks to 2 days. Every tool call is sandboxed, logged, and retried automatically. It handles 40k tool calls per day in production.&rdquo;</p>
-        <footer><p style="font-weight:600;color:var(--fg-primary);font-size:var(--text-sm)">CTO &mdash; Enterprise AI Platform</p><p class="mono-label" style="margin-top:var(--space-1)">Verified engagement &middot; Jan 2025</p></footer>
-      </blockquote>
-    </div>
-    <div style="margin-top:var(--space-8);text-align:center"><a href="client-proof.html" class="btn-ghost">View all case studies &rarr;</a></div>
-  </div>
-</section>
-
-<section class="section-sm" style="background:var(--bg-surface);border-top:1px solid var(--border-hair);border-bottom:1px solid var(--border-hair)">
-  <div class="container" style="text-align:center;max-width:700px;margin-inline:auto">
-    <div class="terminal-block" style="margin-bottom:var(--space-8);text-align:left;max-width:480px;margin-inline:auto">
-      <div class="terminal-line"><span style="color:var(--fg-muted)">$</span> <span style="color:var(--accent)">enki</span> <span style="color:var(--fg-secondary)">audit --system your_workflow.json</span></div>
-      <div class="terminal-line"><span style="color:var(--fg-muted)">&#8627;</span> <span style="color:var(--emerald)">Scanning</span> <span style="color:var(--fg-secondary)">bottlenecks, failure points, automation gaps...</span></div>
-      <div class="terminal-line"><span style="color:var(--fg-muted)">&#8627;</span> <span style="color:var(--amber)">Report</span> <span style="color:var(--fg-secondary)">ready in</span> <span style="color:var(--fg-primary)">48h</span></div>
-    </div>
-    <h2 class="display-section" style="margin-bottom:var(--space-4)">Ready to replace fragile workflows?</h2>
-    <p class="body-lead" style="margin-bottom:var(--space-8);margin-inline:auto">Book a 30-minute system audit. I will review your current stack, identify the highest-leverage automation opportunities, and deliver a written architecture proposal within 48 hours.</p>
-    <a href="contact.html" class="btn-primary" style="font-size:var(--text-base);padding:var(--space-4) var(--space-8)">Book the Audit &rarr;</a>
-  </div>
-</section>
-
-</main>
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)">
-            <span class="nav-logo-mark">IQ://</span>
+  <div class="site-wrap">
+    <nav class="nav" role="navigation" aria-label="Primary navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo" aria-label="Home">
+            <div class="nav-logo-box">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
             <span class="nav-logo-name">Idrees Qurashi</span>
+          </a>
+          <ul class="nav-links" role="list">
+            <li><a href="index.html" class="nav-link active">Overview</a></li>
+            <li><a href="agentic-lab.html" class="nav-link">Agentic Lab</a></li>
+            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
+            <li><a href="client-proof.html" class="nav-link">Client Proof</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
           </div>
-          <p class="footer-meta">AI Automation Engineer &amp; Agentic Systems Architect</p>
-          <p class="footer-meta" style="margin-top:var(--space-2)">Islamabad, Pakistan &middot; Available for remote engagements worldwide</p>
+          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="agentic-lab.html" class="footer-link">Agentic Lab</a>
-          <a href="outbound-engine.html" class="footer-link">Outbound Engine</a>
-          <a href="client-proof.html" class="footer-link">Client Proof</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-          <a href="https://github.com/IdreesQurashi" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/idreesqurashi" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
       </div>
-      <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-hair);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-        <span class="footer-meta">&copy; 2026 Idrees Qurashi. Production-grade systems, zero placeholders.</span>
-        <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;Systems Operational</span>
+      <div class="nav-mobile-menu">
+        <a href="index.html" class="nav-link active">Overview</a>
+        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+        <a href="client-proof.html" class="nav-link">Client Proof</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
-    </div>
-  </footer>
+    </nav>
+
+    <main id="main-content">
+      
+      <!-- Hero Section -->
+      <section style="padding-top:var(--space-20);padding-bottom:var(--space-16)">
+        <div class="container">
+          <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:var(--space-12);align-items:center">
+            
+            <!-- Hero Left -->
+            <div>
+              <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
+                <span class="status-dot"></span> Autonomous Systems Engine
+              </div>
+              
+              <h1 class="display-hero" style="margin-bottom:var(--space-6)">
+                Wiring LLM swarms into systems your business runs.
+              </h1>
+
+              <p class="body-lead" style="margin-bottom:var(--space-8)">
+                Replacing brittle linear scripts with self healing LangGraph agent swarms, vision grounded scrapers, and high volume outbound pipelines that run around the clock.
+              </p>
+
+              <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-10)">
+                <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+                  <span class="status-dot"></span> WhatsApp Direct
+                </a>
+              </div>
+
+              <!-- Tech Tag Row -->
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                <span class="tag">LangGraph</span>
+                <span class="tag">Playwright</span>
+                <span class="tag">MCP Servers</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Make.com</span>
+                <span class="tag">Python 3.12</span>
+                <span class="tag">Docker</span>
+              </div>
+            </div>
+
+            <!-- Hero Right: 3D Video & Terminal Showcase -->
+            <div class="terminal-3d">
+              <div class="terminal-bar">
+                <div class="terminal-dots">
+                  <div class="t-dot" style="background:#EF4444"></div>
+                  <div class="t-dot" style="background:#F59E0B"></div>
+                  <div class="t-dot" style="background:#10B981"></div>
+                </div>
+                <span class="mono-label" style="font-size:var(--text-2xs);color:var(--gold)">
+                  autonomous_lead_swarm.sh
+                </span>
+                <span class="tag tag-emerald" style="padding:2px 6px">LIVE 60s RUN</span>
+              </div>
+
+              <!-- Live Video Placeholder / Terminal Preview -->
+              <div class="video-container-3d">
+                <div class="video-placeholder">
+                  <div class="tag tag-gold" style="margin-bottom:var(--space-3)">Live Autonomous Demo</div>
+                  <p class="mono-val" style="color:var(--fg-primary);margin-bottom:var(--space-2)">Claude Code Lead Extraction Terminal</p>
+                  <p class="body-base" style="font-size:var(--text-xs);max-width:38ch;margin-inline:auto;margin-bottom:var(--space-4)">
+                    Unedited capture of autonomous browser tools navigating, bypassing bot checkpoints, and writing verified CRM records.
+                  </p>
+                  <span class="tag tag-emerald">Live recording asset ready for drop in</span>
+                </div>
+              </div>
+
+              <div class="terminal-body" style="background:var(--bg-sunken);border-top:1px solid var(--border-hair)">
+                <p><span style="color:var(--gold)">01:</span> Supervisor initialized &middot; 4 sub agents dispatched</p>
+                <p><span style="color:var(--emerald)">02:</span> Vision grounded scraper &middot; 312 leads retrieved</p>
+                <p><span style="color:var(--cyan)">03:</span> Outbound verification &middot; 100% bounce guard passed</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 Step Visual Architecture Flow -->
+      <section style="padding-block:var(--space-12)">
+        <div class="container">
+          <div style="text-align:center;max-width:680px;margin-inline:auto;margin-bottom:var(--space-6)">
+            <p class="mono-label" style="color:var(--gold);margin-bottom:var(--space-2)">Execution Blueprint</p>
+            <h2 class="display-section">How the Autonomous Engine Operates</h2>
+          </div>
+
+          <div class="pipeline-flow">
+            <div class="pipeline-step">
+              <p class="pipeline-step-num">STAGE 01 &middot; EXTRACTION</p>
+              <h3 class="pipeline-step-title">Unstructured Ingestion</h3>
+              <p class="pipeline-step-desc">
+                Playwright scrapers and Apify webhooks pull live company registries, LinkedIn accounts, and customer support queues with vision healing on DOM shifts.
+              </p>
+            </div>
+
+            <div class="pipeline-step">
+              <p class="pipeline-step-num">STAGE 02 &middot; REASONING</p>
+              <h3 class="pipeline-step-title">Multi Agent Reasoning Swarm</h3>
+              <p class="pipeline-step-desc">
+                LangGraph supervisor routes tasks to specialized LLM nodes under strict JSON schema enforcement, eliminating hallucinations and formatting errors.
+              </p>
+            </div>
+
+            <div class="pipeline-step">
+              <p class="pipeline-step-num">STAGE 03 &middot; DELIVERY</p>
+              <h3 class="pipeline-step-title">Deterministic CRM Routing</h3>
+              <p class="pipeline-step-desc">
+                Clean verified payloads push into HubSpot, ClickUp, or Gmail dispatch daemons with automated pacing, keeping bounce rates locked below 0.25%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="section-divider">
+          <span class="section-divider-title">Core Capability Pillars</span>
+        </div>
+      </div>
+
+      <!-- Core 3D Cards Grid -->
+      <section style="padding-bottom:var(--space-16)">
+        <div class="container">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)">
+            
+            <article class="card-3d">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+                <div>
+                  <span class="mono-label" style="color:var(--gold)">Flagship 01</span>
+                  <h3 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Autonomous Multi Agent Swarms</h3>
+                </div>
+                <span class="tag tag-emerald">LangGraph</span>
+              </div>
+              <p class="body-base" style="margin-bottom:var(--space-6)">
+                Self coordinating agent DAGs with supervisor nodes, shared memory states, and isolated execution loops that handle complex multi step operations without human intervention.
+              </p>
+              <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center">
+                <span class="mono-label">State Engine: Redis Streams</span>
+                <a href="agentic-lab.html" class="btn-3d btn-3d-slate" style="padding:8px 16px;font-size:var(--text-2xs)">Explore Lab &rarr;</a>
+              </div>
+            </article>
+
+            <article class="card-3d">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+                <div>
+                  <span class="mono-label" style="color:var(--gold)">Flagship 02</span>
+                  <h3 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Self Healing Vision Scrapers</h3>
+                </div>
+                <span class="tag tag-emerald">Playwright</span>
+              </div>
+              <p class="body-base" style="margin-bottom:var(--space-6)">
+                Stealth Playwright scrapers coupled with Gemini vision grounding. Detects DOM changes, recalculates bounding boxes visually, and bypasses brittle selector failures automatically.
+              </p>
+              <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center">
+                <span class="mono-label">Uptime Metric: 98.7%</span>
+                <a href="agentic-lab.html" class="btn-3d btn-3d-slate" style="padding:8px 16px;font-size:var(--text-2xs)">Inspect Teardown &rarr;</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Client Proof Strip on Homepage -->
+      <section style="background:var(--bg-surface);border-top:1px solid var(--border-hair);border-bottom:1px solid var(--border-hair);padding-block:var(--space-16)">
+        <div class="container">
+          <div style="text-align:center;max-width:680px;margin-inline:auto;margin-bottom:var(--space-10)">
+            <p class="mono-label" style="color:var(--gold);margin-bottom:var(--space-2)">Trusted Deliverables</p>
+            <h2 class="display-section">Enterprise Validation</h2>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:var(--space-6)">
+            <div class="card-3d" style="padding:var(--space-6)">
+              <p class="mono-label">Green TV Entertainment</p>
+              <p class="mono-val" style="color:var(--emerald);margin-block:var(--space-2)">16h / Wk Saved</p>
+              <p class="body-base" style="font-size:var(--text-xs)">Automated national broadcast campaign distribution across digital properties.</p>
+            </div>
+
+            <div class="card-3d" style="padding:var(--space-6)">
+              <p class="mono-label">Apache Pizza Ireland</p>
+              <p class="mono-val" style="color:var(--gold);margin-block:var(--space-2)">180+ Stores</p>
+              <p class="body-base" style="font-size:var(--text-xs)">Scalable multi location organic audience acquisition and social engine.</p>
+            </div>
+
+            <div class="card-3d" style="padding:var(--space-6)">
+              <p class="mono-label">Rock Road Healthcare</p>
+              <p class="mono-val" style="color:var(--emerald);margin-block:var(--space-2)">42% No Show Drop</p>
+              <p class="body-base" style="font-size:var(--text-xs)">Automated clinic appointment routing and calendar retention pipelines.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:var(--space-8);text-align:center">
+            <a href="client-proof.html" class="btn-3d btn-3d-gold">View Complete Client Proof &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conversion Footer CTA -->
+      <section style="padding-block:var(--space-20);text-align:center">
+        <div class="container" style="max-width:720px;margin-inline:auto">
+          <h2 class="display-section" style="margin-bottom:var(--space-4)">Book an Architecture Audit</h2>
+          <p class="body-lead" style="margin-bottom:var(--space-8);margin-inline:auto">
+            A focused 30 minute review of your workflow bottlenecks. You receive a written technical proposal within 48 hours.
+          </p>
+          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
+            <a href="contact.html" class="btn-3d btn-3d-gold">Submit Project Brief &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <div class="nav-logo-box" style="width:24px;height:24px">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
+            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+          </div>
+          <div style="display:flex;gap:var(--space-6)">
+            <a href="index.html">Overview</a>
+            <a href="agentic-lab.html">Agentic Lab</a>
+            <a href="client-proof.html">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

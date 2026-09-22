@@ -3,245 +3,228 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Architecture teardowns: 5 production multi-agent systems built with LangGraph, CrewAI, AutoGen, and Playwright."/>
-  <title>Agentic Lab — Multi-Agent Architecture Teardowns | Idrees Qurashi</title>
+  <meta name="description" content="Technical architecture teardowns: Multi agent LangGraph swarms, self healing vision scrapers, and deterministic MCP servers."/>
+  <title>Agentic Lab | Idrees Qurashi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
   <link rel="apple-touch-icon" href="brand_logo.png"/>
   <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
   <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="engine3d.js" defer></script>
 </head>
 <body>
-  <nav class="nav" role="navigation" aria-label="Primary navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo" aria-label="Home" style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:28px;height:28px;border-radius:6px;overflow:hidden;background:#000;border:1px solid var(--border-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-          </div>
-          <span class="nav-logo-name">Idrees Qurashi</span>
-        </a>
-        <ul class="nav-links" role="list">
-          <li><a href="index.html" class="nav-link ">Overview</a></li>
-          <li><a href="agentic-lab.html" class="nav-link active">Agentic Lab</a></li>
-          <li><a href="outbound-engine.html" class="nav-link ">Outbound Engine</a></li>
-          <li><a href="client-proof.html" class="nav-link ">Client Proof</a></li>
-          <li><a href="contact.html" class="nav-link ">Contact</a></li>
-        </ul>
-        <a href="contact.html" class="nav-cta">
-          <span class="status-dot"></span>
-          Book a System Audit
-        </a>
-        <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile-menu">
-      <a href="index.html" class="nav-link">Overview</a>
-      <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-      <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-      <a href="client-proof.html" class="nav-link">Client Proof</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="contact.html" class="btn-primary" style="align-self:flex-start">Book a System Audit</a>
-    </div>
-  </nav>
-<main id="main-content">
+  <canvas id="three-canvas"></canvas>
 
-<section class="section" aria-labelledby="lab-h" style="padding-top:var(--space-20);padding-bottom:var(--space-12)">
-  <div class="container">
-    <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">agentic.lab</span><span class="tag tag-ghost">5 production architectures</span></div>
-    <h1 id="lab-h" class="display-hero" style="max-width:18ch;margin-bottom:var(--space-6)">Agentic system teardowns.</h1>
-    <p class="body-lead">Five multi-agent architectures built, iterated, and deployed to production. Each teardown covers the DAG topology, state management strategy, failure recovery design, and key runtime metrics.</p>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider" style="margin-top:0"><span class="section-divider-label">architecture.01</span></div></div>
-
-<section class="section" aria-labelledby="a1-h" style="padding-top:0">
-  <div class="container">
-    <div class="bento bento-asymm">
-      <article class="card card-accent-top">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
-          <div>
-            <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-accent">LangGraph 0.2</span><span class="tag tag-ghost">Playwright 1.44</span><span class="tag tag-ghost">Redis 7</span><span class="tag tag-ghost">Apollo API</span><span class="tag tag-ghost">Gemini Flash</span></div>
-            <h2 id="a1-h" class="display-card" style="margin-bottom:var(--space-2)">Autonomous Lead Intelligence Swarm</h2>
-            <p class="mono-label">6-agent DAG &middot; LangGraph runtime &middot; Redis state bus</p>
-          </div>
-          <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none;animation:none"></span>&nbsp;DEPLOYED</span>
-        </div>
-        <p class="body-base" style="margin-bottom:var(--space-6)">A six-agent supervisor swarm that autonomously executes full-cycle B2B lead generation. The Supervisor Agent decomposes the ICP brief into parallel scraping tasks. Vision Scraper agents extract LinkedIn and Apollo data with self-healing selector recovery. An Enrichment Agent cross-references company data via Hunter.io and Clearbit. A Personalization Agent invokes Gemini Flash to generate bespoke email copy per contact. The Delivery Agent dispatches via Gmail API with randomized pacing and logs every send to a deduplication registry.</p>
-        <div style="background:var(--bg-base);border:1px solid var(--border-hair);border-radius:var(--radius-md);padding:var(--space-5) var(--space-6);margin-bottom:var(--space-6)">
-          <p class="mono-label" style="margin-bottom:var(--space-4)">graph.topology &mdash; langgraph.StateGraph</p>
-          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
-            <div class="dag-flow">
-              <span class="dag-node" style="border-color:var(--border-accent)"><span style="color:var(--accent)">&#11044;</span> __start__</span>
-              <span class="dag-arrow">&rarr;</span>
-              <span class="dag-node"><span style="color:var(--accent)">&#11044;</span> Supervisor</span>
-              <span class="dag-arrow">&rarr;</span>
-              <span class="dag-node"><span style="color:var(--emerald)">&#11044;</span> VisionScraper</span>
-              <span class="dag-arrow">&rarr;</span>
-              <span class="dag-node"><span style="color:var(--amber)">&#11044;</span> Enrichment</span>
+  <div class="site-wrap">
+    <nav class="nav" role="navigation" aria-label="Primary navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo" aria-label="Home">
+            <div class="nav-logo-box">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <div class="dag-flow">
-              <span style="min-width:200px"></span>
-              <span class="dag-arrow">&rarr;</span>
-              <span class="dag-node"><span style="color:var(--accent)">&#11044;</span> Personalize</span>
-              <span class="dag-arrow">&rarr;</span>
-              <span class="dag-node"><span style="color:var(--emerald)">&#11044;</span> Deliver</span>
-              <span class="dag-arrow">&rarr;</span>
-              <span class="dag-node" style="border-color:var(--border-accent)"><span style="color:var(--accent)">&#11044;</span> __end__</span>
-            </div>
-            <div class="dag-flow" style="margin-top:var(--space-2)">
-              <span class="dag-node" style="border-color:rgba(239,68,68,0.3)"><span style="color:var(--red)">&#11044;</span> ErrorHandler</span>
-              <span class="dag-arrow">&rarr;</span>
-              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--fg-muted)">conditional_edge &rarr; retry | abort</span>
-            </div>
-          </div>
-        </div>
-        <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-5)">
-          <p class="mono-label" style="margin-bottom:var(--space-4)">design.decisions</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-2)">State management</p><p class="body-base" style="font-size:var(--text-sm)">All agent outputs written to a shared TypedDict state. Redis Streams used as cross-process memory bus for parallel sub-agent coordination.</p></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-2)">Failure recovery</p><p class="body-base" style="font-size:var(--text-sm)">Conditional edges route to ErrorHandler on tool_call exceptions. Exponential backoff with jitter. Max 3 retries before abort and Telegram alert.</p></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-2)">Vision grounding</p><p class="body-base" style="font-size:var(--text-sm)">On selector failure, Playwright captures a full-page screenshot. GPT-4o Vision annotates bounding boxes. New XPath generated and injected in real time.</p></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-2)">Rate guard</p><p class="body-base" style="font-size:var(--text-sm)">Delivery agent enforces randomized 900s to 1800s sleep between sends. Stateful dedup log prevents replay on crash recovery.</p></div>
-          </div>
-        </div>
-      </article>
-      <aside>
-        <div class="card" style="margin-bottom:var(--space-4)">
-          <p class="mono-label" style="margin-bottom:var(--space-4)">runtime.metrics</p>
-          <div style="display:flex;flex-direction:column;gap:var(--space-5)">
-            <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span class="mono-label">Leads/hour</span><span class="mono-value">312</span></div><div class="progress-bar"><div class="progress-fill-emerald progress-fill" style="width:78%"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span class="mono-label">Self-heal success</span><span class="mono-value">98.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:98.7%"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)"><span class="mono-label">Personalize accuracy</span><span class="mono-value">91.4%</span></div><div class="progress-bar"><div class="progress-fill-emerald progress-fill" style="width:91.4%"></div></div></div>
-          </div>
-          <div style="margin-top:var(--space-5);padding-top:var(--space-5);border-top:1px solid var(--border-hair)">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-              <div><p class="mono-label">Graph nodes</p><p class="mono-value" style="font-size:var(--text-lg)">6</p></div>
-              <div><p class="mono-label">State keys</p><p class="mono-value" style="font-size:var(--text-lg)">14</p></div>
-              <div><p class="mono-label">Avg. cycle</p><p class="mono-value" style="font-size:var(--text-lg)">4.2m</p></div>
-              <div><p class="mono-label">State bus</p><p class="mono-value" style="font-size:var(--text-lg)">Redis</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="terminal-block">
-          <p class="mono-label" style="margin-bottom:var(--space-3)">live.execution.log</p>
-          <div class="terminal-line"><span class="tl-timestamp">14:02:01</span><span class="tl-level-ok">INFO</span><span class="tl-source">supervisor</span><span class="tl-msg">Decomposed ICP &rarr; <span class="tl-val">3 tasks</span></span></div>
-          <div class="terminal-line"><span class="tl-timestamp">14:02:04</span><span class="tl-level-ok">INFO</span><span class="tl-source">vision_scraper</span><span class="tl-msg">DOM shift &mdash; re-grounding</span></div>
-          <div class="terminal-line"><span class="tl-timestamp">14:02:07</span><span class="tl-level-ok">OK</span><span class="tl-source">vision_scraper</span><span class="tl-msg">XPath injected &middot; <span class="tl-val">312 rows</span></span></div>
-          <div class="terminal-line"><span class="tl-timestamp">14:02:19</span><span class="tl-level-ok">OK</span><span class="tl-source">enrichment</span><span class="tl-msg">Verified <span class="tl-val">294/312</span> emails</span></div>
-          <div class="terminal-line"><span class="tl-timestamp">14:02:31</span><span class="tl-level-ok">INFO</span><span class="tl-source">personalize</span><span class="tl-msg">Gemini Flash &middot; <span class="tl-val">294 drafts</span></span></div>
-          <div class="terminal-line"><span class="tl-timestamp">14:02:33</span><span class="tl-level-ok">INFO</span><span class="tl-source">deliver</span><span class="tl-msg">Rate-guard: <span class="tl-val">1142s</span> until next send</span></div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">architecture.02</span></div></div>
-
-<section class="section" aria-labelledby="a2-h" style="padding-top:0">
-  <div class="container">
-    <div class="bento bento-2">
-      <article class="card" style="border-top:2px solid var(--amber)">
-        <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-amber">CrewAI 0.55</span><span class="tag tag-ghost">LlamaParse</span><span class="tag tag-ghost">Chroma DB</span><span class="tag tag-ghost">FastAPI</span></div>
-        <h2 id="a2-h" class="display-card" style="margin-bottom:var(--space-3)">Document Intelligence Pipeline</h2>
-        <p class="mono-label" style="margin-bottom:var(--space-5)">4-agent crew &middot; RAG architecture &middot; streaming output</p>
-        <p class="body-base" style="margin-bottom:var(--space-6)">A CrewAI crew of four specialists: Ingester, Chunker, Retriever, and Synthesizer. Processes PDF, DOCX, and HTML contracts at scale. LlamaParse handles layout-aware extraction. Chroma DB stores chunked embeddings. The Synthesizer streams structured JSON answers to a FastAPI endpoint. Handles 200-page legal documents in under 90 seconds.</p>
-        <div class="dag-flow" style="margin-bottom:var(--space-6)">
-          <span class="dag-node"><span style="color:var(--amber)">&#11044;</span> Ingester</span><span class="dag-arrow">&rarr;</span>
-          <span class="dag-node"><span style="color:var(--amber)">&#11044;</span> Chunker</span><span class="dag-arrow">&rarr;</span>
-          <span class="dag-node"><span style="color:var(--amber)">&#11044;</span> Retriever</span><span class="dag-arrow">&rarr;</span>
-          <span class="dag-node"><span style="color:var(--amber)">&#11044;</span> Synthesizer</span>
-        </div>
-        <div class="metric-row" style="border-radius:var(--radius-md)">
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">200-page doc</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--fg-primary)">&lt;90s</span></div>
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Retrieval acc.</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--fg-primary)">93.1%</span></div>
-          <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Chunk size</span><span style="font-family:var(--font-mono);font-size:var(--text-xl);font-weight:600;color:var(--fg-primary)">512 tok</span></div>
-        </div>
-      </article>
-      <article class="card" style="border-top:2px solid #7C3AED">
-        <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">AutoGen 0.4</span><span class="tag tag-ghost">Docker Sandbox</span><span class="tag tag-ghost">Python exec</span></div>
-        <h2 class="display-card" style="margin-bottom:var(--space-3)">Code Generation &amp; Audit Agent</h2>
-        <p class="mono-label" style="margin-bottom:var(--space-5)">3-agent loop &middot; sandboxed execution &middot; diff-aware review</p>
-        <p class="body-base" style="margin-bottom:var(--space-6)">AutoGen conversation loop between a CodeGen agent, an Executor agent (Docker-sandboxed Python subprocess), and a Critic agent. The Critic reviews stdout, stderr, and AST diffs. Iterates until all tests pass or 5 rounds are exhausted. Generates complete production scripts with zero placeholder code.</p>
-        <div class="terminal-block">
-          <div class="terminal-line"><span class="tl-level-ok">GEN</span><span class="tl-source">codegen</span><span class="tl-msg">Generated scraper.py &middot; <span class="tl-val">214 lines</span></span></div>
-          <div class="terminal-line"><span class="tl-level-warn">EXEC</span><span class="tl-source">sandbox</span><span class="tl-msg">ModuleNotFoundError: httpx</span></div>
-          <div class="terminal-line"><span class="tl-level-ok">FIX</span><span class="tl-source">critic</span><span class="tl-msg">Injected pip install &middot; retry round <span class="tl-val">2</span></span></div>
-          <div class="terminal-line"><span class="tl-level-ok">PASS</span><span class="tl-source">sandbox</span><span class="tl-msg">All <span class="tl-val">12 tests</span> passed &middot; exit 0</span></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">architecture.03 &middot; 04 &middot; 05</span></div></div>
-
-<section class="section" aria-labelledby="a345-h" style="padding-top:0">
-  <div class="container">
-    <h2 id="a345-h" class="sr-only">Additional architectures</h2>
-    <div class="bento bento-3" style="margin-bottom:var(--space-4)">
-      <article class="card">
-        <p class="mono-label" style="margin-bottom:var(--space-3)">architecture.03</p>
-        <div class="stack-row" style="margin-bottom:var(--space-3)"><span class="tag tag-ghost">n8n</span><span class="tag tag-ghost">Make.com</span><span class="tag tag-ghost">HubSpot</span><span class="tag tag-ghost">Airtable</span></div>
-        <h3 class="display-card" style="margin-bottom:var(--space-3)">CRM Sync &amp; Trigger Orchestration</h3>
-        <p class="body-base" style="margin-bottom:var(--space-5);font-size:var(--text-sm)">Bidirectional HubSpot to Airtable sync via n8n webhook triggers. Contact state changes fire workflows that validate, deduplicate, and write structured records. Includes Slack alerting on sync failures and a Make.com fallback for rate-limit scenarios.</p>
-        <div style="display:flex;gap:var(--space-4);flex-wrap:wrap">
-          <div><span class="mono-label">Records/day</span><p class="mono-value" style="font-size:var(--text-xl)">4,200</p></div>
-          <div><span class="mono-label">Latency</span><p class="mono-value" style="font-size:var(--text-xl)">&lt;800ms</p></div>
-          <div><span class="mono-label">Error rate</span><p class="mono-value" style="font-size:var(--text-xl)">0.03%</p></div>
-        </div>
-      </article>
-      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-        <article class="card" style="flex:1">
-          <p class="mono-label" style="margin-bottom:var(--space-3)">architecture.04</p>
-          <div class="stack-row" style="margin-bottom:var(--space-3)"><span class="tag tag-ghost">LangGraph</span><span class="tag tag-ghost">Telegram Bot</span><span class="tag tag-ghost">SQLite</span></div>
-          <h3 style="font-size:var(--text-base);font-weight:700;color:var(--fg-primary);margin-bottom:var(--space-3)">Autonomous Execution Monitor</h3>
-          <p class="body-base" style="font-size:var(--text-sm)">LangGraph supervisor that polls pipeline health every 15 minutes. Sends structured Telegram alerts on SLA breaches. Maintains a SQLite event log with anomaly scoring via Z-score thresholding.</p>
-        </article>
-        <article class="card" style="flex:1">
-          <p class="mono-label" style="margin-bottom:var(--space-3)">architecture.05</p>
-          <div class="stack-row" style="margin-bottom:var(--space-3)"><span class="tag tag-ghost">MCP</span><span class="tag tag-ghost">FastAPI</span><span class="tag tag-ghost">Pydantic v2</span></div>
-          <h3 style="font-size:var(--text-base);font-weight:700;color:var(--fg-primary);margin-bottom:var(--space-3)">Type-Safe MCP Tool Server</h3>
-          <p class="body-base" style="font-size:var(--text-sm)">Production MCP server with 12 registered tools. Pydantic-validated input schemas, Docker-sandboxed execution, structured JSON audit trail, and OpenAI-compatible tool manifest endpoint.</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)">
-            <span class="nav-logo-mark">IQ://</span>
             <span class="nav-logo-name">Idrees Qurashi</span>
+          </a>
+          <ul class="nav-links" role="list">
+            <li><a href="index.html" class="nav-link">Overview</a></li>
+            <li><a href="agentic-lab.html" class="nav-link active">Agentic Lab</a></li>
+            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
+            <li><a href="client-proof.html" class="nav-link">Client Proof</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
           </div>
-          <p class="footer-meta">AI Automation Engineer &amp; Agentic Systems Architect</p>
-          <p class="footer-meta" style="margin-top:var(--space-2)">Islamabad, Pakistan &middot; Available for remote engagements worldwide</p>
+          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="agentic-lab.html" class="footer-link">Agentic Lab</a>
-          <a href="outbound-engine.html" class="footer-link">Outbound Engine</a>
-          <a href="client-proof.html" class="footer-link">Client Proof</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-          <a href="https://github.com/IdreesQurashi" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/idreesqurashi" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
       </div>
-      <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-hair);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-        <span class="footer-meta">&copy; 2026 Idrees Qurashi. Production-grade systems, zero placeholders.</span>
-        <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;Systems Operational</span>
+      <div class="nav-mobile-menu">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="agentic-lab.html" class="nav-link active">Agentic Lab</a>
+        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+        <a href="client-proof.html" class="nav-link">Client Proof</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
-    </div>
-  </footer>
+    </nav>
+
+    <main id="main-content" style="padding-top:var(--space-16);padding-bottom:var(--space-20)">
+      <div class="container">
+        
+        <div style="text-align:center;max-width:760px;margin-inline:auto;margin-bottom:var(--space-16)">
+          <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
+            Production Architectures &middot; Code Level Teardowns
+          </div>
+          <h1 class="display-hero" style="margin-bottom:var(--space-4)">Autonomous Agentic Fleet</h1>
+          <p class="body-lead" style="margin-inline:auto">
+            Deep technical blueprints of deployed multi agent swarms. State graphs, self healing recovery loops, and isolated tool execution layers.
+          </p>
+        </div>
+
+        <!-- 3 Flagship Architecture Blocks -->
+        <div style="display:flex;flex-direction:column;gap:var(--space-10);margin-bottom:var(--space-16)">
+          
+          <!-- Architecture 01 -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">Architecture 01 &middot; Lead Intelligence</span>
+                <h2 style="font-size:var(--text-2xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Autonomous Outbound SDR Swarm</h2>
+              </div>
+              <span class="tag tag-emerald"><span class="status-dot"></span> Production Verified</span>
+            </div>
+
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              A three layer Directive, Orchestration, and Execution architecture. Extracts deep account intelligence via Firecrawl, synthesizes bespoke executive copy, and routes ambiguous outputs to human review before dispatch.
+            </p>
+
+            <!-- Visual 3 Step Flow -->
+            <div class="pipeline-flow" style="margin-block:var(--space-4)">
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">LAYER 01</p>
+                <h3 class="pipeline-step-title">Directive Constraints</h3>
+                <p class="pipeline-step-desc">ICP boundaries, domain rules, and strict bounce rate guards loaded into memory.</p>
+              </div>
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">LAYER 02</p>
+                <h3 class="pipeline-step-title">LangGraph Supervisor</h3>
+                <p class="pipeline-step-desc">Decomposes prospect profiles, assigns research sub agents, and evaluates confidence scores.</p>
+              </div>
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">LAYER 03</p>
+                <h3 class="pipeline-step-title">Paced Dispatch</h3>
+                <p class="pipeline-step-desc">Enforces randomized 900s to 1800s intervals with stateful deduplication logs.</p>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span class="mono-label">Stack: LangGraph 0.2, Playwright, Gemini Flash Lite, Redis Streams</span>
+              <span class="tag tag-gold">15 to 20 Bookings / Wk</span>
+            </div>
+          </article>
+
+          <!-- Architecture 02 -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">Architecture 02 &middot; Self Healing Automation</span>
+                <h2 style="font-size:var(--text-2xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Vision Grounded Web Scraper</h2>
+              </div>
+              <span class="tag tag-emerald"><span class="status-dot"></span> 98.7% Uptime</span>
+            </div>
+
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              Eliminates brittle web automation failures. Fast path executes cached locators within 14ms. When a DOM mutation causes a selector failure, Gemini Vision takes a viewport snapshot, performs spatial bounding, and rewrites the persistent locator cache on the fly.
+            </p>
+
+            <div class="pipeline-flow" style="margin-block:var(--space-4)">
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">STEP 01</p>
+                <h3 class="pipeline-step-title">Fast Path Execution</h3>
+                <p class="pipeline-step-desc">Stealth Playwright queries local cached ARIA locators with zero LLM latency.</p>
+              </div>
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">STEP 02</p>
+                <h3 class="pipeline-step-title">Visual Spatial Trap</h3>
+                <p class="pipeline-step-desc">DOM mutation triggers full viewport screenshot and visual bounding box calculation.</p>
+              </div>
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">STEP 03</p>
+                <h3 class="pipeline-step-title">Dynamic Cache Update</h3>
+                <p class="pipeline-step-desc">New robust locator stored persistently. Zero human maintenance required.</p>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span class="mono-label">Stack: Playwright Async, Gemini Vision API, SQLite Locator Cache</span>
+              <span class="tag tag-gold">95% Fast Path Zero Cost</span>
+            </div>
+          </article>
+
+          <!-- Architecture 03 -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">Architecture 03 &middot; Server Infrastructure</span>
+                <h2 style="font-size:var(--text-2xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Deterministic MCP Tool Server</h2>
+              </div>
+              <span class="tag tag-emerald"><span class="status-dot"></span> Zero Blast Radius</span>
+            </div>
+
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              Model Context Protocol backends exposing typed JSON schemas to LLM agents. Every external API invocation, database mutation, and script execution runs in an isolated ephemeral environment with rate limits and audited telemetry logs.
+            </p>
+
+            <div class="pipeline-flow" style="margin-block:var(--space-4)">
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">STAGE 01</p>
+                <h3 class="pipeline-step-title">Strict Schema Validation</h3>
+                <p class="pipeline-step-desc">Pydantic models enforce 100% parameter validity before command execution.</p>
+              </div>
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">STAGE 02</p>
+                <h3 class="pipeline-step-title">Isolated Sandbox</h3>
+                <p class="pipeline-step-desc">Code executions run inside ephemeral Docker sandboxes preventing host pollution.</p>
+              </div>
+              <div class="pipeline-step">
+                <p class="pipeline-step-num">STAGE 03</p>
+                <h3 class="pipeline-step-title">Audited Telemetry</h3>
+                <p class="pipeline-step-desc">Complete JSON execution traces streamed to observability dashboards.</p>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
+              <span class="mono-label">Stack: Model Context Protocol (MCP), Python FastAPI, Docker Engine</span>
+              <span class="tag tag-gold">100% Deterministic</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align:center;max-width:680px;margin-inline:auto">
+          <h2 class="display-section" style="margin-bottom:var(--space-4)">Need Custom Autonomous Architecture?</h2>
+          <p class="body-lead" style="margin-bottom:var(--space-8)">
+            Book a 30 minute architecture audit. We examine your current bottlenecks and produce a written deployment roadmap within 48 hours.
+          </p>
+          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
+            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <div class="nav-logo-box" style="width:24px;height:24px">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
+            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+          </div>
+          <div style="display:flex;gap:var(--space-6)">
+            <a href="index.html">Overview</a>
+            <a href="agentic-lab.html">Agentic Lab</a>
+            <a href="client-proof.html">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

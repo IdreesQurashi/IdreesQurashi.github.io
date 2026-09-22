@@ -3,233 +3,242 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Book a 30-minute system audit. Written architecture proposal within 48 hours. No commitment required."/>
-  <title>Book a System Audit — Idrees Qurashi AI Automation Engineer</title>
+  <meta name="description" content="Direct consultation terminal for Idrees Qurashi. Book a 30 minute architecture audit or initiate instant communication."/>
+  <title>Contact Terminal | Idrees Qurashi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
   <link rel="apple-touch-icon" href="brand_logo.png"/>
   <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
   <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="engine3d.js" defer></script>
 </head>
 <body>
-  <nav class="nav" role="navigation" aria-label="Primary navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo" aria-label="Home" style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:28px;height:28px;border-radius:6px;overflow:hidden;background:#000;border:1px solid var(--border-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-          </div>
-          <span class="nav-logo-name">Idrees Qurashi</span>
-        </a>
-        <ul class="nav-links" role="list">
-          <li><a href="index.html" class="nav-link ">Overview</a></li>
-          <li><a href="agentic-lab.html" class="nav-link ">Agentic Lab</a></li>
-          <li><a href="outbound-engine.html" class="nav-link ">Outbound Engine</a></li>
-          <li><a href="client-proof.html" class="nav-link ">Client Proof</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
-        </ul>
-        <a href="contact.html" class="nav-cta">
-          <span class="status-dot"></span>
-          Book a System Audit
-        </a>
-        <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile-menu">
-      <a href="index.html" class="nav-link">Overview</a>
-      <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-      <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-      <a href="client-proof.html" class="nav-link">Client Proof</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="contact.html" class="btn-primary" style="align-self:flex-start">Book a System Audit</a>
-    </div>
-  </nav>
-<main id="main-content">
+  <canvas id="three-canvas"></canvas>
 
-<section class="section" aria-labelledby="ct-h" style="padding-top:var(--space-20)">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start">
-
-      <div>
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span><span class="mono-label">contact.terminal</span>
-          <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;Accepting clients</span>
-        </div>
-        <h1 id="ct-h" class="display-hero" style="margin-bottom:var(--space-6)">Book a system audit.</h1>
-        <p class="body-lead" style="margin-bottom:var(--space-10)">A focused 30-minute session. I review your current automation stack, identify the three highest-leverage opportunities, and deliver a written architecture proposal within 48 hours. No commitment required.</p>
-
-        <div style="display:flex;flex-direction:column;gap:var(--space-5);margin-bottom:var(--space-10)">
-          <div style="display:flex;gap:var(--space-4);align-items:flex-start">
-            <div style="width:28px;height:28px;border:1px solid var(--border-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent)">01</span></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-1)">Submit your brief</p><p class="body-base" style="font-size:var(--text-sm)">Describe your current workflow pain, your team size, and what you have already tried. More context means a sharper audit.</p></div>
-          </div>
-          <div style="display:flex;gap:var(--space-4);align-items:flex-start">
-            <div style="width:28px;height:28px;border:1px solid var(--border-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent)">02</span></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-1)">Receive confirmation within 12 hours</p><p class="body-base" style="font-size:var(--text-sm)">Every submission reviewed personally. Typical response under 4 hours during business hours (PKT).</p></div>
-          </div>
-          <div style="display:flex;gap:var(--space-4);align-items:flex-start">
-            <div style="width:28px;height:28px;border:1px solid var(--border-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent)">03</span></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-1)">30-minute architecture session</p><p class="body-base" style="font-size:var(--text-sm)">Google Meet or Loom async review. I walk through your stack, identify failure points, and outline the autonomous replacement architecture.</p></div>
-          </div>
-          <div style="display:flex;gap:var(--space-4);align-items:flex-start">
-            <div style="width:28px;height:28px;border:1px solid var(--border-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent)">04</span></div>
-            <div><p style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-1)">Written proposal within 48 hours</p><p class="body-base" style="font-size:var(--text-sm)">Detailed architecture document: DAG topology, stack recommendation, estimated delivery timeline, and fixed-price engagement terms.</p></div>
-          </div>
-        </div>
-
-        <div class="card" style="padding:var(--space-5) var(--space-6)">
-          <p class="mono-label" style="margin-bottom:var(--space-4)">direct.channels</p>
-          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-            <div style="display:flex;justify-content:space-between;align-items:center"><span class="body-base" style="font-size:var(--text-sm)">WhatsApp</span><a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="mono-value" style="font-size:var(--text-xs);color:var(--emerald)">+92 348 9911425 (Instant)</a></div>
-            <div style="height:1px;background:var(--border-hair)"></div>
-            <div style="display:flex;justify-content:space-between;align-items:center"><span class="body-base" style="font-size:var(--text-sm)">Email</span><a href="mailto:idreesqurashi6@gmail.com" class="mono-value" style="font-size:var(--text-xs)">idreesqurashi6@gmail.com</a></div>
-            <div style="height:1px;background:var(--border-hair)"></div>
-            <div style="display:flex;justify-content:space-between;align-items:center"><span class="body-base" style="font-size:var(--text-sm)">LinkedIn</span><a href="https://linkedin.com/in/idreesqurashi" target="_blank" rel="noopener" class="mono-value" style="font-size:var(--text-xs)">linkedin.com/in/idreesqurashi</a></div>
-            <div style="height:1px;background:var(--border-hair)"></div>
-            <div style="display:flex;justify-content:space-between;align-items:center"><span class="body-base" style="font-size:var(--text-sm)">GitHub</span><a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" class="mono-value" style="font-size:var(--text-xs)">github.com/IdreesQurashi</a></div>
-            <div style="height:1px;background:var(--border-hair)"></div>
-            <div style="display:flex;justify-content:space-between;align-items:center"><span class="body-base" style="font-size:var(--text-sm)">Timezone</span><span class="mono-value" style="font-size:var(--text-xs)">PKT (UTC+5) &middot; flexible</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <form class="card card-accent-top" action="#" method="POST" novalidate aria-label="System audit request form" style="display:flex;flex-direction:column;gap:var(--space-5)">
-          <p class="mono-label">audit.request.form &mdash; v2.1</p>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-            <div>
-              <label for="fn" class="mono-label" style="display:block;margin-bottom:var(--space-2)">first_name</label>
-              <input id="fn" name="first_name" type="text" required autocomplete="given-name" placeholder="Alex"
-                style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast)"
-                onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"/>
+  <div class="site-wrap">
+    <nav class="nav" role="navigation" aria-label="Primary navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo" aria-label="Home">
+            <div class="nav-logo-box">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <div>
-              <label for="ln" class="mono-label" style="display:block;margin-bottom:var(--space-2)">last_name</label>
-              <input id="ln" name="last_name" type="text" required autocomplete="family-name" placeholder="Rivera"
-                style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast)"
-                onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"/>
-            </div>
-          </div>
-
-          <div>
-            <label for="we" class="mono-label" style="display:block;margin-bottom:var(--space-2)">work_email <span style="color:var(--red)">*</span></label>
-            <input id="we" name="work_email" type="email" required autocomplete="email" placeholder="alex@company.io"
-              style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast)"
-              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"/>
-            <p class="mono-label" style="margin-top:var(--space-2)">No free-tier addresses (Gmail, Hotmail). Work domain only.</p>
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-            <div>
-              <label for="co" class="mono-label" style="display:block;margin-bottom:var(--space-2)">company</label>
-              <input id="co" name="company" type="text" autocomplete="organization" placeholder="FinFlow AI"
-                style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast)"
-                onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"/>
-            </div>
-            <div>
-              <label for="ro" class="mono-label" style="display:block;margin-bottom:var(--space-2)">your_role</label>
-              <input id="ro" name="role" type="text" placeholder="CTO / Head of Growth"
-                style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast)"
-                onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"/>
-            </div>
-          </div>
-
-          <div>
-            <label for="cs" class="mono-label" style="display:block;margin-bottom:var(--space-2)">current_stack <span style="color:var(--fg-muted)">(optional)</span></label>
-            <input id="cs" name="current_stack" type="text" placeholder="n8n, Zapier, HubSpot, custom Python scripts..."
-              style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast)"
-              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"/>
-          </div>
-
-          <div>
-            <label for="br" class="mono-label" style="display:block;margin-bottom:var(--space-2)">workflow_pain_brief <span style="color:var(--red)">*</span></label>
-            <textarea id="br" name="brief" required rows="5"
-              placeholder="Describe the workflow you want to automate or fix. What breaks? How much time does it consume? What have you already tried?"
-              style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;transition:border-color var(--duration-fast);resize:vertical;min-height:120px"
-              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'"></textarea>
-          </div>
-
-          <div>
-            <label for="bg" class="mono-label" style="display:block;margin-bottom:var(--space-2)">engagement_budget</label>
-            <select id="bg" name="budget"
-              style="width:100%;background:var(--bg-elevated);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-4);color:var(--fg-secondary);font-family:var(--font-mono);font-size:var(--text-xs);outline:none;cursor:pointer;appearance:none;transition:border-color var(--duration-fast)"
-              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-dim)'">
-              <option value="">-- select range --</option>
-              <option value="lt2k">Under $2,000 (small pipeline)</option>
-              <option value="2k-5k">$2,000 to $5,000 (multi-agent system)</option>
-              <option value="5k-15k">$5,000 to $15,000 (enterprise build)</option>
-              <option value="15k+">$15,000+ (ongoing retainer or complex swarm)</option>
-            </select>
-          </div>
-
-          <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-5)">
-            <div class="terminal-block" style="margin-bottom:var(--space-5);padding:var(--space-3) var(--space-4)">
-              <div class="terminal-line"><span style="color:var(--fg-muted)">$</span> <span style="color:var(--accent)">audit.submit</span> <span style="color:var(--fg-secondary)">--mode async --response-sla 12h</span></div>
-            </div>
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:var(--text-base);padding:var(--space-4)">
-              Submit Audit Request &#8594;
-            </button>
-            <p class="mono-label" style="margin-top:var(--space-3);text-align:center">Response within 12 hours &middot; No commitment required</p>
-          </div>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section-sm" style="background:var(--bg-surface);border-top:1px solid var(--border-hair);border-bottom:1px solid var(--border-hair);margin-top:var(--space-16)">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-8)">
-      <div>
-        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
-          <span class="status-dot"></span>
-          <span style="font-weight:600;font-size:var(--text-base);color:var(--fg-primary)">Currently accepting 2 new client engagements</span>
-        </div>
-        <p class="body-base" style="font-size:var(--text-sm)">Priority given to AI-native companies and fast-growing B2B startups replacing manual workflow bottlenecks with autonomous systems.</p>
-      </div>
-      <div class="metric-row" style="border-radius:var(--radius-md)">
-        <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Response SLA</span><span class="mono-value" style="font-size:var(--text-base)">&lt;12h</span></div>
-        <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Proposal SLA</span><span class="mono-value" style="font-size:var(--text-base)">48h</span></div>
-        <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Timezone</span><span class="mono-value" style="font-size:var(--text-base)">PKT</span></div>
-        <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Mode</span><span class="mono-value" style="font-size:var(--text-base)">Remote</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)">
-            <span class="nav-logo-mark">IQ://</span>
             <span class="nav-logo-name">Idrees Qurashi</span>
+          </a>
+          <ul class="nav-links" role="list">
+            <li><a href="index.html" class="nav-link">Overview</a></li>
+            <li><a href="agentic-lab.html" class="nav-link">Agentic Lab</a></li>
+            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
+            <li><a href="client-proof.html" class="nav-link">Client Proof</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
           </div>
-          <p class="footer-meta">AI Automation Engineer &amp; Agentic Systems Architect</p>
-          <p class="footer-meta" style="margin-top:var(--space-2)">Islamabad, Pakistan &middot; Available for remote engagements worldwide</p>
+          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="agentic-lab.html" class="footer-link">Agentic Lab</a>
-          <a href="outbound-engine.html" class="footer-link">Outbound Engine</a>
-          <a href="client-proof.html" class="footer-link">Client Proof</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-          <a href="https://github.com/IdreesQurashi" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/idreesqurashi" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
       </div>
-      <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-hair);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-        <span class="footer-meta">&copy; 2026 Idrees Qurashi. Production-grade systems, zero placeholders.</span>
-        <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;Systems Operational</span>
+      <div class="nav-mobile-menu">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+        <a href="client-proof.html" class="nav-link">Client Proof</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="https://wa.me/923489911425" class="btn-3d btn-3d-emerald" style="width:100%">WhatsApp Direct</a>
       </div>
-    </div>
-  </footer>
+    </nav>
+
+    <main id="main-content" style="padding-top:var(--space-16);padding-bottom:var(--space-20)">
+      <div class="container">
+        
+        <div style="text-align:center;max-width:760px;margin-inline:auto;margin-bottom:var(--space-12)">
+          <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
+            <span class="status-dot"></span> Calendar Open for Q4 Engagements
+          </div>
+          <h1 class="display-hero" style="margin-bottom:var(--space-4)">Initiate Direct Transmission</h1>
+          <p class="body-lead" style="margin-inline:auto">
+            Reviewing workflow automation bottlenecks, autonomous agent swarms, and custom outbound engines. Direct response SLA under 4 hours.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:var(--space-8);align-items:start">
+          
+          <!-- Left Column: Direct Channels -->
+          <div class="card-3d" style="padding:var(--space-8)">
+            <p class="mono-label" style="margin-bottom:var(--space-6);color:var(--gold)">Priority Communication Bus</p>
+            
+            <div style="display:flex;flex-direction:column;gap:var(--space-6);margin-bottom:var(--space-8)">
+              <div>
+                <p class="mono-label" style="margin-bottom:var(--space-1)">Instant WhatsApp</p>
+                <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="font-size:var(--text-lg);font-weight:700;color:var(--emerald);display:flex;align-items:center;gap:var(--space-2)">
+                  +92 348 9911425 &rarr;
+                </a>
+                <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Typical response in minutes. Fast lane for founders.</p>
+              </div>
+
+              <div style="height:1px;background:var(--border-hair)"></div>
+
+              <div>
+                <p class="mono-label" style="margin-bottom:var(--space-1)">Direct Mailbox</p>
+                <a href="mailto:idreesqurashi6@gmail.com" style="font-size:var(--text-base);font-weight:600;color:var(--fg-primary)">
+                  idreesqurashi6@gmail.com
+                </a>
+                <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Direct inbox routing with zero automated intermediaries.</p>
+              </div>
+
+              <div style="height:1px;background:var(--border-hair)"></div>
+
+              <div>
+                <p class="mono-label" style="margin-bottom:var(--space-1)">Verified GitHub</p>
+                <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="font-size:var(--text-base);font-weight:600;color:var(--fg-primary)">
+                  github.com/IdreesQurashi
+                </a>
+              </div>
+
+              <div style="height:1px;background:var(--border-hair)"></div>
+
+              <div>
+                <p class="mono-label" style="margin-bottom:var(--space-1)">Operational Base</p>
+                <p class="body-base" style="color:var(--fg-primary);font-weight:600">Islamabad, Pakistan (UTC+5)</p>
+                <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Fully flexible overlap with US and European timezones.</p>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4)">
+              <p class="mono-label" style="margin-bottom:var(--space-2)">30 Minute Audit Scope</p>
+              <ul style="font-size:var(--text-xs);color:var(--fg-secondary);line-height:1.7">
+                <li>&bull; Architecture failure point review</li>
+                <li>&bull; Multi agent swarm feasibility mapping</li>
+                <li>&bull; Written blueprint proposal delivered in 48h</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Form -->
+          <div class="card-3d" style="padding:var(--space-8)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+              <p class="mono-label" style="color:var(--gold)">Direct Dispatch Form</p>
+              <span class="tag tag-emerald"><span class="status-dot"></span> Connected API</span>
+            </div>
+
+            <form id="audit-form" style="display:flex;flex-direction:column;gap:var(--space-5)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div>
+                  <label for="f-name" class="mono-label" style="display:block;margin-bottom:var(--space-2)">Full Name *</label>
+                  <input id="f-name" name="name" type="text" required placeholder="Alex Vance"
+                    style="width:100%;background:var(--bg-sunken);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:12px 16px;color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none"/>
+                </div>
+                <div>
+                  <label for="f-email" class="mono-label" style="display:block;margin-bottom:var(--space-2)">Work Email *</label>
+                  <input id="f-email" name="email" type="email" required placeholder="alex@company.com"
+                    style="width:100%;background:var(--bg-sunken);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:12px 16px;color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none"/>
+                </div>
+              </div>
+
+              <div>
+                <label for="f-company" class="mono-label" style="display:block;margin-bottom:var(--space-2)">Company or Project Name</label>
+                <input id="f-company" name="company" type="text" placeholder="Acme Technologies"
+                  style="width:100%;background:var(--bg-sunken);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:12px 16px;color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none"/>
+              </div>
+
+              <div>
+                <label for="f-message" class="mono-label" style="display:block;margin-bottom:var(--space-2)">Workflow Bottleneck or Project Goals *</label>
+                <textarea id="f-message" name="message" rows="4" required placeholder="Describe your current manual process, tools used, and what you want to automate..."
+                  style="width:100%;background:var(--bg-sunken);border:1px solid var(--border-dim);border-radius:var(--radius-sm);padding:12px 16px;color:var(--fg-primary);font-family:var(--font-sans);font-size:var(--text-sm);outline:none;resize:vertical"></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-3d btn-3d-gold" style="width:100%;padding:16px">
+                Dispatch System Audit Request &rarr;
+              </button>
+
+              <div id="form-feedback" style="display:none;padding:var(--space-4);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);line-height:1.6"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <div class="nav-logo-box" style="width:24px;height:24px">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
+            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+          </div>
+          <div style="display:flex;gap:var(--space-6)">
+            <a href="index.html">Overview</a>
+            <a href="agentic-lab.html">Agentic Lab</a>
+            <a href="client-proof.html">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('audit-form');
+    const feedback = document.getElementById('form-feedback');
+    const btn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.innerText = 'TRANSMITTING VIA ENCRYPTED ROUTE...';
+      btn.disabled = true;
+
+      const payload = {
+        name: document.getElementById('f-name').value,
+        email: document.getElementById('f-email').value,
+        company: document.getElementById('f-company').value,
+        message: document.getElementById('f-message').value,
+        _subject: "New System Audit Request: " + document.getElementById('f-name').value
+      };
+
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/idreesqurashi6@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          feedback.style.display = 'block';
+          feedback.style.background = 'rgba(16, 185, 129, 0.12)';
+          feedback.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+          feedback.style.color = 'var(--emerald)';
+          feedback.innerHTML = '> TRANSMISSION CONFIRMED. Your brief has been dispatched directly to Idrees inbox. Expect response within 4 hours.';
+          form.reset();
+        } else {
+          throw new Error("Dispatch error");
+        }
+      } catch (err) {
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(239, 68, 68, 0.12)';
+        feedback.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+        feedback.style.color = '#EF4444';
+        feedback.innerHTML = '> DISPATCH BACKUP TRIGGERED: Automatic relay failed. Please reach out directly on WhatsApp at +92 348 9911425 for immediate response.';
+      } finally {
+        btn.innerText = 'Dispatch System Audit Request →';
+        btn.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>

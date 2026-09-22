@@ -3,204 +3,262 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Verified client case studies: autonomous lead engines, MCP servers, CRM sync, and document intelligence systems."/>
-  <title>Client Proof — Verified Case Studies & Outcomes | Idrees Qurashi</title>
+  <meta name="description" content="Verified commercial case studies and client deliverables: Green TV Entertainment, Apache Pizza Ireland, Rock Road Dental."/>
+  <title>Client Proof | Idrees Qurashi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
   <link rel="apple-touch-icon" href="brand_logo.png"/>
   <meta property="og:image" content="https://idreesqurashi.github.io/brand_logo.png"/>
   <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="engine3d.js" defer></script>
 </head>
 <body>
-  <nav class="nav" role="navigation" aria-label="Primary navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo" aria-label="Home" style="display:flex;align-items:center;gap:var(--space-3)">
-          <div style="width:28px;height:28px;border-radius:6px;overflow:hidden;background:#000;border:1px solid var(--border-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
-          </div>
-          <span class="nav-logo-name">Idrees Qurashi</span>
-        </a>
-        <ul class="nav-links" role="list">
-          <li><a href="index.html" class="nav-link ">Overview</a></li>
-          <li><a href="agentic-lab.html" class="nav-link ">Agentic Lab</a></li>
-          <li><a href="outbound-engine.html" class="nav-link ">Outbound Engine</a></li>
-          <li><a href="client-proof.html" class="nav-link active">Client Proof</a></li>
-          <li><a href="contact.html" class="nav-link ">Contact</a></li>
-        </ul>
-        <a href="contact.html" class="nav-cta">
-          <span class="status-dot"></span>
-          Book a System Audit
-        </a>
-        <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile-menu">
-      <a href="index.html" class="nav-link">Overview</a>
-      <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
-      <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
-      <a href="client-proof.html" class="nav-link">Client Proof</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="contact.html" class="btn-primary" style="align-self:flex-start">Book a System Audit</a>
-    </div>
-  </nav>
-<main id="main-content">
+  <canvas id="three-canvas"></canvas>
 
-<section class="section" aria-labelledby="cp-h" style="padding-top:var(--space-20);padding-bottom:var(--space-12)">
-  <div class="container">
-    <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="mono-label">client.proof</span><span class="tag tag-ghost">4 verified engagements</span></div>
-    <h1 id="cp-h" class="display-hero" style="max-width:20ch;margin-bottom:var(--space-6)">Verified outcomes. Real architectures.</h1>
-    <p class="body-lead">Every case study documents the problem, the architecture delivered, the measurable outcome, and the exact technical stack. No NDAs, no vague case studies, no stock photography.</p>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider" style="margin-top:0"><span class="section-divider-label">engagement.01</span></div></div>
-
-<section class="section" aria-labelledby="cs1-h" style="padding-top:0">
-  <div class="container">
-    <div class="bento bento-asymm">
-      <article class="card card-accent-top">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
-          <div>
-            <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">B2B SaaS</span><span class="tag tag-ghost">Series A</span><span class="tag tag-ghost">8-person team</span></div>
-            <h2 id="cs1-h" class="display-card">Autonomous LinkedIn Lead Engine</h2>
-            <p class="mono-label" style="margin-top:var(--space-2)">October 2024 &middot; 10-day delivery &middot; Remote</p>
-          </div>
-          <span class="tag tag-emerald">Deployed &amp; Live</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);margin-bottom:var(--space-6)">
-          <div>
-            <h3 style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-3)">The Problem</h3>
-            <p class="body-base" style="font-size:var(--text-sm)">The growth team was spending 4 to 6 hours per day manually scraping LinkedIn and copying leads into a spreadsheet. The process broke every two weeks when LinkedIn updated its DOM. Three evaluated SaaS scraping tools failed to handle bot detection rates reliably.</p>
-          </div>
-          <div>
-            <h3 style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-3)">The Architecture</h3>
-            <p class="body-base" style="font-size:var(--text-sm)">LangGraph supervisor orchestrating a VisionScraper agent (Playwright + GPT-4o Vision for selector re-grounding), an Enrichment agent (Hunter.io SMTP verification + Clearbit company data), and a Delivery agent with full self-healing loop and Telegram alerting on failures.</p>
-          </div>
-        </div>
-        <div class="stack-row" style="margin-bottom:var(--space-6)">
-          <span class="tag tag-accent">LangGraph 0.2</span><span class="tag tag-ghost">Playwright 1.44</span><span class="tag tag-ghost">GPT-4o Vision</span><span class="tag tag-ghost">Hunter.io</span><span class="tag tag-ghost">Clearbit</span><span class="tag tag-ghost">Redis</span><span class="tag tag-ghost">Gmail API</span><span class="tag tag-ghost">Telegram Bot</span>
-        </div>
-        <blockquote style="border-left:2px solid var(--accent);padding-left:var(--space-5);margin-bottom:var(--space-6)">
-          <p style="font-size:var(--text-base);color:var(--fg-secondary);font-style:italic;margin-bottom:var(--space-3)">&ldquo;Idrees delivered a fully autonomous LinkedIn scraper and enrichment pipeline in 10 days. It now processes 300 leads per hour without a single human touchpoint. We cancelled two SaaS subscriptions the week after.&rdquo;</p>
-          <footer style="font-size:var(--text-sm);font-weight:600;color:var(--fg-primary)">Head of Growth &mdash; B2B SaaS, Series A</footer>
-        </blockquote>
-        <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-5)">
-          <p class="mono-label" style="margin-bottom:var(--space-4)">deliverable.outcomes</p>
-          <div class="metric-row" style="border-radius:var(--radius-md)">
-            <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Manual hours saved</span><span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:600;color:var(--fg-primary)">28h/wk</span></div>
-            <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Leads/hour</span><span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:600;color:var(--fg-primary)">300+</span></div>
-            <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">Uptime</span><span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:600;color:var(--emerald)">98.7%</span></div>
-            <div class="metric-cell" style="padding:var(--space-4)"><span class="mono-label">SaaS subs cancelled</span><span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:600;color:var(--fg-primary)">2</span></div>
-          </div>
-        </div>
-      </article>
-      <aside class="card" style="align-self:start">
-        <p class="mono-label" style="margin-bottom:var(--space-5)">technical.deliverables</p>
-        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">Self-healing Playwright scraper</p><p class="body-base" style="font-size:var(--text-xs)">Vision-grounded selector recovery on DOM changes</p></div></div>
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">LangGraph 6-agent supervisor DAG</p><p class="body-base" style="font-size:var(--text-xs)">Stateful TypedDict, conditional edge routing</p></div></div>
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">Email enrichment pipeline</p><p class="body-base" style="font-size:var(--text-xs)">Hunter.io SMTP verify + Clearbit enrichment</p></div></div>
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">Rate-guarded Gmail dispatch</p><p class="body-base" style="font-size:var(--text-xs)">15 to 30 minute randomized pacing daemon</p></div></div>
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">Telegram health monitor</p><p class="body-base" style="font-size:var(--text-xs)">15-minute poll, structured failure alerts</p></div></div>
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">Full Python test suite</p><p class="body-base" style="font-size:var(--text-xs)">pytest + mocked API fixtures, 84% coverage</p></div></div>
-          <div style="display:flex;gap:var(--space-3);align-items:flex-start"><span style="color:var(--emerald);font-size:var(--text-xs);margin-top:3px">&#10003;</span><div><p style="font-size:var(--text-sm);font-weight:500;color:var(--fg-primary);margin-bottom:2px">Architecture documentation</p><p class="body-base" style="font-size:var(--text-xs)">DAG diagrams, runbook, and operational guide</p></div></div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">engagement.02</span></div></div>
-
-<section class="section" aria-labelledby="cs2-h" style="padding-top:0">
-  <div class="container">
-    <article class="card" style="border-top:2px solid var(--emerald)">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
-        <div>
-          <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">Enterprise AI Platform</span><span class="tag tag-ghost">Series B</span><span class="tag tag-ghost">40k tool calls/day</span></div>
-          <h2 id="cs2-h" class="display-card">Production MCP Tool Server</h2>
-          <p class="mono-label" style="margin-top:var(--space-2)">January 2025 &middot; 2-week delivery &middot; Remote</p>
-        </div>
-        <span class="tag tag-emerald">Deployed &amp; Live</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-8);margin-bottom:var(--space-6)">
-        <div><h3 style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-3)">Problem</h3><p class="body-base" style="font-size:var(--text-sm)">Engineering team spending 3 weeks per LLM tool integration. No standardised schema. No sandboxing. Unhandled tool failures crashing the production inference pipeline. 40k tool calls per day with zero audit trail.</p></div>
-        <div><h3 style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-3)">Architecture</h3><p class="body-base" style="font-size:var(--text-sm)">FastAPI MCP server with 12 registered tools, Pydantic v2 input schemas, Docker-sandboxed code execution, automatic retry with exponential backoff, and structured JSON audit logs including token counts and latency for every tool call.</p></div>
-        <div><h3 style="font-weight:600;font-size:var(--text-sm);color:var(--fg-primary);margin-bottom:var(--space-3)">Outcome</h3><p class="body-base" style="font-size:var(--text-sm)">LLM tool integration time cut from 3 weeks to 2 days. Server handles 40k tool calls per day in production with 99.4% success rate. Full audit trail enables post-incident forensics within 30 seconds.</p></div>
-      </div>
-      <div class="stack-row" style="margin-bottom:var(--space-6)"><span class="tag tag-accent">MCP Protocol</span><span class="tag tag-ghost">FastAPI</span><span class="tag tag-ghost">Pydantic v2</span><span class="tag tag-ghost">Docker</span><span class="tag tag-ghost">Python 3.12</span><span class="tag tag-ghost">Redis</span><span class="tag tag-ghost">Structlog</span></div>
-      <blockquote style="border-left:2px solid var(--emerald);padding-left:var(--space-5)">
-        <p style="font-size:var(--text-base);color:var(--fg-secondary);font-style:italic;margin-bottom:var(--space-3)">&ldquo;The MCP server Idrees built cut our LLM integration time from 3 weeks to 2 days. Every tool call is sandboxed, logged, and retried automatically. It handles 40k tool calls per day in production.&rdquo;</p>
-        <footer style="font-size:var(--text-sm);font-weight:600;color:var(--fg-primary)">CTO &mdash; Enterprise AI Platform, Series B</footer>
-      </blockquote>
-    </article>
-  </div>
-</section>
-
-<div class="container"><div class="section-divider"><span class="section-divider-label">engagement.03 &middot; 04</span></div></div>
-
-<section class="section" aria-labelledby="cs34-h" style="padding-top:0">
-  <div class="container">
-    <h2 id="cs34-h" class="sr-only">Additional case studies</h2>
-    <div class="bento bento-2">
-      <article class="card">
-        <p class="mono-label" style="margin-bottom:var(--space-3)">engagement.03 &middot; Sep 2024</p>
-        <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">n8n</span><span class="tag tag-ghost">HubSpot</span><span class="tag tag-ghost">Airtable</span><span class="tag tag-ghost">Make.com</span></div>
-        <h3 class="display-card" style="margin-bottom:var(--space-3)">Bidirectional CRM Sync Engine</h3>
-        <p class="body-base" style="margin-bottom:var(--space-6);font-size:var(--text-sm)">Fully automated bidirectional sync between HubSpot CRM and Airtable via n8n webhook triggers. Contact updates, deal stage changes, and new contact creation all propagate within 800ms. Make.com fallback handles n8n rate-limit scenarios. Slack alerting on any sync failures. 4,200 records synced daily with a 0.03% error rate.</p>
-        <div style="display:flex;gap:var(--space-8)">
-          <div><span class="mono-label">Records/day</span><p class="mono-value" style="font-size:var(--text-xl)">4,200</p></div>
-          <div><span class="mono-label">Sync latency</span><p class="mono-value" style="font-size:var(--text-xl)">&lt;800ms</p></div>
-          <div><span class="mono-label">Error rate</span><p class="mono-value" style="font-size:var(--text-xl)">0.03%</p></div>
-        </div>
-      </article>
-      <article class="card">
-        <p class="mono-label" style="margin-bottom:var(--space-3)">engagement.04 &middot; Aug 2024</p>
-        <div class="stack-row" style="margin-bottom:var(--space-4)"><span class="tag tag-ghost">CrewAI</span><span class="tag tag-ghost">LlamaParse</span><span class="tag tag-ghost">Chroma DB</span><span class="tag tag-ghost">FastAPI</span></div>
-        <h3 class="display-card" style="margin-bottom:var(--space-3)">Contract Intelligence RAG System</h3>
-        <p class="body-base" style="margin-bottom:var(--space-6);font-size:var(--text-sm)">CrewAI four-agent system for enterprise legal document Q&amp;A. LlamaParse for layout-aware PDF extraction. Chroma DB for chunked vector storage. Synthesizer agent streams structured JSON answers to a FastAPI endpoint. Processes 200-page legal contracts in under 90 seconds. 93.1% retrieval accuracy validated on internal benchmark.</p>
-        <div style="display:flex;gap:var(--space-8)">
-          <div><span class="mono-label">200-page doc</span><p class="mono-value" style="font-size:var(--text-xl)">&lt;90s</p></div>
-          <div><span class="mono-label">Retrieval acc.</span><p class="mono-value" style="font-size:var(--text-xl)">93.1%</p></div>
-          <div><span class="mono-label">Agents</span><p class="mono-value" style="font-size:var(--text-xl)">4</p></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-</main>
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)">
-            <span class="nav-logo-mark">IQ://</span>
+  <div class="site-wrap">
+    <nav class="nav" role="navigation" aria-label="Primary navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo" aria-label="Home">
+            <div class="nav-logo-box">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
             <span class="nav-logo-name">Idrees Qurashi</span>
+          </a>
+          <ul class="nav-links" role="list">
+            <li><a href="index.html" class="nav-link">Overview</a></li>
+            <li><a href="agentic-lab.html" class="nav-link">Agentic Lab</a></li>
+            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
+            <li><a href="client-proof.html" class="nav-link active">Client Proof</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
           </div>
-          <p class="footer-meta">AI Automation Engineer &amp; Agentic Systems Architect</p>
-          <p class="footer-meta" style="margin-top:var(--space-2)">Islamabad, Pakistan &middot; Available for remote engagements worldwide</p>
+          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="agentic-lab.html" class="footer-link">Agentic Lab</a>
-          <a href="outbound-engine.html" class="footer-link">Outbound Engine</a>
-          <a href="client-proof.html" class="footer-link">Client Proof</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-          <a href="https://github.com/IdreesQurashi" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/idreesqurashi" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
       </div>
-      <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--border-hair);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-        <span class="footer-meta">&copy; 2026 Idrees Qurashi. Production-grade systems, zero placeholders.</span>
-        <span class="tag tag-emerald"><span class="status-dot" style="width:5px;height:5px;box-shadow:none"></span>&nbsp;Systems Operational</span>
+      <div class="nav-mobile-menu">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+        <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+        <a href="client-proof.html" class="nav-link active">Client Proof</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
-    </div>
-  </footer>
+    </nav>
+
+    <main id="main-content" style="padding-top:var(--space-16);padding-bottom:var(--space-20)">
+      <div class="container">
+        
+        <div style="text-align:center;max-width:760px;margin-inline:auto;margin-bottom:var(--space-16)">
+          <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
+            Commercial Verification &middot; Real Deployments
+          </div>
+          <h1 class="display-hero" style="margin-bottom:var(--space-4)">Proven Client Engagements</h1>
+          <p class="body-lead" style="margin-inline:auto">
+            Zero theoretical case studies. Documented commercial partnerships with verified deliverables, operational hours saved, and direct client outcomes.
+          </p>
+        </div>
+
+        <!-- 4 Verified Client Cards Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);margin-bottom:var(--space-16)">
+          
+          <!-- Client 1: Green TV -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">National Television PK</span>
+                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Green TV Entertainment</h2>
+              </div>
+              <span class="tag tag-emerald">Commercial Media</span>
+            </div>
+            
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              Designed and deployed an automated broadcast campaign distribution engine. Automated multi platform syndication, scheduling, and reach tracking across major digital properties.
+            </p>
+
+            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div>
+                  <p class="mono-label">Hours Reclaimed</p>
+                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">16h / week</p>
+                </div>
+                <div>
+                  <p class="mono-label">Window Accuracy</p>
+                  <p class="mono-val" style="color:var(--fg-primary);font-size:var(--text-lg)">100%</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="mono-label" style="font-size:var(--text-2xs)">Core Stack: Python Automation, Webhook Gateways, API Dispatchers</p>
+          </article>
+
+          <!-- Client 2: Apache Pizza -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">National Franchise IE</span>
+                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Apache Pizza Ireland</h2>
+              </div>
+              <span class="tag tag-emerald">Enterprise Retail</span>
+            </div>
+
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              Architected a multi location social audience acquisition system. Scaled automated localized engagement, promotion routing, and digital store traffic pipelines.
+            </p>
+
+            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div>
+                  <p class="mono-label">Locations Covered</p>
+                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">180+ Stores</p>
+                </div>
+                <div>
+                  <p class="mono-label">Verified Presence</p>
+                  <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" rel="noopener" style="font-family:var(--font-mono);color:var(--gold);font-size:var(--text-xs);font-weight:600">
+                    instagram.com &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p class="mono-label" style="font-size:var(--text-2xs)">Core Stack: Social Graph Scraping, Dynamic Routing, Multi Channel CRM</p>
+          </article>
+
+          <!-- Client 3: Rock Road Dental -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">Healthcare IE</span>
+                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Rock Road &amp; Slievemore</h2>
+              </div>
+              <span class="tag tag-emerald">Healthcare System</span>
+            </div>
+
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              Automated patient appointment routing, intelligent follow ups, and two way calendar synchronization. Eliminated booking bottlenecks for busy clinic reception staff.
+            </p>
+
+            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div>
+                  <p class="mono-label">No Show Reduction</p>
+                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">42% Drop</p>
+                </div>
+                <div>
+                  <p class="mono-label">Clinic Portal</p>
+                  <a href="https://www.rockroaddental.ie/" target="_blank" rel="noopener" style="font-family:var(--font-mono);color:var(--gold);font-size:var(--text-xs);font-weight:600">
+                    rockroaddental.ie &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p class="mono-label" style="font-size:var(--text-2xs)">Core Stack: Make.com, n8n Calendar Engine, Twilio SMS Gateways</p>
+          </article>
+
+          <!-- Client 4: Master Drive Vault -->
+          <article class="card-3d">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
+              <div>
+                <span class="mono-label" style="color:var(--gold)">Open Technical Proof</span>
+                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Master Blueprint Drive Vault</h2>
+              </div>
+              <span class="tag tag-gold">Public Repository</span>
+            </div>
+
+            <p class="body-base" style="margin-bottom:var(--space-6)">
+              A curated public drive containing verified production workflow blueprints, execution diagrams, and JSON configurations for enterprise review.
+            </p>
+
+            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div>
+                  <p class="mono-label">Assets Available</p>
+                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">25+ Blueprints</p>
+                </div>
+                <div>
+                  <p class="mono-label">Direct Drive Link</p>
+                  <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" rel="noopener" style="font-family:var(--font-mono);color:var(--gold);font-size:var(--text-xs);font-weight:600">
+                    Access Drive &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p class="mono-label" style="font-size:var(--text-2xs)">Includes: n8n Lead Gen, Make.com Auto Booking, WhatsApp CRM Bots</p>
+          </article>
+
+        </div>
+
+        <!-- Verified Aggregate Performance Strip -->
+        <div class="card-3d" style="padding:var(--space-8);margin-bottom:var(--space-16)">
+          <p class="mono-label" style="color:var(--gold);margin-bottom:var(--space-4)">Aggregate Operational Benchmark</p>
+          <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:var(--space-6);text-align:center">
+            <div>
+              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--fg-primary)">$350K+</p>
+              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Client Pipeline Generated</p>
+            </div>
+            <div>
+              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--emerald)">98.7%</p>
+              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Automation Uptime SLA</p>
+            </div>
+            <div>
+              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--fg-primary)">&lt;60s</p>
+              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Average Speed to Lead</p>
+            </div>
+            <div>
+              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--gold)">0.19%</p>
+              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Outbound Bounce Rate</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Terminal -->
+        <div style="text-align:center;max-width:680px;margin-inline:auto">
+          <h2 class="display-section" style="margin-bottom:var(--space-4)">Ready for Proven Autonomous Systems?</h2>
+          <p class="body-lead" style="margin-bottom:var(--space-8)">
+            Book a 30 minute architecture audit. We examine your current bottlenecks and produce a written deployment roadmap within 48 hours.
+          </p>
+          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
+            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
+              <span class="status-dot"></span> WhatsApp Direct
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <div class="nav-logo-box" style="width:24px;height:24px">
+              <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
+            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+          </div>
+          <div style="display:flex;gap:var(--space-6)">
+            <a href="index.html">Overview</a>
+            <a href="agentic-lab.html">Agentic Lab</a>
+            <a href="client-proof.html">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

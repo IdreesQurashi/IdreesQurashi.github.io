@@ -1,6 +1,6 @@
 /* ============================================================
    IDREES QURASHI — TRIONN Studio Luxury Architecture
-   Exact replication of trionn.com aesthetic, rhythm, and cards
+   Full 3D Floating Sky Universe & Interactive 3D Cards System
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap');
@@ -8,23 +8,20 @@
 :root {
   /* TRIONN Exact Color Palette */
   --bg-dark:        #040508;
-  --bg-hero:        #0C0C0C;
-  --bg-surface:     #0A0B0E;
-  --bg-surface-alt: #111216;
-  --bg-card:        #0E0F12;
-  --bg-light:       #EBEAE5;
-  --bg-light-card:  #F5F4F0;
+  --bg-hero:        transparent;
+  --bg-surface:     rgba(10, 12, 18, 0.72);
+  --bg-surface-alt: rgba(14, 16, 24, 0.85);
+  --bg-card:        rgba(12, 14, 20, 0.75);
 
   --border-grid:    #2F323B;
   --border-hair:    rgba(255, 255, 255, 0.08);
-  --border-light:   #D8D7D2;
+  --border-card:    rgba(255, 255, 255, 0.09);
 
   --text-white:     #FFFFFF;
   --text-light:     #D8D8D8;
   --text-muted:     rgba(216, 216, 216, 0.55);
   --text-dim:       #737580;
   --text-dark:      #0C0C0C;
-  --text-dark-sub:  #555555;
 
   --accent-emerald: #10B981;
   --accent-amber:   #FF5500;
@@ -36,7 +33,7 @@
   --font-serif:     'Playfair Display', Georgia, serif;
   --font-mono:      'JetBrains Mono', monospace;
 
-  --radius-card:    12px;
+  --radius-card:    16px;
   --radius-pill:    9999px;
 }
 
@@ -82,21 +79,21 @@ button {
   color: inherit;
 }
 
-/* === 2. THREE.JS 3D CANVAS (CRITICAL: Full Visibility) === */
+/* === 2. THREE.JS 3D CANVAS (CRITICAL: Persistent 3D Sky Behind Entire Site) === */
 #three-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1; /* Above dark foundation, below interactive content */
-  pointer-events: auto; /* Receives mouse click & hold to blast */
+  z-index: 1; /* Floating directly in background of the entire website */
+  pointer-events: auto;
 }
 
 .site-wrap {
   position: relative;
   z-index: 2;
-  pointer-events: none; /* Let clicks & hovers pass through empty areas to 3D canvas */
+  pointer-events: none; /* Mouse moves and clicks pass through to 3D sky */
 }
 
 /* Re-enable pointer events for interactive elements */
@@ -108,10 +105,12 @@ button {
 .site-wrap .interactive,
 .site-wrap .showcase-card,
 .site-wrap .workflow-card,
+.site-wrap .showcase-featured-card,
+.site-wrap .facts-item,
+.site-wrap .contact-form-card,
 .site-wrap .nav-link,
 .site-wrap .hero-info-card,
-.site-wrap .footer-links a,
-.site-wrap .contact-form,
+.site-wrap .footer-nav a,
 .site-wrap .btn-underline {
   pointer-events: auto;
 }
@@ -248,7 +247,7 @@ button {
   transition: transform 0.3s ease;
 }
 
-/* === 5. HERO SECTION (TRIONN Exact Split View) === */
+/* === 5. HERO SECTION (100% Transparent, Monumental Lockup) === */
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -256,7 +255,7 @@ button {
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  background: transparent !important; /* CRITICAL: 3D canvas renders behind */
+  background: transparent !important; /* CRITICAL: 3D sky visible */
 }
 
 .hero-section .container {
@@ -268,18 +267,20 @@ button {
 }
 
 .hero-headline {
-  max-width: 650px;
+  max-width: 900px;
   z-index: 5;
 }
 
+/* Precise 2-Line Monumental Lockup */
 .hero-headline h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-size: clamp(3.2rem, 7.2vw, 6.2rem);
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1.02;
   letter-spacing: -0.04em;
   color: var(--text-white);
-  margin-bottom: 0.2em;
+  margin-bottom: 0.15em;
+  white-space: normal;
 }
 
 .serif-italic {
@@ -290,7 +291,7 @@ button {
   color: var(--text-light);
 }
 
-/* TRIONN Hero Action Buttons with Animated Underline */
+/* TRIONN Hero Action Buttons */
 .hero-actions {
   display: flex;
   gap: 28px;
@@ -403,13 +404,16 @@ button {
 
 .hero-info-card {
   display: flex;
-  border: 1px solid var(--border-grid);
-  border-radius: 4px;
-  background: rgba(12, 12, 12, 0.85);
-  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  background: var(--bg-surface);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 40px rgba(0, 0, 0, 0.6);
   color: var(--text-light);
   font-family: var(--font-mono);
   overflow: hidden;
+  position: relative;
 }
 
 .hero-info-left {
@@ -418,7 +422,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: 14px 18px;
-  border-right: 1px solid var(--border-grid);
+  border-right: 1px solid var(--border-hair);
   gap: 6px;
   min-width: 100px;
   text-align: center;
@@ -441,13 +445,13 @@ button {
   text-align: justify;
 }
 
-/* === 6. SECTION 2: ABOUT / PHILOSOPHY === */
+/* === 6. SECTION 2: ABOUT / PHILOSOPHY (Transparent) === */
 .about-section {
   position: relative;
   z-index: 3;
-  padding: 120px 0 100px 0;
-  background: var(--bg-hero);
-  border-top: 1px solid var(--border-grid);
+  padding: 160px 0 120px 0;
+  background: transparent !important; /* CRITICAL: 3D sky visible */
+  border-top: 1px solid var(--border-hair);
 }
 
 .section-tag {
@@ -470,7 +474,7 @@ button {
   max-width: 1100px;
 }
 
-/* TRIONN Signature Precision Line with Corner Crosshair */
+/* Precision Line with Center Crosshair */
 .line-crosshair-wrap {
   position: relative;
   width: 100%;
@@ -482,7 +486,7 @@ button {
 .line-crosshair-line {
   width: 100%;
   height: 1px;
-  background-color: var(--border-grid);
+  background-color: var(--border-hair);
 }
 
 .line-crosshair-mark {
@@ -495,7 +499,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-hero);
+  background: var(--bg-dark);
 }
 
 .line-crosshair-mark svg {
@@ -537,18 +541,19 @@ button {
   color: var(--text-muted);
 }
 
-/* === 7. KINETIC TICKER MARQUEE (TRIONN Band) === */
+/* === 7. KINETIC TICKER MARQUEE (Frosted Ribbon) === */
 .marquee-band {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   padding: 30px 0;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.95);
   color: #000000;
   display: flex;
   align-items: center;
   border-top: 1px solid #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .marquee-content {
@@ -568,17 +573,31 @@ button {
   100% { transform: translateX(-50%); }
 }
 
-/* === 8. LIGHT EDITORIAL SHOWCASE SECTION (TRIONN Contrast Section) === */
+/* === 8. LUXURY 3D CARD ARCHITECTURE (FLOATING SLABS IN SKY) === */
+
+/* Dynamic Glare Highlight that follows cursor on every card */
+.card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+  transform: translate(-100px, -100px);
+}
+
+/* Section Light: Translucent Alabaster / Elevated Glass Slab */
 .section-light {
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: transparent !important;
+  color: var(--text-white);
   padding: 120px 0;
   position: relative;
   z-index: 3;
-}
-
-.section-light .section-tag {
-  color: var(--text-dark-sub);
 }
 
 .section-light .section-title {
@@ -586,7 +605,7 @@ button {
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: var(--text-dark);
+  color: var(--text-white);
   margin-bottom: 40px;
 }
 
@@ -595,18 +614,22 @@ button {
   display: grid;
   grid-template-columns: 1fr 1.35fr;
   gap: 40px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
+  background: var(--bg-surface);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
   overflow: hidden;
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 30px 60px -15px rgba(0, 0, 0, 0.85);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
   margin-bottom: 48px;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .showcase-featured-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 45px 90px -20px rgba(0, 0, 0, 0.95);
 }
 
 .featured-card-content {
@@ -624,12 +647,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  margin: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .featured-media-area video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.showcase-featured-card:hover .featured-media-area video {
+  transform: scale(1.03);
 }
 
 /* Live Badge */
@@ -637,16 +668,16 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(16, 185, 129, 0.12);
   color: var(--accent-emerald);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.35);
 }
 
 .pulse-dot {
@@ -671,19 +702,6 @@ button {
   margin: 16px 0;
 }
 
-.tech-pill {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  background: #F0EFEA;
-  color: #333333;
-  border: 1px solid #D8D7D2;
-}
-
-/* Dark tech pill for dark sections */
 .tech-pill-dark {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -691,19 +709,19 @@ button {
   letter-spacing: 0.06em;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-light);
-  border: 1px solid var(--border-grid);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* === 9. SECTION: WORKFLOWS IN MOTION (Real Video Grid) === */
 .section-motion {
-  background-color: var(--bg-dark);
+  background-color: transparent !important; /* CRITICAL: 3D sky visible */
   color: var(--text-light);
   padding: 120px 0;
   position: relative;
   z-index: 3;
-  border-top: 1px solid var(--border-grid);
+  border-top: 1px solid var(--border-hair);
 }
 
 .section-motion-header {
@@ -718,7 +736,7 @@ button {
 .motion-grid-6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 @media (max-width: 1024px) {
@@ -733,22 +751,25 @@ button {
   }
 }
 
-/* Individual Video Workflow Card */
+/* Luxury 3D Video Workflow Card */
 .workflow-card {
   display: flex;
   flex-direction: column;
   background: var(--bg-surface);
-  border: 1px solid var(--border-grid);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--border-card);
   border-radius: var(--radius-card);
   overflow: hidden;
   position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 24px 50px -12px rgba(0, 0, 0, 0.8);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
 }
 
 .workflow-card:hover {
-  transform: translateY(-8px);
   border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 35px 70px -15px rgba(0, 0, 0, 0.95);
 }
 
 .workflow-video-wrap {
@@ -757,6 +778,7 @@ button {
   background: #000000;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid var(--border-hair);
 }
 
 .workflow-video-wrap video {
@@ -771,7 +793,7 @@ button {
 }
 
 .workflow-card-body {
-  padding: 24px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -811,7 +833,7 @@ button {
 
 .workflow-footer {
   padding-top: 16px;
-  border-top: 1px solid var(--border-grid);
+  border-top: 1px solid var(--border-hair);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -843,8 +865,8 @@ button {
 
 /* === 10. SECTION: 3D SERVICES MONOLITH & CAPABILITIES === */
 .section-services {
-  background: var(--bg-hero);
-  border-top: 1px solid var(--border-grid);
+  background: transparent !important; /* CRITICAL: 3D sky visible */
+  border-top: 1px solid var(--border-hair);
   padding: 100px 0;
   position: relative;
   z-index: 3;
@@ -861,13 +883,18 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border-grid);
-  transition: padding-left 0.3s ease;
+  padding: 28px 24px;
+  border-radius: 12px;
+  background: rgba(10, 12, 18, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-hair);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
 .service-item-row:hover {
-  padding-left: 16px;
+  transform: translateX(10px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(14, 16, 24, 0.7);
 }
 
 .service-name {
@@ -889,11 +916,11 @@ button {
   color: #FFFFFF;
 }
 
-/* === 11. FACTS & METRICS BOARD === */
+/* === 11. FACTS & METRICS BOARD (Glass Elevation) === */
 .facts-section {
-  padding: 80px 0;
-  background: var(--bg-dark);
-  border-top: 1px solid var(--border-grid);
+  padding: 100px 0;
+  background: transparent !important; /* CRITICAL: 3D sky visible */
+  border-top: 1px solid var(--border-hair);
   position: relative;
   z-index: 3;
 }
@@ -901,13 +928,17 @@ button {
 .facts-grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border-grid);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
   background: var(--bg-surface);
+  backdrop-filter: blur(28px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 50px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 .facts-item {
   padding: 36px 28px;
-  border-right: 1px solid var(--border-grid);
+  border-right: 1px solid var(--border-hair);
   position: relative;
 }
 
@@ -945,7 +976,7 @@ button {
     border-right: none;
   }
   .facts-item:nth-child(1), .facts-item:nth-child(2) {
-    border-bottom: 1px solid var(--border-grid);
+    border-bottom: 1px solid var(--border-hair);
   }
 }
 
@@ -955,7 +986,7 @@ button {
   }
   .facts-item {
     border-right: none !important;
-    border-bottom: 1px solid var(--border-grid);
+    border-bottom: 1px solid var(--border-hair);
   }
   .facts-item:last-child {
     border-bottom: none;
@@ -965,8 +996,8 @@ button {
 /* === 12. INTERACTIVE CONTACT & FOOTER === */
 .contact-section {
   padding: 120px 0 80px 0;
-  background: var(--bg-hero);
-  border-top: 1px solid var(--border-grid);
+  background: transparent !important; /* CRITICAL: 3D sky visible */
+  border-top: 1px solid var(--border-hair);
   position: relative;
   z-index: 3;
 }
@@ -983,9 +1014,13 @@ button {
 
 .contact-form-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-grid);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--border-card);
   border-radius: var(--radius-card);
   padding: 40px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 30px 60px -15px rgba(0, 0, 0, 0.85);
+  position: relative;
 }
 
 .form-group {
@@ -1004,9 +1039,9 @@ button {
 
 .form-input, .form-textarea {
   width: 100%;
-  background: var(--bg-surface-alt);
-  border: 1px solid var(--border-grid);
-  border-radius: 6px;
+  background: rgba(8, 10, 15, 0.85);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
   padding: 14px 18px;
   color: #FFFFFF;
   font-family: var(--font-sans);
@@ -1017,7 +1052,7 @@ button {
 .form-input:focus, .form-textarea:focus {
   outline: none;
   border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
 }
 
 .form-textarea {
@@ -1036,19 +1071,19 @@ button {
 
 .form-status.success {
   display: block;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
   color: var(--accent-emerald);
 }
 
 .form-status.error {
   display: block;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
   color: #EF4444;
 }
 
-/* Giant Outline Brand Footer Text (TRIONN Signature) */
+/* Giant Outline Brand Footer Text */
 .footer-giant-brand {
   font-family: var(--font-display);
   font-size: clamp(4rem, 15vw, 14rem);
@@ -1057,7 +1092,7 @@ button {
   line-height: 0.85;
   letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
   user-select: none;
   margin-top: 80px;
   margin-bottom: 30px;
@@ -1065,8 +1100,8 @@ button {
 
 .site-footer {
   padding: 40px 0;
-  border-top: 1px solid var(--border-grid);
-  background: var(--bg-dark);
+  border-top: 1px solid var(--border-hair);
+  background: transparent !important;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
@@ -1096,7 +1131,7 @@ button {
 }
 
 /* Mobile Nav Drawer */
-.mobile-menu-drawer {
+.mobile-menu-drawer, .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
@@ -1113,11 +1148,11 @@ button {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mobile-menu-drawer.open {
+.mobile-menu-drawer.open, .mobile-menu.open {
   transform: translateX(0);
 }
 
-.mobile-menu-drawer a {
+.mobile-menu-drawer a, .mobile-menu a {
   font-family: var(--font-display);
   font-size: 2.25rem;
   font-weight: 600;
@@ -1126,7 +1161,7 @@ button {
   transition: color 0.2s ease;
 }
 
-.mobile-menu-drawer a:hover {
+.mobile-menu-drawer a:hover, .mobile-menu a:hover {
   color: #FFFFFF;
 }
 
@@ -1140,48 +1175,4 @@ button {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Compatibility aliases */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  background: #000000;
-  z-index: 998;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.mobile-menu.open {
-  transform: translateX(0);
-}
-.mobile-menu a {
-  font-family: var(--font-display);
-  font-size: 2.25rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--text-light);
-  transition: color 0.2s ease;
-}
-.mobile-menu a:hover {
-  color: #FFFFFF;
-}
-
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.hamburger span {
-  display: block;
-  width: 14px;
-  height: 1px;
-  background-color: currentColor;
 }

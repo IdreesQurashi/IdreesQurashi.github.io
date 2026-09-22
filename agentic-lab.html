@@ -89,7 +89,7 @@
         <div class="arch-diagram">
           <div class="arch-layer">
             <div class="arch-layer-label">Layer 1 // DIRECTIVE INGESTION</div>
-            <div class="arch-layer-desc">YAML parsing, role whitelists, and rigorous ICP qualification against strict pre-defined exclusion filters.</div>
+            <div class="arch-layer-desc">YAML parsing, role whitelists, and rigorous ICP qualification against strict predefined exclusion filters.</div>
           </div>
           <div class="arch-layer">
             <div class="arch-layer-label">Layer 2 // LANGGRAPH SUPERVISOR</div>
@@ -97,8 +97,18 @@
           </div>
           <div class="arch-layer">
             <div class="arch-layer-label">Layer 3 // PACED EXECUTION RELAY</div>
-            <div class="arch-layer-desc">Randomized 15-30min intervals, real-time bounce monitoring, and automatic cooldown triggers to preserve domain reputation.</div>
+            <div class="arch-layer-desc">Randomized 15 to 30 min intervals, real time bounce monitoring, and automatic cooldown triggers to preserve domain reputation.</div>
           </div>
+        </div>
+
+        <div style="margin:24px 0;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="downloads/workflow_1_outbound_sdr_swarm.zip" download="workflow_1_outbound_sdr_swarm.zip" class="btn-download-blueprint">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Production Blueprint (.zip)
+          </a>
+          <a href="outbound-engine.html" class="btn-outline-arch">
+            Full Outbound Architecture →
+          </a>
         </div>
 
         <div class="tech-tags" style="margin-top:24px">
@@ -111,7 +121,7 @@
         </div>
 
         <div class="facts-board">
-          <div class="metric"><span class="metric-value">15-20</span><span class="metric-label">Meetings Week</span></div>
+          <div class="metric"><span class="metric-value">15 to 20</span><span class="metric-label">Meetings Week</span></div>
           <div class="metric"><span class="metric-value emerald">0.19%</span><span class="metric-label">Bounce Ceiling</span></div>
           <div class="metric"><span class="metric-value">&lt;60s</span><span class="metric-label">Speed to Lead</span></div>
         </div>
@@ -128,35 +138,49 @@
         <span class="section-label">system 02</span>
       </div>
       <div style="grid-column: 2 / 13">
-        <h2 class="section-title">Vision-Grounded Self-Healing Web Scraper</h2>
+        <h2 class="section-title">Autonomous Lead Harvester &amp; Self Healing Scraper</h2>
+        <p style="font-size:1rem;color:rgba(216,216,216,0.7);margin-bottom:24px;line-height:1.6">
+          Autonomous multi agent scraping pipeline executed inside Claude Code terminal. Orchestrates headless Playwright workers, validates medical clinic firmographics across US metro hubs, and self recovers unverified records via background daemons.
+        </p>
+
+        <!-- Video Screencast -->
+        <div style="margin:24px 0;background:#000;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;position:relative;max-width:900px;">
+          <div class="video-audio-badge">
+            <span class="audio-wave"><span></span><span></span><span></span></span>
+            AI Voiceover · 74s Production Cut
+          </div>
+          <video controls playsinline preload="metadata" poster="workflows/claude-code-scraper/poster.jpg" style="width:100%;height:auto;display:block;">
+            <source src="workflows/claude-code-scraper/claude_code_scraper_execution.mp4" type="video/mp4"/>
+          </video>
+        </div>
         
         <div class="arch-diagram">
           <div class="arch-layer">
-            <div class="arch-layer-label">Layer 1 // CACHED FAST PATH</div>
-            <div class="arch-layer-desc">SQLite locator cache enabling 14ms timeout selector resolution for known DOM structures.</div>
+            <div class="arch-layer-label">Layer 1 // CLAUDE OPUS 5 ORCHESTRATOR</div>
+            <div class="arch-layer-desc">Autonomous planning and terminal task execution. Decomposes regional queries and schedules parallel browser workers.</div>
           </div>
           <div class="arch-layer">
-            <div class="arch-layer-label">Layer 2 // MUTATION DETECTION</div>
-            <div class="arch-layer-desc">Cached selector failure detection triggering immediate full-page screenshot capture for vision analysis.</div>
+            <div class="arch-layer-label">Layer 2 // PLAYWRIGHT STEALTH ENGINE</div>
+            <div class="arch-layer-desc">Headless browser cluster with anti bot bypass and DOM selector resolution for clinic listings and social profiles.</div>
           </div>
           <div class="arch-layer">
-            <div class="arch-layer-label">Layer 3 // GEMINI VISION FALLBACK</div>
-            <div class="arch-layer-desc">Bounding-box coordinate computation, complex DOM element mapping, and persistent cache repair.</div>
+            <div class="arch-layer-label">Layer 3 // BACKGROUND RECOVERY DAEMON</div>
+            <div class="arch-layer-desc">Detached background process launched automatically to self heal missing fields and complete data verification without human prompts.</div>
           </div>
         </div>
 
         <div class="tech-tags" style="margin-top:24px">
-          <span class="tech-tag">Playwright Async</span>
-          <span class="tech-tag">Gemini Vision API</span>
-          <span class="tech-tag">SQLite</span>
-          <span class="tech-tag">Python AsyncIO</span>
-          <span class="tech-tag">Pillow</span>
+          <span class="tech-tag">Claude Opus 5</span>
+          <span class="tech-tag">Playwright Stealth</span>
+          <span class="tech-tag">Gemini Flash Lite</span>
+          <span class="tech-tag">Edge TTS</span>
+          <span class="tech-tag">Recovery Daemon</span>
         </div>
 
         <div class="facts-board">
-          <div class="metric"><span class="metric-value emerald">98.7%</span><span class="metric-label">Automated Uptime</span></div>
-          <div class="metric"><span class="metric-value">14ms</span><span class="metric-label">Cached Speed</span></div>
-          <div class="metric"><span class="metric-value">0</span><span class="metric-label">Manual Interventions</span></div>
+          <div class="metric"><span class="metric-value emerald">100%</span><span class="metric-label">Extraction Rate</span></div>
+          <div class="metric"><span class="metric-value">0</span><span class="metric-label">Human Prompts Needed</span></div>
+          <div class="metric"><span class="metric-value emerald">Auto</span><span class="metric-label">Daemon Recovery</span></div>
         </div>
       </div>
     </div>

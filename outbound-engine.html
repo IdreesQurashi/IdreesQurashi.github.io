@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="theme-color" content="#040508"/>
   <meta name="description" content="Autonomous B2B outbound pipeline architecture. ICP extraction, verification, Gemini personalization, and paced deliverability."/>
   <title>Outbound Engine | Idrees Qurashi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -20,163 +21,235 @@
   <canvas id="three-canvas"></canvas>
 
   <div class="site-wrap">
-    <nav class="nav" role="navigation" aria-label="Primary navigation">
+    
+    <!-- TRIONN Minimal Precision Header -->
+    <header class="nav-trionn">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo" aria-label="Home">
+          <a href="index.html" class="nav-brand">
             <div class="nav-logo-box">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span class="nav-logo-name">Idrees Qurashi</span>
+            <div>
+              <div class="nav-brand-title">Idrees Qurashi</div>
+              <div class="nav-brand-sub">Autonomous Systems Studio</div>
+            </div>
           </a>
-          <ul class="nav-links" role="list">
-            <li><a href="index.html" class="nav-link">Overview</a></li>
-            <li><a href="agentic-lab.html" class="nav-link">Agentic Lab</a></li>
-            <li><a href="outbound-engine.html" class="nav-link active">Outbound Engine</a></li>
-            <li><a href="client-proof.html" class="nav-link">Client Proof</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link">Overview</a>
+            <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+            <a href="outbound-engine.html" class="nav-link active">Outbound Engine</a>
+            <a href="client-proof.html" class="nav-link">Client Proof</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </nav>
+
           <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
+            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
           </div>
-          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+
+          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
+
       <div class="nav-mobile-menu">
         <a href="index.html" class="nav-link">Overview</a>
         <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
         <a href="outbound-engine.html" class="nav-link active">Outbound Engine</a>
         <a href="client-proof.html" class="nav-link">Client Proof</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
       </div>
-    </nav>
+    </header>
 
-    <main id="main-content" style="padding-top:var(--space-16);padding-bottom:var(--space-20)">
-      <div class="container">
-        
-        <div style="text-align:center;max-width:760px;margin-inline:auto;margin-bottom:var(--space-16)">
-          <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
-            Zero Bounce OS &middot; Autonomous B2B Pipeline
+    <main id="main-content">
+      
+      <!-- Hero -->
+      <section style="padding-top:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border-grid)">
+        <div class="container">
+          <div class="trionn-pill" style="margin-bottom:2rem">
+            <span class="trionn-star">&#10022;</span>
+            <span>Zero Bounce OS &middot; Autonomous B2B Pipeline</span>
           </div>
-          <h1 class="display-hero" style="margin-bottom:var(--space-4)">The Outbound Machine</h1>
-          <p class="body-lead" style="margin-inline:auto">
-            High volume, low ego outbound system delivering qualified enterprise conversations with bounce rates strictly constrained below 0.25%.
+
+          <div style="margin-bottom:2.5rem">
+            <h1 class="hero-huge-1">The outbound</h1>
+            <h1 class="hero-huge-2">
+              <span class="serif-italic">engine.</span>
+            </h1>
+          </div>
+
+          <p class="body-lead-trionn">
+            High volume, low ego outbound pipeline delivering qualified enterprise conversations with bounce rates strictly constrained below 0.25%.
           </p>
         </div>
+      </section>
 
-        <!-- 3 Step Outbound Visual Flow -->
-        <div class="pipeline-flow" style="margin-bottom:var(--space-16)">
-          <div class="pipeline-step">
-            <p class="pipeline-step-num">STAGE 01 &middot; EXTRACTION</p>
-            <h3 class="pipeline-step-title">Verified Data Ingestion</h3>
-            <p class="pipeline-step-desc">
-              Scrapes decision makers matching strict ICP parameters from official registries and live career postings. Unverified emails discarded silently.
-            </p>
-          </div>
+      <!-- 3 Stage Flow -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
+        <div class="container">
+          
+          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Operational Architecture</div>
+          <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:700;line-height:1.2;letter-spacing:-0.03em;margin-bottom:3rem;color:var(--text-white)">
+            Three layer pipeline: ingestion, personalization, and paced relay.
+          </h2>
 
-          <div class="pipeline-step">
-            <p class="pipeline-step-num">STAGE 02 &middot; ENRICHMENT</p>
-            <h3 class="pipeline-step-title">LLM Personalization</h3>
-            <p class="pipeline-step-desc">
-              Gemini Flash Lite worker pool inspects recent company press, technical stack, and recent hiring requirements to craft bespoke opening context.
-            </p>
-          </div>
-
-          <div class="pipeline-step">
-            <p class="pipeline-step-num">STAGE 03 &middot; DISPATCH</p>
-            <h3 class="pipeline-step-title">Human Paced Relay</h3>
-            <p class="pipeline-step-desc">
-              Background daemons enforce randomized 15 to 30 minute delays between sends, protecting mailbox reputation and eliminating spam filter triggers.
-            </p>
-          </div>
-        </div>
-
-        <!-- Deliverability Rules Matrix -->
-        <div class="card-3d" style="padding:var(--space-8);margin-bottom:var(--space-16)">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
-            <div>
-              <span class="mono-label" style="color:var(--gold)">Operational Safeguards</span>
-              <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Deliverability Invariants</h2>
+          <div class="trionn-flow" style="margin-bottom:4rem">
+            <div class="trionn-flow-step">
+              <p class="trionn-step-num">STAGE 01 &middot; EXTRACTION</p>
+              <h3 class="trionn-step-title">Verified Data Ingestion</h3>
+              <p class="trionn-step-desc">
+                Scrapes decision makers matching strict ICP parameters from official registries and live career postings. Unverified emails discarded silently.
+              </p>
             </div>
-            <span class="tag tag-emerald"><span class="status-dot"></span> 0.19% Live Bounce</span>
+
+            <div class="trionn-flow-step">
+              <p class="trionn-step-num">STAGE 02 &middot; ENRICHMENT</p>
+              <h3 class="trionn-step-title">LLM Personalization</h3>
+              <p class="trionn-step-desc">
+                Gemini Flash Lite worker pool inspects recent company press, technical stack, and recent hiring requirements to craft bespoke opening context.
+              </p>
+            </div>
+
+            <div class="trionn-flow-step">
+              <p class="trionn-step-num">STAGE 03 &middot; DISPATCH</p>
+              <h3 class="trionn-step-title">Human Paced Relay</h3>
+              <p class="trionn-step-desc">
+                Background daemons enforce randomized 15 to 30 minute delays between sends, protecting mailbox reputation and eliminating spam filter triggers.
+              </p>
+            </div>
           </div>
 
-          <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);overflow:hidden">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Invariant</th>
-                  <th>Target Parameter</th>
-                  <th>Failure Protocol</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="color:var(--fg-primary);font-weight:600">Bounce Ceiling</td>
-                  <td style="font-family:var(--font-mono);color:var(--emerald)">&lt; 0.25%</td>
-                  <td>Immediate 24h sending cooldown on mailbox upon single bounce</td>
-                </tr>
-                <tr>
-                  <td style="color:var(--fg-primary);font-weight:600">Human Spacing</td>
-                  <td style="font-family:var(--font-mono);color:var(--gold)">900s to 1800s gap</td>
-                  <td>Randomized jitter prevents burst traffic detection</td>
-                </tr>
-                <tr>
-                  <td style="color:var(--fg-primary);font-weight:600">Email Guessing</td>
-                  <td style="font-family:var(--font-mono);color:var(--fg-primary)">Zero extrapolation</td>
-                  <td>Strict ban on pattern synthesis. JD verified contacts only</td>
-                </tr>
-                <tr>
-                  <td style="color:var(--fg-primary);font-weight:600">Deduplication</td>
-                  <td style="font-family:var(--font-mono);color:var(--fg-primary)">Stateful registry</td>
-                  <td>Persistent log check before dispatch eliminates double sends</td>
-                </tr>
-              </tbody>
-            </table>
+          <!-- Deliverability Safeguards Table Card -->
+          <article class="trionn-card">
+            <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+            <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+            <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+            <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem">
+              <div>
+                <span class="card-number" style="color:var(--text-white)">Operational Safeguards</span>
+                <h3 style="font-size:1.5rem;font-weight:700;color:var(--text-white);margin-top:0.25rem">Deliverability Invariants</h3>
+              </div>
+              <div class="trionn-pill">
+                <span class="status-pulse"></span>
+                <span>0.19% Live Bounce</span>
+              </div>
+            </div>
+
+            <div class="trionn-table-wrap">
+              <table class="trionn-table">
+                <thead>
+                  <tr>
+                    <th>Invariant</th>
+                    <th>Target Parameter</th>
+                    <th>Failure Protocol</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color:var(--text-white);font-weight:700">Bounce Ceiling</td>
+                    <td style="font-family:var(--font-mono);color:var(--accent-emerald);font-weight:600">&lt; 0.25%</td>
+                    <td>Immediate 24h sending cooldown on mailbox upon single bounce</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-white);font-weight:700">Human Spacing</td>
+                    <td style="font-family:var(--font-mono);color:var(--text-dim);font-weight:600">900s to 1800s gap</td>
+                    <td>Randomized jitter prevents burst traffic detection</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-white);font-weight:700">Email Guessing</td>
+                    <td style="font-family:var(--font-mono);color:var(--text-dim);font-weight:600">Zero extrapolation</td>
+                    <td>Strict ban on pattern synthesis. JD verified contacts only</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-white);font-weight:700">Deduplication</td>
+                    <td style="font-family:var(--font-mono);color:var(--text-dim);font-weight:600">Stateful registry</td>
+                    <td>Persistent log check before dispatch eliminates double sends</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Facts Board / Pipeline Metrics -->
+      <section style="border-bottom:1px solid var(--border-grid)">
+        <div class="container" style="padding-inline:0">
+          <div class="facts-board">
+            <div class="facts-cell">
+              <div class="facts-num">&lt; 0.25%</div>
+              <div class="facts-label">Hard Bounce Ceiling</div>
+            </div>
+            <div class="facts-cell">
+              <div class="facts-num">1,800s</div>
+              <div class="facts-label">Human Randomized Spacing</div>
+            </div>
+            <div class="facts-cell">
+              <div class="facts-num">100%</div>
+              <div class="facts-label">Verified Source Gate</div>
+            </div>
+            <div class="facts-cell">
+              <div class="facts-num">15 to 20</div>
+              <div class="facts-label">Weekly Qualified Bookings</div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- CTA Section -->
-        <div style="text-align:center;max-width:680px;margin-inline:auto">
-          <h2 class="display-section" style="margin-bottom:var(--space-4)">Scale Your Outbound Predictably</h2>
-          <p class="body-lead" style="margin-bottom:var(--space-8)">
+      <!-- CTA Section -->
+      <section style="padding-block:8rem;text-align:center">
+        <div class="container" style="max-width:800px;margin-inline:auto">
+          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Outbound Pipeline Audit</div>
+          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
+            Scale your outbound <span class="serif-italic">predictably.</span>
+          </h2>
+          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
             Book a 30 minute architecture audit. We examine your current pipeline and provide a written deployment roadmap within 48 hours.
           </p>
-          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
+            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
           </div>
         </div>
+      </section>
 
-      </div>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <!-- TRIONN Footer -->
+    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
       <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-          <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <div class="nav-logo-box" style="width:24px;height:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="nav-logo-box" style="width:28px;height:28px">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
+              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
+            </span>
           </div>
-          <div style="display:flex;gap:var(--space-6)">
-            <a href="index.html">Overview</a>
-            <a href="agentic-lab.html">Agentic Lab</a>
-            <a href="client-proof.html">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+
+          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
+            <a href="index.html" style="color:var(--text-dim)">Overview</a>
+            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
+            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
           </div>
         </div>
       </div>
     </footer>
+
   </div>
 </body>
 </html>

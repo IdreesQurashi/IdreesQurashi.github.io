@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="theme-color" content="#040508"/>
   <meta name="description" content="Technical architecture teardowns: Multi agent LangGraph swarms, self healing vision scrapers, and deterministic MCP servers."/>
   <title>Agentic Lab | Idrees Qurashi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -20,211 +21,290 @@
   <canvas id="three-canvas"></canvas>
 
   <div class="site-wrap">
-    <nav class="nav" role="navigation" aria-label="Primary navigation">
+    
+    <!-- TRIONN Minimal Precision Header -->
+    <header class="nav-trionn">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo" aria-label="Home">
+          <a href="index.html" class="nav-brand">
             <div class="nav-logo-box">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span class="nav-logo-name">Idrees Qurashi</span>
+            <div>
+              <div class="nav-brand-title">Idrees Qurashi</div>
+              <div class="nav-brand-sub">Autonomous Systems Studio</div>
+            </div>
           </a>
-          <ul class="nav-links" role="list">
-            <li><a href="index.html" class="nav-link">Overview</a></li>
-            <li><a href="agentic-lab.html" class="nav-link active">Agentic Lab</a></li>
-            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
-            <li><a href="client-proof.html" class="nav-link">Client Proof</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link">Overview</a>
+            <a href="agentic-lab.html" class="nav-link active">Agentic Lab</a>
+            <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+            <a href="client-proof.html" class="nav-link">Client Proof</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </nav>
+
           <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
+            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
           </div>
-          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+
+          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
+
       <div class="nav-mobile-menu">
         <a href="index.html" class="nav-link">Overview</a>
         <a href="agentic-lab.html" class="nav-link active">Agentic Lab</a>
         <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
         <a href="client-proof.html" class="nav-link">Client Proof</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
       </div>
-    </nav>
+    </header>
 
-    <main id="main-content" style="padding-top:var(--space-16);padding-bottom:var(--space-20)">
-      <div class="container">
-        
-        <div style="text-align:center;max-width:760px;margin-inline:auto;margin-bottom:var(--space-16)">
-          <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
-            Production Architectures &middot; Code Level Teardowns
+    <main id="main-content">
+      
+      <!-- Hero -->
+      <section style="padding-top:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border-grid)">
+        <div class="container">
+          <div class="trionn-pill" style="margin-bottom:2rem">
+            <span class="trionn-star">&#10022;</span>
+            <span>Production Fleet &middot; Technical Blueprints</span>
           </div>
-          <h1 class="display-hero" style="margin-bottom:var(--space-4)">Autonomous Agentic Fleet</h1>
-          <p class="body-lead" style="margin-inline:auto">
-            Deep technical blueprints of deployed multi agent swarms. State graphs, self healing recovery loops, and isolated tool execution layers.
+
+          <div style="margin-bottom:2.5rem">
+            <h1 class="hero-huge-1">Autonomous</h1>
+            <h1 class="hero-huge-2">
+              <span class="serif-italic">agentic fleet.</span>
+            </h1>
+          </div>
+
+          <p class="body-lead-trionn">
+            Deep technical blueprints of deployed multi agent swarms. State graphs, self healing recovery loops, and deterministic MCP backends engineered for zero downtime.
           </p>
         </div>
+      </section>
 
-        <!-- 3 Flagship Architecture Blocks -->
-        <div style="display:flex;flex-direction:column;gap:var(--space-10);margin-bottom:var(--space-16)">
+      <!-- Architecture Teardowns -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
+        <div class="container">
           
-          <!-- Architecture 01 -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">Architecture 01 &middot; Lead Intelligence</span>
-                <h2 style="font-size:var(--text-2xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Autonomous Outbound SDR Swarm</h2>
-              </div>
-              <span class="tag tag-emerald"><span class="status-dot"></span> Production Verified</span>
-            </div>
+          <div style="display:flex;flex-direction:column;gap:3rem;margin-bottom:4rem">
+            
+            <!-- Architecture 01: SDR Swarm -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
 
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              A three layer Directive, Orchestration, and Execution architecture. Extracts deep account intelligence via Firecrawl, synthesizes bespoke executive copy, and routes ambiguous outputs to human review before dispatch.
-            </p>
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+                <div>
+                  <span class="card-number" style="color:var(--text-white)">Architecture 01 &middot; Lead Intelligence</span>
+                  <h2 style="font-size:clamp(1.5rem, 2.5vw, 2.25rem);font-weight:800;letter-spacing:-0.03em;margin-top:0.5rem;color:var(--text-white)">
+                    Autonomous Outbound SDR Swarm
+                  </h2>
+                </div>
+                <div class="trionn-pill">
+                  <span class="status-pulse"></span>
+                  <span>Production Verified</span>
+                </div>
+              </div>
 
-            <!-- Visual 3 Step Flow -->
-            <div class="pipeline-flow" style="margin-block:var(--space-4)">
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">LAYER 01</p>
-                <h3 class="pipeline-step-title">Directive Constraints</h3>
-                <p class="pipeline-step-desc">ICP boundaries, domain rules, and strict bounce rate guards loaded into memory.</p>
-              </div>
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">LAYER 02</p>
-                <h3 class="pipeline-step-title">LangGraph Supervisor</h3>
-                <p class="pipeline-step-desc">Decomposes prospect profiles, assigns research sub agents, and evaluates confidence scores.</p>
-              </div>
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">LAYER 03</p>
-                <h3 class="pipeline-step-title">Paced Dispatch</h3>
-                <p class="pipeline-step-desc">Enforces randomized 900s to 1800s intervals with stateful deduplication logs.</p>
-              </div>
-            </div>
+              <p class="body-lead-trionn" style="font-size:1.0625rem;margin-bottom:2rem">
+                A three layer Directive, Orchestration, and Execution architecture. Extracts deep account intelligence via Firecrawl, synthesizes bespoke executive copy, and routes ambiguous outputs to human review before dispatch.
+              </p>
 
-            <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
-              <span class="mono-label">Stack: LangGraph 0.2, Playwright, Gemini Flash Lite, Redis Streams</span>
-              <span class="tag tag-gold">15 to 20 Bookings / Wk</span>
-            </div>
-          </article>
-
-          <!-- Architecture 02 -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">Architecture 02 &middot; Self Healing Automation</span>
-                <h2 style="font-size:var(--text-2xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Vision Grounded Web Scraper</h2>
+              <!-- 3 Step Flow -->
+              <div class="trionn-flow">
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">LAYER 01</p>
+                  <h3 class="trionn-step-title">Directive Constraints</h3>
+                  <p class="trionn-step-desc">ICP boundaries, domain rules, and strict bounce rate guards loaded into memory.</p>
+                </div>
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">LAYER 02</p>
+                  <h3 class="trionn-step-title">LangGraph Supervisor</h3>
+                  <p class="trionn-step-desc">Decomposes prospect profiles, assigns research sub agents, and evaluates confidence scores.</p>
+                </div>
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">LAYER 03</p>
+                  <h3 class="trionn-step-title">Paced Dispatch</h3>
+                  <p class="trionn-step-desc">Enforces randomized 900s to 1800s intervals with stateful deduplication logs.</p>
+                </div>
               </div>
-              <span class="tag tag-emerald"><span class="status-dot"></span> 98.7% Uptime</span>
-            </div>
 
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              Eliminates brittle web automation failures. Fast path executes cached locators within 14ms. When a DOM mutation causes a selector failure, Gemini Vision takes a viewport snapshot, performs spatial bounding, and rewrites the persistent locator cache on the fly.
-            </p>
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+                <span style="font-family:var(--font-mono);font-size:0.8125rem;color:var(--text-muted)">
+                  Stack: LangGraph 0.2, Playwright, Gemini Flash Lite, Redis Streams
+                </span>
+                <span class="card-number" style="color:var(--accent-emerald)">
+                  15 to 20 Bookings Weekly
+                </span>
+              </div>
+            </article>
 
-            <div class="pipeline-flow" style="margin-block:var(--space-4)">
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">STEP 01</p>
-                <h3 class="pipeline-step-title">Fast Path Execution</h3>
-                <p class="pipeline-step-desc">Stealth Playwright queries local cached ARIA locators with zero LLM latency.</p>
-              </div>
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">STEP 02</p>
-                <h3 class="pipeline-step-title">Visual Spatial Trap</h3>
-                <p class="pipeline-step-desc">DOM mutation triggers full viewport screenshot and visual bounding box calculation.</p>
-              </div>
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">STEP 03</p>
-                <h3 class="pipeline-step-title">Dynamic Cache Update</h3>
-                <p class="pipeline-step-desc">New robust locator stored persistently. Zero human maintenance required.</p>
-              </div>
-            </div>
+            <!-- Architecture 02: Vision Scraper -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
 
-            <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
-              <span class="mono-label">Stack: Playwright Async, Gemini Vision API, SQLite Locator Cache</span>
-              <span class="tag tag-gold">95% Fast Path Zero Cost</span>
-            </div>
-          </article>
-
-          <!-- Architecture 03 -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-6)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">Architecture 03 &middot; Server Infrastructure</span>
-                <h2 style="font-size:var(--text-2xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Deterministic MCP Tool Server</h2>
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+                <div>
+                  <span class="card-number" style="color:var(--text-white)">Architecture 02 &middot; Resilient Web Automation</span>
+                  <h2 style="font-size:clamp(1.5rem, 2.5vw, 2.25rem);font-weight:800;letter-spacing:-0.03em;margin-top:0.5rem;color:var(--text-white)">
+                    Vision Grounded Web Scraper
+                  </h2>
+                </div>
+                <div class="trionn-pill">
+                  <span class="status-pulse"></span>
+                  <span>98.7% Uptime</span>
+                </div>
               </div>
-              <span class="tag tag-emerald"><span class="status-dot"></span> Zero Blast Radius</span>
-            </div>
 
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              Model Context Protocol backends exposing typed JSON schemas to LLM agents. Every external API invocation, database mutation, and script execution runs in an isolated ephemeral environment with rate limits and audited telemetry logs.
-            </p>
+              <p class="body-lead-trionn" style="font-size:1.0625rem;margin-bottom:2rem">
+                Eliminates brittle web automation failures. Fast path executes cached locators within 14ms. When a DOM mutation causes a selector failure, Gemini Vision takes a viewport snapshot, performs spatial bounding, and rewrites the persistent locator cache on the fly.
+              </p>
 
-            <div class="pipeline-flow" style="margin-block:var(--space-4)">
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">STAGE 01</p>
-                <h3 class="pipeline-step-title">Strict Schema Validation</h3>
-                <p class="pipeline-step-desc">Pydantic models enforce 100% parameter validity before command execution.</p>
+              <!-- 3 Step Flow -->
+              <div class="trionn-flow">
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">STEP 01</p>
+                  <h3 class="trionn-step-title">Fast Path Execution</h3>
+                  <p class="trionn-step-desc">Stealth Playwright queries local cached ARIA locators with zero LLM latency.</p>
+                </div>
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">STEP 02</p>
+                  <h3 class="trionn-step-title">Visual Spatial Trap</h3>
+                  <p class="trionn-step-desc">DOM mutation triggers full viewport screenshot and visual bounding box calculation.</p>
+                </div>
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">STEP 03</p>
+                  <h3 class="trionn-step-title">Dynamic Cache Update</h3>
+                  <p class="trionn-step-desc">New robust locator stored persistently. Zero human maintenance required.</p>
+                </div>
               </div>
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">STAGE 02</p>
-                <h3 class="pipeline-step-title">Isolated Sandbox</h3>
-                <p class="pipeline-step-desc">Code executions run inside ephemeral Docker sandboxes preventing host pollution.</p>
-              </div>
-              <div class="pipeline-step">
-                <p class="pipeline-step-num">STAGE 03</p>
-                <h3 class="pipeline-step-title">Audited Telemetry</h3>
-                <p class="pipeline-step-desc">Complete JSON execution traces streamed to observability dashboards.</p>
-              </div>
-            </div>
 
-            <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2)">
-              <span class="mono-label">Stack: Model Context Protocol (MCP), Python FastAPI, Docker Engine</span>
-              <span class="tag tag-gold">100% Deterministic</span>
-            </div>
-          </article>
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+                <span style="font-family:var(--font-mono);font-size:0.8125rem;color:var(--text-muted)">
+                  Stack: Playwright Async, Gemini Vision API, SQLite Locator Cache
+                </span>
+                <span class="card-number" style="color:var(--accent-emerald)">
+                  95% Fast Path Zero Cost
+                </span>
+              </div>
+            </article>
+
+            <!-- Architecture 03: MCP Server -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus bl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus br" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+                <div>
+                  <span class="card-number" style="color:var(--text-white)">Architecture 03 &middot; Server Infrastructure</span>
+                  <h2 style="font-size:clamp(1.5rem, 2.5vw, 2.25rem);font-weight:800;letter-spacing:-0.03em;margin-top:0.5rem;color:var(--text-white)">
+                    Deterministic MCP Tool Server
+                  </h2>
+                </div>
+                <div class="trionn-pill">
+                  <span class="status-pulse"></span>
+                  <span>Zero Blast Radius</span>
+                </div>
+              </div>
+
+              <p class="body-lead-trionn" style="font-size:1.0625rem;margin-bottom:2rem">
+                Model Context Protocol backends exposing typed JSON schemas to LLM agents. Every external API invocation, database mutation, and script execution runs in an isolated ephemeral environment with rate limits and audited telemetry logs.
+              </p>
+
+              <!-- 3 Step Flow -->
+              <div class="trionn-flow">
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">STAGE 01</p>
+                  <h3 class="trionn-step-title">Strict Schema Validation</h3>
+                  <p class="trionn-step-desc">Pydantic models enforce 100% parameter validity before command execution.</p>
+                </div>
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">STAGE 02</p>
+                  <h3 class="trionn-step-title">Isolated Sandbox</h3>
+                  <p class="trionn-step-desc">Code executions run inside ephemeral Docker sandboxes preventing host pollution.</p>
+                </div>
+                <div class="trionn-flow-step">
+                  <p class="trionn-step-num">STAGE 03</p>
+                  <h3 class="trionn-step-title">Audited Telemetry</h3>
+                  <p class="trionn-step-desc">Complete JSON execution traces streamed to observability dashboards.</p>
+                </div>
+              </div>
+
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+                <span style="font-family:var(--font-mono);font-size:0.8125rem;color:var(--text-muted)">
+                  Stack: Model Context Protocol (MCP), Python FastAPI, Docker Engine
+                </span>
+                <span class="card-number" style="color:var(--accent-emerald)">
+                  100% Deterministic Execution
+                </span>
+              </div>
+            </article>
+
+          </div>
 
         </div>
+      </section>
 
-        <!-- Call to Action -->
-        <div style="text-align:center;max-width:680px;margin-inline:auto">
-          <h2 class="display-section" style="margin-bottom:var(--space-4)">Need Custom Autonomous Architecture?</h2>
-          <p class="body-lead" style="margin-bottom:var(--space-8)">
-            Book a 30 minute architecture audit. We examine your current bottlenecks and produce a written deployment roadmap within 48 hours.
+      <!-- CTA Section -->
+      <section style="padding-block:8rem;text-align:center">
+        <div class="container" style="max-width:800px;margin-inline:auto">
+          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Architecture Audit</div>
+          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
+            Need custom <span class="serif-italic">autonomous systems?</span>
+          </h2>
+          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
+            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
           </p>
-          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
+            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
           </div>
         </div>
+      </section>
 
-      </div>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <!-- TRIONN Footer -->
+    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
       <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-          <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <div class="nav-logo-box" style="width:24px;height:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="nav-logo-box" style="width:28px;height:28px">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
+              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
+            </span>
           </div>
-          <div style="display:flex;gap:var(--space-6)">
-            <a href="index.html">Overview</a>
-            <a href="agentic-lab.html">Agentic Lab</a>
-            <a href="client-proof.html">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+
+          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
+            <a href="index.html" style="color:var(--text-dim)">Overview</a>
+            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
+            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
           </div>
         </div>
       </div>
     </footer>
+
   </div>
 </body>
 </html>

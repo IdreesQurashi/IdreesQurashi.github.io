@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Verified commercial case studies and client deliverables: Green TV Entertainment, Apache Pizza Ireland, Rock Road Dental."/>
+  <meta name="theme-color" content="#040508"/>
+  <meta name="description" content="Verified commercial case studies: Green TV Entertainment, Apache Pizza Ireland, Rock Road Dental."/>
   <title>Client Proof | Idrees Qurashi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -20,33 +21,41 @@
   <canvas id="three-canvas"></canvas>
 
   <div class="site-wrap">
-    <nav class="nav" role="navigation" aria-label="Primary navigation">
+    
+    <header class="nav-trionn">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo" aria-label="Home">
+          <a href="index.html" class="nav-brand">
             <div class="nav-logo-box">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span class="nav-logo-name">Idrees Qurashi</span>
+            <div>
+              <div class="nav-brand-title">Idrees Qurashi</div>
+              <div class="nav-brand-sub">Autonomous Systems Studio</div>
+            </div>
           </a>
-          <ul class="nav-links" role="list">
-            <li><a href="index.html" class="nav-link">Overview</a></li>
-            <li><a href="agentic-lab.html" class="nav-link">Agentic Lab</a></li>
-            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
-            <li><a href="client-proof.html" class="nav-link active">Client Proof</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link">Overview</a>
+            <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+            <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+            <a href="client-proof.html" class="nav-link active">Client Proof</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </nav>
+
           <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
+            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
           </div>
-          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+
+          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
+
       <div class="nav-mobile-menu">
         <a href="index.html" class="nav-link">Overview</a>
         <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
@@ -54,211 +63,187 @@
         <a href="client-proof.html" class="nav-link active">Client Proof</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
-    </nav>
+    </header>
 
-    <main id="main-content" style="padding-top:var(--space-16);padding-bottom:var(--space-20)">
-      <div class="container">
-        
-        <div style="text-align:center;max-width:760px;margin-inline:auto;margin-bottom:var(--space-16)">
-          <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
-            Commercial Verification &middot; Real Deployments
+    <main id="main-content">
+      
+      <!-- Hero -->
+      <section style="padding-top:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border-grid)">
+        <div class="container">
+          <div class="trionn-pill" style="margin-bottom:2rem">
+            <span class="trionn-star">&#10022;</span>
+            <span>Commercial Deliverables &middot; Real Deployments</span>
           </div>
-          <h1 class="display-hero" style="margin-bottom:var(--space-4)">Proven Client Engagements</h1>
-          <p class="body-lead" style="margin-inline:auto">
+
+          <div style="margin-bottom:2.5rem">
+            <h1 class="hero-huge-1">Verified</h1>
+            <h1 class="hero-huge-2">
+              <span class="serif-italic">client proof.</span>
+            </h1>
+          </div>
+
+          <p class="body-lead-trionn">
             Zero theoretical case studies. Documented commercial partnerships with verified deliverables, operational hours saved, and direct client outcomes.
           </p>
         </div>
+      </section>
 
-        <!-- 4 Verified Client Cards Grid -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);margin-bottom:var(--space-16)">
+      <!-- 4 Verified Engagements -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
+        <div class="container">
           
-          <!-- Client 1: Green TV -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">National Television PK</span>
-                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Green TV Entertainment</h2>
-              </div>
-              <span class="tag tag-emerald">Commercial Media</span>
-            </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem">
             
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              Designed and deployed an automated broadcast campaign distribution engine. Automated multi platform syndication, scheduling, and reach tracking across major digital properties.
-            </p>
+            <!-- Engagement 1: Green TV -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
 
-            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-                <div>
-                  <p class="mono-label">Hours Reclaimed</p>
-                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">16h / week</p>
-                </div>
-                <div>
-                  <p class="mono-label">Window Accuracy</p>
-                  <p class="mono-val" style="color:var(--fg-primary);font-size:var(--text-lg)">100%</p>
-                </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
+                <span class="card-number">National Television PK</span>
+                <span class="trionn-pill" style="padding:2px 10px;font-size:0.625rem">Broadcast Media</span>
               </div>
-            </div>
-
-            <p class="mono-label" style="font-size:var(--text-2xs)">Core Stack: Python Automation, Webhook Gateways, API Dispatchers</p>
-          </article>
-
-          <!-- Client 2: Apache Pizza -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">National Franchise IE</span>
-                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Apache Pizza Ireland</h2>
+              <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1rem">Green TV Entertainment</h2>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Automated multi platform broadcast campaign distribution engine. Automated daily syndication, scheduling, and reach tracking across digital properties.
+              </p>
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center">
+                <span class="card-number">Hours Reclaimed: <span style="color:var(--accent-emerald);font-weight:700">16h / Wk</span></span>
+                <span class="card-number">Accuracy: <span style="color:var(--text-white);font-weight:700">100%</span></span>
               </div>
-              <span class="tag tag-emerald">Enterprise Retail</span>
-            </div>
+            </article>
 
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              Architected a multi location social audience acquisition system. Scaled automated localized engagement, promotion routing, and digital store traffic pipelines.
-            </p>
+            <!-- Engagement 2: Apache Pizza -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
 
-            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-                <div>
-                  <p class="mono-label">Locations Covered</p>
-                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">180+ Stores</p>
-                </div>
-                <div>
-                  <p class="mono-label">Verified Presence</p>
-                  <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" rel="noopener" style="font-family:var(--font-mono);color:var(--gold);font-size:var(--text-xs);font-weight:600">
-                    instagram.com &rarr;
-                  </a>
-                </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
+                <span class="card-number">National Franchise IE</span>
+                <span class="trionn-pill" style="padding:2px 10px;font-size:0.625rem">Retail Food</span>
               </div>
-            </div>
-
-            <p class="mono-label" style="font-size:var(--text-2xs)">Core Stack: Social Graph Scraping, Dynamic Routing, Multi Channel CRM</p>
-          </article>
-
-          <!-- Client 3: Rock Road Dental -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">Healthcare IE</span>
-                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Rock Road &amp; Slievemore</h2>
+              <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1rem">Apache Pizza Ireland</h2>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Multi location organic social audience acquisition engine. Scaled localized customer engagement and store traffic capture pipelines across franchise locations.
+              </p>
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center">
+                <span class="card-number">Locations: <span style="color:var(--accent-emerald);font-weight:700">180+ Stores</span></span>
+                <a href="https://www.instagram.com/apachepizzaireland/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);font-weight:700">
+                  instagram.com &rarr;
+                </a>
               </div>
-              <span class="tag tag-emerald">Healthcare System</span>
-            </div>
+            </article>
 
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              Automated patient appointment routing, intelligent follow ups, and two way calendar synchronization. Eliminated booking bottlenecks for busy clinic reception staff.
-            </p>
+            <!-- Engagement 3: Rock Road Dental -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
 
-            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-                <div>
-                  <p class="mono-label">No Show Reduction</p>
-                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">42% Drop</p>
-                </div>
-                <div>
-                  <p class="mono-label">Clinic Portal</p>
-                  <a href="https://www.rockroaddental.ie/" target="_blank" rel="noopener" style="font-family:var(--font-mono);color:var(--gold);font-size:var(--text-xs);font-weight:600">
-                    rockroaddental.ie &rarr;
-                  </a>
-                </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
+                <span class="card-number">Healthcare IE</span>
+                <span class="trionn-pill" style="padding:2px 10px;font-size:0.625rem">Medical Clinics</span>
               </div>
-            </div>
-
-            <p class="mono-label" style="font-size:var(--text-2xs)">Core Stack: Make.com, n8n Calendar Engine, Twilio SMS Gateways</p>
-          </article>
-
-          <!-- Client 4: Master Drive Vault -->
-          <article class="card-3d">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
-              <div>
-                <span class="mono-label" style="color:var(--gold)">Open Technical Proof</span>
-                <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Master Blueprint Drive Vault</h2>
+              <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1rem">Rock Road &amp; Slievemore</h2>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Automated patient appointment routing, intelligent follow ups, and calendar synchronization. Eliminated booking delays and administrative reception load.
+              </p>
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center">
+                <span class="card-number">No Shows: <span style="color:var(--accent-emerald);font-weight:700">42% Reduction</span></span>
+                <a href="https://www.rockroaddental.ie/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);font-weight:700">
+                  rockroaddental.ie &rarr;
+                </a>
               </div>
-              <span class="tag tag-gold">Public Repository</span>
-            </div>
+            </article>
 
-            <p class="body-base" style="margin-bottom:var(--space-6)">
-              A curated public drive containing verified production workflow blueprints, execution diagrams, and JSON configurations for enterprise review.
-            </p>
+            <!-- Engagement 4: Master Drive Vault -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
 
-            <div style="background:var(--bg-sunken);border:1px solid var(--border-hair);border-radius:var(--radius-sm);padding:var(--space-4);margin-bottom:var(--space-6)">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
-                <div>
-                  <p class="mono-label">Assets Available</p>
-                  <p class="mono-val" style="color:var(--emerald);font-size:var(--text-lg)">25+ Blueprints</p>
-                </div>
-                <div>
-                  <p class="mono-label">Direct Drive Link</p>
-                  <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" rel="noopener" style="font-family:var(--font-mono);color:var(--gold);font-size:var(--text-xs);font-weight:600">
-                    Access Drive &rarr;
-                  </a>
-                </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem">
+                <span class="card-number">Public Technical Verification</span>
+                <span class="trionn-pill" style="padding:2px 10px;font-size:0.625rem">Architecture Vault</span>
               </div>
-            </div>
+              <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1rem">Master Blueprint Vault</h2>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Curated public cloud directory containing verified production workflow blueprints, execution DAG diagrams, and JSON configurations for technical review.
+              </p>
+              <div style="border-top:1px solid var(--border-grid);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center">
+                <span class="card-number">Blueprints: <span style="color:var(--accent-emerald);font-weight:700">25+ Verified</span></span>
+                <a href="https://drive.google.com/drive/folders/1KkYzRxjW4nL6DtRiDlUz2_MODM83gpvk" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);font-weight:700">
+                  Open Vault &rarr;
+                </a>
+              </div>
+            </article>
 
-            <p class="mono-label" style="font-size:var(--text-2xs)">Includes: n8n Lead Gen, Make.com Auto Booking, WhatsApp CRM Bots</p>
-          </article>
+          </div>
 
-        </div>
-
-        <!-- Verified Aggregate Performance Strip -->
-        <div class="card-3d" style="padding:var(--space-8);margin-bottom:var(--space-16)">
-          <p class="mono-label" style="color:var(--gold);margin-bottom:var(--space-4)">Aggregate Operational Benchmark</p>
-          <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:var(--space-6);text-align:center">
-            <div>
-              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--fg-primary)">$350K+</p>
-              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Client Pipeline Generated</p>
+          <!-- Facts Board -->
+          <div class="facts-board">
+            <div class="facts-cell">
+              <div class="facts-num">$350K+</div>
+              <div class="facts-label">Client Pipeline Generated</div>
             </div>
-            <div>
-              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--emerald)">98.7%</p>
-              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Automation Uptime SLA</p>
+            <div class="facts-cell">
+              <div class="facts-num" style="color:var(--accent-emerald)">98.7%</div>
+              <div class="facts-label">Automation Uptime SLA</div>
             </div>
-            <div>
-              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--fg-primary)">&lt;60s</p>
-              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Average Speed to Lead</p>
+            <div class="facts-cell">
+              <div class="facts-num">&lt;60s</div>
+              <div class="facts-label">Speed to Lead Routing</div>
             </div>
-            <div>
-              <p style="font-family:var(--font-mono);font-size:var(--text-3xl);font-weight:800;color:var(--gold)">0.19%</p>
-              <p class="body-base" style="font-size:var(--text-xs);margin-top:var(--space-1)">Outbound Bounce Rate</p>
+            <div class="facts-cell">
+              <div class="facts-num">0.19%</div>
+              <div class="facts-label">Outbound Bounce Rate</div>
             </div>
           </div>
-        </div>
 
-        <!-- Call to Action Terminal -->
-        <div style="text-align:center;max-width:680px;margin-inline:auto">
-          <h2 class="display-section" style="margin-bottom:var(--space-4)">Ready for Proven Autonomous Systems?</h2>
-          <p class="body-lead" style="margin-bottom:var(--space-8)">
-            Book a 30 minute architecture audit. We examine your current bottlenecks and produce a written deployment roadmap within 48 hours.
+        </div>
+      </section>
+
+      <!-- Callout -->
+      <section style="padding-block:8rem;text-align:center">
+        <div class="container" style="max-width:800px;margin-inline:auto">
+          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
+            Let&#39;s build <span class="serif-italic">your pipeline.</span>
+          </h2>
+          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
+            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
           </p>
-          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
+            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
           </div>
         </div>
+      </section>
 
-      </div>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
       <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-          <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <div class="nav-logo-box" style="width:24px;height:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="nav-logo-box" style="width:28px;height:28px">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
+              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
+            </span>
           </div>
-          <div style="display:flex;gap:var(--space-6)">
-            <a href="index.html">Overview</a>
-            <a href="agentic-lab.html">Agentic Lab</a>
-            <a href="client-proof.html">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+
+          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
+            <a href="index.html" style="color:var(--text-dim)">Overview</a>
+            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
+            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
           </div>
         </div>
       </div>
     </footer>
+
   </div>
 </body>
 </html>

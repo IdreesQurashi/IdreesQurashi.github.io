@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Autonomous AI agentic architectures, self healing workflows, and deterministic MCP backends powering enterprise operations and high scale B2B systems."/>
-  <title>Idrees Qurashi | AI Automation Engineer &amp; Agentic Systems Architect</title>
+  <meta name="theme-color" content="#040508"/>
+  <meta name="description" content="TRIONN styled autonomous AI agentic architectures and deterministic MCP backends engineered by Idrees Qurashi."/>
+  <title>Idrees Qurashi | Autonomous Systems &amp; AI Architect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
@@ -20,249 +21,275 @@
   <canvas id="three-canvas"></canvas>
 
   <div class="site-wrap">
-    <nav class="nav" role="navigation" aria-label="Primary navigation">
+    
+    <!-- TRIONN Minimal Precision Header -->
+    <header class="nav-trionn">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo" aria-label="Home">
+          <a href="index.html" class="nav-brand">
             <div class="nav-logo-box">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span class="nav-logo-name">Idrees Qurashi</span>
+            <div>
+              <div class="nav-brand-title">Idrees Qurashi</div>
+              <div class="nav-brand-sub">Autonomous Systems Studio</div>
+            </div>
           </a>
-          <ul class="nav-links" role="list">
-            <li><a href="index.html" class="nav-link active">Overview</a></li>
-            <li><a href="agentic-lab.html" class="nav-link">Agentic Lab</a></li>
-            <li><a href="outbound-engine.html" class="nav-link">Outbound Engine</a></li>
-            <li><a href="client-proof.html" class="nav-link">Client Proof</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link active">Overview</a>
+            <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
+            <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
+            <a href="client-proof.html" class="nav-link">Client Proof</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </nav>
+
           <div class="nav-actions">
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
-            <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit</a>
+            <a href="contact.html" class="btn-trionn-white">Book Audit</a>
           </div>
-          <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
+
+          <button class="nav-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.nav-mobile-menu').classList.toggle('open')">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
+
       <div class="nav-mobile-menu">
         <a href="index.html" class="nav-link active">Overview</a>
         <a href="agentic-lab.html" class="nav-link">Agentic Lab</a>
         <a href="outbound-engine.html" class="nav-link">Outbound Engine</a>
         <a href="client-proof.html" class="nav-link">Client Proof</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="https://wa.me/923489911425" class="btn-trionn-emerald" style="width:100%">WhatsApp Direct</a>
       </div>
-    </nav>
+    </header>
 
     <main id="main-content">
       
-      <!-- Hero Section -->
-      <section style="padding-top:var(--space-20);padding-bottom:var(--space-16)">
+      <!-- TRIONN Hero Section -->
+      <section style="min-height:82vh;display:flex;align-items:center;padding-top:4rem;padding-bottom:5rem;border-bottom:1px solid var(--border-grid)">
         <div class="container">
-          <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:var(--space-12);align-items:center">
+          <div style="display:flex;flex-direction:column;align-items:flex-start">
             
-            <!-- Hero Left -->
-            <div>
-              <div class="tag tag-gold" style="margin-bottom:var(--space-4)">
-                <span class="status-dot"></span> Autonomous Systems Engine
-              </div>
-              
-              <h1 class="display-hero" style="margin-bottom:var(--space-6)">
-                Wiring LLM swarms into systems your business runs.
+            <div class="trionn-pill" style="margin-bottom:2rem">
+              <span class="trionn-star">&#10022;</span>
+              <span>Autonomous Systems Engineering &middot; Est. 2022</span>
+            </div>
+
+            <div style="margin-bottom:2.5rem">
+              <h1 class="hero-huge-1">Designed to</h1>
+              <h1 class="hero-huge-2">
+                <span>replace</span> <span class="serif-italic">fragile workflows.</span>
               </h1>
-
-              <p class="body-lead" style="margin-bottom:var(--space-8)">
-                Replacing brittle linear scripts with self healing LangGraph agent swarms, vision grounded scrapers, and high volume outbound pipelines that run around the clock.
-              </p>
-
-              <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-10)">
-                <a href="contact.html" class="btn-3d btn-3d-gold">Book System Audit &rarr;</a>
-                <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-                  <span class="status-dot"></span> WhatsApp Direct
-                </a>
-              </div>
-
-              <!-- Tech Tag Row -->
-              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
-                <span class="tag">LangGraph</span>
-                <span class="tag">Playwright</span>
-                <span class="tag">MCP Servers</span>
-                <span class="tag">n8n</span>
-                <span class="tag">Make.com</span>
-                <span class="tag">Python 3.12</span>
-                <span class="tag">Docker</span>
-              </div>
             </div>
 
-            <!-- Hero Right: 3D Video & Terminal Showcase -->
-            <div class="terminal-3d">
-              <div class="terminal-bar">
-                <div class="terminal-dots">
-                  <div class="t-dot" style="background:#EF4444"></div>
-                  <div class="t-dot" style="background:#F59E0B"></div>
-                  <div class="t-dot" style="background:#10B981"></div>
-                </div>
-                <span class="mono-label" style="font-size:var(--text-2xs);color:var(--gold)">
-                  autonomous_lead_swarm.sh
-                </span>
-                <span class="tag tag-emerald" style="padding:2px 6px">LIVE 60s RUN</span>
-              </div>
+            <p class="body-lead-trionn" style="margin-bottom:3rem">
+              Autonomous AI multi agent swarms, self healing visual scrapers, and deterministic MCP backends powering high ticket enterprise operations and B2B growth.
+            </p>
 
-              <!-- Live Video Placeholder / Terminal Preview -->
-              <div class="video-container-3d">
-                <div class="video-placeholder">
-                  <div class="tag tag-gold" style="margin-bottom:var(--space-3)">Live Autonomous Demo</div>
-                  <p class="mono-val" style="color:var(--fg-primary);margin-bottom:var(--space-2)">Claude Code Lead Extraction Terminal</p>
-                  <p class="body-base" style="font-size:var(--text-xs);max-width:38ch;margin-inline:auto;margin-bottom:var(--space-4)">
-                    Unedited capture of autonomous browser tools navigating, bypassing bot checkpoints, and writing verified CRM records.
-                  </p>
-                  <span class="tag tag-emerald">Live recording asset ready for drop in</span>
-                </div>
-              </div>
-
-              <div class="terminal-body" style="background:var(--bg-sunken);border-top:1px solid var(--border-hair)">
-                <p><span style="color:var(--gold)">01:</span> Supervisor initialized &middot; 4 sub agents dispatched</p>
-                <p><span style="color:var(--emerald)">02:</span> Vision grounded scraper &middot; 312 leads retrieved</p>
-                <p><span style="color:var(--cyan)">03:</span> Outbound verification &middot; 100% bounce guard passed</p>
-              </div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+              <a href="contact.html" class="btn-trionn-white">
+                Book a 30 Minute Call &rarr;
+              </a>
+              <a href="agentic-lab.html" class="btn-trionn-outline">
+                Explore Architectures
+              </a>
+              <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+                <span class="status-pulse"></span> Live WhatsApp
+              </a>
             </div>
 
           </div>
         </div>
       </section>
 
-      <!-- 3 Step Visual Architecture Flow -->
-      <section style="padding-block:var(--space-12)">
+      <!-- TRIONN Section 2: Studio Statement -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
         <div class="container">
-          <div style="text-align:center;max-width:680px;margin-inline:auto;margin-bottom:var(--space-6)">
-            <p class="mono-label" style="color:var(--gold);margin-bottom:var(--space-2)">Execution Blueprint</p>
-            <h2 class="display-section">How the Autonomous Engine Operates</h2>
-          </div>
-
-          <div class="pipeline-flow">
-            <div class="pipeline-step">
-              <p class="pipeline-step-num">STAGE 01 &middot; EXTRACTION</p>
-              <h3 class="pipeline-step-title">Unstructured Ingestion</h3>
-              <p class="pipeline-step-desc">
-                Playwright scrapers and Apify webhooks pull live company registries, LinkedIn accounts, and customer support queues with vision healing on DOM shifts.
-              </p>
+          <div style="display:grid;grid-template-columns:1fr 2.5fr;gap:3rem;align-items:start">
+            <div>
+              <span class="trionn-pill">&#10022; Statement</span>
             </div>
-
-            <div class="pipeline-step">
-              <p class="pipeline-step-num">STAGE 02 &middot; REASONING</p>
-              <h3 class="pipeline-step-title">Multi Agent Reasoning Swarm</h3>
-              <p class="pipeline-step-desc">
-                LangGraph supervisor routes tasks to specialized LLM nodes under strict JSON schema enforcement, eliminating hallucinations and formatting errors.
-              </p>
-            </div>
-
-            <div class="pipeline-step">
-              <p class="pipeline-step-num">STAGE 03 &middot; DELIVERY</p>
-              <h3 class="pipeline-step-title">Deterministic CRM Routing</h3>
-              <p class="pipeline-step-desc">
-                Clean verified payloads push into HubSpot, ClickUp, or Gmail dispatch daemons with automated pacing, keeping bounce rates locked below 0.25%.
+            <div>
+              <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:700;line-height:1.3;letter-spacing:-0.03em;margin-bottom:2rem;color:var(--text-white)">
+                We engineer for longevity: deterministic reliability first, code craft always, built to scale.
+              </h2>
+              <p class="body-lead-trionn" style="font-size:1.125rem;color:var(--text-muted)">
+                Most automations fail because they rely on linear chat prompts and brittle DOM selectors. We replace them with self coordinating LangGraph supervisor swarms, spatial vision healing, and isolated sandboxes that run without human babysitting.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="container">
-        <div class="section-divider">
-          <span class="section-divider-title">Core Capability Pillars</span>
-        </div>
-      </div>
-
-      <!-- Core 3D Cards Grid -->
-      <section style="padding-bottom:var(--space-16)">
+      <!-- TRIONN Section 3: Pillars & Architecture Grid -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
         <div class="container">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)">
+          
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem">
+            <div>
+              <div class="trionn-pill" style="margin-bottom:1rem">&#10022; Core Capabilities</div>
+              <h2 style="font-size:clamp(2rem, 3.8vw, 3.25rem);font-weight:800;letter-spacing:-0.03em">
+                Focused vision. <span class="serif-italic">Measured execution.</span>
+              </h2>
+            </div>
+            <p class="card-number">03 Core Architectures</p>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
             
-            <article class="card-3d">
-              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
-                <div>
-                  <span class="mono-label" style="color:var(--gold)">Flagship 01</span>
-                  <h3 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Autonomous Multi Agent Swarms</h3>
-                </div>
-                <span class="tag tag-emerald">LangGraph</span>
+            <!-- Pillar 1 -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              
+              <div style="display:flex;justify-content:space-between;margin-bottom:2rem">
+                <span class="card-number">01 // SWARMS</span>
+                <span class="status-pulse"></span>
               </div>
-              <p class="body-base" style="margin-bottom:var(--space-6)">
-                Self coordinating agent DAGs with supervisor nodes, shared memory states, and isolated execution loops that handle complex multi step operations without human intervention.
+              <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Multi Agent Swarms</h3>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Hierarchical LangGraph topologies where supervisor nodes distribute tasks to specialized reasoning workers, cross validating outputs under strict JSON schemas.
               </p>
-              <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center">
-                <span class="mono-label">State Engine: Redis Streams</span>
-                <a href="agentic-lab.html" class="btn-3d btn-3d-slate" style="padding:8px 16px;font-size:var(--text-2xs)">Explore Lab &rarr;</a>
-              </div>
+              <a href="agentic-lab.html" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">
+                Inspect Teardown &rarr;
+              </a>
             </article>
 
-            <article class="card-3d">
-              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-4)">
-                <div>
-                  <span class="mono-label" style="color:var(--gold)">Flagship 02</span>
-                  <h3 style="font-size:var(--text-xl);font-weight:700;color:var(--fg-primary);margin-top:var(--space-1)">Self Healing Vision Scrapers</h3>
-                </div>
-                <span class="tag tag-emerald">Playwright</span>
+            <!-- Pillar 2 -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+
+              <div style="display:flex;justify-content:space-between;margin-bottom:2rem">
+                <span class="card-number">02 // SCRAPERS</span>
+                <span class="status-pulse"></span>
               </div>
-              <p class="body-base" style="margin-bottom:var(--space-6)">
-                Stealth Playwright scrapers coupled with Gemini vision grounding. Detects DOM changes, recalculates bounding boxes visually, and bypasses brittle selector failures automatically.
+              <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Self Healing Scrapers</h3>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Stealth Playwright agents backed by vision spatial grounding. When DOM mutations break selectors, Gemini Flash computes visual bounding boxes and repairs the cache in real time.
               </p>
-              <div style="border-top:1px solid var(--border-hair);padding-top:var(--space-4);display:flex;justify-content:space-between;align-items:center">
-                <span class="mono-label">Uptime Metric: 98.7%</span>
-                <a href="agentic-lab.html" class="btn-3d btn-3d-slate" style="padding:8px 16px;font-size:var(--text-2xs)">Inspect Teardown &rarr;</a>
+              <a href="agentic-lab.html" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">
+                Inspect Teardown &rarr;
+              </a>
+            </article>
+
+            <!-- Pillar 3 -->
+            <article class="trionn-card">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <svg class="corner-plus tr" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+
+              <div style="display:flex;justify-content:space-between;margin-bottom:2rem">
+                <span class="card-number">03 // MCP BACKENDS</span>
+                <span class="status-pulse"></span>
               </div>
+              <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Deterministic MCP</h3>
+              <p class="body-sub-trionn" style="margin-bottom:2rem">
+                Model Context Protocol tool servers that provide structured interfaces for AI coding agents and production workers, enforcing sandboxed execution and rate guarded API proxies.
+              </p>
+              <a href="outbound-engine.html" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.08em;font-weight:700">
+                Inspect Pipeline &rarr;
+              </a>
             </article>
 
           </div>
+
         </div>
       </section>
 
-      <!-- Client Proof Strip on Homepage -->
-      <section style="background:var(--bg-surface);border-top:1px solid var(--border-hair);border-bottom:1px solid var(--border-hair);padding-block:var(--space-16)">
+      <!-- TRIONN Section 4: Key Facts Board -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid)">
         <div class="container">
-          <div style="text-align:center;max-width:680px;margin-inline:auto;margin-bottom:var(--space-10)">
-            <p class="mono-label" style="color:var(--gold);margin-bottom:var(--space-2)">Trusted Deliverables</p>
-            <h2 class="display-section">Enterprise Validation</h2>
+          
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem">
+            <div>
+              <div class="trionn-pill" style="margin-bottom:0.75rem">&#10022; Impact Snapshot</div>
+              <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Key facts.</h2>
+            </div>
+            <p class="body-sub-trionn">Audited metrics from live production deployments.</p>
           </div>
 
-          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:var(--space-6)">
-            <div class="card-3d" style="padding:var(--space-6)">
-              <p class="mono-label">Green TV Entertainment</p>
-              <p class="mono-val" style="color:var(--emerald);margin-block:var(--space-2)">16h / Wk Saved</p>
-              <p class="body-base" style="font-size:var(--text-xs)">Automated national broadcast campaign distribution across digital properties.</p>
+          <div class="facts-board">
+            <div class="facts-cell">
+              <svg class="corner-plus tl" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#444"></line><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#444"></line></svg>
+              <div class="facts-num">$350K+</div>
+              <div class="facts-label">Client Pipeline Generated</div>
             </div>
 
-            <div class="card-3d" style="padding:var(--space-6)">
-              <p class="mono-label">Apache Pizza Ireland</p>
-              <p class="mono-val" style="color:var(--gold);margin-block:var(--space-2)">180+ Stores</p>
-              <p class="body-base" style="font-size:var(--text-xs)">Scalable multi location organic audience acquisition and social engine.</p>
+            <div class="facts-cell">
+              <div class="facts-num" style="color:var(--accent-emerald)">98.7%</div>
+              <div class="facts-label">Automation Uptime SLA</div>
             </div>
 
-            <div class="card-3d" style="padding:var(--space-6)">
-              <p class="mono-label">Rock Road Healthcare</p>
-              <p class="mono-val" style="color:var(--emerald);margin-block:var(--space-2)">42% No Show Drop</p>
-              <p class="body-base" style="font-size:var(--text-xs)">Automated clinic appointment routing and calendar retention pipelines.</p>
+            <div class="facts-cell">
+              <div class="facts-num">&lt;60s</div>
+              <div class="facts-label">Speed to Lead Response</div>
+            </div>
+
+            <div class="facts-cell">
+              <div class="facts-num" style="color:var(--text-dim)">0.19%</div>
+              <div class="facts-label">Outbound Bounce Rate</div>
             </div>
           </div>
 
-          <div style="margin-top:var(--space-8);text-align:center">
-            <a href="client-proof.html" class="btn-3d btn-3d-gold">View Complete Client Proof &rarr;</a>
-          </div>
         </div>
       </section>
 
-      <!-- Conversion Footer CTA -->
-      <section style="padding-block:var(--space-20);text-align:center">
-        <div class="container" style="max-width:720px;margin-inline:auto">
-          <h2 class="display-section" style="margin-bottom:var(--space-4)">Book an Architecture Audit</h2>
-          <p class="body-lead" style="margin-bottom:var(--space-8);margin-inline:auto">
-            A focused 30 minute review of your workflow bottlenecks. You receive a written technical proposal within 48 hours.
+      <!-- TRIONN Section 5: Client Highlights -->
+      <section style="padding-block:6rem;border-bottom:1px solid var(--border-grid);background:var(--bg-surface)">
+        <div class="container">
+          
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem">
+            <div>
+              <div class="trionn-pill" style="margin-bottom:0.75rem">&#10022; Proven Partnerships</div>
+              <h2 style="font-size:clamp(1.75rem, 3.2vw, 2.75rem);font-weight:800;letter-spacing:-0.03em">Verified client proof.</h2>
+            </div>
+            <a href="client-proof.html" class="btn-trionn-outline">View All Engagements &rarr;</a>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem">
+            <div class="trionn-card" style="padding:2rem">
+              <p class="card-number" style="margin-bottom:1rem">Green TV Entertainment</p>
+              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">Broadcast Distribution</h3>
+              <p class="body-sub-trionn" style="margin-bottom:1.5rem">Automated digital syndication saving 16 hours weekly across broadcast campaigns.</p>
+              <span class="card-number" style="color:var(--accent-emerald)">16h / Wk Reclaimed</span>
+            </div>
+
+            <div class="trionn-card" style="padding:2rem">
+              <p class="card-number" style="margin-bottom:1rem">Apache Pizza Ireland</p>
+              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">180+ Store Audience</h3>
+              <p class="body-sub-trionn" style="margin-bottom:1.5rem">Scaled localized social audience acquisition across nationwide franchise units.</p>
+              <span class="card-number" style="color:var(--accent-emerald)">180+ Franchise Stores</span>
+            </div>
+
+            <div class="trionn-card" style="padding:2rem">
+              <p class="card-number" style="margin-bottom:1rem">Rock Road Healthcare</p>
+              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem">Clinic Appointment Flow</h3>
+              <p class="body-sub-trionn" style="margin-bottom:1.5rem">Automated patient booking and follow up synchronization cutting no shows by 42%.</p>
+              <span class="card-number" style="color:var(--accent-emerald)">42% No Show Reduction</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TRIONN Section 6: Banner Call to Action -->
+      <section style="padding-block:8rem;text-align:center">
+        <div class="container" style="max-width:800px;margin-inline:auto">
+          <div class="trionn-pill" style="margin-bottom:1.5rem">&#10022; Engagement Initiation</div>
+          <h2 style="font-size:clamp(2.5rem, 5vw, 4.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:2rem">
+            Let&#39;s build <span class="serif-italic">something great.</span>
+          </h2>
+          <p class="body-lead-trionn" style="margin-inline:auto;margin-bottom:3rem">
+            Book a 30 minute architecture audit. We examine your manual bottlenecks and outline the autonomous replacement system with a written roadmap in 48 hours.
           </p>
-          <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap">
-            <a href="contact.html" class="btn-3d btn-3d-gold">Submit Project Brief &rarr;</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-3d btn-3d-emerald">
-              <span class="status-dot"></span> WhatsApp Direct
+          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap">
+            <a href="contact.html" class="btn-trionn-white">Book System Audit &rarr;</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" class="btn-trionn-emerald">
+              <span class="status-pulse"></span> WhatsApp Direct
             </a>
           </div>
         </div>
@@ -270,25 +297,30 @@
 
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <!-- TRIONN Footer -->
+    <footer style="border-top:1px solid var(--border-grid);padding-block:3rem;background:var(--bg-dark)">
       <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
-          <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <div class="nav-logo-box" style="width:24px;height:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="nav-logo-box" style="width:28px;height:28px">
               <img src="brand_logo.png" alt="IQ" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-            <span>&copy; 2026 Idrees Qurashi. Production grade autonomous architectures.</span>
+            <span style="font-size:0.8125rem;color:var(--text-muted);font-family:var(--font-mono)">
+              &copy; 2026 Idrees Qurashi &middot; Autonomous Systems Studio
+            </span>
           </div>
-          <div style="display:flex;gap:var(--space-6)">
-            <a href="index.html">Overview</a>
-            <a href="agentic-lab.html">Agentic Lab</a>
-            <a href="client-proof.html">Client Proof</a>
-            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://wa.me/923489911425" target="_blank" rel="noopener">WhatsApp</a>
+
+          <div style="display:flex;gap:2rem;font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em">
+            <a href="index.html" style="color:var(--text-dim)">Overview</a>
+            <a href="agentic-lab.html" style="color:var(--text-dim)">Agentic Lab</a>
+            <a href="client-proof.html" style="color:var(--text-dim)">Client Proof</a>
+            <a href="https://github.com/IdreesQurashi" target="_blank" rel="noopener" style="color:var(--text-dim)">GitHub</a>
+            <a href="https://wa.me/923489911425" target="_blank" rel="noopener" style="color:var(--text-dim)">WhatsApp</a>
           </div>
         </div>
       </div>
     </footer>
+
   </div>
 </body>
 </html>

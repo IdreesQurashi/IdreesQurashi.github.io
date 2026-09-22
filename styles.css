@@ -1,83 +1,76 @@
 /* ============================================================
-   IDREES QURASHI — Elite Executive 3D Design Engine
-   idreesqurashi.github.io
+   IDREES QURASHI — TRIONN Studio Architecture Design System
+   Exact replication of trionn.com aesthetic, colors, and layout
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* ── Luxury Dark Tokens (Old School Executive) ──────────────── */
 :root {
-  --bg-base:       #0A0C10;
-  --bg-surface:    #10131B;
-  --bg-elevated:   #151924;
-  --bg-sunken:     #06080B;
+  --bg-dark:        #040508;
+  --bg-surface:     #0C0C0C;
+  --bg-surface-alt: #111214;
+  --bg-card:        #0E0F12;
+  --border-grid:    #2F323B;
+  --border-hair:    rgba(255, 255, 255, 0.08);
+  --border-light:   #434343;
 
-  --border-hair:   rgba(255, 255, 255, 0.06);
-  --border-dim:    rgba(255, 255, 255, 0.10);
-  --border-bevel:  rgba(255, 255, 255, 0.18);
-  --border-gold:   rgba(212, 175, 55, 0.35);
+  --text-white:     #FFFFFF;
+  --text-dim:       #D8D8D8;
+  --text-muted:     #888888;
+  --text-subtle:    #555555;
 
-  --fg-primary:    #F2F5FA;
-  --fg-secondary:  #9BA5B7;
-  --fg-muted:      #5C677D;
+  --accent-red:     #D9432B;
+  --accent-emerald: #10B981;
 
-  --gold:          #C9A96E;
-  --gold-dim:      rgba(201, 169, 110, 0.12);
-  --emerald:       #10B981;
-  --emerald-dim:   rgba(16, 185, 129, 0.12);
-  --cyan:          #00D4FF;
-  --cyan-dim:      rgba(0, 212, 255, 0.12);
+  --font-sans:      'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif:     'Playfair Display', Georgia, serif;
+  --font-mono:      'JetBrains Mono', monospace;
 
-  --font-sans:     'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono:     'JetBrains Mono', monospace;
-
-  --text-2xs:  0.6875rem;
-  --text-xs:   0.75rem;
-  --text-sm:   0.875rem;
-  --text-base: 1rem;
-  --text-lg:   1.125rem;
-  --text-xl:   1.375rem;
-  --text-2xl:  1.75rem;
-  --text-3xl:  2.25rem;
-  --text-4xl:  3rem;
-  --text-5xl:  3.75rem;
-
-  --space-1:  0.25rem;
-  --space-2:  0.5rem;
-  --space-3:  0.75rem;
-  --space-4:  1rem;
-  --space-5:  1.25rem;
-  --space-6:  1.5rem;
-  --space-8:  2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-pill:    9999px;
+  --radius-card:    6px;
 }
 
-/* ── Reset & Core ───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; background: var(--bg-base); }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+}
+
 body {
   font-family: var(--font-sans);
-  background: var(--bg-base);
-  color: var(--fg-primary);
-  line-height: 1.6;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
 }
-img, video { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
-ul, ol { list-style: none; }
 
-/* ── 3D Canvas Background ───────────────────────────────────── */
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* ── Three.js 3D WebGL Canvas ───────────────────────────────── */
 #three-canvas {
   position: fixed;
   top: 0;
@@ -86,7 +79,7 @@ ul, ol { list-style: none; }
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.65;
 }
 
 .site-wrap {
@@ -94,82 +87,313 @@ ul, ol { list-style: none; }
   z-index: 1;
 }
 
-/* ── Container ──────────────────────────────────────────────── */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1360px;
   margin-inline: auto;
-  padding-inline: var(--space-6);
+  padding-inline: 2rem;
 }
 
-/* ── Navigation ─────────────────────────────────────────────── */
-.nav {
+/* ── TRIONN Header & Navigation ─────────────────────────────── */
+.nav-trionn {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 12, 16, 0.88);
+  background: rgba(4, 5, 8, 0.85);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-hair);
+  border-bottom: 1px solid var(--border-grid);
 }
+
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 76px;
 }
-.nav-logo {
+
+.nav-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 12px;
 }
+
 .nav-logo-box {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
   background: #000;
-  border: 1px solid var(--border-dim);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  border: 1px solid var(--border-grid);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav-logo-name {
-  font-weight: 700;
-  font-size: var(--text-base);
-  letter-spacing: -0.01em;
-  color: var(--fg-primary);
+
+.nav-brand-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-white);
 }
+
+.nav-brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
+  gap: 2.5rem;
 }
+
 .nav-link {
-  font-size: var(--text-sm);
-  color: var(--fg-secondary);
-  transition: color 150ms ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
   position: relative;
-  padding-block: var(--space-2);
+  padding-block: 6px;
 }
+
 .nav-link:hover, .nav-link.active {
-  color: var(--fg-primary);
+  color: var(--text-white);
 }
+
 .nav-link.active::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
+  background: var(--text-white);
 }
+
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 12px;
 }
+
+/* ── TRIONN Signature Buttons ───────────────────────────────── */
+.btn-trionn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #000000;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-trionn-white:hover {
+  background: #E5E5E5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(255, 255, 255, 0.25);
+}
+
+.btn-trionn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--border-grid);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+}
+.btn-trionn-outline:hover {
+  border-color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+.btn-trionn-emerald {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #0D2218;
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+}
+.btn-trionn-emerald:hover {
+  background: #123324;
+  border-color: var(--accent-emerald);
+  transform: translateY(-2px);
+}
+
+/* ── TRIONN Signature Pills & Corner Crosses ────────────────── */
+.trionn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-grid);
+  background: rgba(12, 12, 12, 0.6);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.trionn-star {
+  color: var(--text-white);
+  font-size: 0.8125rem;
+}
+
+.grid-cell {
+  position: relative;
+  border: 1px solid var(--border-grid);
+  background: var(--bg-surface);
+}
+
+.corner-plus {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  z-index: 10;
+  pointer-events: none;
+}
+.corner-plus.tl { top: -6.5px; left: -6.5px; }
+.corner-plus.tr { top: -6.5px; right: -6.5px; }
+.corner-plus.bl { bottom: -6.5px; left: -6.5px; }
+.corner-plus.br { bottom: -6.5px; right: -6.5px; }
+
+/* ── High Contrast Monumental Typography ────────────────────── */
+.hero-huge-1 {
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-white);
+}
+
+.hero-huge-2 {
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-white);
+}
+
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text-dim);
+}
+
+.body-lead-trionn {
+  font-size: 1.25rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+.body-sub-trionn {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── 3D Card Architecture with Glass & Hover Depth ──────────── */
+.trionn-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-grid);
+  border-radius: var(--radius-card);
+  padding: 2.5rem;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.trionn-card:hover {
+  border-color: #555555;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8);
+}
+
+.card-number {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ── Status Pulse & Indicators ──────────────────────────────── */
+.status-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* ── Data Grid & Facts Board ────────────────────────────────── */
+.facts-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border-grid);
+  background: var(--bg-dark);
+}
+.facts-cell {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--border-grid);
+  position: relative;
+}
+.facts-cell:last-child {
+  border-right: none;
+}
+.facts-num {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-white);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.facts-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ── Mobile Navigation ──────────────────────────────────────── */
 .nav-mobile-toggle {
   display: none;
   flex-direction: column;
@@ -177,326 +401,119 @@ ul, ol { list-style: none; }
   padding: 8px;
 }
 .nav-mobile-toggle span {
-  width: 20px;
+  width: 22px;
   height: 2px;
-  background: var(--fg-secondary);
-  border-radius: 2px;
+  background: var(--text-white);
 }
 .nav-mobile-menu {
   display: none;
   flex-direction: column;
-  padding: var(--space-6);
-  gap: var(--space-4);
+  padding: 1.5rem;
+  gap: 1rem;
   background: var(--bg-surface);
-  border-top: 1px solid var(--border-hair);
+  border-top: 1px solid var(--border-grid);
 }
 .nav-mobile-menu.open {
   display: flex;
 }
 
-/* ── Physical 3D Tactile Buttons ────────────────────────────── */
-.btn-3d {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: 12px 24px;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-radius: var(--radius-sm);
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  box-shadow: 0 4px 0 #000, 0 6px 16px rgba(0, 0, 0, 0.6);
-  transition: all 120ms ease;
-  cursor: pointer;
-  user-select: none;
-}
-.btn-3d:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 0 #000, 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-.btn-3d:active {
-  transform: translateY(3px);
-  box-shadow: 0 1px 0 #000, 0 2px 8px rgba(0, 0, 0, 0.5);
+@media (max-width: 960px) {
+  .nav-links, .nav-actions { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .facts-board { grid-template-columns: repeat(2, 1fr); }
+  .facts-cell:nth-child(2) { border-right: none; }
+  .facts-cell:nth-child(1), .facts-cell:nth-child(2) { border-bottom: 1px solid var(--border-grid); }
 }
 
-.btn-3d-gold {
-  background: linear-gradient(180deg, #D4B272 0%, #A98544 100%);
-  color: #07090D;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
-}
-.btn-3d-slate {
-  background: linear-gradient(180deg, #1C2230 0%, #111520 100%);
-  color: var(--fg-primary);
-}
-.btn-3d-emerald {
-  background: linear-gradient(180deg, #139E6D 0%, #0B6B48 100%);
-  color: #FFFFFF;
+@media (max-width: 600px) {
+  .facts-board { grid-template-columns: 1fr; }
+  .facts-cell { border-right: none; border-bottom: 1px solid var(--border-grid); }
 }
 
-/* ── 3D Perspective Cards with Specular Highlight ────────────── */
-.card-3d-wrap {
-  perspective: 1000px;
-}
-.card-3d {
-  background: var(--bg-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-dim);
-  border-top: 1px solid var(--border-bevel);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.08);
-  padding: var(--space-8);
-  position: relative;
-  overflow: hidden;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-  transform-style: preserve-3d;
-}
-.card-3d:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.85), 0 0 20px rgba(201, 169, 110, 0.08);
-}
-.card-glare {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.06), transparent 70%);
-}
-
-/* ── Typography & Headlines ─────────────────────────────────── */
-.display-hero {
-  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--fg-primary);
-}
-.display-section {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--fg-primary);
-}
-.body-lead {
-  font-size: var(--text-lg);
-  color: var(--fg-secondary);
-  line-height: 1.65;
-  max-width: 62ch;
-}
-.body-base {
-  font-size: var(--text-sm);
-  color: var(--fg-secondary);
-  line-height: 1.6;
-}
-
-.mono-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-}
-.mono-val {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--fg-primary);
-}
-
-/* ── Tags & Status Badges ───────────────────────────────────── */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  font-family: var(--font-mono);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-sm);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-dim);
-  color: var(--fg-secondary);
-}
-.tag-gold {
-  background: var(--gold-dim);
-  border-color: var(--border-gold);
-  color: var(--gold);
-}
-.tag-emerald {
-  background: var(--emerald-dim);
-  border-color: rgba(16, 185, 129, 0.3);
-  color: var(--emerald);
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--emerald);
-  box-shadow: 0 0 8px var(--emerald);
-  animation: pulse-emerald 2s infinite;
-}
-@keyframes pulse-emerald {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-/* ── 3 Step Architecture Flow Diagram ───────────────────────── */
-.pipeline-flow {
+/* ── TRIONN Pipeline Flow Grid ──────────────────────────────── */
+.trionn-flow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
-  position: relative;
-  margin-block: var(--space-8);
+  border: 1px solid var(--border-grid);
+  background: var(--bg-dark);
+  margin-block: 1.5rem;
 }
-.pipeline-step {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-dim);
-  border-top: 2px solid var(--gold);
-  border-radius: var(--radius-md);
-  padding: var(--space-6);
+.trionn-flow-step {
+  padding: 1.75rem 1.5rem;
+  border-right: 1px solid var(--border-grid);
+  background: var(--bg-surface);
   position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-.pipeline-step-num {
+.trionn-flow-step:last-child {
+  border-right: none;
+}
+.trionn-step-num {
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--gold);
+  font-size: 0.6875rem;
   font-weight: 700;
-  margin-bottom: var(--space-2);
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
-.pipeline-step-title {
-  font-size: var(--text-base);
+.trionn-step-title {
+  font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--fg-primary);
-  margin-bottom: var(--space-2);
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
-.pipeline-step-desc {
-  font-size: var(--text-xs);
-  color: var(--fg-secondary);
-  line-height: 1.5;
-}
-
-/* ── 3D Terminal & Live Video Container ─────────────────────── */
-.terminal-3d {
-  background: var(--bg-sunken);
-  border: 1px solid var(--border-dim);
-  border-top: 1px solid var(--border-bevel);
-  border-radius: var(--radius-md);
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.06);
-  overflow: hidden;
-}
-.terminal-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-3) var(--space-4);
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid var(--border-hair);
-}
-.terminal-dots {
-  display: flex;
-  gap: 6px;
-}
-.t-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--border-dim);
-}
-.terminal-body {
-  padding: var(--space-5);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  line-height: 1.8;
-  color: var(--fg-secondary);
+.trionn-step-desc {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  line-height: 1.55;
 }
 
-.video-container-3d {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  position: relative;
-  background: #000;
-  border: 1px solid var(--border-bevel);
-  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.9);
-}
-.video-placeholder {
-  min-height: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 50% 50%, #141926 0%, #080A0F 100%);
-  padding: var(--space-8);
-  text-align: center;
+@media (max-width: 860px) {
+  .trionn-flow {
+    grid-template-columns: 1fr;
+  }
+  .trionn-flow-step {
+    border-right: none;
+    border-bottom: 1px solid var(--border-grid);
+  }
+  .trionn-flow-step:last-child {
+    border-bottom: none;
+  }
 }
 
-/* ── Data Tables ────────────────────────────────────────────── */
-.data-table {
+/* ── TRIONN Data Table ──────────────────────────────────────── */
+.trionn-table-wrap {
+  border: 1px solid var(--border-grid);
+  background: var(--bg-surface);
+  overflow-x: auto;
+}
+.trionn-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--text-sm);
   text-align: left;
+  font-size: 0.875rem;
 }
-.data-table th {
-  padding: var(--space-4) var(--space-5);
+.trionn-table th {
+  padding: 1.25rem 1.5rem;
   font-family: var(--font-mono);
-  font-size: var(--text-2xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--fg-muted);
-  border-bottom: 1px solid var(--border-dim);
-  background: rgba(255,255,255,0.015);
-}
-.data-table td {
-  padding: var(--space-4) var(--space-5);
-  border-bottom: 1px solid var(--border-hair);
-  color: var(--fg-secondary);
-}
-.data-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
-  color: var(--fg-primary);
-}
-
-/* ── Section Dividers & Footers ─────────────────────────────── */
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin-block: var(--space-16);
-}
-.section-divider::before, .section-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border-hair);
-}
-.section-divider-title {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--fg-muted);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-grid);
+  background: var(--bg-surface-alt);
+}
+.trionn-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-grid);
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.trionn-table tr:last-child td {
+  border-bottom: none;
+}
+.trionn-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.footer {
-  border-top: 1px solid var(--border-hair);
-  padding-block: var(--space-12);
-  background: var(--bg-sunken);
-  color: var(--fg-muted);
-  font-size: var(--text-xs);
-}
-
-/* ── Responsive ─────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .nav-links, .nav-actions .btn-3d { display: none; }
-  .nav-mobile-toggle { display: flex; }
-  .pipeline-flow { grid-template-columns: 1fr; }
-}

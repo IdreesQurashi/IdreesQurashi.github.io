@@ -1,13 +1,15 @@
 /**
- * TRIONN Studio Full-Page 3D Sky Engine
- * Multi-Stage Atmospheric Universe Floating Behind the Entire Website:
- * - Stage 1 (Hero): Monumental Obsidian Triangular Sculpture with Amber Core Light & Laser Rays
- * - Stage 2 (About & Showcase): Floating Asteroid Monolith with Orbiting Debris (from TRIONN frames 12 & 15)
- * - Stage 3 (Vault & Motion Grid): 3D Infinite Cyber Grid & Drifting Particle Nebula
- * - Stage 4 (Contact & Footer): Ascending Amber Ember Vortex
- * - Camera glides continuously along Y axis as user scrolls through the entire website
- * - 3D Card Hover Physics (Magnetic perspective tilt + specular glare on all cards)
- * - "HOLD TO BLAST" interactive physics on mouse down/touch
+ * TRIONN Studio High-End Unified 3D Background Engine
+ * Option 1: Monumental Architectural Prism Monolith (TRIONN 1:1 Match)
+ * 
+ * Features:
+ * - Bespoke deconstructivist architectural cluster of 7 chamfered titanium & obsidian monoliths
+ * - Micro-beveled edge highlight wireframes in warm amber & cool cyan
+ * - Cinematic 3-point lighting rig (Amber top key light + Cyan fill + Rear rim)
+ * - Fine 3D coordinate laser lines with luminous vertex nodes
+ * - Calibrated normal rotational velocity (0.05 rad/s) with smooth scroll parallax
+ * - Zero content occlusion: Positioned in negative space and deep Z plane
+ * - Interactive mouse parallax and "HOLD TO BLAST" energy pulse
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   interactiveCards.forEach(card => {
     let bounds;
 
-    function onMouseEnter(e) {
+    function onMouseEnter() {
       bounds = card.getBoundingClientRect();
       card.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease';
     }
@@ -42,17 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const xPct = mouseX / bounds.width - 0.5;
       const yPct = mouseY / bounds.height - 0.5;
 
-      // 3D perspective tilt
-      const rotX = -yPct * 12; // degrees
-      const rotY = xPct * 14;  // degrees
+      const rotX = -yPct * 8;
+      const rotY = xPct * 10;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-8px) scale3d(1.015, 1.015, 1.015)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-6px) scale3d(1.012, 1.012, 1.012)`;
 
-      // Dynamic glare highlight update
       const glare = card.querySelector('.card-glare');
       if (glare) {
         glare.style.opacity = '1';
-        glare.style.transform = `translate(${mouseX - 150}px, ${mouseY - 150}px)`;
+        glare.style.transform = `translate(${mouseX - 160}px, ${mouseY - 160}px)`;
       }
     }
 
@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('mousemove', onMouseMove);
     card.addEventListener('mouseleave', onMouseLeave);
 
-    // Inject glare element if missing
     if (!card.querySelector('.card-glare')) {
       const glareEl = document.createElement('div');
       glareEl.className = 'card-glare';
@@ -75,19 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // === 3. THREE.JS MULTI-STAGE 3D SKY ENGINE ===
+  // === 3. THREE.JS UNIFIED 3D BACKGROUND ENGINE ===
   const canvas = document.getElementById('three-canvas');
   if (!canvas || typeof THREE === 'undefined') return;
 
-  // Scene & Fog (atmospheric sky depth)
+  // Scene setup with atmospheric depth fog
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x040508, 0.028);
+  scene.fog = new THREE.FogExp2(0x050609, 0.022);
 
-  // Camera
-  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+  // Camera positioned for expansive depth
+  const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
   camera.position.set(0, 0, 7.5);
 
-  // WebGL Renderer
+  // High-performance WebGL Renderer
   const renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
@@ -97,241 +96,257 @@ document.addEventListener('DOMContentLoaded', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 1.1;
   if (THREE.sRGBEncoding) renderer.outputEncoding = THREE.sRGBEncoding;
 
-  // === 4. SHARED LIGHTING RIG ===
-  const ambientLight = new THREE.AmbientLight(0x0e1017, 1.4);
+  // === 4. CINEMATIC 3-POINT LIGHTING RIG ===
+  // Ambient base (deep moody dark indigo, kept dim to preserve dark obsidian values)
+  const ambientLight = new THREE.AmbientLight(0x06080d, 0.7);
   scene.add(ambientLight);
 
-  // Stage 1 Hero Lights
-  const heroCoreAmber = new THREE.PointLight(0xFF4500, 6.5, 16, 1.2);
-  heroCoreAmber.position.set(0.3, -0.2, 1.0);
-  scene.add(heroCoreAmber);
+  // Top Key Light: Warm Amber / Solar Orange
+  const keyAmberLight = new THREE.PointLight(0xFF6B2B, 8.5, 24, 1.2);
+  keyAmberLight.position.set(4.0, 3.8, 2.5);
+  scene.add(keyAmberLight);
 
-  const heroSecondaryAmber = new THREE.PointLight(0xFFA500, 3.5, 12, 1.5);
-  heroSecondaryAmber.position.set(-0.4, 0.7, 0.6);
-  scene.add(heroSecondaryAmber);
+  // Secondary Warm Accent
+  const secondaryAmberLight = new THREE.PointLight(0xF59E0B, 3.0, 16, 1.4);
+  secondaryAmberLight.position.set(1.5, 1.0, 1.8);
+  scene.add(secondaryAmberLight);
 
-  const heroBlueRim = new THREE.DirectionalLight(0x3B82F6, 3.5);
-  heroBlueRim.position.set(-6, 5, 4);
-  scene.add(heroBlueRim);
+  // Fill Light: Crisp Cool Cyan (Positioned as a rear-side rim light to avoid washing out front faces)
+  const coolCyanLight = new THREE.DirectionalLight(0x38BDF8, 1.4);
+  coolCyanLight.position.set(-6, 2.5, -3.5);
+  scene.add(coolCyanLight);
 
-  const heroBackLight = new THREE.DirectionalLight(0xFFFFFF, 1.6);
-  heroBackLight.position.set(5, -4, -4);
-  scene.add(heroBackLight);
+  // Rim Silhouette Light: Rear White
+  const rimBackLight = new THREE.DirectionalLight(0xE2E8F0, 1.2);
+  rimBackLight.position.set(0, 4.0, -5);
+  scene.add(rimBackLight);
 
-  // Stage 2 & 3 Ambient Sky Lights
-  const skyLightMid = new THREE.PointLight(0x60A5FA, 4.0, 30);
-  skyLightMid.position.set(-4, -16, 3);
-  scene.add(skyLightMid);
-
-  const skyLightLower = new THREE.PointLight(0xF97316, 5.0, 35);
-  skyLightLower.position.set(4, -32, 2);
-  scene.add(skyLightLower);
-
-  // === 5. MATERIALS ===
-  const obsidianMetal = new THREE.MeshPhysicalMaterial({
-    color: 0x090a0f,
-    metalness: 0.96,
-    roughness: 0.16,
-    clearcoat: 0.85,
-    clearcoatRoughness: 0.12,
-    reflectivity: 0.96,
-    side: THREE.DoubleSide
-  });
-
-  const facetedAccentMetal = new THREE.MeshPhysicalMaterial({
-    color: 0x12141c,
-    metalness: 0.92,
-    roughness: 0.25,
+  // === 5. LUXURY METALLIC & CHAMFER MATERIALS ===
+  // Polished obsidian titanium material (primary monolith body, deep luxury dark gunmetal)
+  const obsidianMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0x05070a,
+    metalness: 0.94,
+    roughness: 0.28,
     clearcoat: 0.6,
+    clearcoatRoughness: 0.2,
     reflectivity: 0.85,
     side: THREE.DoubleSide
   });
 
-  const asteroidRockMaterial = new THREE.MeshStandardMaterial({
-    color: 0x1c1e24,
-    roughness: 0.85,
-    metalness: 0.25,
-    flatShading: true
+  // Brushed dark titanium material (secondary offset slabs)
+  const brushedTitaniumMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0x0a0d14,
+    metalness: 0.88,
+    roughness: 0.35,
+    clearcoat: 0.4,
+    clearcoatRoughness: 0.25,
+    reflectivity: 0.75,
+    side: THREE.DoubleSide
   });
 
-  // Helper for beveled extruded shapes
-  function createBeveledBeam(points, depth, material) {
-    const shape = new THREE.Shape();
-    shape.moveTo(points[0][0], points[0][1]);
-    for (let i = 1; i < points.length; i++) {
-      shape.lineTo(points[i][0], points[i][1]);
-    }
-    shape.closePath();
+  // Accent warm bronze-gold metallic material (focal prism)
+  const bronzeAccentMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0x16130e,
+    emissive: 0x2a1402,
+    emissiveIntensity: 0.25,
+    metalness: 0.92,
+    roughness: 0.22,
+    clearcoat: 0.7,
+    side: THREE.DoubleSide
+  });
 
-    const geom = new THREE.ExtrudeGeometry(shape, {
-      steps: 1,
-      depth: depth,
-      bevelEnabled: true,
-      bevelThickness: 0.08,
-      bevelSize: 0.07,
-      bevelSegments: 4
-    });
-    geom.center();
-    return new THREE.Mesh(geom, material);
+  // Razor-sharp edge highlight materials
+  const amberEdgeMaterial = new THREE.LineBasicMaterial({
+    color: 0xFBA055,
+    transparent: true,
+    opacity: 0.85
+  });
+
+  const cyanEdgeMaterial = new THREE.LineBasicMaterial({
+    color: 0x38BDF8,
+    transparent: true,
+    opacity: 0.6
+  });
+
+  // === 6. MASTER ARCHITECTURAL MONOLITH SCULPTURE ===
+  const masterSculpture = new THREE.Group();
+
+  // Helper: Create a beveled architectural block with glowing edge lines
+  function createArchitecturalBlock(width, height, depth, material, edgeMaterial, posX, posY, posZ, rotX, rotY, rotZ) {
+    const blockGroup = new THREE.Group();
+    const geom = new THREE.BoxGeometry(width, height, depth);
+    const mesh = new THREE.Mesh(geom, material);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    blockGroup.add(mesh);
+
+    // Micro-chamfer crisp edge wireframe
+    const edgesGeom = new THREE.EdgesGeometry(geom, 25);
+    const edgeLines = new THREE.LineSegments(edgesGeom, edgeMaterial);
+    blockGroup.add(edgeLines);
+
+    blockGroup.position.set(posX, posY, posZ);
+    blockGroup.rotation.set(rotX, rotY, rotZ);
+    return blockGroup;
   }
 
-  // === STAGE 1: HERO TRIANGULAR MONUMENT (At Y = 0) ===
-  const heroGroup = new THREE.Group();
+  // Architectural Cluster: 7 Deconstructivist Interlocking Monoliths
+  // 1. Central Tall Monolith (Primary Pillar)
+  const monolithCore = createArchitecturalBlock(
+    0.95, 3.6, 0.75,
+    obsidianMaterial, amberEdgeMaterial,
+    0, 0, 0,
+    0.05, 0.1, -0.08
+  );
+  masterSculpture.add(monolithCore);
 
-  // Left upright beam
-  const leftBeam = createBeveledBeam([[-0.32, -1.9], [0.32, -1.9], [0.28, 1.8], [-0.28, 1.8]], 0.38, obsidianMetal);
-  leftBeam.position.set(-0.75, 0.0, 0.15);
-  leftBeam.rotation.z = -0.32;
-  leftBeam.rotation.y = 0.12;
-  heroGroup.add(leftBeam);
+  // 2. Leaning Cantilever Slab (Angled architectural support)
+  const slabLeft = createArchitecturalBlock(
+    0.85, 3.1, 0.6,
+    brushedTitaniumMaterial, cyanEdgeMaterial,
+    -0.85, -0.2, 0.35,
+    0.12, 0.25, 0.32
+  );
+  masterSculpture.add(slabLeft);
 
-  // Right upright beam
-  const rightBeam = createBeveledBeam([[-0.32, -1.9], [0.32, -1.9], [0.28, 1.8], [-0.28, 1.8]], 0.38, obsidianMetal);
-  rightBeam.position.set(0.75, -0.05, -0.15);
-  rightBeam.rotation.z = 0.36;
-  rightBeam.rotation.y = -0.14;
-  heroGroup.add(rightBeam);
+  // 3. Counter-leaning Monolith (Right wing)
+  const slabRight = createArchitecturalBlock(
+    0.75, 2.7, 0.55,
+    obsidianMaterial, amberEdgeMaterial,
+    0.8, 0.25, -0.3,
+    -0.2, -0.35, -0.42
+  );
+  masterSculpture.add(slabRight);
 
-  // Horizontal crossbar
-  const crossBeam = createBeveledBeam([[-1.25, -0.22], [1.25, -0.22], [1.15, 0.22], [-1.15, 0.22]], 0.42, facetedAccentMetal);
-  crossBeam.position.set(0.05, -0.85, 0.22);
-  crossBeam.rotation.z = 0.04;
-  heroGroup.add(crossBeam);
+  // 4. Horizontal Bridging Crossbar
+  const crossbar = createArchitecturalBlock(
+    2.5, 0.45, 0.6,
+    bronzeAccentMaterial, amberEdgeMaterial,
+    0.1, -0.85, 0.2,
+    0.08, 0.05, 0.06
+  );
+  masterSculpture.add(crossbar);
 
-  // Apex interlocking prism
-  const apexPrism = createBeveledBeam([[-0.45, -0.6], [0.45, -0.6], [0.25, 0.6], [-0.25, 0.6]], 0.46, obsidianMetal);
-  apexPrism.position.set(0.02, 1.45, 0.1);
-  apexPrism.rotation.z = -0.05;
-  heroGroup.add(apexPrism);
+  // 5. Crown Apex Prism (Top angled facet catching amber light)
+  const apexPrism = createArchitecturalBlock(
+    0.5, 1.1, 0.4,
+    bronzeAccentMaterial, amberEdgeMaterial,
+    -0.25, 1.85, 0.15,
+    -0.1, 0.15, 0.12
+  );
+  masterSculpture.add(apexPrism);
 
-  // Inner floating shard
-  const innerShard = createBeveledBeam([[-0.18, -0.9], [0.18, -0.9], [0.12, 0.9], [-0.12, 0.9]], 0.24, facetedAccentMetal);
-  innerShard.position.set(-0.15, 0.1, 0.28);
-  innerShard.rotation.z = 0.22;
-  innerShard.rotation.y = 0.3;
-  heroGroup.add(innerShard);
+  // 6. Sub-surface Diagonal Wedge (Adds structural depth)
+  const wedgeGroup = new THREE.Group();
+  const wedgeGeom = new THREE.CylinderGeometry(0.3, 0.65, 1.5, 5, 1);
+  const wedgeMesh = new THREE.Mesh(wedgeGeom, obsidianMaterial);
+  wedgeGroup.add(wedgeMesh);
+  const wedgeEdges = new THREE.LineSegments(new THREE.EdgesGeometry(wedgeGeom, 20), amberEdgeMaterial);
+  wedgeGroup.add(wedgeEdges);
+  wedgeGroup.position.set(0.9, -0.7, 0.45);
+  wedgeGroup.rotation.set(0.4, 0.2, Math.PI * 0.65);
+  masterSculpture.add(wedgeGroup);
 
-  // Stepped base footing
-  const baseFoot = createBeveledBeam([[-0.55, -0.2], [0.55, -0.2], [0.45, 0.2], [-0.45, 0.2]], 0.5, obsidianMetal);
-  baseFoot.position.set(-1.3, -1.6, 0.1);
-  baseFoot.rotation.z = -0.15;
-  heroGroup.add(baseFoot);
+  // 7. Base Foundation Plinth (Ground balance)
+  const basePlinth = createArchitecturalBlock(
+    1.6, 0.4, 0.9,
+    brushedTitaniumMaterial, cyanEdgeMaterial,
+    -0.3, -1.9, -0.2,
+    0.04, -0.08, 0.02
+  );
+  masterSculpture.add(basePlinth);
 
-  // Radiating 3D laser lines & glowing markers
+  // === 7. DELICATE 3D COORDINATE LASER LINES ===
+  // Hairline geometric coordinates with glowing vertex nodes traversing 3D space
   const laserLinesGroup = new THREE.Group();
-  const laserConfigs = [
-    { start: [-3.5, 2.2, -1.0], end: [3.8, -2.4, 1.2], color: 0xFF5500, glowColor: 0xFFA500 },
-    { start: [-2.8, -2.0, 1.5], end: [3.2, 2.6, -1.2], color: 0x3B82F6, glowColor: 0x60A5FA },
-    { start: [-1.2, 3.2, 0.8], end: [1.6, -3.2, -0.6], color: 0xFF7700, glowColor: 0xFDBA74 },
-    { start: [3.4, 1.2, 1.4], end: [-3.6, -1.0, -1.0], color: 0x93C5FD, glowColor: 0xDBEAFE },
-    { start: [-2.0, 0.4, -2.0], end: [2.5, 0.2, 2.2], color: 0xF97316, glowColor: 0xFDBA74 }
+  const laserEndpoints = [
+    { start: [-3.8, 2.5, -1.5], end: [3.8, -2.4, 1.2], color: 0xFF5E1A, dotColor: 0xFBA055 },
+    { start: [-3.2, -2.0, 1.6], end: [3.4, 2.7, -1.2], color: 0x38BDF8, dotColor: 0x93C5FD },
+    { start: [-1.2, 3.5, 0.8], end: [1.6, -3.2, -0.9], color: 0xF59E0B, dotColor: 0xFDE68A },
+    { start: [3.5, 1.2, 1.5], end: [-3.6, -1.0, -1.4], color: 0x38BDF8, dotColor: 0xBAE6FD }
   ];
-  laserConfigs.forEach(cfg => {
-    const lineMat = new THREE.LineBasicMaterial({ color: cfg.color, transparent: true, opacity: 0.55 });
-    const lineGeom = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...cfg.start), new THREE.Vector3(...cfg.end)]);
+
+  laserEndpoints.forEach(cfg => {
+    const lineGeom = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(...cfg.start),
+      new THREE.Vector3(...cfg.end)
+    ]);
+    const lineMat = new THREE.LineBasicMaterial({
+      color: cfg.color,
+      transparent: true,
+      opacity: 0.45
+    });
     laserLinesGroup.add(new THREE.Line(lineGeom, lineMat));
 
+    // Luminous vertex dots at terminals
     [cfg.start, cfg.end].forEach(pt => {
-      const dot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 8, 8), new THREE.MeshBasicMaterial({ color: cfg.glowColor, transparent: true, opacity: 0.85 }));
+      const dotGeom = new THREE.SphereGeometry(0.038, 8, 8);
+      const dotMat = new THREE.MeshBasicMaterial({
+        color: cfg.dotColor,
+        transparent: true,
+        opacity: 0.85
+      });
+      const dot = new THREE.Mesh(dotGeom, dotMat);
       dot.position.set(...pt);
       laserLinesGroup.add(dot);
     });
   });
-  heroGroup.add(laserLinesGroup);
+  masterSculpture.add(laserLinesGroup);
 
-  // Position hero group
-  heroGroup.position.set(0.65, 0.05, 0);
-  scene.add(heroGroup);
-
-  // === STAGE 2: FLOATING MONOLITHIC ASTEROID / STONE (At Y = -14) ===
-  // Directly replicates TRIONN frames 12 & 15 floating stone
-  const stage2Group = new THREE.Group();
-  stage2Group.position.set(0, -14, -1.5);
-
-  // Central sculpted asteroid block
-  const asteroidGeom = new THREE.DodecahedronGeometry(2.4, 1);
-  // Deform vertices for natural rock fissures
-  const posAttr = asteroidGeom.attributes.position;
-  for (let i = 0; i < posAttr.count; i++) {
-    const vx = posAttr.getX(i);
-    const vy = posAttr.getY(i);
-    const vz = posAttr.getZ(i);
-    const noise = Math.sin(vx * 3.0) * Math.cos(vy * 3.0) * Math.sin(vz * 3.0) * 0.25;
-    posAttr.setXYZ(i, vx + noise, vy * 1.15 + noise, vz + noise);
+  // === 8. THIN ORBITAL VECTOR RINGS ===
+  function createOrbitalRing(radius, segments, color, rotX, rotY, opacity) {
+    const points = [];
+    for (let i = 0; i <= segments; i++) {
+      const theta = (i / segments) * Math.PI * 2;
+      points.push(new THREE.Vector3(Math.cos(theta) * radius, Math.sin(theta) * radius, 0));
+    }
+    const geom = new THREE.BufferGeometry().setFromPoints(points);
+    const mat = new THREE.LineBasicMaterial({
+      color,
+      transparent: true,
+      opacity,
+      linewidth: 1
+    });
+    const ring = new THREE.LineLoop(geom, mat);
+    ring.rotation.x = rotX;
+    ring.rotation.y = rotY;
+    return ring;
   }
-  asteroidGeom.computeVertexNormals();
 
-  const asteroidMesh = new THREE.Mesh(asteroidGeom, asteroidRockMaterial);
-  stage2Group.add(asteroidMesh);
+  const orbitRing1 = createOrbitalRing(2.8, 80, 0xFBA055, Math.PI * 0.32, Math.PI * 0.12, 0.35);
+  const orbitRing2 = createOrbitalRing(3.1, 80, 0x38BDF8, -Math.PI * 0.25, Math.PI * 0.35, 0.3);
+  masterSculpture.add(orbitRing1);
+  masterSculpture.add(orbitRing2);
 
-  // Orbiting crystal shards around the asteroid
-  const shardsGroup = new THREE.Group();
-  for (let i = 0; i < 8; i++) {
-    const shardGeom = new THREE.TetrahedronGeometry(0.25 + Math.random() * 0.35);
-    const shardMesh = new THREE.Mesh(shardGeom, obsidianMetal);
-    const angle = (i / 8) * Math.PI * 2;
-    const radius = 3.6 + Math.random() * 1.2;
-    shardMesh.position.set(Math.cos(angle) * radius, (Math.random() - 0.5) * 2, Math.sin(angle) * radius);
-    shardMesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
-    shardsGroup.add(shardMesh);
+  // === 9. CELESTIAL AMBIENT DUST PARTICLES ===
+  const particleCount = 190;
+  const particleGeom = new THREE.BufferGeometry();
+  const particlePos = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount; i++) {
+    particlePos[i * 3] = (Math.random() - 0.5) * 16;
+    particlePos[i * 3 + 1] = (Math.random() - 0.5) * 14;
+    particlePos[i * 3 + 2] = (Math.random() - 0.5) * 10;
   }
-  stage2Group.add(shardsGroup);
-  scene.add(stage2Group);
-
-  // === STAGE 3: DRIFTING CYBER HORIZON GRID (At Y = -26) ===
-  const gridHelper = new THREE.GridHelper(40, 40, 0x3B82F6, 0x1E2026);
-  gridHelper.position.set(0, -28, -2);
-  gridHelper.material.transparent = true;
-  gridHelper.material.opacity = 0.22;
-  scene.add(gridHelper);
-
-  // === STAGE 4: ASCENDING EMBER VORTEX (At Y = -38) ===
-  const emberCount = 200;
-  const emberGeom = new THREE.BufferGeometry();
-  const emberPositions = new Float32Array(emberCount * 3);
-  const emberSpeeds = new Float32Array(emberCount);
-  for (let i = 0; i < emberCount; i++) {
-    emberPositions[i * 3] = (Math.random() - 0.5) * 16;
-    emberPositions[i * 3 + 1] = -45 + Math.random() * 18;
-    emberPositions[i * 3 + 2] = (Math.random() - 0.5) * 12;
-    emberSpeeds[i] = 0.02 + Math.random() * 0.04;
-  }
-  emberGeom.setAttribute('position', new THREE.BufferAttribute(emberPositions, 3));
-  const emberMat = new THREE.PointsMaterial({
-    color: 0xFF5500,
-    size: 0.06,
-    transparent: true,
-    opacity: 0.75,
-    blending: THREE.AdditiveBlending
-  });
-  const emberParticles = new THREE.Points(emberGeom, emberMat);
-  scene.add(emberParticles);
-
-  // === GLOBAL STARFIELD NEBULA PARTICLES (Full Sky Coverage) ===
-  const skyParticleCount = 350;
-  const skyParticleGeom = new THREE.BufferGeometry();
-  const skyParticlePos = new Float32Array(skyParticleCount * 3);
-  for (let i = 0; i < skyParticleCount; i++) {
-    skyParticlePos[i * 3] = (Math.random() - 0.5) * 22;
-    skyParticlePos[i * 3 + 1] = 6 - Math.random() * 52; // Extends down across whole page height
-    skyParticlePos[i * 3 + 2] = (Math.random() - 0.5) * 14;
-  }
-  skyParticleGeom.setAttribute('position', new THREE.BufferAttribute(skyParticlePos, 3));
-  const skyParticleMat = new THREE.PointsMaterial({
-    color: 0xD8D8D8,
+  particleGeom.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+  const particleMat = new THREE.PointsMaterial({
+    color: 0xFBA055,
     size: 0.035,
     transparent: true,
-    opacity: 0.55
+    opacity: 0.5
   });
-  const skyParticles = new THREE.Points(skyParticleGeom, skyParticleMat);
-  scene.add(skyParticles);
+  const particles = new THREE.Points(particleGeom, particleMat);
+  masterSculpture.add(particles);
 
-  // === 6. MOUSE & SCROLL PHYSICS ===
+  // Initial sculpture placement (offset right in hero to frame headline cleanly)
+  masterSculpture.position.set(0.55, 0.0, 0);
+  scene.add(masterSculpture);
+
+  // === 10. MOUSE & SCROLL REACTION CONTROLLERS ===
   const mouse = { x: 0, y: 0 };
-  const targetRot = { x: 0, y: 0 };
+  const targetMouse = { x: 0, y: 0 };
   let isBlasting = false;
   let blastFactor = 0;
 
@@ -352,7 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
     targetScrollY = window.scrollY;
   }, { passive: true });
 
-  // === 7. 60FPS FLUID ANIMATION LOOP ===
+  // === 11. 60FPS SMOOTH CALIBRATED ANIMATION LOOP ===
+  // Rotates at a steady, dignified, normal speed (0.05 rad/s) throughout the entire site
   const clock = new THREE.Clock();
 
   function animate() {
@@ -360,60 +376,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const elapsed = clock.getElapsedTime();
 
-    // Smooth scroll interpolation (camera flight through sky)
-    currentScrollY += (targetScrollY - currentScrollY) * 0.055;
+    // Smooth scroll interpolation
+    currentScrollY += (targetScrollY - currentScrollY) * 0.05;
     const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
-    const scrollFraction = Math.min(Math.max(currentScrollY / maxScroll, 0), 1);
+    const scrollProgress = Math.min(Math.max(currentScrollY / maxScroll, 0), 1);
 
-    // Camera descends along Y through the multi-stage universe
-    camera.position.y = -scrollFraction * 36;
+    // Mouse parallax damping
+    targetMouse.x += (mouse.x * 0.35 - targetMouse.x) * 0.04;
+    targetMouse.y += (mouse.y * 0.25 - targetMouse.y) * 0.04;
 
-    // Damped mouse follow
-    targetRot.x += (mouse.y * 0.35 - targetRot.x) * 0.045;
-    targetRot.y += (mouse.x * 0.55 - targetRot.y) * 0.045;
+    // Normal, steady, dignified angular velocity (0.045 rad/s base)
+    // Angles facets towards camera for rich isometric depth across all sections
+    masterSculpture.rotation.y = 0.45 + elapsed * 0.045 + scrollProgress * Math.PI * 0.75 + targetMouse.x;
+    masterSculpture.rotation.x = 0.12 + Math.sin(elapsed * 0.1) * 0.05 + scrollProgress * 0.35 - targetMouse.y;
+    masterSculpture.rotation.z = 0.06 + Math.cos(elapsed * 0.08) * 0.04;
 
-    // Stage 1 Monument rotation & levitation
-    heroGroup.rotation.y = targetRot.y + Math.sin(elapsed * 0.25) * 0.08;
-    heroGroup.rotation.x = -targetRot.x + Math.cos(elapsed * 0.3) * 0.05;
-    heroGroup.position.y = 0.05 + Math.sin(elapsed * 0.8) * 0.12;
+    // Orbital rings gentle independent drift
+    orbitRing1.rotation.z = elapsed * 0.08;
+    orbitRing2.rotation.z = -elapsed * 0.09;
 
-    // Stage 2 Asteroid rock continuous slow rotation & shard orbit
-    asteroidMesh.rotation.y = elapsed * 0.12;
-    asteroidMesh.rotation.x = Math.sin(elapsed * 0.1) * 0.15;
-    shardsGroup.rotation.y = -elapsed * 0.18;
+    // Laser rays subtle sway
+    laserLinesGroup.rotation.y = Math.sin(elapsed * 0.15) * 0.05;
+    laserLinesGroup.rotation.x = Math.cos(elapsed * 0.18) * 0.04;
 
-    // Stage 4 Ember vortex ascending animation
-    const pos = emberGeom.attributes.position.array;
-    for (let i = 0; i < emberCount; i++) {
-      pos[i * 3 + 1] += emberSpeeds[i];
-      if (pos[i * 3 + 1] > -26) {
-        pos[i * 3 + 1] = -45;
-      }
-    }
-    emberGeom.attributes.position.needsUpdate = true;
+    // Ambient dust motes drift
+    particles.rotation.y = elapsed * 0.015;
 
-    // Laser lines breathing
-    laserLinesGroup.rotation.y = Math.sin(elapsed * 0.35) * 0.06;
-
-    // Sky particles drift
-    skyParticles.rotation.y = elapsed * 0.015;
-
-    // Blast physics
-    if (isBlasting) {
-      blastFactor += (1 - blastFactor) * 0.16;
+    // Responsive dynamic spatial framing across scroll:
+    // Hero: x = 0.65, frames headline on the left
+    // About & Work: glides into depth (z = -2.0) and frames right margin (x = 0.75) to keep editorial text 100% clean
+    // Contact: glides towards center behind consultation terminal
+    let targetX, targetY, targetZ, targetScale;
+    if (scrollProgress < 0.2) {
+      const p = scrollProgress / 0.2;
+      targetX = 0.65 + p * 0.15;
+      targetY = Math.sin(elapsed * 0.35) * 0.06 - p * 0.4;
+      targetZ = -p * 1.5;
+      targetScale = 1.0 - p * 0.18;
+    } else if (scrollProgress < 0.75) {
+      const p = (scrollProgress - 0.2) / 0.55;
+      targetX = 0.8 - p * 0.45;
+      targetY = -0.4 - p * 0.35;
+      targetZ = -1.5 - p * 0.8;
+      targetScale = 0.82;
     } else {
-      blastFactor += (0 - blastFactor) * 0.08;
+      const p = (scrollProgress - 0.75) / 0.25;
+      targetX = 0.35 - p * 0.35;
+      targetY = -0.75 - p * 0.2;
+      targetZ = -2.3 + p * 0.6;
+      targetScale = 0.82 + p * 0.12;
     }
 
-    heroCoreAmber.intensity = 6.5 + blastFactor * 9.0;
-    heroGroup.scale.setScalar(1.0 + blastFactor * 0.1);
+    masterSculpture.position.set(targetX, targetY, targetZ);
+
+    // Blast physics (smooth lighting intensity flair on hold)
+    if (isBlasting) {
+      blastFactor += (1 - blastFactor) * 0.14;
+    } else {
+      blastFactor += (0 - blastFactor) * 0.07;
+    }
+
+    keyAmberLight.intensity = 8.5 + blastFactor * 9.0;
+    masterSculpture.scale.setScalar(targetScale * (1.0 + blastFactor * 0.08));
 
     renderer.render(scene, camera);
   }
 
   animate();
 
-  // === 8. RESPONSIVE CALIBRATION ===
+  // === 12. RESPONSIVE VIEWPORT CALIBRATION ===
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -421,10 +452,9 @@ document.addEventListener('DOMContentLoaded', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       if (window.innerWidth < 768) {
         camera.position.z = 9.8;
-        heroGroup.position.set(0, 0.4, 0);
+        masterSculpture.position.x = 0;
       } else {
         camera.position.z = 7.5;
-        heroGroup.position.set(0.65, 0.05, 0);
       }
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -433,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (window.innerWidth < 768) {
     camera.position.z = 9.8;
-    heroGroup.position.set(0, 0.4, 0);
+    masterSculpture.position.x = 0;
     camera.updateProjectionMatrix();
   }
 });

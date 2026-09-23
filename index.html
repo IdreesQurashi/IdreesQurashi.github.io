@@ -249,9 +249,12 @@
                 </div>
 
                 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-                  <button type="button" class="btn-download-blueprint" onclick="playScreencastWithSound()">
+                  <button type="button" class="btn-download-blueprint" onclick="openWorkflowModal('claude_scraper')">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    Play Screencast with Voiceover
+                    Watch Full Video Screencast
+                  </button>
+                  <button type="button" class="btn-outline-arch" onclick="openWorkflowModal('claude_scraper')">
+                    Inspect 85% Pop Out →
                   </button>
                   <a href="downloads/workflow_3_claude_scraper.zip" download="workflow_3_claude_scraper.zip" class="btn-outline-arch">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -264,12 +267,16 @@
               </div>
             </div>
 
-            <!-- Real Video Screencast with AI Voiceover -->
+            <!-- Real Video Screencast -->
             <div class="featured-media-area" style="position:relative">
               <div class="video-audio-badge">
                 <span class="audio-wave"><span></span><span></span><span></span></span>
-                AI Voiceover · 74s Production Cut
+                Full Demo · 74s Production Cut
               </div>
+              <button type="button" class="video-popout-trigger" onclick="openWorkflowModal('claude_scraper')" title="Inspect 85% Pop Out" aria-label="Inspect 85% Pop Out">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                <span>85% Pop Out</span>
+              </button>
               <video id="claude-scraper-video" controls playsinline preload="metadata" poster="workflows/claude-code-scraper/poster.jpg">
                 <source src="workflows/claude-code-scraper/claude_code_scraper_execution.mp4" type="video/mp4"/>
               </video>
@@ -334,12 +341,15 @@
           <div class="agentic-duo-grid">
 
             <!-- Card Left: Autonomous Outbound SDR Swarm -->
-            <article class="showcase-featured-card reveal" style="grid-template-columns:1fr;margin-bottom:0;">
+            <article class="showcase-featured-card reveal interactive-card" style="grid-template-columns:1fr;margin-bottom:0;" onclick="if(event.target.tagName !== 'A' && event.target.tagName !== 'BUTTON') openWorkflowModal('agentic_sdr')">
               <div class="featured-card-content" style="padding:36px;">
                 <div>
                   <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
-                    <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                    <span class="flow-step-tag">System 02</span>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
+                      <span class="flow-step-tag">System 02</span>
+                    </div>
+                    <span class="card-popout-hint">Inspect 85% Pop Out →</span>
                   </div>
                   <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:10px">
                     Autonomous Outbound SDR Swarm
@@ -407,7 +417,10 @@
                 </div>
 
                 <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
-                  <a href="downloads/workflow_1_outbound_sdr_swarm.zip" download="workflow_1_outbound_sdr_swarm.zip" class="btn-download-blueprint">
+                  <button type="button" class="btn-download-blueprint" onclick="openWorkflowModal('agentic_sdr')">
+                    Inspect 85% Pop Out →
+                  </button>
+                  <a href="downloads/workflow_1_outbound_sdr_swarm.zip" download="workflow_1_outbound_sdr_swarm.zip" class="btn-outline-arch">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Download Blueprint (.zip)
                   </a>
@@ -419,12 +432,15 @@
             </article>
 
             <!-- Card Right: Autonomous Full Stack Developer Agent -->
-            <article class="showcase-featured-card reveal" style="grid-template-columns:1fr;margin-bottom:0;">
+            <article class="showcase-featured-card reveal interactive-card" style="grid-template-columns:1fr;margin-bottom:0;" onclick="if(event.target.tagName !== 'A' && event.target.tagName !== 'BUTTON') openWorkflowModal('agentic_dev')">
               <div class="featured-card-content" style="padding:36px;">
                 <div>
                   <div style="margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
-                    <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
-                    <span class="flow-step-tag">System 03</span>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <span class="live-pill"><span class="pulse-dot"></span> Production Live</span>
+                      <span class="flow-step-tag">System 03</span>
+                    </div>
+                    <span class="card-popout-hint">Inspect 85% Pop Out →</span>
                   </div>
                   <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;letter-spacing:-0.02em;color:#FFFFFF;margin-bottom:10px">
                     Autonomous Full Stack Developer Agent
@@ -492,6 +508,9 @@
                 </div>
 
                 <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+                  <button type="button" class="btn-download-blueprint" onclick="openWorkflowModal('agentic_dev')">
+                    Inspect 85% Pop Out →
+                  </button>
                   <a href="downloads/workflow_2_autonomous_dev.zip" download="workflow_2_autonomous_dev.zip" class="btn-download-blueprint">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Download Blueprint (.zip)
@@ -947,11 +966,81 @@
     }
 
     const workflowRegistry = {
+      claude_scraper: {
+        type: 'video',
+        src: 'workflows/claude-code-scraper/claude_code_scraper_execution.mp4',
+        poster: 'workflows/claude-code-scraper/poster.jpg',
+        badge: 'Claude Opus 5 · 74s Video Demo',
+        title: 'Claude Code Autonomous Lead Harvester & Enrichment Swarm',
+        desc: 'Autonomous terminal orchestration powered by Claude Opus 5. The agent ingests regional medical clinic directories across Miami and New York, coordinates parallel headless Playwright workers with anti bot stealth fingerprinting, validates ICP criteria with Gemini Flash Lite, and launches autonomous background recovery daemons for unverified records with zero human prompts.',
+        bullets: [
+          'Autonomous CLI Orchestration decomposing high level objectives into executable bash commands.',
+          'Playwright Stealth Scraping bypassing Cloudflare and bot detection mechanisms.',
+          'Gemini 2.0 Flash Lite Enrichment extracting verified decision maker contacts and metadata.',
+          'Autonomous Self Healing Daemon recovering missing fields before final pipeline termination.'
+        ],
+        metrics: [
+          { val: '100%', label: 'Extraction Fidelity' },
+          { val: '0', label: 'Human Prompts Needed' },
+          { val: 'Auto', label: 'Recovery Daemon' }
+        ],
+        tags: ['Claude Opus 5', 'Playwright Stealth', 'Gemini Flash Lite', 'Autonomous Daemons', 'Pydantic V2'],
+        download: 'downloads/workflow_3_claude_scraper.zip',
+        downloadLabel: 'Download Blueprint (.zip)',
+        exploreUrl: 'agentic-workflows.html',
+        exploreLabel: 'Explore Agentic Lab →'
+      },
+      agentic_sdr: {
+        type: 'image',
+        src: 'workflows/agentic-sdr/architecture.svg',
+        badge: 'LangGraph 0.2 · Outbound Swarm',
+        title: 'Autonomous Outbound SDR Swarm',
+        desc: 'Three layer autonomous outbound infrastructure. Directive Ingestion parses ICP rules, the LangGraph Supervisor coordinates specialized research and email agents under strict JSON schemas, and a paced relay daemon dispatches sequences at randomized 15 to 30 minute human cadences to maintain deliverability.',
+        bullets: [
+          'LangGraph 0.2 State Machine with supervisor routing and isolated agent memory.',
+          'Multi Source Waterfall Enrichment verifying emails without guessing patterns.',
+          'Strict 0.85 Evaluator Critic Quality Gate ensuring authentic founder tone.',
+          'Paced Relay Dispatch Daemon preventing mailbox burn and domain blacklisting.'
+        ],
+        metrics: [
+          { val: '15 to 20', label: 'Meetings / Week' },
+          { val: '0.19%', label: 'Bounce Ceiling' },
+          { val: '0.85+', label: 'Quality Gate' }
+        ],
+        tags: ['LangGraph 0.2', 'Playwright', 'Gemini Flash Lite', 'Pydantic V2', 'Zero Bounce OS'],
+        download: 'downloads/workflow_1_outbound_sdr_swarm.zip',
+        downloadLabel: 'Download Blueprint (.zip)',
+        exploreUrl: 'outbound-engine.html',
+        exploreLabel: 'View Full Spec →'
+      },
+      agentic_dev: {
+        type: 'image',
+        src: 'workflows/agentic-dev/architecture.svg',
+        badge: 'Python 3.12 · Autonomous Dev',
+        title: 'Autonomous Full Stack Developer Agent',
+        desc: 'End to end autonomous coding agent. Ingests GitHub issue directives, performs AST syntax parsing, authors test suites first under strict TDD Red Green Refactor cycles, runs sandboxed verification, and self repairs syntax and logic errors autonomously.',
+        bullets: [
+          'GitHub Issue Directive Ingestion parsing specs into executable test contracts.',
+          'AST Syntax Parsing and tree manipulation verifying code changes before disk writes.',
+          'Strict TDD Red Green Refactor Cycles targeting 80%+ test suite coverage.',
+          'Sandboxed Execution with autonomous three strike self healing and git commit generation.'
+        ],
+        metrics: [
+          { val: '80%+', label: 'Test Coverage' },
+          { val: '3x', label: 'Auto Retries' },
+          { val: '0', label: 'Human Guidance' }
+        ],
+        tags: ['Python 3.12', 'AST Parser', 'Pytest Sandbox', 'GitPython', 'Self Healing Loop'],
+        download: 'downloads/workflow_2_autonomous_dev.zip',
+        downloadLabel: 'Download Blueprint (.zip)',
+        exploreUrl: 'agentic-workflows.html',
+        exploreLabel: 'Explore Agentic Lab →'
+      },
       n8n_multimodal: {
         type: 'video',
         src: 'workflows/n8n-multimodal-agent/multimodal_agent_demo.mp4',
         poster: 'workflows/n8n-multimodal-agent/poster.jpg',
-        badge: 'n8n Production · 87s Voiceover',
+        badge: 'n8n Production · 87s Video Demo',
         title: 'Multimodal Voice & Visual Lead Qualification Engine',
         desc: 'Autonomous multimodal pipeline processing Instagram direct messages and voice notes. The system transcribes audio payloads using Whisper, interprets visual media using Gemini 2.0 Flash Lite, assesses lead intent against custom qualification matrices, and records verified records into Google Drive with instant Telegram notifications.',
         bullets: [
@@ -973,7 +1062,7 @@
         type: 'video',
         src: 'workflows/n8n-autoposting-engine/autoposting_engine_demo.mp4',
         poster: 'workflows/n8n-autoposting-engine/poster.jpg',
-        badge: 'n8n Production · 56s Voiceover',
+        badge: 'n8n Production · 56s Video Demo',
         title: 'Master Multi Channel Content Syndication Engine',
         desc: 'Enterprise multi channel distribution swarm engineered to scale organic visibility. When a master video or text draft is approved, this workflow coordinates parallel publishing across YouTube, LinkedIn, X, and Instagram. It formats platform specific metadata, generates high click hooks, handles file compression, and dispatches failure alerts to Telegram.',
         bullets: [
@@ -1102,8 +1191,8 @@
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 ${data.downloadLabel}
               </a>
-              <a href="automation-workflows.html" class="btn-outline-arch">
-                Explore All Automations →
+              <a href="${data.exploreUrl || 'automation-workflows.html'}" class="btn-outline-arch">
+                ${data.exploreLabel || 'Explore All Automations →'}
               </a>
             </div>
           </div>

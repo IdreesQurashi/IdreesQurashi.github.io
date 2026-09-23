@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%" style="background:#060709;font-family:'JetBrains Mono', 'Fira Code', monospace;">
+  <defs>
+    <linearGradient id="sdrBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#050608"/>
+      <stop offset="100%" stop-color="#070a10"/>
+    </linearGradient>
+    <linearGradient id="sdrCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111622" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0b0e17" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="sdrAccentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <radialGradient id="sdrGlowCenter" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#3B82F6" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#sdrBgGrad)"/>
+  <rect width="1200" height="800" fill="url(#sdrGlowCenter)"/>
+
+  <!-- Subtle Circuit Grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="60" y1="0" x2="60" y2="800"/>
+    <line x1="240" y1="0" x2="240" y2="800"/>
+    <line x1="420" y1="0" x2="420" y2="800"/>
+    <line x1="600" y1="0" x2="600" y2="800"/>
+    <line x1="780" y1="0" x2="780" y2="800"/>
+    <line x1="960" y1="0" x2="960" y2="800"/>
+    <line x1="1140" y1="0" x2="1140" y2="800"/>
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="250" x2="1200" y2="250"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="550" x2="1200" y2="550"/>
+    <line x1="0" y1="700" x2="1200" y2="700"/>
+  </g>
+
+  <!-- Header Section -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="126" height="24" rx="12" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+    <circle cx="12" cy="12" r="4" fill="#10B981"/>
+    <text x="24" y="16" fill="#10B981" font-size="10" font-weight="700" letter-spacing="1.5">SYSTEM 02 LIVE</text>
+
+    <text x="0" y="58" fill="#FFFFFF" font-size="24" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-0.5">Autonomous Outbound SDR Swarm</text>
+    <text x="0" y="80" fill="#8E9AA8" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">LangGraph 0.2 State Machine with Multi Agent Routing and Zero Bounce OS Protocol</text>
+
+    <!-- Top Stats Badges -->
+    <g transform="translate(740, 6)">
+      <rect x="0" y="0" width="100" height="52" rx="8" fill="#0D111A" stroke="rgba(255,255,255,0.08)"/>
+      <text x="14" y="24" fill="#10B981" font-size="18" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">0.19%</text>
+      <text x="14" y="42" fill="#64748B" font-size="9" font-weight="600" letter-spacing="0.5">BOUNCE CEIL</text>
+
+      <rect x="112" y="0" width="100" height="52" rx="8" fill="#0D111A" stroke="rgba(255,255,255,0.08)"/>
+      <text x="126" y="24" fill="#FFFFFF" font-size="18" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">15 to 20</text>
+      <text x="126" y="42" fill="#64748B" font-size="9" font-weight="600" letter-spacing="0.5">BOOKINGS/WK</text>
+
+      <rect x="224" y="0" width="100" height="52" rx="8" fill="#0D111A" stroke="rgba(255,255,255,0.08)"/>
+      <text x="238" y="24" fill="#3B82F6" font-size="18" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">0.85+</text>
+      <text x="238" y="42" fill="#64748B" font-size="9" font-weight="600" letter-spacing="0.5">EVAL GATE</text>
+    </g>
+  </g>
+
+  <!-- Flow Arrows / Connectors -->
+  <g stroke="rgba(75,139,245,0.35)" stroke-width="2" fill="none">
+    <!-- Row 1 to Row 2 connections -->
+    <path d="M 380 260 L 440 260" stroke-dasharray="4,4"/>
+    <polygon points="442,260 434,256 434,264" fill="#3B82F6" stroke="none"/>
+
+    <path d="M 740 260 L 800 260" stroke-dasharray="4,4"/>
+    <polygon points="802,260 794,256 794,264" fill="#3B82F6" stroke="none"/>
+
+    <!-- Row 1 end down to Row 2 end -->
+    <path d="M 950 360 L 950 420 L 950 480" stroke-dasharray="4,4"/>
+    <polygon points="950,482 946,474 954,474" fill="#10B981" stroke="none"/>
+
+    <!-- Row 2 right to left connections -->
+    <path d="M 800 580 L 740 580" stroke-dasharray="4,4"/>
+    <polygon points="738,580 746,576 746,584" fill="#3B82F6" stroke="none"/>
+
+    <path d="M 440 580 L 380 580" stroke-dasharray="4,4"/>
+    <polygon points="378,580 386,576 386,584" fill="#10B981" stroke="none"/>
+
+    <!-- Feedback loop from Gate back to Copywriter -->
+    <path d="M 590 480 L 590 430 L 590 380" stroke="rgba(239,68,68,0.4)" stroke-dasharray="3,3"/>
+    <polygon points="590,378 586,386 594,386" fill="#EF4444" stroke="none"/>
+  </g>
+
+  <!-- Flow Status Label on Feedback -->
+  <rect x="545" y="412" width="90" height="18" rx="4" fill="#1E1218" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+  <text x="552" y="424" fill="#F87171" font-size="8.5" font-weight="700">SCORE &lt; 0.85 RETRY</text>
+
+  <!-- NODE 01: DIRECTIVE INGESTION -->
+  <g transform="translate(60, 160)">
+    <rect width="320" height="200" rx="14" fill="url(#sdrCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="320" height="3" fill="#10B981" rx="1"/>
+    <circle cx="32" cy="36" r="14" fill="rgba(16,185,129,0.15)"/>
+    <text x="26" y="41" fill="#10B981" font-size="12" font-weight="800">01</text>
+    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Directive Ingestion</text>
+    <text x="60" y="48" fill="#10B981" font-size="10" font-weight="600" letter-spacing="0.5">RULESET COMPILER</text>
+
+    <line x1="20" y1="66" x2="300" y2="66" stroke="rgba(255,255,255,0.06)"/>
+
+    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Ingests strict ICP guidelines</text>
+    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Enforces negative keyword bans</text>
+    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Discards non remote listings</text>
+    <text x="20" y="156" fill="#CBD5E1" font-size="11">• AST symbol sanitizer active</text>
+
+    <rect x="20" y="170" width="130" height="20" rx="4" fill="#090D14" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+    <text x="28" y="183" fill="#10B981" font-size="9" font-weight="600">STATUS: ZERO CAVEATS</text>
+  </g>
+
+  <!-- NODE 02: SUPERVISOR AGENT -->
+  <g transform="translate(440, 160)">
+    <rect width="300" height="200" rx="14" fill="url(#sdrCardGrad)" stroke="rgba(75,139,245,0.3)" stroke-width="1.2"/>
+    <rect x="0" y="0" width="300" height="3" fill="#3B82F6" rx="1"/>
+    <circle cx="32" cy="36" r="14" fill="rgba(59,130,246,0.15)"/>
+    <text x="24" y="41" fill="#3B82F6" font-size="12" font-weight="800">02</text>
+    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">LangGraph Supervisor</text>
+    <text x="60" y="48" fill="#3B82F6" font-size="10" font-weight="600" letter-spacing="0.5">CENTRAL STATE ROUTER</text>
+
+    <line x1="20" y1="66" x2="280" y2="66" stroke="rgba(255,255,255,0.06)"/>
+
+    <text x="20" y="90" fill="#CBD5E1" font-size="11">• State machine orchestration</text>
+    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Dynamic task allocation</text>
+    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Pydantic schema validation</text>
+    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Strict token budget manager</text>
+
+    <rect x="20" y="170" width="126" height="20" rx="4" fill="#090D14" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+    <text x="28" y="183" fill="#60A5FA" font-size="9" font-weight="600">LATENCY: SUB 450MS</text>
+  </g>
+
+  <!-- NODE 03: DEEP RESEARCH SWARM -->
+  <g transform="translate(800, 160)">
+    <rect width="340" height="200" rx="14" fill="url(#sdrCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="340" height="3" fill="#8B5CF6" rx="1"/>
+    <circle cx="32" cy="36" r="14" fill="rgba(139,92,246,0.15)"/>
+    <text x="24" y="41" fill="#8B5CF6" font-size="12" font-weight="800">03</text>
+    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Deep Research Swarm</text>
+    <text x="60" y="48" fill="#8B5CF6" font-size="10" font-weight="600" letter-spacing="0.5">WATERFALL ENRICHMENT</text>
+
+    <line x1="20" y1="66" x2="320" y2="66" stroke="rgba(255,255,255,0.06)"/>
+
+    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Stealth Playwright browser pool</text>
+    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Verified founder profile scrape</text>
+    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Zero guesswork mailbox rule</text>
+    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Tech stack &amp; revenue analysis</text>
+
+    <rect x="20" y="170" width="138" height="20" rx="4" fill="#090D14" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+    <text x="28" y="183" fill="#C084FC" font-size="9" font-weight="600">VERIFIED RATE: 100%</text>
+  </g>
+
+  <!-- NODE 04: BESPOKE COPYWRITER -->
+  <g transform="translate(800, 480)">
+    <rect width="340" height="200" rx="14" fill="url(#sdrCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="340" height="3" fill="#F59E0B" rx="1"/>
+    <circle cx="32" cy="36" r="14" fill="rgba(245,158,11,0.15)"/>
+    <text x="24" y="41" fill="#F59E0B" font-size="12" font-weight="800">04</text>
+    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Bespoke Copywriter</text>
+    <text x="60" y="48" fill="#F59E0B" font-size="10" font-weight="600" letter-spacing="0.5">SARAEV TONE SYNTHESIZER</text>
+
+    <line x1="20" y1="66" x2="320" y2="66" stroke="rgba(255,255,255,0.06)"/>
+
+    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Low ego conversational tone</text>
+    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Specific technical references</text>
+    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Zero robotic corporate buzzwords</text>
+    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Tailored single sentence offers</text>
+
+    <rect x="20" y="170" width="140" height="20" rx="4" fill="#090D14" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+    <text x="28" y="183" fill="#FBBF24" font-size="9" font-weight="600">CADENCE: HIGH IMPACT</text>
+  </g>
+
+  <!-- NODE 05: 0.85 EVALUATOR CRITIC GATE -->
+  <g transform="translate(440, 480)">
+    <rect width="300" height="200" rx="14" fill="url(#sdrCardGrad)" stroke="rgba(16,185,129,0.3)" stroke-width="1.2"/>
+    <rect x="0" y="0" width="300" height="3" fill="#10B981" rx="1"/>
+    <circle cx="32" cy="36" r="14" fill="rgba(16,185,129,0.15)"/>
+    <text x="24" y="41" fill="#10B981" font-size="12" font-weight="800">05</text>
+    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Evaluator Critic Gate</text>
+    <text x="60" y="48" fill="#10B981" font-size="10" font-weight="600" letter-spacing="0.5">QUALITY SCORING ENGINE</text>
+
+    <line x1="20" y1="66" x2="280" y2="66" stroke="rgba(255,255,255,0.06)"/>
+
+    <text x="20" y="90" fill="#CBD5E1" font-size="11">• 5 point rubric grading suite</text>
+    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Threshold minimum 0.85 score</text>
+    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Anti spam heuristic checks</text>
+    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Autonomous feedback rewrite loop</text>
+
+    <rect x="20" y="170" width="138" height="20" rx="4" fill="#090D14" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+    <text x="28" y="183" fill="#34D399" font-size="9" font-weight="600">PASS RATE: 94.2%</text>
+  </g>
+
+  <!-- NODE 06: PACED RELAY DISPATCH DAEMON -->
+  <g transform="translate(60, 480)">
+    <rect width="320" height="200" rx="14" fill="url(#sdrCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="320" height="3" fill="#10B981" rx="1"/>
+    <circle cx="32" cy="36" r="14" fill="rgba(16,185,129,0.15)"/>
+    <text x="24" y="41" fill="#10B981" font-size="12" font-weight="800">06</text>
+    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Paced Relay Dispatch</text>
+    <text x="60" y="48" fill="#10B981" font-size="10" font-weight="600" letter-spacing="0.5">DELIVERABILITY GUARANTEE</text>
+
+    <line x1="20" y1="66" x2="300" y2="66" stroke="rgba(255,255,255,0.06)"/>
+
+    <text x="20" y="90" fill="#CBD5E1" font-size="11">• 900 to 1800s randomized delay</text>
+    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Zero burst spam protection</text>
+    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Deduplicated SQLite sent ledger</text>
+    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Instant cooldown on hard bounce</text>
+
+    <rect x="20" y="170" width="136" height="20" rx="4" fill="#090D14" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+    <text x="28" y="183" fill="#10B981" font-size="9" font-weight="600">DOMAIN HEALTH: 100%</text>
+  </g>
+
+  <!-- Footer Info Line -->
+  <g transform="translate(60, 740)">
+    <text x="0" y="0" fill="#64748B" font-size="11">LANGGRAPH 0.2 STATE ENGINE // GEMINI FLASH LITE 2.0 WORKER POOL // PLAYWRIGHT STEALTH // PYDANTIC V2</text>
+    <text x="1080" y="0" fill="#10B981" font-size="11" font-weight="700" text-anchor="end">PRODUCTION READY</text>
+  </g>
+</svg>

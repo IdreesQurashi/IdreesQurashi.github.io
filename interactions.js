@@ -204,6 +204,27 @@
       download: 'workflows/linkedin-post-generator/blueprint.json',
       downloadLabel: 'Download Blueprint (.json)'
     },
+    n8n_clinic: {
+      type: 'image',
+      src: 'workflows/n8n-clinic-management/canvas.png',
+      badge: 'n8n Production · 38 Nodes Swarm',
+      title: 'Multi Agent Clinic Management & EHR Swarm',
+      desc: 'Autonomous healthcare workflow architecture orchestrating patient intake triage, dynamic calendar booking, EHR records synchronization, and physician notification alerts across HIPAA compliant webhooks with zero human latency.',
+      bullets: [
+        'Multi Agent Triage Routing dynamically classifying urgency and booking corresponding specialists.',
+        'Bidirectional EHR & Calendar Synchronization ensuring zero double bookings or lost records.',
+        'Deterministic Error Handling & Retries preventing data loss during upstream EHR outages.',
+        'Automated Post Intake Follow Up Dispatch notifying patients and clinical coordinators.'
+      ],
+      metrics: [
+        { val: '38 Nodes', label: 'Orchestrated Pipeline' },
+        { val: 'Sub 30s', label: 'Intake to EHR Sync' },
+        { val: '100%', label: 'Autonomous Booking' }
+      ],
+      tags: ['n8n', 'Healthcare EHR', 'Multi Agent Triage', 'Google Calendar', 'PostgreSQL', 'Telegram Alerts'],
+      download: 'downloads/n8n/08_multiagent_clinic_booking_38nodes.json',
+      downloadLabel: 'Download Blueprint (.json)'
+    },
     make_whatsapp: {
       type: 'video',
       src: 'workflows/whatsapp-replying-bot/whatsapp_replying_bot.mp4',

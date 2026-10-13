@@ -57,6 +57,25 @@ body, .leftclick-body {
   margin-right: auto;
 }
 
+/* === HERO ACTION BUTTONS CALIBRATION === */
+.hero-btn {
+  font-size: 0.88em !important;
+}
+.hero-btn .btn {
+  font-size: 0.95em;
+  padding: 0.18em 0.25em 0.18em 0.9em;
+  gap: 0.75em;
+}
+.hero-btn .btn-icon-box {
+  width: 2.1em;
+  height: 2.1em;
+}
+@media screen and (max-width: 991px) {
+  .hero-btn {
+    font-size: 13.5px !important;
+  }
+}
+
 /* === BRAND LOGO === */
 .main-logo {
   display: flex;

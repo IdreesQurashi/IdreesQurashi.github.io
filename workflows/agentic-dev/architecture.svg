@@ -1,214 +1,296 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%" style="background:#060709;font-family:'JetBrains Mono', 'Fira Code', monospace;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
   <defs>
-    <linearGradient id="devBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d0c14"/>
-      <stop offset="50%" stop-color="#050608"/>
-      <stop offset="100%" stop-color="#0a0812"/>
-    </linearGradient>
-    <linearGradient id="devCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#161322" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0e0c17" stop-opacity="0.9"/>
-    </linearGradient>
-    <radialGradient id="devGlowCenter" cx="50%" cy="45%" r="50%">
-      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.12"/>
-      <stop offset="60%" stop-color="#10B981" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&amp;display=swap');
+      * {
+        font-family: 'DM Sans', 'Dmsans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+    </style>
+
+    <radialGradient id="devBgGrad" cx="50%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#181826"/>
+      <stop offset="55%" stop-color="#111114"/>
+      <stop offset="100%" stop-color="#09090b"/>
     </radialGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#191921" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#121216" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 7 5 L 1 8 z" fill="rgba(255,255,255,0.45)"/>
+    </marker>
+    <marker id="arrowLeft" viewBox="0 0 10 10" refX="4" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 7 2 L 1 5 L 7 8 z" fill="rgba(255,255,255,0.45)"/>
+    </marker>
+    <marker id="arrowLoop" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 2 L 7 5 L 1 8 z" fill="rgba(255,255,255,0.4)"/>
+    </marker>
   </defs>
 
-  <!-- Background -->
   <rect width="1200" height="800" fill="url(#devBgGrad)"/>
-  <rect width="1200" height="800" fill="url(#devGlowCenter)"/>
+  <rect width="1200" height="800" fill="url(#centerGlow)"/>
 
-  <!-- Subtle Circuit Grid -->
-  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
-    <line x1="60" y1="0" x2="60" y2="800"/>
-    <line x1="240" y1="0" x2="240" y2="800"/>
-    <line x1="420" y1="0" x2="420" y2="800"/>
-    <line x1="600" y1="0" x2="600" y2="800"/>
-    <line x1="780" y1="0" x2="780" y2="800"/>
-    <line x1="960" y1="0" x2="960" y2="800"/>
-    <line x1="1140" y1="0" x2="1140" y2="800"/>
-    <line x1="0" y1="100" x2="1200" y2="100"/>
-    <line x1="0" y1="250" x2="1200" y2="250"/>
-    <line x1="0" y1="400" x2="1200" y2="400"/>
-    <line x1="0" y1="550" x2="1200" y2="550"/>
-    <line x1="0" y1="700" x2="1200" y2="700"/>
-  </g>
+  <rect x="20" y="20" width="1160" height="760" rx="20" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
 
-  <!-- Header Section -->
-  <g transform="translate(60, 48)">
-    <rect x="0" y="0" width="126" height="24" rx="12" fill="rgba(255,107,53,0.15)" stroke="rgba(255,107,53,0.35)" stroke-width="1"/>
-    <circle cx="12" cy="12" r="4" fill="#FF6B35"/>
-    <text x="24" y="16" fill="#FF6B35" font-size="10" font-weight="700" letter-spacing="1.5">SYSTEM 03 LIVE</text>
+  <!-- HEADER -->
+  <g transform="translate(60, 42)">
+    <g transform="translate(0, 0)">
+      <svg x="0" y="0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0f0f2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="20" x2="20" y2="4"/>
+        <polyline points="4,4 10.5,10.5 4,17"/>
+        <line x1="13.5" y1="20" x2="20" y2="13.5"/>
+        <circle cx="19.5" cy="19.5" r="0.6" fill="#f0f0f2"/>
+      </svg>
+      <text x="28" y="15" fill="#f0f0f2" font-size="13" font-weight="500">Idrees Qurashi</text>
+      <text x="118" y="15" fill="rgba(255,255,255,0.25)" font-size="13"> · </text>
+      <text x="130" y="15" fill="rgba(255,255,255,0.45)" font-size="12" font-weight="400">Autonomous AI Systems</text>
+    </g>
 
-    <text x="0" y="58" fill="#FFFFFF" font-size="24" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-0.5">Autonomous Full Stack Developer Agent</text>
-    <text x="0" y="80" fill="#8E9AA8" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">Autonomous Test Driven Development Loop with AST Verification and Self Healing</text>
+    <text x="0" y="48" fill="#f0f0f2" font-size="24" font-weight="500" letter-spacing="-0.5">Autonomous Full Stack Developer Agent</text>
+    <text x="0" y="70" fill="rgba(255,255,255,0.5)" font-size="13" font-weight="400">Autonomous test driven development loop with AST verification and self healing</text>
 
-    <!-- Top Stats Badges -->
-    <g transform="translate(740, 6)">
-      <rect x="0" y="0" width="100" height="52" rx="8" fill="#0D111A" stroke="rgba(255,255,255,0.08)"/>
-      <text x="14" y="24" fill="#10B981" font-size="18" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">80%+</text>
-      <text x="14" y="42" fill="#64748B" font-size="9" font-weight="600" letter-spacing="0.5">TEST COVER</text>
-
-      <rect x="112" y="0" width="100" height="52" rx="8" fill="#0D111A" stroke="rgba(255,255,255,0.08)"/>
-      <text x="126" y="24" fill="#FF6B35" font-size="18" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">3x</text>
-      <text x="126" y="42" fill="#64748B" font-size="9" font-weight="600" letter-spacing="0.5">AUTO RETRIES</text>
-
-      <rect x="224" y="0" width="100" height="52" rx="8" fill="#0D111A" stroke="rgba(255,255,255,0.08)"/>
-      <text x="238" y="24" fill="#FFFFFF" font-size="18" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif">0</text>
-      <text x="238" y="42" fill="#64748B" font-size="9" font-weight="600" letter-spacing="0.5">HUMAN TOUCH</text>
+    <!-- Top Stats Cards (Matching .hero-stat) -->
+    <g transform="translate(732, -4)">
+      <g transform="translate(0, 0)">
+        <rect width="110" height="54" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="55" y="26" text-anchor="middle" fill="#f0f0f2" font-size="17" font-weight="500" letter-spacing="-0.5">80%+</text>
+        <text x="55" y="42" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8.5" font-weight="500" letter-spacing="0.08em">TEST COVER</text>
+      </g>
+      <g transform="translate(120, 0)">
+        <rect width="114" height="54" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="57" y="26" text-anchor="middle" fill="#f0f0f2" font-size="17" font-weight="500" letter-spacing="-0.5">3x</text>
+        <text x="57" y="42" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8.5" font-weight="500" letter-spacing="0.08em">AUTO REPAIRS</text>
+      </g>
+      <g transform="translate(244, 0)">
+        <rect width="104" height="54" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+        <text x="52" y="26" text-anchor="middle" fill="#f0f0f2" font-size="17" font-weight="500" letter-spacing="-0.5">0</text>
+        <text x="52" y="42" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8.5" font-weight="500" letter-spacing="0.08em">BABYSITTING</text>
+      </g>
     </g>
   </g>
 
-  <!-- Connectors -->
-  <g stroke="rgba(255,107,53,0.35)" stroke-width="2" fill="none">
-    <path d="M 380 260 L 440 260" stroke-dasharray="4,4"/>
-    <polygon points="442,260 434,256 434,264" fill="#FF6B35" stroke="none"/>
-
-    <path d="M 740 260 L 800 260" stroke-dasharray="4,4"/>
-    <polygon points="802,260 794,256 794,264" fill="#FF6B35" stroke="none"/>
-
-    <path d="M 950 360 L 950 420 L 950 480" stroke-dasharray="4,4"/>
-    <polygon points="950,482 946,474 954,474" fill="#10B981" stroke="none"/>
-
-    <path d="M 800 580 L 740 580" stroke-dasharray="4,4"/>
-    <polygon points="738,580 746,576 746,584" fill="#10B981" stroke="none"/>
-
-    <path d="M 440 580 L 380 580" stroke-dasharray="4,4"/>
-    <polygon points="378,580 386,576 386,584" fill="#10B981" stroke="none"/>
-
-    <!-- Healing Loop from Sandbox back to Code Synthesizer -->
-    <path d="M 590 480 L 590 430 L 590 380" stroke="rgba(239,68,68,0.45)" stroke-dasharray="3,3"/>
-    <polygon points="590,378 586,386 594,386" fill="#EF4444" stroke="none"/>
+  <!-- CONNECTORS -->
+  <g stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none">
+    <path d="M 396 255 L 426 255" marker-end="url(#arrow)"/>
+    <path d="M 768 255 L 798 255" marker-end="url(#arrow)"/>
+    <path d="M 972 365 L 972 449" marker-end="url(#arrow)"/>
+    <path d="M 804 555 L 774 555" marker-end="url(#arrowLeft)"/>
+    <path d="M 432 555 L 402 555" marker-end="url(#arrowLeft)"/>
+    <path d="M 600 445 C 600 405, 780 405, 860 445" stroke="rgba(255,255,255,0.18)" stroke-dasharray="3,3" marker-end="url(#arrowLoop)"/>
   </g>
 
-  <rect x="538" y="412" width="104" height="18" rx="4" fill="#1E1218" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
-  <text x="544" y="424" fill="#F87171" font-size="8.5" font-weight="700">TEST FAIL: REPAIR LOOP</text>
-
-  <!-- NODE 01: CONTRACT SPEC INGESTION -->
-  <g transform="translate(60, 160)">
-    <rect width="320" height="200" rx="14" fill="url(#devCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <rect x="0" y="0" width="320" height="3" fill="#FF6B35" rx="1"/>
-    <circle cx="32" cy="36" r="14" fill="rgba(255,107,53,0.15)"/>
-    <text x="26" y="41" fill="#FF6B35" font-size="12" font-weight="800">01</text>
-    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">GitHub Spec Ingestion</text>
-    <text x="60" y="48" fill="#FF6B35" font-size="10" font-weight="600" letter-spacing="0.5">PRD CONTRACT PARSER</text>
-
-    <line x1="20" y1="66" x2="300" y2="66" stroke="rgba(255,255,255,0.06)"/>
-
-    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Ingests GitHub issue payload</text>
-    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Extracts acceptance boundaries</text>
-    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Resolves architecture ambiguities</text>
-    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Generates atomic checklist</text>
-
-    <rect x="20" y="170" width="132" height="20" rx="4" fill="#090D14" stroke="rgba(255,107,53,0.3)" stroke-width="1"/>
-    <text x="28" y="183" fill="#FF8A5B" font-size="9" font-weight="600">INPUT: ISSUE DIRECTIVE</text>
+  <!-- Feedback Loop Capsule Badge -->
+  <g transform="translate(638, 396)">
+    <rect width="148" height="20" rx="10" fill="#14141a" stroke="rgba(255,255,255,0.1)"/>
+    <circle cx="12" cy="10" r="2.5" fill="rgba(255,255,255,0.5)"/>
+    <text x="22" y="14" fill="rgba(255,255,255,0.6)" font-size="9" font-weight="500" letter-spacing="0.04em">Test Fail: 3 Strike Repair</text>
   </g>
 
-  <!-- NODE 02: AST PARSER & AUDITOR -->
-  <g transform="translate(440, 160)">
-    <rect width="300" height="200" rx="14" fill="url(#devCardGrad)" stroke="rgba(59,130,246,0.3)" stroke-width="1.2"/>
-    <rect x="0" y="0" width="300" height="3" fill="#3B82F6" rx="1"/>
-    <circle cx="32" cy="36" r="14" fill="rgba(59,130,246,0.15)"/>
-    <text x="24" y="41" fill="#3B82F6" font-size="12" font-weight="800">02</text>
-    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">AST Codebase Auditor</text>
-    <text x="60" y="48" fill="#3B82F6" font-size="10" font-weight="600" letter-spacing="0.5">SYNTAX TREE PARSER</text>
+  <!-- ROW 1 CARDS -->
 
-    <line x1="20" y1="66" x2="280" y2="66" stroke="rgba(255,255,255,0.06)"/>
+  <!-- CARD 01: GITHUB SPEC INGESTION -->
+  <g transform="translate(60, 145)">
+    <rect width="336" height="220" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <rect x="20" y="0" width="296" height="1" fill="rgba(255,255,255,0.12)"/>
 
-    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Python AST tree inspection</text>
-    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Function signature cataloging</text>
-    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Dependency cycle validation</text>
-    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Read before write guarantee</text>
+    <rect x="20" y="18" width="60" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="32" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" font-weight="600" letter-spacing="0.08em">STEP 01</text>
 
-    <rect x="20" y="170" width="138" height="20" rx="4" fill="#090D14" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
-    <text x="28" y="183" fill="#60A5FA" font-size="9" font-weight="600">ACCURACY: 100% AST</text>
+    <rect x="178" y="18" width="138" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="247" y="32" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-weight="500" letter-spacing="0.04em">PRD CONTRACT PARSER</text>
+
+    <text x="20" y="66" fill="#f0f0f2" font-size="16" font-weight="500" letter-spacing="-0.3">GitHub Spec Ingestion</text>
+
+    <line x1="20" y1="80" x2="316" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+    <circle cx="26" cy="100" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="104" fill="rgba(255,255,255,0.65)" font-size="11.5">Ingests GitHub issue payload</text>
+
+    <circle cx="26" cy="122" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="126" fill="rgba(255,255,255,0.65)" font-size="11.5">Extracts acceptance boundaries</text>
+
+    <circle cx="26" cy="144" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="148" fill="rgba(255,255,255,0.65)" font-size="11.5">Resolves architecture ambiguities</text>
+
+    <circle cx="26" cy="166" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="170" fill="rgba(255,255,255,0.65)" font-size="11.5">Generates atomic task checklist</text>
+
+    <rect x="20" y="186" width="138" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="89" y="200" text-anchor="middle" fill="#f0f0f2" font-size="9.5" font-weight="500">Directives Ingested</text>
   </g>
 
-  <!-- NODE 03: TDD RED TEST AUTHOR -->
-  <g transform="translate(800, 160)">
-    <rect width="340" height="200" rx="14" fill="url(#devCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <rect x="0" y="0" width="340" height="3" fill="#EF4444" rx="1"/>
-    <circle cx="32" cy="36" r="14" fill="rgba(239,68,68,0.15)"/>
-    <text x="24" y="41" fill="#EF4444" font-size="12" font-weight="800">03</text>
-    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">TDD Red Test Author</text>
-    <text x="60" y="48" fill="#EF4444" font-size="10" font-weight="600" letter-spacing="0.5">TEST SPEC SUITE FIRST</text>
+  <!-- CARD 02: AST CODEBASE AUDITOR -->
+  <g transform="translate(432, 145)">
+    <rect width="336" height="220" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <rect x="20" y="0" width="296" height="1" fill="rgba(255,255,255,0.18)"/>
 
-    <line x1="20" y1="66" x2="320" y2="66" stroke="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="18" width="60" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="32" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" font-weight="600" letter-spacing="0.08em">STEP 02</text>
 
-    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Synthesizes unit test fixtures</text>
-    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Injects boundary edge cases</text>
-    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Asserts failure before write</text>
-    <text x="20" y="156" fill="#CBD5E1" font-size="11">• 80%+ test branch coverage</text>
+    <rect x="180" y="18" width="136" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="248" y="32" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-weight="500" letter-spacing="0.04em">SYNTAX TREE PARSER</text>
 
-    <rect x="20" y="170" width="136" height="20" rx="4" fill="#090D14" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
-    <text x="28" y="183" fill="#F87171" font-size="9" font-weight="600">CYCLE: RED PHASE PASS</text>
+    <text x="20" y="66" fill="#f0f0f2" font-size="16" font-weight="500" letter-spacing="-0.3">AST Codebase Auditor</text>
+
+    <line x1="20" y1="80" x2="316" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+    <circle cx="26" cy="100" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="104" fill="rgba(255,255,255,0.65)" font-size="11.5">Python AST tree inspection</text>
+
+    <circle cx="26" cy="122" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="126" fill="rgba(255,255,255,0.65)" font-size="11.5">Function signature cataloging</text>
+
+    <circle cx="26" cy="144" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="148" fill="rgba(255,255,255,0.65)" font-size="11.5">Dependency cycle validation</text>
+
+    <circle cx="26" cy="166" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="170" fill="rgba(255,255,255,0.65)" font-size="11.5">Read before write guarantee</text>
+
+    <rect x="20" y="186" width="144" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="92" y="200" text-anchor="middle" fill="#f0f0f2" font-size="9.5" font-weight="500">100% AST Accuracy</text>
   </g>
 
-  <!-- NODE 04: GREEN CODE SYNTHESIZER -->
-  <g transform="translate(800, 480)">
-    <rect width="340" height="200" rx="14" fill="url(#devCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <rect x="0" y="0" width="340" height="3" fill="#10B981" rx="1"/>
-    <circle cx="32" cy="36" r="14" fill="rgba(16,185,129,0.15)"/>
-    <text x="24" y="41" fill="#10B981" font-size="12" font-weight="800">04</text>
-    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Green Synthesizer</text>
-    <text x="60" y="48" fill="#10B981" font-size="10" font-weight="600" letter-spacing="0.5">CLEAN ARCHITECTURE</text>
+  <!-- CARD 03: TDD RED TEST AUTHOR -->
+  <g transform="translate(804, 145)">
+    <rect width="336" height="220" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <rect x="20" y="0" width="296" height="1" fill="rgba(255,255,255,0.12)"/>
 
-    <line x1="20" y1="66" x2="320" y2="66" stroke="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="18" width="60" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="32" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" font-weight="600" letter-spacing="0.08em">STEP 03</text>
 
-    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Minimal code to pass tests</text>
-    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Zero placeholder comments</text>
-    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Strict Pydantic type safety</text>
-    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Modular dependency injection</text>
+    <rect x="176" y="18" width="140" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="246" y="32" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-weight="500" letter-spacing="0.04em">TEST SPEC SUITE FIRST</text>
 
-    <rect x="20" y="170" width="138" height="20" rx="4" fill="#090D14" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
-    <text x="28" y="183" fill="#34D399" font-size="9" font-weight="600">CODE QUALITY: AIRTIGHT</text>
+    <text x="20" y="66" fill="#f0f0f2" font-size="16" font-weight="500" letter-spacing="-0.3">TDD Red Test Author</text>
+
+    <line x1="20" y1="80" x2="316" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+    <circle cx="26" cy="100" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="104" fill="rgba(255,255,255,0.65)" font-size="11.5">Synthesizes unit test fixtures</text>
+
+    <circle cx="26" cy="122" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="126" fill="rgba(255,255,255,0.65)" font-size="11.5">Injects boundary edge cases</text>
+
+    <circle cx="26" cy="144" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="148" fill="rgba(255,255,255,0.65)" font-size="11.5">Asserts failure before write</text>
+
+    <circle cx="26" cy="166" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="170" fill="rgba(255,255,255,0.65)" font-size="11.5">80% plus test branch coverage</text>
+
+    <rect x="20" y="186" width="158" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="99" y="200" text-anchor="middle" fill="#f0f0f2" font-size="9.5" font-weight="500">Red Test Phase Verified</text>
   </g>
 
-  <!-- NODE 05: ISOLATED PYTEST SANDBOX -->
-  <g transform="translate(440, 480)">
-    <rect width="300" height="200" rx="14" fill="url(#devCardGrad)" stroke="rgba(16,185,129,0.3)" stroke-width="1.2"/>
-    <rect x="0" y="0" width="300" height="3" fill="#10B981" rx="1"/>
-    <circle cx="32" cy="36" r="14" fill="rgba(16,185,129,0.15)"/>
-    <text x="24" y="41" fill="#10B981" font-size="12" font-weight="800">05</text>
-    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Isolated Pytest Sandbox</text>
-    <text x="60" y="48" fill="#10B981" font-size="10" font-weight="600" letter-spacing="0.5">SUBPROCESS TEST HARNESS</text>
+  <!-- ROW 2 CARDS -->
 
-    <line x1="20" y1="66" x2="280" y2="66" stroke="rgba(255,255,255,0.06)"/>
+  <!-- CARD 06: GIT ATOMIC COMMITTER -->
+  <g transform="translate(60, 445)">
+    <rect width="336" height="220" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <rect x="20" y="0" width="296" height="1" fill="rgba(255,255,255,0.12)"/>
 
-    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Headless test execution</text>
-    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Traceback parse on failure</text>
-    <text x="20" y="134" fill="#CBD5E1" font-size="11">• 3 strike self healing loop</text>
-    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Zero regressions verified</text>
+    <rect x="20" y="18" width="60" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="32" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" font-weight="600" letter-spacing="0.08em">STEP 06</text>
 
-    <rect x="20" y="170" width="128" height="20" rx="4" fill="#090D14" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
-    <text x="28" y="183" fill="#10B981" font-size="9" font-weight="600">STATUS: GREEN PASS</text>
+    <rect x="178" y="18" width="138" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="247" y="32" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-weight="500" letter-spacing="0.04em">VERIFIED DIFF DEPLOYER</text>
+
+    <text x="20" y="66" fill="#f0f0f2" font-size="16" font-weight="500" letter-spacing="-0.3">Git Atomic Committer</text>
+
+    <line x1="20" y1="80" x2="316" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+    <circle cx="26" cy="100" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="104" fill="rgba(255,255,255,0.65)" font-size="11.5">Inspects git diff line by line</text>
+
+    <circle cx="26" cy="122" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="126" fill="rgba(255,255,255,0.65)" font-size="11.5">Structured semantic commit msg</text>
+
+    <circle cx="26" cy="144" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="148" fill="rgba(255,255,255,0.65)" font-size="11.5">Generates walkthrough evidence</text>
+
+    <circle cx="26" cy="166" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="170" fill="rgba(255,255,255,0.65)" font-size="11.5">Pushes clean commits to remote</text>
+
+    <rect x="20" y="186" width="168" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="104" y="200" text-anchor="middle" fill="#f0f0f2" font-size="9.5" font-weight="500">Clean Git Deploy: Code 0</text>
   </g>
 
-  <!-- NODE 06: GIT ATOMIC COMMITTER -->
-  <g transform="translate(60, 480)">
-    <rect width="320" height="200" rx="14" fill="url(#devCardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <rect x="0" y="0" width="320" height="3" fill="#3B82F6" rx="1"/>
-    <circle cx="32" cy="36" r="14" fill="rgba(59,130,246,0.15)"/>
-    <text x="24" y="41" fill="#3B82F6" font-size="12" font-weight="800">06</text>
-    <text x="60" y="34" fill="#FFFFFF" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Git Atomic Committer</text>
-    <text x="60" y="48" fill="#3B82F6" font-size="10" font-weight="600" letter-spacing="0.5">VERIFIED DIFF DEPLOYER</text>
+  <!-- CARD 05: ISOLATED PYTEST SANDBOX -->
+  <g transform="translate(432, 445)">
+    <rect width="336" height="220" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <rect x="20" y="0" width="296" height="1" fill="rgba(255,255,255,0.18)"/>
 
-    <line x1="20" y1="66" x2="300" y2="66" stroke="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="18" width="60" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="32" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" font-weight="600" letter-spacing="0.08em">STEP 05</text>
 
-    <text x="20" y="90" fill="#CBD5E1" font-size="11">• Inspects git diff line by line</text>
-    <text x="20" y="112" fill="#CBD5E1" font-size="11">• Structured semantic commit msg</text>
-    <text x="20" y="134" fill="#CBD5E1" font-size="11">• Generates walkthrough evidence</text>
-    <text x="20" y="156" fill="#CBD5E1" font-size="11">• Pushes to remote repository</text>
+    <rect x="172" y="18" width="144" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="244" y="32" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-weight="500" letter-spacing="0.04em">SUBPROCESS HARNESS</text>
 
-    <rect x="20" y="170" width="138" height="20" rx="4" fill="#090D14" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
-    <text x="28" y="183" fill="#60A5FA" font-size="9" font-weight="600">EXIT STATUS: CODE 0</text>
+    <text x="20" y="66" fill="#f0f0f2" font-size="16" font-weight="500" letter-spacing="-0.3">Isolated Pytest Sandbox</text>
+
+    <line x1="20" y1="80" x2="316" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+    <circle cx="26" cy="100" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="104" fill="rgba(255,255,255,0.65)" font-size="11.5">Headless test execution suite</text>
+
+    <circle cx="26" cy="122" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="126" fill="rgba(255,255,255,0.65)" font-size="11.5">Traceback parsing on test failure</text>
+
+    <circle cx="26" cy="144" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="148" fill="rgba(255,255,255,0.65)" font-size="11.5">3 strike self healing repair cycle</text>
+
+    <circle cx="26" cy="166" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="170" fill="rgba(255,255,255,0.65)" font-size="11.5">Zero regression verification</text>
+
+    <rect x="20" y="186" width="154" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="97" y="200" text-anchor="middle" fill="#f0f0f2" font-size="9.5" font-weight="500">Green Test Suite Passed</text>
   </g>
 
-  <!-- Footer Info Line -->
-  <g transform="translate(60, 740)">
-    <text x="0" y="0" fill="#64748B" font-size="11">TDD RUNNER // PYTHON AST PARSER // PYTEST SANDBOX // GITPYTHON ENGINE</text>
-    <text x="1080" y="0" fill="#10B981" font-size="11" font-weight="700" text-anchor="end">PRODUCTION READY</text>
+  <!-- CARD 04: GREEN CODE SYNTHESIZER -->
+  <g transform="translate(804, 445)">
+    <rect width="336" height="220" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <rect x="20" y="0" width="296" height="1" fill="rgba(255,255,255,0.12)"/>
+
+    <rect x="20" y="18" width="60" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="50" y="32" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9" font-weight="600" letter-spacing="0.08em">STEP 04</text>
+
+    <rect x="180" y="18" width="136" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="248" y="32" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-weight="500" letter-spacing="0.04em">CLEAN ARCHITECTURE</text>
+
+    <text x="20" y="66" fill="#f0f0f2" font-size="16" font-weight="500" letter-spacing="-0.3">Green Code Synthesizer</text>
+
+    <line x1="20" y1="80" x2="316" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+    <circle cx="26" cy="100" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="104" fill="rgba(255,255,255,0.65)" font-size="11.5">Minimal code to pass test specs</text>
+
+    <circle cx="26" cy="122" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="126" fill="rgba(255,255,255,0.65)" font-size="11.5">Zero placeholder or todo tags</text>
+
+    <circle cx="26" cy="144" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="148" fill="rgba(255,255,255,0.65)" font-size="11.5">Strict Pydantic type safety</text>
+
+    <circle cx="26" cy="166" r="2" fill="rgba(255,255,255,0.3)"/>
+    <text x="36" y="170" fill="rgba(255,255,255,0.65)" font-size="11.5">Modular dependency injection</text>
+
+    <rect x="20" y="186" width="148" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="94" y="200" text-anchor="middle" fill="#f0f0f2" font-size="9.5" font-weight="500">Production Grade Code</text>
+  </g>
+
+  <!-- FOOTER -->
+  <g transform="translate(60, 725)">
+    <text x="0" y="12" fill="rgba(255,255,255,0.35)" font-size="11" font-weight="400">TDD Runner · Python AST Parser · Pytest Sandbox · GitPython Engine · Self Healing Harness</text>
+
+    <g transform="translate(860, -2)">
+      <rect width="220" height="24" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+      <circle cx="16" cy="12" r="3" fill="#f0f0f2"/>
+      <text x="28" y="16" fill="#f0f0f2" font-size="10.5" font-weight="500" letter-spacing="0.04em">Production Deployed System</text>
+    </g>
   </g>
 </svg>
